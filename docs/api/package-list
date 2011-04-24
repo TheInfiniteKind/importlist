@@ -1,4 +1,3 @@
 com.moneydance.modules.features.importlist
 com.moneydance.modules.features.importlist.io
-com.moneydance.modules.features.importlist.swing
-com.moneydance.modules.features.importlist.test
+com.moneydance.modules.features.importlist.view

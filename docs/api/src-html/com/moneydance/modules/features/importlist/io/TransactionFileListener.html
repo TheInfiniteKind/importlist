@@ -1,0 +1,121 @@
+<HTML>
+<BODY BGCOLOR="white">
+<PRE>
+<FONT color="green">001</FONT>    package com.moneydance.modules.features.importlist.io;<a name="line.1"></a>
+<FONT color="green">002</FONT>    <a name="line.2"></a>
+<FONT color="green">003</FONT>    import java.io.File;<a name="line.3"></a>
+<FONT color="green">004</FONT>    <a name="line.4"></a>
+<FONT color="green">005</FONT>    import org.apache.commons.io.monitor.FileAlterationListenerAdaptor;<a name="line.5"></a>
+<FONT color="green">006</FONT>    import org.apache.commons.io.monitor.FileAlterationObserver;<a name="line.6"></a>
+<FONT color="green">007</FONT>    import org.apache.commons.lang.Validate;<a name="line.7"></a>
+<FONT color="green">008</FONT>    <a name="line.8"></a>
+<FONT color="green">009</FONT>    /**<a name="line.9"></a>
+<FONT color="green">010</FONT>     * This &lt;code&gt;FileAlterationListener&lt;/code&gt; implementation is notified about<a name="line.10"></a>
+<FONT color="green">011</FONT>     * relevant modifications in the file system. It propagates these modifications<a name="line.11"></a>
+<FONT color="green">012</FONT>     * to the &lt;code&gt;FileAdministration&lt;/code&gt;.<a name="line.12"></a>
+<FONT color="green">013</FONT>     *<a name="line.13"></a>
+<FONT color="green">014</FONT>     * @author &lt;a href="mailto:&amp;#102;&amp;#108;&amp;#111;&amp;#114;&amp;#105;&amp;#97;&amp;#110;&amp;#46;&amp;#106;<a name="line.14"></a>
+<FONT color="green">015</FONT>     *&amp;#46;&amp;#98;&amp;#114;&amp;#101;&amp;#117;&amp;#110;&amp;#105;&amp;#103;&amp;#64;&amp;#109;&amp;#121;&amp;#45;&amp;#102;<a name="line.15"></a>
+<FONT color="green">016</FONT>     *&amp;#108;&amp;#111;&amp;#119;&amp;#46;&amp;#99;&amp;#111;&amp;#109;"&gt;Florian J. Breunig&lt;/a&gt;<a name="line.16"></a>
+<FONT color="green">017</FONT>     */<a name="line.17"></a>
+<FONT color="green">018</FONT>    public class TransactionFileListener extends FileAlterationListenerAdaptor {<a name="line.18"></a>
+<FONT color="green">019</FONT>    <a name="line.19"></a>
+<FONT color="green">020</FONT>        private final FileAdministration fileAdministration;<a name="line.20"></a>
+<FONT color="green">021</FONT>        private boolean dirty;<a name="line.21"></a>
+<FONT color="green">022</FONT>    <a name="line.22"></a>
+<FONT color="green">023</FONT>        TransactionFileListener(final FileAdministration argFileAdministration) {<a name="line.23"></a>
+<FONT color="green">024</FONT>            Validate.notNull(argFileAdministration,<a name="line.24"></a>
+<FONT color="green">025</FONT>            "argFileAdministration can't be null");<a name="line.25"></a>
+<FONT color="green">026</FONT>            this.fileAdministration = argFileAdministration;<a name="line.26"></a>
+<FONT color="green">027</FONT>        }<a name="line.27"></a>
+<FONT color="green">028</FONT>    <a name="line.28"></a>
+<FONT color="green">029</FONT>        @Override<a name="line.29"></a>
+<FONT color="green">030</FONT>        public final void onStart(final FileAlterationObserver observer) {<a name="line.30"></a>
+<FONT color="green">031</FONT>            this.dirty = false;<a name="line.31"></a>
+<FONT color="green">032</FONT>        }<a name="line.32"></a>
+<FONT color="green">033</FONT>    <a name="line.33"></a>
+<FONT color="green">034</FONT>        @Override<a name="line.34"></a>
+<FONT color="green">035</FONT>        public final void onFileCreate(final File file) {<a name="line.35"></a>
+<FONT color="green">036</FONT>            this.dirty = true;<a name="line.36"></a>
+<FONT color="green">037</FONT>        }<a name="line.37"></a>
+<FONT color="green">038</FONT>    <a name="line.38"></a>
+<FONT color="green">039</FONT>        @Override<a name="line.39"></a>
+<FONT color="green">040</FONT>        public final void onFileChange(final File file) {<a name="line.40"></a>
+<FONT color="green">041</FONT>            this.dirty = true;<a name="line.41"></a>
+<FONT color="green">042</FONT>        }<a name="line.42"></a>
+<FONT color="green">043</FONT>    <a name="line.43"></a>
+<FONT color="green">044</FONT>        @Override<a name="line.44"></a>
+<FONT color="green">045</FONT>        public final void onFileDelete(final File file) {<a name="line.45"></a>
+<FONT color="green">046</FONT>            this.dirty = true;<a name="line.46"></a>
+<FONT color="green">047</FONT>        }<a name="line.47"></a>
+<FONT color="green">048</FONT>    <a name="line.48"></a>
+<FONT color="green">049</FONT>        @Override<a name="line.49"></a>
+<FONT color="green">050</FONT>        public final void onStop(final FileAlterationObserver observer) {<a name="line.50"></a>
+<FONT color="green">051</FONT>            if (this.dirty) {<a name="line.51"></a>
+<FONT color="green">052</FONT>                this.fileAdministration.setDirty(true);<a name="line.52"></a>
+<FONT color="green">053</FONT>            }<a name="line.53"></a>
+<FONT color="green">054</FONT>        }<a name="line.54"></a>
+<FONT color="green">055</FONT>    }<a name="line.55"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</PRE>
+</BODY>
+</HTML>

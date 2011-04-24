@@ -1,0 +1,123 @@
+<HTML>
+<BODY BGCOLOR="white">
+<PRE>
+<FONT color="green">001</FONT>    package com.moneydance.modules.features.importlist.view;<a name="line.1"></a>
+<FONT color="green">002</FONT>    <a name="line.2"></a>
+<FONT color="green">003</FONT>    import java.awt.Component;<a name="line.3"></a>
+<FONT color="green">004</FONT>    import java.awt.event.ActionListener;<a name="line.4"></a>
+<FONT color="green">005</FONT>    <a name="line.5"></a>
+<FONT color="green">006</FONT>    import javax.swing.AbstractButton;<a name="line.6"></a>
+<FONT color="green">007</FONT>    import javax.swing.DefaultCellEditor;<a name="line.7"></a>
+<FONT color="green">008</FONT>    import javax.swing.JCheckBox;<a name="line.8"></a>
+<FONT color="green">009</FONT>    import javax.swing.JTable;<a name="line.9"></a>
+<FONT color="green">010</FONT>    <a name="line.10"></a>
+<FONT color="green">011</FONT>    import com.moneydance.modules.features.importlist.io.FileAdministration;<a name="line.11"></a>
+<FONT color="green">012</FONT>    <a name="line.12"></a>
+<FONT color="green">013</FONT>    /**<a name="line.13"></a>
+<FONT color="green">014</FONT>     * @author &lt;a href="mailto:&amp;#102;&amp;#108;&amp;#111;&amp;#114;&amp;#105;&amp;#97;&amp;#110;&amp;#46;&amp;#106;<a name="line.14"></a>
+<FONT color="green">015</FONT>     *&amp;#46;&amp;#98;&amp;#114;&amp;#101;&amp;#117;&amp;#110;&amp;#105;&amp;#103;&amp;#64;&amp;#109;&amp;#121;&amp;#45;&amp;#102;<a name="line.15"></a>
+<FONT color="green">016</FONT>     *&amp;#108;&amp;#111;&amp;#119;&amp;#46;&amp;#99;&amp;#111;&amp;#109;"&gt;Florian J. Breunig&lt;/a&gt;<a name="line.16"></a>
+<FONT color="green">017</FONT>     */<a name="line.17"></a>
+<FONT color="green">018</FONT>    public class ImportEditor extends DefaultCellEditor {<a name="line.18"></a>
+<FONT color="green">019</FONT>    <a name="line.19"></a>
+<FONT color="green">020</FONT>        private static final long serialVersionUID = 4286061728240721119L;<a name="line.20"></a>
+<FONT color="green">021</FONT>        private final FileAdministration    fileAdministration;<a name="line.21"></a>
+<FONT color="green">022</FONT>        private final ButtonRenderer        buttonRenderer;<a name="line.22"></a>
+<FONT color="green">023</FONT>        private String label;<a name="line.23"></a>
+<FONT color="green">024</FONT>    <a name="line.24"></a>
+<FONT color="green">025</FONT>        ImportEditor(final FileAdministration argFileAdministration,<a name="line.25"></a>
+<FONT color="green">026</FONT>                final ButtonRenderer argButtonRenderer) {<a name="line.26"></a>
+<FONT color="green">027</FONT>            super(new JCheckBox());<a name="line.27"></a>
+<FONT color="green">028</FONT>            this.fileAdministration = argFileAdministration;<a name="line.28"></a>
+<FONT color="green">029</FONT>            this.buttonRenderer     = argButtonRenderer;<a name="line.29"></a>
+<FONT color="green">030</FONT>        }<a name="line.30"></a>
+<FONT color="green">031</FONT>    <a name="line.31"></a>
+<FONT color="green">032</FONT>        @Override<a name="line.32"></a>
+<FONT color="green">033</FONT>        public final Object getCellEditorValue() {<a name="line.33"></a>
+<FONT color="green">034</FONT>            return this.label;<a name="line.34"></a>
+<FONT color="green">035</FONT>        }<a name="line.35"></a>
+<FONT color="green">036</FONT>    <a name="line.36"></a>
+<FONT color="green">037</FONT>        @Override<a name="line.37"></a>
+<FONT color="green">038</FONT>        public final Component getTableCellEditorComponent(<a name="line.38"></a>
+<FONT color="green">039</FONT>                final JTable table,<a name="line.39"></a>
+<FONT color="green">040</FONT>                final Object value,<a name="line.40"></a>
+<FONT color="green">041</FONT>                final boolean isSelected,<a name="line.41"></a>
+<FONT color="green">042</FONT>                final int row,<a name="line.42"></a>
+<FONT color="green">043</FONT>                final int column) {<a name="line.43"></a>
+<FONT color="green">044</FONT>            if (value != null) {<a name="line.44"></a>
+<FONT color="green">045</FONT>                this.label = value.toString();<a name="line.45"></a>
+<FONT color="green">046</FONT>            }<a name="line.46"></a>
+<FONT color="green">047</FONT>    <a name="line.47"></a>
+<FONT color="green">048</FONT>            AbstractButton button = this.buttonRenderer.getTableCellRendererButton(<a name="line.48"></a>
+<FONT color="green">049</FONT>                    table, value, isSelected, isSelected, row, column);<a name="line.49"></a>
+<FONT color="green">050</FONT>            ActionListener actionListener =<a name="line.50"></a>
+<FONT color="green">051</FONT>                this.fileAdministration.getImportActionListener(<a name="line.51"></a>
+<FONT color="green">052</FONT>                        table.convertRowIndexToModel(row));<a name="line.52"></a>
+<FONT color="green">053</FONT>            button.addActionListener(actionListener);<a name="line.53"></a>
+<FONT color="green">054</FONT>    <a name="line.54"></a>
+<FONT color="green">055</FONT>            return button;<a name="line.55"></a>
+<FONT color="green">056</FONT>        }<a name="line.56"></a>
+<FONT color="green">057</FONT>    }<a name="line.57"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</PRE>
+</BODY>
+</HTML>
