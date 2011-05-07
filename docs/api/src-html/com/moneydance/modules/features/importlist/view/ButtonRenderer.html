@@ -17,7 +17,7 @@
 <FONT color="green">014</FONT>     *&amp;#46;&amp;#98;&amp;#114;&amp;#101;&amp;#117;&amp;#110;&amp;#105;&amp;#103;&amp;#64;&amp;#109;&amp;#121;&amp;#45;&amp;#102;<a name="line.14"></a>
 <FONT color="green">015</FONT>     *&amp;#108;&amp;#111;&amp;#119;&amp;#46;&amp;#99;&amp;#111;&amp;#109;"&gt;Florian J. Breunig&lt;/a&gt;<a name="line.15"></a>
 <FONT color="green">016</FONT>     */<a name="line.16"></a>
-<FONT color="green">017</FONT>    public class ButtonRenderer implements TableCellRenderer {<a name="line.17"></a>
+<FONT color="green">017</FONT>    class ButtonRenderer implements TableCellRenderer {<a name="line.17"></a>
 <FONT color="green">018</FONT>    <a name="line.18"></a>
 <FONT color="green">019</FONT>        private static final long serialVersionUID = -5002244293774549298L;<a name="line.19"></a>
 <FONT color="green">020</FONT>    <a name="line.20"></a>
@@ -27,39 +27,40 @@
 <FONT color="green">024</FONT>        ButtonRenderer() {<a name="line.24"></a>
 <FONT color="green">025</FONT>        }<a name="line.25"></a>
 <FONT color="green">026</FONT>    <a name="line.26"></a>
-<FONT color="green">027</FONT>        public final Component getTableCellRendererComponent(<a name="line.27"></a>
-<FONT color="green">028</FONT>                final JTable table,<a name="line.28"></a>
-<FONT color="green">029</FONT>                final Object value,<a name="line.29"></a>
-<FONT color="green">030</FONT>                final boolean isSelected,<a name="line.30"></a>
-<FONT color="green">031</FONT>                final boolean hasFocus,<a name="line.31"></a>
-<FONT color="green">032</FONT>                final int row,<a name="line.32"></a>
-<FONT color="green">033</FONT>                final int column) {<a name="line.33"></a>
-<FONT color="green">034</FONT>            return this.getTableCellRendererButton(<a name="line.34"></a>
-<FONT color="green">035</FONT>                    table, value, hasFocus, hasFocus, row, column);<a name="line.35"></a>
-<FONT color="green">036</FONT>        }<a name="line.36"></a>
-<FONT color="green">037</FONT>    <a name="line.37"></a>
-<FONT color="green">038</FONT>        final AbstractButton getTableCellRendererButton(<a name="line.38"></a>
-<FONT color="green">039</FONT>                final JTable table,<a name="line.39"></a>
-<FONT color="green">040</FONT>                final Object value,<a name="line.40"></a>
-<FONT color="green">041</FONT>                final boolean isSelected,<a name="line.41"></a>
-<FONT color="green">042</FONT>                final boolean hasFocus,<a name="line.42"></a>
-<FONT color="green">043</FONT>                final int row,<a name="line.43"></a>
-<FONT color="green">044</FONT>                final int column) {<a name="line.44"></a>
-<FONT color="green">045</FONT>            JButton button = new JButton();<a name="line.45"></a>
-<FONT color="green">046</FONT>            button.setOpaque(true);<a name="line.46"></a>
-<FONT color="green">047</FONT>            ColorSchemeHelper.applyColorScheme(button, row);<a name="line.47"></a>
-<FONT color="green">048</FONT>            //see moneydance.com/pipermail/moneydance-dev/2006-September/000075.html<a name="line.48"></a>
-<FONT color="green">049</FONT>            try {<a name="line.49"></a>
-<FONT color="green">050</FONT>                button.setBorder(MoneydanceLAF.homePageBorder);<a name="line.50"></a>
-<FONT color="green">051</FONT>            } catch (Throwable e) {<a name="line.51"></a>
-<FONT color="green">052</FONT>                e.printStackTrace(System.err);<a name="line.52"></a>
-<FONT color="green">053</FONT>            }<a name="line.53"></a>
-<FONT color="green">054</FONT>            if (value != null) {<a name="line.54"></a>
-<FONT color="green">055</FONT>                button.setText(value.toString());<a name="line.55"></a>
-<FONT color="green">056</FONT>            }<a name="line.56"></a>
-<FONT color="green">057</FONT>            return button;<a name="line.57"></a>
-<FONT color="green">058</FONT>        }<a name="line.58"></a>
-<FONT color="green">059</FONT>    }<a name="line.59"></a>
+<FONT color="green">027</FONT>        @Override<a name="line.27"></a>
+<FONT color="green">028</FONT>        public final Component getTableCellRendererComponent(<a name="line.28"></a>
+<FONT color="green">029</FONT>                final JTable table,<a name="line.29"></a>
+<FONT color="green">030</FONT>                final Object value,<a name="line.30"></a>
+<FONT color="green">031</FONT>                final boolean isSelected,<a name="line.31"></a>
+<FONT color="green">032</FONT>                final boolean hasFocus,<a name="line.32"></a>
+<FONT color="green">033</FONT>                final int row,<a name="line.33"></a>
+<FONT color="green">034</FONT>                final int column) {<a name="line.34"></a>
+<FONT color="green">035</FONT>            return this.getTableCellRendererButton(<a name="line.35"></a>
+<FONT color="green">036</FONT>                    table, value, hasFocus, hasFocus, row, column);<a name="line.36"></a>
+<FONT color="green">037</FONT>        }<a name="line.37"></a>
+<FONT color="green">038</FONT>    <a name="line.38"></a>
+<FONT color="green">039</FONT>        final AbstractButton getTableCellRendererButton(<a name="line.39"></a>
+<FONT color="green">040</FONT>                final JTable table,<a name="line.40"></a>
+<FONT color="green">041</FONT>                final Object value,<a name="line.41"></a>
+<FONT color="green">042</FONT>                final boolean isSelected,<a name="line.42"></a>
+<FONT color="green">043</FONT>                final boolean hasFocus,<a name="line.43"></a>
+<FONT color="green">044</FONT>                final int row,<a name="line.44"></a>
+<FONT color="green">045</FONT>                final int column) {<a name="line.45"></a>
+<FONT color="green">046</FONT>            JButton button = new JButton();<a name="line.46"></a>
+<FONT color="green">047</FONT>            button.setOpaque(true);<a name="line.47"></a>
+<FONT color="green">048</FONT>            ColorSchemeHelper.applyColorScheme(button, row);<a name="line.48"></a>
+<FONT color="green">049</FONT>            //see moneydance.com/pipermail/moneydance-dev/2006-September/000075.html<a name="line.49"></a>
+<FONT color="green">050</FONT>            try {<a name="line.50"></a>
+<FONT color="green">051</FONT>                button.setBorder(MoneydanceLAF.ovalBorder);<a name="line.51"></a>
+<FONT color="green">052</FONT>            } catch (Throwable e) {<a name="line.52"></a>
+<FONT color="green">053</FONT>                e.printStackTrace(System.err);<a name="line.53"></a>
+<FONT color="green">054</FONT>            }<a name="line.54"></a>
+<FONT color="green">055</FONT>            if (value != null) {<a name="line.55"></a>
+<FONT color="green">056</FONT>                button.setText(value.toString());<a name="line.56"></a>
+<FONT color="green">057</FONT>            }<a name="line.57"></a>
+<FONT color="green">058</FONT>            return button;<a name="line.58"></a>
+<FONT color="green">059</FONT>        }<a name="line.59"></a>
+<FONT color="green">060</FONT>    }<a name="line.60"></a>
 
 
 

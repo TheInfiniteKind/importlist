@@ -7,48 +7,52 @@
 <FONT color="green">004</FONT>    import java.awt.Component;<a name="line.4"></a>
 <FONT color="green">005</FONT>    <a name="line.5"></a>
 <FONT color="green">006</FONT>    /**<a name="line.6"></a>
-<FONT color="green">007</FONT>     * @author &lt;a href="mailto:&amp;#102;&amp;#108;&amp;#111;&amp;#114;&amp;#105;&amp;#97;&amp;#110;&amp;#46;&amp;#106;<a name="line.7"></a>
-<FONT color="green">008</FONT>     *&amp;#46;&amp;#98;&amp;#114;&amp;#101;&amp;#117;&amp;#110;&amp;#105;&amp;#103;&amp;#64;&amp;#109;&amp;#121;&amp;#45;&amp;#102;<a name="line.8"></a>
-<FONT color="green">009</FONT>     *&amp;#108;&amp;#111;&amp;#119;&amp;#46;&amp;#99;&amp;#111;&amp;#109;"&gt;Florian J. Breunig&lt;/a&gt;<a name="line.9"></a>
-<FONT color="green">010</FONT>     */<a name="line.10"></a>
-<FONT color="green">011</FONT>    public final class ColorSchemeHelper {<a name="line.11"></a>
-<FONT color="green">012</FONT>    <a name="line.12"></a>
-<FONT color="green">013</FONT>        private static final long serialVersionUID = -2724848115953702911L;<a name="line.13"></a>
-<FONT color="green">014</FONT>        private static Color foregroundColor;<a name="line.14"></a>
-<FONT color="green">015</FONT>        private static Color backgroundColor;<a name="line.15"></a>
-<FONT color="green">016</FONT>        private static Color backgroundColorAlt;<a name="line.16"></a>
-<FONT color="green">017</FONT>    <a name="line.17"></a>
-<FONT color="green">018</FONT>        /**<a name="line.18"></a>
-<FONT color="green">019</FONT>         * Private constructor prevents this class from being instantiated.<a name="line.19"></a>
-<FONT color="green">020</FONT>         */<a name="line.20"></a>
-<FONT color="green">021</FONT>        private ColorSchemeHelper() {<a name="line.21"></a>
-<FONT color="green">022</FONT>        }<a name="line.22"></a>
-<FONT color="green">023</FONT>    <a name="line.23"></a>
-<FONT color="green">024</FONT>        static void applyColorScheme(<a name="line.24"></a>
-<FONT color="green">025</FONT>                final Component component,<a name="line.25"></a>
-<FONT color="green">026</FONT>                final int row) {<a name="line.26"></a>
-<FONT color="green">027</FONT>            component.setForeground(foregroundColor);<a name="line.27"></a>
-<FONT color="green">028</FONT>            component.setBackground(backgroundColorAlt);<a name="line.28"></a>
-<FONT color="green">029</FONT>            if (row % 2 != 0) {<a name="line.29"></a>
-<FONT color="green">030</FONT>                component.setBackground(backgroundColor);<a name="line.30"></a>
-<FONT color="green">031</FONT>            }<a name="line.31"></a>
-<FONT color="green">032</FONT>        }<a name="line.32"></a>
-<FONT color="green">033</FONT>    <a name="line.33"></a>
-<FONT color="green">034</FONT>        static void setForegroundColor(<a name="line.34"></a>
-<FONT color="green">035</FONT>                final Color argForegroundColor) {<a name="line.35"></a>
-<FONT color="green">036</FONT>            foregroundColor = argForegroundColor;<a name="line.36"></a>
-<FONT color="green">037</FONT>        }<a name="line.37"></a>
-<FONT color="green">038</FONT>    <a name="line.38"></a>
-<FONT color="green">039</FONT>        static void setBackgroundColor(<a name="line.39"></a>
-<FONT color="green">040</FONT>                final Color argBackgroundColor) {<a name="line.40"></a>
-<FONT color="green">041</FONT>            backgroundColor = argBackgroundColor;<a name="line.41"></a>
-<FONT color="green">042</FONT>        }<a name="line.42"></a>
-<FONT color="green">043</FONT>    <a name="line.43"></a>
-<FONT color="green">044</FONT>        static void setBackgroundColorAlt(<a name="line.44"></a>
-<FONT color="green">045</FONT>                final Color argBackgroundColorAlt) {<a name="line.45"></a>
-<FONT color="green">046</FONT>            backgroundColorAlt = argBackgroundColorAlt;<a name="line.46"></a>
-<FONT color="green">047</FONT>        }<a name="line.47"></a>
-<FONT color="green">048</FONT>    }<a name="line.48"></a>
+<FONT color="green">007</FONT>     * This helper class applies a given color scheme to a &lt;code&gt;Component&lt;/code&gt;.<a name="line.7"></a>
+<FONT color="green">008</FONT>     * It is used by different &lt;code&gt;TableCellRenderer&lt;/code&gt;s to guarantee a<a name="line.8"></a>
+<FONT color="green">009</FONT>     * consistent style in a table.<a name="line.9"></a>
+<FONT color="green">010</FONT>     *<a name="line.10"></a>
+<FONT color="green">011</FONT>     * @author &lt;a href="mailto:&amp;#102;&amp;#108;&amp;#111;&amp;#114;&amp;#105;&amp;#97;&amp;#110;&amp;#46;&amp;#106;<a name="line.11"></a>
+<FONT color="green">012</FONT>     *&amp;#46;&amp;#98;&amp;#114;&amp;#101;&amp;#117;&amp;#110;&amp;#105;&amp;#103;&amp;#64;&amp;#109;&amp;#121;&amp;#45;&amp;#102;<a name="line.12"></a>
+<FONT color="green">013</FONT>     *&amp;#108;&amp;#111;&amp;#119;&amp;#46;&amp;#99;&amp;#111;&amp;#109;"&gt;Florian J. Breunig&lt;/a&gt;<a name="line.13"></a>
+<FONT color="green">014</FONT>     */<a name="line.14"></a>
+<FONT color="green">015</FONT>    final class ColorSchemeHelper {<a name="line.15"></a>
+<FONT color="green">016</FONT>    <a name="line.16"></a>
+<FONT color="green">017</FONT>        private static final long serialVersionUID = -2724848115953702911L;<a name="line.17"></a>
+<FONT color="green">018</FONT>        private static Color foregroundColor;<a name="line.18"></a>
+<FONT color="green">019</FONT>        private static Color backgroundColor;<a name="line.19"></a>
+<FONT color="green">020</FONT>        private static Color backgroundColorAlt;<a name="line.20"></a>
+<FONT color="green">021</FONT>    <a name="line.21"></a>
+<FONT color="green">022</FONT>        /**<a name="line.22"></a>
+<FONT color="green">023</FONT>         * Private constructor prevents this class from being instantiated.<a name="line.23"></a>
+<FONT color="green">024</FONT>         */<a name="line.24"></a>
+<FONT color="green">025</FONT>        private ColorSchemeHelper() {<a name="line.25"></a>
+<FONT color="green">026</FONT>        }<a name="line.26"></a>
+<FONT color="green">027</FONT>    <a name="line.27"></a>
+<FONT color="green">028</FONT>        static void applyColorScheme(<a name="line.28"></a>
+<FONT color="green">029</FONT>                final Component component,<a name="line.29"></a>
+<FONT color="green">030</FONT>                final int row) {<a name="line.30"></a>
+<FONT color="green">031</FONT>            component.setForeground(foregroundColor);<a name="line.31"></a>
+<FONT color="green">032</FONT>            component.setBackground(backgroundColorAlt);<a name="line.32"></a>
+<FONT color="green">033</FONT>            if (row % 2 != 0) {<a name="line.33"></a>
+<FONT color="green">034</FONT>                component.setBackground(backgroundColor);<a name="line.34"></a>
+<FONT color="green">035</FONT>            }<a name="line.35"></a>
+<FONT color="green">036</FONT>        }<a name="line.36"></a>
+<FONT color="green">037</FONT>    <a name="line.37"></a>
+<FONT color="green">038</FONT>        static void setForegroundColor(<a name="line.38"></a>
+<FONT color="green">039</FONT>                final Color argForegroundColor) {<a name="line.39"></a>
+<FONT color="green">040</FONT>            foregroundColor = argForegroundColor;<a name="line.40"></a>
+<FONT color="green">041</FONT>        }<a name="line.41"></a>
+<FONT color="green">042</FONT>    <a name="line.42"></a>
+<FONT color="green">043</FONT>        static void setBackgroundColor(<a name="line.43"></a>
+<FONT color="green">044</FONT>                final Color argBackgroundColor) {<a name="line.44"></a>
+<FONT color="green">045</FONT>            backgroundColor = argBackgroundColor;<a name="line.45"></a>
+<FONT color="green">046</FONT>        }<a name="line.46"></a>
+<FONT color="green">047</FONT>    <a name="line.47"></a>
+<FONT color="green">048</FONT>        static void setBackgroundColorAlt(<a name="line.48"></a>
+<FONT color="green">049</FONT>                final Color argBackgroundColorAlt) {<a name="line.49"></a>
+<FONT color="green">050</FONT>            backgroundColorAlt = argBackgroundColorAlt;<a name="line.50"></a>
+<FONT color="green">051</FONT>        }<a name="line.51"></a>
+<FONT color="green">052</FONT>    }<a name="line.52"></a>
 
 
 
