@@ -6,239 +6,240 @@
 <FONT color="green">003</FONT>    import java.awt.Dimension;<a name="line.3"></a>
 <FONT color="green">004</FONT>    import java.lang.reflect.InvocationTargetException;<a name="line.4"></a>
 <FONT color="green">005</FONT>    import java.util.ArrayList;<a name="line.5"></a>
-<FONT color="green">006</FONT>    import java.util.Comparator;<a name="line.6"></a>
-<FONT color="green">007</FONT>    import java.util.List;<a name="line.7"></a>
-<FONT color="green">008</FONT>    <a name="line.8"></a>
-<FONT color="green">009</FONT>    import javax.swing.DefaultRowSorter;<a name="line.9"></a>
-<FONT color="green">010</FONT>    import javax.swing.JComponent;<a name="line.10"></a>
-<FONT color="green">011</FONT>    import javax.swing.JLabel;<a name="line.11"></a>
-<FONT color="green">012</FONT>    import javax.swing.JScrollPane;<a name="line.12"></a>
-<FONT color="green">013</FONT>    import javax.swing.JTable;<a name="line.13"></a>
-<FONT color="green">014</FONT>    import javax.swing.RowSorter;<a name="line.14"></a>
-<FONT color="green">015</FONT>    import javax.swing.SwingConstants;<a name="line.15"></a>
-<FONT color="green">016</FONT>    import javax.swing.SwingUtilities;<a name="line.16"></a>
-<FONT color="green">017</FONT>    import javax.swing.table.JTableHeader;<a name="line.17"></a>
-<FONT color="green">018</FONT>    import javax.swing.table.TableColumn;<a name="line.18"></a>
-<FONT color="green">019</FONT>    import javax.swing.table.TableColumnModel;<a name="line.19"></a>
-<FONT color="green">020</FONT>    import javax.swing.table.TableModel;<a name="line.20"></a>
-<FONT color="green">021</FONT>    <a name="line.21"></a>
-<FONT color="green">022</FONT>    import org.apache.commons.lang.Validate;<a name="line.22"></a>
-<FONT color="green">023</FONT>    <a name="line.23"></a>
-<FONT color="green">024</FONT>    import com.moneydance.apps.md.model.RootAccount;<a name="line.24"></a>
-<FONT color="green">025</FONT>    import com.moneydance.apps.md.view.HomePageView;<a name="line.25"></a>
-<FONT color="green">026</FONT>    import com.moneydance.apps.md.view.gui.MoneydanceLAF;<a name="line.26"></a>
-<FONT color="green">027</FONT>    import com.moneydance.modules.features.importlist.AlphanumComparator;<a name="line.27"></a>
-<FONT color="green">028</FONT>    import com.moneydance.modules.features.importlist.Constants;<a name="line.28"></a>
-<FONT color="green">029</FONT>    import com.moneydance.modules.features.importlist.Preferences;<a name="line.29"></a>
-<FONT color="green">030</FONT>    import com.moneydance.modules.features.importlist.io.FileAdministration;<a name="line.30"></a>
-<FONT color="green">031</FONT>    <a name="line.31"></a>
-<FONT color="green">032</FONT>    /**<a name="line.32"></a>
-<FONT color="green">033</FONT>     * The user interface that is displayed on the homepage.<a name="line.33"></a>
-<FONT color="green">034</FONT>     *<a name="line.34"></a>
-<FONT color="green">035</FONT>     * @author &lt;a href="mailto:&amp;#102;&amp;#108;&amp;#111;&amp;#114;&amp;#105;&amp;#97;&amp;#110;&amp;#46;&amp;#106;<a name="line.35"></a>
-<FONT color="green">036</FONT>     *&amp;#46;&amp;#98;&amp;#114;&amp;#101;&amp;#117;&amp;#110;&amp;#105;&amp;#103;&amp;#64;&amp;#109;&amp;#121;&amp;#45;&amp;#102;<a name="line.36"></a>
-<FONT color="green">037</FONT>     *&amp;#108;&amp;#111;&amp;#119;&amp;#46;&amp;#99;&amp;#111;&amp;#109;"&gt;Florian J. Breunig&lt;/a&gt;<a name="line.37"></a>
-<FONT color="green">038</FONT>     */<a name="line.38"></a>
-<FONT color="green">039</FONT>    public class View implements HomePageView, Runnable {<a name="line.39"></a>
-<FONT color="green">040</FONT>    <a name="line.40"></a>
-<FONT color="green">041</FONT>        private final FileAdministration    fileAdministration;<a name="line.41"></a>
-<FONT color="green">042</FONT>        private final ListTableModel        listTableModel;<a name="line.42"></a>
-<FONT color="green">043</FONT>        private final JTable                table;<a name="line.43"></a>
-<FONT color="green">044</FONT>        private final ColumnFactory         columnFactory;<a name="line.44"></a>
-<FONT color="green">045</FONT>        private final JScrollPane           scrollPane;<a name="line.45"></a>
-<FONT color="green">046</FONT>    <a name="line.46"></a>
-<FONT color="green">047</FONT>    <a name="line.47"></a>
-<FONT color="green">048</FONT>        public View(final FileAdministration argFileAdministration) {<a name="line.48"></a>
-<FONT color="green">049</FONT>            Validate.notNull(argFileAdministration,<a name="line.49"></a>
-<FONT color="green">050</FONT>            "argFileAdministration can't be null");<a name="line.50"></a>
-<FONT color="green">051</FONT>            this.fileAdministration = argFileAdministration;<a name="line.51"></a>
-<FONT color="green">052</FONT>    <a name="line.52"></a>
-<FONT color="green">053</FONT>            this.listTableModel = new ListTableModel(<a name="line.53"></a>
-<FONT color="green">054</FONT>                    this.fileAdministration.getFiles());<a name="line.54"></a>
+<FONT color="green">006</FONT>    import java.util.List;<a name="line.6"></a>
+<FONT color="green">007</FONT>    <a name="line.7"></a>
+<FONT color="green">008</FONT>    import javax.swing.JComponent;<a name="line.8"></a>
+<FONT color="green">009</FONT>    import javax.swing.JLabel;<a name="line.9"></a>
+<FONT color="green">010</FONT>    import javax.swing.JScrollPane;<a name="line.10"></a>
+<FONT color="green">011</FONT>    import javax.swing.JTable;<a name="line.11"></a>
+<FONT color="green">012</FONT>    import javax.swing.RowSorter;<a name="line.12"></a>
+<FONT color="green">013</FONT>    import javax.swing.SwingConstants;<a name="line.13"></a>
+<FONT color="green">014</FONT>    import javax.swing.SwingUtilities;<a name="line.14"></a>
+<FONT color="green">015</FONT>    import javax.swing.table.JTableHeader;<a name="line.15"></a>
+<FONT color="green">016</FONT>    import javax.swing.table.TableColumn;<a name="line.16"></a>
+<FONT color="green">017</FONT>    import javax.swing.table.TableColumnModel;<a name="line.17"></a>
+<FONT color="green">018</FONT>    import javax.swing.table.TableModel;<a name="line.18"></a>
+<FONT color="green">019</FONT>    <a name="line.19"></a>
+<FONT color="green">020</FONT>    import org.apache.commons.lang.Validate;<a name="line.20"></a>
+<FONT color="green">021</FONT>    import org.apache.log4j.Logger;<a name="line.21"></a>
+<FONT color="green">022</FONT>    <a name="line.22"></a>
+<FONT color="green">023</FONT>    import com.moneydance.apps.md.model.RootAccount;<a name="line.23"></a>
+<FONT color="green">024</FONT>    import com.moneydance.apps.md.view.HomePageView;<a name="line.24"></a>
+<FONT color="green">025</FONT>    import com.moneydance.apps.md.view.gui.MoneydanceLAF;<a name="line.25"></a>
+<FONT color="green">026</FONT>    import com.moneydance.modules.features.importlist.io.FileAdministration;<a name="line.26"></a>
+<FONT color="green">027</FONT>    import com.moneydance.modules.features.importlist.util.Preferences;<a name="line.27"></a>
+<FONT color="green">028</FONT>    <a name="line.28"></a>
+<FONT color="green">029</FONT>    /**<a name="line.29"></a>
+<FONT color="green">030</FONT>     * The user interface that is displayed on the homepage.<a name="line.30"></a>
+<FONT color="green">031</FONT>     *<a name="line.31"></a>
+<FONT color="green">032</FONT>     * @author &lt;a href="mailto:&amp;#102;&amp;#108;&amp;#111;&amp;#114;&amp;#105;&amp;#97;&amp;#110;&amp;#46;&amp;#106;<a name="line.32"></a>
+<FONT color="green">033</FONT>     *&amp;#46;&amp;#98;&amp;#114;&amp;#101;&amp;#117;&amp;#110;&amp;#105;&amp;#103;&amp;#64;&amp;#109;&amp;#121;&amp;#45;&amp;#102;<a name="line.33"></a>
+<FONT color="green">034</FONT>     *&amp;#108;&amp;#111;&amp;#119;&amp;#46;&amp;#99;&amp;#111;&amp;#109;"&gt;Florian J. Breunig&lt;/a&gt;<a name="line.34"></a>
+<FONT color="green">035</FONT>     */<a name="line.35"></a>
+<FONT color="green">036</FONT>    public class View implements HomePageView, Runnable {<a name="line.36"></a>
+<FONT color="green">037</FONT>    <a name="line.37"></a>
+<FONT color="green">038</FONT>        /**<a name="line.38"></a>
+<FONT color="green">039</FONT>         * Static initialization of class-dependent logger.<a name="line.39"></a>
+<FONT color="green">040</FONT>         */<a name="line.40"></a>
+<FONT color="green">041</FONT>        private static Logger log = Logger.getLogger(View.class);<a name="line.41"></a>
+<FONT color="green">042</FONT>    <a name="line.42"></a>
+<FONT color="green">043</FONT>        private final Preferences           prefs;<a name="line.43"></a>
+<FONT color="green">044</FONT>        private final FileAdministration    fileAdministration;<a name="line.44"></a>
+<FONT color="green">045</FONT>        private final ListTableModel        listTableModel;<a name="line.45"></a>
+<FONT color="green">046</FONT>        private final JTable                table;<a name="line.46"></a>
+<FONT color="green">047</FONT>        private final ColumnFactory         columnFactory;<a name="line.47"></a>
+<FONT color="green">048</FONT>        private final JScrollPane           scrollPane;<a name="line.48"></a>
+<FONT color="green">049</FONT>    <a name="line.49"></a>
+<FONT color="green">050</FONT>    <a name="line.50"></a>
+<FONT color="green">051</FONT>        public View(final FileAdministration argFileAdministration) {<a name="line.51"></a>
+<FONT color="green">052</FONT>            Validate.notNull(argFileAdministration,<a name="line.52"></a>
+<FONT color="green">053</FONT>            "argFileAdministration can't be null");<a name="line.53"></a>
+<FONT color="green">054</FONT>            this.fileAdministration = argFileAdministration;<a name="line.54"></a>
 <FONT color="green">055</FONT>    <a name="line.55"></a>
-<FONT color="green">056</FONT>            this.table = new JTable(this.listTableModel);<a name="line.56"></a>
-<FONT color="green">057</FONT>            this.table.setShowGrid(false);<a name="line.57"></a>
-<FONT color="green">058</FONT>            this.table.setShowVerticalLines(false);<a name="line.58"></a>
-<FONT color="green">059</FONT>            this.table.setShowHorizontalLines(false);<a name="line.59"></a>
-<FONT color="green">060</FONT>            this.table.setIntercellSpacing(new Dimension(0, 0));<a name="line.60"></a>
-<FONT color="green">061</FONT>            this.table.setColumnSelectionAllowed(false);<a name="line.61"></a>
-<FONT color="green">062</FONT>            this.table.setRowSelectionAllowed(false);<a name="line.62"></a>
-<FONT color="green">063</FONT>            this.table.setCellSelectionEnabled(false);<a name="line.63"></a>
-<FONT color="green">064</FONT>    <a name="line.64"></a>
-<FONT color="green">065</FONT>            Preferences prefs            = Preferences.getInstance();<a name="line.65"></a>
-<FONT color="green">066</FONT>            JTableHeader tableHeader     = this.table.getTableHeader();<a name="line.66"></a>
-<FONT color="green">067</FONT>            TableColumnModel columnModel = this.table.getColumnModel();<a name="line.67"></a>
-<FONT color="green">068</FONT>    <a name="line.68"></a>
-<FONT color="green">069</FONT>            this.columnFactory = new ColumnFactory(<a name="line.69"></a>
-<FONT color="green">070</FONT>                    this.fileAdministration,<a name="line.70"></a>
-<FONT color="green">071</FONT>                    tableHeader.getDefaultRenderer());<a name="line.71"></a>
-<FONT color="green">072</FONT>    <a name="line.72"></a>
-<FONT color="green">073</FONT>            TableColumn nameCol = this.table.getColumn(Constants.DESC_NAME);<a name="line.73"></a>
-<FONT color="green">074</FONT>            int nameColNo = columnModel.getColumnIndex(Constants.DESC_NAME);<a name="line.74"></a>
-<FONT color="green">075</FONT>            nameCol.setIdentifier(Constants.DESC_NAME);<a name="line.75"></a>
-<FONT color="green">076</FONT>            nameCol.setHeaderValue(Constants.HEADER_VALUE_NAME);<a name="line.76"></a>
-<FONT color="green">077</FONT>            nameCol.setHeaderRenderer(this.columnFactory.getHeaderRenderer());<a name="line.77"></a>
-<FONT color="green">078</FONT>            nameCol.setCellRenderer(this.columnFactory.getLabelRenderer());<a name="line.78"></a>
-<FONT color="green">079</FONT>            nameCol.setMinWidth(Constants.MIN_COLUMN_WIDTH);<a name="line.79"></a>
-<FONT color="green">080</FONT>            nameCol.setPreferredWidth(prefs.getColumnWidths(nameColNo));<a name="line.80"></a>
-<FONT color="green">081</FONT>    <a name="line.81"></a>
-<FONT color="green">082</FONT>            TableColumn modifiedCol = this.table.getColumn(Constants.DESC_MODIFIED);<a name="line.82"></a>
-<FONT color="green">083</FONT>            int modifiedColNo = columnModel.getColumnIndex(Constants.DESC_MODIFIED);<a name="line.83"></a>
-<FONT color="green">084</FONT>            modifiedCol.setIdentifier(Constants.DESC_MODIFIED);<a name="line.84"></a>
-<FONT color="green">085</FONT>            modifiedCol.setHeaderValue(Constants.HEADER_VALUE_MODIFIED);<a name="line.85"></a>
-<FONT color="green">086</FONT>            modifiedCol.setHeaderRenderer(this.columnFactory.getHeaderRenderer());<a name="line.86"></a>
-<FONT color="green">087</FONT>            modifiedCol.setCellRenderer(this.columnFactory.getLabelRenderer());<a name="line.87"></a>
-<FONT color="green">088</FONT>            modifiedCol.setMinWidth(Constants.MIN_COLUMN_WIDTH);<a name="line.88"></a>
-<FONT color="green">089</FONT>            modifiedCol.setPreferredWidth(prefs.getColumnWidths(modifiedColNo));<a name="line.89"></a>
-<FONT color="green">090</FONT>    <a name="line.90"></a>
-<FONT color="green">091</FONT>            TableColumn importCol = this.table.getColumn(Constants.DESC_IMPORT);<a name="line.91"></a>
-<FONT color="green">092</FONT>            int importColNo = columnModel.getColumnIndex(Constants.DESC_IMPORT);<a name="line.92"></a>
-<FONT color="green">093</FONT>            importCol.setIdentifier(Constants.DESC_IMPORT);<a name="line.93"></a>
-<FONT color="green">094</FONT>            importCol.setHeaderValue(Constants.HEADER_VALUE_IMPORT);<a name="line.94"></a>
-<FONT color="green">095</FONT>            importCol.setHeaderRenderer(this.columnFactory.getHeaderRenderer());<a name="line.95"></a>
-<FONT color="green">096</FONT>            importCol.setCellRenderer(this.columnFactory.getButtonRenderer());<a name="line.96"></a>
-<FONT color="green">097</FONT>            importCol.setCellEditor(this.columnFactory.getImportEditor());<a name="line.97"></a>
-<FONT color="green">098</FONT>            importCol.setResizable(Constants.BUTTON_RESIZABLE);<a name="line.98"></a>
-<FONT color="green">099</FONT>            importCol.setMinWidth(Constants.MIN_COLUMN_WIDTH);<a name="line.99"></a>
-<FONT color="green">100</FONT>            importCol.setPreferredWidth(prefs.getColumnWidths(importColNo));<a name="line.100"></a>
-<FONT color="green">101</FONT>    <a name="line.101"></a>
-<FONT color="green">102</FONT>            TableColumn deleteCol = this.table.getColumn(Constants.DESC_DELETE);<a name="line.102"></a>
-<FONT color="green">103</FONT>            int deleteColNo = columnModel.getColumnIndex(Constants.DESC_DELETE);<a name="line.103"></a>
-<FONT color="green">104</FONT>            deleteCol.setIdentifier(Constants.DESC_DELETE);<a name="line.104"></a>
-<FONT color="green">105</FONT>            deleteCol.setHeaderValue(Constants.HEADER_VALUE_DELETE);<a name="line.105"></a>
-<FONT color="green">106</FONT>            deleteCol.setHeaderRenderer(this.columnFactory.getHeaderRenderer());<a name="line.106"></a>
-<FONT color="green">107</FONT>            deleteCol.setCellRenderer(this.columnFactory.getButtonRenderer());<a name="line.107"></a>
-<FONT color="green">108</FONT>            deleteCol.setCellEditor(this.columnFactory.getDeleteEditor());<a name="line.108"></a>
-<FONT color="green">109</FONT>            deleteCol.setResizable(Constants.BUTTON_RESIZABLE);<a name="line.109"></a>
-<FONT color="green">110</FONT>            deleteCol.setMinWidth(Constants.MIN_COLUMN_WIDTH);<a name="line.110"></a>
-<FONT color="green">111</FONT>            deleteCol.setPreferredWidth(prefs.getColumnWidths(deleteColNo));<a name="line.111"></a>
-<FONT color="green">112</FONT>    <a name="line.112"></a>
-<FONT color="green">113</FONT>            // resizing the columns<a name="line.113"></a>
-<FONT color="green">114</FONT>            TableListener tableListener =<a name="line.114"></a>
-<FONT color="green">115</FONT>                new TableListener(this.table);<a name="line.115"></a>
-<FONT color="green">116</FONT>            columnModel.addColumnModelListener(tableListener);<a name="line.116"></a>
-<FONT color="green">117</FONT>    <a name="line.117"></a>
-<FONT color="green">118</FONT>            // reordering the columns<a name="line.118"></a>
-<FONT color="green">119</FONT>            tableHeader.setReorderingAllowed(Constants.ALLOW_REORDERING);<a name="line.119"></a>
-<FONT color="green">120</FONT>    <a name="line.120"></a>
-<FONT color="green">121</FONT>            // sorting the columns<a name="line.121"></a>
-<FONT color="green">122</FONT>            DefaultRowSorter&lt;TableModel, Integer&gt; rowSorter =<a name="line.122"></a>
-<FONT color="green">123</FONT>                new FileTableRowSorter(this.listTableModel);<a name="line.123"></a>
-<FONT color="green">124</FONT>            List&lt;RowSorter.SortKey&gt; sortKeys = new ArrayList&lt;RowSorter.SortKey&gt;();<a name="line.124"></a>
-<FONT color="green">125</FONT>            sortKeys.add(Preferences.getInstance().getSortKey());<a name="line.125"></a>
-<FONT color="green">126</FONT>            rowSorter.setSortKeys(sortKeys);<a name="line.126"></a>
-<FONT color="green">127</FONT>    <a name="line.127"></a>
-<FONT color="green">128</FONT>            rowSorter.addRowSorterListener(tableListener);<a name="line.128"></a>
-<FONT color="green">129</FONT>    <a name="line.129"></a>
-<FONT color="green">130</FONT>            Comparator&lt;String&gt; comparator = new AlphanumComparator();<a name="line.130"></a>
-<FONT color="green">131</FONT>            rowSorter.setComparator(nameColNo, comparator);<a name="line.131"></a>
-<FONT color="green">132</FONT>            this.table.setRowSorter(rowSorter);<a name="line.132"></a>
-<FONT color="green">133</FONT>    <a name="line.133"></a>
-<FONT color="green">134</FONT>            this.table.setPreferredScrollableViewportSize(<a name="line.134"></a>
-<FONT color="green">135</FONT>                    new Dimension(<a name="line.135"></a>
-<FONT color="green">136</FONT>                            Constants.PREFERRED_TABLE_WIDTH,<a name="line.136"></a>
-<FONT color="green">137</FONT>                            Constants.PREFERRED_TABLE_HEIGHT));<a name="line.137"></a>
-<FONT color="green">138</FONT>    <a name="line.138"></a>
-<FONT color="green">139</FONT>            this.scrollPane = new JScrollPane();<a name="line.139"></a>
-<FONT color="green">140</FONT>            //see moneydance.com/pipermail/moneydance-dev/2006-September/000075.html<a name="line.140"></a>
-<FONT color="green">141</FONT>            try {<a name="line.141"></a>
-<FONT color="green">142</FONT>                this.scrollPane.setBorder(MoneydanceLAF.homePageBorder);<a name="line.142"></a>
-<FONT color="green">143</FONT>            } catch (Throwable e) {<a name="line.143"></a>
-<FONT color="green">144</FONT>                e.printStackTrace(System.err);<a name="line.144"></a>
-<FONT color="green">145</FONT>            }<a name="line.145"></a>
-<FONT color="green">146</FONT>        }<a name="line.146"></a>
-<FONT color="green">147</FONT>    <a name="line.147"></a>
-<FONT color="green">148</FONT>    <a name="line.148"></a>
-<FONT color="green">149</FONT>        @Override<a name="line.149"></a>
-<FONT color="green">150</FONT>        public final void refresh() {<a name="line.150"></a>
-<FONT color="green">151</FONT>            Preferences prefs = Preferences.getInstance();<a name="line.151"></a>
-<FONT color="green">152</FONT>            this.listTableModel.setDateFormatter(prefs.getDateFormatter());<a name="line.152"></a>
-<FONT color="green">153</FONT>            this.listTableModel.setTimeFormatter(prefs.getTimeFormatter());<a name="line.153"></a>
-<FONT color="green">154</FONT>            this.columnFactory.setForegroundColor(prefs.getForegroundColor());<a name="line.154"></a>
-<FONT color="green">155</FONT>            this.columnFactory.setBackgroundColor(prefs.getBackgroundColor());<a name="line.155"></a>
-<FONT color="green">156</FONT>            this.columnFactory.setBackgroundColorAlt(prefs.getBackgroundColorAlt());<a name="line.156"></a>
-<FONT color="green">157</FONT>            this.table.setRowHeight(prefs.getBodyRowHeight());<a name="line.157"></a>
-<FONT color="green">158</FONT>            this.table.getTableHeader().setFont(prefs.getHeaderFont());<a name="line.158"></a>
-<FONT color="green">159</FONT>            this.table.getTableHeader().setSize(<a name="line.159"></a>
-<FONT color="green">160</FONT>                    this.table.getTableHeader().getWidth(),<a name="line.160"></a>
-<FONT color="green">161</FONT>                    prefs.getHeaderRowHeight());<a name="line.161"></a>
-<FONT color="green">162</FONT>            this.scrollPane.setBackground(prefs.getBackgroundColor());<a name="line.162"></a>
-<FONT color="green">163</FONT>            this.scrollPane.getViewport().setBackground(prefs.getBackgroundColor());<a name="line.163"></a>
-<FONT color="green">164</FONT>    <a name="line.164"></a>
-<FONT color="green">165</FONT>            if (this.fileAdministration.isDirty() &amp;&amp; this.scrollPane.isVisible()) {<a name="line.165"></a>
-<FONT color="green">166</FONT>                this.fileAdministration.setDirty(false);<a name="line.166"></a>
-<FONT color="green">167</FONT>                try {<a name="line.167"></a>
-<FONT color="green">168</FONT>                    if (SwingUtilities.isEventDispatchThread()) {<a name="line.168"></a>
-<FONT color="green">169</FONT>                        this.run();<a name="line.169"></a>
-<FONT color="green">170</FONT>                    } else {<a name="line.170"></a>
-<FONT color="green">171</FONT>                        SwingUtilities.invokeAndWait(this);<a name="line.171"></a>
-<FONT color="green">172</FONT>                    }<a name="line.172"></a>
-<FONT color="green">173</FONT>                } catch (InterruptedException e) {<a name="line.173"></a>
-<FONT color="green">174</FONT>                    e.printStackTrace(System.err);<a name="line.174"></a>
-<FONT color="green">175</FONT>                } catch (InvocationTargetException e) {<a name="line.175"></a>
-<FONT color="green">176</FONT>                    e.printStackTrace(System.err);<a name="line.176"></a>
-<FONT color="green">177</FONT>                }<a name="line.177"></a>
-<FONT color="green">178</FONT>            }<a name="line.178"></a>
-<FONT color="green">179</FONT>        }<a name="line.179"></a>
-<FONT color="green">180</FONT>    <a name="line.180"></a>
-<FONT color="green">181</FONT>    <a name="line.181"></a>
-<FONT color="green">182</FONT>        @Override<a name="line.182"></a>
-<FONT color="green">183</FONT>        public final void run() {<a name="line.183"></a>
-<FONT color="green">184</FONT>            this.fileAdministration.reloadFiles();<a name="line.184"></a>
-<FONT color="green">185</FONT>            this.listTableModel.fireTableDataChanged();<a name="line.185"></a>
-<FONT color="green">186</FONT>    <a name="line.186"></a>
-<FONT color="green">187</FONT>            if (this.listTableModel.getRowCount() == 0) {<a name="line.187"></a>
-<FONT color="green">188</FONT>                String message = "&lt;html&gt;&lt;center&gt;&lt;em&gt;There are currently no files "<a name="line.188"></a>
-<FONT color="green">189</FONT>                    + "to import&lt;br&gt;in " + this.fileAdministration.getImportDir()<a name="line.189"></a>
-<FONT color="green">190</FONT>                    + "&lt;/em&gt;&lt;center&gt;&lt;/html&gt;";<a name="line.190"></a>
-<FONT color="green">191</FONT>                Preferences preferences = Preferences.getInstance();<a name="line.191"></a>
-<FONT color="green">192</FONT>                JLabel textPanel = new JLabel(message);<a name="line.192"></a>
-<FONT color="green">193</FONT>                textPanel.setHorizontalAlignment(SwingConstants.CENTER);<a name="line.193"></a>
-<FONT color="green">194</FONT>                textPanel.setBackground(preferences.getBackgroundColor());<a name="line.194"></a>
-<FONT color="green">195</FONT>                this.scrollPane.setViewportView(textPanel);<a name="line.195"></a>
-<FONT color="green">196</FONT>                this.scrollPane.setPreferredSize(<a name="line.196"></a>
-<FONT color="green">197</FONT>                        new Dimension(<a name="line.197"></a>
-<FONT color="green">198</FONT>                                Constants.PREFERRED_EMPTY_MESSAGE_WIDTH,<a name="line.198"></a>
-<FONT color="green">199</FONT>                                Constants.PREFERRED_EMPTY_MESSAGE_HEIGHT));<a name="line.199"></a>
-<FONT color="green">200</FONT>            } else {<a name="line.200"></a>
-<FONT color="green">201</FONT>                this.scrollPane.setViewportView(this.table);<a name="line.201"></a>
-<FONT color="green">202</FONT>                this.scrollPane.setPreferredSize(<a name="line.202"></a>
-<FONT color="green">203</FONT>                        new Dimension(<a name="line.203"></a>
-<FONT color="green">204</FONT>                                Constants.PREFERRED_TABLE_WIDTH,<a name="line.204"></a>
-<FONT color="green">205</FONT>                                Constants.PREFERRED_TABLE_HEIGHT));<a name="line.205"></a>
-<FONT color="green">206</FONT>            }<a name="line.206"></a>
-<FONT color="green">207</FONT>        }<a name="line.207"></a>
-<FONT color="green">208</FONT>    <a name="line.208"></a>
+<FONT color="green">056</FONT>            this.prefs = Preferences.getInstance();<a name="line.56"></a>
+<FONT color="green">057</FONT>    <a name="line.57"></a>
+<FONT color="green">058</FONT>            this.listTableModel = new ListTableModel(<a name="line.58"></a>
+<FONT color="green">059</FONT>                    this.fileAdministration.getFiles());<a name="line.59"></a>
+<FONT color="green">060</FONT>    <a name="line.60"></a>
+<FONT color="green">061</FONT>            this.table = new JTable(this.listTableModel);<a name="line.61"></a>
+<FONT color="green">062</FONT>            this.table.setOpaque(false);<a name="line.62"></a>
+<FONT color="green">063</FONT>            this.table.setShowGrid(false);<a name="line.63"></a>
+<FONT color="green">064</FONT>            this.table.setShowVerticalLines(false);<a name="line.64"></a>
+<FONT color="green">065</FONT>            this.table.setShowHorizontalLines(false);<a name="line.65"></a>
+<FONT color="green">066</FONT>            this.table.setIntercellSpacing(new Dimension(0, 0));<a name="line.66"></a>
+<FONT color="green">067</FONT>            this.table.setColumnSelectionAllowed(false);<a name="line.67"></a>
+<FONT color="green">068</FONT>            this.table.setRowSelectionAllowed(false);<a name="line.68"></a>
+<FONT color="green">069</FONT>            this.table.setCellSelectionEnabled(false);<a name="line.69"></a>
+<FONT color="green">070</FONT>    <a name="line.70"></a>
+<FONT color="green">071</FONT>            JTableHeader tableHeader     = this.table.getTableHeader();<a name="line.71"></a>
+<FONT color="green">072</FONT>            TableColumnModel columnModel = this.table.getColumnModel();<a name="line.72"></a>
+<FONT color="green">073</FONT>    <a name="line.73"></a>
+<FONT color="green">074</FONT>            this.columnFactory = new ColumnFactory(<a name="line.74"></a>
+<FONT color="green">075</FONT>                    this.fileAdministration,<a name="line.75"></a>
+<FONT color="green">076</FONT>                    tableHeader.getDefaultRenderer());<a name="line.76"></a>
+<FONT color="green">077</FONT>    <a name="line.77"></a>
+<FONT color="green">078</FONT>            TableColumn nameCol = this.table.getColumn(this.prefs.getDescName());<a name="line.78"></a>
+<FONT color="green">079</FONT>            int nameColNo = columnModel.getColumnIndex(this.prefs.getDescName());<a name="line.79"></a>
+<FONT color="green">080</FONT>            nameCol.setIdentifier(this.prefs.getDescName());<a name="line.80"></a>
+<FONT color="green">081</FONT>            nameCol.setHeaderValue(this.prefs.getHeaderValueName());<a name="line.81"></a>
+<FONT color="green">082</FONT>            nameCol.setHeaderRenderer(this.columnFactory.getHeaderRenderer());<a name="line.82"></a>
+<FONT color="green">083</FONT>            nameCol.setCellRenderer(this.columnFactory.getLabelRenderer());<a name="line.83"></a>
+<FONT color="green">084</FONT>            nameCol.setMinWidth(this.prefs.getMinColumnWidth());<a name="line.84"></a>
+<FONT color="green">085</FONT>            nameCol.setPreferredWidth(this.prefs.getColumnWidths(nameColNo));<a name="line.85"></a>
+<FONT color="green">086</FONT>    <a name="line.86"></a>
+<FONT color="green">087</FONT>            TableColumn modifiedCol = this.table.getColumn(<a name="line.87"></a>
+<FONT color="green">088</FONT>                    this.prefs.getDescModified());<a name="line.88"></a>
+<FONT color="green">089</FONT>            int modifiedColNo = columnModel.getColumnIndex(<a name="line.89"></a>
+<FONT color="green">090</FONT>                    this.prefs.getDescModified());<a name="line.90"></a>
+<FONT color="green">091</FONT>            modifiedCol.setIdentifier(this.prefs.getDescModified());<a name="line.91"></a>
+<FONT color="green">092</FONT>            modifiedCol.setHeaderValue(this.prefs.getHeaderValueModified());<a name="line.92"></a>
+<FONT color="green">093</FONT>            modifiedCol.setHeaderRenderer(this.columnFactory.getHeaderRenderer());<a name="line.93"></a>
+<FONT color="green">094</FONT>            modifiedCol.setCellRenderer(this.columnFactory.getLabelRenderer());<a name="line.94"></a>
+<FONT color="green">095</FONT>            modifiedCol.setMinWidth(this.prefs.getMinColumnWidth());<a name="line.95"></a>
+<FONT color="green">096</FONT>            modifiedCol.setPreferredWidth(<a name="line.96"></a>
+<FONT color="green">097</FONT>                    this.prefs.getColumnWidths(modifiedColNo));<a name="line.97"></a>
+<FONT color="green">098</FONT>    <a name="line.98"></a>
+<FONT color="green">099</FONT>            TableColumn importCol = this.table.getColumn(<a name="line.99"></a>
+<FONT color="green">100</FONT>                    this.prefs.getDescImport());<a name="line.100"></a>
+<FONT color="green">101</FONT>            int importColNo = columnModel.getColumnIndex(<a name="line.101"></a>
+<FONT color="green">102</FONT>                    this.prefs.getDescImport());<a name="line.102"></a>
+<FONT color="green">103</FONT>            importCol.setIdentifier(this.prefs.getDescImport());<a name="line.103"></a>
+<FONT color="green">104</FONT>            importCol.setHeaderValue(this.prefs.getHeaderValueImport());<a name="line.104"></a>
+<FONT color="green">105</FONT>            importCol.setHeaderRenderer(this.columnFactory.getHeaderRenderer());<a name="line.105"></a>
+<FONT color="green">106</FONT>            importCol.setCellRenderer(this.columnFactory.getButtonRenderer());<a name="line.106"></a>
+<FONT color="green">107</FONT>            importCol.setCellEditor(this.columnFactory.getImportEditor());<a name="line.107"></a>
+<FONT color="green">108</FONT>            importCol.setResizable(this.prefs.getButtonResizable());<a name="line.108"></a>
+<FONT color="green">109</FONT>            importCol.setMinWidth(this.prefs.getMinColumnWidth());<a name="line.109"></a>
+<FONT color="green">110</FONT>            importCol.setPreferredWidth(this.prefs.getColumnWidths(importColNo));<a name="line.110"></a>
+<FONT color="green">111</FONT>    <a name="line.111"></a>
+<FONT color="green">112</FONT>            TableColumn deleteCol = this.table.getColumn(<a name="line.112"></a>
+<FONT color="green">113</FONT>                    this.prefs.getDescDelete());<a name="line.113"></a>
+<FONT color="green">114</FONT>            int deleteColNo = columnModel.getColumnIndex(<a name="line.114"></a>
+<FONT color="green">115</FONT>                    this.prefs.getDescDelete());<a name="line.115"></a>
+<FONT color="green">116</FONT>            deleteCol.setIdentifier(this.prefs.getDescDelete());<a name="line.116"></a>
+<FONT color="green">117</FONT>            deleteCol.setHeaderValue(this.prefs.getHeaderValueDelete());<a name="line.117"></a>
+<FONT color="green">118</FONT>            deleteCol.setHeaderRenderer(this.columnFactory.getHeaderRenderer());<a name="line.118"></a>
+<FONT color="green">119</FONT>            deleteCol.setCellRenderer(this.columnFactory.getButtonRenderer());<a name="line.119"></a>
+<FONT color="green">120</FONT>            deleteCol.setCellEditor(this.columnFactory.getDeleteEditor());<a name="line.120"></a>
+<FONT color="green">121</FONT>            deleteCol.setResizable(this.prefs.getButtonResizable());<a name="line.121"></a>
+<FONT color="green">122</FONT>            deleteCol.setMinWidth(this.prefs.getMinColumnWidth());<a name="line.122"></a>
+<FONT color="green">123</FONT>            deleteCol.setPreferredWidth(this.prefs.getColumnWidths(deleteColNo));<a name="line.123"></a>
+<FONT color="green">124</FONT>    <a name="line.124"></a>
+<FONT color="green">125</FONT>            // resizing the columns<a name="line.125"></a>
+<FONT color="green">126</FONT>            TableListener tableListener = new TableListener(this.table);<a name="line.126"></a>
+<FONT color="green">127</FONT>            columnModel.addColumnModelListener(tableListener);<a name="line.127"></a>
+<FONT color="green">128</FONT>    <a name="line.128"></a>
+<FONT color="green">129</FONT>            // reordering the columns<a name="line.129"></a>
+<FONT color="green">130</FONT>            tableHeader.setReorderingAllowed(this.prefs.getAllowReordering());<a name="line.130"></a>
+<FONT color="green">131</FONT>    <a name="line.131"></a>
+<FONT color="green">132</FONT>            // sorting the columns<a name="line.132"></a>
+<FONT color="green">133</FONT>            RowSorter&lt;TableModel&gt; rowSorter =<a name="line.133"></a>
+<FONT color="green">134</FONT>                new FileTableRowSorter(this.listTableModel);<a name="line.134"></a>
+<FONT color="green">135</FONT>            List&lt;RowSorter.SortKey&gt; sortKeys = new ArrayList&lt;RowSorter.SortKey&gt;();<a name="line.135"></a>
+<FONT color="green">136</FONT>            sortKeys.add(this.prefs.getSortKey());<a name="line.136"></a>
+<FONT color="green">137</FONT>            rowSorter.setSortKeys(sortKeys);<a name="line.137"></a>
+<FONT color="green">138</FONT>            rowSorter.addRowSorterListener(tableListener);<a name="line.138"></a>
+<FONT color="green">139</FONT>            this.table.setRowSorter(rowSorter);<a name="line.139"></a>
+<FONT color="green">140</FONT>    <a name="line.140"></a>
+<FONT color="green">141</FONT>            this.table.setPreferredScrollableViewportSize(<a name="line.141"></a>
+<FONT color="green">142</FONT>                    new Dimension(<a name="line.142"></a>
+<FONT color="green">143</FONT>                            this.prefs.getPreferredTableWidth(),<a name="line.143"></a>
+<FONT color="green">144</FONT>                            this.prefs.getPreferredTableHeight()));<a name="line.144"></a>
+<FONT color="green">145</FONT>    <a name="line.145"></a>
+<FONT color="green">146</FONT>            this.scrollPane = new JCustomScrollPane();<a name="line.146"></a>
+<FONT color="green">147</FONT>            //see moneydance.com/pipermail/moneydance-dev/2006-September/000075.html<a name="line.147"></a>
+<FONT color="green">148</FONT>            try {<a name="line.148"></a>
+<FONT color="green">149</FONT>                this.scrollPane.setBorder(MoneydanceLAF.homePageBorder);<a name="line.149"></a>
+<FONT color="green">150</FONT>            } catch (Throwable e) {<a name="line.150"></a>
+<FONT color="green">151</FONT>                log.warn(e.getMessage(), e);<a name="line.151"></a>
+<FONT color="green">152</FONT>            }<a name="line.152"></a>
+<FONT color="green">153</FONT>        }<a name="line.153"></a>
+<FONT color="green">154</FONT>    <a name="line.154"></a>
+<FONT color="green">155</FONT>    <a name="line.155"></a>
+<FONT color="green">156</FONT>        @Override<a name="line.156"></a>
+<FONT color="green">157</FONT>        public final void refresh() {<a name="line.157"></a>
+<FONT color="green">158</FONT>            this.prefs.reload();<a name="line.158"></a>
+<FONT color="green">159</FONT>            this.listTableModel.setDateFormatter(this.prefs.getDateFormatter());<a name="line.159"></a>
+<FONT color="green">160</FONT>            this.listTableModel.setTimeFormatter(this.prefs.getTimeFormatter());<a name="line.160"></a>
+<FONT color="green">161</FONT>            this.columnFactory.setForeground(this.prefs.getForeground());<a name="line.161"></a>
+<FONT color="green">162</FONT>            this.columnFactory.setBackground(this.prefs.getBackground());<a name="line.162"></a>
+<FONT color="green">163</FONT>            this.columnFactory.setBackgroundAlt(this.prefs.getBackgroundAlt());<a name="line.163"></a>
+<FONT color="green">164</FONT>            this.table.setBackground(this.prefs.getBackground());<a name="line.164"></a>
+<FONT color="green">165</FONT>            this.table.setRowHeight(this.prefs.getBodyRowHeight());<a name="line.165"></a>
+<FONT color="green">166</FONT>            this.scrollPane.setBackground(this.prefs.getBackground());<a name="line.166"></a>
+<FONT color="green">167</FONT>    <a name="line.167"></a>
+<FONT color="green">168</FONT>            if (this.fileAdministration.isDirty() &amp;&amp; this.scrollPane.isVisible()) {<a name="line.168"></a>
+<FONT color="green">169</FONT>                try {<a name="line.169"></a>
+<FONT color="green">170</FONT>                    if (SwingUtilities.isEventDispatchThread()) {<a name="line.170"></a>
+<FONT color="green">171</FONT>                        this.run();<a name="line.171"></a>
+<FONT color="green">172</FONT>                    } else {<a name="line.172"></a>
+<FONT color="green">173</FONT>                        SwingUtilities.invokeAndWait(this);<a name="line.173"></a>
+<FONT color="green">174</FONT>                    }<a name="line.174"></a>
+<FONT color="green">175</FONT>                    this.fileAdministration.setDirty(false);<a name="line.175"></a>
+<FONT color="green">176</FONT>                } catch (InterruptedException e) {<a name="line.176"></a>
+<FONT color="green">177</FONT>                    log.warn(e.getMessage(), e);<a name="line.177"></a>
+<FONT color="green">178</FONT>                } catch (InvocationTargetException e) {<a name="line.178"></a>
+<FONT color="green">179</FONT>                    log.warn(e.getMessage(), e);<a name="line.179"></a>
+<FONT color="green">180</FONT>                }<a name="line.180"></a>
+<FONT color="green">181</FONT>            }<a name="line.181"></a>
+<FONT color="green">182</FONT>        }<a name="line.182"></a>
+<FONT color="green">183</FONT>    <a name="line.183"></a>
+<FONT color="green">184</FONT>    <a name="line.184"></a>
+<FONT color="green">185</FONT>        @Override<a name="line.185"></a>
+<FONT color="green">186</FONT>        public final void run() {<a name="line.186"></a>
+<FONT color="green">187</FONT>            this.fileAdministration.reloadFiles();<a name="line.187"></a>
+<FONT color="green">188</FONT>            this.listTableModel.fireTableDataChanged();<a name="line.188"></a>
+<FONT color="green">189</FONT>    <a name="line.189"></a>
+<FONT color="green">190</FONT>            if (this.listTableModel.getRowCount() == 0) {<a name="line.190"></a>
+<FONT color="green">191</FONT>                String message = this.prefs.getEmptyMessage(<a name="line.191"></a>
+<FONT color="green">192</FONT>                        this.fileAdministration.getImportDir());<a name="line.192"></a>
+<FONT color="green">193</FONT>                JLabel label = new JLabel(message);<a name="line.193"></a>
+<FONT color="green">194</FONT>                label.setHorizontalAlignment(SwingConstants.CENTER);<a name="line.194"></a>
+<FONT color="green">195</FONT>                label.setBackground(this.prefs.getBackground());<a name="line.195"></a>
+<FONT color="green">196</FONT>                this.scrollPane.setViewportView(label);<a name="line.196"></a>
+<FONT color="green">197</FONT>                this.scrollPane.setPreferredSize(<a name="line.197"></a>
+<FONT color="green">198</FONT>                        new Dimension(<a name="line.198"></a>
+<FONT color="green">199</FONT>                                this.prefs.getPreferredEmptyMessageWidth(),<a name="line.199"></a>
+<FONT color="green">200</FONT>                                this.prefs.getPreferredEmptyMessageHeight()));<a name="line.200"></a>
+<FONT color="green">201</FONT>            } else {<a name="line.201"></a>
+<FONT color="green">202</FONT>                this.scrollPane.setViewportView(this.table);<a name="line.202"></a>
+<FONT color="green">203</FONT>                this.scrollPane.setPreferredSize(<a name="line.203"></a>
+<FONT color="green">204</FONT>                        new Dimension(<a name="line.204"></a>
+<FONT color="green">205</FONT>                                this.prefs.getPreferredTableWidth(),<a name="line.205"></a>
+<FONT color="green">206</FONT>                                this.prefs.getPreferredTableHeight()));<a name="line.206"></a>
+<FONT color="green">207</FONT>            }<a name="line.207"></a>
+<FONT color="green">208</FONT>        }<a name="line.208"></a>
 <FONT color="green">209</FONT>    <a name="line.209"></a>
-<FONT color="green">210</FONT>        @Override<a name="line.210"></a>
-<FONT color="green">211</FONT>        public final JComponent getGUIView(final RootAccount rootAccount) {<a name="line.211"></a>
-<FONT color="green">212</FONT>            return this.scrollPane;<a name="line.212"></a>
-<FONT color="green">213</FONT>        }<a name="line.213"></a>
-<FONT color="green">214</FONT>    <a name="line.214"></a>
+<FONT color="green">210</FONT>    <a name="line.210"></a>
+<FONT color="green">211</FONT>        @Override<a name="line.211"></a>
+<FONT color="green">212</FONT>        public final JComponent getGUIView(final RootAccount rootAccount) {<a name="line.212"></a>
+<FONT color="green">213</FONT>            return this.scrollPane;<a name="line.213"></a>
+<FONT color="green">214</FONT>        }<a name="line.214"></a>
 <FONT color="green">215</FONT>    <a name="line.215"></a>
-<FONT color="green">216</FONT>        @Override<a name="line.216"></a>
-<FONT color="green">217</FONT>        public final void reset() {<a name="line.217"></a>
-<FONT color="green">218</FONT>        }<a name="line.218"></a>
-<FONT color="green">219</FONT>    <a name="line.219"></a>
+<FONT color="green">216</FONT>    <a name="line.216"></a>
+<FONT color="green">217</FONT>        @Override<a name="line.217"></a>
+<FONT color="green">218</FONT>        public final void reset() {<a name="line.218"></a>
+<FONT color="green">219</FONT>        }<a name="line.219"></a>
 <FONT color="green">220</FONT>    <a name="line.220"></a>
-<FONT color="green">221</FONT>        @Override<a name="line.221"></a>
-<FONT color="green">222</FONT>        public final void setActive(final boolean active) {<a name="line.222"></a>
-<FONT color="green">223</FONT>            this.scrollPane.setVisible(active);<a name="line.223"></a>
-<FONT color="green">224</FONT>            this.refresh();<a name="line.224"></a>
-<FONT color="green">225</FONT>        }<a name="line.225"></a>
-<FONT color="green">226</FONT>    <a name="line.226"></a>
+<FONT color="green">221</FONT>    <a name="line.221"></a>
+<FONT color="green">222</FONT>        @Override<a name="line.222"></a>
+<FONT color="green">223</FONT>        public final void setActive(final boolean active) {<a name="line.223"></a>
+<FONT color="green">224</FONT>            this.scrollPane.setVisible(active);<a name="line.224"></a>
+<FONT color="green">225</FONT>            this.refresh();<a name="line.225"></a>
+<FONT color="green">226</FONT>        }<a name="line.226"></a>
 <FONT color="green">227</FONT>    <a name="line.227"></a>
-<FONT color="green">228</FONT>        @Override<a name="line.228"></a>
-<FONT color="green">229</FONT>        public final String getID() {<a name="line.229"></a>
-<FONT color="green">230</FONT>            return Constants.ID;<a name="line.230"></a>
-<FONT color="green">231</FONT>        }<a name="line.231"></a>
-<FONT color="green">232</FONT>    <a name="line.232"></a>
+<FONT color="green">228</FONT>    <a name="line.228"></a>
+<FONT color="green">229</FONT>        @Override<a name="line.229"></a>
+<FONT color="green">230</FONT>        public final String getID() {<a name="line.230"></a>
+<FONT color="green">231</FONT>            return this.prefs.getId();<a name="line.231"></a>
+<FONT color="green">232</FONT>        }<a name="line.232"></a>
 <FONT color="green">233</FONT>    <a name="line.233"></a>
-<FONT color="green">234</FONT>        @Override<a name="line.234"></a>
-<FONT color="green">235</FONT>        public final String toString() {<a name="line.235"></a>
-<FONT color="green">236</FONT>            return Constants.EXTENSION_NAME;<a name="line.236"></a>
-<FONT color="green">237</FONT>        }<a name="line.237"></a>
-<FONT color="green">238</FONT>    }<a name="line.238"></a>
+<FONT color="green">234</FONT>    <a name="line.234"></a>
+<FONT color="green">235</FONT>        @Override<a name="line.235"></a>
+<FONT color="green">236</FONT>        public final String toString() {<a name="line.236"></a>
+<FONT color="green">237</FONT>            return this.prefs.getExtensionName();<a name="line.237"></a>
+<FONT color="green">238</FONT>        }<a name="line.238"></a>
+<FONT color="green">239</FONT>    }<a name="line.239"></a>
 
 
 
