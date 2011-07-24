@@ -1,25 +1,33 @@
 body {
-  margin-top: 1.0em;
-  background-color: #ffffff;
   font-family: Helvetica, Arial, FreeSans, san-serif;
-  color: #000000;
-  line-height: 120%;
+  font-size: 1.0em;
+  color: #555555;
+  background-color: #ffffff;
+  line-height: 140%;
 }
 #container {
   margin: 0 auto;
-  width: 700px;
+  width: 525px;
 }
 h1 {
-  font-size: 3.8em;
-  color: #000000;
-  margin-bottom: 0;
-}
-h2 {
-  font-size: 1.5em;
+  font-size: 2.5em;
   color: #000000;
   margin-bottom: 0.5ex;
+}
+h2 {
+  font-size: 1.0em;
+  color: #666666;
+  font-style: italic;
+  font-weight: normal;
+}
+h3 {
+  font-size: 1.5em;
+  color: #000000;
+  margin-bottom: 0.5em;
   padding-bottom: 0;
-  padding-top: 0.2em;
+  padding-top: 0.5em;
+  line-height: 50%;
+  font-weight: normal;
 }
 a {
   color: #000000;
@@ -27,11 +35,12 @@ a {
 a:hover {
   color: #f67600;
 }
-.description {
-  font-size: 1.2em;
-  margin-bottom: 30px;
-  margin-top: 30px;
-  font-style: italic;
+strong {
+  color: #000000;
+  font-weight: normal;
+}
+em {
+  color: #000000;
 }
 table {
   border-collapse: collapse;
@@ -42,16 +51,21 @@ td {
 img {
   border: 0;
 }
+ol {
+  margin-left: -4.5ex;
+}
+ul {
+  margin-left: -1.6ex;
+  text-indent: -4.5ex;
+  list-style-type: circle;
+  list-style-position: inside;
+}
 li {
   padding-bottom: 0.5em;
 }
-pre {
-  background: #000;
-  color: #fff;
-  padding: 15px;
-}
-.footer {
-  text-align:center;
-  padding-top:30px;
-  font-style: italic;
+#fancybox-title {
+  font-family: Helvetica, Arial, FreeSans, san-serif;
+  font-size: 1.0em;
+  z-index: 1102;
+  color: #555555;
 }

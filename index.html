@@ -9,6 +9,28 @@
 			Import List for Moneydance®
 		</title>
 		<link rel="stylesheet" href="style.css" type="text/css" />
+		<script type="text/javascript">
+//<![CDATA[
+			!window.jQuery && document.write('<script src="jquery-1.4.3.min.js"><\/script>');
+		//]]>
+		</script>
+		<script type="text/javascript" src="./fancybox/jquery.mousewheel-3.0.4.pack.js">
+</script>
+		<script type="text/javascript" src="./fancybox/jquery.fancybox-1.3.4.pack.js">
+</script>
+		<link rel="stylesheet" type="text/css" href="./fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+		<link rel="stylesheet" href="style.css" type="text/css" />
+		<script type="text/javascript">
+//<![CDATA[
+			$(document).ready(function() {
+				$("a[rel=example_group]").fancybox({
+					'transitionIn'      : 'elastic',
+					'transitionOut'     : 'elastic',
+					'titlePosition'     : 'inside'
+				});
+			});
+		//]]>
+		</script>
 	</head>
 	<body>
 		<div>
@@ -18,60 +40,57 @@
 			<h1>
 				Import List
 			</h1>
-			<div class="description">
+			<h2>
 				Import List is an open-source extension for Moneydance®<br />
 				monitoring a given directory for transaction files to import.
-			</div>
-			<h2>
+			</h2><a name="rationale" id="rationale"></a>
+			<h3>
 				Rationale
-			</h2>
+			</h3>
 			<p>
 				Personal finance manager <a href="http://www.moneydance.com">Moneydance®</a> offers a <a href="http://moneydance.com/userguide-contents/importing%20additional%20information%20into%20moneydance.html">feature to import transaction files</a>, such as from Quicken™. Using third-party background applications to download transaction files on a regular basis I felt that Moneydance® lacks an overview of which files still have to be imported, which, in turn, forces the user to constantly check on the file system.
 			</p>
 			<p>
 				As a result, this extension monitors a given base directory and displays all of its transaction files in a sortable list inside the homepage view along with two corresponding buttons to import and to delete each transaction file.
-			</p>
-			<h2>
+			</p><a name="screenshots" id="screenshots"></a>
+			<h3>
 				Screenshots
-			</h2>
+			</h3>
 			<p>
-				Click on an image to view it at full size.
+				<a rel="example_group" href="docs/img/screenshot1.png" title="Import List displays a list of transaction files, each of which can be imported or deleted."><img src="docs/img/screenshot1-small.png" alt="Screenshot 1" width="525" height="129" class="indent" /></a>
 			</p>
 			<p>
-				<a href="docs/img/screenshot1.png"><img src="docs/img/screenshot1.png" alt="screenshot 1" width="649" height="160" /></a>
-			</p>
-			<p>
-				<a href="docs/img/screenshot2.png"><img src="docs/img/screenshot2-small.png" alt="screenshot 2" width="649" height="384" /></a>
-			</p>
-			<h2>
+				<a rel="example_group" href="docs/img/screenshot2.png" title="The homepage view of Moneydance® 2010: Note the Import List extension in the top right corner."><img src="docs/img/screenshot2-small.png" alt="screenshot 2" width="525" height="310" class="indent" /></a>
+			</p><a name="features" id="features"></a>
+			<h3>
 				Features
-			</h2>
+			</h3>
 			<ul>
 				<li>
 					<strong>Integration:</strong> Import and delete transaction files seamlessly from the homepage view.
 				</li>
 				<li>
-					<strong>Synchronization:</strong> Changes in the base directory are reflected in the list.
+					<strong>Synchronization:</strong> Whenever there are new files in the base directory, the list updates itself.
 				</li>
 				<li>
-					<strong>Efficient filters:</strong> The list displays only QIF, QFX, OFX, and OFC transaction files.
+					<strong>Efficient filters:</strong> The list displays only the files that Moneydance® can handle (QIF, QFX, OFX, and OFC transaction files, that is).
 				</li>
 				<li>
 					<strong>Security:</strong> The extension is audited and signed with the official Moneydance® key.
 				</li>
-			</ul>
-			<h2>
+			</ul><a name="requirements" id="requirements"></a>
+			<h3>
 				Requirements
-			</h2>
+			</h3>
 			<ul>
-				<li>Moneydance® 2006, 2007, 2008, 2010, or 2011
+				<li>Moneydance® 2006 or newer
 				</li>
 				<li>Java Runtime Environment, version 6
 				</li>
-			</ul>
-			<h2>
+			</ul><a name="download" id="download"></a>
+			<h3>
 				Download
-			</h2>
+			</h3>
 			<table summary="Download Moneydance® extension">
 				<tr>
 					<td style="vertical-align: middle;">
@@ -85,30 +104,27 @@
 						from the official extensions repository.
 					</td>
 				</tr>
-			</table>
-			<h2>
+			</table><a name="installation" id="installation"></a>
+			<h3>
 				Installation
-			</h2>
+			</h3>
 			<ol>
-				<li>Add the extension to Moneydance® by choosing <strong>Add…</strong> or <strong>Manage Extensions…</strong> from the <strong>Extensions</strong> menu (depending on which version of Moneydance® you use).
+				<li>Add the extension to Moneydance® by choosing <em>Add…</em> or <em>Manage Extensions…</em> from the <em>Extensions</em> menu (depending on which version of Moneydance® you use).
 				</li>
 				<li>You will be asked to choose a base directory to monitor (you can always change that one later).
 				</li>
-				<li>In order to display Import List in Moneydance®'s homepage view, open the <strong>Preferences</strong> window and click on the <strong>Home Page</strong> tab. The available items should contain an entry called <strong>Import List</strong>. Add it to the left or right column of your homepage view.
+				<li>In order to display Import List in Moneydance®'s homepage view, open the <em>Preferences</em> window and click on the <em>Home Page</em> tab. The available items should contain an entry called <em>Import List</em>. Add it to the left or right column of your homepage view.
 				</li>
-			</ol>
-			<h2>
+			</ol><a name="license" id="license"></a>
+			<h3>
 				License
-			</h2>
+			</h3>
 			<p>
-				Copyright 2011 <a href="http://www.my-flow.com">Florian J. Breunig</a>.
-			</p>
-			<p>
-				Import List is released under the <a href="http://www.gnu.org/licenses/gpl.html">GNU General Public License, Version 3.0</a>.
+				Copyright 2011 <a href="http://www.my-flow.com">Florian J. Breunig</a>.<br />
+				Import List is released under the <a href="http://www.gnu.org/licenses/gpl.html">GNU General Public License</a>.
 			</p>
 		</div><script type="text/javascript">
 //<![CDATA[
-
 			var _gaq = _gaq || [];
 			_gaq.push(['_setAccount', 'UA-661182-7']);
 			_gaq.push(['_setDomainName', '.github.com']);
@@ -119,7 +135,6 @@
 				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 			})();
-
 		//]]>
 		</script>
 	</body>
