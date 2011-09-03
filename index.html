@@ -41,8 +41,7 @@
 				Import List
 			</h1>
 			<h2>
-				Import List is an open-source extension for Moneydance®<br />
-				monitoring a given directory for transaction files to import.
+				Import List is an open-source extension for Moneydance® monitoring&nbsp;a&nbsp;given&nbsp;directory for transaction files to import.
 			</h2><a name="rationale" id="rationale"></a>
 			<h3>
 				Rationale
@@ -57,7 +56,7 @@
 				Screenshots
 			</h3>
 			<p>
-				<a rel="example_group" href="docs/img/screenshot1.png" title="Import List displays a list of transaction files, each of which can be imported or deleted."><img src="docs/img/screenshot1-small.png" alt="Screenshot 1" width="525" height="129" class="indent" /></a>
+				<a rel="example_group" href="docs/img/screenshot1.png" title="Import List displays a list of transaction files, each of which can be imported or deleted."><img src="docs/img/screenshot1-small.png" alt="Screenshot 1" width="525" height="158" class="indent" /></a>
 			</p>
 			<p>
 				<a rel="example_group" href="docs/img/screenshot2.png" title="The homepage view of Moneydance® 2010: Note the Import List extension in the top right corner."><img src="docs/img/screenshot2-small.png" alt="screenshot 2" width="525" height="310" class="indent" /></a>
@@ -73,7 +72,7 @@
 					<strong>Synchronization:</strong> Whenever there are new files in the base directory, the list updates itself.
 				</li>
 				<li>
-					<strong>Efficient filters:</strong> The list displays only the files that Moneydance® can handle (QIF, QFX, OFX, and OFC transaction files, that is).
+					<strong>Efficient filters:</strong> The list displays only the files that Moneydance® can handle (QIF, QFX, OFX, OFC, and CSV transaction files, that is).
 				</li>
 				<li>
 					<strong>Security:</strong> The extension is audited and signed with the official Moneydance® key.
@@ -85,7 +84,9 @@
 			<ul>
 				<li>Moneydance® 2006 or newer
 				</li>
-				<li>Java Runtime Environment, version 6
+				<li>Java Runtime Environment, version 6 or newer
+				</li>
+				<li>Optional: the <a href="http://www.moneydance.com/download/modules/txtimport.mxt">Text File Importer extension</a>, version 8 or newer (to import CSV transaction files)
 				</li>
 			</ul><a name="download" id="download"></a>
 			<h3>
@@ -94,13 +95,13 @@
 			<table summary="Download Moneydance® extension">
 				<tr>
 					<td style="vertical-align: middle;">
-						<a href="http://moneydance.com/download/modules/importlist.mxt"><img width="60" height="78" src="docs/img/mxt.png" alt="Download Moneydance® extension" /></a>
+						<a href="http://www.moneydance.com/download/modules/importlist.mxt"><img width="60" height="78" src="docs/img/mxt.png" alt="Download Moneydance® extension" /></a>
 					</td>
 					<td>
 						&nbsp;&nbsp;&nbsp;
 					</td>
 					<td style="vertical-align: middle;">
-						Download the <a href="http://moneydance.com/download/modules/importlist.mxt">latest signed version of Import List</a><br />
+						Download the <a href="http://www.moneydance.com/download/modules/importlist.mxt">latest signed version of Import List</a><br />
 						from the official extensions repository.
 					</td>
 				</tr>
@@ -111,14 +112,20 @@
 			<ol>
 				<li>Add the extension to Moneydance® by choosing <em>Add…</em> or <em>Manage Extensions…</em> from the <em>Extensions</em> menu (depending on which version of Moneydance® you use).
 				</li>
-				<li>You will be asked to choose a base directory to monitor (you can always change that one later).
+				<li>In order to display Import List in Moneydance®'s homepage view, open the <em>Preferences</em> window and click on the <em>Home Page</em> tab. The available items should contain an entry named <em>Import List</em>. Add it to the left or right column of your homepage view.
 				</li>
-				<li>In order to display Import List in Moneydance®'s homepage view, open the <em>Preferences</em> window and click on the <em>Home Page</em> tab. The available items should contain an entry called <em>Import List</em>. Add it to the left or right column of your homepage view.
+				<li>You will be asked to choose a base directory where your transaction files reside (you can always change that one later).
 				</li>
 			</ol><a name="feedback" id="feedback"></a>
 			<h3>
 				Feedback
-			</h3>Please send bugs, issues and feature suggestions to <a href="mailto:&#105;&#109;&#112;&#111;&#114;&#116;&#108;&#105;&#115;&#116;&#64;&#109;&#121;&#45;&#102;&#108;&#111;&#119;&#46;&#99;&#111;&#109;&#13;&#10;">&#105;&#109;&#112;&#111;&#114;&#116;&#108;&#105;&#115;&#116;&#64;&#109;&#121;&#45;&#102;&#108;&#111;&#119;&#46;&#99;&#111;&#109;&#13;</a> or submit them on GitHub's <a href="https://github.com/my-flow/importlist/issues">issue tracker</a>. <a name="license" id="license"></a>
+			</h3>
+			<p>
+				Please send bugs, issues, and feature suggestions to <a href="mailto:importlist@my-flow.com">importlist@my-flow.com</a> or submit them on GitHub's <a href="https://github.com/my-flow/importlist/issues">issue tracker</a>. <a name="license" id="license"></a>
+			</p>
+			<p>
+				At the moment I could use some help with the localizations for <a href="https://github.com/my-flow/importlist/blob/master/src/com/moneydance/modules/features/importlist/resources/localizable_fr.properties">French (France)</a> and <a href="https://github.com/my-flow/importlist/blob/master/src/com/moneydance/modules/features/importlist/resources/localizable_es.properties">Spanish (Spain)</a>. If you have some additions to make, please contact me.
+			</p>
 			<h3>
 				License
 			</h3>
