@@ -31,9 +31,9 @@
 <FONT color="green">028</FONT>    <a name="line.28"></a>
 <FONT color="green">029</FONT>    /**<a name="line.29"></a>
 <FONT color="green">030</FONT>     * This is an updated version of the<a name="line.30"></a>
-<FONT color="green">031</FONT>     * &lt;a href="http://www.davekoelle.com/alphanum.html"&gt;Alphanum Algorithm&lt;/a&gt;<a name="line.31"></a>
-<FONT color="green">032</FONT>     * with enhancements made by Daniel Migowski, Andre Bogus, David Koelle,<a name="line.32"></a>
-<FONT color="green">033</FONT>     * and Florian J. Breunig.<a name="line.33"></a>
+<FONT color="green">031</FONT>     * &lt;a href="http://www.davekoelle.com/alphanum.html"&gt;Alphanum Algorithm&lt;/a&gt;.<a name="line.31"></a>
+<FONT color="green">032</FONT>     *<a name="line.32"></a>
+<FONT color="green">033</FONT>     * @author Daniel Migowski, Andre Bogus, David Koelle, and Florian J. Breunig.<a name="line.33"></a>
 <FONT color="green">034</FONT>     */<a name="line.34"></a>
 <FONT color="green">035</FONT>    public final class AlphanumComparator<a name="line.35"></a>
 <FONT color="green">036</FONT>    implements Comparator&lt;String&gt;, Serializable {<a name="line.36"></a>
@@ -71,7 +71,7 @@
 <FONT color="green">068</FONT>         * @return &lt;code&gt;true&lt;/code&gt; if the given char represents a digit;<a name="line.68"></a>
 <FONT color="green">069</FONT>         * &lt;code&gt;false&lt;/code&gt; otherwise.<a name="line.69"></a>
 <FONT color="green">070</FONT>         */<a name="line.70"></a>
-<FONT color="green">071</FONT>        private boolean isDigit(final char character) {<a name="line.71"></a>
+<FONT color="green">071</FONT>        private static boolean isDigit(final char character) {<a name="line.71"></a>
 <FONT color="green">072</FONT>            return character &gt;= DIGIT_LOWER_BOUND<a name="line.72"></a>
 <FONT color="green">073</FONT>            &amp;&amp; character &lt;= DIGIT_UPPER_BOUND;<a name="line.73"></a>
 <FONT color="green">074</FONT>        }<a name="line.74"></a>
@@ -84,7 +84,7 @@
 <FONT color="green">081</FONT>         * @param marker The index of the string to start analyzing from.<a name="line.81"></a>
 <FONT color="green">082</FONT>         * @return A substring containing only digits or only non-digits.<a name="line.82"></a>
 <FONT color="green">083</FONT>         */<a name="line.83"></a>
-<FONT color="green">084</FONT>        private String getChunk(<a name="line.84"></a>
+<FONT color="green">084</FONT>        private static String getChunk(<a name="line.84"></a>
 <FONT color="green">085</FONT>                final String string,<a name="line.85"></a>
 <FONT color="green">086</FONT>                final int slength,<a name="line.86"></a>
 <FONT color="green">087</FONT>                final int marker) {<a name="line.87"></a>
@@ -93,10 +93,10 @@
 <FONT color="green">090</FONT>            char character = string.charAt(index);<a name="line.90"></a>
 <FONT color="green">091</FONT>            chunk.append(character);<a name="line.91"></a>
 <FONT color="green">092</FONT>            index++;<a name="line.92"></a>
-<FONT color="green">093</FONT>            if (this.isDigit(character)) {<a name="line.93"></a>
+<FONT color="green">093</FONT>            if (isDigit(character)) {<a name="line.93"></a>
 <FONT color="green">094</FONT>                while (index &lt; slength) {<a name="line.94"></a>
 <FONT color="green">095</FONT>                    character = string.charAt(index);<a name="line.95"></a>
-<FONT color="green">096</FONT>                    if (!this.isDigit(character)) {<a name="line.96"></a>
+<FONT color="green">096</FONT>                    if (!isDigit(character)) {<a name="line.96"></a>
 <FONT color="green">097</FONT>                        break;<a name="line.97"></a>
 <FONT color="green">098</FONT>                    }<a name="line.98"></a>
 <FONT color="green">099</FONT>                    chunk.append(character);<a name="line.99"></a>
@@ -105,7 +105,7 @@
 <FONT color="green">102</FONT>            } else {<a name="line.102"></a>
 <FONT color="green">103</FONT>                while (index &lt; slength) {<a name="line.103"></a>
 <FONT color="green">104</FONT>                    character = string.charAt(index);<a name="line.104"></a>
-<FONT color="green">105</FONT>                    if (this.isDigit(character)) {<a name="line.105"></a>
+<FONT color="green">105</FONT>                    if (isDigit(character)) {<a name="line.105"></a>
 <FONT color="green">106</FONT>                        break;<a name="line.106"></a>
 <FONT color="green">107</FONT>                    }<a name="line.107"></a>
 <FONT color="green">108</FONT>                    chunk.append(character);<a name="line.108"></a>
@@ -130,17 +130,17 @@
 <FONT color="green">127</FONT>    <a name="line.127"></a>
 <FONT color="green">128</FONT>            while (thisMarker &lt; s1Length &amp;&amp; thatMarker &lt; s2Length) {<a name="line.128"></a>
 <FONT color="green">129</FONT>                final String thisChunk<a name="line.129"></a>
-<FONT color="green">130</FONT>                = this.getChunk(string1, s1Length, thisMarker);<a name="line.130"></a>
+<FONT color="green">130</FONT>                = getChunk(string1, s1Length, thisMarker);<a name="line.130"></a>
 <FONT color="green">131</FONT>                thisMarker += thisChunk.length();<a name="line.131"></a>
 <FONT color="green">132</FONT>    <a name="line.132"></a>
 <FONT color="green">133</FONT>                final String thatChunk<a name="line.133"></a>
-<FONT color="green">134</FONT>                = this.getChunk(string2, s2Length, thatMarker);<a name="line.134"></a>
+<FONT color="green">134</FONT>                = getChunk(string2, s2Length, thatMarker);<a name="line.134"></a>
 <FONT color="green">135</FONT>                thatMarker += thatChunk.length();<a name="line.135"></a>
 <FONT color="green">136</FONT>    <a name="line.136"></a>
 <FONT color="green">137</FONT>                // If both chunks contain numeric characters, sort them numerically<a name="line.137"></a>
 <FONT color="green">138</FONT>                int result = 0;<a name="line.138"></a>
-<FONT color="green">139</FONT>                if (this.isDigit(thisChunk.charAt(0))<a name="line.139"></a>
-<FONT color="green">140</FONT>                        &amp;&amp; this.isDigit(thatChunk.charAt(0))) {<a name="line.140"></a>
+<FONT color="green">139</FONT>                if (isDigit(thisChunk.charAt(0))<a name="line.139"></a>
+<FONT color="green">140</FONT>                        &amp;&amp; isDigit(thatChunk.charAt(0))) {<a name="line.140"></a>
 <FONT color="green">141</FONT>                    // Simple chunk comparison by length.<a name="line.141"></a>
 <FONT color="green">142</FONT>                    final int thisChunkLength = thisChunk.length();<a name="line.142"></a>
 <FONT color="green">143</FONT>                    result = thisChunkLength - thatChunk.length();<a name="line.143"></a>
