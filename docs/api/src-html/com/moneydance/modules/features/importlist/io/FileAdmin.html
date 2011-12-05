@@ -98,7 +98,7 @@
 <FONT color="green">095</FONT>            this.listener = new TransactionFileListener();<a name="line.95"></a>
 <FONT color="green">096</FONT>            this.listener.addObserver(this);<a name="line.96"></a>
 <FONT color="green">097</FONT>            this.monitor  = new FileAlterationMonitor(<a name="line.97"></a>
-<FONT color="green">098</FONT>                    this.settings.getMonitorIntervall());<a name="line.98"></a>
+<FONT color="green">098</FONT>                    this.settings.getMonitorInterval());<a name="line.98"></a>
 <FONT color="green">099</FONT>    <a name="line.99"></a>
 <FONT color="green">100</FONT>            this.files = Collections.synchronizedList(new ArrayList&lt;File&gt;());<a name="line.100"></a>
 <FONT color="green">101</FONT>        }<a name="line.101"></a>
@@ -165,98 +165,98 @@
 <FONT color="green">162</FONT>        }<a name="line.162"></a>
 <FONT color="green">163</FONT>    <a name="line.163"></a>
 <FONT color="green">164</FONT>        public void importAllRows() {<a name="line.164"></a>
-<FONT color="green">165</FONT>            for (int row = 0; row &lt; this.files.size(); row++) {<a name="line.165"></a>
-<FONT color="green">166</FONT>                this.importRow(row);<a name="line.166"></a>
-<FONT color="green">167</FONT>            }<a name="line.167"></a>
-<FONT color="green">168</FONT>            this.setChanged();<a name="line.168"></a>
-<FONT color="green">169</FONT>            this.notifyObservers();<a name="line.169"></a>
-<FONT color="green">170</FONT>        }<a name="line.170"></a>
-<FONT color="green">171</FONT>    <a name="line.171"></a>
-<FONT color="green">172</FONT>        public void importRow(final int rowNumber) {<a name="line.172"></a>
-<FONT color="green">173</FONT>            if (rowNumber &gt;= this.files.size()) {<a name="line.173"></a>
-<FONT color="green">174</FONT>                return;<a name="line.174"></a>
-<FONT color="green">175</FONT>            }<a name="line.175"></a>
-<FONT color="green">176</FONT>            final File file = this.files.get(rowNumber);<a name="line.176"></a>
-<FONT color="green">177</FONT>            this.importFile(file);<a name="line.177"></a>
-<FONT color="green">178</FONT>            this.setChanged();<a name="line.178"></a>
-<FONT color="green">179</FONT>            this.notifyObservers();<a name="line.179"></a>
-<FONT color="green">180</FONT>        }<a name="line.180"></a>
-<FONT color="green">181</FONT>    <a name="line.181"></a>
-<FONT color="green">182</FONT>        private void importFile(final File file) {<a name="line.182"></a>
-<FONT color="green">183</FONT>            String callUri = "";<a name="line.183"></a>
-<FONT color="green">184</FONT>            if (this.transactionFileFilter.accept(file)) {<a name="line.184"></a>
-<FONT color="green">185</FONT>                callUri = this.settings.getTransactionFileImportUriPrefix()<a name="line.185"></a>
-<FONT color="green">186</FONT>                + file.getAbsolutePath();<a name="line.186"></a>
-<FONT color="green">187</FONT>            }<a name="line.187"></a>
-<FONT color="green">188</FONT>            if (this.textFileFilter.accept(file)) {<a name="line.188"></a>
-<FONT color="green">189</FONT>                callUri = this.settings.getTextFileImportUriPrefix()<a name="line.189"></a>
-<FONT color="green">190</FONT>                + file.getAbsolutePath();<a name="line.190"></a>
-<FONT color="green">191</FONT>            }<a name="line.191"></a>
-<FONT color="green">192</FONT>            // Import the file identified by the file parameter<a name="line.192"></a>
-<FONT color="green">193</FONT>            this.context.showURL(callUri);<a name="line.193"></a>
-<FONT color="green">194</FONT>        }<a name="line.194"></a>
-<FONT color="green">195</FONT>    <a name="line.195"></a>
-<FONT color="green">196</FONT>        public void deleteAllRows() {<a name="line.196"></a>
-<FONT color="green">197</FONT>            if (this.files.isEmpty()) {<a name="line.197"></a>
-<FONT color="green">198</FONT>                return;<a name="line.198"></a>
-<FONT color="green">199</FONT>            }<a name="line.199"></a>
-<FONT color="green">200</FONT>            if (this.showWarningBeforeDeletingAllFiles(this.files.size())) {<a name="line.200"></a>
-<FONT color="green">201</FONT>                for (final File file : this.files) {<a name="line.201"></a>
-<FONT color="green">202</FONT>                    try {<a name="line.202"></a>
-<FONT color="green">203</FONT>                        this.deleteFile(file);<a name="line.203"></a>
-<FONT color="green">204</FONT>                    } catch (IOException e) {<a name="line.204"></a>
-<FONT color="green">205</FONT>                        LOG.warn(e.getMessage(), e);<a name="line.205"></a>
-<FONT color="green">206</FONT>                        final String errorMessage = e.getMessage();<a name="line.206"></a>
-<FONT color="green">207</FONT>                        final Object errorLabel = new JLabel(errorMessage);<a name="line.207"></a>
-<FONT color="green">208</FONT>                        JOptionPane.showMessageDialog(<a name="line.208"></a>
-<FONT color="green">209</FONT>                                null, // no parent component<a name="line.209"></a>
-<FONT color="green">210</FONT>                                errorLabel,<a name="line.210"></a>
-<FONT color="green">211</FONT>                                null, // no title<a name="line.211"></a>
-<FONT color="green">212</FONT>                                JOptionPane.ERROR_MESSAGE);<a name="line.212"></a>
-<FONT color="green">213</FONT>                    }<a name="line.213"></a>
-<FONT color="green">214</FONT>                }<a name="line.214"></a>
-<FONT color="green">215</FONT>            } else {<a name="line.215"></a>
-<FONT color="green">216</FONT>                LOG.info("Canceled deleting all files");<a name="line.216"></a>
-<FONT color="green">217</FONT>            }<a name="line.217"></a>
-<FONT color="green">218</FONT>            this.setChanged();<a name="line.218"></a>
-<FONT color="green">219</FONT>            this.notifyObservers();<a name="line.219"></a>
-<FONT color="green">220</FONT>        }<a name="line.220"></a>
-<FONT color="green">221</FONT>    <a name="line.221"></a>
-<FONT color="green">222</FONT>        public void deleteRow(final int rowNumber) {<a name="line.222"></a>
-<FONT color="green">223</FONT>            if (rowNumber &gt;= this.files.size()) {<a name="line.223"></a>
-<FONT color="green">224</FONT>                return;<a name="line.224"></a>
-<FONT color="green">225</FONT>            }<a name="line.225"></a>
-<FONT color="green">226</FONT>            final File file = this.files.get(rowNumber);<a name="line.226"></a>
-<FONT color="green">227</FONT>            if (this.showWarningBeforeDeletingOneFile(file)) {<a name="line.227"></a>
-<FONT color="green">228</FONT>                try {<a name="line.228"></a>
-<FONT color="green">229</FONT>                    this.deleteFile(file);<a name="line.229"></a>
-<FONT color="green">230</FONT>                } catch (IOException e) {<a name="line.230"></a>
-<FONT color="green">231</FONT>                    LOG.warn("Could not delete file " + file.getAbsoluteFile());<a name="line.231"></a>
-<FONT color="green">232</FONT>                    final String errorMessage =<a name="line.232"></a>
-<FONT color="green">233</FONT>                        this.localizable.getErrorMessageDeleteFile(file.getName());<a name="line.233"></a>
-<FONT color="green">234</FONT>                    final Object errorLabel = new JLabel(errorMessage);<a name="line.234"></a>
-<FONT color="green">235</FONT>                    JOptionPane.showMessageDialog(<a name="line.235"></a>
-<FONT color="green">236</FONT>                            null, // no parent component<a name="line.236"></a>
-<FONT color="green">237</FONT>                            errorLabel,<a name="line.237"></a>
-<FONT color="green">238</FONT>                            null, // no title<a name="line.238"></a>
-<FONT color="green">239</FONT>                            JOptionPane.ERROR_MESSAGE);<a name="line.239"></a>
-<FONT color="green">240</FONT>                }<a name="line.240"></a>
-<FONT color="green">241</FONT>            } else {<a name="line.241"></a>
-<FONT color="green">242</FONT>                LOG.info("Canceled deleting file " + file.getAbsoluteFile());<a name="line.242"></a>
-<FONT color="green">243</FONT>            }<a name="line.243"></a>
-<FONT color="green">244</FONT>            this.setChanged();<a name="line.244"></a>
-<FONT color="green">245</FONT>            this.notifyObservers();<a name="line.245"></a>
-<FONT color="green">246</FONT>        }<a name="line.246"></a>
-<FONT color="green">247</FONT>    <a name="line.247"></a>
-<FONT color="green">248</FONT>        private void deleteFile(final File file) throws IOException {<a name="line.248"></a>
-<FONT color="green">249</FONT>            LOG.info("Deleting file " + file.getAbsoluteFile());<a name="line.249"></a>
-<FONT color="green">250</FONT>            FileUtils.forceDelete(file);<a name="line.250"></a>
+<FONT color="green">165</FONT>            FileOperation fileImporter = new FileImporter(<a name="line.165"></a>
+<FONT color="green">166</FONT>                    this.context,<a name="line.166"></a>
+<FONT color="green">167</FONT>                    this.transactionFileFilter,<a name="line.167"></a>
+<FONT color="green">168</FONT>                    this.textFileFilter);<a name="line.168"></a>
+<FONT color="green">169</FONT>    <a name="line.169"></a>
+<FONT color="green">170</FONT>            for (final File file : this.files) {<a name="line.170"></a>
+<FONT color="green">171</FONT>                try {<a name="line.171"></a>
+<FONT color="green">172</FONT>                    fileImporter.perform(file);<a name="line.172"></a>
+<FONT color="green">173</FONT>                } catch (IOException e) {<a name="line.173"></a>
+<FONT color="green">174</FONT>                    LOG.warn(e.getMessage(), e);<a name="line.174"></a>
+<FONT color="green">175</FONT>                }<a name="line.175"></a>
+<FONT color="green">176</FONT>            }<a name="line.176"></a>
+<FONT color="green">177</FONT>            this.setChanged();<a name="line.177"></a>
+<FONT color="green">178</FONT>            this.notifyObservers();<a name="line.178"></a>
+<FONT color="green">179</FONT>        }<a name="line.179"></a>
+<FONT color="green">180</FONT>    <a name="line.180"></a>
+<FONT color="green">181</FONT>        public void importRow(final int rowNumber) {<a name="line.181"></a>
+<FONT color="green">182</FONT>            if (rowNumber &gt;= this.files.size()) {<a name="line.182"></a>
+<FONT color="green">183</FONT>                return;<a name="line.183"></a>
+<FONT color="green">184</FONT>            }<a name="line.184"></a>
+<FONT color="green">185</FONT>            final File file = this.files.get(rowNumber);<a name="line.185"></a>
+<FONT color="green">186</FONT>            try {<a name="line.186"></a>
+<FONT color="green">187</FONT>                FileOperation fileImporter = new FileImporter(<a name="line.187"></a>
+<FONT color="green">188</FONT>                        this.context,<a name="line.188"></a>
+<FONT color="green">189</FONT>                        this.transactionFileFilter,<a name="line.189"></a>
+<FONT color="green">190</FONT>                        this.textFileFilter);<a name="line.190"></a>
+<FONT color="green">191</FONT>                fileImporter.perform(file);<a name="line.191"></a>
+<FONT color="green">192</FONT>            } catch (IOException e) {<a name="line.192"></a>
+<FONT color="green">193</FONT>                LOG.warn(e.getMessage(), e);<a name="line.193"></a>
+<FONT color="green">194</FONT>            }<a name="line.194"></a>
+<FONT color="green">195</FONT>            this.setChanged();<a name="line.195"></a>
+<FONT color="green">196</FONT>            this.notifyObservers();<a name="line.196"></a>
+<FONT color="green">197</FONT>        }<a name="line.197"></a>
+<FONT color="green">198</FONT>    <a name="line.198"></a>
+<FONT color="green">199</FONT>        public void deleteAllRows() {<a name="line.199"></a>
+<FONT color="green">200</FONT>            if (this.files.isEmpty()) {<a name="line.200"></a>
+<FONT color="green">201</FONT>                return;<a name="line.201"></a>
+<FONT color="green">202</FONT>            }<a name="line.202"></a>
+<FONT color="green">203</FONT>            if (this.showWarningBeforeDeletingAllFiles(this.files.size())) {<a name="line.203"></a>
+<FONT color="green">204</FONT>                FileOperation fileDeleter = new FileDeleter();<a name="line.204"></a>
+<FONT color="green">205</FONT>                for (final File file : this.files) {<a name="line.205"></a>
+<FONT color="green">206</FONT>                    try {<a name="line.206"></a>
+<FONT color="green">207</FONT>                        fileDeleter.perform(file);<a name="line.207"></a>
+<FONT color="green">208</FONT>                    } catch (IOException e) {<a name="line.208"></a>
+<FONT color="green">209</FONT>                        LOG.warn(e.getMessage(), e);<a name="line.209"></a>
+<FONT color="green">210</FONT>                        final String errorMessage =<a name="line.210"></a>
+<FONT color="green">211</FONT>                         this.localizable.getErrorMessageDeleteFile(file.getName());<a name="line.211"></a>
+<FONT color="green">212</FONT>                        final Object errorLabel = new JLabel(errorMessage);<a name="line.212"></a>
+<FONT color="green">213</FONT>                        JOptionPane.showMessageDialog(<a name="line.213"></a>
+<FONT color="green">214</FONT>                                null, // no parent component<a name="line.214"></a>
+<FONT color="green">215</FONT>                                errorLabel,<a name="line.215"></a>
+<FONT color="green">216</FONT>                                null, // no title<a name="line.216"></a>
+<FONT color="green">217</FONT>                                JOptionPane.ERROR_MESSAGE);<a name="line.217"></a>
+<FONT color="green">218</FONT>                    }<a name="line.218"></a>
+<FONT color="green">219</FONT>                }<a name="line.219"></a>
+<FONT color="green">220</FONT>            } else {<a name="line.220"></a>
+<FONT color="green">221</FONT>                LOG.info("Canceled deleting all files");<a name="line.221"></a>
+<FONT color="green">222</FONT>            }<a name="line.222"></a>
+<FONT color="green">223</FONT>            this.setChanged();<a name="line.223"></a>
+<FONT color="green">224</FONT>            this.notifyObservers();<a name="line.224"></a>
+<FONT color="green">225</FONT>        }<a name="line.225"></a>
+<FONT color="green">226</FONT>    <a name="line.226"></a>
+<FONT color="green">227</FONT>        public void deleteRow(final int rowNumber) {<a name="line.227"></a>
+<FONT color="green">228</FONT>            if (rowNumber &gt;= this.files.size()) {<a name="line.228"></a>
+<FONT color="green">229</FONT>                return;<a name="line.229"></a>
+<FONT color="green">230</FONT>            }<a name="line.230"></a>
+<FONT color="green">231</FONT>            final File file = this.files.get(rowNumber);<a name="line.231"></a>
+<FONT color="green">232</FONT>            if (this.showWarningBeforeDeletingOneFile(file)) {<a name="line.232"></a>
+<FONT color="green">233</FONT>                try {<a name="line.233"></a>
+<FONT color="green">234</FONT>                    new FileDeleter().perform(file);<a name="line.234"></a>
+<FONT color="green">235</FONT>                } catch (IOException e) {<a name="line.235"></a>
+<FONT color="green">236</FONT>                    LOG.warn("Could not delete file " + file.getAbsoluteFile());<a name="line.236"></a>
+<FONT color="green">237</FONT>                    final String errorMessage =<a name="line.237"></a>
+<FONT color="green">238</FONT>                        this.localizable.getErrorMessageDeleteFile(file.getName());<a name="line.238"></a>
+<FONT color="green">239</FONT>                    final Object errorLabel = new JLabel(errorMessage);<a name="line.239"></a>
+<FONT color="green">240</FONT>                    JOptionPane.showMessageDialog(<a name="line.240"></a>
+<FONT color="green">241</FONT>                            null, // no parent component<a name="line.241"></a>
+<FONT color="green">242</FONT>                            errorLabel,<a name="line.242"></a>
+<FONT color="green">243</FONT>                            null, // no title<a name="line.243"></a>
+<FONT color="green">244</FONT>                            JOptionPane.ERROR_MESSAGE);<a name="line.244"></a>
+<FONT color="green">245</FONT>                }<a name="line.245"></a>
+<FONT color="green">246</FONT>            } else {<a name="line.246"></a>
+<FONT color="green">247</FONT>                LOG.info("Canceled deleting file " + file.getAbsoluteFile());<a name="line.247"></a>
+<FONT color="green">248</FONT>            }<a name="line.248"></a>
+<FONT color="green">249</FONT>            this.setChanged();<a name="line.249"></a>
+<FONT color="green">250</FONT>            this.notifyObservers();<a name="line.250"></a>
 <FONT color="green">251</FONT>        }<a name="line.251"></a>
 <FONT color="green">252</FONT>    <a name="line.252"></a>
 <FONT color="green">253</FONT>        private boolean showWarningBeforeDeletingOneFile(final File file) {<a name="line.253"></a>
-<FONT color="green">254</FONT>            final String confirmationMessage =<a name="line.254"></a>
+<FONT color="green">254</FONT>            final String message =<a name="line.254"></a>
 <FONT color="green">255</FONT>               this.localizable.getConfirmationMessageDeleteOneFile(file.getName());<a name="line.255"></a>
-<FONT color="green">256</FONT>            final Object confirmationLabel = new JLabel(confirmationMessage);<a name="line.256"></a>
+<FONT color="green">256</FONT>            final Object confirmationLabel = new JLabel(message);<a name="line.256"></a>
 <FONT color="green">257</FONT>            final Image image = Helper.getIconImage();<a name="line.257"></a>
 <FONT color="green">258</FONT>            Icon  icon  = null;<a name="line.258"></a>
 <FONT color="green">259</FONT>            if (image != null) {<a name="line.259"></a>
@@ -281,9 +281,9 @@
 <FONT color="green">278</FONT>        }<a name="line.278"></a>
 <FONT color="green">279</FONT>    <a name="line.279"></a>
 <FONT color="green">280</FONT>        private boolean showWarningBeforeDeletingAllFiles(final int size) {<a name="line.280"></a>
-<FONT color="green">281</FONT>            final String confirmationMessage =<a name="line.281"></a>
+<FONT color="green">281</FONT>            final String message =<a name="line.281"></a>
 <FONT color="green">282</FONT>                this.localizable.getConfirmationMessageDeleteAllFiles(size);<a name="line.282"></a>
-<FONT color="green">283</FONT>            final Object confirmationLabel = new JLabel(confirmationMessage);<a name="line.283"></a>
+<FONT color="green">283</FONT>            final Object confirmationLabel = new JLabel(message);<a name="line.283"></a>
 <FONT color="green">284</FONT>            final Image image = Helper.getIconImage();<a name="line.284"></a>
 <FONT color="green">285</FONT>            Icon  icon  = null;<a name="line.285"></a>
 <FONT color="green">286</FONT>            if (image != null) {<a name="line.286"></a>

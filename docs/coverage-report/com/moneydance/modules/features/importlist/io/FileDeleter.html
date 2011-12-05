@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+<head>
+  <title>JMockit Coverage Report</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../../../../coverage.css'/>
+  <script type='text/javascript' src='../../../../../../coverage.js'></script>
+  <link rel='stylesheet' type='text/css' href='../../../../../../prettify.css'/>
+  <script type='text/javascript' src='../../../../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption><code>../master/src/com/moneydance/modules/features/importlist/io/FileDeleter.java</code></caption>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>/*
+ * Import List - http://my-flow.github.com/importlist/
+ * Copyright (C) 2011 Florian J. Breunig
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see &lt;http://www.gnu.org/licenses/>.
+ */
+</td></tr>
+    <tr>
+      <td class='line'>18</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>19</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package com.moneydance.modules.features.importlist.io;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>20</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>21</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>import java.io.File;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>22</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>import java.io.IOException;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>23</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>24</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>import org.apache.commons.io.FileUtils;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>25</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>import org.slf4j.Logger;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>26</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>import org.slf4j.LoggerFactory;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>27</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>/**
+ * @author Florian J. Breunig
+ */
+</td></tr>
+    <tr>
+      <td class='line'>31</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l31s0'>final class FileDeleter implements FileOperation {</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.io.FileDeleterTest#testPerform: 49        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>32</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * Static initialization of class-dependent logger.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>36</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l36s0'>    private static final Logger LOG =</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.io.FileDeleterTest#testPerform: 49        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>37</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            LoggerFactory.getLogger(FileDeleter.class);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>38</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>39</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>40</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public void perform(final File file) throws IOException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>41</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l41s0'>        LOG.info("Deleting file " + file.getAbsoluteFile());</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.io.FileDeleterTest#testPerform: 52, 57        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>42</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l42s0'>        FileUtils.forceDelete(file);</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.io.FileDeleterTest#testPerform: 52, 57        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>43</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l43s0'>    }</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.io.FileDeleterTest#testPerform: 52        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>44</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>

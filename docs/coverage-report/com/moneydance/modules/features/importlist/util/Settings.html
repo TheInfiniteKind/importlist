@@ -1,0 +1,1357 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+<head>
+  <title>JMockit Coverage Report</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../../../../coverage.css'/>
+  <script type='text/javascript' src='../../../../../../coverage.js'></script>
+  <link rel='stylesheet' type='text/css' href='../../../../../../prettify.css'/>
+  <script type='text/javascript' src='../../../../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption><code>../master/src/com/moneydance/modules/features/importlist/util/Settings.java</code></caption>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>/*
+ * Import List - http://my-flow.github.com/importlist/
+ * Copyright (C) 2011 Florian J. Breunig
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see &lt;http://www.gnu.org/licenses/>.
+ */
+</td></tr>
+    <tr>
+      <td class='line'>18</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>19</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package com.moneydance.modules.features.importlist.util;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>20</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>21</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>import java.io.InputStream;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>22</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>23</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>import org.apache.commons.configuration.AbstractFileConfiguration;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>24</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>import org.apache.commons.configuration.Configuration;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>25</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>import org.apache.commons.configuration.ConfigurationException;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>26</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>import org.apache.commons.configuration.PropertiesConfiguration;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>27</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>import org.slf4j.Logger;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>28</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>import org.slf4j.LoggerFactory;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>29</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>/**
+ * This configuration class accesses all values that are read
+ * from a settings file in plain text. The settings file cannot be
+ * modified at runtime, so all &lt;code>Settings&lt;/code> objects are immutable.
+ *
+ * @author Florian J. Breunig
+ */
+</td></tr>
+    <tr>
+      <td class='line'>37</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>public final class Settings {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>38</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * Static initialization of class-dependent logger.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>42</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l42s0'>    private static final Logger LOG =</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>43</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            LoggerFactory.getLogger(Settings.class);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>44</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>45</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final Configuration config;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>46</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * The resource in the JAR file to read the settings from.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>50</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private static final String PROPERTIES_RESOURCE</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>51</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    = "com/moneydance/modules/features/importlist/resources/"</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>52</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            + "settings.properties";</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>53</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>54</td><td class='count'>76</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l54s0'>    Settings() {</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38x2</li>
+          <li>com.moneydance.modules.features.importlist.util.SettingsTest#setUp: 35x37</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44x3</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetUserPreferences: 51, 55</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>55</td><td class='count'>76</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l55s0'>        final AbstractFileConfiguration abstractFileConfiguration =</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38x2</li>
+          <li>com.moneydance.modules.features.importlist.util.SettingsTest#setUp: 35x37</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44x3</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetUserPreferences: 51, 55</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>56</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                new PropertiesConfiguration();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>57</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>58</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        try {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>59</td><td class='count'>76</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l59s0'>            InputStream inputStream = Helper.getInputStreamFromResource(</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38x2</li>
+          <li>com.moneydance.modules.features.importlist.util.SettingsTest#setUp: 35x37</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44x3</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetUserPreferences: 51, 55</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>60</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                    PROPERTIES_RESOURCE);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>61</td><td class='count'>76</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l61s0'>            abstractFileConfiguration.load(inputStream);</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38x2</li>
+          <li>com.moneydance.modules.features.importlist.util.SettingsTest#setUp: 35x37</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44x3</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetUserPreferences: 51, 55</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>62</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l62s0'>        } catch (IllegalArgumentException e) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>63</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l63s0'>            LOG.warn(e.getMessage(), e);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>64</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l64s0'>        } catch (ConfigurationException e) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>65</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l65s0'>            LOG.warn(e.getMessage(), e);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>66</td><td class='count'>76</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l66s0'>        }</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38x2</li>
+          <li>com.moneydance.modules.features.importlist.util.SettingsTest#setUp: 35x37</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44x3</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetUserPreferences: 51, 55</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>67</td><td class='count'>76</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l67s0'>        this.config = abstractFileConfiguration;</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38x2</li>
+          <li>com.moneydance.modules.features.importlist.util.SettingsTest#setUp: 35x37</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44x3</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetUserPreferences: 51, 55</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>68</td><td class='count'>76</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l68s0'>    }</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38x2</li>
+          <li>com.moneydance.modules.features.importlist.util.SettingsTest#setUp: 35x37</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44x3</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetUserPreferences: 51, 55</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>69</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return The descriptive name of this extension.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>73</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public String getExtensionName() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>74</td><td class='count'>43</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l74s0'>        return this.config.getString("extension_name");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41x4</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 46x4</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41x12</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#testGetName: 61</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41x20</li>
+          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetExtensionName: 40</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testToString: 84        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>75</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>76</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return The ID string for this extension.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>80</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public String getExtensionIdentifier() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>81</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l81s0'>        return this.config.getString("extension_identifier");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetExtensionIdentifier: 46</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetID: 78        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>82</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>83</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return The icon image that represents this extension.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>87</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public String getIconResource() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>88</td><td class='count'>9</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l88s0'>        return this.config.getString("icon_resource");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#testGetIconImage: 66x2</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteAllRows: 107x2</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteRow: 115x2</li>
+          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetIconResource: 52</li>
+          <li>com.moneydance.modules.features.importlist.util.HelperTest#testGetIconImage: 61        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>89</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>90</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return The resource that contains the configuration of log4j.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>94</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public String getLog4jPropertiesResource() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>95</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l95s0'>        return this.config.getString("log4j_properties_resource");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38</li>
+          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetLog4jPropertiesResource: 58</li>
+          <li>com.moneydance.modules.features.importlist.util.HelperTest#testGetInputStreamFromResource: 54        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>96</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>97</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return The resource in the JAR file to read the language strings from.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>101</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public String getLocalizableResource() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>102</td><td class='count'>103</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l102s0'>        return this.config.getString("localizable_resource");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetLocalizableResource: 64</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#setUp: 38, 39</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testUpdate: 44</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#setUp: 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39, 38, 39</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x17</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x17</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71x17, 72        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>103</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>104</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return The suffix of the application event that lets the user change the
+     * base directory.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>109</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public String getChooseBaseDirSuffix() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>110</td><td class='count'>14</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l110s0'>        return this.config.getString("choose_base_dir_suffix");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 46</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41x5</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInvokeString: 72, 73x2</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41x3</li>
+          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetChooseBaseDirSuffix: 70        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>111</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>112</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return The scheme of the application event that imports a given file.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>116</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public String getTransactionFileImportUriScheme() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>117</td><td class='count'>8</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l117s0'>        return this.config.getString("transaction_file_import_uri_scheme");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.io.FileImporterTest#testPerform: 106, 107, 108</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportAllRows: 90x4</li>
+          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetTransactionFileImportUriScheme: 76        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>118</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>119</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return The scheme of the application event that imports a given CSV file
+     * using the text file importer plugin.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>124</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public String getTextFileImportUriScheme() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>125</td><td class='count'>7</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l125s0'>        return this.config.getString("text_file_import_uri_scheme");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.io.FileImporterTest#testPerform: 120, 121, 122</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportAllRows: 90x2</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportRow: 98</li>
+          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetTextFileImportUriScheme: 82        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>126</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>127</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return The amount of milliseconds to wait between two runs of the file
+     * scanner.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>132</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public int getMonitorInterval() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>133</td><td class='count'>63</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l133s0'>        return this.config.getInt("monitor_interval");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 46</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41x8</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 43x11</li>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 50, 56, 50, 56, 50, 56</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x16</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetMonitorIntervall: 88</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 37        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>134</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>135</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return Valid extensions of transaction files that can be imported
+     * (case-insensitive).
+     */
+</td></tr>
+    <tr>
+      <td class='line'>140</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public String[] getTransactionFileExtensions() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>141</td><td class='count'>63</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l141s0'>        String[] transactionFileExtensions =</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 46</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41x8</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 43x11</li>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 50, 56, 50, 56, 50, 56</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x16</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetTransactionFileExtensions: 94</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 37        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>142</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                this.config.getStringArray("transaction_file_extensions");</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>143</td><td class='count'>63</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l143s0'>        return transactionFileExtensions;</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 46</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41x8</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 43x11</li>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 50, 56, 50, 56, 50, 56</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x16</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetTransactionFileExtensions: 94</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 37        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>144</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>145</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return Valid extensions of text files that can be imported
+     * (case-insensitive).
+     */
+</td></tr>
+    <tr>
+      <td class='line'>150</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public String[] getTextFileExtensions() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>151</td><td class='count'>63</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l151s0'>        String[] textFileExtensions =</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 46</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41x8</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 43x11</li>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 50, 56, 50, 56, 50, 56</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x16</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetTextFileExtensions: 100</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 37        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>152</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                this.config.getStringArray("text_file_extensions");</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>153</td><td class='count'>63</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l153s0'>        return textFileExtensions;</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 46</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41x8</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 43x11</li>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 50, 56, 50, 56, 50, 56</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x16</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetTextFileExtensions: 100</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 37        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>154</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>155</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return Maximum length of a filename displayed in an error message.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>159</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public int getMaxFilenameLength() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>160</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l160s0'>        return this.config.getInt("max_filename_length");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetMaxFilenameLength: 106        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>161</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>162</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return Unique descriptor of the "name" column.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>166</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public String getDescName() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>167</td><td class='count'>123</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l167s0'>        return this.config.getString("desc_name");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38</li>
+          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetDescName: 112</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44x3</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetUserPreferences: 51, 55</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44x32</li>
+          <li>com.moneydance.modules.features.importlist.controller.AggregationTableModelTest#testGetValueAt: 56, 58, 60, 62, 64</li>
+          <li>com.moneydance.modules.features.importlist.controller.FileTableModelTest#testGetColumnClassInt: 58, 60, 62, 64, 66</li>
+          <li>com.moneydance.modules.features.importlist.controller.FileTableModelTest#testGetValueAtForFullModel: 77, 79, 81, 83, 85</li>
+          <li>com.moneydance.modules.features.importlist.controller.FileTableRowSorterTest#testIsSortable: 43, 44, 45</li>
+          <li>com.moneydance.modules.features.importlist.controller.FileTableRowSorterTest#testGetComparatorInt: 50, 51x2, 52</li>
+          <li>com.moneydance.modules.features.importlist.controller.TableListenerTest#testColumnMoved: 61x5</li>
+          <li>com.moneydance.modules.features.importlist.controller.TableListenerTest#testSorterChanged: 77x5</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x17</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x17</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71x17, 72        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>168</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>169</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return Unique descriptor of the "modified" column.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>173</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public String getDescModified() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>174</td><td class='count'>102</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l174s0'>        return this.config.getString("desc_modified");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38</li>
+          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetDescModified: 118</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44x3</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetUserPreferences: 51, 55</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44x32</li>
+          <li>com.moneydance.modules.features.importlist.controller.AggregationTableModelTest#testGetValueAt: 58, 60, 62, 64</li>
+          <li>com.moneydance.modules.features.importlist.controller.FileTableModelTest#testGetColumnClassInt: 60, 62, 64, 66</li>
+          <li>com.moneydance.modules.features.importlist.controller.FileTableModelTest#testGetValueAtForFullModel: 79, 81, 83, 85</li>
+          <li>com.moneydance.modules.features.importlist.controller.FileTableRowSorterTest#testIsSortable: 44, 45</li>
+          <li>com.moneydance.modules.features.importlist.controller.FileTableRowSorterTest#testGetComparatorInt: 51x2, 52</li>
+          <li>com.moneydance.modules.features.importlist.controller.TableListenerTest#testColumnMoved: 61x3</li>
+          <li>com.moneydance.modules.features.importlist.controller.TableListenerTest#testSorterChanged: 77x3</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x13</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x13</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71x13, 72        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>175</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>176</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return Unique descriptor of the "import" column.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>180</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public String getDescImport() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>181</td><td class='count'>92</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l181s0'>        return this.config.getString("desc_import");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38</li>
+          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetDescImport: 124</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44x3</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetUserPreferences: 51, 55</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44x32</li>
+          <li>com.moneydance.modules.features.importlist.controller.AggregationTableModelTest#testIsCellEditable: 43, 44, 45</li>
+          <li>com.moneydance.modules.features.importlist.controller.AggregationTableModelTest#testGetValueAt: 60, 62, 64</li>
+          <li>com.moneydance.modules.features.importlist.controller.FileTableModelTest#testIsCellEditable: 51, 52, 53</li>
+          <li>com.moneydance.modules.features.importlist.controller.FileTableModelTest#testGetColumnClassInt: 62, 64, 66</li>
+          <li>com.moneydance.modules.features.importlist.controller.FileTableModelTest#testGetValueAtForFullModel: 81, 83, 85</li>
+          <li>com.moneydance.modules.features.importlist.controller.TableListenerTest#testColumnMoved: 61x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.TableListenerTest#testSorterChanged: 77x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x11</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x11</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71x11, 72        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>182</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>183</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return Unique descriptor of the "delete" column.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>187</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public String getDescDelete() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>188</td><td class='count'>79</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l188s0'>        return this.config.getString("desc_delete");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38</li>
+          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetDescDelete: 130</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44x3</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetUserPreferences: 51, 55</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44x32</li>
+          <li>com.moneydance.modules.features.importlist.controller.AggregationTableModelTest#testIsCellEditable: 44, 45</li>
+          <li>com.moneydance.modules.features.importlist.controller.AggregationTableModelTest#testGetValueAt: 62, 64</li>
+          <li>com.moneydance.modules.features.importlist.controller.FileTableModelTest#testIsCellEditable: 52, 53</li>
+          <li>com.moneydance.modules.features.importlist.controller.FileTableModelTest#testGetColumnClassInt: 64, 66</li>
+          <li>com.moneydance.modules.features.importlist.controller.FileTableModelTest#testGetValueAtForFullModel: 83, 85</li>
+          <li>com.moneydance.modules.features.importlist.controller.TableListenerTest#testColumnMoved: 61</li>
+          <li>com.moneydance.modules.features.importlist.controller.TableListenerTest#testSorterChanged: 77</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x9</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x9</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71x9, 72        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>189</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>190</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return Indentation prefix for table header and values.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>194</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public String getIndentationPrefix() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>195</td><td class='count'>23</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l195s0'>        return this.config.getString("indentation_prefix");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 66</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelNameRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 62</li>
+          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetIndentationPrefix: 136</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetHeaderValueName: 56</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetHeaderValueModified: 62</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetHeaderValueImport: 68</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetHeaderValueDelete: 74</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x4</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x4</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71x4, 72        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>196</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>197</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return Determines if the button columns can have different widths.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>201</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public boolean isButtonResizable() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>202</td><td class='count'>13</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l202s0'>        return this.config.getBoolean("button_resizable");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testIsButtonResizable: 142</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x4</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x4</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>203</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>204</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return Minimum width of all columns.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>208</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public int getMinColumnWidth() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>209</td><td class='count'>25</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l209s0'>        return this.config.getInt("min_column_width");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetMinColumnWidth: 148</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x8</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x8</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>210</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>211</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return Determines if reordering of the columns is allowed.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>215</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public boolean isReorderingAllowed() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>216</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l216s0'>        return this.config.getBoolean("reordering_allowed");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testIsReorderingAllowed: 154</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>217</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>218</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return Minimum width of the file table.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>222</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public int getMinimumTableWidth() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>223</td><td class='count'>5</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l223s0'>        return this.config.getInt("minimum_table_width");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetMinimumTableWidth: 160</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetPreferredTableWidth: 215</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>224</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>225</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return Minimum height of the file table.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>229</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public int getMinimumTableHeight() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>230</td><td class='count'>5</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l230s0'>        return this.config.getInt("minimum_table_height");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetMinimumTableHeight: 166</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetPreferredTableHeight: 221</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>231</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>232</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return Constant offset to determine the preferred table height.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>236</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public int getTableHeightOffset() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>237</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l237s0'>        return this.config.getInt("table_height_offset");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetTableHeightOffset: 172</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>238</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>239</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return The default width of the columns
+     */
+</td></tr>
+    <tr>
+      <td class='line'>243</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public int getColumnWidth() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>244</td><td class='count'>27</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l244s0'>        return this.config.getInt("column_width");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetColumnWidth: 178</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetColumnWidths: 153</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetColumnWidths: 160</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x8</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x8</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>245</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>246</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return Preferred width of the message box when no displayable file is
+     * found.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>251</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public int getPreferredEmptyMessageWidth() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>252</td><td class='count'>13</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l252s0'>        return this.config.getInt("preferred_empty_message_width");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetPreferredEmptyMessageWidth: 184</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x3</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x3</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71x3, 72        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>253</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>254</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return Preferred height of the message box when no displayable file is
+     * found.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>259</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public int getPreferredEmptyMessageHeight() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>260</td><td class='count'>13</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l260s0'>        return this.config.getInt("preferred_empty_message_height");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetPreferredEmptyMessageHeight: 190</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x3</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x3</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71x3, 72        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>261</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>262</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * The filename in the confirmation message is split in several lines. This
+     * value defines the maximum length of each line.
+     * @return The maximum length of each line.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>268</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public int getMessageFilenameLineMaxLength() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>269</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l269s0'>        return this.config.getInt("message_filename_line_max_length");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteRow: 115</li>
+          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetMessageFilenameLineMaxLength: 196</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetConfirmationMessageDeleteOneFile: 104</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetErrorMessageDeleteFile: 119        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>270</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>271</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return The length of the version substring extracted from the user's
+     * settings, e.g. 2007r5.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>276</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public int getLengthOfVersionDigits() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>277</td><td class='count'>21</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l277s0'>        return this.config.getInt("length_of_version_digits");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x16</li>
+          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetLengthOfVersionDigits: 202</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetMajorVersion: 86</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>278</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>279</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return The version of Moneydance that uses an opaque background for its
+     * homepage views.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>284</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public int getVersionWithOpaqueHomepageView() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>285</td><td class='count'>20</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l285s0'>        return this.config.getInt("version_with_opaque_homepage_view");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x16</li>
+          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetVersionWithOpaqueHomepageView: 208</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>286</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>287</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return The default foreground color.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>291</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public int getColorValueFgDef() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>292</td><td class='count'>9</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l292s0'>        return this.config.getInt("color_value_fg_def");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetColorValueFgDef: 214</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetForeground: 239</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71x2, 72        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>293</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>294</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return The default background color.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>298</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public int getColorValueBgDef() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>299</td><td class='count'>17</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l299s0'>        return this.config.getInt("color_value_bg_def");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetColorValueBgDef: 220</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetBackground: 245</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x4</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x4</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71x4, 72        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>300</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>301</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return Default alternative background color.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>305</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public int getColorValueBgAltDef() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>306</td><td class='count'>9</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l306s0'>        return this.config.getInt("color_value_bg_alt_def");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetColorValueBgAltDef: 226</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetBackgroundAlt: 251</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71x2, 72        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>307</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>308</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return The height of the header row by multiplying this value with
+     * the font size.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>313</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public double getFactorRowHeightHeader() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>314</td><td class='count'>15</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l314s0'>        return this.config.getDouble("factor_row_height_header");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 49x4, 66x4, 83x4</li>
+          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetFactorRowHeightHeader: 232</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetPreferredTableHeight: 221</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetHeaderRowHeight: 269        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>315</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>316</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return The height of a table row by adding this value to the font size.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>320</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public double getSummandRowHeightBody() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>321</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l321s0'>        return this.config.getDouble("summand_row_height_body");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetSummandRowHeightBody: 238</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetPreferredTableHeight: 221</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetBodyRowHeight: 275        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>322</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>323</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return Keyboard shortcut to import files.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>327</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public String getKeyboardShortcutImport() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>328</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l328s0'>        return this.config.getString("keyboard_shortcut_import");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#testGetKeyStroke: 62</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#testGetKeyStroke: 62</li>
+          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetKeyboardShortcutImport: 244        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>329</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>330</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return Keyboard shortcut to delete files.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>334</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public String getKeyboardShortcutDelete() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>335</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l335s0'>        return this.config.getString("keyboard_shortcut_delete");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#testGetKeyStroke: 62</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#testGetKeyStroke: 62</li>
+          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetKeyboardShortcutDelete: 250        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>336</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>337</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return Tracking code for Google Analytics (aka "utmac").
+     */
+</td></tr>
+    <tr>
+      <td class='line'>341</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public String getTrackingCode() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>342</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l342s0'>        return this.config.getString("tracking_code");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 46</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41x8</li>
+          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetTrackingCode: 256</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 37        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>343</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>344</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>

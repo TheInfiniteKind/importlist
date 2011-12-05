@@ -1,0 +1,507 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+<head>
+  <title>JMockit Coverage Report</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../../../../coverage.css'/>
+  <script type='text/javascript' src='../../../../../../coverage.js'></script>
+  <link rel='stylesheet' type='text/css' href='../../../../../../prettify.css'/>
+  <script type='text/javascript' src='../../../../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption><code>../master/src/com/moneydance/modules/features/importlist/util/FileTableModel.java</code></caption>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>/*
+ * Import List - http://my-flow.github.com/importlist/
+ * Copyright (C) 2011 Florian J. Breunig
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see &lt;http://www.gnu.org/licenses/>.
+ */
+</td></tr>
+    <tr>
+      <td class='line'>18</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>19</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package com.moneydance.modules.features.importlist.util;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>20</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>21</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>import java.io.File;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>22</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>import java.util.Date;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>23</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>import java.util.List;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>24</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>25</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>import javax.swing.table.AbstractTableModel;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>26</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>27</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>import org.apache.commons.lang3.Validate;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>28</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>29</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>/**
+ * This class provides a &lt;code>TableModel&lt;/code> implementation for a given
+ * &lt;code>List&lt;/code> of &lt;code>File&lt;/code>s. It takes care of the formatting and
+ * caching of its table values. The first two columns represent the name of the
+ * file and the date of its last modification, the last two columns represent
+ * the action buttons to import and delete the file, respectively.
+ *
+ * @author Florian J. Breunig
+ */
+</td></tr>
+    <tr>
+      <td class='line'>39</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>final class FileTableModel extends AbstractTableModel {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>40</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>41</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private static final long serialVersionUID = 3552703741263935211L;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>42</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final transient Preferences prefs;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>43</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final transient Settings    settings;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>44</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final transient Localizable localizable;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>45</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final           List&lt;File>  files;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>46</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>47</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l47s0'>    FileTableModel(final List&lt;File> argFiles) {</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.controller.FileTableRowSorterTest#setUp: 40        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>48</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l48s0'>        Validate.notNull(argFiles, "argFiles can't be null");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.controller.FileTableRowSorterTest#setUp: 40        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>49</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l49s0'>        this.prefs       = Helper.getPreferences();</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.controller.FileTableRowSorterTest#setUp: 40        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>50</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l50s0'>        this.settings    = Helper.getSettings();</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.controller.FileTableRowSorterTest#setUp: 40        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>51</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l51s0'>        this.localizable = Helper.getLocalizable();</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.controller.FileTableRowSorterTest#setUp: 40        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>52</td><td>&nbsp;</td>
+      <td><pre class='comment'>        // ESCA-JAVA0256: argFiles is readonly by design</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>53</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l53s0'>        this.files       = argFiles;</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.controller.FileTableRowSorterTest#setUp: 40        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>54</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l54s0'>    }</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.controller.FileTableRowSorterTest#setUp: 40        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>55</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>56</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>57</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public Class&lt;?> getColumnClass(final int columnIndex) {</pre></td>
+    </tr>
+    <tr>
+      <td></td><td class='count'>0</td>
+      <td class='paths'>
+        <span style='cursor:default; background-color:#ff0000' onclick='hidePath()'>Path coverage: 0/5</span>
+        <span class='uncovered' onclick="showPath(this,'l58s0 l60s0 l61s0')">A: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l58s0 l60s0 l63s0 l64s0')">B: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l58s0 l60s0 l63s0 l66s0 l67s0')">C: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l58s0 l60s0 l63s0 l66s0 l69s0 l70s0')">D: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l58s0 l60s0 l63s0 l66s0 l69s0 l72s0')">E: 0</span>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>58</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l58s0'>        String columnName = this.getColumnName(columnIndex);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>59</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>60</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>        <span id='l60s0' title='Executions: 0' class='uncovered'>if (this.settings.getDescName().equals(columnName)) {</span></pre></td>
+    </tr>
+    <tr>
+      <td class='line'>61</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l61s0'>            return String.class;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>62</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>63</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>        <span id='l63s0' title='Executions: 0' class='uncovered'>if (this.settings.getDescModified().equals(columnName)) {</span></pre></td>
+    </tr>
+    <tr>
+      <td class='line'>64</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l64s0'>            return Date.class;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>65</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>66</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>        <span id='l66s0' title='Executions: 0' class='uncovered'>if (this.settings.getDescImport().equals(columnName)) {</span></pre></td>
+    </tr>
+    <tr>
+      <td class='line'>67</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l67s0'>            return String.class;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>68</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>69</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>        <span id='l69s0' title='Executions: 0' class='uncovered'>if (this.settings.getDescDelete().equals(columnName)) {</span></pre></td>
+    </tr>
+    <tr>
+      <td class='line'>70</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l70s0'>            return String.class;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>71</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>72</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l72s0'>        return null;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>73</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>74</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>75</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>76</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public Object getValueAt(final int row, final int column) {</pre></td>
+    </tr>
+    <tr>
+      <td></td><td class='count'>0</td>
+      <td class='paths'>
+        <span style='cursor:default; background-color:#ff0000' onclick='hidePath()'>Path coverage: 0/6</span>
+        <span class='uncovered' onclick="showPath(this,'l77s0 l78s0 l79s0')">A: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l77s0 l82s0 l84s0 l85s0 l86s0')">B: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l77s0 l82s0 l84s0 l88s0 l89s0 l90s0')">C: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l77s0 l82s0 l84s0 l88s0 l92s0 l93s0')">D: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l77s0 l82s0 l84s0 l88s0 l92s0 l95s0 l96s0')">E: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l77s0 l82s0 l84s0 l88s0 l92s0 l95s0 l98s0')">F: 0</span>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>77</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>        <span id='l77s0' title='Executions: 0' class='uncovered'>if (row >= this.files.size()) {</span></pre></td>
+    </tr>
+    <tr>
+      <td class='line'>78</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l78s0'>            this.fireTableDataChanged();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>79</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l79s0'>            throw new IllegalArgumentException("Could not find value for row "</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>80</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l80s0'>                    + row + ", column " + column);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>81</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>82</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l82s0'>        String columnName = this.getColumnName(column);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>83</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>84</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>        <span id='l84s0' title='Executions: 0' class='uncovered'>if (this.settings.getDescName().equals(columnName)) {</span></pre></td>
+    </tr>
+    <tr>
+      <td class='line'>85</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l85s0'>            final File file = this.files.get(row);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>86</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l86s0'>            return file.getName();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>87</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>88</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>        <span id='l88s0' title='Executions: 0' class='uncovered'>if (this.settings.getDescModified().equals(columnName)) {</span></pre></td>
+    </tr>
+    <tr>
+      <td class='line'>89</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l89s0'>            final File file = this.files.get(row);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>90</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l90s0'>            return new Date(file.lastModified());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>91</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>92</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>        <span id='l92s0' title='Executions: 0' class='uncovered'>if (this.settings.getDescImport().equals(columnName)) {</span></pre></td>
+    </tr>
+    <tr>
+      <td class='line'>93</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l93s0'>            return this.localizable.getLabelImportOneButton();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>94</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>95</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>        <span id='l95s0' title='Executions: 0' class='uncovered'>if (this.settings.getDescDelete().equals(columnName)) {</span></pre></td>
+    </tr>
+    <tr>
+      <td class='line'>96</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l96s0'>            return this.localizable.getLabelDeleteOneButton();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>97</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>98</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l98s0'>        throw new IllegalArgumentException(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>99</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l99s0'>                "Could not find value for row " + row + ", column " + column);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>100</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>101</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * Only the last two columns contain buttons and are therefore editable.
+     *
+     * @param row    the row whose value is to be queried
+     * @param column the column whose value is to be queried
+     * @return true  if the column is the last or penultimate one in the model
+     */
+</td></tr>
+    <tr>
+      <td class='line'>109</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>110</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public boolean isCellEditable(final int row, final int column) {</pre></td>
+    </tr>
+    <tr>
+      <td></td><td class='count'>0</td>
+      <td class='paths'>
+        <span style='cursor:default; background-color:#ff0000' onclick='hidePath()'>Path coverage: 0/3</span>
+        <span class='uncovered' onclick="showPath(this,'l111s0 l112s0 l113s0')">A: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l111s0 l112s0 l115s0 l116s0')">B: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l111s0 l112s0 l115s0 l118s0')">C: 0</span>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>111</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l111s0'>        String columnName = this.getColumnName(column);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>112</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>        <span id='l112s0' title='Executions: 0' class='uncovered'>if (this.settings.getDescImport().equals(columnName)) {</span></pre></td>
+    </tr>
+    <tr>
+      <td class='line'>113</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l113s0'>            return true;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>114</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>115</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>        <span id='l115s0' title='Executions: 0' class='uncovered'>if (this.settings.getDescDelete().equals(columnName)) {</span></pre></td>
+    </tr>
+    <tr>
+      <td class='line'>116</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l116s0'>            return true;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>117</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>118</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l118s0'>        return false;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>119</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>120</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>121</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>122</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public int getColumnCount() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>123</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l123s0'>        return this.prefs.getColumnCount();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>124</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>125</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>126</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>127</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public String getColumnName(final int column) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>128</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l128s0'>        return this.prefs.getColumnName(column);</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.controller.FileTableRowSorterTest#testIsSortable: 45        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>129</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>130</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>131</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>132</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public int getRowCount() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>133</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l133s0'>        return this.files.size();</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.controller.FileTableRowSorterTest#setUp: 40        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>134</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>135</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>

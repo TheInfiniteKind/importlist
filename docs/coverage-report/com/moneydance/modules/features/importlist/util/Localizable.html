@@ -1,0 +1,928 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+<head>
+  <title>JMockit Coverage Report</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../../../../coverage.css'/>
+  <script type='text/javascript' src='../../../../../../coverage.js'></script>
+  <link rel='stylesheet' type='text/css' href='../../../../../../prettify.css'/>
+  <script type='text/javascript' src='../../../../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption><code>../master/src/com/moneydance/modules/features/importlist/util/Localizable.java</code></caption>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>/*
+ * Import List - http://my-flow.github.com/importlist/
+ * Copyright (C) 2011 Florian J. Breunig
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see &lt;http://www.gnu.org/licenses/>.
+ */
+</td></tr>
+    <tr>
+      <td class='line'>18</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>19</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package com.moneydance.modules.features.importlist.util;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>20</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>21</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>import java.util.HashMap;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>22</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>import java.util.Map;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>23</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>import java.util.Observable;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>24</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>import java.util.Observer;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>25</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>import java.util.ResourceBundle;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>26</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>27</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>import org.apache.commons.lang3.text.StrSubstitutor;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>28</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>import org.apache.commons.lang3.text.WordUtils;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>29</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>/**
+ * This i18n class provides language-dependent strings such as labels and
+ * messages.
+ *
+ * @author Florian J. Breunig
+ */
+</td></tr>
+    <tr>
+      <td class='line'>36</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>public final class Localizable implements Observer {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>37</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>38</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final Preferences     prefs;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>39</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final Settings        settings;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>40</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private       ResourceBundle  <span class='instance covered' title='Reads: 50 Writes: 102'>resourceBundle</span>;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>41</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>42</td><td class='count'>17</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l42s0'>    Localizable() {</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#setUp: 38        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>43</td><td class='count'>17</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l43s0'>        this.prefs    = Helper.getPreferences();</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#setUp: 38        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>44</td><td class='count'>17</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l44s0'>        this.prefs.addObserver(this);</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#setUp: 38        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>45</td><td class='count'>17</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l45s0'>        this.settings = Helper.getSettings();</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#setUp: 38        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>46</td><td class='count'>17</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l46s0'>        this.resourceBundle = ResourceBundle.getBundle(</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#setUp: 38        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>47</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                this.settings.getLocalizableResource(),</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>48</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                this.prefs.getLocale());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>49</td><td class='count'>17</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l49s0'>    }</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#setUp: 38        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>50</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>51</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>52</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public void update(final Observable observable, final Object updateAll) {</pre></td>
+    </tr>
+    <tr>
+      <td></td><td class='count'>87</td>
+      <td class='paths'>
+        <span style='cursor:default; background-color:#00ff00' onclick='hidePath()'>Path coverage: 2/2</span>
+        <span class='covered' onclick="showPath(this,'l53s0 l54s0')">A: 2</span>
+        <span class='covered' onclick="showPath(this,'l53s0 l56s0 l59s0')">B: 85</span>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>53</td><td class='count'>87</td>
+      <td><pre class='prettyprint jmp'>        <span id='l53s0' title='Executions: 87' class='covered cp' onclick='showHide(this,0)'>if (!Boolean.TRUE.equals(updateAll)) {</span></pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#setUp: 39</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testUpdate: 44, 45</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#setUp: 39x15</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x17</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x17</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71x17, 72        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>54</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l54s0'>            return;</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testUpdate: 45        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>55</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>56</td><td class='count'>85</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l56s0'>        this.resourceBundle = ResourceBundle.getBundle(</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#setUp: 39</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testUpdate: 44</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#setUp: 39x15</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x17</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x17</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71x17, 72        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>57</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                this.settings.getLocalizableResource(),</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>58</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                this.prefs.getLocale());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>59</td><td class='count'>85</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l59s0'>    }</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#setUp: 39</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testUpdate: 44</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#setUp: 39x15</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x17</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x17</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71x17, 72        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>60</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>61</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private ResourceBundle getResourceBundle() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>62</td><td class='count'>50</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l62s0'>        return this.resourceBundle;</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInvokeString: 73</li>
+          <li>com.moneydance.modules.features.importlist.io.DirectoryChooserTest#testReset: 33, 36</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testResetBaseDirectory: 48</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteAllRows: 107x3</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteRow: 115x3</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetDirectoryChooserTitle: 50</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetHeaderValueName: 56</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetHeaderValueModified: 62</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetHeaderValueImport: 68</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetHeaderValueDelete: 74</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetLabelImportOneButton: 80</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetLabelImportAllButton: 86</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetLabelDeleteOneButton: 92</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetLabelDeleteAllButton: 98</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetConfirmationMessageDeleteOneFile: 104</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetConfirmationMessageDeleteAllFiles: 112</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetErrorMessageDeleteFile: 119</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetOptionDeleteFile: 125</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetOptionCancel: 131</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetEmptyMessage: 137</li>
+          <li>com.moneydance.modules.features.importlist.controller.AggregationTableModelTest#testGetValueAt: 60, 62</li>
+          <li>com.moneydance.modules.features.importlist.controller.FileTableModelTest#testGetValueAtForFullModel: 81, 83</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x5</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testResetBaseDirectory: 90</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x5</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71x5, 72        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>63</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>64</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return The title of the dialog that is displayed to choose the base
+     * directory.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>69</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public String getDirectoryChooserTitle() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>70</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l70s0'>        return this.getResourceBundle().getString("directory_chooser_title");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInvokeString: 73</li>
+          <li>com.moneydance.modules.features.importlist.io.DirectoryChooserTest#testReset: 33, 36</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testResetBaseDirectory: 48</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetDirectoryChooserTitle: 50</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testResetBaseDirectory: 90        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>71</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>72</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return Header of the "name" column.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>76</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public String getHeaderValueName() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>77</td><td class='count'>5</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l77s0'>        final String headerValueName =</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetHeaderValueName: 56</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71, 72        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>78</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            this.getResourceBundle().getString("header_value_name");</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>79</td><td class='count'>5</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l79s0'>        return this.settings.getIndentationPrefix() + headerValueName;</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetHeaderValueName: 56</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71, 72        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>80</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>81</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return Header of the "modified" column.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>85</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public String getHeaderValueModified() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>86</td><td class='count'>5</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l86s0'>        final String headerValueModified =</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetHeaderValueModified: 62</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71, 72        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>87</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            this.getResourceBundle().getString("header_value_modified");</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>88</td><td class='count'>5</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l88s0'>        return this.settings.getIndentationPrefix() + headerValueModified;</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetHeaderValueModified: 62</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71, 72        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>89</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>90</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return Header of the "import" column.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>94</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public String getHeaderValueImport() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>95</td><td class='count'>5</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l95s0'>        final String headerValueImport =</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetHeaderValueImport: 68</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71, 72        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>96</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            this.getResourceBundle().getString("header_value_import");</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>97</td><td class='count'>5</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l97s0'>        return this.settings.getIndentationPrefix() + headerValueImport;</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetHeaderValueImport: 68</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71, 72        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>98</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>99</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return Header of the "delete" column.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>103</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public String getHeaderValueDelete() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>104</td><td class='count'>5</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l104s0'>        final String headerValueDelete =</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetHeaderValueDelete: 74</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71, 72        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>105</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            this.getResourceBundle().getString("header_value_delete");</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>106</td><td class='count'>5</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l106s0'>        return this.settings.getIndentationPrefix() + headerValueDelete;</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetHeaderValueDelete: 74</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71, 72        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>107</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>108</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return Label of the "import" button.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>112</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public String getLabelImportOneButton() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>113</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l113s0'>        return this.getResourceBundle().getString("label_import_one_button");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetLabelImportOneButton: 80</li>
+          <li>com.moneydance.modules.features.importlist.controller.FileTableModelTest#testGetValueAtForFullModel: 81        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>114</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>115</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return Label of the "import all" button.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>119</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public String getLabelImportAllButton() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>120</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l120s0'>        return this.getResourceBundle().getString("label_import_all_button");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetLabelImportAllButton: 86</li>
+          <li>com.moneydance.modules.features.importlist.controller.AggregationTableModelTest#testGetValueAt: 60        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>121</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>122</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return Label of the "delete" button.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>126</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public String getLabelDeleteOneButton() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>127</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l127s0'>        return this.getResourceBundle().getString("label_delete_one_button");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetLabelDeleteOneButton: 92</li>
+          <li>com.moneydance.modules.features.importlist.controller.FileTableModelTest#testGetValueAtForFullModel: 83        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>128</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>129</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return Label of the "delete all" button.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>133</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public String getLabelDeleteAllButton() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>134</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l134s0'>        return this.getResourceBundle().getString("label_delete_all_button");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetLabelDeleteAllButton: 98</li>
+          <li>com.moneydance.modules.features.importlist.controller.AggregationTableModelTest#testGetValueAt: 62        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>135</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>136</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @param filename The name of the file that is to be deleted.
+     * @return Confirmation message to be displayed before a file will be
+     *  deleted.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>142</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public String getConfirmationMessageDeleteOneFile(final String filename) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>143</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l143s0'>        final String templateString = this.getResourceBundle().getString(</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteRow: 115</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetConfirmationMessageDeleteOneFile: 104        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>144</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        "confirmation_message_delete_one_file");</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>145</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>146</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l146s0'>        Map&lt;String, String> valuesMap = new HashMap&lt;String, String>();</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteRow: 115</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetConfirmationMessageDeleteOneFile: 104        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>147</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l147s0'>        valuesMap.put("filename",  this.getMarkupFilename(filename));</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteRow: 115</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetConfirmationMessageDeleteOneFile: 104        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>148</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l148s0'>        StrSubstitutor sub = new StrSubstitutor(valuesMap);</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteRow: 115</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetConfirmationMessageDeleteOneFile: 104        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>149</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>150</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l150s0'>        return sub.replace(templateString);</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteRow: 115</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetConfirmationMessageDeleteOneFile: 104        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>151</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>152</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @param size The number of all files that are to be deleted.
+     * @return Confirmation message to be displayed before all files will be
+     *  deleted.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>158</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public String getConfirmationMessageDeleteAllFiles(final int size) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>159</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l159s0'>        final String templateString = this.getResourceBundle().getString(</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteAllRows: 107</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetConfirmationMessageDeleteAllFiles: 112        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>160</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        "confirmation_message_delete_all_files");</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>161</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>162</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l162s0'>        Map&lt;String, String> valuesMap = new HashMap&lt;String, String>();</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteAllRows: 107</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetConfirmationMessageDeleteAllFiles: 112        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>163</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l163s0'>        valuesMap.put("no.files",  String.valueOf(size));</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteAllRows: 107</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetConfirmationMessageDeleteAllFiles: 112        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>164</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l164s0'>        StrSubstitutor sub = new StrSubstitutor(valuesMap);</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteAllRows: 107</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetConfirmationMessageDeleteAllFiles: 112        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>165</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>166</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l166s0'>        return sub.replace(templateString);</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteAllRows: 107</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetConfirmationMessageDeleteAllFiles: 112        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>167</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>168</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @param filename The name of the file that cannot be deleted.
+     * @return Error message to be displayed if a file cannot be deleted.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>173</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public String getErrorMessageDeleteFile(final String filename) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>174</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l174s0'>        final String templateString = this.getResourceBundle().getString(</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetErrorMessageDeleteFile: 119        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>175</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        "error_message_delete_file");</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>176</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>177</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l177s0'>        Map&lt;String, String> valuesMap = new HashMap&lt;String, String>();</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetErrorMessageDeleteFile: 119        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>178</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l178s0'>        valuesMap.put("filename",  this.getMarkupFilename(filename));</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetErrorMessageDeleteFile: 119        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>179</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l179s0'>        StrSubstitutor sub = new StrSubstitutor(valuesMap);</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetErrorMessageDeleteFile: 119        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>180</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>181</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l181s0'>        return sub.replace(templateString);</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetErrorMessageDeleteFile: 119        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>182</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>183</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return Delete button in confirmation message.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>187</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public String getOptionDeleteFile() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>188</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l188s0'>        return this.getResourceBundle().getString("option_delete_file");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteAllRows: 107</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteRow: 115</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetOptionDeleteFile: 125        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>189</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>190</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @return Cancel button in confirmation message.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>194</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public String getOptionCancel() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>195</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l195s0'>        return this.getResourceBundle().getString("option_cancel");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteAllRows: 107</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteRow: 115</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetOptionCancel: 131        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>196</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>197</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * @param baseDirectory The base directory which does not contain any files
+     * to display.
+     * @return Message to display if the list of files is empty.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>203</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public String getEmptyMessage(final String baseDirectory) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>204</td><td class='count'>5</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l204s0'>        final String templateString = this.getResourceBundle().getString(</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetEmptyMessage: 137</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71, 72        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>205</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        "empty_message");</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>206</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>207</td><td class='count'>5</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l207s0'>        Map&lt;String, String> valuesMap = new HashMap&lt;String, String>();</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetEmptyMessage: 137</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71, 72        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>208</td><td class='count'>5</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l208s0'>        valuesMap.put("import.dir", baseDirectory);</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetEmptyMessage: 137</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71, 72        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>209</td><td class='count'>5</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l209s0'>        StrSubstitutor sub = new StrSubstitutor(valuesMap);</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetEmptyMessage: 137</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71, 72        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>210</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>211</td><td class='count'>5</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l211s0'>        return sub.replace(templateString);</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetEmptyMessage: 137</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71, 72        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>212</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>213</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>214</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private String getMarkupFilename(final String filename) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>215</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l215s0'>        int length = this.settings.getMessageFilenameLineMaxLength();</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteRow: 115</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetConfirmationMessageDeleteOneFile: 104</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetErrorMessageDeleteFile: 119        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>216</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l216s0'>        return WordUtils.wrap(filename, length, "&lt;br>", /*wrapLongWords*/ true);</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteRow: 115</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetConfirmationMessageDeleteOneFile: 104</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetErrorMessageDeleteFile: 119        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>217</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>218</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>

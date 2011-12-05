@@ -1,0 +1,576 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+<head>
+  <title>JMockit Coverage Report</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../../../coverage.css'/>
+  <script type='text/javascript' src='../../../../../coverage.js'></script>
+  <link rel='stylesheet' type='text/css' href='../../../../../prettify.css'/>
+  <script type='text/javascript' src='../../../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption><code>../master/src/com/moneydance/modules/features/importlist/Main.java</code></caption>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>/*
+ * Import List - http://my-flow.github.com/importlist/
+ * Copyright (C) 2011 Florian J. Breunig
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see &lt;http://www.gnu.org/licenses/>.
+ */
+</td></tr>
+    <tr>
+      <td class='line'>18</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>19</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package com.moneydance.modules.features.importlist;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>20</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>21</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>import java.awt.Image;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>22</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>import java.util.Observable;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>23</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>import java.util.Observer;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>24</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>25</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>import org.slf4j.Logger;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>26</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>import org.slf4j.LoggerFactory;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>27</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>28</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>import com.moneydance.apps.md.controller.FeatureModule;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>29</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>import com.moneydance.apps.md.view.HomePageView;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>30</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>import com.moneydance.modules.features.importlist.controller.ViewController;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>31</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>import com.moneydance.modules.features.importlist.util.Helper;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>32</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>import com.moneydance.modules.features.importlist.util.Preferences;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>33</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>import com.moneydance.modules.features.importlist.util.Settings;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>34</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>/**
+ * The main class of the extension, instantiated by Moneydance's class loader.
+ *
+ * @author Florian J. Breunig
+ */
+</td></tr>
+    <tr>
+      <td class='line'>40</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>public final class Main extends FeatureModule implements Observer {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>41</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>42</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    static {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>43</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l43s0'>        Helper.loadLoggerConfiguration();</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>44</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>45</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * Static initialization of class-dependent logger.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>49</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l49s0'>    private static final Logger LOG = LoggerFactory.getLogger(Main.class);</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>50</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>51</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final           Preferences  prefs;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>52</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final           Settings     settings;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>53</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private String          <span class='instance covered' title='Reads: 10 Writes: 1'>baseDirectory</span>;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>54</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private ViewController  <span class='instance covered' title='Reads: 15 Writes: 10'>viewController</span>;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>55</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>    /**
+     * Standard constructor must be available in the Moneydance context.
+     */
+</td></tr>
+    <tr>
+      <td class='line'>59</td><td class='count'>9</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l59s0'>    public Main() {</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>60</td><td class='count'>9</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l60s0'>        LOG.info("Initializing extension in Moneydance's application context.");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>61</td><td class='count'>9</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l61s0'>        this.prefs    = Helper.getPreferences();</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>62</td><td class='count'>9</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l62s0'>        this.settings = Helper.getSettings();</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>63</td><td class='count'>9</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l63s0'>    }</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>64</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>65</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>66</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public void init() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>67</td><td class='count'>10</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l67s0'>        this.prefs.addObserver(this);</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 46</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>68</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>69</td><td class='count'>10</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l69s0'>        this.viewController = new ViewController(</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 46</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>70</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                this.baseDirectory,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>71</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                this.getContext(),</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>72</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                this.getBuild());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>73</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>74</td><td>&nbsp;</td>
+      <td><pre class='comment'>        // register this module's homepage view</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>75</td><td class='count'>10</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l75s0'>        LOG.debug("Registering homepage view");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 46</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>76</td><td class='count'>10</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l76s0'>        this.getContext().registerHomePageView(this, this.viewController);</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 46</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>77</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>78</td><td>&nbsp;</td>
+      <td><pre class='comment'>        // register this module to be invoked via the application toolbar</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>79</td><td class='count'>10</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l79s0'>        LOG.debug("Registering toolbar feature");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 46</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>80</td><td class='count'>10</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l80s0'>        this.getContext().registerFeature(</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 46</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>81</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                this,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>82</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                this.settings.getChooseBaseDirSuffix(),</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>83</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                null, // buttonImage</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>84</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                this.getName());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>85</td><td class='count'>10</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l85s0'>    }</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 46</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>86</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>87</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>88</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public String getName() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>89</td><td class='count'>31</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l89s0'>        return this.settings.getExtensionName();</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41x3</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 46x3</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41x9</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#testGetName: 61</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>90</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>91</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>92</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>93</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public Image getIconImage() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>94</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l94s0'>        return Helper.getIconImage();</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#testGetIconImage: 66        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>95</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>96</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>97</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>98</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public void invoke(final String uri) {</pre></td>
+    </tr>
+    <tr>
+      <td></td><td class='count'>2</td>
+      <td class='paths'>
+        <span style='cursor:default; background-color:#00ff00' onclick='hidePath()'>Path coverage: 2/2</span>
+        <span class='covered' onclick="showPath(this,'l99s0 l102s0')">A: 1</span>
+        <span class='covered' onclick="showPath(this,'l99s0 l100s0 l102s0')">B: 1</span>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>99</td><td class='count'>2</td>
+      <td><pre class='prettyprint jmp'>        <span id='l99s0' title='Executions: 2' class='covered cp' onclick='showHide(this,0)'>if (this.settings.getChooseBaseDirSuffix().equals(uri)) {</span></pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInvokeString: 72, 73        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>100</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l100s0'>            this.viewController.resetBaseDirectory();</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInvokeString: 73        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>101</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>102</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l102s0'>    }</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInvokeString: 72, 73        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>103</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>104</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>105</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public void update(final Observable observable, final Object updateAll) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>106</td><td class='count'>38</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l106s0'>        LOG.info("Reloading context from underlying framework.");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#testUpdate: 78</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x9</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x9</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71x9, 72        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>107</td><td class='count'>38</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l107s0'>        this.prefs.setContext(this.getContext());</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#testUpdate: 78</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x9</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x9</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71x9, 72        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>108</td><td class='count'>38</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l108s0'>    }</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#testUpdate: 78</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x9</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x9</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71x9, 72        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>109</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>110</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>111</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public void unload() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>112</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l112s0'>        LOG.info("Unloading extension.");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#testUnload: 51        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>113</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l113s0'>        this.viewController.setActive(false);</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#testUnload: 51        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>114</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l114s0'>        this.cleanup();</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#testUnload: 51        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>115</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l115s0'>        this.prefs.setAllWritablePreferencesToNull();</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#testUnload: 51        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>116</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l116s0'>    }</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#testUnload: 51        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>117</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>118</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>119</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public void cleanup() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>120</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l120s0'>        this.viewController.cleanup();</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#testUnload: 51</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#testCleanup: 56        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>121</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l121s0'>    }</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#testUnload: 51</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#testCleanup: 56        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>122</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>123</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    void setBaseDirectory(final String argBaseDirectory) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>124</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l124s0'>        this.baseDirectory = argBaseDirectory;</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#testSetBaseDirectory: 83        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>125</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l125s0'>    }</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#testSetBaseDirectory: 83        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>126</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>127</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    HomePageView getHomePageView() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>128</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l128s0'>        return this.viewController;</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.MainTest#testGetHomePageView: 88        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>129</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>130</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>

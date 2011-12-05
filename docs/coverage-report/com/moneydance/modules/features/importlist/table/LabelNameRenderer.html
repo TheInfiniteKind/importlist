@@ -1,0 +1,294 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+<head>
+  <title>JMockit Coverage Report</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../../../../coverage.css'/>
+  <script type='text/javascript' src='../../../../../../coverage.js'></script>
+  <link rel='stylesheet' type='text/css' href='../../../../../../prettify.css'/>
+  <script type='text/javascript' src='../../../../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption><code>../master/src/com/moneydance/modules/features/importlist/table/LabelNameRenderer.java</code></caption>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>/*
+ * Import List - http://my-flow.github.com/importlist/
+ * Copyright (C) 2011 Florian J. Breunig
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see &lt;http://www.gnu.org/licenses/>.
+ */
+</td></tr>
+    <tr>
+      <td class='line'>18</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>19</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package com.moneydance.modules.features.importlist.table;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>20</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>21</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>import java.awt.Component;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>22</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>23</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>import javax.swing.JTable;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>24</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>import javax.swing.table.DefaultTableCellRenderer;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>25</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>26</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>import com.moneydance.modules.features.importlist.util.Helper;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>27</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>import com.moneydance.modules.features.importlist.util.Settings;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>28</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>import com.moneydance.modules.features.importlist.view.ColorSchemeHelper;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>29</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>/**
+ * @author Florian J. Breunig
+ */
+</td></tr>
+    <tr>
+      <td class='line'>33</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>class LabelNameRenderer extends DefaultTableCellRenderer {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>34</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>35</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private static final long serialVersionUID = 7553393304980261323L;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>36</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final transient ColorSchemeHelper colorSchemeHelper;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>37</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final transient Settings settings;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>38</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>39</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>40</td><td class='count'>39</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l40s0'>    LabelNameRenderer(final ColorSchemeHelper argColorSchemeHelper) {</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x32</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelNameRendererTest#setUp: 42</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>41</td><td class='count'>39</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l41s0'>        this.colorSchemeHelper = argColorSchemeHelper;</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x32</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelNameRendererTest#setUp: 42</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>42</td><td class='count'>39</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l42s0'>        this.settings          = Helper.getSettings();</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x32</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelNameRendererTest#setUp: 42</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>43</td><td class='count'>39</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l43s0'>    }</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x32</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelNameRendererTest#setUp: 42</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>44</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>45</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // ESCA-JAVA0138: abstract method from interface TableCellRenderer</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>46</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>47</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public final Component getTableCellRendererComponent(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>48</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            final JTable table,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>49</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            final Object value,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>50</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            final boolean isSelected,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>51</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            final boolean hasFocus,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>52</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            final int row,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>53</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            final int column) {</pre></td>
+    </tr>
+    <tr>
+      <td></td><td class='count'>2</td>
+      <td class='paths'>
+        <span style='cursor:default; background-color:#00ff00' onclick='hidePath()'>Path coverage: 2/2</span>
+        <span class='covered' onclick="showPath(this,'l54s0 l57s0 l60s0 l68s0')">A: 1</span>
+        <span class='covered' onclick="showPath(this,'l54s0 l57s0 l58s0 l60s0 l68s0')">B: 1</span>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>54</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l54s0'>        this.setOpaque(false);</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.table.LabelNameRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 52, 62        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>55</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l55s0'>        this.colorSchemeHelper.applyColorScheme(this, row);</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.table.LabelNameRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 52, 62        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>56</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l56s0'>        String label = null;</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.table.LabelNameRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 52, 62        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>57</td><td class='count'>2</td>
+      <td><pre class='prettyprint jmp'>        <span id='l57s0' title='Executions: 2' class='covered cp' onclick='showHide(this,0)'>if (value != null)</span> <span id='l57s1' title='Executions: 1' class='covered cp' onclick='showHide(this,1)'>{</span></pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.table.LabelNameRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 52, 62        </ol>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.table.LabelNameRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 62        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>58</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l58s0'>            label = this.settings.getIndentationPrefix() + value.toString();</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.table.LabelNameRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 62        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>59</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>60</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l60s0'>        super.getTableCellRendererComponent(</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.table.LabelNameRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 52, 62        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>61</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                table,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>62</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                label,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>63</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                isSelected,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>64</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                hasFocus,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>65</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                row,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>66</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                column);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>67</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l67s0'>        this.setBorder(noFocusBorder);</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.table.LabelNameRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 52, 62        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>68</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l68s0'>        return this;</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.table.LabelNameRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 52, 62        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>69</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>70</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>

@@ -1,0 +1,591 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+<head>
+  <title>JMockit Coverage Report</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../../../../coverage.css'/>
+  <script type='text/javascript' src='../../../../../../coverage.js'></script>
+  <link rel='stylesheet' type='text/css' href='../../../../../../prettify.css'/>
+  <script type='text/javascript' src='../../../../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption><code>../master/src/com/moneydance/modules/features/importlist/view/OddColorSchemeHelper.java</code></caption>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>/*
+ * Import List - http://my-flow.github.com/importlist/
+ * Copyright (C) 2011 Florian J. Breunig
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see &lt;http://www.gnu.org/licenses/>.
+ */
+</td></tr>
+    <tr>
+      <td class='line'>18</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>19</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package com.moneydance.modules.features.importlist.view;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>20</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>21</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>import java.awt.Color;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>22</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>import java.awt.Component;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>23</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>24</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>import javax.swing.JComponent;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>25</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>26</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>import org.apache.commons.lang3.Validate;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>27</td><td colspan='2'></td>
+    </tr>
+    <tr class='click' onclick='showHideLines(this)'>
+      <td class='line'></td><td>&nbsp;</td><td class='comment'>/**
+ * This helper class applies a given color scheme to a &lt;code>Component&lt;/code>.
+ * It is used by different &lt;code>TableCellRenderer&lt;/code>s to guarantee a
+ * consistent style in a table.
+ *
+ * @author Florian J. Breunig
+ */
+</td></tr>
+    <tr>
+      <td class='line'>35</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>public final class OddColorSchemeHelper implements ColorSchemeHelper {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>36</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>37</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private Color <span class='instance covered' title='Reads: 16 Writes: 52'>foreground</span>;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>38</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private Color <span class='instance covered' title='Reads: 16 Writes: 52'>background</span>;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>39</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private Color <span class='instance covered' title='Reads: 4 Writes: 52'>backgroundAlt</span>;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>40</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>41</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public OddColorSchemeHelper(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>42</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            final Color argForeground,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>43</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            final Color argBackground,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>44</td><td class='count'>46</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l44s0'>            final Color argBackgroundAlt) {</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 50, 56, 50, 56, 50, 56</li>
+          <li>com.moneydance.modules.features.importlist.table.ButtonRendererTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x16</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 42, 59, 76</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 44x3</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelNameRendererTest#setUp: 42</li>
+          <li>com.moneydance.modules.features.importlist.view.OddColorSchemeHelperTest#setUp: 40x4</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>45</td><td class='count'>46</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l45s0'>        this.setForeground(argForeground);</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 50, 56, 50, 56, 50, 56</li>
+          <li>com.moneydance.modules.features.importlist.table.ButtonRendererTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x16</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 42, 59, 76</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 44x3</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelNameRendererTest#setUp: 42</li>
+          <li>com.moneydance.modules.features.importlist.view.OddColorSchemeHelperTest#setUp: 40x4</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>46</td><td class='count'>46</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l46s0'>        this.setBackground(argBackground);</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 50, 56, 50, 56, 50, 56</li>
+          <li>com.moneydance.modules.features.importlist.table.ButtonRendererTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x16</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 42, 59, 76</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 44x3</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelNameRendererTest#setUp: 42</li>
+          <li>com.moneydance.modules.features.importlist.view.OddColorSchemeHelperTest#setUp: 40x4</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>47</td><td class='count'>46</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l47s0'>        this.setBackgroundAlt(argBackgroundAlt);</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 50, 56, 50, 56, 50, 56</li>
+          <li>com.moneydance.modules.features.importlist.table.ButtonRendererTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x16</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 42, 59, 76</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 44x3</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelNameRendererTest#setUp: 42</li>
+          <li>com.moneydance.modules.features.importlist.view.OddColorSchemeHelperTest#setUp: 40x4</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>48</td><td class='count'>46</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l48s0'>    }</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 50, 56, 50, 56, 50, 56</li>
+          <li>com.moneydance.modules.features.importlist.table.ButtonRendererTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x16</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 42, 59, 76</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 44x3</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelNameRendererTest#setUp: 42</li>
+          <li>com.moneydance.modules.features.importlist.view.OddColorSchemeHelperTest#setUp: 40x4</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>49</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>50</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>51</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public void applyColorScheme(final Component component, final int row) {</pre></td>
+    </tr>
+    <tr>
+      <td></td><td class='count'>16</td>
+      <td class='paths'>
+        <span style='cursor:default; background-color:#00ff00' onclick='hidePath()'>Path coverage: 3/3</span>
+        <span class='covered' onclick="showPath(this,'l52s0 l54s0 l61s0')">A: 12</span>
+        <span class='covered' onclick="showPath(this,'l52s0 l54s0 l55s0 l59s0 l61s0')">B: 1</span>
+        <span class='covered' onclick="showPath(this,'l52s0 l54s0 l55s0 l56s0 l59s0 l61s0')">C: 3</span>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>52</td><td class='count'>16</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l52s0'>        component.setForeground(this.foreground);</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testGetTableCellEditorComponentJTableObjectBooleanIntInt: 72, 81</li>
+          <li>com.moneydance.modules.features.importlist.table.ButtonRendererTest#testGetTableCellRendererComponent: 52</li>
+          <li>com.moneydance.modules.features.importlist.table.ButtonRendererTest#testGetTableCellRendererButton: 65</li>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 49, 66, 83</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 56, 66, 76</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelNameRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 52, 62</li>
+          <li>com.moneydance.modules.features.importlist.view.OddColorSchemeHelperTest#testApplyColorScheme: 49, 50, 53, 54        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>53</td><td class='count'>16</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l53s0'>        component.setBackground(this.background);</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testGetTableCellEditorComponentJTableObjectBooleanIntInt: 72, 81</li>
+          <li>com.moneydance.modules.features.importlist.table.ButtonRendererTest#testGetTableCellRendererComponent: 52</li>
+          <li>com.moneydance.modules.features.importlist.table.ButtonRendererTest#testGetTableCellRendererButton: 65</li>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 49, 66, 83</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 56, 66, 76</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelNameRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 52, 62</li>
+          <li>com.moneydance.modules.features.importlist.view.OddColorSchemeHelperTest#testApplyColorScheme: 49, 50, 53, 54        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>54</td><td class='count'>16</td>
+      <td><pre class='prettyprint jmp'>        <span id='l54s0' title='Executions: 16' class='covered cp' onclick='showHide(this,0)'>if (row % 2 != 0)</span> <span id='l54s1' title='Executions: 4' class='covered cp' onclick='showHide(this,1)'>{</span></pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testGetTableCellEditorComponentJTableObjectBooleanIntInt: 72, 81</li>
+          <li>com.moneydance.modules.features.importlist.table.ButtonRendererTest#testGetTableCellRendererComponent: 52</li>
+          <li>com.moneydance.modules.features.importlist.table.ButtonRendererTest#testGetTableCellRendererButton: 65</li>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 49, 66, 83</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 56, 66, 76</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelNameRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 52, 62</li>
+          <li>com.moneydance.modules.features.importlist.view.OddColorSchemeHelperTest#testApplyColorScheme: 49, 50, 53, 54        </ol>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testGetTableCellEditorComponentJTableObjectBooleanIntInt: 81</li>
+          <li>com.moneydance.modules.features.importlist.table.ButtonRendererTest#testGetTableCellRendererButton: 65</li>
+          <li>com.moneydance.modules.features.importlist.view.OddColorSchemeHelperTest#testApplyColorScheme: 50, 54        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>55</td><td class='count'>4</td>
+      <td><pre class='prettyprint jmp'>            <span id='l55s0' title='Executions: 4' class='covered cp' onclick='showHide(this,0)'>if (component instanceof JComponent)</span> <span id='l55s1' title='Executions: 3' class='covered cp' onclick='showHide(this,1)'>{</span></pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testGetTableCellEditorComponentJTableObjectBooleanIntInt: 81</li>
+          <li>com.moneydance.modules.features.importlist.table.ButtonRendererTest#testGetTableCellRendererButton: 65</li>
+          <li>com.moneydance.modules.features.importlist.view.OddColorSchemeHelperTest#testApplyColorScheme: 50, 54        </ol>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testGetTableCellEditorComponentJTableObjectBooleanIntInt: 81</li>
+          <li>com.moneydance.modules.features.importlist.table.ButtonRendererTest#testGetTableCellRendererButton: 65</li>
+          <li>com.moneydance.modules.features.importlist.view.OddColorSchemeHelperTest#testApplyColorScheme: 54        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>56</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l56s0'>                JComponent jComponent = (JComponent) component;</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testGetTableCellEditorComponentJTableObjectBooleanIntInt: 81</li>
+          <li>com.moneydance.modules.features.importlist.table.ButtonRendererTest#testGetTableCellRendererButton: 65</li>
+          <li>com.moneydance.modules.features.importlist.view.OddColorSchemeHelperTest#testApplyColorScheme: 54        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>57</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l57s0'>                jComponent.setOpaque(true);</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testGetTableCellEditorComponentJTableObjectBooleanIntInt: 81</li>
+          <li>com.moneydance.modules.features.importlist.table.ButtonRendererTest#testGetTableCellRendererButton: 65</li>
+          <li>com.moneydance.modules.features.importlist.view.OddColorSchemeHelperTest#testApplyColorScheme: 54        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>58</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>59</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l59s0'>            component.setBackground(this.backgroundAlt);</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testGetTableCellEditorComponentJTableObjectBooleanIntInt: 81</li>
+          <li>com.moneydance.modules.features.importlist.table.ButtonRendererTest#testGetTableCellRendererButton: 65</li>
+          <li>com.moneydance.modules.features.importlist.view.OddColorSchemeHelperTest#testApplyColorScheme: 50, 54        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>60</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>61</td><td class='count'>16</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l61s0'>    }</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testGetTableCellEditorComponentJTableObjectBooleanIntInt: 72, 81</li>
+          <li>com.moneydance.modules.features.importlist.table.ButtonRendererTest#testGetTableCellRendererComponent: 52</li>
+          <li>com.moneydance.modules.features.importlist.table.ButtonRendererTest#testGetTableCellRendererButton: 65</li>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 49, 66, 83</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 56, 66, 76</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelNameRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 52, 62</li>
+          <li>com.moneydance.modules.features.importlist.view.OddColorSchemeHelperTest#testApplyColorScheme: 49, 50, 53, 54        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>62</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>63</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>64</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public void setForeground(final Color argForeground) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>65</td><td class='count'>52</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l65s0'>        Validate.notNull(argForeground, "argForeground must not be null");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 50, 56, 50, 56, 50, 56</li>
+          <li>com.moneydance.modules.features.importlist.table.ButtonRendererTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x12</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#testSetForeground: 122</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x4</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 42, 59, 76</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 44x3</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelNameRendererTest#setUp: 42</li>
+          <li>com.moneydance.modules.features.importlist.view.OddColorSchemeHelperTest#setUp: 40</li>
+          <li>com.moneydance.modules.features.importlist.view.OddColorSchemeHelperTest#testSetForeground: 59</li>
+          <li>com.moneydance.modules.features.importlist.view.OddColorSchemeHelperTest#setUp: 40x3</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71x2, 72        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>66</td><td class='count'>52</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l66s0'>        this.foreground = argForeground;</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 50, 56, 50, 56, 50, 56</li>
+          <li>com.moneydance.modules.features.importlist.table.ButtonRendererTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x12</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#testSetForeground: 122</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x4</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 42, 59, 76</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 44x3</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelNameRendererTest#setUp: 42</li>
+          <li>com.moneydance.modules.features.importlist.view.OddColorSchemeHelperTest#setUp: 40</li>
+          <li>com.moneydance.modules.features.importlist.view.OddColorSchemeHelperTest#testSetForeground: 59</li>
+          <li>com.moneydance.modules.features.importlist.view.OddColorSchemeHelperTest#setUp: 40x3</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71x2, 72        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>67</td><td class='count'>52</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l67s0'>    }</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 50, 56, 50, 56, 50, 56</li>
+          <li>com.moneydance.modules.features.importlist.table.ButtonRendererTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x12</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#testSetForeground: 122</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x4</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 42, 59, 76</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 44x3</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelNameRendererTest#setUp: 42</li>
+          <li>com.moneydance.modules.features.importlist.view.OddColorSchemeHelperTest#setUp: 40</li>
+          <li>com.moneydance.modules.features.importlist.view.OddColorSchemeHelperTest#testSetForeground: 59</li>
+          <li>com.moneydance.modules.features.importlist.view.OddColorSchemeHelperTest#setUp: 40x3</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71x2, 72        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>68</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>69</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>70</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public void setBackground(final Color argBackground) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>71</td><td class='count'>52</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l71s0'>        Validate.notNull(argBackground, "argBackground must not be null");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 50, 56, 50, 56, 50, 56</li>
+          <li>com.moneydance.modules.features.importlist.table.ButtonRendererTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x13</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#testSetBackground: 127</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x3</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 42, 59, 76</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 44x3</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelNameRendererTest#setUp: 42</li>
+          <li>com.moneydance.modules.features.importlist.view.OddColorSchemeHelperTest#setUp: 40x2</li>
+          <li>com.moneydance.modules.features.importlist.view.OddColorSchemeHelperTest#testSetBackground: 64</li>
+          <li>com.moneydance.modules.features.importlist.view.OddColorSchemeHelperTest#setUp: 40x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71x2, 72        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>72</td><td class='count'>52</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l72s0'>        this.background = argBackground;</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 50, 56, 50, 56, 50, 56</li>
+          <li>com.moneydance.modules.features.importlist.table.ButtonRendererTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x13</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#testSetBackground: 127</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x3</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 42, 59, 76</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 44x3</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelNameRendererTest#setUp: 42</li>
+          <li>com.moneydance.modules.features.importlist.view.OddColorSchemeHelperTest#setUp: 40x2</li>
+          <li>com.moneydance.modules.features.importlist.view.OddColorSchemeHelperTest#testSetBackground: 64</li>
+          <li>com.moneydance.modules.features.importlist.view.OddColorSchemeHelperTest#setUp: 40x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71x2, 72        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>73</td><td class='count'>52</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l73s0'>    }</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 50, 56, 50, 56, 50, 56</li>
+          <li>com.moneydance.modules.features.importlist.table.ButtonRendererTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x13</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#testSetBackground: 127</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x3</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 42, 59, 76</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 44x3</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelNameRendererTest#setUp: 42</li>
+          <li>com.moneydance.modules.features.importlist.view.OddColorSchemeHelperTest#setUp: 40x2</li>
+          <li>com.moneydance.modules.features.importlist.view.OddColorSchemeHelperTest#testSetBackground: 64</li>
+          <li>com.moneydance.modules.features.importlist.view.OddColorSchemeHelperTest#setUp: 40x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71x2, 72        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>74</td><td colspan='2'></td>
+    </tr>
+    <tr>
+      <td class='line'>75</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>76</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public void setBackgroundAlt(final Color argBackgroundAlt) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>77</td><td class='count'>52</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l77s0'>        Validate.notNull(argBackgroundAlt, "argBackgroundAlt must not be null");</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 50, 56, 50, 56, 50, 56</li>
+          <li>com.moneydance.modules.features.importlist.table.ButtonRendererTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x14</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#testSetBackgroundAlt: 132</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 42, 59, 76</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 44x3</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelNameRendererTest#setUp: 42</li>
+          <li>com.moneydance.modules.features.importlist.view.OddColorSchemeHelperTest#setUp: 40x3</li>
+          <li>com.moneydance.modules.features.importlist.view.OddColorSchemeHelperTest#testSetBackgroundAlt: 69</li>
+          <li>com.moneydance.modules.features.importlist.view.OddColorSchemeHelperTest#setUp: 40</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71x2, 72        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>78</td><td class='count'>52</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l78s0'>        this.backgroundAlt = argBackgroundAlt;</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 50, 56, 50, 56, 50, 56</li>
+          <li>com.moneydance.modules.features.importlist.table.ButtonRendererTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x14</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#testSetBackgroundAlt: 132</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 42, 59, 76</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 44x3</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelNameRendererTest#setUp: 42</li>
+          <li>com.moneydance.modules.features.importlist.view.OddColorSchemeHelperTest#setUp: 40x3</li>
+          <li>com.moneydance.modules.features.importlist.view.OddColorSchemeHelperTest#testSetBackgroundAlt: 69</li>
+          <li>com.moneydance.modules.features.importlist.view.OddColorSchemeHelperTest#setUp: 40</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71x2, 72        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>79</td><td class='count'>52</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l79s0'>    }</pre>
+        <ol style='display: none;'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 50, 56, 50, 56, 50, 56</li>
+          <li>com.moneydance.modules.features.importlist.table.ButtonRendererTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x14</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#testSetBackgroundAlt: 132</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 42, 59, 76</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 44x3</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelNameRendererTest#setUp: 42</li>
+          <li>com.moneydance.modules.features.importlist.view.OddColorSchemeHelperTest#setUp: 40x3</li>
+          <li>com.moneydance.modules.features.importlist.view.OddColorSchemeHelperTest#testSetBackgroundAlt: 69</li>
+          <li>com.moneydance.modules.features.importlist.view.OddColorSchemeHelperTest#setUp: 40</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71x2, 72        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>80</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>
