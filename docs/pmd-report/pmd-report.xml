@@ -1,63 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pmd version="4.2.5" timestamp="2011-12-05T23:36:12.739">
-<file name="src/com/moneydance/modules/features/importlist/controller/TableListener.java">
-<violation beginline="92" endline="92" begincolumn="0" endcolumn="0" rule="ReplaceHashtableWithMap" ruleset="Migration Rules" package="com.moneydance.modules.features.importlist.controller" class="TableListener" externalInfoUrl="http://pmd.sourceforge.net/rules/migrating.html#ReplaceHashtableWithMap" priority="3">
-Consider replacing this Hashtable with the newer java.util.Map
-</violation>
-</file>
+<pmd version="4.2.5" timestamp="2012-03-08T11:28:29.374">
 <file name="src/com/moneydance/modules/features/importlist/controller/ViewController.java">
-<violation beginline="19" endline="496" begincolumn="0" endcolumn="0" rule="ExcessiveImports" ruleset="Coupling Rules" package="com.moneydance.modules.features.importlist.controller" class="ViewController" externalInfoUrl="http://pmd.sourceforge.net/rules/coupling.html#ExcessiveImports" priority="3">
-A high number of imports can indicate a high degree of coupling within an object.
+<violation beginline="56" endline="323" begincolumn="0" endcolumn="0" rule="TooManyMethods" ruleset="Code Size Rules" package="com.moneydance.modules.features.importlist.controller" class="ViewController" externalInfoUrl="http://pmd.sourceforge.net/rules/codesize.html#TooManyMethods" priority="3">
+This class has too many methods, consider refactoring it.
 </violation>
-<violation beginline="59" endline="496" begincolumn="0" endcolumn="0" rule="TooManyFields" ruleset="Code Size Rules" package="com.moneydance.modules.features.importlist.controller" class="ViewController" externalInfoUrl="http://pmd.sourceforge.net/rules/codesize.html#TooManyFields" priority="3">
-Too many fields
+<violation beginline="66" endline="66" begincolumn="0" endcolumn="0" rule="LongVariable" ruleset="Naming Rules" package="com.moneydance.modules.features.importlist.controller" class="ViewController" externalInfoUrl="http://pmd.sourceforge.net/rules/naming.html#LongVariable" priority="3">
+Avoid excessively long variable names like directoryChooserFactory
 </violation>
-<violation beginline="95" endline="270" begincolumn="0" endcolumn="0" rule="ExcessiveMethodLength" ruleset="Code Size Rules" package="com.moneydance.modules.features.importlist.controller" class="ViewController" externalInfoUrl="http://pmd.sourceforge.net/rules/codesize.html#ExcessiveMethodLength" priority="3">
-Avoid really long methods.
-</violation>
-<violation beginline="95" endline="270" begincolumn="0" endcolumn="0" rule="NcssMethodCount" ruleset="Code Size Rules" package="com.moneydance.modules.features.importlist.controller" class="ViewController" externalInfoUrl="http://pmd.sourceforge.net/rules/codesize.html#NcssMethodCount" priority="3">
-The method init() has an NCSS line count of 111
-</violation>
-<violation beginline="274" endline="403" begincolumn="0" endcolumn="0" rule="ExcessiveMethodLength" ruleset="Code Size Rules" package="com.moneydance.modules.features.importlist.controller" class="ViewController" externalInfoUrl="http://pmd.sourceforge.net/rules/codesize.html#ExcessiveMethodLength" priority="3">
-Avoid really long methods.
-</violation>
-<violation beginline="274" endline="403" begincolumn="0" endcolumn="0" rule="AvoidSynchronizedAtMethodLevel" ruleset="Design Rules" package="com.moneydance.modules.features.importlist.controller" class="ViewController" externalInfoUrl="http://pmd.sourceforge.net/rules/design.html#AvoidSynchronizedAtMethodLevel" priority="3">
+<violation beginline="124" endline="221" begincolumn="0" endcolumn="0" rule="AvoidSynchronizedAtMethodLevel" ruleset="Design Rules" package="com.moneydance.modules.features.importlist.controller" class="ViewController" externalInfoUrl="http://pmd.sourceforge.net/rules/design.html#AvoidSynchronizedAtMethodLevel" priority="3">
 Use block level rather than method level synchronization
 </violation>
 </file>
-<file name="src/com/moneydance/modules/features/importlist/io/DirectoryChooser.java">
-<violation beginline="66" endline="70" begincolumn="0" endcolumn="0" rule="ConfusingTernary" ruleset="Design Rules" package="com.moneydance.modules.features.importlist.io" class="DirectoryChooser" externalInfoUrl="http://pmd.sourceforge.net/rules/design.html#ConfusingTernary" priority="3">
-Avoid if (x != y) ..; else ..;
-</violation>
-<violation beginline="74" endline="74" begincolumn="0" endcolumn="0" rule="NullAssignment" ruleset="Controversial Rules" package="com.moneydance.modules.features.importlist.io" class="DirectoryChooser" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#NullAssignment" priority="3">
-Assigning an Object to null is a code smell.  Consider refactoring.
+<file name="src/com/moneydance/modules/features/importlist/io/DeleteAllOperation.java">
+<violation beginline="89" endline="89" begincolumn="0" endcolumn="0" rule="LongVariable" ruleset="Naming Rules" package="com.moneydance.modules.features.importlist.io" class="DeleteAllOperation" externalInfoUrl="http://pmd.sourceforge.net/rules/naming.html#LongVariable" priority="3">
+Avoid excessively long variable names like deleteOneOperation
 </violation>
 </file>
 <file name="src/com/moneydance/modules/features/importlist/io/FileAdmin.java">
-<violation beginline="58" endline="315" begincolumn="0" endcolumn="0" rule="TooManyMethods" ruleset="Code Size Rules" package="com.moneydance.modules.features.importlist.io" class="FileAdmin" externalInfoUrl="http://pmd.sourceforge.net/rules/codesize.html#TooManyMethods" priority="3">
-This class has too many methods, consider refactoring it.
-</violation>
-<violation beginline="65" endline="65" begincolumn="0" endcolumn="0" rule="SingularField" ruleset="Design Rules" package="com.moneydance.modules.features.importlist.io" class="FileAdmin" externalInfoUrl="http://pmd.sourceforge.net/rules/design.html#SingularField" priority="3">
-Perhaps 'settings' could be replaced by a local variable.
-</violation>
-<violation beginline="69" endline="69" begincolumn="0" endcolumn="0" rule="LongVariable" ruleset="Naming Rules" package="com.moneydance.modules.features.importlist.io" class="FileAdmin" externalInfoUrl="http://pmd.sourceforge.net/rules/naming.html#LongVariable" priority="3">
+<violation beginline="59" endline="59" begincolumn="0" endcolumn="0" rule="LongVariable" ruleset="Naming Rules" package="com.moneydance.modules.features.importlist.io" class="FileAdmin" externalInfoUrl="http://pmd.sourceforge.net/rules/naming.html#LongVariable" priority="3">
 Avoid excessively long variable names like transactionFileFilter
 </violation>
-<violation beginline="71" endline="71" begincolumn="0" endcolumn="0" rule="LongVariable" ruleset="Naming Rules" package="com.moneydance.modules.features.importlist.io" class="FileAdmin" externalInfoUrl="http://pmd.sourceforge.net/rules/naming.html#LongVariable" priority="3">
+<violation beginline="61" endline="61" begincolumn="0" endcolumn="0" rule="LongVariable" ruleset="Naming Rules" package="com.moneydance.modules.features.importlist.io" class="FileAdmin" externalInfoUrl="http://pmd.sourceforge.net/rules/naming.html#LongVariable" priority="3">
 Avoid excessively long variable names like readableFileFilter
 </violation>
-<violation beginline="116" endline="127" begincolumn="0" endcolumn="0" rule="AvoidSynchronizedAtMethodLevel" ruleset="Design Rules" package="com.moneydance.modules.features.importlist.io" class="FileAdmin" externalInfoUrl="http://pmd.sourceforge.net/rules/design.html#AvoidSynchronizedAtMethodLevel" priority="3">
+<violation beginline="107" endline="118" begincolumn="0" endcolumn="0" rule="AvoidSynchronizedAtMethodLevel" ruleset="Design Rules" package="com.moneydance.modules.features.importlist.io" class="FileAdmin" externalInfoUrl="http://pmd.sourceforge.net/rules/design.html#AvoidSynchronizedAtMethodLevel" priority="3">
 Use block level rather than method level synchronization
 </violation>
-<violation beginline="212" endline="212" begincolumn="0" endcolumn="0" rule="AvoidInstantiatingObjectsInLoops" ruleset="Optimization Rules" package="com.moneydance.modules.features.importlist.io" class="FileAdmin" externalInfoUrl="http://pmd.sourceforge.net/rules/optimizations.html#AvoidInstantiatingObjectsInLoops" priority="3">
-Avoid instantiating new objects inside loops
+<violation beginline="167" endline="167" begincolumn="0" endcolumn="0" rule="LongVariable" ruleset="Naming Rules" package="com.moneydance.modules.features.importlist.io" class="FileAdmin" externalInfoUrl="http://pmd.sourceforge.net/rules/naming.html#LongVariable" priority="3">
+Avoid excessively long variable names like importAllOperation
+</violation>
+<violation beginline="180" endline="180" begincolumn="0" endcolumn="0" rule="LongVariable" ruleset="Naming Rules" package="com.moneydance.modules.features.importlist.io" class="FileAdmin" externalInfoUrl="http://pmd.sourceforge.net/rules/naming.html#LongVariable" priority="3">
+Avoid excessively long variable names like importOneOperation
+</violation>
+<violation beginline="194" endline="194" begincolumn="0" endcolumn="0" rule="LongVariable" ruleset="Naming Rules" package="com.moneydance.modules.features.importlist.io" class="FileAdmin" externalInfoUrl="http://pmd.sourceforge.net/rules/naming.html#LongVariable" priority="3">
+Avoid excessively long variable names like deleteAllOperation
 </violation>
 </file>
-<file name="src/com/moneydance/modules/features/importlist/io/FileImporter.java">
-<violation beginline="49" endline="49" begincolumn="0" endcolumn="0" rule="LongVariable" ruleset="Naming Rules" package="com.moneydance.modules.features.importlist.io" class="FileImporter" externalInfoUrl="http://pmd.sourceforge.net/rules/naming.html#LongVariable" priority="3">
+<file name="src/com/moneydance/modules/features/importlist/io/ImportAllOperation.java">
+<violation beginline="34" endline="34" begincolumn="0" endcolumn="0" rule="LongVariable" ruleset="Naming Rules" package="com.moneydance.modules.features.importlist.io" class="ImportAllOperation" externalInfoUrl="http://pmd.sourceforge.net/rules/naming.html#LongVariable" priority="3">
 Avoid excessively long variable names like transactionFileFilter
 </violation>
-<violation beginline="60" endline="60" begincolumn="0" endcolumn="0" rule="LongVariable" ruleset="Naming Rules" package="com.moneydance.modules.features.importlist.io" class="FileImporter" externalInfoUrl="http://pmd.sourceforge.net/rules/naming.html#LongVariable" priority="3">
+<violation beginline="39" endline="39" begincolumn="0" endcolumn="0" rule="LongVariable" ruleset="Naming Rules" package="com.moneydance.modules.features.importlist.io" class="ImportAllOperation" externalInfoUrl="http://pmd.sourceforge.net/rules/naming.html#LongVariable" priority="3">
+Avoid excessively long variable names like argTransactionFileFilter
+</violation>
+<violation beginline="53" endline="53" begincolumn="0" endcolumn="0" rule="LongVariable" ruleset="Naming Rules" package="com.moneydance.modules.features.importlist.io" class="ImportAllOperation" externalInfoUrl="http://pmd.sourceforge.net/rules/naming.html#LongVariable" priority="3">
+Avoid excessively long variable names like importOneOperation
+</violation>
+</file>
+<file name="src/com/moneydance/modules/features/importlist/io/ImportOneOperation.java">
+<violation beginline="50" endline="50" begincolumn="0" endcolumn="0" rule="LongVariable" ruleset="Naming Rules" package="com.moneydance.modules.features.importlist.io" class="ImportOneOperation" externalInfoUrl="http://pmd.sourceforge.net/rules/naming.html#LongVariable" priority="3">
+Avoid excessively long variable names like transactionFileFilter
+</violation>
+<violation beginline="61" endline="61" begincolumn="0" endcolumn="0" rule="LongVariable" ruleset="Naming Rules" package="com.moneydance.modules.features.importlist.io" class="ImportOneOperation" externalInfoUrl="http://pmd.sourceforge.net/rules/naming.html#LongVariable" priority="3">
 Avoid excessively long variable names like argTransactionFileFilter
 </violation>
 </file>
@@ -98,9 +92,6 @@ Avoid excessively long variable names like argDefaultHeaderTableCellRenderer
 <violation beginline="47" endline="47" begincolumn="0" endcolumn="0" rule="LongVariable" ruleset="Naming Rules" package="com.moneydance.modules.features.importlist.table" class="LabelModifiedRenderer" externalInfoUrl="http://pmd.sourceforge.net/rules/naming.html#LongVariable" priority="3">
 Avoid excessively long variable names like argColorSchemeHelper
 </violation>
-<violation beginline="71" endline="71" begincolumn="0" endcolumn="0" rule="SimplifyConditional" ruleset="Design Rules" package="com.moneydance.modules.features.importlist.table" class="LabelModifiedRenderer" externalInfoUrl="http://pmd.sourceforge.net/rules/design.html#SimplifyConditional" priority="3">
-No need to check for null before an instanceof
-</violation>
 </file>
 <file name="src/com/moneydance/modules/features/importlist/table/LabelNameRenderer.java">
 <violation beginline="40" endline="40" begincolumn="0" endcolumn="0" rule="LongVariable" ruleset="Naming Rules" package="com.moneydance.modules.features.importlist.table" class="LabelNameRenderer" externalInfoUrl="http://pmd.sourceforge.net/rules/naming.html#LongVariable" priority="3">
@@ -108,12 +99,6 @@ Avoid excessively long variable names like argColorSchemeHelper
 </violation>
 </file>
 <file name="src/com/moneydance/modules/features/importlist/util/Helper.java">
-<violation beginline="56" endline="63" begincolumn="0" endcolumn="0" rule="AvoidSynchronizedAtMethodLevel" ruleset="Design Rules" package="com.moneydance.modules.features.importlist.util" class="Helper" externalInfoUrl="http://pmd.sourceforge.net/rules/design.html#AvoidSynchronizedAtMethodLevel" priority="3">
-Use block level rather than method level synchronization
-</violation>
-<violation beginline="74" endline="81" begincolumn="0" endcolumn="0" rule="AvoidSynchronizedAtMethodLevel" ruleset="Design Rules" package="com.moneydance.modules.features.importlist.util" class="Helper" externalInfoUrl="http://pmd.sourceforge.net/rules/design.html#AvoidSynchronizedAtMethodLevel" priority="3">
-Use block level rather than method level synchronization
-</violation>
 <violation beginline="106" endline="106" begincolumn="0" endcolumn="0" rule="UseProperClassLoader" ruleset="J2EE Rules" package="com.moneydance.modules.features.importlist.util" class="Helper" externalInfoUrl="http://pmd.sourceforge.net/rules/j2ee.html#UseProperClassLoader" priority="3">
 In J2EE, getClassLoader() might not work as expected.  Use Thread.currentThread().getContextClassLoader() instead.
 </violation>
@@ -130,10 +115,10 @@ Avoid excessively long variable names like columnOrderDefault
 <violation beginline="99" endline="99" begincolumn="0" endcolumn="0" rule="ReplaceHashtableWithMap" ruleset="Migration Rules" package="com.moneydance.modules.features.importlist.util" class="Preferences" externalInfoUrl="http://pmd.sourceforge.net/rules/migrating.html#ReplaceHashtableWithMap" priority="3">
 Consider replacing this Hashtable with the newer java.util.Map
 </violation>
-<violation beginline="189" endline="189" begincolumn="0" endcolumn="0" rule="ReplaceHashtableWithMap" ruleset="Migration Rules" package="com.moneydance.modules.features.importlist.util" class="Preferences" externalInfoUrl="http://pmd.sourceforge.net/rules/migrating.html#ReplaceHashtableWithMap" priority="3">
+<violation beginline="185" endline="185" begincolumn="0" endcolumn="0" rule="ReplaceHashtableWithMap" ruleset="Migration Rules" package="com.moneydance.modules.features.importlist.util" class="Preferences" externalInfoUrl="http://pmd.sourceforge.net/rules/migrating.html#ReplaceHashtableWithMap" priority="3">
 Consider replacing this Hashtable with the newer java.util.Map
 </violation>
-<violation beginline="301" endline="301" begincolumn="0" endcolumn="0" rule="LongVariable" ruleset="Naming Rules" package="com.moneydance.modules.features.importlist.util" class="Preferences" externalInfoUrl="http://pmd.sourceforge.net/rules/naming.html#LongVariable" priority="3">
+<violation beginline="297" endline="297" begincolumn="0" endcolumn="0" rule="LongVariable" ruleset="Naming Rules" package="com.moneydance.modules.features.importlist.util" class="Preferences" externalInfoUrl="http://pmd.sourceforge.net/rules/naming.html#LongVariable" priority="3">
 Avoid excessively long variable names like backgroundAltValue
 </violation>
 </file>
@@ -149,6 +134,30 @@ Avoid excessively long variable names like transactionFileExtensions
 </violation>
 <violation beginline="151" endline="151" begincolumn="0" endcolumn="0" rule="LongVariable" ruleset="Naming Rules" package="com.moneydance.modules.features.importlist.util" class="Settings" externalInfoUrl="http://pmd.sourceforge.net/rules/naming.html#LongVariable" priority="3">
 Avoid excessively long variable names like textFileExtensions
+</violation>
+</file>
+<file name="src/com/moneydance/modules/features/importlist/view/BaseTableFactory.java">
+<violation beginline="61" endline="161" begincolumn="0" endcolumn="0" rule="ExcessiveMethodLength" ruleset="Code Size Rules" package="com.moneydance.modules.features.importlist.view" class="BaseTableFactory" externalInfoUrl="http://pmd.sourceforge.net/rules/codesize.html#ExcessiveMethodLength" priority="3">
+Avoid really long methods.
+</violation>
+</file>
+<file name="src/com/moneydance/modules/features/importlist/view/SplitPaneFactory.java">
+<violation beginline="33" endline="33" begincolumn="0" endcolumn="0" rule="LongVariable" ruleset="Naming Rules" package="com.moneydance.modules.features.importlist.view" class="SplitPaneFactory" externalInfoUrl="http://pmd.sourceforge.net/rules/naming.html#LongVariable" priority="3">
+Avoid excessively long variable names like topComponentFactory
+</violation>
+<violation beginline="34" endline="34" begincolumn="0" endcolumn="0" rule="LongVariable" ruleset="Naming Rules" package="com.moneydance.modules.features.importlist.view" class="SplitPaneFactory" externalInfoUrl="http://pmd.sourceforge.net/rules/naming.html#LongVariable" priority="3">
+Avoid excessively long variable names like bottomComponentFactory
+</violation>
+<violation beginline="37" endline="37" begincolumn="0" endcolumn="0" rule="LongVariable" ruleset="Naming Rules" package="com.moneydance.modules.features.importlist.view" class="SplitPaneFactory" externalInfoUrl="http://pmd.sourceforge.net/rules/naming.html#LongVariable" priority="3">
+Avoid excessively long variable names like argTopComponentFactory
+</violation>
+<violation beginline="38" endline="38" begincolumn="0" endcolumn="0" rule="LongVariable" ruleset="Naming Rules" package="com.moneydance.modules.features.importlist.view" class="SplitPaneFactory" externalInfoUrl="http://pmd.sourceforge.net/rules/naming.html#LongVariable" priority="3">
+Avoid excessively long variable names like argBottomComponentFactory
+</violation>
+</file>
+<file name="src/com/moneydance/modules/features/importlist/view/TableListener.java">
+<violation beginline="92" endline="92" begincolumn="0" endcolumn="0" rule="ReplaceHashtableWithMap" ruleset="Migration Rules" package="com.moneydance.modules.features.importlist.view" class="TableListener" externalInfoUrl="http://pmd.sourceforge.net/rules/migrating.html#ReplaceHashtableWithMap" priority="3">
+Consider replacing this Hashtable with the newer java.util.Map
 </violation>
 </file>
 <file name="test/com/moneydance/modules/features/importlist/ConsoleRunner.java">
@@ -208,13 +217,18 @@ This class has too many methods, consider refactoring it.
 </violation>
 </file>
 <file name="test/com/moneydance/modules/features/importlist/util/PreferencesTest.java">
-<violation beginline="38" endline="279" begincolumn="0" endcolumn="0" rule="TooManyMethods" ruleset="Code Size Rules" package="com.moneydance.modules.features.importlist.util" class="PreferencesTest" externalInfoUrl="http://pmd.sourceforge.net/rules/codesize.html#TooManyMethods" priority="3">
+<violation beginline="38" endline="272" begincolumn="0" endcolumn="0" rule="TooManyMethods" ruleset="Code Size Rules" package="com.moneydance.modules.features.importlist.util" class="PreferencesTest" externalInfoUrl="http://pmd.sourceforge.net/rules/codesize.html#TooManyMethods" priority="3">
 This class has too many methods, consider refactoring it.
 </violation>
 </file>
 <file name="test/com/moneydance/modules/features/importlist/util/SettingsTest.java">
 <violation beginline="29" endline="259" begincolumn="0" endcolumn="0" rule="TooManyMethods" ruleset="Code Size Rules" package="com.moneydance.modules.features.importlist.util" class="SettingsTest" externalInfoUrl="http://pmd.sourceforge.net/rules/codesize.html#TooManyMethods" priority="3">
 This class has too many methods, consider refactoring it.
+</violation>
+</file>
+<file name="test/com/moneydance/modules/features/importlist/view/DirectoryChooserFactoryTest.java">
+<violation beginline="31" endline="31" begincolumn="0" endcolumn="0" rule="LongVariable" ruleset="Naming Rules" package="com.moneydance.modules.features.importlist.view" class="DirectoryChooserFactoryTest" externalInfoUrl="http://pmd.sourceforge.net/rules/naming.html#LongVariable" priority="3">
+Avoid excessively long variable names like directoryChooserFactory
 </violation>
 </file>
 </pmd>

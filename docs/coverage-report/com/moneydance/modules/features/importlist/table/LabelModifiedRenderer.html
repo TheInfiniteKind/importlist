@@ -1,21 +1,20 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
-<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+<!DOCTYPE html>
+<html>
 <head>
-  <title>JMockit Coverage Report</title>
+  <title>JMockit Coverage Report - LabelModifiedRenderer.java</title>
   <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
   <link rel='stylesheet' type='text/css' href='../../../../../../coverage.css'/>
   <script type='text/javascript' src='../../../../../../coverage.js'></script>
-  <link rel='stylesheet' type='text/css' href='../../../../../../prettify.css'/>
   <script type='text/javascript' src='../../../../../../prettify.js'></script>
 </head>
 <body onload='prettyPrint()'>
   <table cellpadding='0' cellspacing='1'>
-    <caption><code>../master/src/com/moneydance/modules/features/importlist/table/LabelModifiedRenderer.java</code></caption>
-    <tr class='click' onclick='showHideLines(this)'>
-      <td class='line'></td><td>&nbsp;</td><td class='comment'>/*
+    <caption>master/src/com/moneydance/modules/features/importlist/table/LabelModifiedRenderer.java</caption>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/*
  * Import List - http://my-flow.github.com/importlist/
- * Copyright (C) 2011 Florian J. Breunig
+ * Copyright (C) 2011-2012 Florian J. Breunig
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,82 +28,43 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see &lt;http://www.gnu.org/licenses/>.
- */
-</td></tr>
-    <tr>
-      <td class='line'>18</td><td colspan='2'></td>
+ */</div><span>/*...*/</span></td>
     </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'>19</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>package com.moneydance.modules.features.importlist.table;</pre></td>
     </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>20</td><td colspan='2'></td>
+      <td class='line'></td><td>&nbsp;</td>
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import java.awt.Component;
+import java.text.DateFormat;
+import java.util.Date;
+
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
+
+import org.apache.commons.lang3.Validate;
+
+import com.moneydance.modules.features.importlist.util.Helper;
+import com.moneydance.modules.features.importlist.util.Settings;
+import com.moneydance.modules.features.importlist.view.ColorSchemeHelper;
+import com.moneydance.util.CustomDateFormat;
+</div><span>import ...</span></pre></td>
     </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>21</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>import java.awt.Component;</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>22</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>import java.text.DateFormat;</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>23</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>import java.util.Date;</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>24</td><td colspan='2'></td>
-    </tr>
-    <tr>
-      <td class='line'>25</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>import javax.swing.JTable;</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>26</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>import javax.swing.table.DefaultTableCellRenderer;</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>27</td><td colspan='2'></td>
-    </tr>
-    <tr>
-      <td class='line'>28</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>import org.apache.commons.lang3.Validate;</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>29</td><td colspan='2'></td>
-    </tr>
-    <tr>
-      <td class='line'>30</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>import com.moneydance.modules.features.importlist.util.Helper;</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>31</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>import com.moneydance.modules.features.importlist.util.Settings;</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>32</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>import com.moneydance.modules.features.importlist.view.ColorSchemeHelper;</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>33</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>import com.moneydance.util.CustomDateFormat;</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>34</td><td colspan='2'></td>
-    </tr>
-    <tr class='click' onclick='showHideLines(this)'>
-      <td class='line'></td><td>&nbsp;</td><td class='comment'>/**
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
  * @author Florian J. Breunig
- */
-</td></tr>
+ */</div><span>/*...*/</span></td>
+    </tr>
     <tr>
       <td class='line'>38</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>final class LabelModifiedRenderer extends DefaultTableCellRenderer {</pre></td>
     </tr>
-    <tr>
-      <td class='line'>39</td><td colspan='2'></td>
-    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'>40</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    private static final long serialVersionUID = 7553393304980261323L;</pre></td>
@@ -119,18 +79,28 @@
     </tr>
     <tr>
       <td class='line'>43</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    private       transient CustomDateFormat  <span class='instance covered' title='Reads: 1 Writes: 47'>dateFormatter</span>;</pre></td>
+      <td><pre class='prettyprint'>    private       transient CustomDateFormat  <span class='instance covered' title='Reads: 1 Writes: 53'>dateFormatter</span>;</pre></td>
     </tr>
     <tr>
       <td class='line'>44</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    private                 DateFormat        <span class='instance covered' title='Reads: 1 Writes: 47'>timeFormatter</span>;</pre></td>
+      <td><pre class='prettyprint'>    private                 DateFormat        <span class='instance covered' title='Reads: 1 Writes: 53'>timeFormatter</span>;</pre></td>
     </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>45</td><td colspan='2'></td>
-    </tr>
-    <tr>
-      <td class='line'>46</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    LabelModifiedRenderer(</pre></td>
+      <td class='line'>46</td><td class='count'>49</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l46s0'>    LabelModifiedRenderer(</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 52x32</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 50x3</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 49x2</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 57x2</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 49x2</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 57x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>47</td><td>&nbsp;</td>
@@ -141,89 +111,122 @@
       <td><pre class='prettyprint'>            final CustomDateFormat argDateFormatter,</pre></td>
     </tr>
     <tr>
-      <td class='line'>49</td><td class='count'>41</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l49s0'>            final DateFormat argTimeFormatter) {</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x32</li>
-          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 44x3</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71        </ol>
-      </td>
+      <td class='line'>49</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            final DateFormat argTimeFormatter) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>50</td><td class='count'>41</td>
+      <td class='line'>50</td><td class='count'>98</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l50s0'>        Validate.notNull(argColorSchemeHelper,</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x32</li>
-          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 44x3</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 52x64</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 50x6</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 49x4</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 57x4</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 49x4</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 57x4</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x4</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x4</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71</li>
+        </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>51</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                "argColorCchemeHelper must not be null");</pre></td>
+      <td class='line'>51</td><td class='count'>49</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l51s0'>                "argColorCchemeHelper must not be null");</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 52x32</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 50x3</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 49x2</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 57x2</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 49x2</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 57x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>52</td><td class='count'>41</td>
+      <td class='line'>52</td><td class='count'>49</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l52s0'>        this.colorSchemeHelper = argColorSchemeHelper;</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x32</li>
-          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 44x3</li>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 52x32</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 50x3</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 49x2</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 57x2</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 49x2</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 57x2</li>
           <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71        </ol>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71</li>
+        </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>53</td><td class='count'>41</td>
+      <td class='line'>53</td><td class='count'>49</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l53s0'>        this.setDateFormatter(argDateFormatter);</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x32</li>
-          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 44x3</li>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 52x32</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 50x3</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 49x2</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 57x2</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 49x2</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 57x2</li>
           <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71        </ol>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71</li>
+        </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>54</td><td class='count'>41</td>
+      <td class='line'>54</td><td class='count'>49</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l54s0'>        this.setTimeFormatter(argTimeFormatter);</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x32</li>
-          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 44x3</li>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 52x32</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 50x3</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 49x2</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 57x2</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 49x2</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 57x2</li>
           <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71        </ol>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71</li>
+        </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>55</td><td class='count'>41</td>
+      <td class='line'>55</td><td class='count'>49</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l55s0'>        this.settings          = Helper.getSettings();</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x32</li>
-          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 44x3</li>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 52x32</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 50x3</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 49x2</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 57x2</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 49x2</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 57x2</li>
           <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71        </ol>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71</li>
+        </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>56</td><td class='count'>41</td>
+      <td class='line'>56</td><td class='count'>49</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l56s0'>    }</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x32</li>
-          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 44x3</li>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 52x32</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 50x3</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 49x2</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 57x2</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 49x2</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 57x2</li>
           <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71        </ol>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71</li>
+        </ol>
       </td>
     </tr>
-    <tr>
-      <td class='line'>57</td><td colspan='2'></td>
-    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'>58</td><td>&nbsp;</td>
       <td><pre class='comment'>    // ESCA-JAVA0138: abstract method from interface TableCellRenderer</pre></td>
@@ -261,230 +264,295 @@
       <td><pre class='prettyprint'>            final int column) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>67</td><td colspan='2'></td>
-    </tr>
-    <tr>
       <td></td><td class='count'>3</td>
       <td class='paths'>
-        <span style='cursor:default; background-color:#00ff00' onclick='hidePath()'>Path coverage: 3/3</span>
-        <span class='covered' onclick="showPath(this,'l68s0 l71s0 l79s0 l87s0')">A: 1</span>
-        <span class='covered' onclick="showPath(this,'l68s0 l71s0 l71s1 l79s0 l87s0')">B: 1</span>
-        <span class='covered' onclick="showPath(this,'l68s0 l71s0 l71s1 l72s0 l79s0 l87s0')">C: 1</span>
+        <span style='cursor:default; background-color:#00ff00' onclick='hidePath()'>Path coverage: 2/2</span>
+        <span class='covered' onclick="showPath(this,'l68s0 l71s0 l79s0 l87s0')">A: 2</span>
+        <span class='covered' onclick="showPath(this,'l68s0 l71s0 l72s0 l79s0 l87s0')">B: 1</span>
       </td>
     </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'>68</td><td class='count'>3</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l68s0'>        this.setOpaque(false);</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 56, 66, 76        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 58, 68, 78</li>
+        </ol>
       </td>
     </tr>
     <tr>
       <td class='line'>69</td><td class='count'>3</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l69s0'>        this.colorSchemeHelper.applyColorScheme(this, row);</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 56, 66, 76        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 58, 68, 78</li>
+        </ol>
       </td>
     </tr>
     <tr>
       <td class='line'>70</td><td class='count'>3</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l70s0'>        String label = null;</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 56, 66, 76        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 58, 68, 78</li>
+        </ol>
       </td>
     </tr>
     <tr>
       <td class='line'>71</td><td class='count'>3</td>
-      <td><pre class='prettyprint jmp'>        <span id='l71s0' title='Executions: 3' class='covered cp' onclick='showHide(this,0)'>if (value != null</span> && <span id='l71s1' title='Executions: 2' class='covered cp' onclick='showHide(this,1)'>value instanceof Date)</span> <span id='l71s2' title='Executions: 1' class='covered cp' onclick='showHide(this,2)'>{</span></pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 56, 66, 76        </ol>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 66, 76        </ol>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 66        </ol>
+      <td><pre class='prettyprint jmp'>        <span id='l71s0' title='Executions: 3' class='covered cp' onclick='showHide(this,0)'>if (value instanceof Date)</span> <span id='l71s1' title='Executions: 1' class='covered cp' onclick='showHide(this,1)'>{</span></pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 58, 68, 78</li>
+        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 68</li>
+        </ol>
       </td>
     </tr>
     <tr>
       <td class='line'>72</td><td class='count'>1</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l72s0'>            final Date fileDate = (Date) value;</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 66        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 68</li>
+        </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>73</td><td class='count'>1</td>
+      <td class='line'>73</td><td class='count'>2</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l73s0'>            label = this.settings.getIndentationPrefix()</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 66        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 68</li>
+        </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>74</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>            + this.dateFormatter.format(fileDate)</pre></td>
+      <td class='line'>74</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l74s0'>            + this.dateFormatter.format(fileDate)</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 68</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>75</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>            + " "</pre></td>
+      <td class='line'>75</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l75s0'>            + " "</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 68</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>76</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>            + this.timeFormatter.format(fileDate);</pre></td>
+      <td class='line'>76</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l76s0'>            + this.timeFormatter.format(fileDate);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 68</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>77</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>        }</pre></td>
     </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>78</td><td colspan='2'></td>
-    </tr>
-    <tr>
-      <td class='line'>79</td><td class='count'>3</td>
+      <td class='line'>79</td><td class='count'>6</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l79s0'>        super.getTableCellRendererComponent(</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 56, 66, 76        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 58x2, 68x2, 78</li>
+        </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>80</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                table,</pre></td>
+      <td class='line'>80</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l80s0'>                table,</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 58, 68, 78</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>81</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                label,</pre></td>
+      <td class='line'>81</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l81s0'>                label,</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 58, 68, 78</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>82</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                isSelected,</pre></td>
+      <td class='line'>82</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l82s0'>                isSelected,</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 58, 68, 78</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>83</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                hasFocus,</pre></td>
+      <td class='line'>83</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l83s0'>                hasFocus,</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 58, 68, 78</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>84</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                row,</pre></td>
+      <td class='line'>84</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l84s0'>                row,</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 58, 68, 78</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>85</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                column);</pre></td>
+      <td class='line'>85</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l85s0'>                column);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 58, 68, 78</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>86</td><td class='count'>3</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l86s0'>        this.setBorder(noFocusBorder);</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 56, 66, 76        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 58, 68, 78</li>
+        </ol>
       </td>
     </tr>
     <tr>
       <td class='line'>87</td><td class='count'>3</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l87s0'>        return this;</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 56, 66, 76        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 58, 68, 78</li>
+        </ol>
       </td>
     </tr>
     <tr>
       <td class='line'>88</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
-    <tr>
-      <td class='line'>89</td><td colspan='2'></td>
-    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'>90</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    void setDateFormatter(final CustomDateFormat argDateFormatter) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>91</td><td class='count'>47</td>
+      <td class='line'>91</td><td class='count'>53</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l91s0'>        Validate.notNull(argDateFormatter, "argDateFormatter must not be null");</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x30</li>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 52x30</li>
           <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#testSetDateFormatter: 137</li>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x2</li>
-          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 44</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 52x2</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 50</li>
           <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#testSetDateFormatter: 89</li>
-          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 44x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x3</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x3</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71x3, 72        </ol>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 50x2</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 49x2</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 57x2</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 49x3, 51</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 57x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71</li>
+        </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>92</td><td class='count'>47</td>
+      <td class='line'>92</td><td class='count'>53</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l92s0'>        this.dateFormatter = argDateFormatter;</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x30</li>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 52x30</li>
           <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#testSetDateFormatter: 137</li>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x2</li>
-          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 44</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 52x2</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 50</li>
           <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#testSetDateFormatter: 89</li>
-          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 44x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x3</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x3</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71x3, 72        </ol>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 50x2</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 49x2</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 57x2</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 49x3, 51</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 57x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71</li>
+        </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>93</td><td class='count'>47</td>
+      <td class='line'>93</td><td class='count'>53</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l93s0'>    }</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x30</li>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 52x30</li>
           <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#testSetDateFormatter: 137</li>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x2</li>
-          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 44</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 52x2</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 50</li>
           <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#testSetDateFormatter: 89</li>
-          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 44x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x3</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x3</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71x3, 72        </ol>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 50x2</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 49x2</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 57x2</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 49x3, 51</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 57x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71</li>
+        </ol>
       </td>
     </tr>
-    <tr>
-      <td class='line'>94</td><td colspan='2'></td>
-    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'>95</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    void setTimeFormatter(final DateFormat argTimeFormatter) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>96</td><td class='count'>47</td>
+      <td class='line'>96</td><td class='count'>53</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l96s0'>        Validate.notNull(argTimeFormatter, "argTimeFormatter must not be null");</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x32</li>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 52x32</li>
           <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#testSetTimeFormatter: 142</li>
-          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 44x2</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 50x2</li>
           <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#testSetTimeFormatter: 94</li>
-          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 44</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x3</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x3</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71x3, 72        </ol>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 50</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 49x2</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 57x2</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 49x3, 51</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 57x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71</li>
+        </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>97</td><td class='count'>47</td>
+      <td class='line'>97</td><td class='count'>53</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l97s0'>        this.timeFormatter = argTimeFormatter;</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x32</li>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 52x32</li>
           <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#testSetTimeFormatter: 142</li>
-          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 44x2</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 50x2</li>
           <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#testSetTimeFormatter: 94</li>
-          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 44</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x3</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x3</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71x3, 72        </ol>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 50</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 49x2</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 57x2</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 49x3, 51</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 57x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71</li>
+        </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>98</td><td class='count'>47</td>
+      <td class='line'>98</td><td class='count'>53</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l98s0'>    }</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x32</li>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 52x32</li>
           <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#testSetTimeFormatter: 142</li>
-          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 44x2</li>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 50x2</li>
           <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#testSetTimeFormatter: 94</li>
-          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 44</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x3</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x3</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71x3, 72        </ol>
+          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#setUp: 50</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 49x2</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 57x2</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 49x3, 51</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 57x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71</li>
+        </ol>
       </td>
     </tr>
     <tr>

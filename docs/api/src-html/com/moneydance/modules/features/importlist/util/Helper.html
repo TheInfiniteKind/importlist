@@ -3,7 +3,7 @@
 <PRE>
 <FONT color="green">001</FONT>    /*<a name="line.1"></a>
 <FONT color="green">002</FONT>     * Import List - http://my-flow.github.com/importlist/<a name="line.2"></a>
-<FONT color="green">003</FONT>     * Copyright (C) 2011 Florian J. Breunig<a name="line.3"></a>
+<FONT color="green">003</FONT>     * Copyright (C) 2011-2012 Florian J. Breunig<a name="line.3"></a>
 <FONT color="green">004</FONT>     *<a name="line.4"></a>
 <FONT color="green">005</FONT>     * This program is free software: you can redistribute it and/or modify<a name="line.5"></a>
 <FONT color="green">006</FONT>     * it under the terms of the GNU General Public License as published by<a name="line.6"></a>
@@ -56,7 +56,7 @@
 <FONT color="green">053</FONT>            // Prevents this class from being instantiated from the outside.<a name="line.53"></a>
 <FONT color="green">054</FONT>        }<a name="line.54"></a>
 <FONT color="green">055</FONT>    <a name="line.55"></a>
-<FONT color="green">056</FONT>        public static synchronized Preferences getPreferences() {<a name="line.56"></a>
+<FONT color="green">056</FONT>        public static Preferences getPreferences() {<a name="line.56"></a>
 <FONT color="green">057</FONT>            synchronized (Helper.class) {<a name="line.57"></a>
 <FONT color="green">058</FONT>                if (prefs == null) {<a name="line.58"></a>
 <FONT color="green">059</FONT>                    prefs = new Preferences();<a name="line.59"></a>
@@ -74,7 +74,7 @@
 <FONT color="green">071</FONT>            return settings;<a name="line.71"></a>
 <FONT color="green">072</FONT>        }<a name="line.72"></a>
 <FONT color="green">073</FONT>    <a name="line.73"></a>
-<FONT color="green">074</FONT>        public static synchronized Localizable getLocalizable() {<a name="line.74"></a>
+<FONT color="green">074</FONT>        public static Localizable getLocalizable() {<a name="line.74"></a>
 <FONT color="green">075</FONT>            synchronized (Helper.class) {<a name="line.75"></a>
 <FONT color="green">076</FONT>                if (localizable == null) {<a name="line.76"></a>
 <FONT color="green">077</FONT>                    localizable = new Localizable();<a name="line.77"></a>

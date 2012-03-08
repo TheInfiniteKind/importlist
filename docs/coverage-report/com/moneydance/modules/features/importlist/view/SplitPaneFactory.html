@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JMockit Coverage Report - SplitPaneFactory.java</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../../../../coverage.css'/>
+  <script type='text/javascript' src='../../../../../../coverage.js'></script>
+  <script type='text/javascript' src='../../../../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption>master/src/com/moneydance/modules/features/importlist/view/SplitPaneFactory.java</caption>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/*
+ * Import List - http://my-flow.github.com/importlist/
+ * Copyright (C) 2011-2012 Florian J. Breunig
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see &lt;http://www.gnu.org/licenses/>.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>19</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package com.moneydance.modules.features.importlist.view;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import javax.swing.JComponent;
+import javax.swing.JSplitPane;
+import javax.swing.border.EmptyBorder;
+
+import com.moneydance.apps.md.view.gui.MoneydanceLAF;
+</div><span>import ...</span></pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+ * @author Florian J. Breunig
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>30</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>public final class SplitPaneFactory implements ComponentFactory {</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>32</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private       JSplitPane <span class='instance covered' title='Reads: 13 Writes: 1'>splitPane</span>;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>33</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final ComponentFactory topComponentFactory;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>34</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final ComponentFactory bottomComponentFactory;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>36</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l36s0'>    public SplitPaneFactory(</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.view.SplitPaneFactoryTest#setUp: 37</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>37</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            final ComponentFactory argTopComponentFactory,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>38</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            final ComponentFactory argBottomComponentFactory) {</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>40</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l40s0'>        this.topComponentFactory    = argTopComponentFactory;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.view.SplitPaneFactoryTest#setUp: 37</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>41</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l41s0'>        this.bottomComponentFactory = argBottomComponentFactory;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.view.SplitPaneFactoryTest#setUp: 37</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>42</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l42s0'>    }</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.view.SplitPaneFactoryTest#setUp: 37</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>44</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private void init() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>45</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l45s0'>        this.splitPane = new JCustomSplitPane(JSplitPane.VERTICAL_SPLIT);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.view.SplitPaneFactoryTest#testGetComponent: 43</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>46</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l46s0'>        this.splitPane.setResizeWeight(1.0);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.view.SplitPaneFactoryTest#testGetComponent: 43</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>47</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l47s0'>        this.splitPane.setDividerSize(0);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.view.SplitPaneFactoryTest#testGetComponent: 43</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>48</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l48s0'>        this.splitPane.setContinuousLayout(true);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.view.SplitPaneFactoryTest#testGetComponent: 43</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>49</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l49s0'>        this.splitPane.setOpaque(false);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.view.SplitPaneFactoryTest#testGetComponent: 43</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>50</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l50s0'>        this.splitPane.setBorder(MoneydanceLAF.homePageBorder);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.view.SplitPaneFactoryTest#testGetComponent: 43</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>51</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l51s0'>    }</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.view.SplitPaneFactoryTest#testGetComponent: 43</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>53</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>54</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public JSplitPane getComponent() {</pre></td>
+    </tr>
+    <tr>
+      <td></td><td class='count'>2</td>
+      <td class='paths'>
+        <span style='cursor:default; background-color:#00ff00' onclick='hidePath()'>Path coverage: 2/2</span>
+        <span class='covered' onclick="showPath(this,'l55s0 l59s0 l66s0')">A: 1</span>
+        <span class='covered' onclick="showPath(this,'l55s0 l56s0 l59s0 l66s0')">B: 1</span>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>55</td><td class='count'>2</td>
+      <td><pre class='prettyprint jmp'>        <span id='l55s0' title='Executions: 2' class='covered cp' onclick='showHide(this,0)'>if (this.splitPane == null)</span> <span id='l55s1' title='Executions: 1' class='covered cp' onclick='showHide(this,1)'>{</span></pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.view.SplitPaneFactoryTest#testGetComponent: 43, 45</li>
+        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.view.SplitPaneFactoryTest#testGetComponent: 43</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>56</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l56s0'>            this.init();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.view.SplitPaneFactoryTest#testGetComponent: 43</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>57</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>59</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l59s0'>        JComponent topComponent = this.topComponentFactory.getComponent();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.view.SplitPaneFactoryTest#testGetComponent: 43, 45</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>60</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l60s0'>        topComponent.setBorder(new EmptyBorder(0, 0, 0, 0));</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.view.SplitPaneFactoryTest#testGetComponent: 43, 45</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>61</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l61s0'>        this.splitPane.setTopComponent(topComponent);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.view.SplitPaneFactoryTest#testGetComponent: 43, 45</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>63</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l63s0'>        JComponent bottomComponent = this.bottomComponentFactory.getComponent();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.view.SplitPaneFactoryTest#testGetComponent: 43, 45</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>64</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l64s0'>        this.splitPane.setBottomComponent(bottomComponent);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.view.SplitPaneFactoryTest#testGetComponent: 43, 45</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>66</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l66s0'>        return this.splitPane;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.view.SplitPaneFactoryTest#testGetComponent: 43, 45</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>67</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>68</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>

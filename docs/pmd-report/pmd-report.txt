@@ -1,21 +1,19 @@
 
-src/com/moneydance/modules/features/importlist/controller/TableListener.java:92	Consider replacing this Hashtable with the newer java.util.Map
-src/com/moneydance/modules/features/importlist/controller/ViewController.java:19	A high number of imports can indicate a high degree of coupling within an object.
-src/com/moneydance/modules/features/importlist/controller/ViewController.java:59	Too many fields
-src/com/moneydance/modules/features/importlist/controller/ViewController.java:95	Avoid really long methods.
-src/com/moneydance/modules/features/importlist/controller/ViewController.java:95	The method init() has an NCSS line count of 111
-src/com/moneydance/modules/features/importlist/controller/ViewController.java:274	Avoid really long methods.
-src/com/moneydance/modules/features/importlist/controller/ViewController.java:274	Use block level rather than method level synchronization
-src/com/moneydance/modules/features/importlist/io/DirectoryChooser.java:66	Avoid if (x != y) ..; else ..;
-src/com/moneydance/modules/features/importlist/io/DirectoryChooser.java:74	Assigning an Object to null is a code smell.  Consider refactoring.
-src/com/moneydance/modules/features/importlist/io/FileAdmin.java:58	This class has too many methods, consider refactoring it.
-src/com/moneydance/modules/features/importlist/io/FileAdmin.java:65	Perhaps 'settings' could be replaced by a local variable.
-src/com/moneydance/modules/features/importlist/io/FileAdmin.java:69	Avoid excessively long variable names like transactionFileFilter
-src/com/moneydance/modules/features/importlist/io/FileAdmin.java:71	Avoid excessively long variable names like readableFileFilter
-src/com/moneydance/modules/features/importlist/io/FileAdmin.java:116	Use block level rather than method level synchronization
-src/com/moneydance/modules/features/importlist/io/FileAdmin.java:212	Avoid instantiating new objects inside loops
-src/com/moneydance/modules/features/importlist/io/FileImporter.java:49	Avoid excessively long variable names like transactionFileFilter
-src/com/moneydance/modules/features/importlist/io/FileImporter.java:60	Avoid excessively long variable names like argTransactionFileFilter
+src/com/moneydance/modules/features/importlist/controller/ViewController.java:56	This class has too many methods, consider refactoring it.
+src/com/moneydance/modules/features/importlist/controller/ViewController.java:66	Avoid excessively long variable names like directoryChooserFactory
+src/com/moneydance/modules/features/importlist/controller/ViewController.java:124	Use block level rather than method level synchronization
+src/com/moneydance/modules/features/importlist/io/DeleteAllOperation.java:89	Avoid excessively long variable names like deleteOneOperation
+src/com/moneydance/modules/features/importlist/io/FileAdmin.java:59	Avoid excessively long variable names like transactionFileFilter
+src/com/moneydance/modules/features/importlist/io/FileAdmin.java:61	Avoid excessively long variable names like readableFileFilter
+src/com/moneydance/modules/features/importlist/io/FileAdmin.java:107	Use block level rather than method level synchronization
+src/com/moneydance/modules/features/importlist/io/FileAdmin.java:167	Avoid excessively long variable names like importAllOperation
+src/com/moneydance/modules/features/importlist/io/FileAdmin.java:180	Avoid excessively long variable names like importOneOperation
+src/com/moneydance/modules/features/importlist/io/FileAdmin.java:194	Avoid excessively long variable names like deleteAllOperation
+src/com/moneydance/modules/features/importlist/io/ImportAllOperation.java:34	Avoid excessively long variable names like transactionFileFilter
+src/com/moneydance/modules/features/importlist/io/ImportAllOperation.java:39	Avoid excessively long variable names like argTransactionFileFilter
+src/com/moneydance/modules/features/importlist/io/ImportAllOperation.java:53	Avoid excessively long variable names like importOneOperation
+src/com/moneydance/modules/features/importlist/io/ImportOneOperation.java:50	Avoid excessively long variable names like transactionFileFilter
+src/com/moneydance/modules/features/importlist/io/ImportOneOperation.java:61	Avoid excessively long variable names like argTransactionFileFilter
 src/com/moneydance/modules/features/importlist/table/ButtonRenderer.java:46	Avoid excessively long variable names like argColorSchemeHelper
 src/com/moneydance/modules/features/importlist/table/ColumnFactory.java:44	Avoid excessively long variable names like evenColorSchemeHelper
 src/com/moneydance/modules/features/importlist/table/ColumnFactory.java:45	Avoid excessively long variable names like oddColorSchemeHelper
@@ -26,20 +24,23 @@ src/com/moneydance/modules/features/importlist/table/HeaderRenderer.java:45	Avoi
 src/com/moneydance/modules/features/importlist/table/HeaderRenderer.java:50	Avoid excessively long variable names like argColorSchemeHelper
 src/com/moneydance/modules/features/importlist/table/HeaderRenderer.java:51	Avoid excessively long variable names like argDefaultHeaderTableCellRenderer
 src/com/moneydance/modules/features/importlist/table/LabelModifiedRenderer.java:47	Avoid excessively long variable names like argColorSchemeHelper
-src/com/moneydance/modules/features/importlist/table/LabelModifiedRenderer.java:71	No need to check for null before an instanceof
 src/com/moneydance/modules/features/importlist/table/LabelNameRenderer.java:40	Avoid excessively long variable names like argColorSchemeHelper
-src/com/moneydance/modules/features/importlist/util/Helper.java:56	Use block level rather than method level synchronization
-src/com/moneydance/modules/features/importlist/util/Helper.java:74	Use block level rather than method level synchronization
 src/com/moneydance/modules/features/importlist/util/Helper.java:106	In J2EE, getClassLoader() might not work as expected.  Use Thread.currentThread().getContextClassLoader() instead.
 src/com/moneydance/modules/features/importlist/util/Localizable.java:86	Avoid excessively long variable names like headerValueModified
 src/com/moneydance/modules/features/importlist/util/Preferences.java:52	Avoid excessively long variable names like columnOrderDefault
 src/com/moneydance/modules/features/importlist/util/Preferences.java:99	Consider replacing this Hashtable with the newer java.util.Map
-src/com/moneydance/modules/features/importlist/util/Preferences.java:189	Consider replacing this Hashtable with the newer java.util.Map
-src/com/moneydance/modules/features/importlist/util/Preferences.java:301	Avoid excessively long variable names like backgroundAltValue
+src/com/moneydance/modules/features/importlist/util/Preferences.java:185	Consider replacing this Hashtable with the newer java.util.Map
+src/com/moneydance/modules/features/importlist/util/Preferences.java:297	Avoid excessively long variable names like backgroundAltValue
 src/com/moneydance/modules/features/importlist/util/Settings.java:50	Avoid excessively long variable names like PROPERTIES_RESOURCE
 src/com/moneydance/modules/features/importlist/util/Settings.java:55	Avoid excessively long variable names like abstractFileConfiguration
 src/com/moneydance/modules/features/importlist/util/Settings.java:141	Avoid excessively long variable names like transactionFileExtensions
 src/com/moneydance/modules/features/importlist/util/Settings.java:151	Avoid excessively long variable names like textFileExtensions
+src/com/moneydance/modules/features/importlist/view/BaseTableFactory.java:61	Avoid really long methods.
+src/com/moneydance/modules/features/importlist/view/SplitPaneFactory.java:33	Avoid excessively long variable names like topComponentFactory
+src/com/moneydance/modules/features/importlist/view/SplitPaneFactory.java:34	Avoid excessively long variable names like bottomComponentFactory
+src/com/moneydance/modules/features/importlist/view/SplitPaneFactory.java:37	Avoid excessively long variable names like argTopComponentFactory
+src/com/moneydance/modules/features/importlist/view/SplitPaneFactory.java:38	Avoid excessively long variable names like argBottomComponentFactory
+src/com/moneydance/modules/features/importlist/view/TableListener.java:92	Consider replacing this Hashtable with the newer java.util.Map
 test/com/moneydance/modules/features/importlist/ConsoleRunner.java:84	To be compliant to J2EE, a webapp should not use any thread.
 test/com/moneydance/modules/features/importlist/controller/AggregationTableModelTest.java:33	Avoid excessively long variable names like aggregationTableModel
 test/com/moneydance/modules/features/importlist/controller/FileTableModelTest.java:58	The String literal "column class must not be null" appears 4 times in this file; the first occurrence is on line 58
@@ -54,3 +55,4 @@ test/com/moneydance/modules/features/importlist/table/LabelModifiedRendererTest.
 test/com/moneydance/modules/features/importlist/util/LocalizableTest.java:31	This class has too many methods, consider refactoring it.
 test/com/moneydance/modules/features/importlist/util/PreferencesTest.java:38	This class has too many methods, consider refactoring it.
 test/com/moneydance/modules/features/importlist/util/SettingsTest.java:29	This class has too many methods, consider refactoring it.
+test/com/moneydance/modules/features/importlist/view/DirectoryChooserFactoryTest.java:31	Avoid excessively long variable names like directoryChooserFactory

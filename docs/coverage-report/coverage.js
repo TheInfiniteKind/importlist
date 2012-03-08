@@ -69,10 +69,14 @@ function showHideFiles(files)
    table.style.display = table.style.display == 'none' ? 'block' : 'none';
 }
 
-function showHideLines(row)
+function showHideLines(cell)
 {
-   var cellWithLines = row.cells[2].style;
-   cellWithLines.display = cellWithLines.display == 'block' ? 'none' : 'block';
+   var content = cell.children;
+   var expanded = content[0].style;
+   var collapsed = content[1].style;
+   var showingExpanded = expanded.display == 'block';
+   expanded.display = showingExpanded ? 'none' : 'block';
+   collapsed.display = showingExpanded ? 'block' : 'none';
 }
 
 var metricCol;
@@ -102,7 +106,7 @@ function sortRows(tbl, metric)
    var startRow = 0;
    var endRow = tbl.rows.length;
 
-   if (tbl.rows[0].cells.length == 5) {
+   if (tbl.id == 'packages') {
       metricCol = 1 + metric;
       startRow = 1;
       endRow--;

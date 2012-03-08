@@ -1,21 +1,20 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
-<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+<!DOCTYPE html>
+<html>
 <head>
-  <title>JMockit Coverage Report</title>
+  <title>JMockit Coverage Report - ImportOneEditor.java</title>
   <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
   <link rel='stylesheet' type='text/css' href='../../../../../../coverage.css'/>
   <script type='text/javascript' src='../../../../../../coverage.js'></script>
-  <link rel='stylesheet' type='text/css' href='../../../../../../prettify.css'/>
   <script type='text/javascript' src='../../../../../../prettify.js'></script>
 </head>
 <body onload='prettyPrint()'>
   <table cellpadding='0' cellspacing='1'>
-    <caption><code>../master/src/com/moneydance/modules/features/importlist/table/ImportOneEditor.java</code></caption>
-    <tr class='click' onclick='showHideLines(this)'>
-      <td class='line'></td><td>&nbsp;</td><td class='comment'>/*
+    <caption>master/src/com/moneydance/modules/features/importlist/table/ImportOneEditor.java</caption>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/*
  * Import List - http://my-flow.github.com/importlist/
- * Copyright (C) 2011 Florian J. Breunig
+ * Copyright (C) 2011-2012 Florian J. Breunig
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,62 +28,41 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see &lt;http://www.gnu.org/licenses/>.
- */
-</td></tr>
-    <tr>
-      <td class='line'>18</td><td colspan='2'></td>
+ */</div><span>/*...*/</span></td>
     </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'>19</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>package com.moneydance.modules.features.importlist.table;</pre></td>
     </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>20</td><td colspan='2'></td>
+      <td class='line'></td><td>&nbsp;</td>
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.KeyStroke;
+
+import com.moneydance.modules.features.importlist.io.FileAdmin;
+</div><span>import ...</span></pre></td>
     </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>21</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>import java.awt.event.ActionEvent;</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>22</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>import java.awt.event.ActionListener;</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>23</td><td colspan='2'></td>
-    </tr>
-    <tr>
-      <td class='line'>24</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>import javax.swing.KeyStroke;</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>25</td><td colspan='2'></td>
-    </tr>
-    <tr>
-      <td class='line'>26</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>import com.moneydance.modules.features.importlist.io.FileAdmin;</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>27</td><td colspan='2'></td>
-    </tr>
-    <tr class='click' onclick='showHideLines(this)'>
-      <td class='line'></td><td>&nbsp;</td><td class='comment'>/**
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
  * @author Florian J. Breunig
- */
-</td></tr>
+ */</div><span>/*...*/</span></td>
+    </tr>
     <tr>
       <td class='line'>31</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>final class ImportOneEditor extends AbstractEditor {</pre></td>
     </tr>
-    <tr>
-      <td class='line'>32</td><td colspan='2'></td>
-    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'>33</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    private static final long serialVersionUID = 4286061728240721119L;</pre></td>
     </tr>
-    <tr>
-      <td class='line'>34</td><td colspan='2'></td>
-    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'>35</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    ImportOneEditor(</pre></td>
@@ -98,30 +76,38 @@
       <td><pre class='prettyprint'>            final ButtonRenderer buttonRenderer) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>38</td><td class='count'>21</td>
+      <td class='line'>38</td><td class='count'>25</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l38s0'>        super(fileAdmin, buttonRenderer);</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x16</li>
-          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 43x2</li>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 52x16</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 49</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 57</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 49</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 57</li>
           <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71        </ol>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71</li>
+        </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>39</td><td class='count'>21</td>
+      <td class='line'>39</td><td class='count'>25</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l39s0'>    }</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x16</li>
-          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 43x2</li>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 52x16</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 49</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 57</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 49</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 57</li>
           <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71        </ol>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71</li>
+        </ol>
       </td>
     </tr>
-    <tr>
-      <td class='line'>40</td><td colspan='2'></td>
-    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'>41</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    @Override</pre></td>
@@ -133,8 +119,9 @@
     <tr>
       <td class='line'>43</td><td class='count'>2</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l43s0'>        return new ActionListener() {</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#testGetActionListener: 53        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#testGetActionListener: 54</li>
+        </ol>
       </td>
     </tr>
     <tr>
@@ -148,15 +135,17 @@
     <tr>
       <td class='line'>46</td><td class='count'>1</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l46s0'>                ImportOneEditor.this.getFileAdmin().importRow(rowNumber);</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#testGetActionListener: 57        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#testGetActionListener: 57</li>
+        </ol>
       </td>
     </tr>
     <tr>
       <td class='line'>47</td><td class='count'>1</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l47s0'>            }</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#testGetActionListener: 57        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#testGetActionListener: 57</li>
+        </ol>
       </td>
     </tr>
     <tr>
@@ -167,9 +156,7 @@
       <td class='line'>49</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
-    <tr>
-      <td class='line'>50</td><td colspan='2'></td>
-    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'>51</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    @Override</pre></td>
@@ -181,15 +168,17 @@
     <tr>
       <td class='line'>53</td><td class='count'>1</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l53s0'>        final String shortcut = this.getSettings().getKeyboardShortcutImport();</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#testGetKeyStroke: 62        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#testGetKeyStroke: 63</li>
+        </ol>
       </td>
     </tr>
     <tr>
       <td class='line'>54</td><td class='count'>1</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l54s0'>        return KeyStroke.getKeyStroke(shortcut);</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#testGetKeyStroke: 62        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#testGetKeyStroke: 63</li>
+        </ol>
       </td>
     </tr>
     <tr>

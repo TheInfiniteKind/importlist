@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JMockit Coverage Report - ImportOneOperation.java</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../../../../coverage.css'/>
+  <script type='text/javascript' src='../../../../../../coverage.js'></script>
+  <script type='text/javascript' src='../../../../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption>master/src/com/moneydance/modules/features/importlist/io/ImportOneOperation.java</caption>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/*
+ * Import List - http://my-flow.github.com/importlist/
+ * Copyright (C) 2011-2012 Florian J. Breunig
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see &lt;http://www.gnu.org/licenses/>.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>19</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package com.moneydance.modules.features.importlist.io;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import java.io.File;
+import java.io.FileFilter;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.commons.io.FilenameUtils;
+import org.apache.commons.lang3.text.StrSubstitutor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.moneydance.apps.md.controller.FeatureModuleContext;
+import com.moneydance.apps.md.model.Account;
+import com.moneydance.apps.md.model.AccountUtil;
+import com.moneydance.apps.md.model.AcctFilter;
+import com.moneydance.apps.md.model.RootAccount;
+import com.moneydance.modules.features.importlist.util.Helper;
+import com.moneydance.modules.features.importlist.util.Preferences;
+import com.moneydance.modules.features.importlist.util.Settings;
+</div><span>import ...</span></pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+ * @author Florian J. Breunig
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>45</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l45s0'>final class ImportOneOperation implements FileOperation {</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportAllRows: 87</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>47</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final Preferences          prefs;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>48</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final Settings             settings;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>49</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final FeatureModuleContext context;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>50</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final FileFilter           transactionFileFilter;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>51</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final FileFilter           textFileFilter;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>    /**
+     * Static initialization of class-dependent logger.
+     */</div><span>    /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>56</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l56s0'>    private static final Logger LOG =</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportAllRows: 87</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>57</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l57s0'>            LoggerFactory.getLogger(ImportOneOperation.class);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportAllRows: 87</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>59</td><td class='count'>15</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l59s0'>    ImportOneOperation(</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportAllRows: 87, 90</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportRow: 98</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#testShowWarningAndPerform: 57</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#testPerform: 62</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 99, 105, 111, 118, 124, 130, 137, 143, 149</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#testGetActionListener: 57</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>60</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            final FeatureModuleContext argContext,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>61</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            final FileFilter argTransactionFileFilter,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>62</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            final FileFilter argTextFileFilter) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>63</td><td class='count'>15</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l63s0'>        this.prefs                  = Helper.getPreferences();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportAllRows: 87, 90</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportRow: 98</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#testShowWarningAndPerform: 57</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#testPerform: 62</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 99, 105, 111, 118, 124, 130, 137, 143, 149</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#testGetActionListener: 57</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>64</td><td class='count'>15</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l64s0'>        this.settings               = Helper.getSettings();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportAllRows: 87, 90</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportRow: 98</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#testShowWarningAndPerform: 57</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#testPerform: 62</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 99, 105, 111, 118, 124, 130, 137, 143, 149</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#testGetActionListener: 57</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>65</td><td class='count'>15</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l65s0'>        this.context                = argContext;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportAllRows: 87, 90</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportRow: 98</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#testShowWarningAndPerform: 57</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#testPerform: 62</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 99, 105, 111, 118, 124, 130, 137, 143, 149</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#testGetActionListener: 57</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>66</td><td class='count'>15</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l66s0'>        this.transactionFileFilter  = argTransactionFileFilter;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportAllRows: 87, 90</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportRow: 98</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#testShowWarningAndPerform: 57</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#testPerform: 62</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 99, 105, 111, 118, 124, 130, 137, 143, 149</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#testGetActionListener: 57</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>67</td><td class='count'>15</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l67s0'>        this.textFileFilter         = argTextFileFilter;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportAllRows: 87, 90</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportRow: 98</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#testShowWarningAndPerform: 57</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#testPerform: 62</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 99, 105, 111, 118, 124, 130, 137, 143, 149</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#testGetActionListener: 57</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>68</td><td class='count'>15</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l68s0'>    }</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportAllRows: 87, 90</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportRow: 98</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#testShowWarningAndPerform: 57</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#testPerform: 62</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 99, 105, 111, 118, 124, 130, 137, 143, 149</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#testGetActionListener: 57</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>70</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>71</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public void showWarningAndPerform(final List&lt;File> files) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>72</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l72s0'>        this.perform(files);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportRow: 98</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>73</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l73s0'>    }</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportRow: 98</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>75</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>76</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public void perform(final List&lt;File> files) {</pre></td>
+    </tr>
+    <tr>
+      <td></td><td class='count'>18</td>
+      <td class='paths'>
+        <span style='cursor:default; background-color:#00ff00' onclick='hidePath()'>Path coverage: 3/3</span>
+        <span class='covered' onclick="showPath(this,'l77s0 l82s0 l84s0 l89s0 l94s0')">A: 3</span>
+        <span class='covered' onclick="showPath(this,'l77s0 l82s0 l84s0 l85s0 l89s0 l94s0')">B: 6</span>
+        <span class='covered' onclick="showPath(this,'l77s0 l82s0 l83s0 l89s0 l94s0')">C: 9</span>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>77</td><td class='count'>18</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l77s0'>        final File file = files.iterator().next();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportAllRows: 90x6</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportRow: 98</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#testShowWarningAndPerform: 57</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#testPerform: 62</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 103, 109, 115, 122, 128, 134, 141, 147, 153</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>78</td><td class='count'>18</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l78s0'>        Map&lt;String, String> valuesMap = new HashMap&lt;String, String>();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportAllRows: 90x6</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportRow: 98</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#testShowWarningAndPerform: 57</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#testPerform: 62</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 103, 109, 115, 122, 128, 134, 141, 147, 153</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>79</td><td class='count'>18</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l79s0'>        valuesMap.put("filename",  file.getAbsolutePath());</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportAllRows: 90x6</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportRow: 98</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#testShowWarningAndPerform: 57</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#testPerform: 62</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 103, 109, 115, 122, 128, 134, 141, 147, 153</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>81</td><td class='count'>18</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l81s0'>        String uriScheme = "";</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportAllRows: 90x6</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportRow: 98</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#testShowWarningAndPerform: 57</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#testPerform: 62</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 103, 109, 115, 122, 128, 134, 141, 147, 153</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>82</td><td class='count'>18</td>
+      <td><pre class='prettyprint jmp'>        <span id='l82s0' title='Executions: 18' class='covered cp' onclick='showHide(this,0)'>if (this.transactionFileFilter.accept(file)) {</span></pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportAllRows: 90x6</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportRow: 98</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#testShowWarningAndPerform: 57</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#testPerform: 62</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 103, 109, 115, 122, 128, 134, 141, 147, 153</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>83</td><td class='count'>9</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l83s0'>            uriScheme = this.settings.getTransactionFileImportUriScheme();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportAllRows: 90x4</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#testShowWarningAndPerform: 57</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#testPerform: 62</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 103, 109, 115</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>84</td><td class='count'>9</td>
+      <td><pre class='prettyprint jmp'>        <span id='l84s0' title='Executions: 9' class='covered cp' onclick='showHide(this,0)'>}</span> else <span id='l84s1' title='Executions: 6' class='covered cp' onclick='showHide(this,1)'>if (this.textFileFilter.accept(file)) {</span></pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportAllRows: 90x2</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportRow: 98</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 122, 128, 134, 141, 147, 153</li>
+        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportAllRows: 90x2</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportRow: 98</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 122, 128, 134</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>85</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l85s0'>            uriScheme = this.settings.getTextFileImportUriScheme();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportAllRows: 90x2</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportRow: 98</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 122, 128, 134</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>86</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l86s0'>            valuesMap.put("accountno", this.getAccountNumberForFile(file));</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportAllRows: 90x2</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportRow: 98</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 122, 128, 134</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>87</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>89</td><td class='count'>18</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l89s0'>        final StrSubstitutor sub = new StrSubstitutor(valuesMap);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportAllRows: 90x6</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportRow: 98</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#testShowWarningAndPerform: 57</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#testPerform: 62</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 103, 109, 115, 122, 128, 134, 141, 147, 153</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>90</td><td class='count'>18</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l90s0'>        final String resolvedUri = sub.replace(uriScheme);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportAllRows: 90x6</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportRow: 98</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#testShowWarningAndPerform: 57</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#testPerform: 62</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 103, 109, 115, 122, 128, 134, 141, 147, 153</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>92</td><td>&nbsp;</td>
+      <td><pre class='comment'>        // Import the file by calling the URI</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>93</td><td class='count'>18</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l93s0'>        this.context.showURL(resolvedUri);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportAllRows: 90x6</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportRow: 98</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#testShowWarningAndPerform: 57</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#testPerform: 62</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 103, 109, 115, 122, 128, 134, 141, 147, 153</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>94</td><td class='count'>18</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l94s0'>    }</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportAllRows: 90x6</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportRow: 98</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#testShowWarningAndPerform: 57</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#testPerform: 62</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 103, 109, 115, 122, 128, 134, 141, 147, 153</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>96</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private String getAccountNumberForFile(final File argFile) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>97</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l97s0'>        final String fileName = FilenameUtils.removeExtension(</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportAllRows: 90x2</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportRow: 98</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 122, 128, 134</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td></td><td class='count'>0</td>
+      <td class='paths'>
+        <span style='cursor:default; background-color:#ff0000' onclick='hidePath()'>Path coverage: 0/4</span>
+        <span class='uncovered' onclick="showPath(this,'l98s0 l107s0 l121s0')">A: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l98s0 l107s0 l108s0 l112s0 l113s0 l121s0')">B: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l98s0 l107s0 l108s0 l112s0 l113s0 l114s0 l121s0')">C: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l98s0 l107s0 l108s0 l109s0 l121s0')">D: 0</span>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>98</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l98s0'>                argFile.getName());</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportAllRows: 90x2</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportRow: 98</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 122, 128, 134</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>100</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l100s0'>        RootAccount rootAccount = this.context.getRootAccount();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportAllRows: 90x2</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportRow: 98</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 122, 128, 134</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>102</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l102s0'>        String accountNumber = "-1";</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportAllRows: 90x2</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportRow: 98</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 122, 128, 134</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>103</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l103s0'>        Iterator&lt;Account> iterator =</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportAllRows: 90x2</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportRow: 98</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 122, 128, 134</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>104</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l104s0'>                AccountUtil.getAccountIterator(rootAccount);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportAllRows: 90x2</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportRow: 98</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 122, 128, 134</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>105</td><td class='count'>24</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l105s0'>        while (iterator.hasNext()) {</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportAllRows: 90x4</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportRow: 98x2</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 122x6, 128x6, 134</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>106</td><td class='count'>12</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l106s0'>            final Account account = iterator.next();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 122x4, 128x4, 134</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>107</td><td class='count'>12</td>
+      <td><pre class='prettyprint jmp'>            <span id='l107s0' title='Executions: 12' class='covered cp' onclick='showHide(this,0)'>if (!AcctFilter.NON_CATEGORY_FILTER.matches(account)</span></pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 122x4, 128x4, 134</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>108</td><td class='count'>9</td>
+      <td><pre class='prettyprint jmp'>                    || <span id='l108s1' title='Executions: 3' class='covered cp' onclick='showHide(this,1)'>rootAccount.equals(account)) {</span></pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 122, 128, 134</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>109</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l109s0'>                continue;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 122, 128, 134</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>110</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>112</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l112s0'>            final String accountName = account.getFullAccountName();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 122x2, 128x2, 134</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>113</td><td class='count'>6</td>
+      <td><pre class='prettyprint jmp'>            <span id='l113s0' title='Executions: 6' class='covered cp' onclick='showHide(this,0)'>if (this.isEqual(accountName, fileName)) {</span></pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 122x2, 128x2, 134</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>114</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l114s0'>                LOG.debug("Found matching account \""</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 122x2, 128</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>115</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l115s0'>                        + account.getFullAccountName()</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 122, 128</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>116</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l116s0'>                        + "\" for file " + argFile.getName());</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 122, 128</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>117</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l117s0'>                accountNumber = String.valueOf(account.getAccountNum());</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 122, 128</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>118</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>119</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>121</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l121s0'>        return accountNumber;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportAllRows: 90x2</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportRow: 98</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 122, 128, 134</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>122</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>124</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private boolean isEqual(final String first, final String second) {</pre></td>
+    </tr>
+    <tr>
+      <td></td><td class='count'>6</td>
+      <td class='paths'>
+        <span style='cursor:default; background-color:#00ff00' onclick='hidePath()'>Path coverage: 3/3</span>
+        <span class='covered' onclick="showPath(this,'l125s0 l127s0 l127s1 l127s2')">A: 4</span>
+        <span class='covered' onclick="showPath(this,'l125s0 l127s0 l127s3')">B: 1</span>
+        <span class='covered' onclick="showPath(this,'l125s0 l127s0 l127s1 l127s3')">C: 1</span>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>125</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l125s0'>        final String string1 =  first.toUpperCase(this.prefs.getLocale());</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 122x2, 128x2, 134</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>126</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l126s0'>        final String string2 = second.toUpperCase(this.prefs.getLocale());</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 122x2, 128x2, 134</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>127</td><td class='count'>6</td>
+      <td><pre class='prettyprint jmp'>        <span id='l127s0' title='Executions: 6' class='covered cp' onclick='showHide(this,0)'>return string1.contains(string2)</span> || <span id='l127s1' title='Executions: 5' class='covered cp' onclick='showHide(this,1)'>string2.contains(string1);</span></pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 122x2, 128x2, 134</li>
+        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 122x3, 128x2, 134</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>128</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>129</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>

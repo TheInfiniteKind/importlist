@@ -1,21 +1,20 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
-<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+<!DOCTYPE html>
+<html>
 <head>
-  <title>JMockit Coverage Report</title>
+  <title>JMockit Coverage Report - AbstractEditor.java</title>
   <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
   <link rel='stylesheet' type='text/css' href='../../../../../../coverage.css'/>
   <script type='text/javascript' src='../../../../../../coverage.js'></script>
-  <link rel='stylesheet' type='text/css' href='../../../../../../prettify.css'/>
   <script type='text/javascript' src='../../../../../../prettify.js'></script>
 </head>
 <body onload='prettyPrint()'>
   <table cellpadding='0' cellspacing='1'>
-    <caption><code>../master/src/com/moneydance/modules/features/importlist/table/AbstractEditor.java</code></caption>
-    <tr class='click' onclick='showHideLines(this)'>
-      <td class='line'></td><td>&nbsp;</td><td class='comment'>/*
+    <caption>master/src/com/moneydance/modules/features/importlist/table/AbstractEditor.java</caption>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/*
  * Import List - http://my-flow.github.com/importlist/
- * Copyright (C) 2011 Florian J. Breunig
+ * Copyright (C) 2011-2012 Florian J. Breunig
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,102 +28,48 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see &lt;http://www.gnu.org/licenses/>.
- */
-</td></tr>
-    <tr>
-      <td class='line'>18</td><td colspan='2'></td>
+ */</div><span>/*...*/</span></td>
     </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'>19</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>package com.moneydance.modules.features.importlist.table;</pre></td>
     </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>20</td><td colspan='2'></td>
+      <td class='line'></td><td>&nbsp;</td>
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import java.awt.Component;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.AbstractAction;
+import javax.swing.AbstractButton;
+import javax.swing.Action;
+import javax.swing.DefaultCellEditor;
+import javax.swing.JCheckBox;
+import javax.swing.JComponent;
+import javax.swing.JTable;
+import javax.swing.KeyStroke;
+
+import org.apache.commons.lang3.Validate;
+
+import com.moneydance.modules.features.importlist.io.FileAdmin;
+import com.moneydance.modules.features.importlist.util.Helper;
+import com.moneydance.modules.features.importlist.util.Settings;
+</div><span>import ...</span></pre></td>
     </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>21</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>import java.awt.Component;</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>22</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>import java.awt.event.ActionEvent;</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>23</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>import java.awt.event.ActionListener;</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>24</td><td colspan='2'></td>
-    </tr>
-    <tr>
-      <td class='line'>25</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>import javax.swing.AbstractAction;</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>26</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>import javax.swing.AbstractButton;</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>27</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>import javax.swing.Action;</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>28</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>import javax.swing.DefaultCellEditor;</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>29</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>import javax.swing.JCheckBox;</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>30</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>import javax.swing.JComponent;</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>31</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>import javax.swing.JTable;</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>32</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>import javax.swing.KeyStroke;</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>33</td><td colspan='2'></td>
-    </tr>
-    <tr>
-      <td class='line'>34</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>import org.apache.commons.lang3.Validate;</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>35</td><td colspan='2'></td>
-    </tr>
-    <tr>
-      <td class='line'>36</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>import com.moneydance.modules.features.importlist.io.FileAdmin;</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>37</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>import com.moneydance.modules.features.importlist.util.Helper;</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>38</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>import com.moneydance.modules.features.importlist.util.Settings;</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>39</td><td colspan='2'></td>
-    </tr>
-    <tr class='click' onclick='showHideLines(this)'>
-      <td class='line'></td><td>&nbsp;</td><td class='comment'>/**
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
  * @author Florian J. Breunig
- */
-</td></tr>
+ */</div><span>/*...*/</span></td>
+    </tr>
     <tr>
       <td class='line'>43</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>public abstract class AbstractEditor extends DefaultCellEditor {</pre></td>
     </tr>
-    <tr>
-      <td class='line'>44</td><td colspan='2'></td>
-    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'>45</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    private static final long serialVersionUID = -2042274086341185241L;</pre></td>
@@ -145,23 +90,17 @@
       <td class='line'>49</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    private                 String          <span class='instance covered' title='Reads: 1 Writes: 1'>label</span>;</pre></td>
     </tr>
-    <tr>
-      <td class='line'>50</td><td colspan='2'></td>
-    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'>51</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public abstract ActionListener getActionListener(final int rowNumber);</pre></td>
     </tr>
-    <tr>
-      <td class='line'>52</td><td colspan='2'></td>
-    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'>53</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public abstract KeyStroke getKeyStroke();</pre></td>
     </tr>
-    <tr>
-      <td class='line'>54</td><td colspan='2'></td>
-    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'>55</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    AbstractEditor(</pre></td>
@@ -175,129 +114,226 @@
       <td><pre class='prettyprint'>            final ButtonRenderer argButtonRenderer) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>58</td><td class='count'>90</td>
+      <td class='line'>58</td><td class='count'>106</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l58s0'>        super(new JCheckBox());</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 50, 56, 50, 56, 50, 56</li>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x64</li>
-          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 43x2</li>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 52, 58, 52, 58, 52, 58</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 52x64</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 49x4</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 57x4</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 49x4</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 57x4</li>
           <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x4</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x4</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71        </ol>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x4</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71</li>
+        </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>59</td><td class='count'>90</td>
+      <td class='line'>59</td><td class='count'>106</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l59s0'>        Validate.notNull(</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 50, 56, 50, 56, 50, 56</li>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x64</li>
-          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 43x2</li>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 52, 58, 52, 58, 52, 58</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 52x64</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 49x4</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 57x4</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 49x4</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 57x4</li>
           <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x4</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x4</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71        </ol>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x4</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71</li>
+        </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>60</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                argFileAdmin,</pre></td>
+      <td class='line'>60</td><td class='count'>106</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l60s0'>                argFileAdmin,</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 52, 58, 52, 58, 52, 58</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 52x64</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 49x4</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 57x4</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 49x4</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 57x4</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x4</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x4</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>61</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                "argFileAdmin must not be null");</pre></td>
+      <td class='line'>61</td><td class='count'>106</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l61s0'>                "argFileAdmin must not be null");</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 52, 58, 52, 58, 52, 58</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 52x64</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 49x4</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 57x4</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 49x4</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 57x4</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x4</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x4</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>62</td><td class='count'>90</td>
+      <td class='line'>62</td><td class='count'>106</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l62s0'>        Validate.notNull(</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 50, 56, 50, 56, 50, 56</li>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x64</li>
-          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 43x2</li>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 52, 58, 52, 58, 52, 58</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 52x64</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 49x4</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 57x4</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 49x4</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 57x4</li>
           <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x4</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x4</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71        </ol>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x4</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71</li>
+        </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>63</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                argButtonRenderer,</pre></td>
+      <td class='line'>63</td><td class='count'>106</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l63s0'>                argButtonRenderer,</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 52, 58, 52, 58, 52, 58</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 52x64</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 49x4</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 57x4</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 49x4</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 57x4</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x4</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x4</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>64</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                "argButtonRenderer must not be null");</pre></td>
+      <td class='line'>64</td><td class='count'>106</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l64s0'>                "argButtonRenderer must not be null");</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 52, 58, 52, 58, 52, 58</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 52x64</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 49x4</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 57x4</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 49x4</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 57x4</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x4</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x4</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>65</td><td class='count'>90</td>
+      <td class='line'>65</td><td class='count'>106</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l65s0'>        this.settings       = Helper.getSettings();</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 50, 56, 50, 56, 50, 56</li>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x64</li>
-          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 43x2</li>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 52, 58, 52, 58, 52, 58</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 52x64</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 49x4</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 57x4</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 49x4</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 57x4</li>
           <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x4</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x4</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71        </ol>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x4</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71</li>
+        </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>66</td><td class='count'>90</td>
+      <td class='line'>66</td><td class='count'>106</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l66s0'>        this.fileAdmin      = argFileAdmin;</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 50, 56, 50, 56, 50, 56</li>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x64</li>
-          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 43x2</li>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 52, 58, 52, 58, 52, 58</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 52x64</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 49x4</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 57x4</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 49x4</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 57x4</li>
           <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x4</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x4</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71        </ol>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x4</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71</li>
+        </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>67</td><td class='count'>90</td>
+      <td class='line'>67</td><td class='count'>106</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l67s0'>        this.buttonRenderer = argButtonRenderer;</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 50, 56, 50, 56, 50, 56</li>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x64</li>
-          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 43x2</li>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 52, 58, 52, 58, 52, 58</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 52x64</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 49x4</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 57x4</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 49x4</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 57x4</li>
           <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x4</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x4</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71        </ol>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x4</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71</li>
+        </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>68</td><td class='count'>90</td>
+      <td class='line'>68</td><td class='count'>106</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l68s0'>    }</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 50, 56, 50, 56, 50, 56</li>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x64</li>
-          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 43x2</li>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 52, 58, 52, 58, 52, 58</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 52x64</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 45x2</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 49x4</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 57x4</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 49x4</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 57x4</li>
           <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x4</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x4</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71        </ol>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x4</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71</li>
+        </ol>
       </td>
     </tr>
-    <tr>
-      <td class='line'>69</td><td colspan='2'></td>
-    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'>70</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    protected final Settings getSettings() {</pre></td>
@@ -305,20 +341,19 @@
     <tr>
       <td class='line'>71</td><td class='count'>4</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l71s0'>        return this.settings;</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#testGetKeyStroke: 62</li>
-          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#testGetKeyStroke: 62</li>
-          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#testGetKeyStroke: 62</li>
-          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#testGetKeyStroke: 62        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#testGetKeyStroke: 63</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#testGetKeyStroke: 63</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#testGetKeyStroke: 63</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#testGetKeyStroke: 63</li>
+        </ol>
       </td>
     </tr>
     <tr>
       <td class='line'>72</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
-    <tr>
-      <td class='line'>73</td><td colspan='2'></td>
-    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'>74</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    protected final FileAdmin getFileAdmin() {</pre></td>
@@ -326,20 +361,19 @@
     <tr>
       <td class='line'>75</td><td class='count'>4</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l75s0'>        return this.fileAdmin;</pre>
-        <ol style='display: none;'>
+        <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#testGetActionListener: 57</li>
           <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#testGetActionListener: 57</li>
           <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#testGetActionListener: 57</li>
-          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#testGetActionListener: 57        </ol>
+          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#testGetActionListener: 57</li>
+        </ol>
       </td>
     </tr>
     <tr>
       <td class='line'>76</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
-    <tr>
-      <td class='line'>77</td><td colspan='2'></td>
-    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'>78</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    @Override</pre></td>
@@ -351,17 +385,16 @@
     <tr>
       <td class='line'>80</td><td class='count'>1</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l80s0'>        return this.label;</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testGetCellEditorValue: 66        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testGetCellEditorValue: 67</li>
+        </ol>
       </td>
     </tr>
     <tr>
       <td class='line'>81</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
-    <tr>
-      <td class='line'>82</td><td colspan='2'></td>
-    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'>83</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    @Override</pre></td>
@@ -401,75 +434,81 @@
     <tr>
       <td class='line'>90</td><td class='count'>2</td>
       <td><pre class='prettyprint jmp'>        <span id='l90s0' title='Executions: 2' class='covered cp' onclick='showHide(this,0)'>if (value != null)</span> <span id='l90s1' title='Executions: 1' class='covered cp' onclick='showHide(this,1)'>{</span></pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testGetTableCellEditorComponentJTableObjectBooleanIntInt: 72, 81        </ol>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testGetTableCellEditorComponentJTableObjectBooleanIntInt: 72        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testGetTableCellEditorComponentJTableObjectBooleanIntInt: 74, 83</li>
+        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testGetTableCellEditorComponentJTableObjectBooleanIntInt: 74</li>
+        </ol>
       </td>
     </tr>
     <tr>
       <td class='line'>91</td><td class='count'>1</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l91s0'>            this.label = value.toString();</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testGetTableCellEditorComponentJTableObjectBooleanIntInt: 72        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testGetTableCellEditorComponentJTableObjectBooleanIntInt: 74</li>
+        </ol>
       </td>
     </tr>
     <tr>
       <td class='line'>92</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>        }</pre></td>
     </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>93</td><td colspan='2'></td>
-    </tr>
-    <tr>
-      <td class='line'>94</td><td class='count'>2</td>
+      <td class='line'>94</td><td class='count'>4</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l94s0'>        AbstractButton button = this.buttonRenderer.getTableCellRendererButton(</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testGetTableCellEditorComponentJTableObjectBooleanIntInt: 72, 81        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testGetTableCellEditorComponentJTableObjectBooleanIntInt: 74x2, 83</li>
+        </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>95</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                table, value, isSelected, isSelected, row, column);</pre></td>
+      <td class='line'>95</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l95s0'>                table, value, isSelected, isSelected, row, column);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testGetTableCellEditorComponentJTableObjectBooleanIntInt: 74, 83</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>96</td><td class='count'>2</td>
+      <td class='line'>96</td><td class='count'>4</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l96s0'>        ActionListener actionListener = this.getActionListener(</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testGetTableCellEditorComponentJTableObjectBooleanIntInt: 72, 81        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testGetTableCellEditorComponentJTableObjectBooleanIntInt: 74x2, 83</li>
+        </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>97</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                table.convertRowIndexToModel(row));</pre></td>
+      <td class='line'>97</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l97s0'>                table.convertRowIndexToModel(row));</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testGetTableCellEditorComponentJTableObjectBooleanIntInt: 74, 83</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>98</td><td class='count'>2</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l98s0'>        button.addActionListener(actionListener);</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testGetTableCellEditorComponentJTableObjectBooleanIntInt: 72, 81        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testGetTableCellEditorComponentJTableObjectBooleanIntInt: 74, 83</li>
+        </ol>
       </td>
     </tr>
-    <tr>
-      <td class='line'>99</td><td colspan='2'></td>
-    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'>100</td><td class='count'>2</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l100s0'>        return button;</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testGetTableCellEditorComponentJTableObjectBooleanIntInt: 72, 81        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testGetTableCellEditorComponentJTableObjectBooleanIntInt: 74, 83</li>
+        </ol>
       </td>
     </tr>
     <tr>
       <td class='line'>101</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
-    <tr>
-      <td class='line'>102</td><td colspan='2'></td>
-    </tr>
-    <tr>
-      <td class='line'>103</td><td colspan='2'></td>
-    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'>104</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public final void registerKeyboardShortcut(final JComponent jComponent) {</pre></td>
@@ -485,45 +524,45 @@
     <tr>
       <td class='line'>105</td><td class='count'>2</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l105s0'>        Validate.notNull(jComponent, "jComponent must not be null");</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testRegisterKeyboardShortcut: 95, 97        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testRegisterKeyboardShortcut: 95, 97</li>
+        </ol>
       </td>
     </tr>
     <tr>
       <td class='line'>106</td><td class='count'>2</td>
       <td><pre class='prettyprint jmp'>        <span id='l106s0' title='Executions: 2' class='covered cp' onclick='showHide(this,0)'>if (this.getKeyStroke() == null) {</span></pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testRegisterKeyboardShortcut: 95, 97        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testRegisterKeyboardShortcut: 95, 97</li>
+        </ol>
       </td>
     </tr>
     <tr>
       <td class='line'>107</td><td class='count'>1</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l107s0'>            return;</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testRegisterKeyboardShortcut: 95        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testRegisterKeyboardShortcut: 95</li>
+        </ol>
       </td>
     </tr>
     <tr>
       <td class='line'>108</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>        }</pre></td>
     </tr>
-    <tr>
-      <td class='line'>109</td><td colspan='2'></td>
-    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'>110</td><td class='count'>2</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l110s0'>        final Action action = new AbstractAction() {</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testRegisterKeyboardShortcut: 97        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testRegisterKeyboardShortcut: 97</li>
+        </ol>
       </td>
     </tr>
     <tr>
       <td class='line'>111</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>            private static final long serialVersionUID = 947999658820121305L;</pre></td>
     </tr>
-    <tr>
-      <td class='line'>112</td><td colspan='2'></td>
-    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'>113</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>            @Override</pre></td>
@@ -535,69 +574,86 @@
     <tr>
       <td class='line'>115</td><td class='count'>1</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l115s0'>                ActionListener actionListener =</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testRegisterKeyboardShortcut: 104        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testRegisterKeyboardShortcut: 104</li>
+        </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>116</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                    AbstractEditor.this.getActionListener(0);</pre></td>
+      <td class='line'>116</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l116s0'>                    AbstractEditor.this.getActionListener(0);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testRegisterKeyboardShortcut: 104</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>117</td><td class='count'>1</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l117s0'>                actionListener.actionPerformed(actionEvent);</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testRegisterKeyboardShortcut: 104        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testRegisterKeyboardShortcut: 104</li>
+        </ol>
       </td>
     </tr>
     <tr>
       <td class='line'>118</td><td class='count'>1</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l118s0'>            }</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testRegisterKeyboardShortcut: 104        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testRegisterKeyboardShortcut: 104</li>
+        </ol>
       </td>
     </tr>
     <tr>
       <td class='line'>119</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>        };</pre></td>
     </tr>
-    <tr>
-      <td class='line'>120</td><td colspan='2'></td>
-    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'>121</td><td class='count'>1</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l121s0'>        final String actionMapKey = this.getClass().getName(); // unique</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testRegisterKeyboardShortcut: 97        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testRegisterKeyboardShortcut: 97</li>
+        </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>122</td><td class='count'>1</td>
+      <td class='line'>122</td><td class='count'>2</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l122s0'>        jComponent.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testRegisterKeyboardShortcut: 97        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testRegisterKeyboardShortcut: 97</li>
+        </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>123</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                this.getKeyStroke(),</pre></td>
+      <td class='line'>123</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l123s0'>                this.getKeyStroke(),</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testRegisterKeyboardShortcut: 97</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>124</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                actionMapKey);</pre></td>
+      <td class='line'>124</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l124s0'>                actionMapKey);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testRegisterKeyboardShortcut: 97</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>125</td><td class='count'>1</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l125s0'>        jComponent.getActionMap().put(actionMapKey, action);</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testRegisterKeyboardShortcut: 97        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testRegisterKeyboardShortcut: 97</li>
+        </ol>
       </td>
     </tr>
     <tr>
       <td class='line'>126</td><td class='count'>1</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l126s0'>    }</pre>
-        <ol style='display: none;'>
-          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testRegisterKeyboardShortcut: 97        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#testRegisterKeyboardShortcut: 97</li>
+        </ol>
       </td>
     </tr>
     <tr>

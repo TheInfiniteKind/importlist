@@ -1,6 +1,5 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
-<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+<!DOCTYPE html>
+<html>
 <head>
   <title>JMockit Coverage Report</title>
   <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
@@ -9,34 +8,62 @@
 </head>
 <body>
   <h1>JMockit Coverage Report</h1>
-  <table>
-    <caption>All Packages and Files<div style='font-size: smaller'>../master/src</div></caption>
+  <table id='packages'>
+    <caption>All Packages and Files<div style='font-size: smaller'>master/src</div></caption>
     <tr>
-      <th style='cursor: pointer' onclick='showHideAllFiles(this)'>Packages: 6</th>
-      <th onclick='location.reload()' style='cursor: pointer' title='Click on the title for each metric to sort by size (total number of line segments, paths, or fields).'>Files: 33</th>
-      <th onclick='sortTables(1)' style='cursor: pointer' title='Measures how much of the executable production code was exercised by tests.
+      <th style='cursor: col-resize' onclick='showHideAllFiles(this)'>Packages: 9</th>
+      <th onclick='location.reload()' style='cursor: n-resize' title='Click on the title for each metric to sort by size (total number of line segments, paths, or fields).'>Files: 69</th>
+      <th onclick='sortTables(1)' style='cursor: n-resize' title='Measures how much of the executable production code was exercised by tests.
 An executable line of code contains one or more executable segments.
 The percentages are calculated as 100*NE/NS, where NS is the number of segments and NE the number of executed segments.'>Line</th>
-      <th onclick='sortTables(2)' style='cursor: pointer' title='Measures how many of the possible execution paths through method/constructor bodies were actually executed by tests.
+      <th onclick='sortTables(2)' style='cursor: n-resize' title='Measures how many of the possible execution paths through method/constructor bodies were actually executed by tests.
 The percentages are calculated as 100*NPE/NP, where NP is the number of possible paths and NPE the number of fully executed paths.'>Path</th>
-      <th onclick='sortTables(3)' style='cursor: pointer' title='Measures how many of the instance and static non-final fields were fully exercised by the test run.
+      <th onclick='sortTables(3)' style='cursor: n-resize' title='Measures how many of the instance and static non-final fields were fully exercised by the test run.
 To be fully exercised, a field must have the last value assigned to it read by at least one test.
 The percentages are calculated as 100*NFE/NF, where NF is the number of non-final fields and NFE the number of fully exercised fields.'>Data</th>
     </tr>
     <tr>
-      <td class='package'>com.moneydance.modules.features.importlist</td>
+      <td class='package click' onclick='showHideFiles(this)'>com.moneydance.apps.md.controller</td>
       <td>
         <table width='100%'>
           <tr>
-            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/Main.html'>Main.java</a>                   </td>
-            <td class='coverage' style='background-color:#00ff00' title='Line segments: 33/33'>100%</td>
+            <td class='file'>StubContext.java              </td>
+            <td class='coverage' style='background-color:#5ea100' title='Line segments: 24/38'>63%</td>
+            <td class='coverage' style='background-color:#629d00' title='Paths: 8/13'>62%</td>
+            <td class='coverage' style='background-color:#00ff00' title='Fields: 2/2'>100%</td>
+          </tr>
+          <tr>
+            <td class='file'>StubContextFactory.java       </td>
+            <td class='coverage' style='background-color:#00ff00' title='Line segments: 22/22'>100%</td>
+            <td class='coverage' style='background-color:#00ff00' title='Paths: 4/4'>100%</td>
+            <td class='coverage' style='background-color:#00ff00' title='Fields: 1/1'>100%</td>
+          </tr>
+        </table>
+      </td>
+      <td class='coverage' style='background-color:#3bc400' title='Line segments: 46/60'>77%</td>
+      <td class='coverage' style='background-color:#4bb400' title='Paths: 12/17'>71%</td>
+      <td class='coverage' style='background-color:#00ff00' title='Fields: 3/3'>100%</td>
+    </tr>
+    <tr>
+      <td class='package click' onclick='showHideFiles(this)'>com.moneydance.modules.features.importlist</td>
+      <td>
+        <table width='100%'>
+          <tr>
+            <td class='file'>AllTests.java                 </td>
+            <td class='coverage' style='background-color:#ff0000' title='Line segments: 0/1'>0%</td>
+            <td class='coverage' style='background-color:#ff0000' title='Paths: 0/1'>0%</td>
+            <td class='coverage nocode'>N/A</td>
+          </tr>
+          <tr>
+            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/Main.html'>Main.java</a>                     </td>
+            <td class='coverage' style='background-color:#00ff00' title='Line segments: 41/41'>100%</td>
             <td class='coverage' style='background-color:#00ff00' title='Paths: 11/11'>100%</td>
             <td class='coverage' style='background-color:#00ff00' title='Fields: 2/2'>100%</td>
           </tr>
         </table>
       </td>
-      <td class='coverage' style='background-color:#00ff00' title='Line segments: 33/33'>100%</td>
-      <td class='coverage' style='background-color:#00ff00' title='Paths: 11/11'>100%</td>
+      <td class='coverage' style='background-color:#06f900' title='Line segments: 41/42'>98%</td>
+      <td class='coverage' style='background-color:#15ea00' title='Paths: 11/12'>92%</td>
       <td class='coverage' style='background-color:#00ff00' title='Fields: 2/2'>100%</td>
     </tr>
     <tr>
@@ -44,102 +71,108 @@ The percentages are calculated as 100*NFE/NF, where NF is the number of non-fina
       <td>
         <table width='100%'>
           <tr>
-            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/controller/AggregationTableModel.html'>AggregationTableModel.java</a>  </td>
-            <td class='coverage' style='background-color:#00ff00' title='Line segments: 31/31'>100%</td>
+            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/controller/AggregationTableModel.html'>AggregationTableModel.java</a>    </td>
+            <td class='coverage' style='background-color:#00ff00' title='Line segments: 32/32'>100%</td>
             <td class='coverage' style='background-color:#00ff00' title='Paths: 13/13'>100%</td>
             <td class='coverage nocode'>N/A</td>
           </tr>
           <tr>
-            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/controller/FileTableModel.html'>FileTableModel.java</a>         </td>
-            <td class='coverage' style='background-color:#00ff00' title='Line segments: 52/52'>100%</td>
+            <td class='file'>AllTests.java                 </td>
+            <td class='coverage' style='background-color:#ff0000' title='Line segments: 0/1'>0%</td>
+            <td class='coverage' style='background-color:#ff0000' title='Paths: 0/1'>0%</td>
+            <td class='coverage nocode'>N/A</td>
+          </tr>
+          <tr>
+            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/controller/FileTableModel.html'>FileTableModel.java</a>           </td>
+            <td class='coverage' style='background-color:#00ff00' title='Line segments: 54/54'>100%</td>
             <td class='coverage' style='background-color:#00ff00' title='Paths: 18/18'>100%</td>
             <td class='coverage nocode'>N/A</td>
           </tr>
           <tr>
-            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/controller/FileTableRowSorter.html'>FileTableRowSorter.java</a>     </td>
+            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/controller/FileTableRowSorter.html'>FileTableRowSorter.java</a>       </td>
             <td class='coverage' style='background-color:#00ff00' title='Line segments: 17/17'>100%</td>
             <td class='coverage' style='background-color:#00ff00' title='Paths: 7/7'>100%</td>
             <td class='coverage nocode'>N/A</td>
           </tr>
           <tr>
-            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/controller/JCustomScrollPane.html'>JCustomScrollPane.java</a>      </td>
-            <td class='coverage' style='background-color:#00ff00' title='Line segments: 11/11'>100%</td>
-            <td class='coverage' style='background-color:#00ff00' title='Paths: 5/5'>100%</td>
-            <td class='coverage nocode'>N/A</td>
-          </tr>
-          <tr>
-            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/controller/JCustomSplitPane.html'>JCustomSplitPane.java</a>       </td>
-            <td class='coverage' style='background-color:#00ff00' title='Line segments: 12/12'>100%</td>
-            <td class='coverage' style='background-color:#00ff00' title='Paths: 5/5'>100%</td>
-            <td class='coverage nocode'>N/A</td>
-          </tr>
-          <tr>
-            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/controller/TableListener.html'>TableListener.java</a>          </td>
-            <td class='coverage' style='background-color:#0bf400' title='Line segments: 44/46'>96%</td>
-            <td class='coverage' style='background-color:#44bb00' title='Paths: 11/15'>73%</td>
-            <td class='coverage' style='background-color:#00ff00' title='Fields: 2/2'>100%</td>
-          </tr>
-          <tr>
-            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/controller/Tracker.html'>Tracker.java</a>                </td>
-            <td class='coverage' style='background-color:#609f00' title='Line segments: 15/24'>63%</td>
+            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/controller/Tracker.html'>Tracker.java</a>                  </td>
+            <td class='coverage' style='background-color:#738c00' title='Line segments: 17/31'>55%</td>
             <td class='coverage' style='background-color:#926d00' title='Paths: 3/7'>43%</td>
             <td class='coverage nocode'>N/A</td>
           </tr>
           <tr>
-            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/controller/ViewController.html'>ViewController.java</a>         </td>
-            <td class='coverage' style='background-color:#2ed100' title='Line segments: 184/225'>82%</td>
-            <td class='coverage' style='background-color:#58a700' title='Paths: 19/29'>66%</td>
-            <td class='coverage' style='background-color:#00ff00' title='Fields: 11/11'>100%</td>
+            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/controller/ViewController.html'>ViewController.java</a>           </td>
+            <td class='coverage' style='background-color:#699600' title='Line segments: 96/163'>59%</td>
+            <td class='coverage' style='background-color:#55aa00' title='Paths: 20/30'>67%</td>
+            <td class='coverage' style='background-color:#4cb300' title='Fields: 7/10'>70%</td>
           </tr>
         </table>
       </td>
-      <td class='coverage' style='background-color:#20df00' title='Line segments: 366/418'>88%</td>
-      <td class='coverage' style='background-color:#2ed100' title='Paths: 81/99'>82%</td>
-      <td class='coverage' style='background-color:#00ff00' title='Fields: 13/13'>100%</td>
+      <td class='coverage' style='background-color:#46b900' title='Line segments: 216/298'>72%</td>
+      <td class='coverage' style='background-color:#32cd00' title='Paths: 61/76'>80%</td>
+      <td class='coverage' style='background-color:#4cb300' title='Fields: 7/10'>70%</td>
     </tr>
     <tr>
       <td class='package click' onclick='showHideFiles(this)'>com.moneydance.modules.features.importlist.io</td>
       <td>
         <table width='100%'>
           <tr>
-            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/io/DirectoryChooser.html'>DirectoryChooser.java</a>       </td>
-            <td class='coverage' style='background-color:#2ad500' title='Line segments: 45/54'>83%</td>
-            <td class='coverage' style='background-color:#926d00' title='Paths: 12/28'>43%</td>
-            <td class='coverage' style='background-color:#00ff00' title='Fields: 1/1'>100%</td>
-          </tr>
-          <tr>
-            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/io/FileAdmin.html'>FileAdmin.java</a>              </td>
-            <td class='coverage' style='background-color:#36c900' title='Line segments: 105/133'>79%</td>
-            <td class='coverage' style='background-color:#52ad00' title='Paths: 19/28'>68%</td>
-            <td class='coverage' style='background-color:#00ff00' title='Fields: 1/1'>100%</td>
-          </tr>
-          <tr>
-            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/io/FileDeleter.html'>FileDeleter.java</a>            </td>
-            <td class='coverage' style='background-color:#00ff00' title='Line segments: 5/5'>100%</td>
-            <td class='coverage' style='background-color:#00ff00' title='Paths: 2/2'>100%</td>
+            <td class='file'>AllTests.java                 </td>
+            <td class='coverage' style='background-color:#ff0000' title='Line segments: 0/1'>0%</td>
+            <td class='coverage' style='background-color:#ff0000' title='Paths: 0/1'>0%</td>
             <td class='coverage nocode'>N/A</td>
           </tr>
           <tr>
-            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/io/FileImporter.html'>FileImporter.java</a>           </td>
-            <td class='coverage' style='background-color:#00ff00' title='Line segments: 46/46'>100%</td>
-            <td class='coverage' style='background-color:#27d800' title='Paths: 11/13'>85%</td>
+            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/io/DeleteAllOperation.html'>DeleteAllOperation.java</a>       </td>
+            <td class='coverage' style='background-color:#0ef100' title='Line segments: 34/36'>94%</td>
+            <td class='coverage' style='background-color:#7f8000' title='Paths: 3/6'>50%</td>
             <td class='coverage nocode'>N/A</td>
           </tr>
           <tr>
-            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/io/FileOperation.html'>FileOperation.java</a>          </td>
+            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/io/DeleteOneOperation.html'>DeleteOneOperation.java</a>       </td>
+            <td class='coverage' style='background-color:#00ff00' title='Line segments: 47/47'>100%</td>
+            <td class='coverage' style='background-color:#55aa00' title='Paths: 4/6'>67%</td>
+            <td class='coverage nocode'>N/A</td>
+          </tr>
+          <tr>
+            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/io/DirectoryChooser.html'>DirectoryChooser.java</a>         </td>
+            <td class='coverage' style='background-color:#0df200' title='Line segments: 37/39'>95%</td>
+            <td class='coverage' style='background-color:#6d9200' title='Paths: 8/14'>57%</td>
+            <td class='coverage nocode'>N/A</td>
+          </tr>
+          <tr>
+            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/io/FileAdmin.html'>FileAdmin.java</a>                </td>
+            <td class='coverage' style='background-color:#16e900' title='Line segments: 104/114'>91%</td>
+            <td class='coverage' style='background-color:#19e600' title='Paths: 18/20'>90%</td>
+            <td class='coverage' style='background-color:#00ff00' title='Fields: 2/2'>100%</td>
+          </tr>
+          <tr>
+            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/io/FileOperation.html'>FileOperation.java</a>            </td>
             <td class='coverage nocode'>N/A</td><td class='coverage nocode'>N/A</td>
             <td class='coverage nocode'>N/A</td>
           </tr>
           <tr>
-            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/io/TransactionFileListener.html'>TransactionFileListener.java</a></td>
-            <td class='coverage' style='background-color:#00ff00' title='Line segments: 19/19'>100%</td>
+            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/io/ImportAllOperation.html'>ImportAllOperation.java</a>       </td>
+            <td class='coverage' style='background-color:#00ff00' title='Line segments: 14/14'>100%</td>
+            <td class='coverage' style='background-color:#00ff00' title='Paths: 3/3'>100%</td>
+            <td class='coverage nocode'>N/A</td>
+          </tr>
+          <tr>
+            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/io/ImportOneOperation.html'>ImportOneOperation.java</a>       </td>
+            <td class='coverage' style='background-color:#00ff00' title='Line segments: 53/53'>100%</td>
+            <td class='coverage' style='background-color:#55aa00' title='Paths: 8/12'>67%</td>
+            <td class='coverage nocode'>N/A</td>
+          </tr>
+          <tr>
+            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/io/TransactionFileListener.html'>TransactionFileListener.java</a>  </td>
+            <td class='coverage' style='background-color:#00ff00' title='Line segments: 20/20'>100%</td>
             <td class='coverage' style='background-color:#00ff00' title='Paths: 10/10'>100%</td>
             <td class='coverage nocode'>N/A</td>
           </tr>
         </table>
       </td>
-      <td class='coverage' style='background-color:#25da00' title='Line segments: 220/257'>86%</td>
-      <td class='coverage' style='background-color:#55aa00' title='Paths: 54/81'>67%</td>
+      <td class='coverage' style='background-color:#0cf300' title='Line segments: 309/324'>95%</td>
+      <td class='coverage' style='background-color:#40bf00' title='Paths: 54/72'>75%</td>
       <td class='coverage' style='background-color:#00ff00' title='Fields: 2/2'>100%</td>
     </tr>
     <tr>
@@ -147,69 +180,75 @@ The percentages are calculated as 100*NFE/NF, where NF is the number of non-fina
       <td>
         <table width='100%'>
           <tr>
-            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/table/AbstractEditor.html'>AbstractEditor.java</a>         </td>
-            <td class='coverage' style='background-color:#00ff00' title='Line segments: 29/29'>100%</td>
+            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/table/AbstractEditor.html'>AbstractEditor.java</a>           </td>
+            <td class='coverage' style='background-color:#00ff00' title='Line segments: 39/39'>100%</td>
             <td class='coverage' style='background-color:#00ff00' title='Paths: 10/10'>100%</td>
             <td class='coverage' style='background-color:#00ff00' title='Fields: 1/1'>100%</td>
           </tr>
           <tr>
-            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/table/ButtonRenderer.html'>ButtonRenderer.java</a>         </td>
-            <td class='coverage' style='background-color:#00ff00' title='Line segments: 38/38'>100%</td>
-            <td class='coverage' style='background-color:#00ff00' title='Paths: 12/12'>100%</td>
+            <td class='file'>AllTests.java                 </td>
+            <td class='coverage' style='background-color:#ff0000' title='Line segments: 0/1'>0%</td>
+            <td class='coverage' style='background-color:#ff0000' title='Paths: 0/1'>0%</td>
+            <td class='coverage nocode'>N/A</td>
+          </tr>
+          <tr>
+            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/table/ButtonRenderer.html'>ButtonRenderer.java</a>           </td>
+            <td class='coverage' style='background-color:#00ff00' title='Line segments: 48/48'>100%</td>
+            <td class='coverage' style='background-color:#00ff00' title='Paths: 13/13'>100%</td>
             <td class='coverage' style='background-color:#00ff00' title='Fields: 3/3'>100%</td>
           </tr>
           <tr>
-            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/table/ColumnFactory.html'>ColumnFactory.java</a>          </td>
-            <td class='coverage' style='background-color:#00ff00' title='Line segments: 48/48'>100%</td>
+            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/table/ColumnFactory.html'>ColumnFactory.java</a>            </td>
+            <td class='coverage' style='background-color:#00ff00' title='Line segments: 74/74'>100%</td>
             <td class='coverage' style='background-color:#0ef100' title='Paths: 17/18'>94%</td>
             <td class='coverage nocode'>N/A</td>
           </tr>
           <tr>
-            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/table/DeleteAllEditor.html'>DeleteAllEditor.java</a>        </td>
-            <td class='coverage' style='background-color:#00ff00' title='Line segments: 7/7'>100%</td>
+            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/table/DeleteAllEditor.html'>DeleteAllEditor.java</a>          </td>
+            <td class='coverage' style='background-color:#00ff00' title='Line segments: 8/8'>100%</td>
+            <td class='coverage' style='background-color:#00ff00' title='Paths: 5/5'>100%</td>
+            <td class='coverage nocode'>N/A</td>
+          </tr>
+          <tr>
+            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/table/DeleteOneEditor.html'>DeleteOneEditor.java</a>          </td>
+            <td class='coverage' style='background-color:#00ff00' title='Line segments: 8/8'>100%</td>
+            <td class='coverage' style='background-color:#00ff00' title='Paths: 5/5'>100%</td>
+            <td class='coverage nocode'>N/A</td>
+          </tr>
+          <tr>
+            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/table/HeaderRenderer.html'>HeaderRenderer.java</a>           </td>
+            <td class='coverage' style='background-color:#00ff00' title='Line segments: 37/37'>100%</td>
             <td class='coverage' style='background-color:#00ff00' title='Paths: 4/4'>100%</td>
             <td class='coverage nocode'>N/A</td>
           </tr>
           <tr>
-            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/table/DeleteOneEditor.html'>DeleteOneEditor.java</a>        </td>
-            <td class='coverage' style='background-color:#00ff00' title='Line segments: 7/7'>100%</td>
-            <td class='coverage' style='background-color:#00ff00' title='Paths: 4/4'>100%</td>
+            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/table/ImportAllEditor.html'>ImportAllEditor.java</a>          </td>
+            <td class='coverage' style='background-color:#00ff00' title='Line segments: 8/8'>100%</td>
+            <td class='coverage' style='background-color:#00ff00' title='Paths: 5/5'>100%</td>
             <td class='coverage nocode'>N/A</td>
           </tr>
           <tr>
-            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/table/HeaderRenderer.html'>HeaderRenderer.java</a>         </td>
-            <td class='coverage' style='background-color:#00ff00' title='Line segments: 23/23'>100%</td>
-            <td class='coverage' style='background-color:#00ff00' title='Paths: 4/4'>100%</td>
+            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/table/ImportOneEditor.html'>ImportOneEditor.java</a>          </td>
+            <td class='coverage' style='background-color:#00ff00' title='Line segments: 8/8'>100%</td>
+            <td class='coverage' style='background-color:#00ff00' title='Paths: 5/5'>100%</td>
             <td class='coverage nocode'>N/A</td>
           </tr>
           <tr>
-            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/table/ImportAllEditor.html'>ImportAllEditor.java</a>        </td>
-            <td class='coverage' style='background-color:#00ff00' title='Line segments: 7/7'>100%</td>
-            <td class='coverage' style='background-color:#00ff00' title='Paths: 4/4'>100%</td>
-            <td class='coverage nocode'>N/A</td>
-          </tr>
-          <tr>
-            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/table/ImportOneEditor.html'>ImportOneEditor.java</a>        </td>
-            <td class='coverage' style='background-color:#00ff00' title='Line segments: 7/7'>100%</td>
-            <td class='coverage' style='background-color:#00ff00' title='Paths: 4/4'>100%</td>
-            <td class='coverage nocode'>N/A</td>
-          </tr>
-          <tr>
-            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/table/LabelModifiedRenderer.html'>LabelModifiedRenderer.java</a>  </td>
-            <td class='coverage' style='background-color:#00ff00' title='Line segments: 24/24'>100%</td>
-            <td class='coverage' style='background-color:#00ff00' title='Paths: 6/6'>100%</td>
+            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/table/LabelModifiedRenderer.html'>LabelModifiedRenderer.java</a>    </td>
+            <td class='coverage' style='background-color:#00ff00' title='Line segments: 33/33'>100%</td>
+            <td class='coverage' style='background-color:#00ff00' title='Paths: 5/5'>100%</td>
             <td class='coverage' style='background-color:#00ff00' title='Fields: 2/2'>100%</td>
           </tr>
           <tr>
-            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/table/LabelNameRenderer.html'>LabelNameRenderer.java</a>      </td>
-            <td class='coverage' style='background-color:#00ff00' title='Line segments: 13/13'>100%</td>
+            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/table/LabelNameRenderer.html'>LabelNameRenderer.java</a>        </td>
+            <td class='coverage' style='background-color:#00ff00' title='Line segments: 19/19'>100%</td>
             <td class='coverage' style='background-color:#00ff00' title='Paths: 3/3'>100%</td>
             <td class='coverage nocode'>N/A</td>
           </tr>
         </table>
       </td>
-      <td class='coverage' style='background-color:#00ff00' title='Line segments: 203/203'>100%</td>
-      <td class='coverage' style='background-color:#04fb00' title='Paths: 68/69'>99%</td>
+      <td class='coverage' style='background-color:#01fe00' title='Line segments: 282/283'>>99%</td>
+      <td class='coverage' style='background-color:#07f800' title='Paths: 72/74'>97%</td>
       <td class='coverage' style='background-color:#00ff00' title='Fields: 6/6'>100%</td>
     </tr>
     <tr>
@@ -217,39 +256,45 @@ The percentages are calculated as 100*NFE/NF, where NF is the number of non-fina
       <td>
         <table width='100%'>
           <tr>
-            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/util/AlphanumComparator.html'>AlphanumComparator.java</a>     </td>
-            <td class='coverage' style='background-color:#00ff00' title='Line segments: 63/63'>100%</td>
-            <td class='coverage' style='background-color:#bd4200' title='Paths: 7/27'>26%</td>
+            <td class='file'>AllTests.java                 </td>
+            <td class='coverage' style='background-color:#ff0000' title='Line segments: 0/1'>0%</td>
+            <td class='coverage' style='background-color:#ff0000' title='Paths: 0/1'>0%</td>
             <td class='coverage nocode'>N/A</td>
           </tr>
           <tr>
-            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/util/Helper.html'>Helper.java</a>                 </td>
-            <td class='coverage' style='background-color:#31ce00' title='Line segments: 42/52'>81%</td>
+            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/util/AlphanumComparator.html'>AlphanumComparator.java</a>       </td>
+            <td class='coverage' style='background-color:#00ff00' title='Line segments: 62/62'>100%</td>
+            <td class='coverage' style='background-color:#aa5500' title='Paths: 6/18'>33%</td>
+            <td class='coverage nocode'>N/A</td>
+          </tr>
+          <tr>
+            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/util/Helper.html'>Helper.java</a>                   </td>
+            <td class='coverage' style='background-color:#30cf00' title='Line segments: 43/53'>81%</td>
             <td class='coverage' style='background-color:#17e800' title='Paths: 10/11'>91%</td>
             <td class='coverage' style='background-color:#00ff00' title='Fields: 3/3'>100%</td>
           </tr>
           <tr>
-            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/util/Localizable.html'>Localizable.java</a>            </td>
-            <td class='coverage' style='background-color:#00ff00' title='Line segments: 49/49'>100%</td>
+            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/util/Localizable.html'>Localizable.java</a>              </td>
+            <td class='coverage' style='background-color:#00ff00' title='Line segments: 61/61'>100%</td>
             <td class='coverage' style='background-color:#00ff00' title='Paths: 20/20'>100%</td>
             <td class='coverage' style='background-color:#00ff00' title='Fields: 1/1'>100%</td>
           </tr>
           <tr>
-            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/util/Preferences.html'>Preferences.java</a>            </td>
-            <td class='coverage' style='background-color:#00ff00' title='Line segments: 92/92'>100%</td>
-            <td class='coverage' style='background-color:#00ff00' title='Paths: 41/41'>100%</td>
+            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/util/Preferences.html'>Preferences.java</a>              </td>
+            <td class='coverage' style='background-color:#00ff00' title='Line segments: 140/140'>100%</td>
+            <td class='coverage' style='background-color:#00ff00' title='Paths: 40/40'>100%</td>
             <td class='coverage' style='background-color:#00ff00' title='Fields: 2/2'>100%</td>
           </tr>
           <tr>
-            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/util/Settings.html'>Settings.java</a>               </td>
-            <td class='coverage' style='background-color:#14eb00' title='Line segments: 47/51'>92%</td>
+            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/util/Settings.html'>Settings.java</a>                 </td>
+            <td class='coverage' style='background-color:#12ed00' title='Line segments: 52/56'>93%</td>
             <td class='coverage' style='background-color:#00ff00' title='Paths: 38/38'>100%</td>
             <td class='coverage nocode'>N/A</td>
           </tr>
         </table>
       </td>
-      <td class='coverage' style='background-color:#0cf300' title='Line segments: 293/307'>95%</td>
-      <td class='coverage' style='background-color:#27d800' title='Paths: 116/137'>85%</td>
+      <td class='coverage' style='background-color:#0af500' title='Line segments: 358/373'>96%</td>
+      <td class='coverage' style='background-color:#1ce300' title='Paths: 114/128'>89%</td>
       <td class='coverage' style='background-color:#00ff00' title='Fields: 6/6'>100%</td>
     </tr>
     <tr>
@@ -257,35 +302,229 @@ The percentages are calculated as 100*NFE/NF, where NF is the number of non-fina
       <td>
         <table width='100%'>
           <tr>
-            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/view/ColorSchemeHelper.html'>ColorSchemeHelper.java</a>      </td>
+            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/view/AggregationTableFactory.html'>AggregationTableFactory.java</a>  </td>
+            <td class='coverage' style='background-color:#00ff00' title='Line segments: 95/95'>100%</td>
+            <td class='coverage' style='background-color:#00ff00' title='Paths: 6/6'>100%</td>
+            <td class='coverage' style='background-color:#00ff00' title='Fields: 4/4'>100%</td>
+          </tr>
+          <tr>
+            <td class='file'>AllTests.java                 </td>
+            <td class='coverage' style='background-color:#ff0000' title='Line segments: 0/1'>0%</td>
+            <td class='coverage' style='background-color:#ff0000' title='Paths: 0/1'>0%</td>
+            <td class='coverage nocode'>N/A</td>
+          </tr>
+          <tr>
+            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/view/BaseTableFactory.html'>BaseTableFactory.java</a>         </td>
+            <td class='coverage' style='background-color:#00ff00' title='Line segments: 130/130'>100%</td>
+            <td class='coverage' style='background-color:#00ff00' title='Paths: 6/6'>100%</td>
+            <td class='coverage' style='background-color:#00ff00' title='Fields: 6/6'>100%</td>
+          </tr>
+          <tr>
+            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/view/ColorSchemeHelper.html'>ColorSchemeHelper.java</a>        </td>
             <td class='coverage nocode'>N/A</td><td class='coverage nocode'>N/A</td>
             <td class='coverage nocode'>N/A</td>
           </tr>
           <tr>
-            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/view/EvenColorSchemeHelper.html'>EvenColorSchemeHelper.java</a>  </td>
+            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/view/ComponentFactory.html'>ComponentFactory.java</a>         </td>
+            <td class='coverage nocode'>N/A</td><td class='coverage nocode'>N/A</td>
+            <td class='coverage nocode'>N/A</td>
+          </tr>
+          <tr>
+            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/view/DirectoryChooserFactory.html'>DirectoryChooserFactory.java</a>  </td>
+            <td class='coverage' style='background-color:#00ff00' title='Line segments: 13/13'>100%</td>
+            <td class='coverage' style='background-color:#00ff00' title='Paths: 4/4'>100%</td>
+            <td class='coverage' style='background-color:#00ff00' title='Fields: 1/1'>100%</td>
+          </tr>
+          <tr>
+            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/view/EmptyLabelFactory.html'>EmptyLabelFactory.java</a>        </td>
+            <td class='coverage' style='background-color:#00ff00' title='Line segments: 12/12'>100%</td>
+            <td class='coverage' style='background-color:#00ff00' title='Paths: 4/4'>100%</td>
+            <td class='coverage' style='background-color:#00ff00' title='Fields: 2/2'>100%</td>
+          </tr>
+          <tr>
+            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/view/EvenColorSchemeHelper.html'>EvenColorSchemeHelper.java</a>    </td>
             <td class='coverage' style='background-color:#00ff00' title='Line segments: 24/24'>100%</td>
             <td class='coverage' style='background-color:#00ff00' title='Paths: 7/7'>100%</td>
             <td class='coverage' style='background-color:#00ff00' title='Fields: 3/3'>100%</td>
           </tr>
           <tr>
-            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/view/OddColorSchemeHelper.html'>OddColorSchemeHelper.java</a>   </td>
+            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/view/JCustomScrollPane.html'>JCustomScrollPane.java</a>        </td>
+            <td class='coverage' style='background-color:#00ff00' title='Line segments: 11/11'>100%</td>
+            <td class='coverage' style='background-color:#00ff00' title='Paths: 5/5'>100%</td>
+            <td class='coverage nocode'>N/A</td>
+          </tr>
+          <tr>
+            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/view/JCustomSplitPane.html'>JCustomSplitPane.java</a>         </td>
+            <td class='coverage' style='background-color:#00ff00' title='Line segments: 12/12'>100%</td>
+            <td class='coverage' style='background-color:#00ff00' title='Paths: 5/5'>100%</td>
+            <td class='coverage nocode'>N/A</td>
+          </tr>
+          <tr>
+            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/view/OddColorSchemeHelper.html'>OddColorSchemeHelper.java</a>     </td>
             <td class='coverage' style='background-color:#00ff00' title='Line segments: 24/24'>100%</td>
             <td class='coverage' style='background-color:#00ff00' title='Paths: 7/7'>100%</td>
             <td class='coverage' style='background-color:#00ff00' title='Fields: 3/3'>100%</td>
           </tr>
+          <tr>
+            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/view/SplitPaneFactory.html'>SplitPaneFactory.java</a>         </td>
+            <td class='coverage' style='background-color:#00ff00' title='Line segments: 20/20'>100%</td>
+            <td class='coverage' style='background-color:#00ff00' title='Paths: 4/4'>100%</td>
+            <td class='coverage' style='background-color:#00ff00' title='Fields: 1/1'>100%</td>
+          </tr>
+          <tr>
+            <td class='file'><a target='_blank' href='com/moneydance/modules/features/importlist/view/TableListener.html'>TableListener.java</a>            </td>
+            <td class='coverage' style='background-color:#0af500' title='Line segments: 50/52'>96%</td>
+            <td class='coverage' style='background-color:#27d800' title='Paths: 11/13'>85%</td>
+            <td class='coverage' style='background-color:#00ff00' title='Fields: 2/2'>100%</td>
+          </tr>
         </table>
       </td>
-      <td class='coverage' style='background-color:#00ff00' title='Line segments: 48/48'>100%</td>
-      <td class='coverage' style='background-color:#00ff00' title='Paths: 14/14'>100%</td>
-      <td class='coverage' style='background-color:#00ff00' title='Fields: 6/6'>100%</td>
+      <td class='coverage' style='background-color:#02fd00' title='Line segments: 391/394'>99%</td>
+      <td class='coverage' style='background-color:#0cf300' title='Paths: 59/62'>95%</td>
+      <td class='coverage' style='background-color:#00ff00' title='Fields: 22/22'>100%</td>
+    </tr>
+    <tr>
+      <td class='package click' onclick='showHideFiles(this)'>org.eclipse.jdt.internal.junit.runner</td>
+      <td>
+        <table width='100%'>
+          <tr>
+            <td class='file'>DefaultClassifier.java        </td>
+            <td class='coverage' style='background-color:#ff0000' title='Line segments: 0/12'>0%</td>
+            <td class='coverage' style='background-color:#ff0000' title='Paths: 0/4'>0%</td>
+            <td class='coverage' style='background-color:#ff0000' title='Fields: 0/1'>0%</td>
+          </tr>
+          <tr>
+            <td class='file'>FirstRunExecutionListener.java</td>
+            <td class='coverage' style='background-color:#b34c00' title='Line segments: 8/27'>30%</td>
+            <td class='coverage' style='background-color:#8e7100' title='Paths: 4/9'>44%</td>
+            <td class='coverage' style='background-color:#00ff00' title='Fields: 2/2'>100%</td>
+          </tr>
+          <tr>
+            <td class='file'>IClassifiesThrowables.java    </td>
+            <td class='coverage nocode'>N/A</td><td class='coverage nocode'>N/A</td>
+            <td class='coverage nocode'>N/A</td>
+          </tr>
+          <tr>
+            <td class='file'>IListensToTestExecutions.java </td>
+            <td class='coverage nocode'>N/A</td><td class='coverage nocode'>N/A</td>
+            <td class='coverage nocode'>N/A</td>
+          </tr>
+          <tr>
+            <td class='file'>IStopListener.java            </td>
+            <td class='coverage nocode'>N/A</td><td class='coverage nocode'>N/A</td>
+            <td class='coverage nocode'>N/A</td>
+          </tr>
+          <tr>
+            <td class='file'>ITestIdentifier.java          </td>
+            <td class='coverage nocode'>N/A</td><td class='coverage nocode'>N/A</td>
+            <td class='coverage nocode'>N/A</td>
+          </tr>
+          <tr>
+            <td class='file'>ITestLoader.java              </td>
+            <td class='coverage nocode'>N/A</td><td class='coverage nocode'>N/A</td>
+            <td class='coverage nocode'>N/A</td>
+          </tr>
+          <tr>
+            <td class='file'>ITestReference.java           </td>
+            <td class='coverage nocode'>N/A</td><td class='coverage nocode'>N/A</td>
+            <td class='coverage nocode'>N/A</td>
+          </tr>
+          <tr>
+            <td class='file'>IVisitsTestTrees.java         </td>
+            <td class='coverage nocode'>N/A</td><td class='coverage nocode'>N/A</td>
+            <td class='coverage nocode'>N/A</td>
+          </tr>
+          <tr>
+            <td class='file'>MessageSender.java            </td>
+            <td class='coverage nocode'>N/A</td><td class='coverage nocode'>N/A</td>
+            <td class='coverage nocode'>N/A</td>
+          </tr>
+          <tr>
+            <td class='file'>RemoteTestRunner.java         </td>
+            <td class='coverage' style='background-color:#d82700' title='Line segments: 56/366'>15%</td>
+            <td class='coverage' style='background-color:#f20d00' title='Paths: 12/234'>5%</td>
+            <td class='coverage' style='background-color:#c53a00' title='Fields: 5/22'>23%</td>
+          </tr>
+          <tr>
+            <td class='file'>RerunExecutionListener.java   </td>
+            <td class='coverage' style='background-color:#ff0000' title='Line segments: 0/16'>0%</td>
+            <td class='coverage' style='background-color:#ff0000' title='Paths: 0/7'>0%</td>
+            <td class='coverage' style='background-color:#ff0000' title='Fields: 0/1'>0%</td>
+          </tr>
+          <tr>
+            <td class='file'>TestExecution.java            </td>
+            <td class='coverage' style='background-color:#689700' title='Line segments: 13/22'>59%</td>
+            <td class='coverage' style='background-color:#7f8000' title='Paths: 4/8'>50%</td>
+            <td class='coverage' style='background-color:#40bf00' title='Fields: 3/4'>75%</td>
+          </tr>
+          <tr>
+            <td class='file'>TestIdMap.java                </td>
+            <td class='coverage' style='background-color:#5da200' title='Line segments: 7/11'>64%</td>
+            <td class='coverage' style='background-color:#7f8000' title='Paths: 2/4'>50%</td>
+            <td class='coverage' style='background-color:#7f8000' title='Fields: 1/2'>50%</td>
+          </tr>
+          <tr>
+            <td class='file'>TestReferenceFailure.java     </td>
+            <td class='coverage' style='background-color:#ff0000' title='Line segments: 0/17'>0%</td>
+            <td class='coverage' style='background-color:#ff0000' title='Paths: 0/9'>0%</td>
+            <td class='coverage' style='background-color:#ff0000' title='Fields: 0/1'>0%</td>
+          </tr>
+        </table>
+      </td>
+      <td class='coverage' style='background-color:#d22d00' title='Line segments: 84/471'>18%</td>
+      <td class='coverage' style='background-color:#eb1400' title='Paths: 22/275'>8%</td>
+      <td class='coverage' style='background-color:#aa5500' title='Fields: 11/33'>33%</td>
+    </tr>
+    <tr>
+      <td class='package click' onclick='showHideFiles(this)'>org.eclipse.jdt.internal.junit4.runner</td>
+      <td>
+        <table width='100%'>
+          <tr>
+            <td class='file'>JUnit4Identifier.java         </td>
+            <td class='coverage' style='background-color:#33cc00' title='Line segments: 8/10'>80%</td>
+            <td class='coverage' style='background-color:#33cc00' title='Paths: 4/5'>80%</td>
+            <td class='coverage nocode'>N/A</td>
+          </tr>
+          <tr>
+            <td class='file'>JUnit4TestClassReference.java </td>
+            <td class='coverage' style='background-color:#867900' title='Line segments: 10/21'>48%</td>
+            <td class='coverage' style='background-color:#b24d00' title='Paths: 3/10'>30%</td>
+            <td class='coverage nocode'>N/A</td>
+          </tr>
+          <tr>
+            <td class='file'>JUnit4TestListener.java       </td>
+            <td class='coverage' style='background-color:#cb3400' title='Line segments: 8/39'>21%</td>
+            <td class='coverage' style='background-color:#b64900' title='Paths: 4/14'>29%</td>
+            <td class='coverage nocode'>N/A</td>
+          </tr>
+          <tr>
+            <td class='file'>JUnit4TestLoader.java         </td>
+            <td class='coverage' style='background-color:#ff0000' title='Line segments: 0/36'>0%</td>
+            <td class='coverage' style='background-color:#ff0000' title='Paths: 0/12'>0%</td>
+            <td class='coverage nocode'>N/A</td>
+          </tr>
+          <tr>
+            <td class='file'>JUnit4TestReference.java      </td>
+            <td class='coverage' style='background-color:#649b00' title='Line segments: 14/23'>61%</td>
+            <td class='coverage' style='background-color:#669900' title='Paths: 3/5'>60%</td>
+            <td class='coverage' style='background-color:#00ff00' title='Fields: 1/1'>100%</td>
+          </tr>
+        </table>
+      </td>
+      <td class='coverage' style='background-color:#b04f00' title='Line segments: 40/129'>31%</td>
+      <td class='coverage' style='background-color:#b14e00' title='Paths: 14/46'>30%</td>
+      <td class='coverage' style='background-color:#00ff00' title='Fields: 1/1'>100%</td>
     </tr>
     <tr class='total'>
       <td>Total</td><td>&nbsp;</td>
-      <td class='coverage' style='background-color:#15ea00' title='Line segments: 1163/1266'>92%</td>
-      <td class='coverage' style='background-color:#2ad500' title='Paths: 344/411'>84%</td>
-      <td class='coverage' style='background-color:#00ff00' title='Fields: 35/35'>100%</td>
+      <td class='coverage' style='background-color:#41be00' title='Line segments: 1767/2374'>74%</td>
+      <td class='coverage' style='background-color:#738c00' title='Paths: 419/762'>55%</td>
+      <td class='coverage' style='background-color:#4bb400' title='Fields: 60/85'>71%</td>
     </tr>
   </table>
-  <p>Generated on Tue Dec 06 00:04:16 CET 2011</p>
+  <p>
+    <a href='http://code.google.com/p/jmockit'><img src='logo.png'></a>
+    Generated on Thu Mar 08 11:27:54 CET 2012
+  </p>
 </body>
 </html>
