@@ -38,7 +38,8 @@
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'></td><td>&nbsp;</td>
-      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import java.awt.event.ActionEvent;
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.KeyStroke;
@@ -54,95 +55,87 @@ import com.moneydance.modules.features.importlist.io.FileAdmin;
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>31</td><td>&nbsp;</td>
+      <td class='line'>32</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>final class DeleteOneEditor extends AbstractEditor {</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>33</td><td>&nbsp;</td>
+      <td class='line'>34</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    private static final long serialVersionUID = -4347839572548324049L;</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>35</td><td>&nbsp;</td>
+      <td class='line'>36</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    DeleteOneEditor(</pre></td>
     </tr>
     <tr>
-      <td class='line'>36</td><td>&nbsp;</td>
+      <td class='line'>37</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>            final FileAdmin fileAdmin,</pre></td>
     </tr>
     <tr>
-      <td class='line'>37</td><td>&nbsp;</td>
+      <td class='line'>38</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>            final ButtonRenderer buttonRenderer) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>38</td><td class='count'>25</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l38s0'>        super(fileAdmin, buttonRenderer);</pre>
+      <td class='line'>39</td><td class='count'>25</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l39s0'>        super(fileAdmin, buttonRenderer);</pre>
         <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 52x16</li>
-          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 45x2</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 49</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 57</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 49</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 57</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x16</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 56</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 56</li>
           <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55</li>
           <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>39</td><td class='count'>25</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l39s0'>    }</pre>
+      <td class='line'>40</td><td class='count'>25</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l40s0'>    }</pre>
         <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 52x16</li>
-          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 45x2</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 49</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 57</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 49</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 57</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x16</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 56</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 56</li>
           <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55</li>
           <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71</li>
         </ol>
       </td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>41</td><td>&nbsp;</td>
+      <td class='line'>42</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    @Override</pre></td>
     </tr>
     <tr>
-      <td class='line'>42</td><td>&nbsp;</td>
+      <td class='line'>43</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public ActionListener getActionListener(final int rowNumber) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>43</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l43s0'>        return new ActionListener() {</pre>
+      <td class='line'>44</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l44s0'>        return new ActionListener() {</pre>
         <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#testGetActionListener: 54</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#testGetActionListener: 53</li>
         </ol>
       </td>
-    </tr>
-    <tr>
-      <td class='line'>44</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>            @Override</pre></td>
     </tr>
     <tr>
       <td class='line'>45</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>46</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>            public void actionPerformed(final ActionEvent actionEvent) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>46</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l46s0'>                DeleteOneEditor.this.getFileAdmin().deleteRow(rowNumber);</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#testGetActionListener: 57</li>
-        </ol>
-      </td>
-    </tr>
-    <tr>
-      <td class='line'>47</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l47s0'>            }</pre>
+      <td class='line'>47</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l47s0'>                EventQueue.invokeLater(new Runnable() {</pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#testGetActionListener: 57</li>
         </ol>
@@ -150,43 +143,75 @@ import com.moneydance.modules.features.importlist.io.FileAdmin;
     </tr>
     <tr>
       <td class='line'>48</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>        };</pre></td>
+      <td><pre class='prettyprint'>                    @Override</pre></td>
     </tr>
     <tr>
       <td class='line'>49</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    }</pre></td>
+      <td><pre class='prettyprint'>                    public void run() {</pre></td>
     </tr>
-    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>50</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l50s0'>                        DeleteOneEditor.this.getFileAdmin()</pre></td>
+    </tr>
     <tr>
       <td class='line'>51</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    @Override</pre></td>
+      <td><pre class='prettyprint'>                                .deleteRow(rowNumber);</pre></td>
     </tr>
     <tr>
-      <td class='line'>52</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    public KeyStroke getKeyStroke() {</pre></td>
+      <td class='line'>52</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l52s0'>                    }</pre></td>
     </tr>
     <tr>
-      <td class='line'>53</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l53s0'>        final String shortcut = this.getSettings().getKeyboardShortcutDelete();</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#testGetKeyStroke: 63</li>
-        </ol>
-      </td>
+      <td class='line'>53</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                });</pre></td>
     </tr>
     <tr>
       <td class='line'>54</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l54s0'>        return KeyStroke.getKeyStroke(shortcut);</pre>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l54s0'>            }</pre>
         <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#testGetKeyStroke: 63</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#testGetActionListener: 57</li>
         </ol>
       </td>
     </tr>
     <tr>
       <td class='line'>55</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    }</pre></td>
+      <td><pre class='prettyprint'>        };</pre></td>
     </tr>
     <tr>
       <td class='line'>56</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>58</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>59</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public KeyStroke getKeyStroke() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>60</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l60s0'>        final String shortcut = this.getSettings().getKeyboardShortcutDelete();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#testGetKeyStroke: 62</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>61</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l61s0'>        return KeyStroke.getKeyStroke(shortcut);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#testGetKeyStroke: 62</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>62</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>63</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>}</pre></td>
     </tr>
   </table>

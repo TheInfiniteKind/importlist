@@ -72,7 +72,7 @@
 <FONT color="green">069</FONT>                final FeatureModuleContext argContext) {<a name="line.69"></a>
 <FONT color="green">070</FONT>            this.context          = argContext;<a name="line.70"></a>
 <FONT color="green">071</FONT>            this.directoryChooser = new DirectoryChooser(baseDirectory);<a name="line.71"></a>
-<FONT color="green">072</FONT>            Settings settings = Helper.getSettings();<a name="line.72"></a>
+<FONT color="green">072</FONT>            Settings settings = Helper.INSTANCE.getSettings();<a name="line.72"></a>
 <FONT color="green">073</FONT>            this.transactionFileFilter = new SuffixFileFilter(<a name="line.73"></a>
 <FONT color="green">074</FONT>                    settings.getTransactionFileExtensions(),<a name="line.74"></a>
 <FONT color="green">075</FONT>                    IOCase.INSENSITIVE);<a name="line.75"></a>

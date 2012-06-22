@@ -45,9 +45,9 @@
 <FONT color="green">042</FONT>        private final transient Localizable localizable;<a name="line.42"></a>
 <FONT color="green">043</FONT>    <a name="line.43"></a>
 <FONT color="green">044</FONT>        public AggregationTableModel() {<a name="line.44"></a>
-<FONT color="green">045</FONT>            this.prefs       = Helper.getPreferences();<a name="line.45"></a>
-<FONT color="green">046</FONT>            this.settings    = Helper.getSettings();<a name="line.46"></a>
-<FONT color="green">047</FONT>            this.localizable = Helper.getLocalizable();<a name="line.47"></a>
+<FONT color="green">045</FONT>            this.prefs       = Helper.INSTANCE.getPreferences();<a name="line.45"></a>
+<FONT color="green">046</FONT>            this.settings    = Helper.INSTANCE.getSettings();<a name="line.46"></a>
+<FONT color="green">047</FONT>            this.localizable = Helper.INSTANCE.getLocalizable();<a name="line.47"></a>
 <FONT color="green">048</FONT>        }<a name="line.48"></a>
 <FONT color="green">049</FONT>    <a name="line.49"></a>
 <FONT color="green">050</FONT>        @Override<a name="line.50"></a>

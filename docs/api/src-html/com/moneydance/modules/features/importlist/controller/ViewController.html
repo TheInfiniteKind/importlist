@@ -79,9 +79,9 @@
 <FONT color="green">076</FONT>                final String baseDirectory,<a name="line.76"></a>
 <FONT color="green">077</FONT>                final FeatureModuleContext context,<a name="line.77"></a>
 <FONT color="green">078</FONT>                final int build) {<a name="line.78"></a>
-<FONT color="green">079</FONT>            this.prefs       = Helper.getPreferences();<a name="line.79"></a>
-<FONT color="green">080</FONT>            this.settings    = Helper.getSettings();<a name="line.80"></a>
-<FONT color="green">081</FONT>            this.localizable = Helper.getLocalizable();<a name="line.81"></a>
+<FONT color="green">079</FONT>            this.prefs       = Helper.INSTANCE.getPreferences();<a name="line.79"></a>
+<FONT color="green">080</FONT>            this.settings    = Helper.INSTANCE.getSettings();<a name="line.80"></a>
+<FONT color="green">081</FONT>            this.localizable = Helper.INSTANCE.getLocalizable();<a name="line.81"></a>
 <FONT color="green">082</FONT>            this.fileAdmin   = new FileAdmin(baseDirectory, context);<a name="line.82"></a>
 <FONT color="green">083</FONT>            this.fileAdmin.addObserver(this);<a name="line.83"></a>
 <FONT color="green">084</FONT>            this.tracker     = new Tracker(<a name="line.84"></a>

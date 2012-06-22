@@ -54,9 +54,9 @@
 <FONT color="green">051</FONT>    <a name="line.51"></a>
 <FONT color="green">052</FONT>        public FileTableModel(final List&lt;File&gt; argFiles) {<a name="line.52"></a>
 <FONT color="green">053</FONT>            Validate.notNull(argFiles, "argFiles must not be null");<a name="line.53"></a>
-<FONT color="green">054</FONT>            this.prefs       = Helper.getPreferences();<a name="line.54"></a>
-<FONT color="green">055</FONT>            this.settings    = Helper.getSettings();<a name="line.55"></a>
-<FONT color="green">056</FONT>            this.localizable = Helper.getLocalizable();<a name="line.56"></a>
+<FONT color="green">054</FONT>            this.prefs       = Helper.INSTANCE.getPreferences();<a name="line.54"></a>
+<FONT color="green">055</FONT>            this.settings    = Helper.INSTANCE.getSettings();<a name="line.55"></a>
+<FONT color="green">056</FONT>            this.localizable = Helper.INSTANCE.getLocalizable();<a name="line.56"></a>
 <FONT color="green">057</FONT>            // ESCA-JAVA0256: argFiles is readonly by design<a name="line.57"></a>
 <FONT color="green">058</FONT>            this.files       = argFiles;<a name="line.58"></a>
 <FONT color="green">059</FONT>        }<a name="line.59"></a>
