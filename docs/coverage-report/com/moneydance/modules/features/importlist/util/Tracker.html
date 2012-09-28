@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JMockit Coverage Report - Tracker.java</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../../../../coverage.css'/>
+  <script type='text/javascript' src='../../../../../../coverage.js'></script>
+  <script type='text/javascript' src='../../../../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption>master/src/com/moneydance/modules/features/importlist/util/Tracker.java</caption>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/*
+ * Import List - http://my-flow.github.com/importlist/
+ * Copyright (C) 2011-2012 Florian J. Breunig
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see &lt;http://www.gnu.org/licenses/>.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>19</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package com.moneydance.modules.features.importlist.util;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import java.net.Authenticator;
+import java.net.InetSocketAddress;
+import java.net.PasswordAuthentication;
+import java.net.Proxy;
+import java.net.SocketAddress;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.dmurph.tracking.AnalyticsConfigData;
+import com.dmurph.tracking.JGoogleAnalyticsTracker;
+import com.dmurph.tracking.JGoogleAnalyticsTracker.GoogleAnalyticsVersion;
+</div><span>import ...</span></pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+ * @author Florian J. Breunig
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>37</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>public final class Tracker {</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>39</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final Preferences prefs;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>40</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final String fullVersion;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>41</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final String build;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>43</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final JGoogleAnalyticsTracker analyticsTracker;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>44</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l44s0'>    private static final Logger LOG = LoggerFactory.getLogger(Tracker.class);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>46</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l46s0'>    Tracker(final int argBuild) {</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+          <li>com.moneydance.modules.features.importlist.util.TrackerTest#setUp: 35</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>47</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l47s0'>        this.prefs          = Helper.INSTANCE.getPreferences();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+          <li>com.moneydance.modules.features.importlist.util.TrackerTest#setUp: 35</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>48</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l48s0'>        this.fullVersion    = "Moneydance " + this.prefs.getFullVersion();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+          <li>com.moneydance.modules.features.importlist.util.TrackerTest#setUp: 35</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>49</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l49s0'>        this.build          = "Import List v" + String.valueOf(argBuild);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+          <li>com.moneydance.modules.features.importlist.util.TrackerTest#setUp: 35</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>51</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l51s0'>        JGoogleAnalyticsTracker.setProxy(this.getProxy());</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+          <li>com.moneydance.modules.features.importlist.util.TrackerTest#setUp: 35</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>52</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l52s0'>        Settings settings = Helper.INSTANCE.getSettings();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+          <li>com.moneydance.modules.features.importlist.util.TrackerTest#setUp: 35</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>53</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l53s0'>        AnalyticsConfigData config = new AnalyticsConfigData(</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+          <li>com.moneydance.modules.features.importlist.util.TrackerTest#setUp: 35</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>54</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                settings.getTrackingCode());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>55</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l55s0'>        this.analyticsTracker = new JGoogleAnalyticsTracker(</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+          <li>com.moneydance.modules.features.importlist.util.TrackerTest#setUp: 35</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>56</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                config,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>57</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                GoogleAnalyticsVersion.V_4_7_2);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>58</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l58s0'>    }</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+          <li>com.moneydance.modules.features.importlist.util.TrackerTest#setUp: 35</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>60</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public void track(final EventName eventName) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>61</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l61s0'>        LOG.debug("trackEvent");</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#testUnload: 51</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+          <li>com.moneydance.modules.features.importlist.util.TrackerTest#testTrack: 40</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>62</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l62s0'>        this.analyticsTracker.trackEvent(</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#testUnload: 51</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+          <li>com.moneydance.modules.features.importlist.util.TrackerTest#testTrack: 40</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>63</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                this.fullVersion,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>64</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                eventName.toString(),</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>65</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                this.build);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>66</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l66s0'>    }</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#testUnload: 51</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+          <li>com.moneydance.modules.features.importlist.util.TrackerTest#testTrack: 40</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>68</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private Proxy getProxy() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>69</td><td class='count'>2</td>
+      <td><pre class='prettyprint jmp'>        <span id='l69s0' title='Executions: 2' class='covered cp' onclick='showHide(this,0)'>if (!this.prefs.useProxy()) {</span></pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+          <li>com.moneydance.modules.features.importlist.util.TrackerTest#setUp: 35</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>70</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l70s0'>            return Proxy.NO_PROXY;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+          <li>com.moneydance.modules.features.importlist.util.TrackerTest#setUp: 35</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>71</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>73</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l73s0'>        final SocketAddress socketAddress = new InetSocketAddress(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>74</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                this.prefs.getProxyHost(),</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>75</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                this.prefs.getProxyPort());</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>77</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l77s0'>        boolean authProxy = this.prefs.needProxyAuthentication();</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>79</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l79s0'>        Proxy.Type proxyType = Proxy.Type.HTTP;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>81</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>        <span id='l81s0' title='Executions: 0' class='uncovered'>if (authProxy)</span> <span id='l81s1' title='Executions: 0' class='uncovered'>{</span></pre></td>
+    </tr>
+    <tr>
+      <td class='line'>82</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l82s0'>            proxyType = Proxy.Type.SOCKS;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>83</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l83s0'>            Authenticator.setDefault(new Authenticator() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>84</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>85</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                protected PasswordAuthentication getPasswordAuthentication() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>86</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l86s0'>                    return new PasswordAuthentication(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>87</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                           Tracker.this.prefs.getProxyUsername(),</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>88</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                           Tracker.this.prefs.getProxyPassword().toCharArray());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>89</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>90</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            });</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>91</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>92</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l92s0'>        return new Proxy(proxyType, socketAddress);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>93</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>    /**
+     * @author Florian J. Breunig
+     */</div><span>    /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>98</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l98s0'>    public enum EventName {</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>100</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        INSTALL(Helper.INSTANCE.getSettings().getEventActionInstall()),</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>102</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        DISPLAY(Helper.INSTANCE.getSettings().getEventActionDisplay()),</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>104</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        UNINSTALL(Helper.INSTANCE.getSettings().getEventActionUninstall());</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>106</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        private final String eventString;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>108</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l108s0'>        private EventName(final String argEventString) {</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#testUnload: 51</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>109</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l109s0'>            this.eventString = argEventString;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#testUnload: 51</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>110</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l110s0'>        }</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#testUnload: 51</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>112</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>113</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        public String toString() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>114</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l114s0'>            return this.eventString;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#testUnload: 51</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+          <li>com.moneydance.modules.features.importlist.util.TrackerTest#testTrack: 40</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>115</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>116</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>117</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>

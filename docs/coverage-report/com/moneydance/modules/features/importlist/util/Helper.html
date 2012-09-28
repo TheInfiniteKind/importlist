@@ -98,26 +98,29 @@ import org.slf4j.LoggerFactory;
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'>52</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private Tracker tracker;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>54</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public Preferences getPreferences() {</pre></td>
     </tr>
     <tr>
-      <td></td><td class='count'>372</td>
+      <td></td><td class='count'>360</td>
       <td class='paths'>
         <span style='cursor:default; background-color:#00ff00' onclick='hidePath()'>Path coverage: 2/2</span>
-        <span class='covered' onclick="showPath(this,'l53s0 l54s0 l57s0 l58s0')">A: 371</span>
-        <span class='covered' onclick="showPath(this,'l53s0 l54s0 l55s0 l57s0 l58s0')">B: 1</span>
+        <span class='covered' onclick="showPath(this,'l55s0 l56s0 l59s0 l60s0')">A: 359</span>
+        <span class='covered' onclick="showPath(this,'l55s0 l56s0 l57s0 l59s0 l60s0')">B: 1</span>
       </td>
     </tr>
     <tr>
-      <td class='line'>53</td><td class='count'>372</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l53s0'>        synchronized (Helper.class) {</pre>
+      <td class='line'>55</td><td class='count'>360</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l55s0'>        synchronized (Helper.class) {</pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38, 41x4</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 46x3</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38, 41x3, 38, 41x3, 38, 41x3, 38, 41x3, 38, 41x3, 38, 41x3, 38, 41x3, 38, 41x3</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 46x2</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38, 41x2, 38, 41x2, 38, 41x2, 38, 41x2, 38, 41x2, 38, 41x2, 38, 41x2, 38, 41x2</li>
           <li>com.moneydance.modules.features.importlist.io.DeleteAllOperationTest#setUp: 40x2</li>
-          <li>com.moneydance.modules.features.importlist.io.DirectoryChooserTest#testGetBaseDirectory: 32</li>
-          <li>com.moneydance.modules.features.importlist.io.DirectoryChooserTest#testChooseBaseDirectory: 39</li>
           <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43</li>
           <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportAllRows: 87, 90</li>
           <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 42, 43</li>
@@ -128,6 +131,10 @@ import org.slf4j.LoggerFactory;
           <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#setUp: 43</li>
           <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#testPerform: 62</li>
           <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 93, 99, 105, 111, 118, 124, 130, 137, 143, 149</li>
+          <li>com.moneydance.modules.features.importlist.io.MacDirectoryChooserTest#testChooseBaseDirectory: 39</li>
+          <li>com.moneydance.modules.features.importlist.io.MacDirectoryChooserTest#testGetBaseDirectory: 32</li>
+          <li>com.moneydance.modules.features.importlist.io.DefaultDirectoryChooserTest#testChooseBaseDirectory: 39</li>
+          <li>com.moneydance.modules.features.importlist.io.DefaultDirectoryChooserTest#testGetBaseDirectory: 32</li>
           <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 49, 50, 56, 49, 50, 56, 49, 50, 56</li>
           <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3</li>
           <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 42, 43, 42, 43</li>
@@ -142,6 +149,7 @@ import org.slf4j.LoggerFactory;
           <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 45x31</li>
           <li>com.moneydance.modules.features.importlist.util.LocalizableTest#setUp: 37x16</li>
           <li>com.moneydance.modules.features.importlist.util.HelperTest#testGetPreferences: 32</li>
+          <li>com.moneydance.modules.features.importlist.util.TrackerTest#setUp: 35</li>
           <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#setUp: 40, 41, 42</li>
           <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48x3</li>
           <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#setUp: 40, 41, 42</li>
@@ -160,27 +168,24 @@ import org.slf4j.LoggerFactory;
           <li>com.moneydance.modules.features.importlist.controller.AggregationTableModelTest#setUp: 37, 38, 37, 38, 37, 38, 37, 38, 37, 38, 37, 38</li>
           <li>com.moneydance.modules.features.importlist.controller.FileTableModelTest#setUp: 42, 43, 46, 42, 43, 46, 42, 43, 46, 42, 43, 46, 42, 43, 46, 42, 43, 46, 42, 43, 46</li>
           <li>com.moneydance.modules.features.importlist.controller.FileTableRowSorterTest#setUp: 37x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.TrackerTest#setUp: 33</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 37x4</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x7</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 37x16</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x7</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 37x8</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71x7</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 37</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 38x3</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x9</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 38x12</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x9</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 38x6</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72x9</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 38</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>54</td><td class='count'>372</td>
-      <td><pre class='prettyprint jmp'>            <span id='l54s0' title='Executions: 372' class='covered cp' onclick='showHide(this,0)'>if (this.prefs == null)</span> <span id='l54s1' title='Executions: 1' class='covered cp' onclick='showHide(this,1)'>{</span></pre>
+      <td class='line'>56</td><td class='count'>360</td>
+      <td><pre class='prettyprint jmp'>            <span id='l56s0' title='Executions: 360' class='covered cp' onclick='showHide(this,0)'>if (this.prefs == null)</span> <span id='l56s1' title='Executions: 1' class='covered cp' onclick='showHide(this,1)'>{</span></pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38, 41x4</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 46x3</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38, 41x3, 38, 41x3, 38, 41x3, 38, 41x3, 38, 41x3, 38, 41x3, 38, 41x3, 38, 41x3</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 46x2</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38, 41x2, 38, 41x2, 38, 41x2, 38, 41x2, 38, 41x2, 38, 41x2, 38, 41x2, 38, 41x2</li>
           <li>com.moneydance.modules.features.importlist.io.DeleteAllOperationTest#setUp: 40x2</li>
-          <li>com.moneydance.modules.features.importlist.io.DirectoryChooserTest#testGetBaseDirectory: 32</li>
-          <li>com.moneydance.modules.features.importlist.io.DirectoryChooserTest#testChooseBaseDirectory: 39</li>
           <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43</li>
           <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportAllRows: 87, 90</li>
           <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 42, 43</li>
@@ -191,6 +196,10 @@ import org.slf4j.LoggerFactory;
           <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#setUp: 43</li>
           <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#testPerform: 62</li>
           <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 93, 99, 105, 111, 118, 124, 130, 137, 143, 149</li>
+          <li>com.moneydance.modules.features.importlist.io.MacDirectoryChooserTest#testChooseBaseDirectory: 39</li>
+          <li>com.moneydance.modules.features.importlist.io.MacDirectoryChooserTest#testGetBaseDirectory: 32</li>
+          <li>com.moneydance.modules.features.importlist.io.DefaultDirectoryChooserTest#testChooseBaseDirectory: 39</li>
+          <li>com.moneydance.modules.features.importlist.io.DefaultDirectoryChooserTest#testGetBaseDirectory: 32</li>
           <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 49, 50, 56, 49, 50, 56, 49, 50, 56</li>
           <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3</li>
           <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 42, 43, 42, 43</li>
@@ -205,6 +214,7 @@ import org.slf4j.LoggerFactory;
           <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 45x31</li>
           <li>com.moneydance.modules.features.importlist.util.LocalizableTest#setUp: 37x16</li>
           <li>com.moneydance.modules.features.importlist.util.HelperTest#testGetPreferences: 32</li>
+          <li>com.moneydance.modules.features.importlist.util.TrackerTest#setUp: 35</li>
           <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#setUp: 40, 41, 42</li>
           <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48x3</li>
           <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#setUp: 40, 41, 42</li>
@@ -223,14 +233,13 @@ import org.slf4j.LoggerFactory;
           <li>com.moneydance.modules.features.importlist.controller.AggregationTableModelTest#setUp: 37, 38, 37, 38, 37, 38, 37, 38, 37, 38, 37, 38</li>
           <li>com.moneydance.modules.features.importlist.controller.FileTableModelTest#setUp: 42, 43, 46, 42, 43, 46, 42, 43, 46, 42, 43, 46, 42, 43, 46, 42, 43, 46, 42, 43, 46</li>
           <li>com.moneydance.modules.features.importlist.controller.FileTableRowSorterTest#setUp: 37x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.TrackerTest#setUp: 33</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 37x4</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x7</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 37x16</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x7</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 37x8</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71x7</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 37</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 38x3</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x9</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 38x12</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x9</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 38x6</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72x9</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 38</li>
         </ol>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38</li>
@@ -238,27 +247,25 @@ import org.slf4j.LoggerFactory;
       </td>
     </tr>
     <tr>
-      <td class='line'>55</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l55s0'>                this.prefs = new Preferences();</pre>
+      <td class='line'>57</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l57s0'>                this.prefs = new Preferences();</pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>56</td><td>&nbsp;</td>
+      <td class='line'>58</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>            }</pre></td>
     </tr>
     <tr>
-      <td class='line'>57</td><td class='count'>372</td>
-      <td><pre class='prettyprint jmp'>        <span id='l57s0' title='Executions: 372' class='covered cp' onclick='showHide(this,0)'>}</span></pre>
+      <td class='line'>59</td><td class='count'>360</td>
+      <td><pre class='prettyprint jmp'>        <span id='l59s0' title='Executions: 360' class='covered cp' onclick='showHide(this,0)'>}</span></pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38, 41x4</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 46x3</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38, 41x3, 38, 41x3, 38, 41x3, 38, 41x3, 38, 41x3, 38, 41x3, 38, 41x3, 38, 41x3</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 46x2</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38, 41x2, 38, 41x2, 38, 41x2, 38, 41x2, 38, 41x2, 38, 41x2, 38, 41x2, 38, 41x2</li>
           <li>com.moneydance.modules.features.importlist.io.DeleteAllOperationTest#setUp: 40x2</li>
-          <li>com.moneydance.modules.features.importlist.io.DirectoryChooserTest#testGetBaseDirectory: 32</li>
-          <li>com.moneydance.modules.features.importlist.io.DirectoryChooserTest#testChooseBaseDirectory: 39</li>
           <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43</li>
           <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportAllRows: 87, 90</li>
           <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 42, 43</li>
@@ -269,6 +276,10 @@ import org.slf4j.LoggerFactory;
           <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#setUp: 43</li>
           <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#testPerform: 62</li>
           <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 93, 99, 105, 111, 118, 124, 130, 137, 143, 149</li>
+          <li>com.moneydance.modules.features.importlist.io.MacDirectoryChooserTest#testChooseBaseDirectory: 39</li>
+          <li>com.moneydance.modules.features.importlist.io.MacDirectoryChooserTest#testGetBaseDirectory: 32</li>
+          <li>com.moneydance.modules.features.importlist.io.DefaultDirectoryChooserTest#testChooseBaseDirectory: 39</li>
+          <li>com.moneydance.modules.features.importlist.io.DefaultDirectoryChooserTest#testGetBaseDirectory: 32</li>
           <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 49, 50, 56, 49, 50, 56, 49, 50, 56</li>
           <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3</li>
           <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 42, 43, 42, 43</li>
@@ -283,6 +294,7 @@ import org.slf4j.LoggerFactory;
           <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 45x31</li>
           <li>com.moneydance.modules.features.importlist.util.LocalizableTest#setUp: 37x16</li>
           <li>com.moneydance.modules.features.importlist.util.HelperTest#testGetPreferences: 32</li>
+          <li>com.moneydance.modules.features.importlist.util.TrackerTest#setUp: 35</li>
           <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#setUp: 40, 41, 42</li>
           <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48x3</li>
           <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#setUp: 40, 41, 42</li>
@@ -301,27 +313,24 @@ import org.slf4j.LoggerFactory;
           <li>com.moneydance.modules.features.importlist.controller.AggregationTableModelTest#setUp: 37, 38, 37, 38, 37, 38, 37, 38, 37, 38, 37, 38</li>
           <li>com.moneydance.modules.features.importlist.controller.FileTableModelTest#setUp: 42, 43, 46, 42, 43, 46, 42, 43, 46, 42, 43, 46, 42, 43, 46, 42, 43, 46, 42, 43, 46</li>
           <li>com.moneydance.modules.features.importlist.controller.FileTableRowSorterTest#setUp: 37x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.TrackerTest#setUp: 33</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 37x4</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x7</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 37x16</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x7</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 37x8</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71x7</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 37</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 38x3</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x9</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 38x12</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x9</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 38x6</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72x9</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 38</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>58</td><td class='count'>372</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l58s0'>        return this.prefs;</pre>
+      <td class='line'>60</td><td class='count'>360</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l60s0'>        return this.prefs;</pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38, 41x4</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 46x3</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38, 41x3, 38, 41x3, 38, 41x3, 38, 41x3, 38, 41x3, 38, 41x3, 38, 41x3, 38, 41x3</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 46x2</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38, 41x2, 38, 41x2, 38, 41x2, 38, 41x2, 38, 41x2, 38, 41x2, 38, 41x2, 38, 41x2</li>
           <li>com.moneydance.modules.features.importlist.io.DeleteAllOperationTest#setUp: 40x2</li>
-          <li>com.moneydance.modules.features.importlist.io.DirectoryChooserTest#testGetBaseDirectory: 32</li>
-          <li>com.moneydance.modules.features.importlist.io.DirectoryChooserTest#testChooseBaseDirectory: 39</li>
           <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43, 42, 43</li>
           <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportAllRows: 87, 90</li>
           <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 42, 43</li>
@@ -332,6 +341,10 @@ import org.slf4j.LoggerFactory;
           <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#setUp: 43</li>
           <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#testPerform: 62</li>
           <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 93, 99, 105, 111, 118, 124, 130, 137, 143, 149</li>
+          <li>com.moneydance.modules.features.importlist.io.MacDirectoryChooserTest#testChooseBaseDirectory: 39</li>
+          <li>com.moneydance.modules.features.importlist.io.MacDirectoryChooserTest#testGetBaseDirectory: 32</li>
+          <li>com.moneydance.modules.features.importlist.io.DefaultDirectoryChooserTest#testChooseBaseDirectory: 39</li>
+          <li>com.moneydance.modules.features.importlist.io.DefaultDirectoryChooserTest#testGetBaseDirectory: 32</li>
           <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 49, 50, 56, 49, 50, 56, 49, 50, 56</li>
           <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3, 44, 45x3</li>
           <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 42, 43, 42, 43</li>
@@ -346,6 +359,7 @@ import org.slf4j.LoggerFactory;
           <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 45x31</li>
           <li>com.moneydance.modules.features.importlist.util.LocalizableTest#setUp: 37x16</li>
           <li>com.moneydance.modules.features.importlist.util.HelperTest#testGetPreferences: 32</li>
+          <li>com.moneydance.modules.features.importlist.util.TrackerTest#setUp: 35</li>
           <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#setUp: 40, 41, 42</li>
           <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48x3</li>
           <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#setUp: 40, 41, 42</li>
@@ -364,33 +378,34 @@ import org.slf4j.LoggerFactory;
           <li>com.moneydance.modules.features.importlist.controller.AggregationTableModelTest#setUp: 37, 38, 37, 38, 37, 38, 37, 38, 37, 38, 37, 38</li>
           <li>com.moneydance.modules.features.importlist.controller.FileTableModelTest#setUp: 42, 43, 46, 42, 43, 46, 42, 43, 46, 42, 43, 46, 42, 43, 46, 42, 43, 46, 42, 43, 46</li>
           <li>com.moneydance.modules.features.importlist.controller.FileTableRowSorterTest#setUp: 37x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.TrackerTest#setUp: 33</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 37x4</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x7</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 37x16</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x7</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 37x8</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71x7</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 37</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 38x3</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x9</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 38x12</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x9</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 38x6</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72x9</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 38</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>59</td><td>&nbsp;</td>
+      <td class='line'>61</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>61</td><td>&nbsp;</td>
+      <td class='line'>63</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public Settings getSettings() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>62</td><td class='count'>446</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l62s0'>        return Settings.INSTANCE;</pre>
+      <td class='line'>64</td><td class='count'>481</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l64s0'>        return Settings.INSTANCE;</pre>
         <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38x3, 41x3</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38x3, 41x4</li>
           <li>com.moneydance.modules.features.importlist.MainTest#testInit: 46x2</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38, 41x2, 38, 41x2, 38, 41x2, 38, 41x2</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38, 41x2</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#testUnload: 51x3</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38, 41x2, 38, 41x2, 38, 41x2</li>
           <li>com.moneydance.modules.features.importlist.MainTest#testGetIconImage: 66x2</li>
           <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38, 41x2</li>
           <li>com.moneydance.modules.features.importlist.MainTest#testInvokeString: 73</li>
@@ -424,6 +439,7 @@ import org.slf4j.LoggerFactory;
           <li>com.moneydance.modules.features.importlist.util.HelperTest#testGetIconImage: 62x2</li>
           <li>com.moneydance.modules.features.importlist.util.HelperTest#testGetSettings: 38</li>
           <li>com.moneydance.modules.features.importlist.util.HelperTest#testGetInputStreamFromResource: 55</li>
+          <li>com.moneydance.modules.features.importlist.util.TrackerTest#setUp: 35</li>
           <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#setUp: 41, 42</li>
           <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48x10</li>
           <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#setUp: 41, 42</li>
@@ -440,88 +456,166 @@ import org.slf4j.LoggerFactory;
           <li>com.moneydance.modules.features.importlist.controller.AggregationTableModelTest#setUp: 38x6</li>
           <li>com.moneydance.modules.features.importlist.controller.FileTableModelTest#setUp: 43, 46, 43, 46, 43, 46, 43, 46, 43, 46, 43, 46, 43, 46</li>
           <li>com.moneydance.modules.features.importlist.controller.FileTableRowSorterTest#setUp: 37x4</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 37x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x13</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 37x8</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x13</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 37x4</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71x13</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 37</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 38x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x23</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 38x8</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x23</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 38x4</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72x23</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 38</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>63</td><td>&nbsp;</td>
+      <td class='line'>65</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>65</td><td>&nbsp;</td>
+      <td class='line'>67</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public Localizable getLocalizable() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>66</td><td class='count'>142</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l66s0'>        return Localizable.INSTANCE;</pre>
+      <td class='line'>68</td><td class='count'>210</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l68s0'>        return Localizable.INSTANCE;</pre>
         <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41x2</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 46x2</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41x16</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41x3</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 46x3</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41x24</li>
           <li>com.moneydance.modules.features.importlist.io.DeleteAllOperationTest#setUp: 45x2</li>
           <li>com.moneydance.modules.features.importlist.io.DeleteAllOperationTest#testPerform: 55</li>
           <li>com.moneydance.modules.features.importlist.io.DeleteOneOperationTest#testShowWarningAndPerform: 67, 71</li>
           <li>com.moneydance.modules.features.importlist.io.DeleteOneOperationTest#testPerform: 50, 54</li>
-          <li>com.moneydance.modules.features.importlist.io.DirectoryChooserTest#testGetBaseDirectory: 32</li>
-          <li>com.moneydance.modules.features.importlist.io.DirectoryChooserTest#testChooseBaseDirectory: 39</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 43x10</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 43x20</li>
           <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteAllRows: 107</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 43</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 43x2</li>
           <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteRow: 115</li>
-          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 50, 56, 50, 56, 50, 56</li>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x16</li>
-          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.io.MacDirectoryChooserTest#testChooseBaseDirectory: 39</li>
+          <li>com.moneydance.modules.features.importlist.io.MacDirectoryChooserTest#testGetBaseDirectory: 32</li>
+          <li>com.moneydance.modules.features.importlist.io.DefaultDirectoryChooserTest#testChooseBaseDirectory: 39</li>
+          <li>com.moneydance.modules.features.importlist.io.DefaultDirectoryChooserTest#testGetBaseDirectory: 32</li>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 50x2, 56x2, 50x2, 56x2, 50x2, 56x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x32</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 43x4</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 43x4</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 43x4</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 43x4</li>
           <li>com.moneydance.modules.features.importlist.util.HelperTest#testGetLocalizable: 44</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#setUp: 41, 42, 41, 42</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#setUp: 41, 42</li>
+          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#setUp: 41x2, 42, 41x2, 42</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#setUp: 41x2, 42</li>
           <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#setUp: 41, 42</li>
+          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#setUp: 41x2, 42</li>
           <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 56</li>
           <li>com.moneydance.modules.features.importlist.view.TableListenerTest#setUp: 47x6</li>
           <li>com.moneydance.modules.features.importlist.controller.AggregationTableModelTest#setUp: 38x6</li>
           <li>com.moneydance.modules.features.importlist.controller.FileTableModelTest#setUp: 43, 46, 43, 46, 43, 46, 43, 46, 43, 46, 43, 46, 43, 46</li>
           <li>com.moneydance.modules.features.importlist.controller.FileTableRowSorterTest#setUp: 37x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 37x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 97x3</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 37x8</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 55x3</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 37x4</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 71x3</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 37</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 38x3</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x3</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 38x12</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x3</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 38x6</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72x3</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 38</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>67</td><td>&nbsp;</td>
+      <td class='line'>69</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>69</td><td>&nbsp;</td>
+      <td class='line'>71</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public Tracker getTracker(final int build) {</pre></td>
+    </tr>
+    <tr>
+      <td></td><td class='count'>21</td>
+      <td class='paths'>
+        <span style='cursor:default; background-color:#00ff00' onclick='hidePath()'>Path coverage: 2/2</span>
+        <span class='covered' onclick="showPath(this,'l72s0 l73s0 l76s0 l77s0')">A: 20</span>
+        <span class='covered' onclick="showPath(this,'l72s0 l73s0 l74s0 l76s0 l77s0')">B: 1</span>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>72</td><td class='count'>21</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l72s0'>        synchronized (Helper.class) {</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 46</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41x8</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 38</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>73</td><td class='count'>21</td>
+      <td><pre class='prettyprint jmp'>            <span id='l73s0' title='Executions: 21' class='covered cp' onclick='showHide(this,0)'>if (this.tracker == null)</span> <span id='l73s1' title='Executions: 1' class='covered cp' onclick='showHide(this,1)'>{</span></pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 46</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41x8</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 38</li>
+        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>74</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l74s0'>                this.tracker = new Tracker(build);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>75</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>76</td><td class='count'>21</td>
+      <td><pre class='prettyprint jmp'>        <span id='l76s0' title='Executions: 21' class='covered cp' onclick='showHide(this,0)'>}</span></pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 46</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41x8</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 38</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>77</td><td class='count'>21</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l77s0'>        return this.tracker;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 46</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41x8</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 38</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>78</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>80</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public void loadLoggerConfiguration() {</pre></td>
     </tr>
     <tr>
       <td></td><td class='count'>2</td>
       <td class='paths'>
         <span style='cursor:default; background-color:#00ff00' onclick='hidePath()'>Path coverage: 2/2</span>
-        <span class='covered' onclick="showPath(this,'l70s0 l72s0 l74s0')">A: 1</span>
-        <span class='covered' onclick="showPath(this,'l70s0 l72s0 l77s0 l87s0 l88s0')">B: 1</span>
+        <span class='covered' onclick="showPath(this,'l81s0 l83s0 l85s0')">A: 1</span>
+        <span class='covered' onclick="showPath(this,'l81s0 l83s0 l88s0 l98s0 l99s0')">B: 1</span>
       </td>
     </tr>
     <tr>
-      <td class='line'>70</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l70s0'>        boolean rootIsConfigured = org.apache.log4j.Logger</pre>
+      <td class='line'>81</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l81s0'>        boolean rootIsConfigured = org.apache.log4j.Logger</pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38</li>
           <li>com.moneydance.modules.features.importlist.util.HelperTest#testLoadLoggerConfiguration: 50</li>
@@ -529,12 +623,12 @@ import org.slf4j.LoggerFactory;
       </td>
     </tr>
     <tr>
-      <td class='line'>71</td><td>&nbsp;</td>
+      <td class='line'>82</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                .getRootLogger().getAllAppenders().hasMoreElements();</pre></td>
     </tr>
     <tr>
-      <td class='line'>72</td><td class='count'>2</td>
-      <td><pre class='prettyprint jmp'>        <span id='l72s0' title='Executions: 2' class='covered cp' onclick='showHide(this,0)'>if (rootIsConfigured)</span> <span id='l72s1' title='Executions: 1' class='covered cp' onclick='showHide(this,1)'>{</span></pre>
+      <td class='line'>83</td><td class='count'>2</td>
+      <td><pre class='prettyprint jmp'>        <span id='l83s0' title='Executions: 2' class='covered cp' onclick='showHide(this,0)'>if (rootIsConfigured)</span> <span id='l83s1' title='Executions: 1' class='covered cp' onclick='showHide(this,1)'>{</span></pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38</li>
           <li>com.moneydance.modules.features.importlist.util.HelperTest#testLoadLoggerConfiguration: 50</li>
@@ -545,89 +639,89 @@ import org.slf4j.LoggerFactory;
       </td>
     </tr>
     <tr>
-      <td class='line'>73</td><td>&nbsp;</td>
+      <td class='line'>84</td><td>&nbsp;</td>
       <td><pre class='comment'>            // do not overwrite any existing configurations</pre></td>
     </tr>
     <tr>
-      <td class='line'>74</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l74s0'>            return;</pre>
+      <td class='line'>85</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l85s0'>            return;</pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.util.HelperTest#testLoadLoggerConfiguration: 50</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>75</td><td>&nbsp;</td>
+      <td class='line'>86</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>        }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>77</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l77s0'>        final Properties properties = new Properties();</pre>
+      <td class='line'>88</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l88s0'>        final Properties properties = new Properties();</pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>78</td><td>&nbsp;</td>
+      <td class='line'>89</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>        try {</pre></td>
     </tr>
     <tr>
-      <td class='line'>79</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l79s0'>            InputStream inputStream = this.getInputStreamFromResource(</pre>
+      <td class='line'>90</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l90s0'>            InputStream inputStream = this.getInputStreamFromResource(</pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>80</td><td>&nbsp;</td>
+      <td class='line'>91</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                    this.getSettings().getLog4jPropertiesResource());</pre></td>
     </tr>
     <tr>
-      <td class='line'>81</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l81s0'>            properties.load(inputStream);</pre>
+      <td class='line'>92</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l92s0'>            properties.load(inputStream);</pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>82</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l82s0'>        }  catch (IllegalArgumentException e) {</pre></td>
+      <td class='line'>93</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l93s0'>        }  catch (IllegalArgumentException e) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>83</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l83s0'>            e.printStackTrace(System.err);</pre></td>
+      <td class='line'>94</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l94s0'>            e.printStackTrace(System.err);</pre></td>
     </tr>
     <tr>
-      <td class='line'>84</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l84s0'>        } catch (IOException e) {</pre></td>
+      <td class='line'>95</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l95s0'>        } catch (IOException e) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>85</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l85s0'>            e.printStackTrace(System.err);</pre></td>
+      <td class='line'>96</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l96s0'>            e.printStackTrace(System.err);</pre></td>
     </tr>
     <tr>
-      <td class='line'>86</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l86s0'>        }</pre>
+      <td class='line'>97</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l97s0'>        }</pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>87</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l87s0'>        PropertyConfigurator.configure(properties);</pre>
+      <td class='line'>98</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l98s0'>        PropertyConfigurator.configure(properties);</pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>88</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l88s0'>    }</pre>
+      <td class='line'>99</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l99s0'>    }</pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38</li>
         </ol>
@@ -635,16 +729,16 @@ import org.slf4j.LoggerFactory;
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>90</td><td>&nbsp;</td>
+      <td class='line'>101</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public InputStream getInputStreamFromResource(</pre></td>
     </tr>
     <tr>
-      <td class='line'>91</td><td>&nbsp;</td>
+      <td class='line'>102</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>            final String resource) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>92</td><td class='count'>10</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l92s0'>        ClassLoader cloader     = Helper.class.getClassLoader();</pre>
+      <td class='line'>103</td><td class='count'>10</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l103s0'>        ClassLoader cloader     = Helper.class.getClassLoader();</pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38x2</li>
           <li>com.moneydance.modules.features.importlist.MainTest#testGetIconImage: 66</li>
@@ -658,8 +752,8 @@ import org.slf4j.LoggerFactory;
       </td>
     </tr>
     <tr>
-      <td class='line'>93</td><td class='count'>10</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l93s0'>        InputStream inputStream = cloader.getResourceAsStream(resource);</pre>
+      <td class='line'>104</td><td class='count'>10</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l104s0'>        InputStream inputStream = cloader.getResourceAsStream(resource);</pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38x2</li>
           <li>com.moneydance.modules.features.importlist.MainTest#testGetIconImage: 66</li>
@@ -673,8 +767,8 @@ import org.slf4j.LoggerFactory;
       </td>
     </tr>
     <tr>
-      <td class='line'>94</td><td class='count'>10</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l94s0'>        Validate.notNull(inputStream, "Resource " + resource</pre>
+      <td class='line'>105</td><td class='count'>10</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l105s0'>        Validate.notNull(inputStream, "Resource " + resource</pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38x2</li>
           <li>com.moneydance.modules.features.importlist.MainTest#testGetIconImage: 66</li>
@@ -688,12 +782,12 @@ import org.slf4j.LoggerFactory;
       </td>
     </tr>
     <tr>
-      <td class='line'>95</td><td>&nbsp;</td>
+      <td class='line'>106</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                + " was not found.");</pre></td>
     </tr>
     <tr>
-      <td class='line'>96</td><td class='count'>10</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l96s0'>        return inputStream;</pre>
+      <td class='line'>107</td><td class='count'>10</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l107s0'>        return inputStream;</pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38x2</li>
           <li>com.moneydance.modules.features.importlist.MainTest#testGetIconImage: 66</li>
@@ -707,17 +801,17 @@ import org.slf4j.LoggerFactory;
       </td>
     </tr>
     <tr>
-      <td class='line'>97</td><td>&nbsp;</td>
+      <td class='line'>108</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>99</td><td>&nbsp;</td>
+      <td class='line'>110</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public Image getIconImage() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>100</td><td class='count'>7</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l100s0'>        Image image = null;</pre>
+      <td class='line'>111</td><td class='count'>7</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l111s0'>        Image image = null;</pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.MainTest#testGetIconImage: 66</li>
           <li>com.moneydance.modules.features.importlist.io.DeleteAllOperationTest#testShowWarningAndPerform: 50</li>
@@ -729,92 +823,12 @@ import org.slf4j.LoggerFactory;
       </td>
     </tr>
     <tr>
-      <td class='line'>101</td><td>&nbsp;</td>
+      <td class='line'>112</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>        try {</pre></td>
     </tr>
     <tr>
-      <td class='line'>102</td><td class='count'>7</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l102s0'>            LOG.debug("Loading icon " + this.getSettings().getIconResource()</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#testGetIconImage: 66</li>
-          <li>com.moneydance.modules.features.importlist.io.DeleteAllOperationTest#testShowWarningAndPerform: 50</li>
-          <li>com.moneydance.modules.features.importlist.io.DeleteOneOperationTest#testShowWarningAndPerform: 68, 72</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteAllRows: 107</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteRow: 115</li>
-          <li>com.moneydance.modules.features.importlist.util.HelperTest#testGetIconImage: 62</li>
-        </ol>
-      </td>
-    </tr>
-    <tr>
-      <td class='line'>103</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                    + " from resource.");</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>104</td><td class='count'>7</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l104s0'>            InputStream inputStream =</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#testGetIconImage: 66</li>
-          <li>com.moneydance.modules.features.importlist.io.DeleteAllOperationTest#testShowWarningAndPerform: 50</li>
-          <li>com.moneydance.modules.features.importlist.io.DeleteOneOperationTest#testShowWarningAndPerform: 68, 72</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteAllRows: 107</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteRow: 115</li>
-          <li>com.moneydance.modules.features.importlist.util.HelperTest#testGetIconImage: 62</li>
-        </ol>
-      </td>
-    </tr>
-    <tr>
-      <td class='line'>105</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                    Helper.INSTANCE.getInputStreamFromResource(</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>106</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                            this.getSettings().getIconResource());</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>107</td><td class='count'>7</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l107s0'>            image = ImageIO.read(inputStream);</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#testGetIconImage: 66</li>
-          <li>com.moneydance.modules.features.importlist.io.DeleteAllOperationTest#testShowWarningAndPerform: 50</li>
-          <li>com.moneydance.modules.features.importlist.io.DeleteOneOperationTest#testShowWarningAndPerform: 68, 72</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteAllRows: 107</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteRow: 115</li>
-          <li>com.moneydance.modules.features.importlist.util.HelperTest#testGetIconImage: 62</li>
-        </ol>
-      </td>
-    </tr>
-    <tr>
-      <td class='line'>108</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l108s0'>        } catch (IllegalArgumentException e) {</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>109</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l109s0'>            LOG.warn(e.getMessage(), e);</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>110</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l110s0'>        } catch (IOException e) {</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>111</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l111s0'>            LOG.warn(e.getMessage(), e);</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>112</td><td class='count'>7</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l112s0'>        }</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#testGetIconImage: 66</li>
-          <li>com.moneydance.modules.features.importlist.io.DeleteAllOperationTest#testShowWarningAndPerform: 50</li>
-          <li>com.moneydance.modules.features.importlist.io.DeleteOneOperationTest#testShowWarningAndPerform: 68, 72</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteAllRows: 107</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteRow: 115</li>
-          <li>com.moneydance.modules.features.importlist.util.HelperTest#testGetIconImage: 62</li>
-        </ol>
-      </td>
-    </tr>
-    <tr>
       <td class='line'>113</td><td class='count'>7</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l113s0'>        return image;</pre>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l113s0'>            LOG.debug("Loading icon " + this.getSettings().getIconResource()</pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.MainTest#testGetIconImage: 66</li>
           <li>com.moneydance.modules.features.importlist.io.DeleteAllOperationTest#testShowWarningAndPerform: 50</li>
@@ -827,10 +841,90 @@ import org.slf4j.LoggerFactory;
     </tr>
     <tr>
       <td class='line'>114</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                    + " from resource.");</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>115</td><td class='count'>7</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l115s0'>            InputStream inputStream =</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#testGetIconImage: 66</li>
+          <li>com.moneydance.modules.features.importlist.io.DeleteAllOperationTest#testShowWarningAndPerform: 50</li>
+          <li>com.moneydance.modules.features.importlist.io.DeleteOneOperationTest#testShowWarningAndPerform: 68, 72</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteAllRows: 107</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteRow: 115</li>
+          <li>com.moneydance.modules.features.importlist.util.HelperTest#testGetIconImage: 62</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>116</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                    Helper.INSTANCE.getInputStreamFromResource(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>117</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                            this.getSettings().getIconResource());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>118</td><td class='count'>7</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l118s0'>            image = ImageIO.read(inputStream);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#testGetIconImage: 66</li>
+          <li>com.moneydance.modules.features.importlist.io.DeleteAllOperationTest#testShowWarningAndPerform: 50</li>
+          <li>com.moneydance.modules.features.importlist.io.DeleteOneOperationTest#testShowWarningAndPerform: 68, 72</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteAllRows: 107</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteRow: 115</li>
+          <li>com.moneydance.modules.features.importlist.util.HelperTest#testGetIconImage: 62</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>119</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l119s0'>        } catch (IllegalArgumentException e) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>120</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l120s0'>            LOG.warn(e.getMessage(), e);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>121</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l121s0'>        } catch (IOException e) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>122</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l122s0'>            LOG.warn(e.getMessage(), e);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>123</td><td class='count'>7</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l123s0'>        }</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#testGetIconImage: 66</li>
+          <li>com.moneydance.modules.features.importlist.io.DeleteAllOperationTest#testShowWarningAndPerform: 50</li>
+          <li>com.moneydance.modules.features.importlist.io.DeleteOneOperationTest#testShowWarningAndPerform: 68, 72</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteAllRows: 107</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteRow: 115</li>
+          <li>com.moneydance.modules.features.importlist.util.HelperTest#testGetIconImage: 62</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>124</td><td class='count'>7</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l124s0'>        return image;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#testGetIconImage: 66</li>
+          <li>com.moneydance.modules.features.importlist.io.DeleteAllOperationTest#testShowWarningAndPerform: 50</li>
+          <li>com.moneydance.modules.features.importlist.io.DeleteOneOperationTest#testShowWarningAndPerform: 68, 72</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteAllRows: 107</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteRow: 115</li>
+          <li>com.moneydance.modules.features.importlist.util.HelperTest#testGetIconImage: 62</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>125</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr>
-      <td class='line'>115</td><td>&nbsp;</td>
+      <td class='line'>126</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>}</pre></td>
     </tr>
   </table>

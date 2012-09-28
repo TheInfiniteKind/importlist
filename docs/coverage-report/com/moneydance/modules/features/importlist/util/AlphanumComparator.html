@@ -145,10 +145,13 @@
       <td><pre class='prettyprint'>    private static boolean isDigit(final char character) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>69</td><td class='count'>73</td>
-      <td><pre class='prettyprint jmp'>        <span id='l69s0' title='Executions: 73' class='covered cp' onclick='showHide(this,0)'>return character >= DIGIT_LOWER_BOUND</span></pre>
+      <td class='line'>69</td><td class='count'>790</td>
+      <td><pre class='prettyprint jmp'>        <span id='l69s0' title='Executions: 790' class='covered cp' onclick='showHide(this,0)'>return character >= DIGIT_LOWER_BOUND</span></pre>
         <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x33, 48x23, 54</li>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x33, 48x23, 54x17</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x239</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x239</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
         </ol>
       </td>
     </tr>
@@ -189,11 +192,11 @@
       <td><pre class='prettyprint'>            final int marker) {</pre></td>
     </tr>
     <tr>
-      <td></td><td class='count'>9</td>
+      <td></td><td class='count'>39</td>
       <td class='paths'>
         <span style='cursor:default; background-color:#9f6000' onclick='hidePath()'>Path coverage: 3/8</span>
         <span class='uncovered' onclick="showPath(this,'l85s0 l90s0 l100s0 l109s0')">A: 0</span>
-        <span class='covered' onclick="showPath(this,'l85s0 l90s0 l100s0 l101s0 l102s0 l105s0 l109s0')">B: 6</span>
+        <span class='covered' onclick="showPath(this,'l85s0 l90s0 l100s0 l101s0 l102s0 l105s0 l109s0')">B: 36</span>
         <span class='covered' onclick="showPath(this,'l85s0 l90s0 l100s0 l101s0 l102s0 l103s0 l109s0')">C: 2</span>
         <span class='covered' onclick="showPath(this,'l85s0 l90s0 l91s0 l109s0')">D: 1</span>
         <span class='uncovered' onclick="showPath(this,'l85s0 l90s0 l91s0 l92s0 l93s0 l96s0 l100s0 l109s0')">E: 0</span>
@@ -203,50 +206,68 @@
       </td>
     </tr>
     <tr>
-      <td class='line'>85</td><td class='count'>14</td>
+      <td class='line'>85</td><td class='count'>44</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l85s0'>        int index = marker;</pre>
         <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x8, 48x4, 54</li>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x8, 48x4, 54x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x10</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x10</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>86</td><td class='count'>14</td>
+      <td class='line'>86</td><td class='count'>44</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l86s0'>        final StringBuilder chunk = new StringBuilder();</pre>
         <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x8, 48x4, 54</li>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x8, 48x4, 54x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x10</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x10</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>87</td><td class='count'>14</td>
+      <td class='line'>87</td><td class='count'>44</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l87s0'>        char character = string.charAt(index);</pre>
         <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x8, 48x4, 54</li>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x8, 48x4, 54x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x10</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x10</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>88</td><td class='count'>14</td>
+      <td class='line'>88</td><td class='count'>44</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l88s0'>        chunk.append(character);</pre>
         <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x8, 48x4, 54</li>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x8, 48x4, 54x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x10</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x10</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>89</td><td class='count'>14</td>
+      <td class='line'>89</td><td class='count'>44</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l89s0'>        index++;</pre>
         <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x8, 48x4, 54</li>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x8, 48x4, 54x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x10</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x10</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>90</td><td class='count'>14</td>
-      <td><pre class='prettyprint jmp'>        <span id='l90s0' title='Executions: 14' class='covered cp' onclick='showHide(this,0)'>if (isDigit(character)) {</span></pre>
+      <td class='line'>90</td><td class='count'>44</td>
+      <td><pre class='prettyprint jmp'>        <span id='l90s0' title='Executions: 44' class='covered cp' onclick='showHide(this,0)'>if (isDigit(character)) {</span></pre>
         <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x8, 48x4, 54</li>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x8, 48x4, 54x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x10</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x10</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
         </ol>
       </td>
     </tr>
@@ -314,29 +335,41 @@
       <td><pre class='prettyprint'>        } else {</pre></td>
     </tr>
     <tr>
-      <td class='line'>100</td><td class='count'>38</td>
-      <td><pre class='prettyprint jmp'>            <span id='l100s0' title='Executions: 38' class='covered cp' onclick='showHide(this,0)'>while (index &lt; slength)</span> <span id='l100s1' title='Executions: 36' class='covered cp' onclick='showHide(this,1)'>{</span></pre>
+      <td class='line'>100</td><td class='count'>740</td>
+      <td><pre class='prettyprint jmp'>            <span id='l100s0' title='Executions: 740' class='covered cp' onclick='showHide(this,0)'>while (index &lt; slength)</span> <span id='l100s1' title='Executions: 708' class='covered cp' onclick='showHide(this,1)'>{</span></pre>
         <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x12, 48x10, 54</li>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x12, 48x10, 54x16</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x234</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x234</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
         </ol>
         <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x12, 48x10, 54</li>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x12, 48x10, 54x14</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x224</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x224</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>101</td><td class='count'>36</td>
+      <td class='line'>101</td><td class='count'>708</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l101s0'>                character = string.charAt(index);</pre>
         <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x12, 48x10, 54</li>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x12, 48x10, 54x14</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x224</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x224</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>102</td><td class='count'>36</td>
-      <td><pre class='prettyprint jmp'>                <span id='l102s0' title='Executions: 36' class='covered cp' onclick='showHide(this,0)'>if (isDigit(character)) {</span></pre>
+      <td class='line'>102</td><td class='count'>708</td>
+      <td><pre class='prettyprint jmp'>                <span id='l102s0' title='Executions: 708' class='covered cp' onclick='showHide(this,0)'>if (isDigit(character)) {</span></pre>
         <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x12, 48x10, 54</li>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x12, 48x10, 54x14</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x224</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x224</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
         </ol>
       </td>
     </tr>
@@ -353,18 +386,24 @@
       <td><pre class='prettyprint'>                }</pre></td>
     </tr>
     <tr>
-      <td class='line'>105</td><td class='count'>30</td>
+      <td class='line'>105</td><td class='count'>702</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l105s0'>                chunk.append(character);</pre>
         <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x8, 48x8, 54</li>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x8, 48x8, 54x14</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x224</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x224</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>106</td><td class='count'>30</td>
+      <td class='line'>106</td><td class='count'>702</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l106s0'>                index++;</pre>
         <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x8, 48x8, 54</li>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x8, 48x8, 54x14</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x224</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x224</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
         </ol>
       </td>
     </tr>
@@ -377,10 +416,13 @@
       <td><pre class='prettyprint'>        }</pre></td>
     </tr>
     <tr>
-      <td class='line'>109</td><td class='count'>14</td>
+      <td class='line'>109</td><td class='count'>44</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l109s0'>        return chunk.toString();</pre>
         <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x8, 48x4, 54</li>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x8, 48x4, 54x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x10</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x10</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
         </ol>
       </td>
     </tr>
@@ -407,11 +449,11 @@
       <td><pre class='prettyprint'>    public int compare(final String string1, final String string2) {</pre></td>
     </tr>
     <tr>
-      <td></td><td class='count'>1</td>
+      <td></td><td class='count'>16</td>
       <td class='paths'>
-        <span style='cursor:default; background-color:#eb1400' onclick='hidePath()'>Path coverage: 1/13</span>
+        <span style='cursor:default; background-color:#d82700' onclick='hidePath()'>Path coverage: 2/13</span>
         <span class='uncovered' onclick="showPath(this,'l120s0 l125s0 l125s1 l126s0 l136s0 l136s1 l139s0 l142s0 l143s0 l144s0 l145s0 l146s0')">A: 0</span>
-        <span class='uncovered' onclick="showPath(this,'l120s0 l125s0 l125s1 l126s0 l136s0 l151s0 l154s0 l155s0')">B: 0</span>
+        <span class='covered' onclick="showPath(this,'l120s0 l125s0 l125s1 l126s0 l136s0 l151s0 l154s0 l155s0')">B: 15</span>
         <span class='uncovered' onclick="showPath(this,'l120s0 l125s0 l125s1 l126s0 l136s0 l136s1 l151s0 l154s0 l155s0')">C: 0</span>
         <span class='uncovered' onclick="showPath(this,'l120s0 l125s0 l125s1 l126s0 l136s0 l136s1 l139s0 l142s0 l150s0 l154s0 l155s0')">D: 0</span>
         <span class='uncovered' onclick="showPath(this,'l120s0 l125s0 l125s1 l126s0 l136s0 l136s1 l139s0 l142s0 l143s0 l150s0 l154s0 l155s0')">E: 0</span>
@@ -426,57 +468,81 @@
       </td>
     </tr>
     <tr>
-      <td class='line'>120</td><td class='count'>3</td>
+      <td class='line'>120</td><td class='count'>18</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l120s0'>        int thisMarker = 0;</pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43, 48, 54</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x5</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x5</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>121</td><td class='count'>3</td>
+      <td class='line'>121</td><td class='count'>18</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l121s0'>        int thatMarker = 0;</pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43, 48, 54</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x5</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x5</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>122</td><td class='count'>3</td>
+      <td class='line'>122</td><td class='count'>18</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l122s0'>        final int s1Length = string1.length();</pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43, 48, 54</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x5</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x5</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>123</td><td class='count'>3</td>
+      <td class='line'>123</td><td class='count'>18</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l123s0'>        final int s2Length = string2.length();</pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43, 48, 54</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x5</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x5</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
         </ol>
       </td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>125</td><td class='count'>8</td>
-      <td><pre class='prettyprint jmp'>        <span id='l125s0' title='Executions: 8' class='covered cp' onclick='showHide(this,0)'>while (thisMarker &lt; s1Length</span> && <span id='l125s1' title='Executions: 7' class='covered cp' onclick='showHide(this,1)'>thatMarker &lt; s2Length)</span> <span id='l125s2' title='Executions: 7' class='covered cp' onclick='showHide(this,2)'>{</span></pre>
+      <td class='line'>125</td><td class='count'>23</td>
+      <td><pre class='prettyprint jmp'>        <span id='l125s0' title='Executions: 23' class='covered cp' onclick='showHide(this,0)'>while (thisMarker &lt; s1Length</span> && <span id='l125s1' title='Executions: 22' class='covered cp' onclick='showHide(this,1)'>thatMarker &lt; s2Length)</span> <span id='l125s2' title='Executions: 22' class='covered cp' onclick='showHide(this,2)'>{</span></pre>
         <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x4, 48x2, 54</li>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x4, 48x2, 54x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x5</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x5</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
         </ol>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x4, 48x2, 54</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x5</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x5</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
         </ol>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x4, 48x2, 54</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x5</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x5</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>126</td><td class='count'>7</td>
+      <td class='line'>126</td><td class='count'>22</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l126s0'>            final String thisChunk</pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x4, 48x2, 54</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x5</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x5</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
         </ol>
       </td>
     </tr>
@@ -485,19 +551,25 @@
       <td><pre class='prettyprint'>            = getChunk(string1, s1Length, thisMarker);</pre></td>
     </tr>
     <tr>
-      <td class='line'>128</td><td class='count'>7</td>
+      <td class='line'>128</td><td class='count'>22</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l128s0'>            thisMarker += thisChunk.length();</pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x4, 48x2, 54</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x5</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x5</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
         </ol>
       </td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>130</td><td class='count'>7</td>
+      <td class='line'>130</td><td class='count'>22</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l130s0'>            final String thatChunk</pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x4, 48x2, 54</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x5</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x5</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
         </ol>
       </td>
     </tr>
@@ -506,10 +578,13 @@
       <td><pre class='prettyprint'>            = getChunk(string2, s2Length, thatMarker);</pre></td>
     </tr>
     <tr>
-      <td class='line'>132</td><td class='count'>7</td>
+      <td class='line'>132</td><td class='count'>22</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l132s0'>            thatMarker += thatChunk.length();</pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x4, 48x2, 54</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x5</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x5</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
         </ol>
       </td>
     </tr>
@@ -519,18 +594,24 @@
       <td><pre class='comment'>            // If both chunks contain numeric characters, sort them numerically</pre></td>
     </tr>
     <tr>
-      <td class='line'>135</td><td class='count'>7</td>
+      <td class='line'>135</td><td class='count'>22</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l135s0'>            int result = 0;</pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x4, 48x2, 54</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x5</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x5</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>136</td><td class='count'>7</td>
-      <td><pre class='prettyprint jmp'>            <span id='l136s0' title='Executions: 7' class='covered cp' onclick='showHide(this,0)'>if (isDigit(thisChunk.charAt(0))</span></pre>
+      <td class='line'>136</td><td class='count'>22</td>
+      <td><pre class='prettyprint jmp'>            <span id='l136s0' title='Executions: 22' class='covered cp' onclick='showHide(this,0)'>if (isDigit(thisChunk.charAt(0))</span></pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x4, 48x2, 54</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x5</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x5</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
         </ol>
       </td>
     </tr>
@@ -632,10 +713,13 @@
       </td>
     </tr>
     <tr>
-      <td class='line'>151</td><td class='count'>4</td>
+      <td class='line'>151</td><td class='count'>19</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l151s0'>                result = thisChunk.compareTo(thatChunk);</pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x2, 48, 54</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x5</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x5</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
         </ol>
       </td>
     </tr>
@@ -645,21 +729,30 @@
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>154</td><td class='count'>6</td>
-      <td><pre class='prettyprint jmp'>            <span id='l154s0' title='Executions: 6' class='covered cp' onclick='showHide(this,0)'>if (result != 0)</span> <span id='l154s1' title='Executions: 1' class='covered cp' onclick='showHide(this,1)'>{</span></pre>
+      <td class='line'>154</td><td class='count'>21</td>
+      <td><pre class='prettyprint jmp'>            <span id='l154s0' title='Executions: 21' class='covered cp' onclick='showHide(this,0)'>if (result != 0)</span> <span id='l154s1' title='Executions: 16' class='covered cp' onclick='showHide(this,1)'>{</span></pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x4, 48, 54</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x5</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x5</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
         </ol>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x5</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x5</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>155</td><td class='count'>1</td>
+      <td class='line'>155</td><td class='count'>16</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l155s0'>                return result;</pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x5</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x5</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
         </ol>
       </td>
     </tr>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JMockit Coverage Report - DefaultDirectoryChooser.java</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../../../../coverage.css'/>
+  <script type='text/javascript' src='../../../../../../coverage.js'></script>
+  <script type='text/javascript' src='../../../../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption>master/src/com/moneydance/modules/features/importlist/io/DefaultDirectoryChooser.java</caption>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/*
+ * Import List - http://my-flow.github.com/importlist/
+ * Copyright (C) 2011-2012 Florian J. Breunig
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see &lt;http://www.gnu.org/licenses/>.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>19</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package com.moneydance.modules.features.importlist.io;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import java.io.File;
+
+import javax.swing.JFileChooser;
+
+import org.apache.commons.io.FileUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+</div><span>import ...</span></pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+ * @author Florian J. Breunig
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>33</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>final class DefaultDirectoryChooser extends AbstractDirectoryChooser {</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>    /**
+     * Static initialization of class-dependent logger.
+     */</div><span>    /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>38</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l38s0'>    private static final Logger LOG =</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.DefaultDirectoryChooserTest#testChooseBaseDirectory: 39</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>39</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            LoggerFactory.getLogger(DefaultDirectoryChooser.class);</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>    /**
+     * @param argBaseDirectory set the base directory when executed as a stand-
+     * alone application
+     */</div><span>    /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>45</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    DefaultDirectoryChooser(final String argBaseDirectory) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>46</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l46s0'>        super(argBaseDirectory);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.DefaultDirectoryChooserTest#testChooseBaseDirectory: 39</li>
+          <li>com.moneydance.modules.features.importlist.io.DefaultDirectoryChooserTest#testGetBaseDirectory: 32</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>47</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l47s0'>    }</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.DefaultDirectoryChooserTest#testChooseBaseDirectory: 39</li>
+          <li>com.moneydance.modules.features.importlist.io.DefaultDirectoryChooserTest#testGetBaseDirectory: 32</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>49</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>50</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    void chooseBaseDirectory() {</pre></td>
+    </tr>
+    <tr>
+      <td></td><td class='count'>0</td>
+      <td class='paths'>
+        <span style='cursor:default; background-color:#ff0000' onclick='hidePath()'>Path coverage: 0/4</span>
+        <span class='uncovered' onclick="showPath(this,'l51s0 l64s0 l70s0 l71s0')">A: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l51s0 l64s0 l65s0 l70s0 l71s0')">B: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l51s0 l64s0 l70s0 l74s0 l78s0')">C: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l51s0 l64s0 l65s0 l70s0 l74s0 l78s0')">D: 0</span>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>51</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l51s0'>        final JFileChooser fileChooser = new JFileChooser();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.DefaultDirectoryChooserTest#testChooseBaseDirectory: 40</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>52</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l52s0'>        fileChooser.setDialogTitle(</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.DefaultDirectoryChooserTest#testChooseBaseDirectory: 40</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>53</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                this.getLocalizable().getDirectoryChooserTitle());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>54</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l54s0'>        fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.DefaultDirectoryChooserTest#testChooseBaseDirectory: 40</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>55</td><td>&nbsp;</td>
+      <td><pre class='comment'>        // disable the "All files" option.</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>56</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l56s0'>        fileChooser.setAcceptAllFileFilterUsed(false);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.DefaultDirectoryChooserTest#testChooseBaseDirectory: 40</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>58</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        try {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>59</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l59s0'>            fileChooser.setCurrentDirectory(FileUtils.getUserDirectory());</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.DefaultDirectoryChooserTest#testChooseBaseDirectory: 40</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>60</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l60s0'>        } catch (SecurityException e) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>61</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l61s0'>            LOG.warn(e.getMessage(), e);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>62</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l62s0'>        }</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.DefaultDirectoryChooserTest#testChooseBaseDirectory: 40</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>64</td><td class='count'>1</td>
+      <td><pre class='prettyprint jmp'>        <span id='l64s0' title='Executions: 1' class='covered cp' onclick='showHide(this,0)'>if (this.getBaseDirectory() != null) {</span></pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.DefaultDirectoryChooserTest#testChooseBaseDirectory: 40</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>65</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l65s0'>            final File parentDirectory =</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.DefaultDirectoryChooserTest#testChooseBaseDirectory: 40</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>66</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                   this.getBaseDirectory().getParentFile();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>67</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l67s0'>            fileChooser.setCurrentDirectory(parentDirectory);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.DefaultDirectoryChooserTest#testChooseBaseDirectory: 40</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>68</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>70</td><td class='count'>1</td>
+      <td><pre class='prettyprint jmp'>        <span id='l70s0' title='Executions: 1' class='covered cp' onclick='showHide(this,0)'>if (fileChooser.showOpenDialog(null) != JFileChooser.APPROVE_OPTION)</span> <span id='l70s1' title='Executions: 0' class='uncovered'>{</span></pre></td>
+    </tr>
+    <tr>
+      <td class='line'>71</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l71s0'>            return;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>72</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>74</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l74s0'>        this.getPrefs().setBaseDirectory(</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.DefaultDirectoryChooserTest#testChooseBaseDirectory: 40</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>75</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                fileChooser.getSelectedFile().getAbsolutePath());</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>77</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l77s0'>        LOG.info("Base directory is " + this.getPrefs().getBaseDirectory());</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.DefaultDirectoryChooserTest#testChooseBaseDirectory: 40</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>78</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l78s0'>    }</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.DefaultDirectoryChooserTest#testChooseBaseDirectory: 40</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>79</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JMockit Coverage Report - DirectoryValidator.java</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../../../../coverage.css'/>
+  <script type='text/javascript' src='../../../../../../coverage.js'></script>
+  <script type='text/javascript' src='../../../../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption>master/src/com/moneydance/modules/features/importlist/io/DirectoryValidator.java</caption>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/*
+ * Import List - http://my-flow.github.com/importlist/
+ * Copyright (C) 2011-2012 Florian J. Breunig
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see &lt;http://www.gnu.org/licenses/>.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>19</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package com.moneydance.modules.features.importlist.io;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import java.io.File;
+
+import org.apache.commons.io.filefilter.CanReadFileFilter;
+import org.apache.commons.io.filefilter.FileFilterUtils;
+import org.apache.commons.io.filefilter.IOFileFilter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+</div><span>import ...</span></pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+ * @author Florian J. Breunig, Florian.Breunig@my-flow.com
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>32</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l32s0'>enum DirectoryValidator implements IOFileFilter {</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>    /**
+     * Helper instance.
+     */</div><span>    /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>37</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    INSTANCE;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>    /**
+     * Static initialization of class-dependent logger.
+     */</div><span>    /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>42</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private static final Logger LOG =</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>43</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            LoggerFactory.getLogger(DirectoryValidator.class);</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>45</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    boolean checkValidDirectory(final File file) {</pre></td>
+    </tr>
+    <tr>
+      <td></td><td class='count'>6</td>
+      <td class='paths'>
+        <span style='cursor:default; background-color:#00ff00' onclick='hidePath()'>Path coverage: 2/2</span>
+        <span class='covered' onclick="showPath(this,'l46s0 l47s0')">A: 1</span>
+        <span class='covered' onclick="showPath(this,'l46s0 l50s0')">B: 5</span>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>46</td><td class='count'>6</td>
+      <td><pre class='prettyprint jmp'>        <span id='l46s0' title='Executions: 6' class='covered cp' onclick='showHide(this,0)'>if (file == null)</span> <span id='l46s1' title='Executions: 1' class='covered cp' onclick='showHide(this,1)'>{</span></pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.DirectoryValidatorTest#testCheckValidDirectory: 18, 21</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72, 73</li>
+        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.DirectoryValidatorTest#testCheckValidDirectory: 21</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>47</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l47s0'>            return false;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.DirectoryValidatorTest#testCheckValidDirectory: 21</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>48</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>50</td><td class='count'>5</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l50s0'>        return this.accept(file);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.DirectoryValidatorTest#testCheckValidDirectory: 18</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72, 73</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>51</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>53</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>54</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public boolean accept(final File file) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>55</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        try {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>56</td><td class='count'>7</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l56s0'>            return FileFilterUtils.and(</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.DirectoryValidatorTest#testCheckValidDirectory: 18</li>
+          <li>com.moneydance.modules.features.importlist.io.DirectoryValidatorTest#testAcceptFile: 27</li>
+          <li>com.moneydance.modules.features.importlist.io.DirectoryValidatorTest#testAcceptFileString: 33</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72, 73</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>57</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                    CanReadFileFilter.CAN_READ,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>58</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                    FileFilterUtils.directoryFileFilter()).accept(file);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>59</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l59s0'>        } catch (SecurityException e) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>60</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l60s0'>            LOG.warn(e.getMessage(), e);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>61</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l61s0'>            return false;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>62</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>63</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>65</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>66</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public boolean accept(final File dir, final String name) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>67</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l67s0'>        return this.accept(new File(dir, name));</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.DirectoryValidatorTest#testAcceptFileString: 33</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>68</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>69</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>

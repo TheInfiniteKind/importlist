@@ -40,7 +40,6 @@
       <td class='line'></td><td>&nbsp;</td>
       <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import java.awt.Image;
 import java.io.File;
-import java.io.IOException;
 import java.util.List;
 
 import javax.swing.Icon;
@@ -64,7 +63,7 @@ import com.moneydance.modules.features.importlist.util.Localizable;
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>41</td><td>&nbsp;</td>
+      <td class='line'>40</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>final class DeleteOneOperation implements FileOperation {</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -75,26 +74,37 @@ import com.moneydance.modules.features.importlist.util.Localizable;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>46</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l46s0'>    private static final Logger LOG =</pre>
+      <td class='line'>45</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l45s0'>    private static final Logger LOG =</pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.io.DeleteAllOperationTest#testPerform: 55</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>47</td><td>&nbsp;</td>
+      <td class='line'>46</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>            LoggerFactory.getLogger(DeleteOneOperation.class);</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>49</td><td>&nbsp;</td>
+      <td class='line'>48</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    private final Localizable localizable;</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
+      <td class='line'>50</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l50s0'>    DeleteOneOperation() {</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.DeleteAllOperationTest#testPerform: 55</li>
+          <li>com.moneydance.modules.features.importlist.io.DeleteOneOperationTest#testShowWarningAndPerform: 67, 71</li>
+          <li>com.moneydance.modules.features.importlist.io.DeleteOneOperationTest#testPerform: 50, 54</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteRow: 115</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
       <td class='line'>51</td><td class='count'>6</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l51s0'>    DeleteOneOperation() {</pre>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l51s0'>        this.localizable = Helper.INSTANCE.getLocalizable();</pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.io.DeleteAllOperationTest#testPerform: 55</li>
           <li>com.moneydance.modules.features.importlist.io.DeleteOneOperationTest#testShowWarningAndPerform: 67, 71</li>
@@ -105,18 +115,7 @@ import com.moneydance.modules.features.importlist.util.Localizable;
     </tr>
     <tr>
       <td class='line'>52</td><td class='count'>6</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l52s0'>        this.localizable = Helper.INSTANCE.getLocalizable();</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.io.DeleteAllOperationTest#testPerform: 55</li>
-          <li>com.moneydance.modules.features.importlist.io.DeleteOneOperationTest#testShowWarningAndPerform: 67, 71</li>
-          <li>com.moneydance.modules.features.importlist.io.DeleteOneOperationTest#testPerform: 50, 54</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteRow: 115</li>
-        </ol>
-      </td>
-    </tr>
-    <tr>
-      <td class='line'>53</td><td class='count'>6</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l53s0'>    }</pre>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l52s0'>    }</pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.io.DeleteAllOperationTest#testPerform: 55</li>
           <li>com.moneydance.modules.features.importlist.io.DeleteOneOperationTest#testShowWarningAndPerform: 67, 71</li>
@@ -127,26 +126,35 @@ import com.moneydance.modules.features.importlist.util.Localizable;
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>55</td><td>&nbsp;</td>
+      <td class='line'>54</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    @Override</pre></td>
     </tr>
     <tr>
-      <td class='line'>56</td><td>&nbsp;</td>
+      <td class='line'>55</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public void showWarningAndPerform(final List&lt;File> files) {</pre></td>
     </tr>
     <tr>
       <td></td><td class='count'>3</td>
       <td class='paths'>
         <span style='cursor:default; background-color:#7f8000' onclick='hidePath()'>Path coverage: 2/4</span>
-        <span class='uncovered' onclick="showPath(this,'l57s0 l64s0 l67s0 l82s0 l85s0 l87s0')">A: 0</span>
-        <span class='uncovered' onclick="showPath(this,'l57s0 l64s0 l67s0 l82s0 l83s0 l87s0')">B: 0</span>
-        <span class='covered' onclick="showPath(this,'l57s0 l64s0 l65s0 l67s0 l82s0 l85s0 l87s0')">C: 2</span>
-        <span class='covered' onclick="showPath(this,'l57s0 l64s0 l65s0 l67s0 l82s0 l83s0 l87s0')">D: 1</span>
+        <span class='uncovered' onclick="showPath(this,'l56s0 l63s0 l66s0 l81s0 l84s0 l86s0')">A: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l56s0 l63s0 l66s0 l81s0 l82s0 l86s0')">B: 0</span>
+        <span class='covered' onclick="showPath(this,'l56s0 l63s0 l64s0 l66s0 l81s0 l84s0 l86s0')">C: 2</span>
+        <span class='covered' onclick="showPath(this,'l56s0 l63s0 l64s0 l66s0 l81s0 l82s0 l86s0')">D: 1</span>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>56</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l56s0'>        final File file = files.iterator().next();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.DeleteOneOperationTest#testShowWarningAndPerform: 68, 72</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteRow: 115</li>
+        </ol>
       </td>
     </tr>
     <tr>
       <td class='line'>57</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l57s0'>        final File file = files.iterator().next();</pre>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l57s0'>        final String message =</pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.io.DeleteOneOperationTest#testShowWarningAndPerform: 68, 72</li>
           <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteRow: 115</li>
@@ -154,25 +162,25 @@ import com.moneydance.modules.features.importlist.util.Localizable;
       </td>
     </tr>
     <tr>
-      <td class='line'>58</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l58s0'>        final String message =</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.io.DeleteOneOperationTest#testShowWarningAndPerform: 68, 72</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteRow: 115</li>
-        </ol>
-      </td>
-    </tr>
-    <tr>
-      <td class='line'>59</td><td>&nbsp;</td>
+      <td class='line'>58</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                this.localizable.getConfirmationMessageDeleteOneFile(</pre></td>
     </tr>
     <tr>
-      <td class='line'>60</td><td>&nbsp;</td>
+      <td class='line'>59</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                        file.getName());</pre></td>
     </tr>
     <tr>
+      <td class='line'>60</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l60s0'>        final Object confirmationLabel = new JLabel(message);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.DeleteOneOperationTest#testShowWarningAndPerform: 68, 72</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteRow: 115</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
       <td class='line'>61</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l61s0'>        final Object confirmationLabel = new JLabel(message);</pre>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l61s0'>        final Image image = Helper.INSTANCE.getIconImage();</pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.io.DeleteOneOperationTest#testShowWarningAndPerform: 68, 72</li>
           <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteRow: 115</li>
@@ -181,7 +189,7 @@ import com.moneydance.modules.features.importlist.util.Localizable;
     </tr>
     <tr>
       <td class='line'>62</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l62s0'>        final Image image = Helper.INSTANCE.getIconImage();</pre>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l62s0'>        Icon  icon  = null;</pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.io.DeleteOneOperationTest#testShowWarningAndPerform: 68, 72</li>
           <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteRow: 115</li>
@@ -190,7 +198,11 @@ import com.moneydance.modules.features.importlist.util.Localizable;
     </tr>
     <tr>
       <td class='line'>63</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l63s0'>        Icon  icon  = null;</pre>
+      <td><pre class='prettyprint jmp'>        <span id='l63s0' title='Executions: 3' class='covered cp' onclick='showHide(this,0)'>if (image != null)</span> <span id='l63s1' title='Executions: 3' class='covered cp' onclick='showHide(this,1)'>{</span></pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.DeleteOneOperationTest#testShowWarningAndPerform: 68, 72</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteRow: 115</li>
+        </ol>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.io.DeleteOneOperationTest#testShowWarningAndPerform: 68, 72</li>
           <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteRow: 115</li>
@@ -199,20 +211,7 @@ import com.moneydance.modules.features.importlist.util.Localizable;
     </tr>
     <tr>
       <td class='line'>64</td><td class='count'>3</td>
-      <td><pre class='prettyprint jmp'>        <span id='l64s0' title='Executions: 3' class='covered cp' onclick='showHide(this,0)'>if (image != null)</span> <span id='l64s1' title='Executions: 3' class='covered cp' onclick='showHide(this,1)'>{</span></pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.io.DeleteOneOperationTest#testShowWarningAndPerform: 68, 72</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteRow: 115</li>
-        </ol>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.io.DeleteOneOperationTest#testShowWarningAndPerform: 68, 72</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteRow: 115</li>
-        </ol>
-      </td>
-    </tr>
-    <tr>
-      <td class='line'>65</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l65s0'>            icon = new ImageIcon(image);</pre>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l64s0'>            icon = new ImageIcon(image);</pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.io.DeleteOneOperationTest#testShowWarningAndPerform: 68, 72</li>
           <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteRow: 115</li>
@@ -220,12 +219,12 @@ import com.moneydance.modules.features.importlist.util.Localizable;
       </td>
     </tr>
     <tr>
-      <td class='line'>66</td><td>&nbsp;</td>
+      <td class='line'>65</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>        }</pre></td>
     </tr>
     <tr>
-      <td class='line'>67</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l67s0'>        final Object[] options = {</pre>
+      <td class='line'>66</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l66s0'>        final Object[] options = {</pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.io.DeleteOneOperationTest#testShowWarningAndPerform: 68, 72</li>
           <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteRow: 115</li>
@@ -233,21 +232,21 @@ import com.moneydance.modules.features.importlist.util.Localizable;
       </td>
     </tr>
     <tr>
-      <td class='line'>68</td><td>&nbsp;</td>
+      <td class='line'>67</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                this.localizable.getOptionDeleteFile(),</pre></td>
     </tr>
     <tr>
-      <td class='line'>69</td><td>&nbsp;</td>
+      <td class='line'>68</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                this.localizable.getOptionCancel()</pre></td>
     </tr>
     <tr>
-      <td class='line'>70</td><td>&nbsp;</td>
+      <td class='line'>69</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>        };</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>72</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l72s0'>        final int choice = JOptionPane.showOptionDialog(</pre>
+      <td class='line'>71</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l71s0'>        final int choice = JOptionPane.showOptionDialog(</pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.io.DeleteOneOperationTest#testShowWarningAndPerform: 68, 72</li>
           <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteRow: 115</li>
@@ -255,41 +254,41 @@ import com.moneydance.modules.features.importlist.util.Localizable;
       </td>
     </tr>
     <tr>
-      <td class='line'>73</td><td>&nbsp;</td>
+      <td class='line'>72</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                null, // no parent component</pre></td>
     </tr>
     <tr>
-      <td class='line'>74</td><td>&nbsp;</td>
+      <td class='line'>73</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                confirmationLabel,</pre></td>
     </tr>
     <tr>
-      <td class='line'>75</td><td>&nbsp;</td>
+      <td class='line'>74</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                null, // no title</pre></td>
     </tr>
     <tr>
-      <td class='line'>76</td><td>&nbsp;</td>
+      <td class='line'>75</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                JOptionPane.DEFAULT_OPTION,</pre></td>
     </tr>
     <tr>
-      <td class='line'>77</td><td>&nbsp;</td>
+      <td class='line'>76</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                JOptionPane.WARNING_MESSAGE,</pre></td>
     </tr>
     <tr>
-      <td class='line'>78</td><td>&nbsp;</td>
+      <td class='line'>77</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                icon,</pre></td>
     </tr>
     <tr>
-      <td class='line'>79</td><td>&nbsp;</td>
+      <td class='line'>78</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                options,</pre></td>
     </tr>
     <tr>
-      <td class='line'>80</td><td>&nbsp;</td>
+      <td class='line'>79</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                options[1]);</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>82</td><td class='count'>3</td>
-      <td><pre class='prettyprint jmp'>        <span id='l82s0' title='Executions: 3' class='covered cp' onclick='showHide(this,0)'>if (choice == 0)</span> <span id='l82s1' title='Executions: 1' class='covered cp' onclick='showHide(this,1)'>{</span></pre>
+      <td class='line'>81</td><td class='count'>3</td>
+      <td><pre class='prettyprint jmp'>        <span id='l81s0' title='Executions: 3' class='covered cp' onclick='showHide(this,0)'>if (choice == 0)</span> <span id='l81s1' title='Executions: 1' class='covered cp' onclick='showHide(this,1)'>{</span></pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.io.DeleteOneOperationTest#testShowWarningAndPerform: 68, 72</li>
           <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteRow: 115</li>
@@ -300,20 +299,20 @@ import com.moneydance.modules.features.importlist.util.Localizable;
       </td>
     </tr>
     <tr>
-      <td class='line'>83</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l83s0'>            this.perform(files);</pre>
+      <td class='line'>82</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l82s0'>            this.perform(files);</pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.io.DeleteOneOperationTest#testShowWarningAndPerform: 68</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>84</td><td>&nbsp;</td>
+      <td class='line'>83</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>        } else {</pre></td>
     </tr>
     <tr>
-      <td class='line'>85</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l85s0'>            LOG.info("Canceled deleting file " + file.getAbsoluteFile());</pre>
+      <td class='line'>84</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l84s0'>            LOG.info("Canceled deleting file " + file.getAbsoluteFile());</pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.io.DeleteOneOperationTest#testShowWarningAndPerform: 72</li>
           <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteRow: 115</li>
@@ -321,12 +320,12 @@ import com.moneydance.modules.features.importlist.util.Localizable;
       </td>
     </tr>
     <tr>
-      <td class='line'>86</td><td>&nbsp;</td>
+      <td class='line'>85</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>        }</pre></td>
     </tr>
     <tr>
-      <td class='line'>87</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l87s0'>    }</pre>
+      <td class='line'>86</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l86s0'>    }</pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.io.DeleteOneOperationTest#testShowWarningAndPerform: 68, 72</li>
           <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteRow: 115</li>
@@ -335,22 +334,26 @@ import com.moneydance.modules.features.importlist.util.Localizable;
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>89</td><td>&nbsp;</td>
+      <td class='line'>88</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    @Override</pre></td>
     </tr>
     <tr>
-      <td class='line'>90</td><td>&nbsp;</td>
+      <td class='line'>89</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public void perform(final List&lt;File> files) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>91</td><td class='count'>4</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l91s0'>        final File file = files.iterator().next();</pre>
+      <td class='line'>90</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l90s0'>        final File file = files.iterator().next();</pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.io.DeleteAllOperationTest#testPerform: 55</li>
           <li>com.moneydance.modules.features.importlist.io.DeleteOneOperationTest#testShowWarningAndPerform: 68</li>
           <li>com.moneydance.modules.features.importlist.io.DeleteOneOperationTest#testPerform: 51, 55</li>
         </ol>
       </td>
+    </tr>
+    <tr>
+      <td class='line'>91</td><td>&nbsp;</td>
+      <td><pre class='comment'>        // ESCA-JAVA0166: IOException, SecurityException</pre></td>
     </tr>
     <tr>
       <td class='line'>92</td><td>&nbsp;</td>
@@ -378,7 +381,7 @@ import com.moneydance.modules.features.importlist.util.Localizable;
     </tr>
     <tr>
       <td class='line'>95</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l95s0'>        } catch (IOException e) {</pre>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l95s0'>        } catch (Exception e) {</pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.io.DeleteAllOperationTest#testPerform: 55</li>
           <li>com.moneydance.modules.features.importlist.io.DeleteOneOperationTest#testPerform: 55</li>
@@ -387,7 +390,7 @@ import com.moneydance.modules.features.importlist.util.Localizable;
     </tr>
     <tr>
       <td class='line'>96</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l96s0'>            LOG.warn("Could not delete file " + file.getAbsoluteFile());</pre>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l96s0'>            LOG.warn(e.getMessage(), e);</pre>
         <ol style='display: none'>
           <li>com.moneydance.modules.features.importlist.io.DeleteAllOperationTest#testPerform: 55</li>
           <li>com.moneydance.modules.features.importlist.io.DeleteOneOperationTest#testPerform: 55</li>
