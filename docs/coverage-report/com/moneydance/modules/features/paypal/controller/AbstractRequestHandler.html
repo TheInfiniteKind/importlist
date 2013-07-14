@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JMockit Coverage Report - AbstractRequestHandler.java</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../../../../coverage.css'/>
+  <script type='text/javascript' src='../../../../../../coverage.js'></script>
+  <script type='text/javascript' src='../../../../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption>develop/src/com/moneydance/modules/features/paypal/controller/AbstractRequestHandler.java</caption>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/*
+ * PayPal for Moneydance - http://my-flow.github.io/paypalformoneydance/
+ * Copyright (C) 2013 Florian J. Breunig. All rights reserved.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>6</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package com.moneydance.modules.features.paypal.controller;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import org.apache.commons.lang3.Validate;
+
+import com.moneydance.modules.features.paypal.service.RequestHandler;
+import com.moneydance.modules.features.paypal.service.ServiceResult;
+import com.moneydance.modules.features.paypal.util.Helper;
+import com.moneydance.modules.features.paypal.util.Localizable;
+</div><span>import ...</span></pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+ * @author Florian J. Breunig
+ * @param &lt;V>
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>19</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>abstract class AbstractRequestHandler&lt;V> implements RequestHandler&lt;V> {</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>21</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final ViewController viewController;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>22</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final Localizable localizable;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>24</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l24s0'>    AbstractRequestHandler(final ViewController argViewController) {</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#setUp: 32</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>25</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l25s0'>        Validate.notNull(argViewController, "view controller must not be null");</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#setUp: 32</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>26</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l26s0'>        this.viewController = argViewController;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#setUp: 32</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>27</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l27s0'>        this.localizable = Helper.INSTANCE.getLocalizable();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#setUp: 32</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>28</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l28s0'>    }</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#setUp: 32</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>30</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>31</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public void serviceCallFinished(final ServiceResult&lt;V> serviceResult) {</pre></td>
+    </tr>
+    <tr>
+      <td></td><td class='count'>1</td>
+      <td class='paths'>
+        <span style='cursor:default; background-color:#bf4000' onclick='hidePath()'>Path coverage: 1/4</span>
+        <span class='uncovered' onclick="showPath(this,'l32s0 l35s0 l38s0')">A: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l32s0 l35s0 l36s0 l38s0')">B: 0</span>
+        <span class='covered' onclick="showPath(this,'l32s0 l33s0 l35s0 l38s0')">C: 1</span>
+        <span class='uncovered' onclick="showPath(this,'l32s0 l33s0 l35s0 l36s0 l38s0')">D: 0</span>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>32</td><td class='count'>1</td>
+      <td><pre class='prettyprint jmp'>        <span id='l32s0' title='Executions: 1' class='covered cp' onclick='showHide(this,0)'>if (serviceResult.getResults() != null) {</span></pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#testServiceCallFinished: 64</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>33</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l33s0'>            this.serviceCallSucceeded(serviceResult);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#testServiceCallFinished: 64</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>34</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>35</td><td class='count'>1</td>
+      <td><pre class='prettyprint jmp'>        <span id='l35s0' title='Executions: 1' class='covered cp' onclick='showHide(this,0)'>if (serviceResult.getErrorMessage() != null) {</span></pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#testServiceCallFinished: 64</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>36</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l36s0'>            this.serviceCallFailed(serviceResult.getErrorMessage());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>37</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>38</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l38s0'>    }</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#testServiceCallFinished: 64</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>    /**
+     * @param serviceResult result must not be null
+     */</div><span>    /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>43</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    protected abstract void serviceCallSucceeded(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>44</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            final ServiceResult&lt;V> serviceResult);</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>46</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private void serviceCallFailed(final String message) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>47</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l47s0'>        final String labelMessage =</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>48</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l48s0'>                this.localizable.getErrorMessageServiceCallFailed(message);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>49</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l49s0'>        this.viewController.unlock(labelMessage, null);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>50</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l50s0'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>52</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    protected final ViewController getViewController() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>53</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l53s0'>        return this.viewController;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#testServiceCallSucceededEmptyResult: 41</li>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#testServiceCallSucceededValidSingleResult: 48</li>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#testServiceCallSucceededMultipleResults: 55</li>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#testServiceCallFinished: 64</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>54</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>55</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>

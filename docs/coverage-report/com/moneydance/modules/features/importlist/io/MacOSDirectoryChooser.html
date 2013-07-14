@@ -4,6 +4,7 @@
   <title>JMockit Coverage Report - MacOSDirectoryChooser.java</title>
   <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
   <link rel='stylesheet' type='text/css' href='../../../../../../coverage.css'/>
+  <link rel='shortcut icon' type='image/png' href='../../../../../../logo.png'/>
   <script type='text/javascript' src='../../../../../../coverage.js'></script>
   <script type='text/javascript' src='../../../../../../prettify.js'></script>
 </head>
@@ -11,28 +12,68 @@
   <table cellpadding='0' cellspacing='1'>
     <caption>master/src/com/moneydance/modules/features/importlist/io/MacOSDirectoryChooser.java</caption>
     <tr>
-      <td class='line'></td><td>&nbsp;</td>
-      <td class='comment' onclick='showHideLines(this)'><div>/*
- * Import List - http://my-flow.github.com/importlist/
- * Copyright (C) 2011-2012 Florian J. Breunig
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see &lt;http://www.gnu.org/licenses/>.
- */</div><span>/*...*/</span></td>
+      <td class='line'>1</td><td>&nbsp;</td>
+      <td><pre class='comment'>// Import List - http://my-flow.github.io/importlist/</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>2</td><td>&nbsp;</td>
+      <td><pre class='comment'>// Copyright (C) 2011-2014 Florian J. Breunig</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>3</td><td>&nbsp;</td>
+      <td><pre class='comment'>//</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>4</td><td>&nbsp;</td>
+      <td><pre class='comment'>// This program is free software: you can redistribute it and/or modify</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>5</td><td>&nbsp;</td>
+      <td><pre class='comment'>// it under the terms of the GNU General Public License as published by</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>6</td><td>&nbsp;</td>
+      <td><pre class='comment'>// the Free Software Foundation, either version 3 of the License, or</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>7</td><td>&nbsp;</td>
+      <td><pre class='comment'>// (at your option) any later version.</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>8</td><td>&nbsp;</td>
+      <td><pre class='comment'>//</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>9</td><td>&nbsp;</td>
+      <td><pre class='comment'>// This program is distributed in the hope that it will be useful,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>10</td><td>&nbsp;</td>
+      <td><pre class='comment'>// but WITHOUT ANY WARRANTY; without even the implied warranty of</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>11</td><td>&nbsp;</td>
+      <td><pre class='comment'>// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>12</td><td>&nbsp;</td>
+      <td><pre class='comment'>// GNU General Public License for more details.</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>13</td><td>&nbsp;</td>
+      <td><pre class='comment'>//</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>14</td><td>&nbsp;</td>
+      <td><pre class='comment'>// You should have received a copy of the GNU General Public License</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>15</td><td>&nbsp;</td>
+      <td><pre class='comment'>// along with this program. If not, see &lt;http://www.gnu.org/licenses/>.</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>19</td><td>&nbsp;</td>
+      <td class='line'>17</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>package com.moneydance.modules.features.importlist.io;</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -41,10 +82,10 @@
       <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import java.awt.FileDialog;
 import java.awt.Frame;
 import java.io.File;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import org.apache.commons.io.FileUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 </div><span>import ...</span></pre></td>
     </tr>
@@ -52,11 +93,14 @@ import org.slf4j.LoggerFactory;
     <tr>
       <td class='line'></td><td>&nbsp;</td>
       <td class='comment' onclick='showHideLines(this)'><div>/**
+ * An implementation strategy specific to Mac OS that presents a file dialog
+ * in a sandboxed runtime environment.
+ *
  * @author Florian J. Breunig
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>33</td><td>&nbsp;</td>
+      <td class='line'>34</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>final class MacOSDirectoryChooser extends AbstractDirectoryChooser {</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -67,16 +111,12 @@ import org.slf4j.LoggerFactory;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>38</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l38s0'>    private static final Logger LOG =</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
-        </ol>
-      </td>
+      <td class='line'>39</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l39s0'>    private static final Logger LOG =</pre></td>
     </tr>
     <tr>
-      <td class='line'>39</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>            LoggerFactory.getLogger(MacOSDirectoryChooser.class);</pre></td>
+      <td class='line'>40</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            Logger.getLogger(MacOSDirectoryChooser.class.getName());</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
@@ -87,307 +127,173 @@ import org.slf4j.LoggerFactory;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>45</td><td>&nbsp;</td>
+      <td class='line'>46</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    MacOSDirectoryChooser(final String argBaseDirectory) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>46</td><td class='count'>68</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l46s0'>        super(argBaseDirectory);</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 46</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41x8</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 43x11</li>
-          <li>com.moneydance.modules.features.importlist.io.MacDirectoryChooserTest#testChooseBaseDirectory: 39</li>
-          <li>com.moneydance.modules.features.importlist.io.MacDirectoryChooserTest#testGetBaseDirectory: 32</li>
-          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 50, 56, 50, 56, 50, 56</li>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x16</li>
-          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#setUp: 41x2</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#setUp: 41x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 38</li>
-        </ol>
-      </td>
+      <td class='line'>47</td><td class='count'>66</td>
+      <td><pre class='prettyprint covered' id='l47s0'>        super(argBaseDirectory);</pre></td>
     </tr>
     <tr>
-      <td class='line'>47</td><td class='count'>68</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l47s0'>    }</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 46</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41x8</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 43x11</li>
-          <li>com.moneydance.modules.features.importlist.io.MacDirectoryChooserTest#testChooseBaseDirectory: 39</li>
-          <li>com.moneydance.modules.features.importlist.io.MacDirectoryChooserTest#testGetBaseDirectory: 32</li>
-          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 50, 56, 50, 56, 50, 56</li>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x16</li>
-          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#setUp: 41x2</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#setUp: 41x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 38</li>
-        </ol>
-      </td>
+      <td class='line'>48</td><td class='count'>66</td>
+      <td><pre class='prettyprint covered' id='l48s0'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>49</td><td>&nbsp;</td>
+      <td class='line'>50</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    @Override</pre></td>
     </tr>
     <tr>
-      <td class='line'>50</td><td>&nbsp;</td>
+      <td class='line'>51</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    void chooseBaseDirectory() {</pre></td>
     </tr>
     <tr>
       <td></td><td class='count'>0</td>
       <td class='paths'>
         <span style='cursor:default; background-color:#ff0000' onclick='hidePath()'>Path coverage: 0/6</span>
-        <span class='uncovered' onclick="showPath(this,'l51s0 l66s0 l73s0 l76s0 l77s0')">A: 0</span>
-        <span class='uncovered' onclick="showPath(this,'l51s0 l66s0 l67s0 l69s0 l73s0 l76s0 l77s0')">B: 0</span>
-        <span class='uncovered' onclick="showPath(this,'l51s0 l66s0 l67s0 l69s0 l70s0 l73s0 l76s0 l77s0')">C: 0</span>
-        <span class='uncovered' onclick="showPath(this,'l51s0 l66s0 l73s0 l76s0 l80s0 l85s0')">D: 0</span>
-        <span class='uncovered' onclick="showPath(this,'l51s0 l66s0 l67s0 l69s0 l73s0 l76s0 l80s0 l85s0')">E: 0</span>
-        <span class='uncovered' onclick="showPath(this,'l51s0 l66s0 l67s0 l69s0 l70s0 l73s0 l76s0 l80s0 l85s0')">F: 0</span>
-      </td>
-    </tr>
-    <tr>
-      <td class='line'>51</td><td class='count'>4</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l51s0'>        System.setProperty("apple.awt.fileDialogForDirectories", "true");</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#testInvokeString: 73</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testChooseBaseDirectory: 48</li>
-          <li>com.moneydance.modules.features.importlist.io.MacDirectoryChooserTest#testChooseBaseDirectory: 40</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testChooseBaseDirectory: 91</li>
-        </ol>
+        <span class='uncovered' onclick="showPath(this,'l52s0 l67s0 l74s0 l77s0 l78s0')">A: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l52s0 l67s0 l68s0 l70s0 l74s0 l77s0 l78s0')">B: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l52s0 l67s0 l68s0 l70s0 l71s0 l74s0 l77s0 l78s0')">C: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l52s0 l67s0 l74s0 l77s0 l81s0 l88s0')">D: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l52s0 l67s0 l68s0 l70s0 l74s0 l77s0 l81s0 l88s0')">E: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l52s0 l67s0 l68s0 l70s0 l71s0 l74s0 l77s0 l81s0 l88s0')">F: 0</span>
       </td>
     </tr>
     <tr>
       <td class='line'>52</td><td class='count'>4</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l52s0'>        final FileDialog fileDialog = new FileDialog(</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#testInvokeString: 73</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testChooseBaseDirectory: 48</li>
-          <li>com.moneydance.modules.features.importlist.io.MacDirectoryChooserTest#testChooseBaseDirectory: 40</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testChooseBaseDirectory: 91</li>
-        </ol>
-      </td>
+      <td><pre class='prettyprint covered' id='l52s0'>        System.setProperty("apple.awt.fileDialogForDirectories", "true");</pre></td>
     </tr>
     <tr>
-      <td class='line'>53</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                (Frame) null,</pre></td>
+      <td class='line'>53</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l53s0'>        final FileDialog fileDialog = new FileDialog(</pre></td>
     </tr>
     <tr>
       <td class='line'>54</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                this.getLocalizable().getDirectoryChooserTitle(),</pre></td>
+      <td><pre class='prettyprint'>                (Frame) null,</pre></td>
     </tr>
     <tr>
       <td class='line'>55</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                this.getLocalizable().getDirectoryChooserTitle(),</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>56</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                FileDialog.LOAD);</pre></td>
     </tr>
     <tr>
-      <td class='line'>56</td><td class='count'>4</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l56s0'>        fileDialog.setModal(true);</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#testInvokeString: 73</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testChooseBaseDirectory: 48</li>
-          <li>com.moneydance.modules.features.importlist.io.MacDirectoryChooserTest#testChooseBaseDirectory: 40</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testChooseBaseDirectory: 91</li>
-        </ol>
-      </td>
+      <td class='line'>57</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l57s0'>        fileDialog.setModal(true);</pre></td>
     </tr>
     <tr>
-      <td class='line'>57</td><td class='count'>4</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l57s0'>        fileDialog.setFilenameFilter(DirectoryValidator.INSTANCE);</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#testInvokeString: 73</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testChooseBaseDirectory: 48</li>
-          <li>com.moneydance.modules.features.importlist.io.MacDirectoryChooserTest#testChooseBaseDirectory: 40</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testChooseBaseDirectory: 91</li>
-        </ol>
-      </td>
+      <td class='line'>58</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l58s0'>        fileDialog.setFilenameFilter(DirectoryValidator.INSTANCE);</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>59</td><td>&nbsp;</td>
+      <td class='line'>60</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>        try {</pre></td>
     </tr>
     <tr>
-      <td class='line'>60</td><td class='count'>4</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l60s0'>            fileDialog.setDirectory(</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#testInvokeString: 73</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testChooseBaseDirectory: 48</li>
-          <li>com.moneydance.modules.features.importlist.io.MacDirectoryChooserTest#testChooseBaseDirectory: 40</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testChooseBaseDirectory: 91</li>
-        </ol>
-      </td>
+      <td class='line'>61</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l61s0'>            fileDialog.setDirectory(</pre></td>
     </tr>
     <tr>
-      <td class='line'>61</td><td>&nbsp;</td>
+      <td class='line'>62</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                    FileUtils.getUserDirectory().getAbsolutePath());</pre></td>
     </tr>
     <tr>
-      <td class='line'>62</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l62s0'>        } catch (SecurityException e) {</pre></td>
-    </tr>
-    <tr>
       <td class='line'>63</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l63s0'>            LOG.warn(e.getMessage(), e);</pre></td>
+      <td><pre class='prettyprint uncovered' id='l63s0'>        } catch (SecurityException e) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>64</td><td class='count'>4</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l64s0'>        }</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#testInvokeString: 73</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testChooseBaseDirectory: 48</li>
-          <li>com.moneydance.modules.features.importlist.io.MacDirectoryChooserTest#testChooseBaseDirectory: 40</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testChooseBaseDirectory: 91</li>
-        </ol>
-      </td>
+      <td class='line'>64</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l64s0'>            LOG.log(Level.WARNING, e.getMessage(), e);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>65</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l65s0'>        }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>66</td><td class='count'>4</td>
-      <td><pre class='prettyprint jmp'>        <span id='l66s0' title='Executions: 4' class='covered cp' onclick='showHide(this,0)'>if (this.getBaseDirectory() != null) {</span></pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#testInvokeString: 73</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testChooseBaseDirectory: 48</li>
-          <li>com.moneydance.modules.features.importlist.io.MacDirectoryChooserTest#testChooseBaseDirectory: 40</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testChooseBaseDirectory: 91</li>
-        </ol>
-      </td>
+      <td class='line'>67</td><td class='count'>4</td>
+      <td><pre class='prettyprint jmp'>        <span id='l67s0' title='Executions: 4' class='covered'>if (this.getBaseDirectory() != null) {</span></pre></td>
     </tr>
     <tr>
-      <td class='line'>67</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l67s0'>            final File parentDirectory =</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testChooseBaseDirectory: 48</li>
-        </ol>
-      </td>
+      <td class='line'>68</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l68s0'>            final File parentDirectory =</pre></td>
     </tr>
     <tr>
-      <td class='line'>68</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                   this.getBaseDirectory().getParentFile();</pre></td>
+      <td class='line'>69</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                    this.getBaseDirectory().getParentFile();</pre></td>
     </tr>
     <tr>
-      <td class='line'>69</td><td class='count'>1</td>
-      <td><pre class='prettyprint jmp'>            <span id='l69s0' title='Executions: 1' class='covered cp' onclick='showHide(this,0)'>if (parentDirectory != null)</span> <span id='l69s1' title='Executions: 1' class='covered cp' onclick='showHide(this,1)'>{</span></pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testChooseBaseDirectory: 48</li>
-        </ol>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testChooseBaseDirectory: 48</li>
-        </ol>
-      </td>
+      <td class='line'>70</td><td class='count'>4</td>
+      <td><pre class='prettyprint jmp'>            <span id='l70s0' title='Executions: 4' class='covered'>if (parentDirectory != null)</span> <span id='l70s1' title='Executions: 4' class='covered'>{</span></pre></td>
     </tr>
     <tr>
-      <td class='line'>70</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l70s0'>                fileDialog.setDirectory(parentDirectory.getAbsolutePath());</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testChooseBaseDirectory: 48</li>
-        </ol>
-      </td>
-    </tr>
-    <tr>
-      <td class='line'>71</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>            }</pre></td>
+      <td class='line'>71</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l71s0'>                fileDialog.setDirectory(parentDirectory.getAbsolutePath());</pre></td>
     </tr>
     <tr>
       <td class='line'>72</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>        }</pre></td>
+      <td><pre class='prettyprint'>            }</pre></td>
     </tr>
     <tr>
-      <td class='line'>73</td><td class='count'>4</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l73s0'>        fileDialog.setVisible(true);</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#testInvokeString: 73</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testChooseBaseDirectory: 48</li>
-          <li>com.moneydance.modules.features.importlist.io.MacDirectoryChooserTest#testChooseBaseDirectory: 40</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testChooseBaseDirectory: 91</li>
-        </ol>
-      </td>
+      <td class='line'>73</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
     </tr>
     <tr>
       <td class='line'>74</td><td class='count'>4</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l74s0'>        System.setProperty("apple.awt.fileDialogForDirectories", "false");</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#testInvokeString: 73</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testChooseBaseDirectory: 48</li>
-          <li>com.moneydance.modules.features.importlist.io.MacDirectoryChooserTest#testChooseBaseDirectory: 40</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testChooseBaseDirectory: 91</li>
-        </ol>
-      </td>
+      <td><pre class='prettyprint covered' id='l74s0'>        fileDialog.setVisible(true);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>75</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l75s0'>        System.setProperty("apple.awt.fileDialogForDirectories", "false");</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>76</td><td class='count'>4</td>
-      <td><pre class='prettyprint jmp'>        <span id='l76s0' title='Executions: 4' class='covered cp' onclick='showHide(this,0)'>if (fileDialog.getFile() == null) {</span></pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#testInvokeString: 73</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testChooseBaseDirectory: 48</li>
-          <li>com.moneydance.modules.features.importlist.io.MacDirectoryChooserTest#testChooseBaseDirectory: 40</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testChooseBaseDirectory: 91</li>
-        </ol>
-      </td>
+      <td class='line'>77</td><td class='count'>4</td>
+      <td><pre class='prettyprint jmp'>        <span id='l77s0' title='Executions: 4' class='covered'>if (fileDialog.getFile() == null) {</span></pre></td>
     </tr>
     <tr>
-      <td class='line'>77</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l77s0'>            return;</pre></td>
+      <td class='line'>78</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l78s0'>            return;</pre></td>
     </tr>
     <tr>
-      <td class='line'>78</td><td>&nbsp;</td>
+      <td class='line'>79</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>        }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>80</td><td class='count'>4</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l80s0'>        this.getPrefs().setBaseDirectory(new File(</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#testInvokeString: 73</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testChooseBaseDirectory: 48</li>
-          <li>com.moneydance.modules.features.importlist.io.MacDirectoryChooserTest#testChooseBaseDirectory: 40</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testChooseBaseDirectory: 91</li>
-        </ol>
-      </td>
-    </tr>
-    <tr>
-      <td class='line'>81</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                fileDialog.getDirectory(),</pre></td>
+      <td class='line'>81</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l81s0'>        this.getPrefs().setBaseDirectory(new File(</pre></td>
     </tr>
     <tr>
       <td class='line'>82</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                fileDialog.getDirectory(),</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>83</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                fileDialog.getFile()).getAbsolutePath());</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>84</td><td class='count'>4</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l84s0'>        LOG.info("Base directory is " + this.getPrefs().getBaseDirectory());</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#testInvokeString: 73</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testChooseBaseDirectory: 48</li>
-          <li>com.moneydance.modules.features.importlist.io.MacDirectoryChooserTest#testChooseBaseDirectory: 40</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testChooseBaseDirectory: 91</li>
-        </ol>
-      </td>
-    </tr>
-    <tr>
-      <td class='line'>85</td><td class='count'>4</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l85s0'>    }</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#testInvokeString: 73</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testChooseBaseDirectory: 48</li>
-          <li>com.moneydance.modules.features.importlist.io.MacDirectoryChooserTest#testChooseBaseDirectory: 40</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testChooseBaseDirectory: 91</li>
-        </ol>
-      </td>
+      <td class='line'>85</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l85s0'>        LOG.info(String.format(</pre></td>
     </tr>
     <tr>
       <td class='line'>86</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                "Base directory is %s",</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>87</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                this.getPrefs().getBaseDirectory()));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>88</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l88s0'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>89</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>}</pre></td>
     </tr>
   </table>

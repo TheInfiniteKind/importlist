@@ -1,328 +1,340 @@
-<HTML>
-<BODY BGCOLOR="white">
-<PRE>
-<FONT color="green">001</FONT>    /*<a name="line.1"></a>
-<FONT color="green">002</FONT>     * Import List - http://my-flow.github.com/importlist/<a name="line.2"></a>
-<FONT color="green">003</FONT>     * Copyright (C) 2011-2012 Florian J. Breunig<a name="line.3"></a>
-<FONT color="green">004</FONT>     *<a name="line.4"></a>
-<FONT color="green">005</FONT>     * This program is free software: you can redistribute it and/or modify<a name="line.5"></a>
-<FONT color="green">006</FONT>     * it under the terms of the GNU General Public License as published by<a name="line.6"></a>
-<FONT color="green">007</FONT>     * the Free Software Foundation, either version 3 of the License, or<a name="line.7"></a>
-<FONT color="green">008</FONT>     * (at your option) any later version.<a name="line.8"></a>
-<FONT color="green">009</FONT>     *<a name="line.9"></a>
-<FONT color="green">010</FONT>     * This program is distributed in the hope that it will be useful,<a name="line.10"></a>
-<FONT color="green">011</FONT>     * but WITHOUT ANY WARRANTY; without even the implied warranty of<a name="line.11"></a>
-<FONT color="green">012</FONT>     * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the<a name="line.12"></a>
-<FONT color="green">013</FONT>     * GNU General Public License for more details.<a name="line.13"></a>
-<FONT color="green">014</FONT>     *<a name="line.14"></a>
-<FONT color="green">015</FONT>     * You should have received a copy of the GNU General Public License<a name="line.15"></a>
-<FONT color="green">016</FONT>     * along with this program. If not, see &lt;http://www.gnu.org/licenses/&gt;.<a name="line.16"></a>
-<FONT color="green">017</FONT>     */<a name="line.17"></a>
-<FONT color="green">018</FONT>    <a name="line.18"></a>
-<FONT color="green">019</FONT>    package com.moneydance.modules.features.importlist.controller;<a name="line.19"></a>
-<FONT color="green">020</FONT>    <a name="line.20"></a>
-<FONT color="green">021</FONT>    import java.awt.Dimension;<a name="line.21"></a>
-<FONT color="green">022</FONT>    import java.awt.event.ActionEvent;<a name="line.22"></a>
-<FONT color="green">023</FONT>    import java.awt.event.ActionListener;<a name="line.23"></a>
-<FONT color="green">024</FONT>    import java.util.Observable;<a name="line.24"></a>
-<FONT color="green">025</FONT>    import java.util.Observer;<a name="line.25"></a>
-<FONT color="green">026</FONT>    <a name="line.26"></a>
-<FONT color="green">027</FONT>    import javax.swing.JButton;<a name="line.27"></a>
-<FONT color="green">028</FONT>    import javax.swing.JComponent;<a name="line.28"></a>
-<FONT color="green">029</FONT>    import javax.swing.JLabel;<a name="line.29"></a>
-<FONT color="green">030</FONT>    import javax.swing.JViewport;<a name="line.30"></a>
-<FONT color="green">031</FONT>    import javax.swing.table.AbstractTableModel;<a name="line.31"></a>
-<FONT color="green">032</FONT>    <a name="line.32"></a>
-<FONT color="green">033</FONT>    import com.moneydance.apps.md.controller.FeatureModuleContext;<a name="line.33"></a>
-<FONT color="green">034</FONT>    import com.moneydance.apps.md.model.RootAccount;<a name="line.34"></a>
-<FONT color="green">035</FONT>    import com.moneydance.apps.md.view.HomePageView;<a name="line.35"></a>
-<FONT color="green">036</FONT>    import com.moneydance.apps.md.view.gui.MoneydanceLAF;<a name="line.36"></a>
-<FONT color="green">037</FONT>    import com.moneydance.modules.features.importlist.io.FileAdmin;<a name="line.37"></a>
-<FONT color="green">038</FONT>    import com.moneydance.modules.features.importlist.table.AbstractEditor;<a name="line.38"></a>
-<FONT color="green">039</FONT>    import com.moneydance.modules.features.importlist.table.ColumnFactory;<a name="line.39"></a>
-<FONT color="green">040</FONT>    import com.moneydance.modules.features.importlist.util.Helper;<a name="line.40"></a>
-<FONT color="green">041</FONT>    import com.moneydance.modules.features.importlist.util.Localizable;<a name="line.41"></a>
-<FONT color="green">042</FONT>    import com.moneydance.modules.features.importlist.util.Preferences;<a name="line.42"></a>
-<FONT color="green">043</FONT>    import com.moneydance.modules.features.importlist.util.Settings;<a name="line.43"></a>
-<FONT color="green">044</FONT>    import com.moneydance.modules.features.importlist.util.Tracker;<a name="line.44"></a>
-<FONT color="green">045</FONT>    import com.moneydance.modules.features.importlist.view.AggregationTableFactory;<a name="line.45"></a>
-<FONT color="green">046</FONT>    import com.moneydance.modules.features.importlist.view.BaseTableFactory;<a name="line.46"></a>
-<FONT color="green">047</FONT>    import com.moneydance.modules.features.importlist.view.ComponentFactory;<a name="line.47"></a>
-<FONT color="green">048</FONT>    import com.moneydance.modules.features.importlist.view.DirectoryChooserFactory;<a name="line.48"></a>
-<FONT color="green">049</FONT>    import com.moneydance.modules.features.importlist.view.EmptyLabelFactory;<a name="line.49"></a>
-<FONT color="green">050</FONT>    import com.moneydance.modules.features.importlist.view.SplitPaneFactory;<a name="line.50"></a>
-<FONT color="green">051</FONT>    <a name="line.51"></a>
-<FONT color="green">052</FONT>    /**<a name="line.52"></a>
-<FONT color="green">053</FONT>     * The user interface that is displayed on the homepage.<a name="line.53"></a>
-<FONT color="green">054</FONT>     *<a name="line.54"></a>
-<FONT color="green">055</FONT>     * @author Florian J. Breunig<a name="line.55"></a>
-<FONT color="green">056</FONT>     */<a name="line.56"></a>
-<FONT color="green">057</FONT>    public final class ViewController implements HomePageView, Observer {<a name="line.57"></a>
-<FONT color="green">058</FONT>    <a name="line.58"></a>
-<FONT color="green">059</FONT>        private final Preferences               prefs;<a name="line.59"></a>
-<FONT color="green">060</FONT>        private final Settings                  settings;<a name="line.60"></a>
-<FONT color="green">061</FONT>        private final Localizable               localizable;<a name="line.61"></a>
-<FONT color="green">062</FONT>        private final FileAdmin                 fileAdmin;<a name="line.62"></a>
-<FONT color="green">063</FONT>        private final Tracker                   tracker;<a name="line.63"></a>
-<FONT color="green">064</FONT>        private       boolean                   initialized;<a name="line.64"></a>
-<FONT color="green">065</FONT>        private       ColumnFactory             columnFactory;<a name="line.65"></a>
-<FONT color="green">066</FONT>        private       JViewport                 viewport;<a name="line.66"></a>
-<FONT color="green">067</FONT>        private       DirectoryChooserFactory   directoryChooserFactory;<a name="line.67"></a>
-<FONT color="green">068</FONT>        private       EmptyLabelFactory         emptyLabelFactory;<a name="line.68"></a>
-<FONT color="green">069</FONT>        private       ComponentFactory          splitPaneFactory;<a name="line.69"></a>
-<FONT color="green">070</FONT>        private       BaseTableFactory          baseTableFactory;<a name="line.70"></a>
-<FONT color="green">071</FONT>        private       AbstractTableModel        baseTableModel;<a name="line.71"></a>
-<FONT color="green">072</FONT>        private       AbstractTableModel        aggrTableModel;<a name="line.72"></a>
-<FONT color="green">073</FONT>        private       boolean                   dirty;<a name="line.73"></a>
-<FONT color="green">074</FONT>    <a name="line.74"></a>
-<FONT color="green">075</FONT>    <a name="line.75"></a>
-<FONT color="green">076</FONT>        public ViewController(<a name="line.76"></a>
-<FONT color="green">077</FONT>                final String baseDirectory,<a name="line.77"></a>
-<FONT color="green">078</FONT>                final FeatureModuleContext context,<a name="line.78"></a>
-<FONT color="green">079</FONT>                final Tracker argTracker) {<a name="line.79"></a>
-<FONT color="green">080</FONT>            this.prefs       = Helper.INSTANCE.getPreferences();<a name="line.80"></a>
-<FONT color="green">081</FONT>            this.settings    = Helper.INSTANCE.getSettings();<a name="line.81"></a>
-<FONT color="green">082</FONT>            this.localizable = Helper.INSTANCE.getLocalizable();<a name="line.82"></a>
-<FONT color="green">083</FONT>            this.fileAdmin   = new FileAdmin(baseDirectory, context);<a name="line.83"></a>
-<FONT color="green">084</FONT>            this.fileAdmin.addObserver(this);<a name="line.84"></a>
-<FONT color="green">085</FONT>            this.tracker     = argTracker;<a name="line.85"></a>
-<FONT color="green">086</FONT>        }<a name="line.86"></a>
-<FONT color="green">087</FONT>    <a name="line.87"></a>
-<FONT color="green">088</FONT>    <a name="line.88"></a>
-<FONT color="green">089</FONT>        private void init() {<a name="line.89"></a>
-<FONT color="green">090</FONT>            this.viewport = new JViewport();<a name="line.90"></a>
-<FONT color="green">091</FONT>            this.viewport.setOpaque(false);<a name="line.91"></a>
-<FONT color="green">092</FONT>    <a name="line.92"></a>
-<FONT color="green">093</FONT>            ActionListener actionListener = new ChooseBaseDirectoryActionListener();<a name="line.93"></a>
-<FONT color="green">094</FONT>            this.directoryChooserFactory = new DirectoryChooserFactory(<a name="line.94"></a>
-<FONT color="green">095</FONT>                    actionListener);<a name="line.95"></a>
-<FONT color="green">096</FONT>            this.emptyLabelFactory       = new EmptyLabelFactory();<a name="line.96"></a>
-<FONT color="green">097</FONT>    <a name="line.97"></a>
-<FONT color="green">098</FONT>            this.baseTableModel   = new FileTableModel(this.fileAdmin.getFiles());<a name="line.98"></a>
-<FONT color="green">099</FONT>            this.baseTableFactory = new BaseTableFactory(<a name="line.99"></a>
-<FONT color="green">100</FONT>                    this.baseTableModel,<a name="line.100"></a>
-<FONT color="green">101</FONT>                    this.fileAdmin);<a name="line.101"></a>
-<FONT color="green">102</FONT>    <a name="line.102"></a>
-<FONT color="green">103</FONT>            this.aggrTableModel   = new AggregationTableModel();<a name="line.103"></a>
-<FONT color="green">104</FONT>            AggregationTableFactory aggrTableFactory = new AggregationTableFactory(<a name="line.104"></a>
-<FONT color="green">105</FONT>                    this.aggrTableModel,<a name="line.105"></a>
-<FONT color="green">106</FONT>                    this.fileAdmin);<a name="line.106"></a>
-<FONT color="green">107</FONT>            this.columnFactory    = this.baseTableFactory.getColumnFactory();<a name="line.107"></a>
-<FONT color="green">108</FONT>    <a name="line.108"></a>
-<FONT color="green">109</FONT>            this.splitPaneFactory = new SplitPaneFactory(<a name="line.109"></a>
-<FONT color="green">110</FONT>                    this.baseTableFactory,<a name="line.110"></a>
-<FONT color="green">111</FONT>                    aggrTableFactory);<a name="line.111"></a>
-<FONT color="green">112</FONT>    <a name="line.112"></a>
-<FONT color="green">113</FONT>            this.setDirty(true);<a name="line.113"></a>
-<FONT color="green">114</FONT>            this.refresh();<a name="line.114"></a>
-<FONT color="green">115</FONT>            this.fileAdmin.startMonitor();<a name="line.115"></a>
-<FONT color="green">116</FONT>    <a name="line.116"></a>
-<FONT color="green">117</FONT>            this.tracker.track(Tracker.EventName.DISPLAY);<a name="line.117"></a>
-<FONT color="green">118</FONT>        }<a name="line.118"></a>
-<FONT color="green">119</FONT>    <a name="line.119"></a>
-<FONT color="green">120</FONT>    <a name="line.120"></a>
-<FONT color="green">121</FONT>        @Override<a name="line.121"></a>
-<FONT color="green">122</FONT>        public synchronized void refresh() {<a name="line.122"></a>
-<FONT color="green">123</FONT>            if (this.viewport == null || !this.viewport.isVisible()) {<a name="line.123"></a>
-<FONT color="green">124</FONT>                return;<a name="line.124"></a>
-<FONT color="green">125</FONT>            }<a name="line.125"></a>
-<FONT color="green">126</FONT>    <a name="line.126"></a>
-<FONT color="green">127</FONT>            this.prefs.reload();<a name="line.127"></a>
-<FONT color="green">128</FONT>            this.fileAdmin.checkValidBaseDirectory();<a name="line.128"></a>
-<FONT color="green">129</FONT>    <a name="line.129"></a>
-<FONT color="green">130</FONT>            // display a label iff no base directory has been chosen<a name="line.130"></a>
-<FONT color="green">131</FONT>            if (this.fileAdmin.getBaseDirectory() == null) {<a name="line.131"></a>
-<FONT color="green">132</FONT>                JButton chooserButton = this.directoryChooserFactory.getComponent();<a name="line.132"></a>
-<FONT color="green">133</FONT>                chooserButton.setText(<a name="line.133"></a>
-<FONT color="green">134</FONT>                        "&lt;html&gt;&lt;u&gt;"<a name="line.134"></a>
-<FONT color="green">135</FONT>                        + this.localizable.getDirectoryChooserTitle()<a name="line.135"></a>
-<FONT color="green">136</FONT>                        + "&lt;/u&gt;&lt;/html&gt;");<a name="line.136"></a>
-<FONT color="green">137</FONT>    <a name="line.137"></a>
-<FONT color="green">138</FONT>                this.viewport.setView(chooserButton);<a name="line.138"></a>
-<FONT color="green">139</FONT>                this.viewport.setMinimumSize(<a name="line.139"></a>
-<FONT color="green">140</FONT>                        new Dimension(<a name="line.140"></a>
-<FONT color="green">141</FONT>                                this.settings.getPreferredEmptyMessageWidth(),<a name="line.141"></a>
-<FONT color="green">142</FONT>                                this.settings.getPreferredEmptyMessageHeight()));<a name="line.142"></a>
-<FONT color="green">143</FONT>                this.viewport.setPreferredSize(<a name="line.143"></a>
-<FONT color="green">144</FONT>                        new Dimension(<a name="line.144"></a>
-<FONT color="green">145</FONT>                                this.settings.getPreferredEmptyMessageWidth(),<a name="line.145"></a>
-<FONT color="green">146</FONT>                                this.settings.getPreferredEmptyMessageHeight()));<a name="line.146"></a>
-<FONT color="green">147</FONT>                this.viewport.setMaximumSize(<a name="line.147"></a>
-<FONT color="green">148</FONT>                        new Dimension(<a name="line.148"></a>
-<FONT color="green">149</FONT>                                this.settings.getPreferredEmptyMessageWidth(),<a name="line.149"></a>
-<FONT color="green">150</FONT>                                this.settings.getPreferredEmptyMessageHeight()));<a name="line.150"></a>
-<FONT color="green">151</FONT>                return;<a name="line.151"></a>
-<FONT color="green">152</FONT>            }<a name="line.152"></a>
-<FONT color="green">153</FONT>    <a name="line.153"></a>
-<FONT color="green">154</FONT>            if (this.isDirty()) {<a name="line.154"></a>
-<FONT color="green">155</FONT>                this.setDirty(false);<a name="line.155"></a>
-<FONT color="green">156</FONT>                this.fileAdmin.reloadFiles();<a name="line.156"></a>
-<FONT color="green">157</FONT>                this.baseTableModel.fireTableDataChanged();<a name="line.157"></a>
-<FONT color="green">158</FONT>                this.aggrTableModel.fireTableDataChanged();<a name="line.158"></a>
-<FONT color="green">159</FONT>            }<a name="line.159"></a>
-<FONT color="green">160</FONT>    <a name="line.160"></a>
-<FONT color="green">161</FONT>            // display a label iff there are no files in the list<a name="line.161"></a>
-<FONT color="green">162</FONT>            if (this.baseTableModel.getRowCount() == 0) {<a name="line.162"></a>
-<FONT color="green">163</FONT>                String emptyMessage = this.localizable.getEmptyMessage(<a name="line.163"></a>
-<FONT color="green">164</FONT>                        this.fileAdmin.getBaseDirectory().getAbsolutePath());<a name="line.164"></a>
-<FONT color="green">165</FONT>                JLabel emptyLabel = this.emptyLabelFactory.getComponent();<a name="line.165"></a>
-<FONT color="green">166</FONT>                emptyLabel.setText(emptyMessage);<a name="line.166"></a>
-<FONT color="green">167</FONT>    <a name="line.167"></a>
-<FONT color="green">168</FONT>                this.viewport.setView(emptyLabel);<a name="line.168"></a>
-<FONT color="green">169</FONT>                this.viewport.setMinimumSize(<a name="line.169"></a>
-<FONT color="green">170</FONT>                        new Dimension(<a name="line.170"></a>
-<FONT color="green">171</FONT>                                this.settings.getPreferredEmptyMessageWidth(),<a name="line.171"></a>
-<FONT color="green">172</FONT>                                this.settings.getPreferredEmptyMessageHeight()));<a name="line.172"></a>
-<FONT color="green">173</FONT>                this.viewport.setPreferredSize(<a name="line.173"></a>
-<FONT color="green">174</FONT>                        new Dimension(<a name="line.174"></a>
-<FONT color="green">175</FONT>                                this.settings.getPreferredEmptyMessageWidth(),<a name="line.175"></a>
-<FONT color="green">176</FONT>                                this.settings.getPreferredEmptyMessageHeight()));<a name="line.176"></a>
-<FONT color="green">177</FONT>                this.viewport.setMaximumSize(<a name="line.177"></a>
-<FONT color="green">178</FONT>                        new Dimension(<a name="line.178"></a>
-<FONT color="green">179</FONT>                                this.settings.getPreferredEmptyMessageWidth(),<a name="line.179"></a>
-<FONT color="green">180</FONT>                                this.settings.getPreferredEmptyMessageHeight()));<a name="line.180"></a>
-<FONT color="green">181</FONT>                return;<a name="line.181"></a>
-<FONT color="green">182</FONT>            }<a name="line.182"></a>
-<FONT color="green">183</FONT>    <a name="line.183"></a>
-<FONT color="green">184</FONT>            // display only scroll pane iff there is exactly one file in the list<a name="line.184"></a>
-<FONT color="green">185</FONT>            if (this.baseTableModel.getRowCount() == 1) {<a name="line.185"></a>
-<FONT color="green">186</FONT>                JComponent component = this.baseTableFactory.getComponent();<a name="line.186"></a>
-<FONT color="green">187</FONT>                component.setBorder(MoneydanceLAF.homePageBorder);<a name="line.187"></a>
-<FONT color="green">188</FONT>    <a name="line.188"></a>
-<FONT color="green">189</FONT>                this.viewport.setView(component);<a name="line.189"></a>
-<FONT color="green">190</FONT>                this.viewport.setMinimumSize(<a name="line.190"></a>
-<FONT color="green">191</FONT>                        new Dimension(<a name="line.191"></a>
-<FONT color="green">192</FONT>                                this.settings.getMinimumTableWidth(),<a name="line.192"></a>
-<FONT color="green">193</FONT>                                this.settings.getMinimumTableHeight()));<a name="line.193"></a>
-<FONT color="green">194</FONT>                this.viewport.setPreferredSize(<a name="line.194"></a>
-<FONT color="green">195</FONT>                        new Dimension(<a name="line.195"></a>
-<FONT color="green">196</FONT>                                this.prefs.getPreferredTableWidth(),<a name="line.196"></a>
-<FONT color="green">197</FONT>                                this.prefs.getPreferredTableHeight(<a name="line.197"></a>
-<FONT color="green">198</FONT>                                        this.baseTableModel.getRowCount())));<a name="line.198"></a>
-<FONT color="green">199</FONT>                this.viewport.setMaximumSize(<a name="line.199"></a>
-<FONT color="green">200</FONT>                        new Dimension(<a name="line.200"></a>
-<FONT color="green">201</FONT>                                this.prefs.getMaximumTableWidth(),<a name="line.201"></a>
-<FONT color="green">202</FONT>                                this.prefs.getMaximumTableHeight()));<a name="line.202"></a>
-<FONT color="green">203</FONT>                this.registerKeyboardShortcuts4One();<a name="line.203"></a>
-<FONT color="green">204</FONT>                return;<a name="line.204"></a>
-<FONT color="green">205</FONT>            }<a name="line.205"></a>
-<FONT color="green">206</FONT>    <a name="line.206"></a>
-<FONT color="green">207</FONT>            // display scroll pane and an additional import all/delete all table<a name="line.207"></a>
-<FONT color="green">208</FONT>            // iff there is more than one file in the list<a name="line.208"></a>
-<FONT color="green">209</FONT>            if (this.baseTableModel.getRowCount() &gt; 1) {<a name="line.209"></a>
-<FONT color="green">210</FONT>                JComponent component = this.splitPaneFactory.getComponent();<a name="line.210"></a>
-<FONT color="green">211</FONT>                component.setBorder(MoneydanceLAF.homePageBorder);<a name="line.211"></a>
-<FONT color="green">212</FONT>    <a name="line.212"></a>
-<FONT color="green">213</FONT>                this.viewport.setView(component);<a name="line.213"></a>
-<FONT color="green">214</FONT>                this.viewport.setMinimumSize(null);<a name="line.214"></a>
-<FONT color="green">215</FONT>                this.viewport.setPreferredSize(null);<a name="line.215"></a>
-<FONT color="green">216</FONT>                this.viewport.setMaximumSize(null);<a name="line.216"></a>
-<FONT color="green">217</FONT>                this.registerKeyboardShortcuts4All();<a name="line.217"></a>
-<FONT color="green">218</FONT>                return;<a name="line.218"></a>
-<FONT color="green">219</FONT>            }<a name="line.219"></a>
-<FONT color="green">220</FONT>        }<a name="line.220"></a>
-<FONT color="green">221</FONT>    <a name="line.221"></a>
-<FONT color="green">222</FONT>    <a name="line.222"></a>
-<FONT color="green">223</FONT>        @Override<a name="line.223"></a>
-<FONT color="green">224</FONT>        public void update(final Observable observable, final Object object) {<a name="line.224"></a>
-<FONT color="green">225</FONT>            this.setDirty(true);<a name="line.225"></a>
-<FONT color="green">226</FONT>            this.refresh();<a name="line.226"></a>
-<FONT color="green">227</FONT>        }<a name="line.227"></a>
-<FONT color="green">228</FONT>    <a name="line.228"></a>
-<FONT color="green">229</FONT>    <a name="line.229"></a>
-<FONT color="green">230</FONT>        @Override<a name="line.230"></a>
-<FONT color="green">231</FONT>        public JComponent getGUIView(final RootAccount rootAccount) {<a name="line.231"></a>
-<FONT color="green">232</FONT>            if (!this.initialized) {<a name="line.232"></a>
-<FONT color="green">233</FONT>                this.initialized = true;<a name="line.233"></a>
-<FONT color="green">234</FONT>                this.init();<a name="line.234"></a>
-<FONT color="green">235</FONT>            }<a name="line.235"></a>
-<FONT color="green">236</FONT>            return this.viewport;<a name="line.236"></a>
-<FONT color="green">237</FONT>        }<a name="line.237"></a>
-<FONT color="green">238</FONT>    <a name="line.238"></a>
-<FONT color="green">239</FONT>    <a name="line.239"></a>
-<FONT color="green">240</FONT>        @Override<a name="line.240"></a>
-<FONT color="green">241</FONT>        public void reset() {<a name="line.241"></a>
-<FONT color="green">242</FONT>            // ignore<a name="line.242"></a>
-<FONT color="green">243</FONT>        }<a name="line.243"></a>
-<FONT color="green">244</FONT>    <a name="line.244"></a>
-<FONT color="green">245</FONT>    <a name="line.245"></a>
-<FONT color="green">246</FONT>        @Override<a name="line.246"></a>
-<FONT color="green">247</FONT>        public void setActive(final boolean active) {<a name="line.247"></a>
-<FONT color="green">248</FONT>            if (this.viewport == null) {<a name="line.248"></a>
-<FONT color="green">249</FONT>                return;<a name="line.249"></a>
-<FONT color="green">250</FONT>            }<a name="line.250"></a>
-<FONT color="green">251</FONT>            this.viewport.setVisible(active);<a name="line.251"></a>
-<FONT color="green">252</FONT>            this.refresh();<a name="line.252"></a>
-<FONT color="green">253</FONT>        }<a name="line.253"></a>
-<FONT color="green">254</FONT>    <a name="line.254"></a>
-<FONT color="green">255</FONT>    <a name="line.255"></a>
-<FONT color="green">256</FONT>        @Override<a name="line.256"></a>
-<FONT color="green">257</FONT>        public String getID() {<a name="line.257"></a>
-<FONT color="green">258</FONT>            return this.settings.getExtensionIdentifier();<a name="line.258"></a>
-<FONT color="green">259</FONT>        }<a name="line.259"></a>
-<FONT color="green">260</FONT>    <a name="line.260"></a>
-<FONT color="green">261</FONT>    <a name="line.261"></a>
-<FONT color="green">262</FONT>        @Override<a name="line.262"></a>
-<FONT color="green">263</FONT>        public String toString() {<a name="line.263"></a>
-<FONT color="green">264</FONT>            return this.settings.getExtensionName();<a name="line.264"></a>
-<FONT color="green">265</FONT>        }<a name="line.265"></a>
-<FONT color="green">266</FONT>    <a name="line.266"></a>
-<FONT color="green">267</FONT>    <a name="line.267"></a>
-<FONT color="green">268</FONT>        public void chooseBaseDirectory() {<a name="line.268"></a>
-<FONT color="green">269</FONT>            this.fileAdmin.chooseBaseDirectory();<a name="line.269"></a>
-<FONT color="green">270</FONT>        }<a name="line.270"></a>
-<FONT color="green">271</FONT>    <a name="line.271"></a>
-<FONT color="green">272</FONT>    <a name="line.272"></a>
-<FONT color="green">273</FONT>        public void cleanup() {<a name="line.273"></a>
-<FONT color="green">274</FONT>            if (!this.initialized) {<a name="line.274"></a>
-<FONT color="green">275</FONT>                return;<a name="line.275"></a>
-<FONT color="green">276</FONT>            }<a name="line.276"></a>
-<FONT color="green">277</FONT>            this.viewport.setEnabled(false);<a name="line.277"></a>
-<FONT color="green">278</FONT>            this.viewport.removeAll();<a name="line.278"></a>
-<FONT color="green">279</FONT>            this.fileAdmin.stopMonitor();<a name="line.279"></a>
-<FONT color="green">280</FONT>        }<a name="line.280"></a>
-<FONT color="green">281</FONT>    <a name="line.281"></a>
-<FONT color="green">282</FONT>    <a name="line.282"></a>
-<FONT color="green">283</FONT>        public void setDirty(final boolean argDirty) {<a name="line.283"></a>
-<FONT color="green">284</FONT>            this.dirty = argDirty;<a name="line.284"></a>
-<FONT color="green">285</FONT>        }<a name="line.285"></a>
-<FONT color="green">286</FONT>    <a name="line.286"></a>
-<FONT color="green">287</FONT>    <a name="line.287"></a>
-<FONT color="green">288</FONT>        public boolean isDirty() {<a name="line.288"></a>
-<FONT color="green">289</FONT>            return this.dirty;<a name="line.289"></a>
-<FONT color="green">290</FONT>        }<a name="line.290"></a>
-<FONT color="green">291</FONT>    <a name="line.291"></a>
-<FONT color="green">292</FONT>    <a name="line.292"></a>
-<FONT color="green">293</FONT>        private void registerKeyboardShortcuts4One() {<a name="line.293"></a>
-<FONT color="green">294</FONT>            AbstractEditor importOneEditor =<a name="line.294"></a>
-<FONT color="green">295</FONT>                this.columnFactory.getImportOneEditor();<a name="line.295"></a>
-<FONT color="green">296</FONT>            importOneEditor.registerKeyboardShortcut(this.viewport);<a name="line.296"></a>
-<FONT color="green">297</FONT>    <a name="line.297"></a>
-<FONT color="green">298</FONT>            AbstractEditor deleteOneEditor =<a name="line.298"></a>
-<FONT color="green">299</FONT>                this.columnFactory.getDeleteOneEditor();<a name="line.299"></a>
-<FONT color="green">300</FONT>            deleteOneEditor.registerKeyboardShortcut(this.viewport);<a name="line.300"></a>
-<FONT color="green">301</FONT>        }<a name="line.301"></a>
-<FONT color="green">302</FONT>    <a name="line.302"></a>
-<FONT color="green">303</FONT>    <a name="line.303"></a>
-<FONT color="green">304</FONT>        private void registerKeyboardShortcuts4All() {<a name="line.304"></a>
-<FONT color="green">305</FONT>            AbstractEditor importAllEditor =<a name="line.305"></a>
-<FONT color="green">306</FONT>                this.columnFactory.getImportAllEditor();<a name="line.306"></a>
-<FONT color="green">307</FONT>            importAllEditor.registerKeyboardShortcut(this.viewport);<a name="line.307"></a>
-<FONT color="green">308</FONT>    <a name="line.308"></a>
-<FONT color="green">309</FONT>            AbstractEditor deleteAllEditor =<a name="line.309"></a>
-<FONT color="green">310</FONT>                this.columnFactory.getDeleteAllEditor();<a name="line.310"></a>
-<FONT color="green">311</FONT>            deleteAllEditor.registerKeyboardShortcut(this.viewport);<a name="line.311"></a>
-<FONT color="green">312</FONT>        }<a name="line.312"></a>
-<FONT color="green">313</FONT>    <a name="line.313"></a>
-<FONT color="green">314</FONT>    <a name="line.314"></a>
-<FONT color="green">315</FONT>        private class ChooseBaseDirectoryActionListener implements ActionListener {<a name="line.315"></a>
-<FONT color="green">316</FONT>    <a name="line.316"></a>
-<FONT color="green">317</FONT>            @Override<a name="line.317"></a>
-<FONT color="green">318</FONT>            public void actionPerformed(final ActionEvent event) {<a name="line.318"></a>
-<FONT color="green">319</FONT>                ViewController.this.chooseBaseDirectory();<a name="line.319"></a>
-<FONT color="green">320</FONT>            }<a name="line.320"></a>
-<FONT color="green">321</FONT>        }<a name="line.321"></a>
-<FONT color="green">322</FONT>    }<a name="line.322"></a>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+<title>Source code</title>
+<link rel="stylesheet" type="text/css" href="../../../../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<div class="sourceContainer">
+<pre><span class="sourceLineNo">001</span>// Import List - http://my-flow.github.io/importlist/<a name="line.1"></a>
+<span class="sourceLineNo">002</span>// Copyright (C) 2011-2014 Florian J. Breunig<a name="line.2"></a>
+<span class="sourceLineNo">003</span>//<a name="line.3"></a>
+<span class="sourceLineNo">004</span>// This program is free software: you can redistribute it and/or modify<a name="line.4"></a>
+<span class="sourceLineNo">005</span>// it under the terms of the GNU General Public License as published by<a name="line.5"></a>
+<span class="sourceLineNo">006</span>// the Free Software Foundation, either version 3 of the License, or<a name="line.6"></a>
+<span class="sourceLineNo">007</span>// (at your option) any later version.<a name="line.7"></a>
+<span class="sourceLineNo">008</span>//<a name="line.8"></a>
+<span class="sourceLineNo">009</span>// This program is distributed in the hope that it will be useful,<a name="line.9"></a>
+<span class="sourceLineNo">010</span>// but WITHOUT ANY WARRANTY; without even the implied warranty of<a name="line.10"></a>
+<span class="sourceLineNo">011</span>// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the<a name="line.11"></a>
+<span class="sourceLineNo">012</span>// GNU General Public License for more details.<a name="line.12"></a>
+<span class="sourceLineNo">013</span>//<a name="line.13"></a>
+<span class="sourceLineNo">014</span>// You should have received a copy of the GNU General Public License<a name="line.14"></a>
+<span class="sourceLineNo">015</span>// along with this program. If not, see &lt;http://www.gnu.org/licenses/&gt;.<a name="line.15"></a>
+<span class="sourceLineNo">016</span><a name="line.16"></a>
+<span class="sourceLineNo">017</span>package com.moneydance.modules.features.importlist.controller;<a name="line.17"></a>
+<span class="sourceLineNo">018</span><a name="line.18"></a>
+<span class="sourceLineNo">019</span>import com.moneydance.apps.md.controller.FeatureModuleContext;<a name="line.19"></a>
+<span class="sourceLineNo">020</span>import com.moneydance.apps.md.model.RootAccount;<a name="line.20"></a>
+<span class="sourceLineNo">021</span>import com.moneydance.apps.md.view.HomePageView;<a name="line.21"></a>
+<span class="sourceLineNo">022</span>import com.moneydance.apps.md.view.gui.MoneydanceLAF;<a name="line.22"></a>
+<span class="sourceLineNo">023</span>import com.moneydance.modules.features.importlist.io.FileAdmin;<a name="line.23"></a>
+<span class="sourceLineNo">024</span>import com.moneydance.modules.features.importlist.presentation.AggregationTableFactory;<a name="line.24"></a>
+<span class="sourceLineNo">025</span>import com.moneydance.modules.features.importlist.presentation.BaseTableFactory;<a name="line.25"></a>
+<span class="sourceLineNo">026</span>import com.moneydance.modules.features.importlist.presentation.ComponentFactory;<a name="line.26"></a>
+<span class="sourceLineNo">027</span>import com.moneydance.modules.features.importlist.presentation.DirectoryChooserButtonFactory;<a name="line.27"></a>
+<span class="sourceLineNo">028</span>import com.moneydance.modules.features.importlist.presentation.EmptyLabelFactory;<a name="line.28"></a>
+<span class="sourceLineNo">029</span>import com.moneydance.modules.features.importlist.presentation.SplitPaneFactory;<a name="line.29"></a>
+<span class="sourceLineNo">030</span>import com.moneydance.modules.features.importlist.table.AbstractEditor;<a name="line.30"></a>
+<span class="sourceLineNo">031</span>import com.moneydance.modules.features.importlist.table.ColumnFactory;<a name="line.31"></a>
+<span class="sourceLineNo">032</span>import com.moneydance.modules.features.importlist.util.Helper;<a name="line.32"></a>
+<span class="sourceLineNo">033</span>import com.moneydance.modules.features.importlist.util.Localizable;<a name="line.33"></a>
+<span class="sourceLineNo">034</span>import com.moneydance.modules.features.importlist.util.Preferences;<a name="line.34"></a>
+<span class="sourceLineNo">035</span>import com.moneydance.modules.features.importlist.util.Settings;<a name="line.35"></a>
+<span class="sourceLineNo">036</span>import com.moneydance.modules.features.importlist.util.Tracker;<a name="line.36"></a>
+<span class="sourceLineNo">037</span><a name="line.37"></a>
+<span class="sourceLineNo">038</span>import java.awt.Dimension;<a name="line.38"></a>
+<span class="sourceLineNo">039</span>import java.awt.event.ActionEvent;<a name="line.39"></a>
+<span class="sourceLineNo">040</span>import java.awt.event.ActionListener;<a name="line.40"></a>
+<span class="sourceLineNo">041</span>import java.util.Observable;<a name="line.41"></a>
+<span class="sourceLineNo">042</span>import java.util.Observer;<a name="line.42"></a>
+<span class="sourceLineNo">043</span><a name="line.43"></a>
+<span class="sourceLineNo">044</span>import javax.swing.JButton;<a name="line.44"></a>
+<span class="sourceLineNo">045</span>import javax.swing.JComponent;<a name="line.45"></a>
+<span class="sourceLineNo">046</span>import javax.swing.JLabel;<a name="line.46"></a>
+<span class="sourceLineNo">047</span>import javax.swing.JViewport;<a name="line.47"></a>
+<span class="sourceLineNo">048</span>import javax.swing.table.AbstractTableModel;<a name="line.48"></a>
+<span class="sourceLineNo">049</span><a name="line.49"></a>
+<span class="sourceLineNo">050</span>/**<a name="line.50"></a>
+<span class="sourceLineNo">051</span> * The user interface that is displayed on the homepage.<a name="line.51"></a>
+<span class="sourceLineNo">052</span> *<a name="line.52"></a>
+<span class="sourceLineNo">053</span> * @author Florian J. Breunig<a name="line.53"></a>
+<span class="sourceLineNo">054</span> */<a name="line.54"></a>
+<span class="sourceLineNo">055</span>public final class ViewController implements HomePageView {<a name="line.55"></a>
+<span class="sourceLineNo">056</span><a name="line.56"></a>
+<span class="sourceLineNo">057</span>    private final Settings              settings;<a name="line.57"></a>
+<span class="sourceLineNo">058</span>    private final Localizable           localizable;<a name="line.58"></a>
+<span class="sourceLineNo">059</span>    private final FileAdmin             fileAdmin;<a name="line.59"></a>
+<span class="sourceLineNo">060</span>    private final Tracker               tracker;<a name="line.60"></a>
+<span class="sourceLineNo">061</span>    private       boolean               initialized;<a name="line.61"></a>
+<span class="sourceLineNo">062</span>    private       ColumnFactory         columnFactory;<a name="line.62"></a>
+<span class="sourceLineNo">063</span>    private       JViewport             viewport;<a name="line.63"></a>
+<span class="sourceLineNo">064</span>    private       DirectoryChooserButtonFactory directoryChooserFactory;<a name="line.64"></a>
+<span class="sourceLineNo">065</span>    private       EmptyLabelFactory     emptyLabelFactory;<a name="line.65"></a>
+<span class="sourceLineNo">066</span>    private       ComponentFactory      splitPaneFactory;<a name="line.66"></a>
+<span class="sourceLineNo">067</span>    private       BaseTableFactory      baseTableFactory;<a name="line.67"></a>
+<span class="sourceLineNo">068</span>    private       AbstractTableModel    baseTableModel;<a name="line.68"></a>
+<span class="sourceLineNo">069</span>    private       AbstractTableModel    aggrTableModel;<a name="line.69"></a>
+<span class="sourceLineNo">070</span>    private       boolean               dirty;<a name="line.70"></a>
+<span class="sourceLineNo">071</span><a name="line.71"></a>
+<span class="sourceLineNo">072</span><a name="line.72"></a>
+<span class="sourceLineNo">073</span>    public ViewController(<a name="line.73"></a>
+<span class="sourceLineNo">074</span>            final String baseDirectory,<a name="line.74"></a>
+<span class="sourceLineNo">075</span>            final FeatureModuleContext context,<a name="line.75"></a>
+<span class="sourceLineNo">076</span>            final Tracker argTracker) {<a name="line.76"></a>
+<span class="sourceLineNo">077</span>        this.settings    = Helper.INSTANCE.getSettings();<a name="line.77"></a>
+<span class="sourceLineNo">078</span>        this.localizable = Helper.INSTANCE.getLocalizable();<a name="line.78"></a>
+<span class="sourceLineNo">079</span>        this.fileAdmin   = new FileAdmin(baseDirectory, context);<a name="line.79"></a>
+<span class="sourceLineNo">080</span>        this.fileAdmin.addObserver(new ViewControllerObserver());<a name="line.80"></a>
+<span class="sourceLineNo">081</span>        this.tracker     = argTracker;<a name="line.81"></a>
+<span class="sourceLineNo">082</span>    }<a name="line.82"></a>
+<span class="sourceLineNo">083</span><a name="line.83"></a>
+<span class="sourceLineNo">084</span><a name="line.84"></a>
+<span class="sourceLineNo">085</span>    private void init() {<a name="line.85"></a>
+<span class="sourceLineNo">086</span>        this.viewport = new JViewport();<a name="line.86"></a>
+<span class="sourceLineNo">087</span>        this.viewport.setOpaque(false);<a name="line.87"></a>
+<span class="sourceLineNo">088</span><a name="line.88"></a>
+<span class="sourceLineNo">089</span>        ActionListener actionListener = new ChooseBaseDirectoryActionListener();<a name="line.89"></a>
+<span class="sourceLineNo">090</span>        this.directoryChooserFactory = new DirectoryChooserButtonFactory(<a name="line.90"></a>
+<span class="sourceLineNo">091</span>                actionListener);<a name="line.91"></a>
+<span class="sourceLineNo">092</span>        this.emptyLabelFactory       = new EmptyLabelFactory();<a name="line.92"></a>
+<span class="sourceLineNo">093</span><a name="line.93"></a>
+<span class="sourceLineNo">094</span>        this.baseTableModel   = new FileTableModel(this.fileAdmin.getFiles());<a name="line.94"></a>
+<span class="sourceLineNo">095</span>        this.baseTableFactory = new BaseTableFactory(<a name="line.95"></a>
+<span class="sourceLineNo">096</span>                this.baseTableModel,<a name="line.96"></a>
+<span class="sourceLineNo">097</span>                this.fileAdmin);<a name="line.97"></a>
+<span class="sourceLineNo">098</span><a name="line.98"></a>
+<span class="sourceLineNo">099</span>        this.aggrTableModel   = new AggregationTableModel();<a name="line.99"></a>
+<span class="sourceLineNo">100</span>        AggregationTableFactory aggrTableFactory = new AggregationTableFactory(<a name="line.100"></a>
+<span class="sourceLineNo">101</span>                this.aggrTableModel,<a name="line.101"></a>
+<span class="sourceLineNo">102</span>                this.fileAdmin);<a name="line.102"></a>
+<span class="sourceLineNo">103</span>        this.columnFactory    = this.baseTableFactory.getColumnFactory();<a name="line.103"></a>
+<span class="sourceLineNo">104</span><a name="line.104"></a>
+<span class="sourceLineNo">105</span>        this.splitPaneFactory = new SplitPaneFactory(<a name="line.105"></a>
+<span class="sourceLineNo">106</span>                this.baseTableFactory,<a name="line.106"></a>
+<span class="sourceLineNo">107</span>                aggrTableFactory);<a name="line.107"></a>
+<span class="sourceLineNo">108</span><a name="line.108"></a>
+<span class="sourceLineNo">109</span>        this.setDirty(true);<a name="line.109"></a>
+<span class="sourceLineNo">110</span>        this.refresh();<a name="line.110"></a>
+<span class="sourceLineNo">111</span>        this.fileAdmin.startMonitor();<a name="line.111"></a>
+<span class="sourceLineNo">112</span><a name="line.112"></a>
+<span class="sourceLineNo">113</span>        this.tracker.track(Tracker.EventName.DISPLAY);<a name="line.113"></a>
+<span class="sourceLineNo">114</span>    }<a name="line.114"></a>
+<span class="sourceLineNo">115</span><a name="line.115"></a>
+<span class="sourceLineNo">116</span><a name="line.116"></a>
+<span class="sourceLineNo">117</span>    @Override<a name="line.117"></a>
+<span class="sourceLineNo">118</span>    public synchronized void refresh() {<a name="line.118"></a>
+<span class="sourceLineNo">119</span>        if (this.viewport == null || !this.viewport.isVisible()) {<a name="line.119"></a>
+<span class="sourceLineNo">120</span>            return;<a name="line.120"></a>
+<span class="sourceLineNo">121</span>        }<a name="line.121"></a>
+<span class="sourceLineNo">122</span><a name="line.122"></a>
+<span class="sourceLineNo">123</span>        Helper.INSTANCE.setChanged();<a name="line.123"></a>
+<span class="sourceLineNo">124</span>        Helper.INSTANCE.notifyObservers(Boolean.TRUE);<a name="line.124"></a>
+<span class="sourceLineNo">125</span><a name="line.125"></a>
+<span class="sourceLineNo">126</span>        this.fileAdmin.checkValidBaseDirectory();<a name="line.126"></a>
+<span class="sourceLineNo">127</span><a name="line.127"></a>
+<span class="sourceLineNo">128</span>        // display a label iff no base directory has been chosen<a name="line.128"></a>
+<span class="sourceLineNo">129</span>        if (this.fileAdmin.getBaseDirectory() == null) {<a name="line.129"></a>
+<span class="sourceLineNo">130</span>            JButton chooserButton = this.directoryChooserFactory.getComponent();<a name="line.130"></a>
+<span class="sourceLineNo">131</span>            chooserButton.setText(String.format(<a name="line.131"></a>
+<span class="sourceLineNo">132</span>                    "&lt;html&gt;&lt;u&gt;%s&lt;/u&gt;&lt;/html&gt;",<a name="line.132"></a>
+<span class="sourceLineNo">133</span>                    this.localizable.getDirectoryChooserTitle()));<a name="line.133"></a>
+<span class="sourceLineNo">134</span><a name="line.134"></a>
+<span class="sourceLineNo">135</span>            this.viewport.setView(chooserButton);<a name="line.135"></a>
+<span class="sourceLineNo">136</span>            this.viewport.setMinimumSize(<a name="line.136"></a>
+<span class="sourceLineNo">137</span>                    new Dimension(<a name="line.137"></a>
+<span class="sourceLineNo">138</span>                            this.settings.getPreferredEmptyMessageWidth(),<a name="line.138"></a>
+<span class="sourceLineNo">139</span>                            this.settings.getPreferredEmptyMessageHeight()));<a name="line.139"></a>
+<span class="sourceLineNo">140</span>            this.viewport.setPreferredSize(<a name="line.140"></a>
+<span class="sourceLineNo">141</span>                    new Dimension(<a name="line.141"></a>
+<span class="sourceLineNo">142</span>                            this.settings.getPreferredEmptyMessageWidth(),<a name="line.142"></a>
+<span class="sourceLineNo">143</span>                            this.settings.getPreferredEmptyMessageHeight()));<a name="line.143"></a>
+<span class="sourceLineNo">144</span>            this.viewport.setMaximumSize(<a name="line.144"></a>
+<span class="sourceLineNo">145</span>                    new Dimension(<a name="line.145"></a>
+<span class="sourceLineNo">146</span>                            this.settings.getPreferredEmptyMessageWidth(),<a name="line.146"></a>
+<span class="sourceLineNo">147</span>                            this.settings.getPreferredEmptyMessageHeight()));<a name="line.147"></a>
+<span class="sourceLineNo">148</span>            return;<a name="line.148"></a>
+<span class="sourceLineNo">149</span>        }<a name="line.149"></a>
+<span class="sourceLineNo">150</span><a name="line.150"></a>
+<span class="sourceLineNo">151</span>        if (this.isDirty()) {<a name="line.151"></a>
+<span class="sourceLineNo">152</span>            this.setDirty(false);<a name="line.152"></a>
+<span class="sourceLineNo">153</span>            this.fileAdmin.reloadFiles();<a name="line.153"></a>
+<span class="sourceLineNo">154</span>            this.baseTableModel.fireTableDataChanged();<a name="line.154"></a>
+<span class="sourceLineNo">155</span>            this.aggrTableModel.fireTableDataChanged();<a name="line.155"></a>
+<span class="sourceLineNo">156</span>        }<a name="line.156"></a>
+<span class="sourceLineNo">157</span><a name="line.157"></a>
+<span class="sourceLineNo">158</span>        // display a label iff there are no files in the list<a name="line.158"></a>
+<span class="sourceLineNo">159</span>        if (this.baseTableModel.getRowCount() == 0) {<a name="line.159"></a>
+<span class="sourceLineNo">160</span>            String emptyMessage = this.localizable.getEmptyMessage(<a name="line.160"></a>
+<span class="sourceLineNo">161</span>                    this.fileAdmin.getBaseDirectory().getAbsolutePath());<a name="line.161"></a>
+<span class="sourceLineNo">162</span>            JLabel emptyLabel = this.emptyLabelFactory.getComponent();<a name="line.162"></a>
+<span class="sourceLineNo">163</span>            emptyLabel.setText(emptyMessage);<a name="line.163"></a>
+<span class="sourceLineNo">164</span><a name="line.164"></a>
+<span class="sourceLineNo">165</span>            this.viewport.setView(emptyLabel);<a name="line.165"></a>
+<span class="sourceLineNo">166</span>            this.viewport.setMinimumSize(<a name="line.166"></a>
+<span class="sourceLineNo">167</span>                    new Dimension(<a name="line.167"></a>
+<span class="sourceLineNo">168</span>                            this.settings.getPreferredEmptyMessageWidth(),<a name="line.168"></a>
+<span class="sourceLineNo">169</span>                            this.settings.getPreferredEmptyMessageHeight()));<a name="line.169"></a>
+<span class="sourceLineNo">170</span>            this.viewport.setPreferredSize(<a name="line.170"></a>
+<span class="sourceLineNo">171</span>                    new Dimension(<a name="line.171"></a>
+<span class="sourceLineNo">172</span>                            this.settings.getPreferredEmptyMessageWidth(),<a name="line.172"></a>
+<span class="sourceLineNo">173</span>                            this.settings.getPreferredEmptyMessageHeight()));<a name="line.173"></a>
+<span class="sourceLineNo">174</span>            this.viewport.setMaximumSize(<a name="line.174"></a>
+<span class="sourceLineNo">175</span>                    new Dimension(<a name="line.175"></a>
+<span class="sourceLineNo">176</span>                            this.settings.getPreferredEmptyMessageWidth(),<a name="line.176"></a>
+<span class="sourceLineNo">177</span>                            this.settings.getPreferredEmptyMessageHeight()));<a name="line.177"></a>
+<span class="sourceLineNo">178</span>            return;<a name="line.178"></a>
+<span class="sourceLineNo">179</span>        }<a name="line.179"></a>
+<span class="sourceLineNo">180</span><a name="line.180"></a>
+<span class="sourceLineNo">181</span>        // display only scroll pane iff there is exactly one file in the list<a name="line.181"></a>
+<span class="sourceLineNo">182</span>        if (this.baseTableModel.getRowCount() == 1) {<a name="line.182"></a>
+<span class="sourceLineNo">183</span>            JComponent component = this.baseTableFactory.getComponent();<a name="line.183"></a>
+<span class="sourceLineNo">184</span>            component.setBorder(MoneydanceLAF.homePageBorder);<a name="line.184"></a>
+<span class="sourceLineNo">185</span><a name="line.185"></a>
+<span class="sourceLineNo">186</span>            this.viewport.setView(component);<a name="line.186"></a>
+<span class="sourceLineNo">187</span>            this.viewport.setMinimumSize(<a name="line.187"></a>
+<span class="sourceLineNo">188</span>                    new Dimension(<a name="line.188"></a>
+<span class="sourceLineNo">189</span>                            this.settings.getMinimumTableWidth(),<a name="line.189"></a>
+<span class="sourceLineNo">190</span>                            this.settings.getMinimumTableHeight()));<a name="line.190"></a>
+<span class="sourceLineNo">191</span>            this.viewport.setPreferredSize(<a name="line.191"></a>
+<span class="sourceLineNo">192</span>                    new Dimension(<a name="line.192"></a>
+<span class="sourceLineNo">193</span>                            Helper.INSTANCE.getPreferences()<a name="line.193"></a>
+<span class="sourceLineNo">194</span>                            .getPreferredTableWidth(),<a name="line.194"></a>
+<span class="sourceLineNo">195</span>                            Helper.INSTANCE.getPreferences()<a name="line.195"></a>
+<span class="sourceLineNo">196</span>                            .getPreferredTableHeight(<a name="line.196"></a>
+<span class="sourceLineNo">197</span>                                    this.baseTableModel.getRowCount())));<a name="line.197"></a>
+<span class="sourceLineNo">198</span>            this.viewport.setMaximumSize(<a name="line.198"></a>
+<span class="sourceLineNo">199</span>                    new Dimension(<a name="line.199"></a>
+<span class="sourceLineNo">200</span>                            Preferences.getMaximumTableWidth(),<a name="line.200"></a>
+<span class="sourceLineNo">201</span>                            Preferences.getMaximumTableHeight()));<a name="line.201"></a>
+<span class="sourceLineNo">202</span>            this.registerKeyboardShortcuts4One();<a name="line.202"></a>
+<span class="sourceLineNo">203</span>            return;<a name="line.203"></a>
+<span class="sourceLineNo">204</span>        }<a name="line.204"></a>
+<span class="sourceLineNo">205</span><a name="line.205"></a>
+<span class="sourceLineNo">206</span>        // display scroll pane and an additional import all/delete all table<a name="line.206"></a>
+<span class="sourceLineNo">207</span>        // iff there is more than one file in the list<a name="line.207"></a>
+<span class="sourceLineNo">208</span>        if (this.baseTableModel.getRowCount() &gt; 1) {<a name="line.208"></a>
+<span class="sourceLineNo">209</span>            JComponent component = this.splitPaneFactory.getComponent();<a name="line.209"></a>
+<span class="sourceLineNo">210</span>            component.setBorder(MoneydanceLAF.homePageBorder);<a name="line.210"></a>
+<span class="sourceLineNo">211</span><a name="line.211"></a>
+<span class="sourceLineNo">212</span>            this.viewport.setView(component);<a name="line.212"></a>
+<span class="sourceLineNo">213</span>            this.viewport.setMinimumSize(null);<a name="line.213"></a>
+<span class="sourceLineNo">214</span>            this.viewport.setPreferredSize(null);<a name="line.214"></a>
+<span class="sourceLineNo">215</span>            this.viewport.setMaximumSize(null);<a name="line.215"></a>
+<span class="sourceLineNo">216</span>            this.registerKeyboardShortcuts4All();<a name="line.216"></a>
+<span class="sourceLineNo">217</span>            return;<a name="line.217"></a>
+<span class="sourceLineNo">218</span>        }<a name="line.218"></a>
+<span class="sourceLineNo">219</span>    }<a name="line.219"></a>
+<span class="sourceLineNo">220</span><a name="line.220"></a>
+<span class="sourceLineNo">221</span><a name="line.221"></a>
+<span class="sourceLineNo">222</span>    @Override<a name="line.222"></a>
+<span class="sourceLineNo">223</span>    public JComponent getGUIView(final RootAccount rootAccount) {<a name="line.223"></a>
+<span class="sourceLineNo">224</span>        if (!this.initialized) {<a name="line.224"></a>
+<span class="sourceLineNo">225</span>            this.initialized = true;<a name="line.225"></a>
+<span class="sourceLineNo">226</span>            this.init();<a name="line.226"></a>
+<span class="sourceLineNo">227</span>        }<a name="line.227"></a>
+<span class="sourceLineNo">228</span>        return this.viewport;<a name="line.228"></a>
+<span class="sourceLineNo">229</span>    }<a name="line.229"></a>
+<span class="sourceLineNo">230</span><a name="line.230"></a>
+<span class="sourceLineNo">231</span><a name="line.231"></a>
+<span class="sourceLineNo">232</span>    @Override<a name="line.232"></a>
+<span class="sourceLineNo">233</span>    public void reset() {<a name="line.233"></a>
+<span class="sourceLineNo">234</span>        // ignore<a name="line.234"></a>
+<span class="sourceLineNo">235</span>    }<a name="line.235"></a>
+<span class="sourceLineNo">236</span><a name="line.236"></a>
+<span class="sourceLineNo">237</span><a name="line.237"></a>
+<span class="sourceLineNo">238</span>    @Override<a name="line.238"></a>
+<span class="sourceLineNo">239</span>    public void setActive(final boolean active) {<a name="line.239"></a>
+<span class="sourceLineNo">240</span>        if (this.viewport == null) {<a name="line.240"></a>
+<span class="sourceLineNo">241</span>            return;<a name="line.241"></a>
+<span class="sourceLineNo">242</span>        }<a name="line.242"></a>
+<span class="sourceLineNo">243</span>        this.viewport.setVisible(active);<a name="line.243"></a>
+<span class="sourceLineNo">244</span>        this.refresh();<a name="line.244"></a>
+<span class="sourceLineNo">245</span>    }<a name="line.245"></a>
+<span class="sourceLineNo">246</span><a name="line.246"></a>
+<span class="sourceLineNo">247</span><a name="line.247"></a>
+<span class="sourceLineNo">248</span>    @Override<a name="line.248"></a>
+<span class="sourceLineNo">249</span>    public String getID() {<a name="line.249"></a>
+<span class="sourceLineNo">250</span>        return this.settings.getExtensionIdentifier();<a name="line.250"></a>
+<span class="sourceLineNo">251</span>    }<a name="line.251"></a>
+<span class="sourceLineNo">252</span><a name="line.252"></a>
+<span class="sourceLineNo">253</span><a name="line.253"></a>
+<span class="sourceLineNo">254</span>    @Override<a name="line.254"></a>
+<span class="sourceLineNo">255</span>    public String toString() {<a name="line.255"></a>
+<span class="sourceLineNo">256</span>        return this.settings.getExtensionName();<a name="line.256"></a>
+<span class="sourceLineNo">257</span>    }<a name="line.257"></a>
+<span class="sourceLineNo">258</span><a name="line.258"></a>
+<span class="sourceLineNo">259</span><a name="line.259"></a>
+<span class="sourceLineNo">260</span>    public void chooseBaseDirectory() {<a name="line.260"></a>
+<span class="sourceLineNo">261</span>        this.fileAdmin.chooseBaseDirectory();<a name="line.261"></a>
+<span class="sourceLineNo">262</span>    }<a name="line.262"></a>
+<span class="sourceLineNo">263</span><a name="line.263"></a>
+<span class="sourceLineNo">264</span><a name="line.264"></a>
+<span class="sourceLineNo">265</span>    public void cleanup() {<a name="line.265"></a>
+<span class="sourceLineNo">266</span>        if (!this.initialized) {<a name="line.266"></a>
+<span class="sourceLineNo">267</span>            return;<a name="line.267"></a>
+<span class="sourceLineNo">268</span>        }<a name="line.268"></a>
+<span class="sourceLineNo">269</span>        this.viewport.setEnabled(false);<a name="line.269"></a>
+<span class="sourceLineNo">270</span>        this.viewport.removeAll();<a name="line.270"></a>
+<span class="sourceLineNo">271</span>        this.fileAdmin.stopMonitor();<a name="line.271"></a>
+<span class="sourceLineNo">272</span>    }<a name="line.272"></a>
+<span class="sourceLineNo">273</span><a name="line.273"></a>
+<span class="sourceLineNo">274</span><a name="line.274"></a>
+<span class="sourceLineNo">275</span>    public void setDirty(final boolean argDirty) {<a name="line.275"></a>
+<span class="sourceLineNo">276</span>        this.dirty = argDirty;<a name="line.276"></a>
+<span class="sourceLineNo">277</span>    }<a name="line.277"></a>
+<span class="sourceLineNo">278</span><a name="line.278"></a>
+<span class="sourceLineNo">279</span><a name="line.279"></a>
+<span class="sourceLineNo">280</span>    public boolean isDirty() {<a name="line.280"></a>
+<span class="sourceLineNo">281</span>        return this.dirty;<a name="line.281"></a>
+<span class="sourceLineNo">282</span>    }<a name="line.282"></a>
+<span class="sourceLineNo">283</span><a name="line.283"></a>
+<span class="sourceLineNo">284</span><a name="line.284"></a>
+<span class="sourceLineNo">285</span>    private void registerKeyboardShortcuts4One() {<a name="line.285"></a>
+<span class="sourceLineNo">286</span>        AbstractEditor importOneEditor =<a name="line.286"></a>
+<span class="sourceLineNo">287</span>                this.columnFactory.getImportOneEditor();<a name="line.287"></a>
+<span class="sourceLineNo">288</span>        importOneEditor.registerKeyboardShortcut(this.viewport);<a name="line.288"></a>
+<span class="sourceLineNo">289</span><a name="line.289"></a>
+<span class="sourceLineNo">290</span>        AbstractEditor deleteOneEditor =<a name="line.290"></a>
+<span class="sourceLineNo">291</span>                this.columnFactory.getDeleteOneEditor();<a name="line.291"></a>
+<span class="sourceLineNo">292</span>        deleteOneEditor.registerKeyboardShortcut(this.viewport);<a name="line.292"></a>
+<span class="sourceLineNo">293</span>    }<a name="line.293"></a>
+<span class="sourceLineNo">294</span><a name="line.294"></a>
+<span class="sourceLineNo">295</span><a name="line.295"></a>
+<span class="sourceLineNo">296</span>    private void registerKeyboardShortcuts4All() {<a name="line.296"></a>
+<span class="sourceLineNo">297</span>        AbstractEditor importAllEditor =<a name="line.297"></a>
+<span class="sourceLineNo">298</span>                this.columnFactory.getImportAllEditor();<a name="line.298"></a>
+<span class="sourceLineNo">299</span>        importAllEditor.registerKeyboardShortcut(this.viewport);<a name="line.299"></a>
+<span class="sourceLineNo">300</span><a name="line.300"></a>
+<span class="sourceLineNo">301</span>        AbstractEditor deleteAllEditor =<a name="line.301"></a>
+<span class="sourceLineNo">302</span>                this.columnFactory.getDeleteAllEditor();<a name="line.302"></a>
+<span class="sourceLineNo">303</span>        deleteAllEditor.registerKeyboardShortcut(this.viewport);<a name="line.303"></a>
+<span class="sourceLineNo">304</span>    }<a name="line.304"></a>
+<span class="sourceLineNo">305</span><a name="line.305"></a>
+<span class="sourceLineNo">306</span>    /**<a name="line.306"></a>
+<span class="sourceLineNo">307</span>     * @author Florian J. Breunig<a name="line.307"></a>
+<span class="sourceLineNo">308</span>     */<a name="line.308"></a>
+<span class="sourceLineNo">309</span>    private final class ViewControllerObserver<a name="line.309"></a>
+<span class="sourceLineNo">310</span>    implements Observer {<a name="line.310"></a>
+<span class="sourceLineNo">311</span>        @Override<a name="line.311"></a>
+<span class="sourceLineNo">312</span>        public void update(final Observable observable, final Object object) {<a name="line.312"></a>
+<span class="sourceLineNo">313</span>            ViewController.this.setDirty(true);<a name="line.313"></a>
+<span class="sourceLineNo">314</span>            ViewController.this.refresh();<a name="line.314"></a>
+<span class="sourceLineNo">315</span>        }<a name="line.315"></a>
+<span class="sourceLineNo">316</span>    }<a name="line.316"></a>
+<span class="sourceLineNo">317</span><a name="line.317"></a>
+<span class="sourceLineNo">318</span>    /**<a name="line.318"></a>
+<span class="sourceLineNo">319</span>     * @author Florian J. Breunig<a name="line.319"></a>
+<span class="sourceLineNo">320</span>     */<a name="line.320"></a>
+<span class="sourceLineNo">321</span>    private final class ChooseBaseDirectoryActionListener<a name="line.321"></a>
+<span class="sourceLineNo">322</span>    implements ActionListener {<a name="line.322"></a>
+<span class="sourceLineNo">323</span><a name="line.323"></a>
+<span class="sourceLineNo">324</span>        @Override<a name="line.324"></a>
+<span class="sourceLineNo">325</span>        public void actionPerformed(final ActionEvent event) {<a name="line.325"></a>
+<span class="sourceLineNo">326</span>            ViewController.this.chooseBaseDirectory();<a name="line.326"></a>
+<span class="sourceLineNo">327</span>        }<a name="line.327"></a>
+<span class="sourceLineNo">328</span>    }<a name="line.328"></a>
+<span class="sourceLineNo">329</span>}<a name="line.329"></a>
 
 
 
@@ -383,6 +395,7 @@
 
 
 
-</PRE>
-</BODY>
-</HTML>
+</pre>
+</div>
+</body>
+</html>

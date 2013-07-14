@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JMockit Coverage Report - AggregationTableFactory.java</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../../../../coverage.css'/>
+  <link rel='shortcut icon' type='image/png' href='../../../../../../logo.png'/>
+  <script type='text/javascript' src='../../../../../../coverage.js'></script>
+  <script type='text/javascript' src='../../../../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption>master/src/com/moneydance/modules/features/importlist/presentation/AggregationTableFactory.java</caption>
+    <tr>
+      <td class='line'>1</td><td>&nbsp;</td>
+      <td><pre class='comment'>// Import List - http://my-flow.github.io/importlist/</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>2</td><td>&nbsp;</td>
+      <td><pre class='comment'>// Copyright (C) 2011-2014 Florian J. Breunig</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>3</td><td>&nbsp;</td>
+      <td><pre class='comment'>//</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>4</td><td>&nbsp;</td>
+      <td><pre class='comment'>// This program is free software: you can redistribute it and/or modify</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>5</td><td>&nbsp;</td>
+      <td><pre class='comment'>// it under the terms of the GNU General Public License as published by</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>6</td><td>&nbsp;</td>
+      <td><pre class='comment'>// the Free Software Foundation, either version 3 of the License, or</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>7</td><td>&nbsp;</td>
+      <td><pre class='comment'>// (at your option) any later version.</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>8</td><td>&nbsp;</td>
+      <td><pre class='comment'>//</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>9</td><td>&nbsp;</td>
+      <td><pre class='comment'>// This program is distributed in the hope that it will be useful,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>10</td><td>&nbsp;</td>
+      <td><pre class='comment'>// but WITHOUT ANY WARRANTY; without even the implied warranty of</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>11</td><td>&nbsp;</td>
+      <td><pre class='comment'>// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>12</td><td>&nbsp;</td>
+      <td><pre class='comment'>// GNU General Public License for more details.</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>13</td><td>&nbsp;</td>
+      <td><pre class='comment'>//</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>14</td><td>&nbsp;</td>
+      <td><pre class='comment'>// You should have received a copy of the GNU General Public License</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>15</td><td>&nbsp;</td>
+      <td><pre class='comment'>// along with this program. If not, see &lt;http://www.gnu.org/licenses/>.</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>17</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package com.moneydance.modules.features.importlist.presentation;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import com.moneydance.modules.features.importlist.io.FileAdmin;
+import com.moneydance.modules.features.importlist.table.ColumnFactory;
+import com.moneydance.modules.features.importlist.util.Helper;
+import com.moneydance.modules.features.importlist.util.Preferences;
+import com.moneydance.modules.features.importlist.util.Settings;
+
+import java.awt.Dimension;
+
+import javax.swing.JTable;
+import javax.swing.table.JTableHeader;
+import javax.swing.table.TableColumn;
+import javax.swing.table.TableColumnModel;
+import javax.swing.table.TableModel;
+</div><span>import ...</span></pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+ * @author Florian J. Breunig
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>36</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>public final class AggregationTableFactory implements ComponentFactory {</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>38</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final Settings settings;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>39</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final Preferences prefs;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>40</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final JTable table;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>42</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public AggregationTableFactory(final TableModel argTableModel,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>43</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l43s0'>            final FileAdmin argFileAdmin) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>44</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l44s0'>        this.settings   = Helper.INSTANCE.getSettings();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>45</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l45s0'>        this.prefs      = Helper.INSTANCE.getPreferences();</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>47</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l47s0'>        this.table = new JTable(argTableModel);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>48</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l48s0'>        this.table.setOpaque(false);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>49</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l49s0'>        this.table.setShowGrid(false);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>50</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l50s0'>        this.table.setShowVerticalLines(false);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>51</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l51s0'>        this.table.setShowHorizontalLines(false);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>52</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l52s0'>        this.table.setIntercellSpacing(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>53</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                new Dimension(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>54</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                        0,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>55</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                        this.settings.getTableHeightOffset()));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>56</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l56s0'>        this.table.setColumnSelectionAllowed(false);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>57</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l57s0'>        this.table.setRowSelectionAllowed(false);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>58</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l58s0'>        this.table.setCellSelectionEnabled(false);</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>60</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l60s0'>        TableColumnModel aggrColumnModel = this.table.getColumnModel();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>61</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l61s0'>        JTableHeader tableHeader         = this.table.getTableHeader();</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>63</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l63s0'>        ColumnFactory columnFactory = new ColumnFactory(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>64</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                argFileAdmin,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>65</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                this.prefs.getForeground(),</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>66</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                this.prefs.getBackground(),</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>67</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                this.prefs.getBackgroundAlt(),</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>68</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                tableHeader.getDefaultRenderer(),</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>69</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                this.prefs.getDateFormatter(),</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>70</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                Preferences.getTimeFormatter());</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>73</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l73s0'>        TableColumn nameCol = this.table.getColumn(this.settings.getDescName());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>74</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l74s0'>        int nameColNo = aggrColumnModel.getColumnIndex(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>75</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                this.settings.getDescName());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>76</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l76s0'>        nameCol.setIdentifier(this.settings.getDescName());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>77</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l77s0'>        nameCol.setCellRenderer(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>78</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                columnFactory.getLabelNameAllRenderer());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>79</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l79s0'>        nameCol.setMinWidth(this.settings.getMinColumnWidth());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>80</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l80s0'>        nameCol.setPreferredWidth(this.prefs.getColumnWidths(nameColNo));</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>82</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l82s0'>        TableColumn modifiedCol = this.table.getColumn(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>83</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                this.settings.getDescModified());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>84</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l84s0'>        int modifiedColNo = aggrColumnModel.getColumnIndex(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>85</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                this.settings.getDescModified());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>86</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l86s0'>        modifiedCol.setIdentifier(this.settings.getDescModified());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>87</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l87s0'>        modifiedCol.setCellRenderer(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>88</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                columnFactory.getLabelModifiedAllRenderer());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>89</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l89s0'>        modifiedCol.setMinWidth(this.settings.getMinColumnWidth());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>90</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l90s0'>        modifiedCol.setPreferredWidth(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>91</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                this.prefs.getColumnWidths(modifiedColNo));</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>93</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l93s0'>        TableColumn importCol = this.table.getColumn(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>94</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                this.settings.getDescImport());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>95</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l95s0'>        int importColNo = aggrColumnModel.getColumnIndex(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>96</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                this.settings.getDescImport());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>97</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l97s0'>        importCol.setIdentifier(this.settings.getDescImport());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>98</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l98s0'>        importCol.setCellRenderer(columnFactory.getButtonAllRenderer());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>99</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l99s0'>        importCol.setCellEditor(columnFactory.getImportAllEditor());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>100</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l100s0'>        importCol.setResizable(this.settings.isButtonResizable());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>101</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l101s0'>        importCol.setMinWidth(this.settings.getMinColumnWidth());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>102</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l102s0'>        importCol.setPreferredWidth(this.prefs.getColumnWidths(importColNo));</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>104</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l104s0'>        TableColumn deleteCol = this.table.getColumn(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>105</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                this.settings.getDescDelete());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>106</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l106s0'>        int deleteColNo = aggrColumnModel.getColumnIndex(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>107</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                this.settings.getDescDelete());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>108</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l108s0'>        deleteCol.setIdentifier(this.settings.getDescDelete());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>109</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l109s0'>        deleteCol.setCellRenderer(columnFactory.getButtonAllRenderer());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>110</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l110s0'>        deleteCol.setCellEditor(columnFactory.getDeleteAllEditor());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>111</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l111s0'>        deleteCol.setResizable(this.settings.isButtonResizable());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>112</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l112s0'>        deleteCol.setMinWidth(this.settings.getMinColumnWidth());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>113</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l113s0'>        deleteCol.setPreferredWidth(this.prefs.getColumnWidths(deleteColNo));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>114</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l114s0'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>116</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>117</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public JTable getComponent() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>118</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered' id='l118s0'>        this.table.setBackground(this.prefs.getBackground());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>119</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered' id='l119s0'>        this.table.setFont(Preferences.getBodyFont());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>120</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered' id='l120s0'>        this.table.setRowHeight(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>121</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                this.prefs.getBodyRowHeight()</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>122</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                + this.settings.getTableHeightOffset());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>123</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered' id='l123s0'>        this.table.setMinimumSize(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>124</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                new Dimension(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>125</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                        this.settings.getMinimumTableWidth(),</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>126</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                        this.prefs.getBodyRowHeight()</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>127</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                        + this.settings.getTableHeightOffset()));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>128</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered' id='l128s0'>        this.table.setPreferredSize(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>129</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                new Dimension(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>130</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                        this.prefs.getPreferredTableWidth(),</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>131</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                        this.prefs.getBodyRowHeight()</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>132</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                        + this.settings.getTableHeightOffset()));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>133</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered' id='l133s0'>        this.table.setMaximumSize(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>134</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                new Dimension(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>135</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                        Preferences.getMaximumTableWidth(),</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>136</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                        this.prefs.getBodyRowHeight()</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>137</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                        + this.settings.getTableHeightOffset()));</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>139</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered' id='l139s0'>        return this.table;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>140</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>141</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>

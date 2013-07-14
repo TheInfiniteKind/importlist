@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JMockit Coverage Report - TableListener.java</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../../../../coverage.css'/>
+  <link rel='shortcut icon' type='image/png' href='../../../../../../logo.png'/>
+  <script type='text/javascript' src='../../../../../../coverage.js'></script>
+  <script type='text/javascript' src='../../../../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption>master/src/com/moneydance/modules/features/importlist/presentation/TableListener.java</caption>
+    <tr>
+      <td class='line'>1</td><td>&nbsp;</td>
+      <td><pre class='comment'>// Import List - http://my-flow.github.io/importlist/</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>2</td><td>&nbsp;</td>
+      <td><pre class='comment'>// Copyright (C) 2011-2014 Florian J. Breunig</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>3</td><td>&nbsp;</td>
+      <td><pre class='comment'>//</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>4</td><td>&nbsp;</td>
+      <td><pre class='comment'>// This program is free software: you can redistribute it and/or modify</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>5</td><td>&nbsp;</td>
+      <td><pre class='comment'>// it under the terms of the GNU General Public License as published by</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>6</td><td>&nbsp;</td>
+      <td><pre class='comment'>// the Free Software Foundation, either version 3 of the License, or</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>7</td><td>&nbsp;</td>
+      <td><pre class='comment'>// (at your option) any later version.</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>8</td><td>&nbsp;</td>
+      <td><pre class='comment'>//</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>9</td><td>&nbsp;</td>
+      <td><pre class='comment'>// This program is distributed in the hope that it will be useful,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>10</td><td>&nbsp;</td>
+      <td><pre class='comment'>// but WITHOUT ANY WARRANTY; without even the implied warranty of</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>11</td><td>&nbsp;</td>
+      <td><pre class='comment'>// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>12</td><td>&nbsp;</td>
+      <td><pre class='comment'>// GNU General Public License for more details.</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>13</td><td>&nbsp;</td>
+      <td><pre class='comment'>//</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>14</td><td>&nbsp;</td>
+      <td><pre class='comment'>// You should have received a copy of the GNU General Public License</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>15</td><td>&nbsp;</td>
+      <td><pre class='comment'>// along with this program. If not, see &lt;http://www.gnu.org/licenses/>.</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>17</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package com.moneydance.modules.features.importlist.presentation;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import com.moneydance.modules.features.importlist.util.Helper;
+import com.moneydance.modules.features.importlist.util.Preferences;
+
+import java.util.Hashtable;
+import java.util.logging.Logger;
+
+import javax.swing.JTable;
+import javax.swing.RowSorter;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.RowSorterEvent;
+import javax.swing.event.RowSorterListener;
+import javax.swing.event.TableColumnModelEvent;
+import javax.swing.event.TableColumnModelListener;
+</div><span>import ...</span></pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+ * This &lt;code>EventListener&lt;/code> is notified upon rearrangement, resorting,
+ * and resizing of the table. It saves its state in the
+ * &lt;code>Preferences&lt;/code>.
+ *
+ * @author Florian J. Breunig
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>41</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>final class TableListener</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>42</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>implements TableColumnModelListener, RowSorterListener {</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>    /**
+     * Static initialization of class-dependent logger.
+     */</div><span>    /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>47</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l47s0'>    private static final Logger LOG =</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>48</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            Logger.getLogger(TableListener.class.getName());</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>50</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final Preferences prefs;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>51</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final JTable table;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>52</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private int <span class='instance covered' title='Reads: 2 Writes: 1'>lastFrom</span>;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>53</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private int <span class='instance covered' title='Reads: 2 Writes: 1'>lastTo</span>;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>55</td><td class='count'>11</td>
+      <td><pre class='prettyprint covered' id='l55s0'>    TableListener(final JTable argTable) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>56</td><td class='count'>11</td>
+      <td><pre class='prettyprint covered' id='l56s0'>        this.prefs = Helper.INSTANCE.getPreferences();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>57</td><td class='count'>11</td>
+      <td><pre class='prettyprint covered' id='l57s0'>        this.table = argTable;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>58</td><td class='count'>11</td>
+      <td><pre class='prettyprint covered' id='l58s0'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>60</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>61</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public void columnMarginChanged(final ChangeEvent event) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>62</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l62s0'>        LOG.config("Margin of a column changed.");</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>63</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l63s0'>        this.saveColumnWidths();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>64</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l64s0'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>66</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>67</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public void columnMoved(final TableColumnModelEvent event) {</pre></td>
+    </tr>
+    <tr>
+      <td></td><td class='count'>2</td>
+      <td class='paths'>
+        <span style='cursor:default; background-color:#55aa00' onclick='hidePath()'>Path coverage: 2/3</span>
+        <span class='covered' onclick="showPath(this,'l68s0 l68s1 l70s0')">A: 1</span>
+        <span class='uncovered' onclick="showPath(this,'l68s0 l72s0 l79s0')">B: 0</span>
+        <span class='covered' onclick="showPath(this,'l68s0 l68s1 l72s0 l79s0')">C: 1</span>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>68</td><td class='count'>2</td>
+      <td><pre class='prettyprint jmp'>        <span id='l68s0' title='Executions: 2' class='covered'>if (event.getFromIndex() == this.lastFrom</span></pre></td>
+    </tr>
+    <tr>
+      <td class='line'>69</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                && event.getToIndex() == this.lastTo) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>70</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l70s0'>            return;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>71</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>72</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l72s0'>        LOG.config("Order of columns changed.");</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>73</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l73s0'>        this.lastFrom = event.getFromIndex();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>74</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l74s0'>        this.lastTo   = event.getToIndex();</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>76</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l76s0'>        this.saveColumnOrder();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>77</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l77s0'>        this.saveSortKey();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>78</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l78s0'>        this.saveColumnWidths();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>79</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l79s0'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>81</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>82</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public void sorterChanged(final RowSorterEvent event) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>83</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l83s0'>        LOG.config("Sort order of a column changed.");</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>84</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l84s0'>        this.saveSortKey();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>85</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l85s0'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>87</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private void saveColumnOrder() {</pre></td>
+    </tr>
+    <tr>
+      <td></td><td class='count'>1</td>
+      <td class='paths'>
+        <span style='cursor:default; background-color:#7f8000' onclick='hidePath()'>Path coverage: 1/2</span>
+        <span class='uncovered' onclick="showPath(this,'l88s0 l91s0 l95s0 l96s0')">A: 0</span>
+        <span class='covered' onclick="showPath(this,'l88s0 l91s0 l92s0 l95s0 l96s0')">B: 1</span>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>88</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l88s0'>        Hashtable&lt;String, String> hashtable = new Hashtable&lt;String, String>(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>89</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                this.table.getColumnCount());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>90</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l90s0'>        int columnCount = this.table.getColumnCount();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>91</td><td class='count'>5</td>
+      <td><pre class='prettyprint jmp'>        <span id='l91s0' title='Executions: 5' class='covered'>for (int column = 0; column &lt; columnCount; column++)</span> <span id='l91s1' title='Executions: 4' class='covered'>{</span></pre></td>
+    </tr>
+    <tr>
+      <td class='line'>92</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l92s0'>            String columnName = this.table.getColumnName(column);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>93</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l93s0'>            hashtable.put(Integer.toString(column), columnName);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>94</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>95</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l95s0'>        this.prefs.setColumnNames(hashtable);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>96</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l96s0'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>98</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private void saveColumnWidths() {</pre></td>
+    </tr>
+    <tr>
+      <td></td><td class='count'>2</td>
+      <td class='paths'>
+        <span style='cursor:default; background-color:#7f8000' onclick='hidePath()'>Path coverage: 1/2</span>
+        <span class='uncovered' onclick="showPath(this,'l99s0 l100s0 l105s0')">A: 0</span>
+        <span class='covered' onclick="showPath(this,'l99s0 l100s0 l101s0 l105s0')">B: 2</span>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>99</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered' id='l99s0'>        int columnCount = this.table.getColumnCount();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>100</td><td class='count'>10</td>
+      <td><pre class='prettyprint jmp'>        <span id='l100s0' title='Executions: 10' class='covered'>for (int column = 0; column &lt; columnCount; column++)</span> <span id='l100s1' title='Executions: 8' class='covered'>{</span></pre></td>
+    </tr>
+    <tr>
+      <td class='line'>101</td><td class='count'>8</td>
+      <td><pre class='prettyprint covered' id='l101s0'>            String columnName = this.table.getColumnName(column);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>102</td><td class='count'>8</td>
+      <td><pre class='prettyprint covered' id='l102s0'>            int columnWidth   = this.table.getColumn(columnName).getWidth();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>103</td><td class='count'>8</td>
+      <td><pre class='prettyprint covered' id='l103s0'>            this.prefs.setColumnWidths(column, columnWidth);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>104</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>105</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered' id='l105s0'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>107</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private void saveSortKey() {</pre></td>
+    </tr>
+    <tr>
+      <td></td><td class='count'>5</td>
+      <td class='paths'>
+        <span style='cursor:default; background-color:#7f8000' onclick='hidePath()'>Path coverage: 1/2</span>
+        <span class='uncovered' onclick="showPath(this,'l108s0 l109s0')">A: 0</span>
+        <span class='covered' onclick="showPath(this,'l108s0 l111s0 l120s0')">B: 5</span>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>108</td><td class='count'>5</td>
+      <td><pre class='prettyprint jmp'>        <span id='l108s0' title='Executions: 5' class='covered'>if (this.table.getRowSorter().getSortKeys().isEmpty()) {</span></pre></td>
+    </tr>
+    <tr>
+      <td class='line'>109</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l109s0'>            return;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>110</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>111</td><td class='count'>5</td>
+      <td><pre class='prettyprint covered' id='l111s0'>        RowSorter.SortKey originalSortKey =</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>112</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                this.table.getRowSorter().getSortKeys().get(0);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>113</td><td class='count'>5</td>
+      <td><pre class='prettyprint covered' id='l113s0'>        int adjustedColumn = this.table.convertColumnIndexToView(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>114</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                originalSortKey.getColumn());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>115</td><td class='count'>5</td>
+      <td><pre class='prettyprint covered' id='l115s0'>        RowSorter.SortKey adjustedSortKey =</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>116</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                new RowSorter.SortKey(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>117</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                        adjustedColumn,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>118</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                        originalSortKey.getSortOrder());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>119</td><td class='count'>5</td>
+      <td><pre class='prettyprint covered' id='l119s0'>        this.prefs.setSortKey(adjustedSortKey);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>120</td><td class='count'>5</td>
+      <td><pre class='prettyprint covered' id='l120s0'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>122</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>123</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public void columnAdded(final TableColumnModelEvent event) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>124</td><td>&nbsp;</td>
+      <td><pre class='comment'>        // columns cannot be added</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>125</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l125s0'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>127</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>128</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public void columnRemoved(final TableColumnModelEvent event) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>129</td><td>&nbsp;</td>
+      <td><pre class='comment'>        // columns cannot be removed</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>130</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l130s0'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>132</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>133</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public void columnSelectionChanged(final ListSelectionEvent event) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>134</td><td>&nbsp;</td>
+      <td><pre class='comment'>        // ignore selected columns</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>135</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l135s0'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>136</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>

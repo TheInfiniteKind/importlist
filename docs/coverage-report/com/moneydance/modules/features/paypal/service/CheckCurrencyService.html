@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JMockit Coverage Report - CheckCurrencyService.java</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../../../../coverage.css'/>
+  <script type='text/javascript' src='../../../../../../coverage.js'></script>
+  <script type='text/javascript' src='../../../../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption>develop/src/com/moneydance/modules/features/paypal/service/CheckCurrencyService.java</caption>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/*
+ * PayPal for Moneydance - http://my-flow.github.io/paypalformoneydance/
+ * Copyright (C) 2013 Florian J. Breunig. All rights reserved.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>6</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package com.moneydance.modules.features.paypal.service;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import java.io.IOException;
+import java.net.SocketException;
+import java.net.UnknownHostException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Locale;
+import java.util.concurrent.Callable;
+import java.util.logging.Logger;
+
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.apache.commons.lang3.Validate;
+import org.xml.sax.SAXException;
+
+import urn.ebay.api.PayPalAPI.GetBalanceReq;
+import urn.ebay.api.PayPalAPI.GetBalanceRequestType;
+import urn.ebay.api.PayPalAPI.GetBalanceResponseType;
+import urn.ebay.api.PayPalAPI.PayPalAPIInterfaceServiceService;
+import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
+import urn.ebay.apis.eBLBaseComponents.AckCodeType;
+import urn.ebay.apis.eBLBaseComponents.CurrencyCodeType;
+
+import com.moneydance.modules.features.paypal.util.Helper;
+import com.moneydance.modules.features.paypal.util.Localizable;
+import com.paypal.exception.ClientActionRequiredException;
+import com.paypal.exception.HttpErrorException;
+import com.paypal.exception.InvalidCredentialException;
+import com.paypal.exception.InvalidResponseDataException;
+import com.paypal.exception.MissingCredentialException;
+import com.paypal.exception.SSLConfigurationException;
+import com.paypal.sdk.exceptions.OAuthException;
+</div><span>import ...</span></pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+ * @author Florian J. Breunig
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>44</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>public final class CheckCurrencyService</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>45</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>implements Callable&lt;ServiceResult&lt;CurrencyCodeType>> {</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>    /**
+     * Static initialization of class-dependent logger.
+     */</div><span>    /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>50</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l50s0'>    private static final Logger LOG = Logger.getLogger(</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulEmpty: 59</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>51</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l51s0'>            CheckCurrencyService.class.getName());</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulEmpty: 59</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>53</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l53s0'>    private static final AckCodeType[] ACK_CODES =</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulEmpty: 59</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>54</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l54s0'>        {AckCodeType.SUCCESS, AckCodeType.SUCCESSWITHWARNING};</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulEmpty: 59</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>56</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final Localizable localizable;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>57</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final PayPalAPIInterfaceServiceService service;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>58</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final Locale errorLocale;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>60</td><td class='count'>16</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l60s0'>    public CheckCurrencyService(</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulEmpty: 59</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulFilled: 78</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFail: 95</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailUnknownHostException: 113</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSocketException: 131</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailIOException: 149</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSSLException: 167</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInvalidCredentialException: 185</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailHttpErrorException: 203</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInvalidResponseDataException: 221</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailClientActionRequiredException: 239</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailMissingCredentialException: 257</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailOAuthException: 275</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInterruptedException: 293</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailParserConfigurationException: 311</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSAXException: 329</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>61</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            final PayPalAPIInterfaceServiceService argService,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>62</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            final Locale argErrorLocale) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>63</td><td class='count'>16</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l63s0'>        this.localizable = Helper.INSTANCE.getLocalizable();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulEmpty: 59</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulFilled: 78</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFail: 95</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailUnknownHostException: 113</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSocketException: 131</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailIOException: 149</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSSLException: 167</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInvalidCredentialException: 185</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailHttpErrorException: 203</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInvalidResponseDataException: 221</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailClientActionRequiredException: 239</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailMissingCredentialException: 257</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailOAuthException: 275</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInterruptedException: 293</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailParserConfigurationException: 311</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSAXException: 329</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>64</td><td class='count'>16</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l64s0'>        Validate.notNull(argService, "service must not be null");</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulEmpty: 59</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulFilled: 78</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFail: 95</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailUnknownHostException: 113</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSocketException: 131</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailIOException: 149</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSSLException: 167</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInvalidCredentialException: 185</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailHttpErrorException: 203</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInvalidResponseDataException: 221</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailClientActionRequiredException: 239</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailMissingCredentialException: 257</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailOAuthException: 275</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInterruptedException: 293</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailParserConfigurationException: 311</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSAXException: 329</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>65</td><td class='count'>16</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l65s0'>        this.service = argService;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulEmpty: 59</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulFilled: 78</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFail: 95</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailUnknownHostException: 113</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSocketException: 131</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailIOException: 149</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSSLException: 167</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInvalidCredentialException: 185</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailHttpErrorException: 203</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInvalidResponseDataException: 221</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailClientActionRequiredException: 239</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailMissingCredentialException: 257</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailOAuthException: 275</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInterruptedException: 293</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailParserConfigurationException: 311</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSAXException: 329</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>66</td><td class='count'>16</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l66s0'>        Validate.notNull(argErrorLocale, "error locale must not be null");</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulEmpty: 59</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulFilled: 78</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFail: 95</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailUnknownHostException: 113</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSocketException: 131</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailIOException: 149</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSSLException: 167</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInvalidCredentialException: 185</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailHttpErrorException: 203</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInvalidResponseDataException: 221</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailClientActionRequiredException: 239</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailMissingCredentialException: 257</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailOAuthException: 275</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInterruptedException: 293</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailParserConfigurationException: 311</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSAXException: 329</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>67</td><td class='count'>16</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l67s0'>        this.errorLocale = argErrorLocale;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulEmpty: 59</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulFilled: 78</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFail: 95</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailUnknownHostException: 113</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSocketException: 131</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailIOException: 149</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSSLException: 167</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInvalidCredentialException: 185</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailHttpErrorException: 203</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInvalidResponseDataException: 221</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailClientActionRequiredException: 239</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailMissingCredentialException: 257</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailOAuthException: 275</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInterruptedException: 293</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailParserConfigurationException: 311</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSAXException: 329</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>68</td><td class='count'>16</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l68s0'>    }</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulEmpty: 59</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulFilled: 78</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFail: 95</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailUnknownHostException: 113</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSocketException: 131</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailIOException: 149</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSSLException: 167</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInvalidCredentialException: 185</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailHttpErrorException: 203</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInvalidResponseDataException: 221</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailClientActionRequiredException: 239</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailMissingCredentialException: 257</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailOAuthException: 275</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInterruptedException: 293</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailParserConfigurationException: 311</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSAXException: 329</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>70</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>71</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public ServiceResult&lt;CurrencyCodeType> call() {</pre></td>
+    </tr>
+    <tr>
+      <td></td><td class='count'>3</td>
+      <td class='paths'>
+        <span style='cursor:default; background-color:#7f8000' onclick='hidePath()'>Path coverage: 3/6</span>
+        <span class='uncovered' onclick="showPath(this,'l72s0 l86s0 l92s0 l132s0')">A: 0</span>
+        <span class='covered' onclick="showPath(this,'l72s0 l86s0 l92s0 l93s0 l96s0 l132s0')">B: 1</span>
+        <span class='uncovered' onclick="showPath(this,'l72s0 l86s0 l87s0 l92s0 l132s0')">C: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l72s0 l86s0 l87s0 l92s0 l93s0 l96s0 l132s0')">D: 0</span>
+        <span class='covered' onclick="showPath(this,'l72s0 l86s0 l87s0 l88s0 l92s0 l132s0')">E: 1</span>
+        <span class='covered' onclick="showPath(this,'l72s0 l86s0 l87s0 l88s0 l92s0 l93s0 l96s0 l132s0')">F: 1</span>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>72</td><td class='count'>16</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l72s0'>        List&lt;CurrencyCodeType> results = null;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulEmpty: 62</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulFilled: 81</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFail: 98</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailUnknownHostException: 116</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSocketException: 134</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailIOException: 152</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSSLException: 170</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInvalidCredentialException: 188</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailHttpErrorException: 206</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInvalidResponseDataException: 224</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailClientActionRequiredException: 242</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailMissingCredentialException: 260</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailOAuthException: 278</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInterruptedException: 296</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailParserConfigurationException: 314</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSAXException: 332</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>73</td><td class='count'>16</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l73s0'>        String errorCode = null;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulEmpty: 62</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulFilled: 81</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFail: 98</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailUnknownHostException: 116</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSocketException: 134</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailIOException: 152</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSSLException: 170</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInvalidCredentialException: 188</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailHttpErrorException: 206</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInvalidResponseDataException: 224</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailClientActionRequiredException: 242</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailMissingCredentialException: 260</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailOAuthException: 278</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInterruptedException: 296</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailParserConfigurationException: 314</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSAXException: 332</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>74</td><td class='count'>16</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l74s0'>        String errorMessage = null;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulEmpty: 62</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulFilled: 81</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFail: 98</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailUnknownHostException: 116</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSocketException: 134</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailIOException: 152</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSSLException: 170</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInvalidCredentialException: 188</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailHttpErrorException: 206</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInvalidResponseDataException: 224</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailClientActionRequiredException: 242</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailMissingCredentialException: 260</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailOAuthException: 278</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInterruptedException: 296</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailParserConfigurationException: 314</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSAXException: 332</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>76</td><td class='count'>16</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l76s0'>        GetBalanceRequestType reqType = new GetBalanceRequestType();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulEmpty: 62</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulFilled: 81</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFail: 98</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailUnknownHostException: 116</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSocketException: 134</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailIOException: 152</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSSLException: 170</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInvalidCredentialException: 188</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailHttpErrorException: 206</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInvalidResponseDataException: 224</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailClientActionRequiredException: 242</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailMissingCredentialException: 260</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailOAuthException: 278</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInterruptedException: 296</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailParserConfigurationException: 314</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSAXException: 332</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>77</td><td class='count'>16</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l77s0'>        reqType.setReturnAllCurrencies("1");</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulEmpty: 62</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulFilled: 81</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFail: 98</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailUnknownHostException: 116</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSocketException: 134</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailIOException: 152</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSSLException: 170</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInvalidCredentialException: 188</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailHttpErrorException: 206</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInvalidResponseDataException: 224</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailClientActionRequiredException: 242</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailMissingCredentialException: 260</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailOAuthException: 278</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInterruptedException: 296</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailParserConfigurationException: 314</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSAXException: 332</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>78</td><td class='count'>16</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l78s0'>        reqType.setErrorLanguage(this.errorLocale.toString());</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulEmpty: 62</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulFilled: 81</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFail: 98</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailUnknownHostException: 116</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSocketException: 134</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailIOException: 152</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSSLException: 170</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInvalidCredentialException: 188</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailHttpErrorException: 206</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInvalidResponseDataException: 224</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailClientActionRequiredException: 242</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailMissingCredentialException: 260</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailOAuthException: 278</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInterruptedException: 296</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailParserConfigurationException: 314</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSAXException: 332</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>80</td><td class='count'>16</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l80s0'>        GetBalanceReq req = new GetBalanceReq();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulEmpty: 62</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulFilled: 81</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFail: 98</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailUnknownHostException: 116</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSocketException: 134</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailIOException: 152</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSSLException: 170</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInvalidCredentialException: 188</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailHttpErrorException: 206</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInvalidResponseDataException: 224</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailClientActionRequiredException: 242</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailMissingCredentialException: 260</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailOAuthException: 278</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInterruptedException: 296</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailParserConfigurationException: 314</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSAXException: 332</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>81</td><td class='count'>16</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l81s0'>        req.setGetBalanceRequest(reqType);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulEmpty: 62</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulFilled: 81</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFail: 98</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailUnknownHostException: 116</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSocketException: 134</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailIOException: 152</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSSLException: 170</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInvalidCredentialException: 188</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailHttpErrorException: 206</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInvalidResponseDataException: 224</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailClientActionRequiredException: 242</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailMissingCredentialException: 260</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailOAuthException: 278</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInterruptedException: 296</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailParserConfigurationException: 314</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSAXException: 332</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>83</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        try {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>84</td><td class='count'>16</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l84s0'>            GetBalanceResponseType txnResponse = this.service.getBalance(req);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulEmpty: 62</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulFilled: 81</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFail: 98</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailUnknownHostException: 116</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSocketException: 134</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailIOException: 152</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSSLException: 170</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInvalidCredentialException: 188</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailHttpErrorException: 206</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInvalidResponseDataException: 224</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailClientActionRequiredException: 242</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailMissingCredentialException: 260</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailOAuthException: 278</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInterruptedException: 296</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailParserConfigurationException: 314</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSAXException: 332</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>86</td><td class='count'>3</td>
+      <td><pre class='prettyprint jmp'>            <span id='l86s0' title='Executions: 3' class='covered cp' onclick='showHide(this,0)'>if (txnResponse.getErrors() != null</span></pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulEmpty: 62</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulFilled: 81</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFail: 98</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>87</td><td class='count'>2</td>
+      <td><pre class='prettyprint jmp'>                    && <span id='l87s1' title='Executions: 2' class='covered cp' onclick='showHide(this,1)'>!txnResponse.getErrors().isEmpty()) {</span></pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulFilled: 81</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFail: 98</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>88</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l88s0'>                errorCode = txnResponse.getErrors().get(0).getErrorCode();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulFilled: 81</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFail: 98</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>89</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l89s0'>                errorMessage = txnResponse.getErrors().get(0).getLongMessage();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulFilled: 81</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFail: 98</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>90</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>92</td><td class='count'>3</td>
+      <td><pre class='prettyprint jmp'>            <span id='l92s0' title='Executions: 3' class='covered cp' onclick='showHide(this,0)'>if (Arrays.asList(ACK_CODES).contains(txnResponse.getAck())) {</span></pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulEmpty: 62</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulFilled: 81</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFail: 98</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>93</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l93s0'>                results = new ArrayList&lt;CurrencyCodeType>(txnResponse</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulEmpty: 62x2</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulFilled: 81</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>94</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l94s0'>                        .getBalanceHoldings().size());</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulEmpty: 62</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulFilled: 81</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>96</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l96s0'>                for (BasicAmountType amount</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulEmpty: 62</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulFilled: 81</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>97</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l97s0'>                        : txnResponse.getBalanceHoldings()) {</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulEmpty: 62</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulFilled: 81</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>98</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l98s0'>                    LOG.info(String.format(</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulFilled: 81</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>99</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l99s0'>                            "Available currency: %s", amount.getCurrencyID()));</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulFilled: 81</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>100</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l100s0'>                    results.add(amount.getCurrencyID());</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulFilled: 81</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>101</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>102</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>104</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l104s0'>        } catch (UnknownHostException e) {</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulEmpty: 62</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulFilled: 81</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>105</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l105s0'>            errorMessage = this.localizable.getErrorMessageConnectionFailed();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailUnknownHostException: 116</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>106</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l106s0'>        } catch (SocketException e) {</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSocketException: 134</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>107</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l107s0'>            errorMessage = this.localizable.getErrorMessageConnectionFailed();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSocketException: 134</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>108</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l108s0'>        } catch (IOException e) {</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailIOException: 152</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>109</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l109s0'>            errorMessage = e.getLocalizedMessage();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailIOException: 152</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>110</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l110s0'>        } catch (SSLConfigurationException e) {</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSSLException: 170</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>111</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l111s0'>            errorMessage = e.getLocalizedMessage();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSSLException: 170</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>112</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l112s0'>        } catch (InvalidCredentialException e) {</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInvalidCredentialException: 188</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>113</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l113s0'>            errorMessage = e.getLocalizedMessage();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInvalidCredentialException: 188</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>114</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l114s0'>        } catch (HttpErrorException e) {</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailHttpErrorException: 206</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>115</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l115s0'>            errorMessage = e.getLocalizedMessage();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailHttpErrorException: 206</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>116</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l116s0'>        } catch (InvalidResponseDataException e) {</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInvalidResponseDataException: 224</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>117</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l117s0'>            errorMessage = e.getLocalizedMessage();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInvalidResponseDataException: 224</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>118</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l118s0'>        } catch (ClientActionRequiredException e) {</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailClientActionRequiredException: 242</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>119</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l119s0'>            errorMessage = e.getLocalizedMessage();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailClientActionRequiredException: 242</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>120</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l120s0'>        } catch (MissingCredentialException e) {</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailMissingCredentialException: 260</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>121</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l121s0'>            errorMessage = e.getLocalizedMessage();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailMissingCredentialException: 260</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>122</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l122s0'>        } catch (OAuthException e) {</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailOAuthException: 278</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>123</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l123s0'>            errorMessage = e.getLocalizedMessage();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailOAuthException: 278</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>124</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l124s0'>        } catch (InterruptedException e) {</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInterruptedException: 296</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>125</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l125s0'>            errorMessage = e.getLocalizedMessage();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInterruptedException: 296</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>126</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l126s0'>        } catch (ParserConfigurationException e) {</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailParserConfigurationException: 314</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>127</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l127s0'>            errorMessage = e.getLocalizedMessage();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailParserConfigurationException: 314</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>128</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l128s0'>        } catch (SAXException e) {</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSAXException: 332</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>129</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l129s0'>            errorMessage = e.getLocalizedMessage();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSAXException: 332</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>130</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>132</td><td class='count'>32</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l132s0'>        return new ServiceResult&lt;CurrencyCodeType>(</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulEmpty: 62x2</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulFilled: 81x2</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFail: 98x2</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailUnknownHostException: 116x2</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSocketException: 134x2</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailIOException: 152x2</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSSLException: 170x2</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInvalidCredentialException: 188x2</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailHttpErrorException: 206x2</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInvalidResponseDataException: 224x2</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailClientActionRequiredException: 242x2</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailMissingCredentialException: 260x2</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailOAuthException: 278x2</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInterruptedException: 296x2</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailParserConfigurationException: 314x2</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSAXException: 332</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>133</td><td class='count'>16</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l133s0'>                results,</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulEmpty: 62</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulFilled: 81</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFail: 98</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailUnknownHostException: 116</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSocketException: 134</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailIOException: 152</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSSLException: 170</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInvalidCredentialException: 188</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailHttpErrorException: 206</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInvalidResponseDataException: 224</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailClientActionRequiredException: 242</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailMissingCredentialException: 260</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailOAuthException: 278</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInterruptedException: 296</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailParserConfigurationException: 314</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSAXException: 332</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>134</td><td class='count'>16</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l134s0'>                errorCode,</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulEmpty: 62</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulFilled: 81</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFail: 98</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailUnknownHostException: 116</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSocketException: 134</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailIOException: 152</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSSLException: 170</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInvalidCredentialException: 188</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailHttpErrorException: 206</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInvalidResponseDataException: 224</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailClientActionRequiredException: 242</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailMissingCredentialException: 260</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailOAuthException: 278</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInterruptedException: 296</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailParserConfigurationException: 314</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSAXException: 332</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>135</td><td class='count'>16</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l135s0'>                errorMessage);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulEmpty: 62</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulFilled: 81</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFail: 98</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailUnknownHostException: 116</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSocketException: 134</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailIOException: 152</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSSLException: 170</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInvalidCredentialException: 188</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailHttpErrorException: 206</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInvalidResponseDataException: 224</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailClientActionRequiredException: 242</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailMissingCredentialException: 260</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailOAuthException: 278</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInterruptedException: 296</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailParserConfigurationException: 314</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSAXException: 332</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>136</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>137</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>

@@ -13,8 +13,8 @@
     <tr>
       <td class='line'></td><td>&nbsp;</td>
       <td class='comment' onclick='showHideLines(this)'><div>/*
- * Import List - http://my-flow.github.com/importlist/
- * Copyright (C) 2011-2012 Florian J. Breunig
+ * Import List - http://my-flow.github.io/importlist/
+ * Copyright (C) 2011-2013 Florian J. Breunig
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,7 +33,7 @@
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'>19</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>package com.moneydance.modules.features.importlist.view;</pre></td>
+      <td><pre class='prettyprint'>package com.moneydance.modules.features.importlist.presentation;</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
@@ -52,19 +52,19 @@
       <td class='line'>26</td><td class='count'>6</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l26s0'>final class JCustomScrollPane extends JScrollPane {</pre>
         <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.view.JCustomScrollPaneTest#setUp: 37</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
+          <li>com.moneydance.modules.features.importlist.presentation.BaseTableFactoryTest#testGetComponent: 49</li>
+          <li>com.moneydance.modules.features.importlist.presentation.BaseTableFactoryTest#testGetColumnFactory: 57</li>
+          <li>com.moneydance.modules.features.importlist.presentation.JCustomScrollPaneTest#setUp: 38</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 93</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 52</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67</li>
         </ol>
       </td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'>28</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    private static final long serialVersionUID = -2741147624999364681L;</pre></td>
+      <td><pre class='prettyprint'>    private static final long serialVersionUID = 1L;</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
@@ -89,7 +89,7 @@
       <td class='line'>32</td><td class='count'>4</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l32s0'>        super.addNotify();</pre>
         <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.view.JCustomScrollPaneTest#testAddNotify: 45, 49, 56, 60</li>
+          <li>com.moneydance.modules.features.importlist.presentation.JCustomScrollPaneTest#testAddNotify: 45, 49, 56, 60</li>
         </ol>
       </td>
     </tr>
@@ -97,7 +97,7 @@
       <td class='line'>33</td><td class='count'>4</td>
       <td><pre class='prettyprint jmp'>        <span id='l33s0' title='Executions: 4' class='covered cp' onclick='showHide(this,0)'>if (this.getColumnHeader() != null) {</span></pre>
         <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.view.JCustomScrollPaneTest#testAddNotify: 45, 49, 56, 60</li>
+          <li>com.moneydance.modules.features.importlist.presentation.JCustomScrollPaneTest#testAddNotify: 45, 49, 56, 60</li>
         </ol>
       </td>
     </tr>
@@ -105,7 +105,7 @@
       <td class='line'>34</td><td class='count'>2</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l34s0'>            this.getColumnHeader().setOpaque(false);</pre>
         <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.view.JCustomScrollPaneTest#testAddNotify: 49, 60</li>
+          <li>com.moneydance.modules.features.importlist.presentation.JCustomScrollPaneTest#testAddNotify: 49, 60</li>
         </ol>
       </td>
     </tr>
@@ -113,7 +113,7 @@
       <td class='line'>35</td><td class='count'>2</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l35s0'>            this.getColumnHeader().setBackground(this.getBackground());</pre>
         <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.view.JCustomScrollPaneTest#testAddNotify: 49, 60</li>
+          <li>com.moneydance.modules.features.importlist.presentation.JCustomScrollPaneTest#testAddNotify: 49, 60</li>
         </ol>
       </td>
     </tr>
@@ -126,7 +126,7 @@
       <td class='line'>38</td><td class='count'>4</td>
       <td><pre class='prettyprint jmp'>        <span id='l38s0' title='Executions: 4' class='covered cp' onclick='showHide(this,0)'>if (this.getViewport() != null) {</span></pre>
         <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.view.JCustomScrollPaneTest#testAddNotify: 45, 49, 56, 60</li>
+          <li>com.moneydance.modules.features.importlist.presentation.JCustomScrollPaneTest#testAddNotify: 45, 49, 56, 60</li>
         </ol>
       </td>
     </tr>
@@ -134,7 +134,7 @@
       <td class='line'>39</td><td class='count'>2</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l39s0'>            this.getViewport().setOpaque(false);</pre>
         <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.view.JCustomScrollPaneTest#testAddNotify: 56, 60</li>
+          <li>com.moneydance.modules.features.importlist.presentation.JCustomScrollPaneTest#testAddNotify: 56, 60</li>
         </ol>
       </td>
     </tr>
@@ -142,7 +142,7 @@
       <td class='line'>40</td><td class='count'>2</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l40s0'>            this.getViewport().setBackground(this.getBackground());</pre>
         <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.view.JCustomScrollPaneTest#testAddNotify: 56, 60</li>
+          <li>com.moneydance.modules.features.importlist.presentation.JCustomScrollPaneTest#testAddNotify: 56, 60</li>
         </ol>
       </td>
     </tr>
@@ -154,7 +154,7 @@
       <td class='line'>42</td><td class='count'>4</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l42s0'>    }</pre>
         <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.view.JCustomScrollPaneTest#testAddNotify: 45, 49, 56, 60</li>
+          <li>com.moneydance.modules.features.importlist.presentation.JCustomScrollPaneTest#testAddNotify: 45, 49, 56, 60</li>
         </ol>
       </td>
     </tr>

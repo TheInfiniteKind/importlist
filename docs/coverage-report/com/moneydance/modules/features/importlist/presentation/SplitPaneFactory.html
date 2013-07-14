@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JMockit Coverage Report - SplitPaneFactory.java</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../../../../coverage.css'/>
+  <link rel='shortcut icon' type='image/png' href='../../../../../../logo.png'/>
+  <script type='text/javascript' src='../../../../../../coverage.js'></script>
+  <script type='text/javascript' src='../../../../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption>master/src/com/moneydance/modules/features/importlist/presentation/SplitPaneFactory.java</caption>
+    <tr>
+      <td class='line'>1</td><td>&nbsp;</td>
+      <td><pre class='comment'>// Import List - http://my-flow.github.io/importlist/</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>2</td><td>&nbsp;</td>
+      <td><pre class='comment'>// Copyright (C) 2011-2014 Florian J. Breunig</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>3</td><td>&nbsp;</td>
+      <td><pre class='comment'>//</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>4</td><td>&nbsp;</td>
+      <td><pre class='comment'>// This program is free software: you can redistribute it and/or modify</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>5</td><td>&nbsp;</td>
+      <td><pre class='comment'>// it under the terms of the GNU General Public License as published by</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>6</td><td>&nbsp;</td>
+      <td><pre class='comment'>// the Free Software Foundation, either version 3 of the License, or</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>7</td><td>&nbsp;</td>
+      <td><pre class='comment'>// (at your option) any later version.</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>8</td><td>&nbsp;</td>
+      <td><pre class='comment'>//</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>9</td><td>&nbsp;</td>
+      <td><pre class='comment'>// This program is distributed in the hope that it will be useful,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>10</td><td>&nbsp;</td>
+      <td><pre class='comment'>// but WITHOUT ANY WARRANTY; without even the implied warranty of</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>11</td><td>&nbsp;</td>
+      <td><pre class='comment'>// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>12</td><td>&nbsp;</td>
+      <td><pre class='comment'>// GNU General Public License for more details.</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>13</td><td>&nbsp;</td>
+      <td><pre class='comment'>//</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>14</td><td>&nbsp;</td>
+      <td><pre class='comment'>// You should have received a copy of the GNU General Public License</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>15</td><td>&nbsp;</td>
+      <td><pre class='comment'>// along with this program. If not, see &lt;http://www.gnu.org/licenses/>.</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>17</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package com.moneydance.modules.features.importlist.presentation;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import com.moneydance.apps.md.view.gui.MoneydanceLAF;
+
+import javax.swing.JComponent;
+import javax.swing.JSplitPane;
+import javax.swing.border.EmptyBorder;
+</div><span>import ...</span></pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+ * @author Florian J. Breunig
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>28</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>public final class SplitPaneFactory implements ComponentFactory {</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>30</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private       JSplitPane <span class='instance covered' title='Reads: 44 Writes: 4'>splitPane</span>;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>31</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final ComponentFactory topComponentFactory;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>32</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final ComponentFactory bottomComponentFactory;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>34</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public SplitPaneFactory(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>35</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            final ComponentFactory argTopComponentFactory,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>36</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l36s0'>            final ComponentFactory argBottomComponentFactory) {</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>38</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l38s0'>        this.topComponentFactory    = argTopComponentFactory;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>39</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l39s0'>        this.bottomComponentFactory = argBottomComponentFactory;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>40</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l40s0'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>42</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private void init() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>43</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l43s0'>        this.splitPane = new JCustomSplitPane(JSplitPane.VERTICAL_SPLIT);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>44</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l44s0'>        this.splitPane.setResizeWeight(1.0);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>45</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l45s0'>        this.splitPane.setDividerSize(0);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>46</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l46s0'>        this.splitPane.setContinuousLayout(true);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>47</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l47s0'>        this.splitPane.setOpaque(false);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>48</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l48s0'>        this.splitPane.setBorder(MoneydanceLAF.homePageBorder);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>49</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l49s0'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>51</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>52</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public JSplitPane getComponent() {</pre></td>
+    </tr>
+    <tr>
+      <td></td><td class='count'>6</td>
+      <td class='paths'>
+        <span style='cursor:default; background-color:#00ff00' onclick='hidePath()'>Path coverage: 2/2</span>
+        <span class='covered' onclick="showPath(this,'l53s0 l57s0 l64s0')">A: 2</span>
+        <span class='covered' onclick="showPath(this,'l53s0 l54s0 l57s0 l64s0')">B: 4</span>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>53</td><td class='count'>6</td>
+      <td><pre class='prettyprint jmp'>        <span id='l53s0' title='Executions: 6' class='covered'>if (this.splitPane == null)</span> <span id='l53s1' title='Executions: 4' class='covered'>{</span></pre></td>
+    </tr>
+    <tr>
+      <td class='line'>54</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l54s0'>            this.init();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>55</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>57</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered' id='l57s0'>        JComponent topComponent = this.topComponentFactory.getComponent();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>58</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered' id='l58s0'>        topComponent.setBorder(new EmptyBorder(0, 0, 0, 0));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>59</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered' id='l59s0'>        this.splitPane.setTopComponent(topComponent);</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>61</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered' id='l61s0'>        JComponent bottomComponent = this.bottomComponentFactory.getComponent();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>62</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered' id='l62s0'>        this.splitPane.setBottomComponent(bottomComponent);</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>64</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered' id='l64s0'>        return this.splitPane;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>65</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>66</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>

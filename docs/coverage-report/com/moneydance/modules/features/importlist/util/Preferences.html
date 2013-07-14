@@ -4,6 +4,7 @@
   <title>JMockit Coverage Report - Preferences.java</title>
   <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
   <link rel='stylesheet' type='text/css' href='../../../../../../coverage.css'/>
+  <link rel='shortcut icon' type='image/png' href='../../../../../../logo.png'/>
   <script type='text/javascript' src='../../../../../../coverage.js'></script>
   <script type='text/javascript' src='../../../../../../prettify.js'></script>
 </head>
@@ -11,51 +12,90 @@
   <table cellpadding='0' cellspacing='1'>
     <caption>master/src/com/moneydance/modules/features/importlist/util/Preferences.java</caption>
     <tr>
-      <td class='line'></td><td>&nbsp;</td>
-      <td class='comment' onclick='showHideLines(this)'><div>/*
- * Import List - http://my-flow.github.com/importlist/
- * Copyright (C) 2011-2012 Florian J. Breunig
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see &lt;http://www.gnu.org/licenses/>.
- */</div><span>/*...*/</span></td>
+      <td class='line'>1</td><td>&nbsp;</td>
+      <td><pre class='comment'>// Import List - http://my-flow.github.io/importlist/</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>2</td><td>&nbsp;</td>
+      <td><pre class='comment'>// Copyright (C) 2011-2014 Florian J. Breunig</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>3</td><td>&nbsp;</td>
+      <td><pre class='comment'>//</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>4</td><td>&nbsp;</td>
+      <td><pre class='comment'>// This program is free software: you can redistribute it and/or modify</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>5</td><td>&nbsp;</td>
+      <td><pre class='comment'>// it under the terms of the GNU General Public License as published by</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>6</td><td>&nbsp;</td>
+      <td><pre class='comment'>// the Free Software Foundation, either version 3 of the License, or</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>7</td><td>&nbsp;</td>
+      <td><pre class='comment'>// (at your option) any later version.</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>8</td><td>&nbsp;</td>
+      <td><pre class='comment'>//</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>9</td><td>&nbsp;</td>
+      <td><pre class='comment'>// This program is distributed in the hope that it will be useful,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>10</td><td>&nbsp;</td>
+      <td><pre class='comment'>// but WITHOUT ANY WARRANTY; without even the implied warranty of</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>11</td><td>&nbsp;</td>
+      <td><pre class='comment'>// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>12</td><td>&nbsp;</td>
+      <td><pre class='comment'>// GNU General Public License for more details.</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>13</td><td>&nbsp;</td>
+      <td><pre class='comment'>//</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>14</td><td>&nbsp;</td>
+      <td><pre class='comment'>// You should have received a copy of the GNU General Public License</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>15</td><td>&nbsp;</td>
+      <td><pre class='comment'>// along with this program. If not, see &lt;http://www.gnu.org/licenses/>.</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>19</td><td>&nbsp;</td>
+      <td class='line'>17</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>package com.moneydance.modules.features.importlist.util;</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'></td><td>&nbsp;</td>
-      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import java.awt.Color;
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import com.moneydance.apps.md.controller.FeatureModuleContext;
+import com.moneydance.apps.md.controller.UserPreferences;
+import com.moneydance.util.CustomDateFormat;
+import com.moneydance.util.StreamTable;
+
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.Toolkit;
 import java.text.DateFormat;
 import java.util.Hashtable;
 import java.util.Locale;
-import java.util.Observable;
 
 import javax.swing.RowSorter;
 import javax.swing.SortOrder;
 import javax.swing.UIManager;
 
-import org.apache.commons.lang.Validate;
-
-import com.moneydance.apps.md.controller.FeatureModuleContext;
-import com.moneydance.apps.md.controller.UserPreferences;
-import com.moneydance.util.CustomDateFormat;
-import com.moneydance.util.StreamTable;
+import org.apache.commons.lang3.Validate;
 </div><span>import ...</span></pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -71,33 +111,33 @@ import com.moneydance.util.StreamTable;
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>48</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>public final class Preferences extends Observable {</pre></td>
+      <td class='line'>45</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>public final class Preferences {</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
+      <td class='line'>47</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final Settings        settings;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>48</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private       UserPreferences <span class='instance covered' title='Reads: 764 Writes: 209'>userPreferences</span>;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>49</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final StreamTable     columnOrderDefault;</pre></td>
+    </tr>
+    <tr>
       <td class='line'>50</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    private         UserPreferences <span class='instance covered' title='Reads: 780 Writes: 195'>userPreferences</span>;</pre></td>
+      <td><pre class='prettyprint'>    private final StreamTable     sortOrderDefault;</pre></td>
     </tr>
     <tr>
       <td class='line'>51</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    private final   Settings        settings;</pre></td>
+      <td><pre class='prettyprint'>    private final StreamTable     columnWidths;</pre></td>
     </tr>
     <tr>
       <td class='line'>52</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    private final   StreamTable     columnOrderDefault;</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>53</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    private final   StreamTable     sortOrderDefault;</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>54</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    private final   StreamTable     columnWidths;</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>55</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    private         StreamTable     <span class='instance covered' title='Reads: 644 Writes: 3'>columnOrder</span>;</pre></td>
+      <td><pre class='prettyprint'>    private       StreamTable     <span class='instance covered' title='Reads: 734 Writes: 3'>columnOrder</span>;</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
@@ -108,931 +148,412 @@ import com.moneydance.util.StreamTable;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>61</td><td class='count'>37</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l61s0'>    Preferences() {</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44x3</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetUserPreferences: 51, 55</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44</li>
-        </ol>
-      </td>
+      <td class='line'>58</td><td class='count'>38</td>
+      <td><pre class='prettyprint covered' id='l58s0'>    Preferences() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>62</td><td class='count'>37</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l62s0'>        this.settings           = Helper.INSTANCE.getSettings();</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44x3</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetUserPreferences: 51, 55</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44</li>
-        </ol>
-      </td>
+      <td class='line'>59</td><td class='count'>38</td>
+      <td><pre class='prettyprint covered' id='l59s0'>        this.settings           = Helper.INSTANCE.getSettings();</pre></td>
     </tr>
     <tr>
-      <td class='line'>63</td><td class='count'>37</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l63s0'>        this.columnWidths       = new StreamTable();</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44x3</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetUserPreferences: 51, 55</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44</li>
-        </ol>
-      </td>
+      <td class='line'>60</td><td class='count'>38</td>
+      <td><pre class='prettyprint covered' id='l60s0'>        this.columnWidths       = new StreamTable();</pre></td>
     </tr>
     <tr>
-      <td class='line'>64</td><td class='count'>37</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l64s0'>        this.columnOrderDefault = new StreamTable();</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44x3</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetUserPreferences: 51, 55</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44</li>
-        </ol>
-      </td>
+      <td class='line'>61</td><td class='count'>38</td>
+      <td><pre class='prettyprint covered' id='l61s0'>        this.columnOrderDefault = new StreamTable();</pre></td>
     </tr>
     <tr>
-      <td class='line'>65</td><td class='count'>37</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l65s0'>        this.columnOrderDefault.put("0", this.settings.getDescName());</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44x3</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetUserPreferences: 51, 55</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44</li>
-        </ol>
-      </td>
+      <td class='line'>62</td><td class='count'>38</td>
+      <td><pre class='prettyprint covered' id='l62s0'>        this.columnOrderDefault.put("0", this.settings.getDescName());</pre></td>
     </tr>
     <tr>
-      <td class='line'>66</td><td class='count'>37</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l66s0'>        this.columnOrderDefault.put("1", this.settings.getDescModified());</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44x3</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetUserPreferences: 51, 55</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44</li>
-        </ol>
-      </td>
+      <td class='line'>63</td><td class='count'>38</td>
+      <td><pre class='prettyprint covered' id='l63s0'>        this.columnOrderDefault.put("1", this.settings.getDescModified());</pre></td>
     </tr>
     <tr>
-      <td class='line'>67</td><td class='count'>37</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l67s0'>        this.columnOrderDefault.put("2", this.settings.getDescImport());</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44x3</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetUserPreferences: 51, 55</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44</li>
-        </ol>
-      </td>
+      <td class='line'>64</td><td class='count'>38</td>
+      <td><pre class='prettyprint covered' id='l64s0'>        this.columnOrderDefault.put("2", this.settings.getDescImport());</pre></td>
     </tr>
     <tr>
-      <td class='line'>68</td><td class='count'>37</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l68s0'>        this.columnOrderDefault.put("3", this.settings.getDescDelete());</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44x3</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetUserPreferences: 51, 55</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44</li>
-        </ol>
-      </td>
+      <td class='line'>65</td><td class='count'>38</td>
+      <td><pre class='prettyprint covered' id='l65s0'>        this.columnOrderDefault.put("3", this.settings.getDescDelete());</pre></td>
     </tr>
     <tr>
-      <td class='line'>69</td><td class='count'>37</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l69s0'>        this.sortOrderDefault   = new StreamTable();</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44x3</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetUserPreferences: 51, 55</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44</li>
-        </ol>
-      </td>
+      <td class='line'>66</td><td class='count'>38</td>
+      <td><pre class='prettyprint covered' id='l66s0'>        this.sortOrderDefault   = new StreamTable();</pre></td>
     </tr>
     <tr>
-      <td class='line'>70</td><td class='count'>37</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l70s0'>        this.sortOrderDefault.put("0", SortOrder.ASCENDING.toString());</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44x3</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetUserPreferences: 51, 55</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44</li>
-        </ol>
-      </td>
+      <td class='line'>67</td><td class='count'>38</td>
+      <td><pre class='prettyprint covered' id='l67s0'>        this.sortOrderDefault.put("0", SortOrder.ASCENDING.toString());</pre></td>
     </tr>
     <tr>
-      <td class='line'>71</td><td class='count'>37</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l71s0'>    }</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44x3</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetUserPreferences: 51, 55</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44</li>
-        </ol>
-      </td>
+      <td class='line'>68</td><td class='count'>38</td>
+      <td><pre class='prettyprint covered' id='l68s0'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>73</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    public void reload() {</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>74</td><td class='count'>5</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l74s0'>        this.setChanged();</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testReload: 70</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72, 73</li>
-        </ol>
-      </td>
-    </tr>
-    <tr>
-      <td class='line'>75</td><td class='count'>5</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l75s0'>        this.notifyObservers(Boolean.TRUE);</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testReload: 70</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72, 73</li>
-        </ol>
-      </td>
-    </tr>
-    <tr>
-      <td class='line'>76</td><td class='count'>5</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l76s0'>    }</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testReload: 70</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72, 73</li>
-        </ol>
-      </td>
-    </tr>
-    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
-    <tr>
-      <td class='line'>78</td><td>&nbsp;</td>
+      <td class='line'>70</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public void setContext(final FeatureModuleContext context) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>79</td><td class='count'>195</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l79s0'>        this.userPreferences = ((com.moneydance.apps.md.controller.Main)</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#testUpdate: 78</li>
-          <li>com.moneydance.modules.features.importlist.io.DeleteAllOperationTest#setUp: 40x2</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 42x11</li>
-          <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 93</li>
-          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 49x3</li>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 44x16</li>
-          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 42x2</li>
-          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 42x2</li>
-          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 42x2</li>
-          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 42x2</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 45, 46, 45, 46, 45, 46</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetUserPreferences: 53x2</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46</li>
-          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#setUp: 37x16</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#setUp: 40x2</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#setUp: 40x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.AggregationTableModelTest#setUp: 37x6</li>
-          <li>com.moneydance.modules.features.importlist.controller.FileTableModelTest#setUp: 42x7</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 38</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x9</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 38x4</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x9</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 38x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72x9, 73x9</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 38</li>
-        </ol>
-      </td>
+      <td class='line'>71</td><td class='count'>209</td>
+      <td><pre class='prettyprint covered' id='l71s0'>        this.userPreferences = ((com.moneydance.apps.md.controller.Main)</pre></td>
     </tr>
     <tr>
-      <td class='line'>80</td><td>&nbsp;</td>
+      <td class='line'>72</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                context).getPreferences();</pre></td>
     </tr>
     <tr>
-      <td class='line'>81</td><td class='count'>195</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l81s0'>    }</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#testUpdate: 78</li>
-          <li>com.moneydance.modules.features.importlist.io.DeleteAllOperationTest#setUp: 40x2</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 42x11</li>
-          <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 93</li>
-          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 49x3</li>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 44x16</li>
-          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 42x2</li>
-          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 42x2</li>
-          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 42x2</li>
-          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 42x2</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 45, 46, 45, 46, 45, 46</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetUserPreferences: 53x2</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46, 45, 46</li>
-          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#setUp: 37x16</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#setUp: 40x2</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#setUp: 40x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.AggregationTableModelTest#setUp: 37x6</li>
-          <li>com.moneydance.modules.features.importlist.controller.FileTableModelTest#setUp: 42x7</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 38</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x9</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 38x4</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x9</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 38x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72x9, 73x9</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 38</li>
-        </ol>
-      </td>
+      <td class='line'>73</td><td class='count'>209</td>
+      <td><pre class='prettyprint covered' id='l73s0'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>83</td><td>&nbsp;</td>
+      <td class='line'>75</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    private UserPreferences getUserPreferences() {</pre></td>
     </tr>
     <tr>
-      <td></td><td class='count'>388</td>
+      <td></td><td class='count'>381</td>
       <td class='paths'>
         <span style='cursor:default; background-color:#00ff00' onclick='hidePath()'>Path coverage: 2/2</span>
-        <span class='covered' onclick="showPath(this,'l84s0 l90s0')">A: 386</span>
-        <span class='covered' onclick="showPath(this,'l84s0 l85s0 l90s0')">B: 2</span>
+        <span class='covered' onclick="showPath(this,'l76s0 l82s0')">A: 379</span>
+        <span class='covered' onclick="showPath(this,'l76s0 l77s0 l82s0')">B: 2</span>
       </td>
     </tr>
     <tr>
-      <td class='line'>84</td><td class='count'>389</td>
-      <td><pre class='prettyprint jmp'>        <span id='l84s0' title='Executions: 389' class='covered cp' onclick='showHide(this,0)'>if (this.userPreferences == null)</span> <span id='l84s1' title='Executions: 3' class='covered cp' onclick='showHide(this,1)'>{</span></pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41x4</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 46</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#testUnload: 51x5</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41x5</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#testInvokeString: 73x13</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41x3</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testChooseBaseDirectory: 48x16</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testReloadFiles: 59x2</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 43</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testGetBaseDirectory: 66x2</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 43</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testStartMonitor: 76x6</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportAllRows: 89x2</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 43</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportRow: 97x2</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 43</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteAllRows: 106x2</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 43</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteRow: 114x2</li>
-          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 122x4, 128x4, 134x4</li>
-          <li>com.moneydance.modules.features.importlist.io.MacDirectoryChooserTest#testChooseBaseDirectory: 40x3</li>
-          <li>com.moneydance.modules.features.importlist.io.MacDirectoryChooserTest#testGetBaseDirectory: 32, 33x2</li>
-          <li>com.moneydance.modules.features.importlist.io.DefaultDirectoryChooserTest#testChooseBaseDirectory: 40x6</li>
-          <li>com.moneydance.modules.features.importlist.io.DefaultDirectoryChooserTest#testGetBaseDirectory: 32, 33x2</li>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x16</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetBaseDirectory: 104, 105</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetBaseDirectory: 98</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetUserPreferences: 53, 56</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetAllWritablePreferencesToNull: 75x5</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetFullVersion: 80</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetMajorVersion: 86</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetLocale: 92</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testUseProxy: 111</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetProxyHost: 116</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetProxyPort: 122</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testNeedProxyAuthentication: 127</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetProxyUsername: 132</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetProxyPassword: 138</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetColumnWidths: 145, 146</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetColumnWidths: 153</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetColumnNames: 159, 160</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetColumnName: 165</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetSortKey: 175, 176</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetSortKey: 182</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetColumnCount: 188</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetDateFormatter: 196</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetForeground: 232</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetBackground: 238</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetBackgroundAlt: 244</li>
-          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#setUp: 39</li>
-          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testUpdate: 44</li>
-          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#setUp: 39x15</li>
-          <li>com.moneydance.modules.features.importlist.util.TrackerTest#setUp: 35x2</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48x11, 50</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 56x9</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48x16, 50x6</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 56x10</li>
-          <li>com.moneydance.modules.features.importlist.view.EmptyLabelFactoryTest#testGetComponent: 40, 42</li>
-          <li>com.moneydance.modules.features.importlist.view.SplitPaneFactoryTest#testGetComponent: 42x2, 44x2</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testColumnMarginChanged: 53x4</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testColumnMoved: 62, 68x6</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testSorterChanged: 78, 82</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x40</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testChooseBaseDirectory: 91x13</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x40</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72x40, 73</li>
-        </ol>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetUserPreferences: 53, 56</li>
-        </ol>
-      </td>
+      <td class='line'>76</td><td class='count'>381</td>
+      <td><pre class='prettyprint jmp'>        <span id='l76s0' title='Executions: 381' class='covered'>if (this.userPreferences == null)</span> <span id='l76s1' title='Executions: 2' class='covered'>{</span></pre></td>
     </tr>
     <tr>
-      <td class='line'>85</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l85s0'>            this.setChanged();</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetUserPreferences: 53, 56</li>
-        </ol>
-      </td>
+      <td class='line'>77</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered' id='l77s0'>            Helper.INSTANCE.setChanged();</pre></td>
     </tr>
     <tr>
-      <td class='line'>86</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l86s0'>            this.notifyObservers(Boolean.FALSE);</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetUserPreferences: 53, 56</li>
-        </ol>
-      </td>
+      <td class='line'>78</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered' id='l78s0'>            Helper.INSTANCE.notifyObservers(Boolean.FALSE);</pre></td>
     </tr>
     <tr>
-      <td class='line'>87</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l87s0'>            Validate.notNull(this.userPreferences,</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetUserPreferences: 53, 56</li>
-        </ol>
-      </td>
+      <td class='line'>79</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered' id='l79s0'>            Validate.notNull(this.userPreferences,</pre></td>
     </tr>
     <tr>
-      <td class='line'>88</td><td>&nbsp;</td>
+      <td class='line'>80</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                    "user preferences not initialized");</pre></td>
     </tr>
     <tr>
-      <td class='line'>89</td><td>&nbsp;</td>
+      <td class='line'>81</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>        }</pre></td>
     </tr>
     <tr>
-      <td class='line'>90</td><td class='count'>388</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l90s0'>        return this.userPreferences;</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41x4</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 46</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#testUnload: 51x5</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41x5</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#testInvokeString: 73x13</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41x3</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testChooseBaseDirectory: 48x16</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testReloadFiles: 59x2</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 43</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testGetBaseDirectory: 66x2</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 43</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testStartMonitor: 76x6</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportAllRows: 89x2</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 43</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportRow: 97x2</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 43</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteAllRows: 106x2</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 43</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteRow: 114x2</li>
-          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 122x4, 128x4, 134x4</li>
-          <li>com.moneydance.modules.features.importlist.io.MacDirectoryChooserTest#testChooseBaseDirectory: 40x3</li>
-          <li>com.moneydance.modules.features.importlist.io.MacDirectoryChooserTest#testGetBaseDirectory: 32, 33x2</li>
-          <li>com.moneydance.modules.features.importlist.io.DefaultDirectoryChooserTest#testChooseBaseDirectory: 40x6</li>
-          <li>com.moneydance.modules.features.importlist.io.DefaultDirectoryChooserTest#testGetBaseDirectory: 32, 33x2</li>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x16</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetBaseDirectory: 104, 105</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetBaseDirectory: 98</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetUserPreferences: 53</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetAllWritablePreferencesToNull: 75x5</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetFullVersion: 80</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetMajorVersion: 86</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetLocale: 92</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testUseProxy: 111</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetProxyHost: 116</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetProxyPort: 122</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testNeedProxyAuthentication: 127</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetProxyUsername: 132</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetProxyPassword: 138</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetColumnWidths: 145, 146</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetColumnWidths: 153</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetColumnNames: 159, 160</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetColumnName: 165</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetSortKey: 175, 176</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetSortKey: 182</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetColumnCount: 188</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetDateFormatter: 196</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetForeground: 232</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetBackground: 238</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetBackgroundAlt: 244</li>
-          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#setUp: 39</li>
-          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testUpdate: 44</li>
-          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#setUp: 39x15</li>
-          <li>com.moneydance.modules.features.importlist.util.TrackerTest#setUp: 35x2</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48x11, 50</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 56x9</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48x16, 50x6</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 56x10</li>
-          <li>com.moneydance.modules.features.importlist.view.EmptyLabelFactoryTest#testGetComponent: 40, 42</li>
-          <li>com.moneydance.modules.features.importlist.view.SplitPaneFactoryTest#testGetComponent: 42x2, 44x2</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testColumnMarginChanged: 53x4</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testColumnMoved: 62, 68x6</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testSorterChanged: 78, 82</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x40</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testChooseBaseDirectory: 91x13</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x40</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72x40, 73</li>
-        </ol>
-      </td>
+      <td class='line'>82</td><td class='count'>381</td>
+      <td><pre class='prettyprint covered' id='l82s0'>        return this.userPreferences;</pre></td>
     </tr>
     <tr>
-      <td class='line'>91</td><td>&nbsp;</td>
+      <td class='line'>83</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>93</td><td>&nbsp;</td>
+      <td class='line'>85</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public void setAllWritablePreferencesToNull() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>94</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l94s0'>        this.getUserPreferences().setSetting(</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#testUnload: 51</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetAllWritablePreferencesToNull: 75</li>
-        </ol>
-      </td>
+      <td class='line'>86</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered' id='l86s0'>        this.getUserPreferences().setSetting(</pre></td>
     </tr>
     <tr>
-      <td class='line'>95</td><td>&nbsp;</td>
+      <td class='line'>87</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                "importlist.first_run",</pre></td>
     </tr>
     <tr>
-      <td class='line'>96</td><td>&nbsp;</td>
+      <td class='line'>88</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                (String) null);</pre></td>
     </tr>
     <tr>
-      <td class='line'>97</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l97s0'>        this.setBaseDirectory(null);</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#testUnload: 51</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetAllWritablePreferencesToNull: 75</li>
-        </ol>
-      </td>
+      <td class='line'>89</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered' id='l89s0'>        this.setBaseDirectory(null);</pre></td>
     </tr>
     <tr>
-      <td class='line'>98</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l98s0'>        this.getUserPreferences().setSetting(</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#testUnload: 51</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetAllWritablePreferencesToNull: 75</li>
-        </ol>
-      </td>
+      <td class='line'>90</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered' id='l90s0'>        this.getUserPreferences().setSetting(</pre></td>
     </tr>
     <tr>
-      <td class='line'>99</td><td>&nbsp;</td>
+      <td class='line'>91</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                "importlist.column_widths",</pre></td>
     </tr>
     <tr>
-      <td class='line'>100</td><td>&nbsp;</td>
+      <td class='line'>92</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                (StreamTable) null);</pre></td>
     </tr>
     <tr>
-      <td class='line'>101</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l101s0'>        this.setColumnNames(</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#testUnload: 51</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetAllWritablePreferencesToNull: 75</li>
-        </ol>
-      </td>
+      <td class='line'>93</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered' id='l93s0'>        this.setColumnNames(</pre></td>
     </tr>
     <tr>
-      <td class='line'>102</td><td>&nbsp;</td>
+      <td class='line'>94</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                (Hashtable&lt;String, String>) null);</pre></td>
     </tr>
     <tr>
-      <td class='line'>103</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l103s0'>        this.getUserPreferences().setSetting(</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#testUnload: 51</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetAllWritablePreferencesToNull: 75</li>
-        </ol>
-      </td>
+      <td class='line'>95</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered' id='l95s0'>        this.getUserPreferences().setSetting(</pre></td>
     </tr>
     <tr>
-      <td class='line'>104</td><td>&nbsp;</td>
+      <td class='line'>96</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                "importlist.sort_order",</pre></td>
     </tr>
     <tr>
-      <td class='line'>105</td><td>&nbsp;</td>
+      <td class='line'>97</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                (StreamTable) null);</pre></td>
     </tr>
     <tr>
-      <td class='line'>106</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l106s0'>    }</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#testUnload: 51</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetAllWritablePreferencesToNull: 75</li>
-        </ol>
-      </td>
+      <td class='line'>98</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered' id='l98s0'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>108</td><td>&nbsp;</td>
+      <td class='line'>100</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public void setFirstRun(final boolean firstRun) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>109</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l109s0'>        this.getUserPreferences().setSetting(</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
-        </ol>
-      </td>
+      <td class='line'>101</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l101s0'>        this.getUserPreferences().setSetting(</pre></td>
     </tr>
     <tr>
-      <td class='line'>110</td><td>&nbsp;</td>
+      <td class='line'>102</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                "importlist.first_run",</pre></td>
     </tr>
     <tr>
-      <td class='line'>111</td><td>&nbsp;</td>
+      <td class='line'>103</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                firstRun);</pre></td>
     </tr>
     <tr>
-      <td class='line'>112</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l112s0'>    }</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
-        </ol>
-      </td>
+      <td class='line'>104</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l104s0'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>114</td><td>&nbsp;</td>
+      <td class='line'>106</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public boolean isFirstRun() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>115</td><td class='count'>10</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l115s0'>        return this.getUserPreferences().getBoolSetting(</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 46</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
-        </ol>
-      </td>
+      <td class='line'>107</td><td class='count'>12</td>
+      <td><pre class='prettyprint covered' id='l107s0'>        return this.getUserPreferences().getBoolSetting(</pre></td>
     </tr>
     <tr>
-      <td class='line'>116</td><td>&nbsp;</td>
+      <td class='line'>108</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                "importlist.first_run",</pre></td>
     </tr>
     <tr>
-      <td class='line'>117</td><td>&nbsp;</td>
+      <td class='line'>109</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                true);</pre></td>
     </tr>
     <tr>
-      <td class='line'>118</td><td>&nbsp;</td>
+      <td class='line'>110</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>120</td><td>&nbsp;</td>
+      <td class='line'>112</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public String getFullVersion() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>121</td><td class='count'>30</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l121s0'>        final String fullString = this.getUserPreferences().getSetting(</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x16</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetFullVersion: 80</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetMajorVersion: 86</li>
-          <li>com.moneydance.modules.features.importlist.util.TrackerTest#setUp: 35</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
-        </ol>
-      </td>
+      <td class='line'>113</td><td class='count'>28</td>
+      <td><pre class='prettyprint covered' id='l113s0'>        return this.getUserPreferences().getSetting("current_version", "0");</pre></td>
     </tr>
     <tr>
-      <td class='line'>122</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                "current_version", "0");</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>123</td><td class='count'>30</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l123s0'>        return fullString;</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x16</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetFullVersion: 80</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetMajorVersion: 86</li>
-          <li>com.moneydance.modules.features.importlist.util.TrackerTest#setUp: 35</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
-        </ol>
-      </td>
-    </tr>
-    <tr>
-      <td class='line'>124</td><td>&nbsp;</td>
+      <td class='line'>114</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>126</td><td>&nbsp;</td>
+      <td class='line'>116</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public int getMajorVersion() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>127</td><td class='count'>27</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l127s0'>        final String fullString = this.getFullVersion();</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x16</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetMajorVersion: 86</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
-        </ol>
-      </td>
+      <td class='line'>117</td><td class='count'>26</td>
+      <td><pre class='prettyprint covered' id='l117s0'>        final String fullString = this.getFullVersion();</pre></td>
     </tr>
     <tr>
-      <td class='line'>128</td><td class='count'>27</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l128s0'>        final int endIndex = Math.min(</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x16</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetMajorVersion: 86</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
-        </ol>
-      </td>
+      <td class='line'>118</td><td class='count'>26</td>
+      <td><pre class='prettyprint covered' id='l118s0'>        final int endIndex = Math.min(</pre></td>
     </tr>
     <tr>
-      <td class='line'>129</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                this.settings.getLengthOfVersionDigits(),</pre></td>
+      <td class='line'>119</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                Helper.INSTANCE.getSettings().getLengthOfVersionDigits(),</pre></td>
     </tr>
     <tr>
-      <td class='line'>130</td><td>&nbsp;</td>
+      <td class='line'>120</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                fullString.length());</pre></td>
     </tr>
     <tr>
-      <td class='line'>131</td><td class='count'>27</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l131s0'>        String substring = fullString.substring(0, endIndex);</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x16</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetMajorVersion: 86</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
-        </ol>
-      </td>
+      <td class='line'>121</td><td class='count'>26</td>
+      <td><pre class='prettyprint covered' id='l121s0'>        String substring = fullString.substring(0, endIndex);</pre></td>
     </tr>
     <tr>
-      <td class='line'>132</td><td class='count'>27</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l132s0'>        return Integer.parseInt(substring);</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x16</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetMajorVersion: 86</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
-        </ol>
-      </td>
+      <td class='line'>122</td><td class='count'>26</td>
+      <td><pre class='prettyprint covered' id='l122s0'>        return Integer.parseInt(substring);</pre></td>
     </tr>
     <tr>
-      <td class='line'>133</td><td>&nbsp;</td>
+      <td class='line'>123</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>135</td><td>&nbsp;</td>
+      <td class='line'>125</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public Locale getLocale() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>136</td><td class='count'>37</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l136s0'>        return this.getUserPreferences().getLocale();</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
-          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 122x4, 128x4, 134x4</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetUserPreferences: 53, 56</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetLocale: 92</li>
-          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#setUp: 39</li>
-          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testUpdate: 44</li>
-          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#setUp: 39x15</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72, 73</li>
-        </ol>
-      </td>
+      <td class='line'>126</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l126s0'>        return this.getUserPreferences().getLocale();</pre></td>
     </tr>
     <tr>
-      <td class='line'>137</td><td>&nbsp;</td>
+      <td class='line'>127</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>129</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public String getBaseDirectory() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>130</td><td class='count'>115</td>
+      <td><pre class='prettyprint covered' id='l130s0'>        return this.getUserPreferences().getSetting("importlist.import_dir");</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>131</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>133</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public void setBaseDirectory(final String baseDirectory) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>134</td><td class='count'>17</td>
+      <td><pre class='prettyprint covered' id='l134s0'>        this.getUserPreferences().setSetting(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>135</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                "importlist.import_dir",</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>136</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                baseDirectory);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>137</td><td class='count'>17</td>
+      <td><pre class='prettyprint covered' id='l137s0'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'>139</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    public String getBaseDirectory() {</pre></td>
+      <td><pre class='prettyprint'>    public boolean hasProxy() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>140</td><td class='count'>110</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l140s0'>        return this.getUserPreferences().getSetting("importlist.import_dir");</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#testInvokeString: 73x12</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testChooseBaseDirectory: 48x15</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testReloadFiles: 59x2</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testGetBaseDirectory: 66x2</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testStartMonitor: 76x6</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportAllRows: 89x2</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportRow: 97x2</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteAllRows: 106x2</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteRow: 114x2</li>
-          <li>com.moneydance.modules.features.importlist.io.MacDirectoryChooserTest#testChooseBaseDirectory: 40x2</li>
-          <li>com.moneydance.modules.features.importlist.io.MacDirectoryChooserTest#testGetBaseDirectory: 33x2</li>
-          <li>com.moneydance.modules.features.importlist.io.DefaultDirectoryChooserTest#testChooseBaseDirectory: 40x5</li>
-          <li>com.moneydance.modules.features.importlist.io.DefaultDirectoryChooserTest#testGetBaseDirectory: 33x2</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetBaseDirectory: 105</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetBaseDirectory: 98</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x12</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testChooseBaseDirectory: 91x12</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x12</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72x12, 73</li>
-        </ol>
-      </td>
+      <td class='line'>140</td><td class='count'>5</td>
+      <td><pre class='prettyprint covered' id='l140s0'>        return this.getUserPreferences().getBoolSetting(</pre></td>
     </tr>
     <tr>
       <td class='line'>141</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    }</pre></td>
-    </tr>
-    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
-    <tr>
-      <td class='line'>143</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    public void setBaseDirectory(final String baseDirectory) {</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>144</td><td class='count'>21</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l144s0'>        this.getUserPreferences().setSetting(</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#testUnload: 51</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#testInvokeString: 73</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testChooseBaseDirectory: 48</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 43x9</li>
-          <li>com.moneydance.modules.features.importlist.io.MacDirectoryChooserTest#testChooseBaseDirectory: 40</li>
-          <li>com.moneydance.modules.features.importlist.io.MacDirectoryChooserTest#testGetBaseDirectory: 32</li>
-          <li>com.moneydance.modules.features.importlist.io.DefaultDirectoryChooserTest#testChooseBaseDirectory: 40</li>
-          <li>com.moneydance.modules.features.importlist.io.DefaultDirectoryChooserTest#testGetBaseDirectory: 32</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetBaseDirectory: 104</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetAllWritablePreferencesToNull: 75</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testChooseBaseDirectory: 91</li>
-        </ol>
-      </td>
-    </tr>
-    <tr>
-      <td class='line'>145</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                "importlist.import_dir",</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>146</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                baseDirectory);</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>147</td><td class='count'>21</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l147s0'>    }</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#testUnload: 51</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#testInvokeString: 73</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testChooseBaseDirectory: 48</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 43x9</li>
-          <li>com.moneydance.modules.features.importlist.io.MacDirectoryChooserTest#testChooseBaseDirectory: 40</li>
-          <li>com.moneydance.modules.features.importlist.io.MacDirectoryChooserTest#testGetBaseDirectory: 32</li>
-          <li>com.moneydance.modules.features.importlist.io.DefaultDirectoryChooserTest#testChooseBaseDirectory: 40</li>
-          <li>com.moneydance.modules.features.importlist.io.DefaultDirectoryChooserTest#testGetBaseDirectory: 32</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetBaseDirectory: 104</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetAllWritablePreferencesToNull: 75</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testChooseBaseDirectory: 91</li>
-        </ol>
-      </td>
-    </tr>
-    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
-    <tr>
-      <td class='line'>149</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    public boolean useProxy() {</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>150</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l150s0'>        return this.getUserPreferences().getBoolSetting(</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testUseProxy: 111</li>
-          <li>com.moneydance.modules.features.importlist.util.TrackerTest#setUp: 35</li>
-        </ol>
-      </td>
-    </tr>
-    <tr>
-      <td class='line'>151</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                UserPreferences.NET_USE_PROXY,</pre></td>
     </tr>
     <tr>
-      <td class='line'>152</td><td>&nbsp;</td>
+      <td class='line'>142</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                false);</pre></td>
     </tr>
     <tr>
-      <td class='line'>153</td><td>&nbsp;</td>
+      <td class='line'>143</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>155</td><td>&nbsp;</td>
+      <td class='line'>145</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public String getProxyHost() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>156</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l156s0'>        return this.getUserPreferences().getSetting(</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetProxyHost: 116</li>
-        </ol>
-      </td>
+      <td class='line'>146</td><td class='count'>5</td>
+      <td><pre class='prettyprint covered' id='l146s0'>        return this.getUserPreferences().getSetting(</pre></td>
     </tr>
     <tr>
-      <td class='line'>157</td><td>&nbsp;</td>
+      <td class='line'>147</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                UserPreferences.NET_PROXY_HOST);</pre></td>
     </tr>
     <tr>
-      <td class='line'>158</td><td>&nbsp;</td>
+      <td class='line'>148</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>160</td><td>&nbsp;</td>
+      <td class='line'>150</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public int getProxyPort() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>161</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l161s0'>        return this.getUserPreferences().getIntSetting(</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetProxyPort: 122</li>
-        </ol>
-      </td>
+      <td class='line'>151</td><td class='count'>5</td>
+      <td><pre class='prettyprint covered' id='l151s0'>        return this.getUserPreferences().getIntSetting(</pre></td>
     </tr>
     <tr>
-      <td class='line'>162</td><td>&nbsp;</td>
+      <td class='line'>152</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                UserPreferences.NET_PROXY_PORT,</pre></td>
     </tr>
     <tr>
-      <td class='line'>163</td><td>&nbsp;</td>
+      <td class='line'>153</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                0);</pre></td>
     </tr>
     <tr>
-      <td class='line'>164</td><td>&nbsp;</td>
+      <td class='line'>154</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>166</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    public boolean needProxyAuthentication() {</pre></td>
+      <td class='line'>156</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public boolean hasProxyAuthentication() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>167</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l167s0'>        return this.getUserPreferences().getBoolSetting(</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testNeedProxyAuthentication: 127</li>
-        </ol>
-      </td>
+      <td class='line'>157</td><td class='count'>5</td>
+      <td><pre class='prettyprint covered' id='l157s0'>        return this.getUserPreferences().getBoolSetting(</pre></td>
     </tr>
     <tr>
-      <td class='line'>168</td><td>&nbsp;</td>
+      <td class='line'>158</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                UserPreferences.NET_AUTH_PROXY,</pre></td>
     </tr>
     <tr>
-      <td class='line'>169</td><td>&nbsp;</td>
+      <td class='line'>159</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                false);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>160</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>162</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public String getProxyUsername() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>163</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l163s0'>        return this.getUserPreferences().getSetting(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>164</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                UserPreferences.NET_PROXY_USER);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>165</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>167</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public String getProxyPassword() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>168</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l168s0'>        return this.getUserPreferences().getSetting(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>169</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                UserPreferences.NET_PROXY_PASS);</pre></td>
     </tr>
     <tr>
       <td class='line'>170</td><td>&nbsp;</td>
@@ -1041,638 +562,286 @@ import com.moneydance.util.StreamTable;
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'>172</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    public String getProxyUsername() {</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>173</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l173s0'>        return this.getUserPreferences().getSetting(</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetProxyUsername: 132</li>
-        </ol>
-      </td>
-    </tr>
-    <tr>
-      <td class='line'>174</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                UserPreferences.NET_PROXY_USER);</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>175</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    }</pre></td>
-    </tr>
-    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
-    <tr>
-      <td class='line'>177</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    public String getProxyPassword() {</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>178</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l178s0'>        return this.getUserPreferences().getSetting(</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetProxyPassword: 138</li>
-        </ol>
-      </td>
-    </tr>
-    <tr>
-      <td class='line'>179</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                UserPreferences.NET_PROXY_PASS);</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>180</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    }</pre></td>
-    </tr>
-    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
-    <tr>
-      <td class='line'>182</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public void setColumnWidths(</pre></td>
     </tr>
     <tr>
-      <td class='line'>183</td><td>&nbsp;</td>
+      <td class='line'>173</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>            final int column,</pre></td>
     </tr>
     <tr>
-      <td class='line'>184</td><td>&nbsp;</td>
+      <td class='line'>174</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>            final int columnWidth) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>185</td><td class='count'>9</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l185s0'>        this.columnWidths.put(Integer.toString(column), columnWidth);</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetColumnWidths: 145</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testColumnMarginChanged: 53x4</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testColumnMoved: 68</li>
-        </ol>
-      </td>
+      <td class='line'>175</td><td class='count'>9</td>
+      <td><pre class='prettyprint covered' id='l175s0'>        this.columnWidths.put(Integer.toString(column), columnWidth);</pre></td>
     </tr>
     <tr>
-      <td class='line'>186</td><td class='count'>9</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l186s0'>        this.getUserPreferences().setSetting(</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetColumnWidths: 145</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testColumnMarginChanged: 53x4</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testColumnMoved: 68</li>
-        </ol>
-      </td>
+      <td class='line'>176</td><td class='count'>9</td>
+      <td><pre class='prettyprint covered' id='l176s0'>        this.getUserPreferences().setSetting(</pre></td>
     </tr>
     <tr>
-      <td class='line'>187</td><td>&nbsp;</td>
+      <td class='line'>177</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                "importlist.column_widths",</pre></td>
     </tr>
     <tr>
-      <td class='line'>188</td><td>&nbsp;</td>
+      <td class='line'>178</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                this.columnWidths);</pre></td>
     </tr>
     <tr>
-      <td class='line'>189</td><td class='count'>9</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l189s0'>    }</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetColumnWidths: 145</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testColumnMarginChanged: 53x4</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testColumnMoved: 68</li>
-        </ol>
-      </td>
+      <td class='line'>179</td><td class='count'>9</td>
+      <td><pre class='prettyprint covered' id='l179s0'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>191</td><td>&nbsp;</td>
+      <td class='line'>181</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public int getColumnWidths(final int column) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>192</td><td class='count'>42</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l192s0'>        StreamTable streamTable = this.getUserPreferences().getTableSetting(</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetColumnWidths: 146</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetColumnWidths: 153</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48x4</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 56x4</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48x4</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 56x4</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x8</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x8</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
-        </ol>
-      </td>
+      <td class='line'>182</td><td class='count'>38</td>
+      <td><pre class='prettyprint covered' id='l182s0'>        StreamTable streamTable = this.getUserPreferences().getTableSetting(</pre></td>
     </tr>
     <tr>
-      <td class='line'>193</td><td>&nbsp;</td>
+      <td class='line'>183</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                "importlist.column_widths",</pre></td>
     </tr>
     <tr>
-      <td class='line'>194</td><td>&nbsp;</td>
+      <td class='line'>184</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                this.columnWidths);</pre></td>
     </tr>
     <tr>
-      <td class='line'>195</td><td class='count'>42</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l195s0'>        return streamTable.getInt(</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetColumnWidths: 146</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetColumnWidths: 153</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48x4</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 56x4</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48x4</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 56x4</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x8</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x8</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
-        </ol>
-      </td>
+      <td class='line'>185</td><td class='count'>38</td>
+      <td><pre class='prettyprint covered' id='l185s0'>        return streamTable.getInt(</pre></td>
     </tr>
     <tr>
-      <td class='line'>196</td><td>&nbsp;</td>
+      <td class='line'>186</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                Integer.toString(column),</pre></td>
     </tr>
     <tr>
-      <td class='line'>197</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                this.settings.getColumnWidth());</pre></td>
+      <td class='line'>187</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                Helper.INSTANCE.getSettings().getColumnWidth());</pre></td>
     </tr>
     <tr>
-      <td class='line'>198</td><td>&nbsp;</td>
+      <td class='line'>188</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>200</td><td>&nbsp;</td>
+      <td class='line'>190</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public void setColumnNames(final Hashtable&lt;String, String> hashtable) {</pre></td>
     </tr>
     <tr>
       <td></td><td class='count'>5</td>
       <td class='paths'>
         <span style='cursor:default; background-color:#00ff00' onclick='hidePath()'>Path coverage: 2/2</span>
-        <span class='covered' onclick="showPath(this,'l201s0 l202s0 l206s0 l209s0')">A: 3</span>
-        <span class='covered' onclick="showPath(this,'l201s0 l202s0 l203s0 l206s0 l209s0')">B: 2</span>
+        <span class='covered' onclick="showPath(this,'l191s0 l192s0 l196s0 l199s0')">A: 3</span>
+        <span class='covered' onclick="showPath(this,'l191s0 l192s0 l193s0 l196s0 l199s0')">B: 2</span>
       </td>
     </tr>
     <tr>
-      <td class='line'>201</td><td class='count'>5</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l201s0'>        StreamTable streamTable = null;</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#testUnload: 51</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetAllWritablePreferencesToNull: 75</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetColumnNames: 159, 160</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testColumnMoved: 68</li>
-        </ol>
-      </td>
+      <td class='line'>191</td><td class='count'>5</td>
+      <td><pre class='prettyprint covered' id='l191s0'>        StreamTable streamTable = null;</pre></td>
     </tr>
     <tr>
-      <td class='line'>202</td><td class='count'>5</td>
-      <td><pre class='prettyprint jmp'>        <span id='l202s0' title='Executions: 5' class='covered cp' onclick='showHide(this,0)'>if (hashtable != null)</span> <span id='l202s1' title='Executions: 2' class='covered cp' onclick='showHide(this,1)'>{</span></pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#testUnload: 51</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetAllWritablePreferencesToNull: 75</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetColumnNames: 159, 160</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testColumnMoved: 68</li>
-        </ol>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetColumnNames: 160</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testColumnMoved: 68</li>
-        </ol>
-      </td>
+      <td class='line'>192</td><td class='count'>5</td>
+      <td><pre class='prettyprint jmp'>        <span id='l192s0' title='Executions: 5' class='covered'>if (hashtable != null)</span> <span id='l192s1' title='Executions: 2' class='covered'>{</span></pre></td>
     </tr>
     <tr>
-      <td class='line'>203</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l203s0'>            streamTable = new StreamTable();</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetColumnNames: 160</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testColumnMoved: 68</li>
-        </ol>
-      </td>
+      <td class='line'>193</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered' id='l193s0'>            streamTable = new StreamTable();</pre></td>
     </tr>
     <tr>
-      <td class='line'>204</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l204s0'>            streamTable.merge(hashtable);</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetColumnNames: 160</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testColumnMoved: 68</li>
-        </ol>
-      </td>
+      <td class='line'>194</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered' id='l194s0'>            streamTable.merge(hashtable);</pre></td>
     </tr>
     <tr>
-      <td class='line'>205</td><td>&nbsp;</td>
+      <td class='line'>195</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>        }</pre></td>
     </tr>
     <tr>
-      <td class='line'>206</td><td class='count'>5</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l206s0'>        this.getUserPreferences().setSetting(</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#testUnload: 51</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetAllWritablePreferencesToNull: 75</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetColumnNames: 159, 160</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testColumnMoved: 68</li>
-        </ol>
-      </td>
+      <td class='line'>196</td><td class='count'>5</td>
+      <td><pre class='prettyprint covered' id='l196s0'>        this.getUserPreferences().setSetting(</pre></td>
     </tr>
     <tr>
-      <td class='line'>207</td><td>&nbsp;</td>
+      <td class='line'>197</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                "importlist.column_order",</pre></td>
     </tr>
     <tr>
-      <td class='line'>208</td><td>&nbsp;</td>
+      <td class='line'>198</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                streamTable);</pre></td>
     </tr>
     <tr>
-      <td class='line'>209</td><td class='count'>5</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l209s0'>    }</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#testUnload: 51</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetAllWritablePreferencesToNull: 75</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetColumnNames: 159, 160</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testColumnMoved: 68</li>
-        </ol>
-      </td>
+      <td class='line'>199</td><td class='count'>5</td>
+      <td><pre class='prettyprint covered' id='l199s0'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>211</td><td>&nbsp;</td>
+      <td class='line'>201</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public String getColumnName(final int column) {</pre></td>
     </tr>
     <tr>
-      <td></td><td class='count'>180</td>
+      <td></td><td class='count'>220</td>
       <td class='paths'>
         <span style='cursor:default; background-color:#00ff00' onclick='hidePath()'>Path coverage: 2/2</span>
-        <span class='covered' onclick="showPath(this,'l212s0 l217s0')">A: 179</span>
-        <span class='covered' onclick="showPath(this,'l212s0 l213s0 l217s0')">B: 1</span>
+        <span class='covered' onclick="showPath(this,'l202s0 l207s0')">A: 219</span>
+        <span class='covered' onclick="showPath(this,'l202s0 l203s0 l207s0')">B: 1</span>
       </td>
     </tr>
     <tr>
-      <td class='line'>212</td><td class='count'>180</td>
-      <td><pre class='prettyprint jmp'>        <span id='l212s0' title='Executions: 180' class='covered cp' onclick='showHide(this,0)'>if (this.columnOrder == null)</span> <span id='l212s1' title='Executions: 1' class='covered cp' onclick='showHide(this,1)'>{</span></pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetColumnName: 165, 167</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48x4</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 56x4</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48x5</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 56x5</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#setUp: 47x4</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testColumnMarginChanged: 53x4</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#setUp: 47x4</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testColumnMoved: 63x5, 68x8</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#setUp: 47x4</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testSorterChanged: 79x5</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#setUp: 47x12</li>
-          <li>com.moneydance.modules.features.importlist.controller.AggregationTableModelTest#testIsCellEditable: 43, 44, 45</li>
-          <li>com.moneydance.modules.features.importlist.controller.AggregationTableModelTest#testGetValueAt: 56, 58, 60, 62, 64</li>
-          <li>com.moneydance.modules.features.importlist.controller.AggregationTableModelTest#testGetColumnNameInt: 76</li>
-          <li>com.moneydance.modules.features.importlist.controller.FileTableModelTest#testIsCellEditable: 51, 52, 53</li>
-          <li>com.moneydance.modules.features.importlist.controller.FileTableModelTest#testGetColumnClassInt: 58, 60, 62, 64, 66</li>
-          <li>com.moneydance.modules.features.importlist.controller.FileTableModelTest#testGetColumnNameInt: 96</li>
-          <li>com.moneydance.modules.features.importlist.controller.FileTableModelTest#testGetValueAtForFullModel: 77, 79, 81, 83, 85</li>
-          <li>com.moneydance.modules.features.importlist.controller.FileTableRowSorterTest#testIsSortable: 43, 44, 45</li>
-          <li>com.moneydance.modules.features.importlist.controller.FileTableRowSorterTest#testGetComparatorInt: 50, 51x2, 52</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x28</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x28</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
-        </ol>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetColumnName: 165</li>
-        </ol>
-      </td>
+      <td class='line'>202</td><td class='count'>220</td>
+      <td><pre class='prettyprint jmp'>        <span id='l202s0' title='Executions: 220' class='covered'>if (this.columnOrder == null)</span> <span id='l202s1' title='Executions: 1' class='covered'>{</span></pre></td>
     </tr>
     <tr>
-      <td class='line'>213</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l213s0'>            this.columnOrder = this.getUserPreferences().getTableSetting(</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetColumnName: 165</li>
-        </ol>
-      </td>
+      <td class='line'>203</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l203s0'>            this.columnOrder = this.getUserPreferences().getTableSetting(</pre></td>
     </tr>
     <tr>
-      <td class='line'>214</td><td>&nbsp;</td>
+      <td class='line'>204</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                    "importlist.column_order",</pre></td>
     </tr>
     <tr>
-      <td class='line'>215</td><td>&nbsp;</td>
+      <td class='line'>205</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                    this.columnOrderDefault);</pre></td>
     </tr>
     <tr>
-      <td class='line'>216</td><td>&nbsp;</td>
+      <td class='line'>206</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>        }</pre></td>
     </tr>
     <tr>
-      <td class='line'>217</td><td class='count'>180</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l217s0'>        return this.columnOrder.getStr(Integer.toString(column), null);</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetColumnName: 165, 167</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48x4</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 56x4</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48x5</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 56x5</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#setUp: 47x4</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testColumnMarginChanged: 53x4</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#setUp: 47x4</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testColumnMoved: 63x5, 68x8</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#setUp: 47x4</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testSorterChanged: 79x5</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#setUp: 47x12</li>
-          <li>com.moneydance.modules.features.importlist.controller.AggregationTableModelTest#testIsCellEditable: 43, 44, 45</li>
-          <li>com.moneydance.modules.features.importlist.controller.AggregationTableModelTest#testGetValueAt: 56, 58, 60, 62, 64</li>
-          <li>com.moneydance.modules.features.importlist.controller.AggregationTableModelTest#testGetColumnNameInt: 76</li>
-          <li>com.moneydance.modules.features.importlist.controller.FileTableModelTest#testIsCellEditable: 51, 52, 53</li>
-          <li>com.moneydance.modules.features.importlist.controller.FileTableModelTest#testGetColumnClassInt: 58, 60, 62, 64, 66</li>
-          <li>com.moneydance.modules.features.importlist.controller.FileTableModelTest#testGetColumnNameInt: 96</li>
-          <li>com.moneydance.modules.features.importlist.controller.FileTableModelTest#testGetValueAtForFullModel: 77, 79, 81, 83, 85</li>
-          <li>com.moneydance.modules.features.importlist.controller.FileTableRowSorterTest#testIsSortable: 43, 44, 45</li>
-          <li>com.moneydance.modules.features.importlist.controller.FileTableRowSorterTest#testGetComparatorInt: 50, 51x2, 52</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x28</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x28</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
-        </ol>
-      </td>
+      <td class='line'>207</td><td class='count'>220</td>
+      <td><pre class='prettyprint covered' id='l207s0'>        return this.columnOrder.getStr(Integer.toString(column), null);</pre></td>
     </tr>
     <tr>
-      <td class='line'>218</td><td>&nbsp;</td>
+      <td class='line'>208</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>220</td><td>&nbsp;</td>
+      <td class='line'>210</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public void setSortKey(final RowSorter.SortKey sortKey) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>221</td><td class='count'>6</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l221s0'>        StreamTable streamTable = new StreamTable();</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetSortKey: 175</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testColumnMoved: 68</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testSorterChanged: 82</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
-        </ol>
-      </td>
+      <td class='line'>211</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered' id='l211s0'>        StreamTable streamTable = new StreamTable();</pre></td>
     </tr>
     <tr>
-      <td class='line'>222</td><td class='count'>6</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l222s0'>        streamTable.put(sortKey.getColumn(), sortKey.getSortOrder().toString());</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetSortKey: 175</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testColumnMoved: 68</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testSorterChanged: 82</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
-        </ol>
-      </td>
+      <td class='line'>212</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered' id='l212s0'>        streamTable.put(sortKey.getColumn(), sortKey.getSortOrder().toString());</pre></td>
     </tr>
     <tr>
-      <td class='line'>223</td><td class='count'>6</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l223s0'>        this.getUserPreferences().setSetting(</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetSortKey: 175</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testColumnMoved: 68</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testSorterChanged: 82</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
-        </ol>
-      </td>
+      <td class='line'>213</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered' id='l213s0'>        this.getUserPreferences().setSetting(</pre></td>
     </tr>
     <tr>
-      <td class='line'>224</td><td>&nbsp;</td>
+      <td class='line'>214</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                "importlist.sort_order",</pre></td>
     </tr>
     <tr>
-      <td class='line'>225</td><td>&nbsp;</td>
+      <td class='line'>215</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                streamTable);</pre></td>
     </tr>
     <tr>
-      <td class='line'>226</td><td class='count'>6</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l226s0'>    }</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetSortKey: 175</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testColumnMoved: 68</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testSorterChanged: 82</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
-        </ol>
-      </td>
+      <td class='line'>216</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered' id='l216s0'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>228</td><td>&nbsp;</td>
+      <td class='line'>218</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public RowSorter.SortKey getSortKey() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>229</td><td class='count'>9</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l229s0'>        StreamTable streamTable = this.getUserPreferences().getTableSetting(</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetSortKey: 176</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetSortKey: 182</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testColumnMoved: 62</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testSorterChanged: 78</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
-        </ol>
-      </td>
+      <td class='line'>219</td><td class='count'>9</td>
+      <td><pre class='prettyprint covered' id='l219s0'>        StreamTable streamTable = this.getUserPreferences().getTableSetting(</pre></td>
     </tr>
     <tr>
-      <td class='line'>230</td><td>&nbsp;</td>
+      <td class='line'>220</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                "importlist.sort_order", this.sortOrderDefault);</pre></td>
     </tr>
     <tr>
-      <td class='line'>231</td><td class='count'>9</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l231s0'>        Object key        = streamTable.keys().nextElement();</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetSortKey: 176</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetSortKey: 182</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testColumnMoved: 62</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testSorterChanged: 78</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
-        </ol>
-      </td>
+      <td class='line'>221</td><td class='count'>9</td>
+      <td><pre class='prettyprint covered' id='l221s0'>        Object key        = streamTable.keys().nextElement();</pre></td>
     </tr>
     <tr>
-      <td class='line'>232</td><td class='count'>9</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l232s0'>        int column        = Integer.parseInt(key.toString());</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetSortKey: 176</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetSortKey: 182</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testColumnMoved: 62</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testSorterChanged: 78</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
-        </ol>
-      </td>
+      <td class='line'>222</td><td class='count'>9</td>
+      <td><pre class='prettyprint covered' id='l222s0'>        int column        = Integer.parseInt(key.toString());</pre></td>
     </tr>
     <tr>
-      <td class='line'>233</td><td class='count'>9</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l233s0'>        String sortOrder  = streamTable.getStr(key, null);</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetSortKey: 176</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetSortKey: 182</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testColumnMoved: 62</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testSorterChanged: 78</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
-        </ol>
-      </td>
+      <td class='line'>223</td><td class='count'>9</td>
+      <td><pre class='prettyprint covered' id='l223s0'>        String sortOrder  = streamTable.getStr(key, null);</pre></td>
     </tr>
     <tr>
-      <td class='line'>234</td><td class='count'>9</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l234s0'>        return new RowSorter.SortKey(column, SortOrder.valueOf(sortOrder));</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetSortKey: 176</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetSortKey: 182</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testColumnMoved: 62</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testSorterChanged: 78</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
-        </ol>
-      </td>
+      <td class='line'>224</td><td class='count'>9</td>
+      <td><pre class='prettyprint covered' id='l224s0'>        return new RowSorter.SortKey(column, SortOrder.valueOf(sortOrder));</pre></td>
     </tr>
     <tr>
-      <td class='line'>235</td><td>&nbsp;</td>
+      <td class='line'>225</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>237</td><td>&nbsp;</td>
+      <td class='line'>227</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public int getColumnCount() {</pre></td>
     </tr>
     <tr>
-      <td></td><td class='count'>142</td>
+      <td></td><td class='count'>147</td>
       <td class='paths'>
         <span style='cursor:default; background-color:#00ff00' onclick='hidePath()'>Path coverage: 2/2</span>
-        <span class='covered' onclick="showPath(this,'l238s0 l243s0')">A: 140</span>
-        <span class='covered' onclick="showPath(this,'l238s0 l239s0 l243s0')">B: 2</span>
+        <span class='covered' onclick="showPath(this,'l228s0 l233s0')">A: 145</span>
+        <span class='covered' onclick="showPath(this,'l228s0 l229s0 l233s0')">B: 2</span>
       </td>
     </tr>
     <tr>
-      <td class='line'>238</td><td class='count'>142</td>
-      <td><pre class='prettyprint jmp'>        <span id='l238s0' title='Executions: 142' class='covered cp' onclick='showHide(this,0)'>if (this.columnOrder == null)</span> <span id='l238s1' title='Executions: 2' class='covered cp' onclick='showHide(this,1)'>{</span></pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetColumnCount: 188, 190</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48x5</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 56x5</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48x11</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 56x11</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#setUp: 47x10</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testColumnMoved: 63x6</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#setUp: 47x5</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testSorterChanged: 79x6</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#setUp: 47x15</li>
-          <li>com.moneydance.modules.features.importlist.controller.AggregationTableModelTest#testGetColumnCount: 70</li>
-          <li>com.moneydance.modules.features.importlist.controller.FileTableModelTest#testGetColumnCount: 90</li>
-          <li>com.moneydance.modules.features.importlist.controller.FileTableRowSorterTest#testGetComparatorInt: 51</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x21</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x21</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
-        </ol>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetColumnCount: 188</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48</li>
-        </ol>
-      </td>
+      <td class='line'>228</td><td class='count'>147</td>
+      <td><pre class='prettyprint jmp'>        <span id='l228s0' title='Executions: 147' class='covered'>if (this.columnOrder == null)</span> <span id='l228s1' title='Executions: 2' class='covered'>{</span></pre></td>
     </tr>
     <tr>
-      <td class='line'>239</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l239s0'>            this.columnOrder = this.getUserPreferences().getTableSetting(</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetColumnCount: 188</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48</li>
-        </ol>
-      </td>
+      <td class='line'>229</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered' id='l229s0'>            this.columnOrder = this.getUserPreferences().getTableSetting(</pre></td>
     </tr>
     <tr>
-      <td class='line'>240</td><td>&nbsp;</td>
+      <td class='line'>230</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                    "importlist.column_order",</pre></td>
     </tr>
     <tr>
-      <td class='line'>241</td><td>&nbsp;</td>
+      <td class='line'>231</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                    this.columnOrderDefault);</pre></td>
     </tr>
     <tr>
-      <td class='line'>242</td><td>&nbsp;</td>
+      <td class='line'>232</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>        }</pre></td>
     </tr>
     <tr>
-      <td class='line'>243</td><td class='count'>142</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l243s0'>        return this.columnOrder.size();</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetColumnCount: 188, 190</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48x5</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 56x5</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48x11</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 56x11</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#setUp: 47x10</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testColumnMoved: 63x6</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#setUp: 47x5</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testSorterChanged: 79x6</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#setUp: 47x15</li>
-          <li>com.moneydance.modules.features.importlist.controller.AggregationTableModelTest#testGetColumnCount: 70</li>
-          <li>com.moneydance.modules.features.importlist.controller.FileTableModelTest#testGetColumnCount: 90</li>
-          <li>com.moneydance.modules.features.importlist.controller.FileTableRowSorterTest#testGetComparatorInt: 51</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x21</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x21</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
-        </ol>
-      </td>
+      <td class='line'>233</td><td class='count'>147</td>
+      <td><pre class='prettyprint covered' id='l233s0'>        return this.columnOrder.size();</pre></td>
     </tr>
     <tr>
-      <td class='line'>244</td><td>&nbsp;</td>
+      <td class='line'>234</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>246</td><td>&nbsp;</td>
+      <td class='line'>236</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public CustomDateFormat getDateFormatter() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>247</td><td class='count'>17</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l247s0'>        return this.getUserPreferences().getShortDateFormatter();</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetDateFormatter: 196</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48x2, 50</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x3</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x3</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72x3, 73</li>
-        </ol>
-      </td>
+      <td class='line'>237</td><td class='count'>16</td>
+      <td><pre class='prettyprint covered' id='l237s0'>        return this.getUserPreferences().getShortDateFormatter();</pre></td>
     </tr>
     <tr>
-      <td class='line'>248</td><td>&nbsp;</td>
+      <td class='line'>238</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>250</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    public DateFormat getTimeFormatter() {</pre></td>
+      <td class='line'>240</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public static DateFormat getTimeFormatter() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>251</td><td class='count'>17</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l251s0'>        return DateFormat.getTimeInstance();</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetTimeFormatter: 202</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48x2, 50</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x3</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x3</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72x3, 73</li>
-        </ol>
-      </td>
+      <td class='line'>241</td><td class='count'>16</td>
+      <td><pre class='prettyprint covered' id='l241s0'>        return DateFormat.getTimeInstance();</pre></td>
     </tr>
     <tr>
-      <td class='line'>252</td><td>&nbsp;</td>
+      <td class='line'>242</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -1683,24 +852,15 @@ import com.moneydance.util.StreamTable;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>257</td><td>&nbsp;</td>
+      <td class='line'>247</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public int getPreferredTableWidth() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>258</td><td class='count'>13</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l258s0'>        return this.settings.getMinimumTableWidth();</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetPreferredTableWidth: 208</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48, 50</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48, 50</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72x2, 73</li>
-        </ol>
-      </td>
+      <td class='line'>248</td><td class='count'>13</td>
+      <td><pre class='prettyprint covered' id='l248s0'>        return this.settings.getMinimumTableWidth();</pre></td>
     </tr>
     <tr>
-      <td class='line'>259</td><td>&nbsp;</td>
+      <td class='line'>249</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -1712,51 +872,27 @@ import com.moneydance.util.StreamTable;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>265</td><td>&nbsp;</td>
+      <td class='line'>255</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public int getPreferredTableHeight(final int rowCount) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>266</td><td class='count'>7</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l266s0'>        int fit = this.getHeaderRowHeight()</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetPreferredTableHeight: 214</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48, 50</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72, 73</li>
-        </ol>
-      </td>
+      <td class='line'>256</td><td class='count'>7</td>
+      <td><pre class='prettyprint covered' id='l256s0'>        int fit = this.getHeaderRowHeight()</pre></td>
     </tr>
     <tr>
-      <td class='line'>267</td><td>&nbsp;</td>
+      <td class='line'>257</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                + rowCount * this.getBodyRowHeight();</pre></td>
     </tr>
     <tr>
-      <td class='line'>268</td><td class='count'>7</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l268s0'>        int min = Math.min(this.getMaximumTableHeight(), fit);</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetPreferredTableHeight: 214</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48, 50</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72, 73</li>
-        </ol>
-      </td>
+      <td class='line'>258</td><td class='count'>7</td>
+      <td><pre class='prettyprint covered' id='l258s0'>        int min = Math.min(Preferences.getMaximumTableHeight(), fit);</pre></td>
     </tr>
     <tr>
-      <td class='line'>269</td><td class='count'>7</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l269s0'>        return Math.max(this.settings.getMinimumTableHeight(), min);</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetPreferredTableHeight: 214</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48, 50</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72, 73</li>
-        </ol>
-      </td>
+      <td class='line'>259</td><td class='count'>7</td>
+      <td><pre class='prettyprint covered' id='l259s0'>        return Math.max(this.settings.getMinimumTableHeight(), min);</pre></td>
     </tr>
     <tr>
-      <td class='line'>270</td><td>&nbsp;</td>
+      <td class='line'>260</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -1767,28 +903,19 @@ import com.moneydance.util.StreamTable;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>275</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    public int getMaximumTableWidth() {</pre></td>
+      <td class='line'>265</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public static int getMaximumTableWidth() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>276</td><td class='count'>13</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l276s0'>        return (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth()</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetMaximumTableWidth: 220</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48, 50</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48, 50</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72x2, 73</li>
-        </ol>
-      </td>
+      <td class='line'>266</td><td class='count'>13</td>
+      <td><pre class='prettyprint covered' id='l266s0'>        return (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth()</pre></td>
     </tr>
     <tr>
-      <td class='line'>277</td><td>&nbsp;</td>
+      <td class='line'>267</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                / (2 + 1);</pre></td>
     </tr>
     <tr>
-      <td class='line'>278</td><td>&nbsp;</td>
+      <td class='line'>268</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -1799,28 +926,19 @@ import com.moneydance.util.StreamTable;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>283</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    public int getMaximumTableHeight() {</pre></td>
+      <td class='line'>273</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public static int getMaximumTableHeight() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>284</td><td class='count'>14</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l284s0'>        return (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight()</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetPreferredTableHeight: 214</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetMaximumTableHeight: 226</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48x2, 50x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72x2, 73</li>
-        </ol>
-      </td>
+      <td class='line'>274</td><td class='count'>14</td>
+      <td><pre class='prettyprint covered' id='l274s0'>        return (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight()</pre></td>
     </tr>
     <tr>
-      <td class='line'>285</td><td>&nbsp;</td>
+      <td class='line'>275</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                / (2 + 1);</pre></td>
     </tr>
     <tr>
-      <td class='line'>286</td><td>&nbsp;</td>
+      <td class='line'>276</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -1831,49 +949,27 @@ import com.moneydance.util.StreamTable;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>291</td><td>&nbsp;</td>
+      <td class='line'>281</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public Color getForeground() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>292</td><td class='count'>17</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l292s0'>        int foregroundValue = this.getUserPreferences().getIntSetting(</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetForeground: 232</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48x2, 50</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x3</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x3</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72x3, 73</li>
-        </ol>
-      </td>
+      <td class='line'>282</td><td class='count'>16</td>
+      <td><pre class='prettyprint covered' id='l282s0'>        int foregroundValue = this.getUserPreferences().getIntSetting(</pre></td>
     </tr>
     <tr>
-      <td class='line'>293</td><td>&nbsp;</td>
+      <td class='line'>283</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                UserPreferences.GUI_HOMEPG_FG,</pre></td>
     </tr>
     <tr>
-      <td class='line'>294</td><td>&nbsp;</td>
+      <td class='line'>284</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                this.settings.getColorValueFgDef());</pre></td>
     </tr>
     <tr>
-      <td class='line'>295</td><td class='count'>17</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l295s0'>        return new Color(foregroundValue);</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetForeground: 232</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48x2, 50</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x3</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x3</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72x3, 73</li>
-        </ol>
-      </td>
+      <td class='line'>285</td><td class='count'>16</td>
+      <td><pre class='prettyprint covered' id='l285s0'>        return new Color(foregroundValue);</pre></td>
     </tr>
     <tr>
-      <td class='line'>296</td><td>&nbsp;</td>
+      <td class='line'>286</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -1884,53 +980,27 @@ import com.moneydance.util.StreamTable;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>301</td><td>&nbsp;</td>
+      <td class='line'>291</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public Color getBackground() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>302</td><td class='count'>41</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l302s0'>        int backgroundValue = this.getUserPreferences().getIntSetting(</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetBackground: 238</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48x2, 50</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48x4, 50x3</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.view.EmptyLabelFactoryTest#testGetComponent: 40, 42</li>
-          <li>com.moneydance.modules.features.importlist.view.SplitPaneFactoryTest#testGetComponent: 42x2, 44x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x6</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x6</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72x6, 73</li>
-        </ol>
-      </td>
+      <td class='line'>292</td><td class='count'>40</td>
+      <td><pre class='prettyprint covered' id='l292s0'>        int backgroundValue = this.getUserPreferences().getIntSetting(</pre></td>
     </tr>
     <tr>
-      <td class='line'>303</td><td>&nbsp;</td>
+      <td class='line'>293</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                UserPreferences.GUI_HOMEPG_BG,</pre></td>
     </tr>
     <tr>
-      <td class='line'>304</td><td>&nbsp;</td>
+      <td class='line'>294</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                this.settings.getColorValueBgDef());</pre></td>
     </tr>
     <tr>
-      <td class='line'>305</td><td class='count'>41</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l305s0'>        return new Color(backgroundValue);</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetBackground: 238</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48x2, 50</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48x4, 50x3</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.view.EmptyLabelFactoryTest#testGetComponent: 40, 42</li>
-          <li>com.moneydance.modules.features.importlist.view.SplitPaneFactoryTest#testGetComponent: 42x2, 44x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x6</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x6</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72x6, 73</li>
-        </ol>
-      </td>
+      <td class='line'>295</td><td class='count'>40</td>
+      <td><pre class='prettyprint covered' id='l295s0'>        return new Color(backgroundValue);</pre></td>
     </tr>
     <tr>
-      <td class='line'>306</td><td>&nbsp;</td>
+      <td class='line'>296</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -1941,73 +1011,75 @@ import com.moneydance.util.StreamTable;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>311</td><td>&nbsp;</td>
+      <td class='line'>301</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public Color getBackgroundAlt() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>312</td><td class='count'>17</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l312s0'>        int backgroundAltValue = this.getUserPreferences().getIntSetting(</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetBackgroundAlt: 244</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48x2, 50</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x3</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x3</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72x3, 73</li>
-        </ol>
-      </td>
+      <td class='line'>302</td><td class='count'>16</td>
+      <td><pre class='prettyprint covered' id='l302s0'>        int backgroundAltValue = this.getUserPreferences().getIntSetting(</pre></td>
     </tr>
     <tr>
-      <td class='line'>313</td><td>&nbsp;</td>
+      <td class='line'>303</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                "gui.home_alt_bg",</pre></td>
     </tr>
     <tr>
-      <td class='line'>314</td><td>&nbsp;</td>
+      <td class='line'>304</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                this.settings.getColorValueBgAltDef());</pre></td>
     </tr>
     <tr>
-      <td class='line'>315</td><td class='count'>17</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l315s0'>        return new Color(backgroundAltValue);</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetBackgroundAlt: 244</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48x2, 50</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x3</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x3</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72x3, 73</li>
-        </ol>
-      </td>
+      <td class='line'>305</td><td class='count'>16</td>
+      <td><pre class='prettyprint covered' id='l305s0'>        return new Color(backgroundAltValue);</pre></td>
     </tr>
     <tr>
-      <td class='line'>316</td><td>&nbsp;</td>
+      <td class='line'>306</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>318</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    public Font getHeaderFont() {</pre></td>
+      <td class='line'>308</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public static Font getHeaderFont() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>319</td><td class='count'>4</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l319s0'>        final Font baseFont = UIManager.getFont("Label.font");</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 49, 66, 83</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetHeaderFont: 250</li>
-        </ol>
-      </td>
+      <td class='line'>309</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l309s0'>        final Font baseFont = UIManager.getFont("Label.font");</pre></td>
     </tr>
     <tr>
-      <td class='line'>320</td><td class='count'>4</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l320s0'>        return baseFont.deriveFont(Font.BOLD, baseFont.getSize2D() + 2.0F);</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 49, 66, 83</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetHeaderFont: 250</li>
-        </ol>
-      </td>
+      <td class='line'>310</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l310s0'>        return baseFont.deriveFont(Font.BOLD, baseFont.getSize2D() + 2.0F);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>311</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>313</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public static Font getBodyFont() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>314</td><td class='count'>77</td>
+      <td><pre class='prettyprint covered' id='l314s0'>        return UIManager.getFont("Label.font");</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>315</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>317</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public int getHeaderRowHeight() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>318</td><td class='count'>20</td>
+      <td><pre class='prettyprint covered' id='l318s0'>        return Math.round(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>319</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                (float) this.settings.getFactorRowHeightHeader()</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>320</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                * Preferences.getBodyFont().getSize2D());</pre></td>
     </tr>
     <tr>
       <td class='line'>321</td><td>&nbsp;</td>
@@ -2016,95 +1088,26 @@ import com.moneydance.util.StreamTable;
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'>323</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    public Font getBodyFont() {</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>324</td><td class='count'>77</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l324s0'>        return UIManager.getFont("Label.font");</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 49x4, 66x4, 83x4</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetPreferredTableHeight: 214x2</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetBodyFont: 256</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetHeaderRowHeight: 262</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetBodyRowHeight: 268</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48x5, 50x5</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48x4, 50x4</li>
-          <li>com.moneydance.modules.features.importlist.view.EmptyLabelFactoryTest#testGetComponent: 40, 42</li>
-          <li>com.moneydance.modules.features.importlist.view.SplitPaneFactoryTest#testGetComponent: 42x2, 44x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x9</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x9</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72x9, 73</li>
-        </ol>
-      </td>
-    </tr>
-    <tr>
-      <td class='line'>325</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    }</pre></td>
-    </tr>
-    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
-    <tr>
-      <td class='line'>327</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    public int getHeaderRowHeight() {</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>328</td><td class='count'>20</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l328s0'>        return Math.round(</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 49x4, 66x4, 83x4</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetPreferredTableHeight: 214</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetHeaderRowHeight: 262</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48, 50</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72, 73</li>
-        </ol>
-      </td>
-    </tr>
-    <tr>
-      <td class='line'>329</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                (float) this.settings.getFactorRowHeightHeader()</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>330</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                * this.getBodyFont().getSize2D());</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>331</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    }</pre></td>
-    </tr>
-    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
-    <tr>
-      <td class='line'>333</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public int getBodyRowHeight() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>334</td><td class='count'>38</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l334s0'>        return Math.round(</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetPreferredTableHeight: 214</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetBodyRowHeight: 268</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48x4, 50x4</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48x2, 50x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x6</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x6</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72x6, 73</li>
-        </ol>
-      </td>
+      <td class='line'>324</td><td class='count'>38</td>
+      <td><pre class='prettyprint covered' id='l324s0'>        return Math.round(</pre></td>
     </tr>
     <tr>
-      <td class='line'>335</td><td>&nbsp;</td>
+      <td class='line'>325</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                (float) this.settings.getSummandRowHeightBody()</pre></td>
     </tr>
     <tr>
-      <td class='line'>336</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                + this.getBodyFont().getSize2D());</pre></td>
+      <td class='line'>326</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                + Preferences.getBodyFont().getSize2D());</pre></td>
     </tr>
     <tr>
-      <td class='line'>337</td><td>&nbsp;</td>
+      <td class='line'>327</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr>
-      <td class='line'>338</td><td>&nbsp;</td>
+      <td class='line'>328</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>}</pre></td>
     </tr>
   </table>
