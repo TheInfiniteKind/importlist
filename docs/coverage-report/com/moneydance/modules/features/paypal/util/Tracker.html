@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JMockit Coverage Report - Tracker.java</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../../../../coverage.css'/>
+  <script type='text/javascript' src='../../../../../../coverage.js'></script>
+  <script type='text/javascript' src='../../../../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption>develop/src/com/moneydance/modules/features/paypal/util/Tracker.java</caption>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/*
+ * PayPal for Moneydance - http://my-flow.github.io/paypalformoneydance/
+ * Copyright (C) 2013 Florian J. Breunig. All rights reserved.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>6</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package com.moneydance.modules.features.paypal.util;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import java.net.Authenticator;
+import java.net.InetSocketAddress;
+import java.net.PasswordAuthentication;
+import java.net.Proxy;
+import java.net.SocketAddress;
+import java.util.logging.Logger;
+
+import com.dmurph.tracking.AnalyticsConfigData;
+import com.dmurph.tracking.JGoogleAnalyticsTracker;
+import com.dmurph.tracking.JGoogleAnalyticsTracker.GoogleAnalyticsVersion;
+</div><span>import ...</span></pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+ * @author Florian J. Breunig
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>22</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>public final class Tracker {</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>    /**
+     * Static initialization of class-dependent logger.
+     */</div><span>    /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>27</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l27s0'>    private static final Logger LOG = Logger.getLogger(</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 28</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>28</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l28s0'>            Tracker.class.getName());</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 28</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>30</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final Preferences prefs;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>31</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final String fullVersion;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>32</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final String build;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>34</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final JGoogleAnalyticsTracker analyticsTracker;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>36</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l36s0'>    Tracker(final int argBuild) {</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 28</li>
+          <li>com.moneydance.modules.features.paypal.util.TrackerTest#setUp: 20</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>37</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l37s0'>        Settings settings = Helper.INSTANCE.getSettings();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 28</li>
+          <li>com.moneydance.modules.features.paypal.util.TrackerTest#setUp: 20</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>39</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l39s0'>        this.prefs       = Helper.INSTANCE.getPreferences();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 28</li>
+          <li>com.moneydance.modules.features.paypal.util.TrackerTest#setUp: 20</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>40</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l40s0'>        this.fullVersion = String.format("Moneydance %s",</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 28x2</li>
+          <li>com.moneydance.modules.features.paypal.util.TrackerTest#setUp: 20</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>41</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l41s0'>                this.prefs.getFullVersion());</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 28</li>
+          <li>com.moneydance.modules.features.paypal.util.TrackerTest#setUp: 20</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>42</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l42s0'>        this.build       = String.format("%s v%d",</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 28x2</li>
+          <li>com.moneydance.modules.features.paypal.util.TrackerTest#setUp: 20</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>43</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l43s0'>                settings.getExtensionName(),</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 28</li>
+          <li>com.moneydance.modules.features.paypal.util.TrackerTest#setUp: 20</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>44</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l44s0'>                argBuild);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 28</li>
+          <li>com.moneydance.modules.features.paypal.util.TrackerTest#setUp: 20</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>46</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l46s0'>        JGoogleAnalyticsTracker.setProxy(this.getProxy());</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 28</li>
+          <li>com.moneydance.modules.features.paypal.util.TrackerTest#setUp: 20</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>47</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l47s0'>        AnalyticsConfigData config = new AnalyticsConfigData(</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 28x2</li>
+          <li>com.moneydance.modules.features.paypal.util.TrackerTest#setUp: 20</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>48</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l48s0'>                settings.getTrackingCode());</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 28</li>
+          <li>com.moneydance.modules.features.paypal.util.TrackerTest#setUp: 20</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>49</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l49s0'>        this.analyticsTracker = new JGoogleAnalyticsTracker(</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 28x2</li>
+          <li>com.moneydance.modules.features.paypal.util.TrackerTest#setUp: 20</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>50</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l50s0'>                config,</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 28</li>
+          <li>com.moneydance.modules.features.paypal.util.TrackerTest#setUp: 20</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>51</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l51s0'>                GoogleAnalyticsVersion.V_4_7_2);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 28</li>
+          <li>com.moneydance.modules.features.paypal.util.TrackerTest#setUp: 20</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>52</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l52s0'>    }</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 28</li>
+          <li>com.moneydance.modules.features.paypal.util.TrackerTest#setUp: 20</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>54</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public void track(final EventName eventName) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>55</td><td class='count'>21</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l55s0'>        LOG.config("trackEvent");</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 28x2</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#testUnload: 38</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 28x4</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#testInvokeString: 60</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 28</li>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#setUp: 24x4</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 29x5</li>
+          <li>com.moneydance.modules.features.paypal.util.TrackerTest#testTrack: 26</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>56</td><td>&nbsp;</td>
+      <td><pre class='comment'>        //        this.analyticsTracker.trackEvent( // FIXME</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>57</td><td>&nbsp;</td>
+      <td><pre class='comment'>        //                this.fullVersion,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>58</td><td>&nbsp;</td>
+      <td><pre class='comment'>        //                eventName.toString(),</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>59</td><td>&nbsp;</td>
+      <td><pre class='comment'>        //                this.build);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>60</td><td class='count'>21</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l60s0'>    }</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 28x2</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#testUnload: 38</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 28x4</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#testInvokeString: 60</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 28</li>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#setUp: 24x4</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 29x5</li>
+          <li>com.moneydance.modules.features.paypal.util.TrackerTest#testTrack: 26</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>62</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private Proxy getProxy() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>63</td><td class='count'>2</td>
+      <td><pre class='prettyprint jmp'>        <span id='l63s0' title='Executions: 2' class='covered cp' onclick='showHide(this,0)'>if (!this.prefs.hasProxy()) {</span></pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 28</li>
+          <li>com.moneydance.modules.features.paypal.util.TrackerTest#setUp: 20</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>64</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l64s0'>            return Proxy.NO_PROXY;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 28</li>
+          <li>com.moneydance.modules.features.paypal.util.TrackerTest#setUp: 20</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>65</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>67</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l67s0'>        final SocketAddress socketAddress = new InetSocketAddress(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>68</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l68s0'>                this.prefs.getProxyHost(),</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>69</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l69s0'>                this.prefs.getProxyPort());</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>71</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l71s0'>        boolean authProxy = this.prefs.hasProxyAuthentication();</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>73</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l73s0'>        Proxy.Type proxyType = Proxy.Type.HTTP;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>75</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>        <span id='l75s0' title='Executions: 0' class='uncovered'>if (authProxy)</span> <span id='l75s1' title='Executions: 0' class='uncovered'>{</span></pre></td>
+    </tr>
+    <tr>
+      <td class='line'>76</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l76s0'>            proxyType = Proxy.Type.SOCKS;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>77</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l77s0'>            Authenticator.setDefault(new Authenticator() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>78</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>79</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                protected PasswordAuthentication getPasswordAuthentication() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>80</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l80s0'>                    return new PasswordAuthentication(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>81</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l81s0'>                            Tracker.this.prefs.getProxyUsername(),</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>82</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l82s0'>                            Tracker.this.prefs.getProxyPassword().toCharArray());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>83</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>84</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            });</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>85</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>86</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l86s0'>        return new Proxy(proxyType, socketAddress);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>87</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>    /**
+     * @author Florian J. Breunig
+     */</div><span>    /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>92</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public enum EventName {</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>94</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        INSTALL(Helper.INSTANCE.getSettings().getEventActionInstall()),</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>96</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        DISPLAY(Helper.INSTANCE.getSettings().getEventActionDisplay()),</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>98</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        UNINSTALL(Helper.INSTANCE.getSettings().getEventActionUninstall());</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>100</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        private final String eventString;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>102</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l102s0'>        private EventName(final String argEventString) {</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 28</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>103</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l103s0'>            this.eventString = argEventString;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 28</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>104</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l104s0'>        }</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 28</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>106</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>107</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        public String toString() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>108</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l108s0'>            return this.eventString;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>109</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>110</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>111</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>

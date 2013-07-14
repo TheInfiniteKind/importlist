@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JMockit Coverage Report - Helper.java</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../../../../coverage.css'/>
+  <script type='text/javascript' src='../../../../../../coverage.js'></script>
+  <script type='text/javascript' src='../../../../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption>develop/src/com/moneydance/modules/features/paypal/util/Helper.java</caption>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/*
+ * PayPal for Moneydance - http://my-flow.github.io/paypalformoneydance/
+ * Copyright (C) 2013 Florian J. Breunig. All rights reserved.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>6</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package com.moneydance.modules.features.paypal.util;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
+import java.awt.event.WindowEvent;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Observable;
+import java.util.Observer;
+import java.util.logging.Level;
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
+
+import javax.imageio.ImageIO;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
+import javax.swing.JComponent;
+import javax.swing.JDialog;
+import javax.swing.JRootPane;
+import javax.swing.KeyStroke;
+
+import org.apache.commons.lang3.Validate;
+
+import com.moneydance.apps.md.controller.FeatureModuleContext;
+</div><span>import ...</span></pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+ * This helper class provides public convenience methods.
+ *
+ * @author Florian J. Breunig
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>37</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>public enum Helper {</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>    /**
+     * Helper instance.
+     */</div><span>    /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>42</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    INSTANCE;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>    /**
+     * Static initialization of class-dependent logger.
+     */</div><span>    /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>47</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private static final Logger LOG = Logger.getLogger(Helper.class.getName());</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>49</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private static final KeyStroke ESCAPE_STROKE =</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>50</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0);</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>52</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private static final String DISPATCH_WINDOW_CLOSING_ACTION_MAP_KEY =</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>53</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            "com.spodding.tackline.dispatch:WINDOW_CLOSING";</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>55</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final HelperObservable observable;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>56</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private       Preferences prefs;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>57</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private       Tracker tracker;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>59</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l59s0'>    private Helper() {</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 25</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>60</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l60s0'>        this.observable = new HelperObservable();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 25</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>61</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l61s0'>    }</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 25</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>63</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public Preferences getPreferences() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>64</td><td class='count'>460</td>
+      <td><pre class='prettyprint jmp'>        <span id='l64s0' title='Executions: 460' class='covered cp' onclick='showHide(this,0)'>synchronized (Helper.class) {</span></pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 25x2, 26x4, 28x2, 25x2, 26x2, 25x2, 26x2, 25x2, 26x2, 25x2, 26x2, 25x2, 26x2</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#testInvokeString: 60x16</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 25x2, 26x2</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#testUpdate: 65x2</li>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#setUp: 20x2, 21x4, 24x14, 25x2, 20x2, 21x4, 24x14, 25x2, 20x2, 21x4, 24x14, 25x2, 20x2, 21x4, 24x14, 25x2</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 27x2, 28x4, 29x14, 27x2, 28x4, 29x14</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#testStartWizard: 34x14</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 27x2, 28x4, 29x14, 27x2, 28x4, 29x14, 27x2, 28x4, 29x14</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#testTransactionsImported: 56x2</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#setUp: 47x32</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#setUp: 50x32</li>
+          <li>com.moneydance.modules.features.paypal.util.CurrencyMapperTest#setUp: 24x14</li>
+          <li>com.moneydance.modules.features.paypal.util.HelperTest#testGetPreferences: 20x2</li>
+          <li>com.moneydance.modules.features.paypal.util.LocalizableTest#setUp: 25x24</li>
+          <li>com.moneydance.modules.features.paypal.util.PreferencesTest#setUp: 30x2</li>
+          <li>com.moneydance.modules.features.paypal.util.PreferencesTest#testGetUserPreferences: 44x14, 47x14</li>
+          <li>com.moneydance.modules.features.paypal.util.PreferencesTest#setUp: 30x40</li>
+          <li>com.moneydance.modules.features.paypal.util.TrackerTest#setUp: 20x2</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardControllerTest#setUp: 27x24</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardHandlerTest#setUp: 30</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>65</td><td class='count'>230</td>
+      <td><pre class='prettyprint jmp'>            <span id='l65s0' title='Executions: 230' class='covered cp' onclick='showHide(this,0)'>if (this.prefs == null)</span> <span id='l65s1' title='Executions: 1' class='covered cp' onclick='showHide(this,1)'>{</span></pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 25, 26x2, 28, 25, 26, 25, 26, 25, 26, 25, 26, 25, 26</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#testInvokeString: 60x8</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 25, 26</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#testUpdate: 65</li>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#setUp: 20, 21x2, 24x7, 25, 20, 21x2, 24x7, 25, 20, 21x2, 24x7, 25, 20, 21x2, 24x7, 25</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 27, 28x2, 29x7, 27, 28x2, 29x7</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#testStartWizard: 34x7</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 27, 28x2, 29x7, 27, 28x2, 29x7, 27, 28x2, 29x7</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#testTransactionsImported: 56</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#setUp: 47x16</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#setUp: 50x16</li>
+          <li>com.moneydance.modules.features.paypal.util.CurrencyMapperTest#setUp: 24x7</li>
+          <li>com.moneydance.modules.features.paypal.util.HelperTest#testGetPreferences: 20</li>
+          <li>com.moneydance.modules.features.paypal.util.LocalizableTest#setUp: 25x12</li>
+          <li>com.moneydance.modules.features.paypal.util.PreferencesTest#setUp: 30</li>
+          <li>com.moneydance.modules.features.paypal.util.PreferencesTest#testGetUserPreferences: 44x7, 47x7</li>
+          <li>com.moneydance.modules.features.paypal.util.PreferencesTest#setUp: 30x20</li>
+          <li>com.moneydance.modules.features.paypal.util.TrackerTest#setUp: 20</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardControllerTest#setUp: 27x12</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardHandlerTest#setUp: 30</li>
+        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 25</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>66</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l66s0'>                this.prefs = new Preferences();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 25</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>67</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>68</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>69</td><td class='count'>230</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l69s0'>        return this.prefs;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 25, 26x2, 28, 25, 26, 25, 26, 25, 26, 25, 26, 25, 26</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#testInvokeString: 60x8</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 25, 26</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#testUpdate: 65</li>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#setUp: 20, 21x2, 24x7, 25, 20, 21x2, 24x7, 25, 20, 21x2, 24x7, 25, 20, 21x2, 24x7, 25</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 27, 28x2, 29x7, 27, 28x2, 29x7</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#testStartWizard: 34x7</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 27, 28x2, 29x7, 27, 28x2, 29x7, 27, 28x2, 29x7</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#testTransactionsImported: 56</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#setUp: 47x16</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#setUp: 50x16</li>
+          <li>com.moneydance.modules.features.paypal.util.CurrencyMapperTest#setUp: 24x7</li>
+          <li>com.moneydance.modules.features.paypal.util.HelperTest#testGetPreferences: 20</li>
+          <li>com.moneydance.modules.features.paypal.util.LocalizableTest#setUp: 25x12</li>
+          <li>com.moneydance.modules.features.paypal.util.PreferencesTest#setUp: 30</li>
+          <li>com.moneydance.modules.features.paypal.util.PreferencesTest#testGetUserPreferences: 44x7, 47x7</li>
+          <li>com.moneydance.modules.features.paypal.util.PreferencesTest#setUp: 30x20</li>
+          <li>com.moneydance.modules.features.paypal.util.TrackerTest#setUp: 20</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardControllerTest#setUp: 27x12</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardHandlerTest#setUp: 30</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>70</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>72</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public Settings getSettings() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>73</td><td class='count'>224</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l73s0'>        return Settings.INSTANCE;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 25x2, 26x3, 28x4, 25, 26, 25, 26, 25, 26, 25, 26</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#testGetIconImage: 54x2</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 25, 26</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#testInvokeString: 60x5</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 25, 26</li>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#setUp: 20, 24x3, 32, 20, 24x3, 32</li>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#testServiceCallSucceededValidSingleResult: 47</li>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#setUp: 20, 24x3, 32</li>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#testServiceCallSucceededMultipleResults: 54</li>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#setUp: 20, 24x3, 32</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 27, 29x3, 27, 29x3, 27, 29x3, 27, 29x3, 27, 29x3</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#testTransactionsImported: 56</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#setUp: 47x16</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#setUp: 50</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#testCallSuccessfulEmpty: 63</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#setUp: 50</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#testCallSuccessfulFilled: 86</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#setUp: 50</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#testCallFail: 106</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#setUp: 50</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#testCallFailUnknownHostException: 128</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#setUp: 50</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#testCallFailSocketException: 150</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#setUp: 50</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#testCallFailIOException: 172</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#setUp: 50</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#testCallFailSSLException: 194</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#setUp: 50</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#testCallFailInvalidCredentialException: 216</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#setUp: 50</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#testCallFailHttpErrorException: 238</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#setUp: 50</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#testCallFailInvalidResponseDataException: 260</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#setUp: 50</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#testCallFailClientActionRequiredException: 282</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#setUp: 50</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#testCallFailMissingCredentialException: 304</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#setUp: 50</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#testCallFailOAuthException: 326</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#setUp: 50</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#testCallFailInterruptedException: 348</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#setUp: 50</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#testCallFailParserConfigurationException: 370</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#setUp: 50</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#testCallFailSAXException: 392</li>
+          <li>com.moneydance.modules.features.paypal.util.CurrencyMapperTest#setUp: 24x7</li>
+          <li>com.moneydance.modules.features.paypal.util.HelperTest#testGetIconImage: 51x2</li>
+          <li>com.moneydance.modules.features.paypal.util.HelperTest#testGetSettings: 26</li>
+          <li>com.moneydance.modules.features.paypal.util.HelperTest#testGetInputStreamFromResource: 45</li>
+          <li>com.moneydance.modules.features.paypal.util.LocalizableTest#setUp: 25x12</li>
+          <li>com.moneydance.modules.features.paypal.util.PreferencesTest#setUp: 30x21</li>
+          <li>com.moneydance.modules.features.paypal.util.TrackerTest#setUp: 20</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardControllerTest#setUp: 27, 29x3, 27, 29x3, 27, 29x3, 27, 29x3, 27, 29x3, 27, 29x3, 27, 29x3, 27, 29x3, 27, 29x3, 27, 29x3, 27, 29x3, 27, 29x3</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardHandlerTest#setUp: 30, 34x3, 30, 34x3, 30, 34</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>74</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>76</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public Localizable getLocalizable() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>77</td><td class='count'>288</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l77s0'>        return Localizable.INSTANCE;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 26, 28</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#testInit: 33</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 26, 28, 26, 28, 26, 28, 26, 28, 26, 28</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#testInvokeString: 60x8</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 26, 28</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#testUpdate: 65</li>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#setUp: 20, 21, 24x8, 25, 32x3, 20, 21, 24x8, 25, 32x3, 20, 21, 24x8, 25, 32x3, 20, 21, 24x8, 25, 32x3</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 27, 28, 29x8</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#testUpdate: 40</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 27, 28, 29x8</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#testStartWizard: 34x7</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 27, 28, 29x8, 27, 28, 29x8, 27, 28, 29x8</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#testTransactionsImported: 56</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#setUp: 47</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulEmpty: 59</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#setUp: 47</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallSuccessfulFilled: 78</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#setUp: 47</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFail: 95</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#setUp: 47</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailUnknownHostException: 113</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#setUp: 47</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSocketException: 131</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#setUp: 47</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailIOException: 149</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#setUp: 47</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSSLException: 167</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#setUp: 47</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInvalidCredentialException: 185</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#setUp: 47</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailHttpErrorException: 203</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#setUp: 47</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInvalidResponseDataException: 221</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#setUp: 47</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailClientActionRequiredException: 239</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#setUp: 47</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailMissingCredentialException: 257</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#setUp: 47</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailOAuthException: 275</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#setUp: 47</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailInterruptedException: 293</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#setUp: 47</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailParserConfigurationException: 311</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#setUp: 47</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#testCallFailSAXException: 329</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#setUp: 50</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#testCallSuccessfulEmpty: 63</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#setUp: 50</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#testCallSuccessfulFilled: 86</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#setUp: 50</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#testCallFail: 106</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#setUp: 50</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#testCallFailUnknownHostException: 128</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#setUp: 50</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#testCallFailSocketException: 150</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#setUp: 50</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#testCallFailIOException: 172</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#setUp: 50</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#testCallFailSSLException: 194</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#setUp: 50</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#testCallFailInvalidCredentialException: 216</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#setUp: 50</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#testCallFailHttpErrorException: 238</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#setUp: 50</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#testCallFailInvalidResponseDataException: 260</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#setUp: 50</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#testCallFailClientActionRequiredException: 282</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#setUp: 50</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#testCallFailMissingCredentialException: 304</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#setUp: 50</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#testCallFailOAuthException: 326</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#setUp: 50</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#testCallFailInterruptedException: 348</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#setUp: 50</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#testCallFailParserConfigurationException: 370</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#setUp: 50</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#testCallFailSAXException: 392</li>
+          <li>com.moneydance.modules.features.paypal.util.CurrencyMapperTest#setUp: 24x7</li>
+          <li>com.moneydance.modules.features.paypal.util.HelperTest#testGetLocalizable: 32</li>
+          <li>com.moneydance.modules.features.paypal.util.LocalizableTest#setUp: 25x12</li>
+          <li>com.moneydance.modules.features.paypal.util.PreferencesTest#setUp: 30</li>
+          <li>com.moneydance.modules.features.paypal.util.PreferencesTest#testGetUserPreferences: 44x7, 47x7</li>
+          <li>com.moneydance.modules.features.paypal.util.PreferencesTest#setUp: 30x20</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardControllerTest#setUp: 27, 29, 27, 29, 27, 29, 27, 29, 27, 29, 27, 29, 27, 29, 27, 29, 27, 29, 27, 29, 27, 29, 27, 29</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardHandlerTest#setUp: 30, 34, 30, 34, 30, 34</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>78</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>80</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public Tracker getTracker(final int build) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>81</td><td class='count'>36</td>
+      <td><pre class='prettyprint jmp'>        <span id='l81s0' title='Executions: 36' class='covered cp' onclick='showHide(this,0)'>synchronized (Helper.class) {</span></pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 28x2</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#testInit: 33x2</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 28x12</li>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#setUp: 23x8</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 28x10</li>
+          <li>com.moneydance.modules.features.paypal.util.HelperTest#testGetTracker: 38</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>82</td><td class='count'>18</td>
+      <td><pre class='prettyprint jmp'>            <span id='l82s0' title='Executions: 18' class='covered cp' onclick='showHide(this,0)'>if (this.tracker == null)</span> <span id='l82s1' title='Executions: 1' class='covered cp' onclick='showHide(this,1)'>{</span></pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 28</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#testInit: 33</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 28x6</li>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#setUp: 23x4</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 28x5</li>
+          <li>com.moneydance.modules.features.paypal.util.HelperTest#testGetTracker: 38</li>
+        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 28</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>83</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l83s0'>                this.tracker = new Tracker(build);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 28</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>84</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>85</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>86</td><td class='count'>18</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l86s0'>        return this.tracker;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 28</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#testInit: 33</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 28x6</li>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#setUp: 23x4</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 28x5</li>
+          <li>com.moneydance.modules.features.paypal.util.HelperTest#testGetTracker: 38</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>87</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>89</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public void addObserver(final Observer o) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>90</td><td class='count'>9</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l90s0'>        this.observable.addObserver(o);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 28</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#testInit: 33</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 28x6</li>
+          <li>com.moneydance.modules.features.paypal.util.PreferencesTest#testGetUserPreferences: 37</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>91</td><td class='count'>9</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l91s0'>    }</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 28</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#testInit: 33</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 28x6</li>
+          <li>com.moneydance.modules.features.paypal.util.PreferencesTest#testGetUserPreferences: 37</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>93</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public void setChanged() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>94</td><td class='count'>13</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l94s0'>        this.observable.setChanged();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#testInvokeString: 60</li>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#setUp: 24x4</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 29x2</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#testStartWizard: 34</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 29x3</li>
+          <li>com.moneydance.modules.features.paypal.util.PreferencesTest#testGetUserPreferences: 44, 47</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>95</td><td class='count'>13</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l95s0'>    }</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#testInvokeString: 60</li>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#setUp: 24x4</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 29x2</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#testStartWizard: 34</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 29x3</li>
+          <li>com.moneydance.modules.features.paypal.util.PreferencesTest#testGetUserPreferences: 44, 47</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>97</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public void notifyObservers(final Object arg) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>98</td><td class='count'>13</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l98s0'>        this.observable.notifyObservers(arg);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#testInvokeString: 60</li>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#setUp: 24x4</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 29x2</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#testStartWizard: 34</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 29x3</li>
+          <li>com.moneydance.modules.features.paypal.util.PreferencesTest#testGetUserPreferences: 44, 47</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>99</td><td class='count'>13</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l99s0'>    }</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#testInvokeString: 60</li>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#setUp: 24x4</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 29x2</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#testStartWizard: 34</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 29x3</li>
+          <li>com.moneydance.modules.features.paypal.util.PreferencesTest#testGetUserPreferences: 44, 47</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>101</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public void setContext(final FeatureModuleContext context) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>102</td><td class='count'>199</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l102s0'>        this.getPreferences().setContext(context);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 26x6</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#testInvokeString: 60x6</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 26</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#testUpdate: 65</li>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#setUp: 20, 24x7, 25, 20, 24x7, 25, 20, 24x7, 25, 20, 24x7, 25</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 27, 29x7, 27, 29x7</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#testStartWizard: 34x7</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 27, 29x7, 27, 29x7, 27, 29x7</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#testTransactionsImported: 56</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#setUp: 47x16</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#setUp: 50x16</li>
+          <li>com.moneydance.modules.features.paypal.util.CurrencyMapperTest#setUp: 24x7</li>
+          <li>com.moneydance.modules.features.paypal.util.LocalizableTest#setUp: 25x12</li>
+          <li>com.moneydance.modules.features.paypal.util.PreferencesTest#setUp: 30</li>
+          <li>com.moneydance.modules.features.paypal.util.PreferencesTest#testGetUserPreferences: 44x7, 47x7</li>
+          <li>com.moneydance.modules.features.paypal.util.PreferencesTest#setUp: 30x20</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardControllerTest#setUp: 27x12</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardHandlerTest#setUp: 30</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>103</td><td class='count'>199</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l103s0'>        this.getLocalizable().update();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 26x6</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#testInvokeString: 60x6</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 26</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#testUpdate: 65</li>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#setUp: 20, 24x7, 25, 20, 24x7, 25, 20, 24x7, 25, 20, 24x7, 25</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 27, 29x7, 27, 29x7</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#testStartWizard: 34x7</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 27, 29x7, 27, 29x7, 27, 29x7</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#testTransactionsImported: 56</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#setUp: 47x16</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#setUp: 50x16</li>
+          <li>com.moneydance.modules.features.paypal.util.CurrencyMapperTest#setUp: 24x7</li>
+          <li>com.moneydance.modules.features.paypal.util.LocalizableTest#setUp: 25x12</li>
+          <li>com.moneydance.modules.features.paypal.util.PreferencesTest#setUp: 30</li>
+          <li>com.moneydance.modules.features.paypal.util.PreferencesTest#testGetUserPreferences: 44x7, 47x7</li>
+          <li>com.moneydance.modules.features.paypal.util.PreferencesTest#setUp: 30x20</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardControllerTest#setUp: 27x12</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardHandlerTest#setUp: 30</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>104</td><td class='count'>199</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l104s0'>    }</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 26x6</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#testInvokeString: 60x6</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 26</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#testUpdate: 65</li>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#setUp: 20, 24x7, 25, 20, 24x7, 25, 20, 24x7, 25, 20, 24x7, 25</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 27, 29x7, 27, 29x7</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#testStartWizard: 34x7</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 27, 29x7, 27, 29x7, 27, 29x7</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#testTransactionsImported: 56</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#setUp: 47x16</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#setUp: 50x16</li>
+          <li>com.moneydance.modules.features.paypal.util.CurrencyMapperTest#setUp: 24x7</li>
+          <li>com.moneydance.modules.features.paypal.util.LocalizableTest#setUp: 25x12</li>
+          <li>com.moneydance.modules.features.paypal.util.PreferencesTest#setUp: 30</li>
+          <li>com.moneydance.modules.features.paypal.util.PreferencesTest#testGetUserPreferences: 44x7, 47x7</li>
+          <li>com.moneydance.modules.features.paypal.util.PreferencesTest#setUp: 30x20</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardControllerTest#setUp: 27x12</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardHandlerTest#setUp: 30</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>106</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public void loadLoggerConfiguration() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>107</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        try {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>108</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l108s0'>            InputStream inputStream = this.getInputStreamFromResource(</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 25</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>109</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l109s0'>                    this.getSettings().getLoggingPropertiesResource());</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 25</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>110</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l110s0'>            LogManager.getLogManager().readConfiguration(inputStream);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 25</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>112</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l112s0'>        } catch (SecurityException e) {</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 25</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>113</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l113s0'>            e.printStackTrace(System.err);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>114</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l114s0'>        } catch (IOException e) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>115</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l115s0'>            e.printStackTrace(System.err);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>116</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>117</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l117s0'>    }</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 25</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>119</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public InputStream getInputStreamFromResource(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>120</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            final String resource) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>121</td><td class='count'>62</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l121s0'>        ClassLoader cloader     = Helper.class.getClassLoader();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 25x2</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#testGetIconImage: 54</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#testInvokeString: 60</li>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#setUp: 24x4</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 29x5</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#setUp: 49x16</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#setUp: 52x16</li>
+          <li>com.moneydance.modules.features.paypal.util.HelperTest#testGetIconImage: 51</li>
+          <li>com.moneydance.modules.features.paypal.util.HelperTest#testGetInputStreamFromResource: 44</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardControllerTest#setUp: 29x12</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardHandlerTest#setUp: 34</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>122</td><td class='count'>62</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l122s0'>        InputStream inputStream = cloader.getResourceAsStream(resource);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 25x2</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#testGetIconImage: 54</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#testInvokeString: 60</li>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#setUp: 24x4</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 29x5</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#setUp: 49x16</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#setUp: 52x16</li>
+          <li>com.moneydance.modules.features.paypal.util.HelperTest#testGetIconImage: 51</li>
+          <li>com.moneydance.modules.features.paypal.util.HelperTest#testGetInputStreamFromResource: 44</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardControllerTest#setUp: 29x12</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardHandlerTest#setUp: 34</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>123</td><td class='count'>62</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l123s0'>        Validate.notNull(inputStream, "Resource %s was not found.",  resource);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 25x2</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#testGetIconImage: 54</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#testInvokeString: 60</li>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#setUp: 24x4</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 29x5</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#setUp: 49x16</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#setUp: 52x16</li>
+          <li>com.moneydance.modules.features.paypal.util.HelperTest#testGetIconImage: 51</li>
+          <li>com.moneydance.modules.features.paypal.util.HelperTest#testGetInputStreamFromResource: 44</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardControllerTest#setUp: 29x12</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardHandlerTest#setUp: 34</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>124</td><td class='count'>62</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l124s0'>        return inputStream;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 25x2</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#testGetIconImage: 54</li>
+          <li>com.moneydance.modules.features.paypal.MainTest#testInvokeString: 60</li>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#setUp: 24x4</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 29x5</li>
+          <li>com.moneydance.modules.features.paypal.service.CheckCurrencyServiceTest#setUp: 49x16</li>
+          <li>com.moneydance.modules.features.paypal.service.TransactionSearchServiceTest#setUp: 52x16</li>
+          <li>com.moneydance.modules.features.paypal.util.HelperTest#testGetIconImage: 51</li>
+          <li>com.moneydance.modules.features.paypal.util.HelperTest#testGetInputStreamFromResource: 44</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardControllerTest#setUp: 29x12</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardHandlerTest#setUp: 34</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>125</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>127</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public Image getIconImage() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>128</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l128s0'>        Image image = null;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#testGetIconImage: 54</li>
+          <li>com.moneydance.modules.features.paypal.util.HelperTest#testGetIconImage: 51</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>129</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        try {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>130</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l130s0'>            LOG.config(String.format("Loading icon %s from resource.",</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#testGetIconImage: 54x2</li>
+          <li>com.moneydance.modules.features.paypal.util.HelperTest#testGetIconImage: 51</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>131</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l131s0'>                    this.getSettings().getIconResource()));</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#testGetIconImage: 54</li>
+          <li>com.moneydance.modules.features.paypal.util.HelperTest#testGetIconImage: 51</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>132</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l132s0'>            InputStream inputStream =</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#testGetIconImage: 54</li>
+          <li>com.moneydance.modules.features.paypal.util.HelperTest#testGetIconImage: 51</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>133</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l133s0'>                    Helper.INSTANCE.getInputStreamFromResource(</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#testGetIconImage: 54x2</li>
+          <li>com.moneydance.modules.features.paypal.util.HelperTest#testGetIconImage: 51</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>134</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l134s0'>                            this.getSettings().getIconResource());</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#testGetIconImage: 54</li>
+          <li>com.moneydance.modules.features.paypal.util.HelperTest#testGetIconImage: 51</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>135</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l135s0'>            image = ImageIO.read(inputStream);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#testGetIconImage: 54</li>
+          <li>com.moneydance.modules.features.paypal.util.HelperTest#testGetIconImage: 51</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>136</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l136s0'>        } catch (IllegalArgumentException e) {</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#testGetIconImage: 54</li>
+          <li>com.moneydance.modules.features.paypal.util.HelperTest#testGetIconImage: 51</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>137</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l137s0'>            LOG.log(Level.WARNING, e.getMessage(), e);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>138</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l138s0'>        } catch (IOException e) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>139</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l139s0'>            LOG.log(Level.WARNING, e.getMessage(), e);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>140</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>141</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l141s0'>        return image;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#testGetIconImage: 54</li>
+          <li>com.moneydance.modules.features.paypal.util.HelperTest#testGetIconImage: 51</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>142</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>144</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public Image getHelpImage() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>145</td><td class='count'>25</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l145s0'>        Image image = null;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#testInvokeString: 60</li>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#setUp: 24x4</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 29x5</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardControllerTest#setUp: 29x12</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardHandlerTest#setUp: 34</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>146</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        try {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>147</td><td class='count'>50</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l147s0'>            LOG.config(String.format("Loading icon %s from resource.",</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#testInvokeString: 60x2</li>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#setUp: 24x8</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 29x10</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardControllerTest#setUp: 29x24</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardHandlerTest#setUp: 34</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>148</td><td class='count'>25</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l148s0'>                    this.getSettings().getHelpResource()));</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#testInvokeString: 60</li>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#setUp: 24x4</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 29x5</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardControllerTest#setUp: 29x12</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardHandlerTest#setUp: 34</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>149</td><td class='count'>25</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l149s0'>            InputStream inputStream =</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#testInvokeString: 60</li>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#setUp: 24x4</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 29x5</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardControllerTest#setUp: 29x12</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardHandlerTest#setUp: 34</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>150</td><td class='count'>50</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l150s0'>                    Helper.INSTANCE.getInputStreamFromResource(</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#testInvokeString: 60x2</li>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#setUp: 24x8</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 29x10</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardControllerTest#setUp: 29x24</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardHandlerTest#setUp: 34</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>151</td><td class='count'>25</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l151s0'>                            this.getSettings().getHelpResource());</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#testInvokeString: 60</li>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#setUp: 24x4</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 29x5</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardControllerTest#setUp: 29x12</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardHandlerTest#setUp: 34</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>152</td><td class='count'>25</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l152s0'>            image = ImageIO.read(inputStream);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#testInvokeString: 60</li>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#setUp: 24x4</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 29x5</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardControllerTest#setUp: 29x12</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardHandlerTest#setUp: 34</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>153</td><td class='count'>25</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l153s0'>        } catch (IllegalArgumentException e) {</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#testInvokeString: 60</li>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#setUp: 24x4</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 29x5</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardControllerTest#setUp: 29x12</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardHandlerTest#setUp: 34</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>154</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l154s0'>            LOG.log(Level.WARNING, e.getMessage(), e);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>155</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l155s0'>        } catch (IOException e) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>156</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l156s0'>            LOG.log(Level.WARNING, e.getMessage(), e);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>157</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>158</td><td class='count'>25</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l158s0'>        return image;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#testInvokeString: 60</li>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#setUp: 24x4</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 29x5</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardControllerTest#setUp: 29x12</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardHandlerTest#setUp: 34</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>159</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>161</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public void installEscapeCloseOperation(final JDialog dialog) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>162</td><td class='count'>50</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l162s0'>        Action dispatchClosing = new AbstractAction() {</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#testInvokeString: 60x2</li>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#setUp: 24x8</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 29x10</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardControllerTest#setUp: 29x24</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardHandlerTest#setUp: 34</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>163</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            private static final long serialVersionUID = 1L;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>165</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>166</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            public void actionPerformed(final ActionEvent event) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>167</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l167s0'>                dialog.dispatchEvent(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>168</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l168s0'>                        new WindowEvent(dialog, WindowEvent.WINDOW_CLOSING));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>169</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l169s0'>            }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>170</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        };</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>171</td><td class='count'>25</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l171s0'>        JRootPane root = dialog.getRootPane();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#testInvokeString: 60</li>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#setUp: 24x4</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 29x5</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardControllerTest#setUp: 29x12</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardHandlerTest#setUp: 34</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>172</td><td class='count'>50</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l172s0'>        root.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#testInvokeString: 60x2</li>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#setUp: 24x8</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 29x10</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardControllerTest#setUp: 29x24</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardHandlerTest#setUp: 34</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>173</td><td class='count'>25</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l173s0'>                ESCAPE_STROKE, DISPATCH_WINDOW_CLOSING_ACTION_MAP_KEY);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#testInvokeString: 60</li>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#setUp: 24x4</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 29x5</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardControllerTest#setUp: 29x12</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardHandlerTest#setUp: 34</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>174</td><td class='count'>50</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l174s0'>        root.getActionMap().put(</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#testInvokeString: 60x2</li>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#setUp: 24x8</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 29x10</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardControllerTest#setUp: 29x24</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardHandlerTest#setUp: 34</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>175</td><td class='count'>25</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l175s0'>                DISPATCH_WINDOW_CLOSING_ACTION_MAP_KEY, dispatchClosing);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#testInvokeString: 60</li>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#setUp: 24x4</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 29x5</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardControllerTest#setUp: 29x12</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardHandlerTest#setUp: 34</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>176</td><td class='count'>25</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l176s0'>    }</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#testInvokeString: 60</li>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#setUp: 24x4</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 29x5</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardControllerTest#setUp: 29x12</li>
+          <li>com.moneydance.modules.features.paypal.presentation.WizardHandlerTest#setUp: 34</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>    /**
+     * @author Florian J. Breunig
+     */</div><span>    /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>181</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l181s0'>    private final class HelperObservable extends Observable {</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#setUp: 25</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>182</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>183</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        public synchronized void setChanged() { // increase visiblity</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>184</td><td class='count'>13</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l184s0'>            super.setChanged();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#testInvokeString: 60</li>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#setUp: 24x4</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 29x2</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#testStartWizard: 34</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 29x3</li>
+          <li>com.moneydance.modules.features.paypal.util.PreferencesTest#testGetUserPreferences: 44, 47</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>185</td><td class='count'>13</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l185s0'>        }</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.paypal.MainTest#testInvokeString: 60</li>
+          <li>com.moneydance.modules.features.paypal.controller.TransactionSearchRequestHandlerTest#setUp: 24x4</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 29x2</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#testStartWizard: 34</li>
+          <li>com.moneydance.modules.features.paypal.controller.ViewControllerTest#setUp: 29x3</li>
+          <li>com.moneydance.modules.features.paypal.util.PreferencesTest#testGetUserPreferences: 44, 47</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>186</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>187</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>

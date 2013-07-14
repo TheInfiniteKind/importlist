@@ -1,6 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<!-- Font Awesome - http://fortawesome.github.com/Font-Awesome -->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -12,14 +11,14 @@
         </title>
 
         <!-- Font Awesome -->
-        <link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
+        <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
         <!--[if IE 7]>
-            <link rel="stylesheet" href="css/font-awesome-ie7.css">
+            <link rel="stylesheet" href="css/font-awesome-ie7.min.css">
         <![endif]-->
 
         <!-- jQuery -->
         <!--[if gte IE 6]><!-->
-            <script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
+            <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
         <!--<![endif]-->
 
         <!-- Bootstrap -->
@@ -29,9 +28,9 @@
         <!--<![endif]-->
 
         <!-- fancyBox -->
-        <link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css?v=2.1.4" />
+        <link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css?v=2.1.5" />
         <!--[if gte IE 6]><!-->
-            <script type="text/javascript" src="js/jquery.fancybox.pack.js?v=2.1.4"></script>
+            <script type="text/javascript" src="js/jquery.fancybox.pack.js?v=2.1.5"></script>
             <script type="text/javascript">
                 //<![CDATA[
                 $(document).ready(function() {
@@ -43,7 +42,7 @@
                         }
                     });
                 });
-            //]]>
+                //]]>
             </script>
         <!--<![endif]-->
 
@@ -67,42 +66,42 @@
             </div>
 
             <a name="toc" id="toc"></a>
-            <h3>
+            <h2>
                 Content
-            </h3>
-            <ul class="nav nav-list" style="width: 10em;">
-              <li><a href="#rationale"><i class="icon-home icon-white"></i> Rationale</a></li>
-              <li><a href="#screenshots"><i class="icon-picture"></i> Screenshots</a></li>
-              <li><a href="#features"><i class="icon-list"></i> Features</a></li>
-              <li><a href="#requirements"><i class="icon-check"></i> Requirements</a></li>
-              <li><a href="#download"><i class="icon-download"></i> Download</a></li>
-              <li><a href="#installation"><i class="icon-tasks"></i> Installation</a></li>
-              <li><a href="#stats"><i class="icon-user"></i> Data Tracking</a></li>
-              <li><a href="#feedback"><i class="icon-comment"></i> Feedback</a></li>
+            </h2>
+            <ul class="nav nav-list" style="width: 11em;">
+              <li><a href="#rationale"><em class="fa fa-home fa-fw"></em> Rationale</a></li>
+              <li><a href="#screenshots"><em class="fa fa-picture-o fa-fw"></em> Screenshots</a></li>
+              <li><a href="#features"><em class="fa fa-list fa-fw"></em> Features</a></li>
+              <li><a href="#requirements"><em class="fa fa-check-square-o fa-fw"></em> Requirements</a></li>
+              <li><a href="#download"><em class="fa fa-download fa-fw"></em> Download</a></li>
+              <li><a href="#installation"><em class="fa fa-tasks fa-fw"></em> Installation</a></li>
+              <li><a href="#stats"><em class="fa fa-user fa-fw"></em> Data Tracking</a></li>
+              <li><a href="#feedback"><em class="fa fa-comment fa-fw"></em> Feedback</a></li>
             </ul>
 
             <a name="rationale" id="rationale"></a>
-            <h3>
+            <h2>
                 Rationale
-            </h3>
+            </h2>
             <p>
                 Personal finance manager <a href="http://www.moneydance.com">Moneydance®</a> offers a <a href="http://moneydance.com/userguide-contents/importing%20additional%20information%20into%20moneydance.html">feature to import transaction files</a>, such as from Quicken™. Using third-party background applications to download transaction files on a regular basis I felt that Moneydance® lacks an overview of which files still have to be imported, which, in turn, forces the user to constantly check on the file system.
             </p>
             <p>
                 As a result, this extension monitors a given base directory and displays all of its transaction files in a sortable list inside the homepage view along with two corresponding buttons to import and to delete each transaction file.
             </p><a name="screenshots" id="screenshots"></a>
-            <h3>
+            <h2>
                 Screenshots
-            </h3>
+            </h2>
             <p>
                 <a rel="example_group" href="img/screenshot1.png" title="Import List displays a list of transaction files, each of which can be imported and deleted."><img src="img/screenshot1-small.png" alt="Screenshot 1" width="525" height="176" /></a>
             </p>
             <p>
                 <a rel="example_group" href="img/screenshot2.png" title="The homepage view of Moneydance® 2010: Note the Import List extension in the top right corner."><img src="img/screenshot2-small.png" alt="Screenshot 2" width="525" height="310" /></a>
             </p><a name="features" id="features"></a>
-            <h3>
+            <h2>
                 Features
-            </h3>
+            </h2>
             <ul>
                 <li>
                     <strong>Integration:</strong> Import and delete transaction files seamlessly from the homepage view.
@@ -117,74 +116,73 @@
                     <strong>Integrity:</strong> The extension is audited and signed with the official Moneydance® key.
                 </li>
             </ul><a name="requirements" id="requirements"></a>
-            <h3>
+            <h2>
                 Requirements
-            </h3>
+            </h2>
             <ul>
-                <li><i class="icon-check"></i> Moneydance® 2006 or newer</li>
-                <li><i class="icon-check"></i> Java Runtime Environment, version 6 or newer</li>
-                <li><i class="icon-check-empty"></i> Optional: the <a href="http://www.moneydance.com/download/modules/txtimport.mxt" style="display:inline;">Text File Importer extension</a>, version 11 or newer (only if you want to import CSV transaction files)</li>
+                <li><em class="fa fa-check-square-o fa-fw"></em> Moneydance® 2010 or newer</li>
+                <li><em class="fa fa-check-square-o fa-fw"></em> Java Runtime Environment, version 6 or newer</li>
+                <li><em class="fa fa-square-o fa-fw"></em> Optional: the <a href="http://www.moneydance.com/download/modules/txtimport.mxt" style="display:inline;">Text File Importer extension</a>, version 11 or newer (only if you want to import CSV transaction files)</li>
             </ul><a name="download" id="download"></a>
-            <h3>
+            <h2>
                 Download
-            </h3>The latest signed version of Import List is available on the official extensions repository:
-            <div class="btn-download"><a class="btn" href="http://www.moneydance.com/download/modules/importlist.mxt"><i class="icon-download"></i>&nbsp;Download Import List</a>
+            </h2>The latest signed version of Import List is available on the official extensions repository:
+            <div class="btn-download"><a class="btn" href="http://www.moneydance.com/download/modules/importlist.mxt"><em class="fa fa-arrow-circle-o-down" style="color:inherit;"></em>&nbsp;Download Import List</a>
                 <a name="installation" id="installation"></a></div>
-            <h3>
+            <h2>
                 Installation
-            </h3>
+            </h2>
             <ol>
                 <li>Add the extension to Moneydance® by choosing <em>Add…</em> or <em>Manage Extensions…</em> from the <em>Extensions</em> menu (depending on which version of Moneydance® you use).
                 </li>
-                <li>In order to display Import List in Moneydance®'s homepage view, open the <em>Preferences</em> window and click on the <em>Home Page</em> tab. The available items should contain an entry named <em>Import List</em>. Add it to the left or right column of your homepage view.
+                <li>In order to display Import List in Moneydance®&rsquo;s homepage view, open the <em>Preferences</em> window and click on the <em>Home Page</em> tab. The available items should contain an entry named <em>Import List</em>. Add it to the left or right column of your homepage view.
                 </li>
                 <li>You will be asked to choose a base directory where your transaction files reside. You can always change that one later.
                 </li>
             </ol><a name="stats" id="stats"></a>
-            <h3>
+            <h2>
                 Data Tracking
-            </h3>
+            </h2>
             <p>
-                The Import List extension connects to <a href="http://www.google.com/intl/de/analytics/">Google Analytics</a> in order to track statistical data on its usage. These data include
+                The Import List extension connects to <a href="http://www.google.com/analytics/">Google Analytics</a> in order to track statistical data on its usage. These data include
             </p>
             <ul>
                 <li>
-                    <i class="icon-ok"></i> screen resolution
+                    <em class="fa fa-check"></em> screen resolution
                 </li>
                 <li>
-                    <i class="icon-ok"></i> screen color depth
+                    <em class="fa fa-check"></em> screen color depth
                 </li>
                 <li>
-                    <i class="icon-ok"></i> language
+                    <em class="fa fa-check"></em> language
                 </li>
                 <li>
-                    <i class="icon-ok"></i> geographical location
+                    <em class="fa fa-check"></em> geographical location
                 </li>
                 <li>
-                    <i class="icon-ok"></i> version of the Import List
+                    <em class="fa fa-check"></em> version of the Import List extension
                 </li>
                 <li>
-                    <i class="icon-ok"></i> version of Moneydance®.
+                    <em class="fa fa-check"></em> version of Moneydance®.
                 </li>
             </ul>
             <p>
-                For more information about Google Analytics' privacy and security, visit the <a href="http://www.google.com/intl/en_uk/analytics/privacyoverview.html">Google Analytics Privacy Overview</a>. Import List does not submit any financial information.
+                For more information about Google Analytics&rsquo; privacy and security, visit the <a href="http://www.google.com/intl/en_uk/analytics/privacyoverview.html">Google Analytics Privacy Overview</a>. Import List does not submit any financial information.
             </p><a name="feedback" id="feedback"></a>
-            <h3>
+            <h2>
                 Feedback
-            </h3>
+            </h2>
             <p>
-                Please submit bugs, issues, and feature suggestions on GitHub's <a href="https://github.com/my-flow/importlist/issues">issue tracker</a> or send them to <a href="mailto:importlist@my-flow.com">importlist@my-flow.com</a>.
+                Please submit bugs, issues, and feature suggestions on GitHub&rsquo;s <a href="https://github.com/my-flow/importlist/issues">issue tracker</a> or send them to <a href="mailto:importlist@my-flow.com">importlist@my-flow.com</a>.
             </p>
             <p>
                 At the moment I could use some help with the localization for <a href="https://github.com/my-flow/importlist/blob/master/src/com/moneydance/modules/features/importlist/resources/localizable_fr.properties">French (France)</a> and <a href="https://github.com/my-flow/importlist/blob/master/src/com/moneydance/modules/features/importlist/resources/localizable_es.properties">Spanish (Spain)</a>. If you have some additions to make, please contact me.
             </p>
-            <div id="push"></div>
         </div>
         <div id="footer">
             <div class="container">
                 <small>
-                    Copyright 2011-2013 <a href="http://www.my-flow.com">Florian J. Breunig</a>.<br />
+                    Copyright 2011-2014 <a href="http://www.my-flow.com">Florian J. Breunig</a>.<br />
                     Import List is released under the <a href="http://www.gnu.org/licenses/gpl.html">GNU General Public License</a>.
                 </small>
             </div>

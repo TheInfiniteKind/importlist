@@ -4,6 +4,7 @@
   <title>JMockit Coverage Report - Settings.java</title>
   <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
   <link rel='stylesheet' type='text/css' href='../../../../../../coverage.css'/>
+  <link rel='shortcut icon' type='image/png' href='../../../../../../logo.png'/>
   <script type='text/javascript' src='../../../../../../coverage.js'></script>
   <script type='text/javascript' src='../../../../../../prettify.js'></script>
 </head>
@@ -11,41 +12,83 @@
   <table cellpadding='0' cellspacing='1'>
     <caption>master/src/com/moneydance/modules/features/importlist/util/Settings.java</caption>
     <tr>
-      <td class='line'></td><td>&nbsp;</td>
-      <td class='comment' onclick='showHideLines(this)'><div>/*
- * Import List - http://my-flow.github.com/importlist/
- * Copyright (C) 2011-2012 Florian J. Breunig
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see &lt;http://www.gnu.org/licenses/>.
- */</div><span>/*...*/</span></td>
+      <td class='line'>1</td><td>&nbsp;</td>
+      <td><pre class='comment'>// Import List - http://my-flow.github.io/importlist/</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>2</td><td>&nbsp;</td>
+      <td><pre class='comment'>// Copyright (C) 2011-2014 Florian J. Breunig</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>3</td><td>&nbsp;</td>
+      <td><pre class='comment'>//</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>4</td><td>&nbsp;</td>
+      <td><pre class='comment'>// This program is free software: you can redistribute it and/or modify</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>5</td><td>&nbsp;</td>
+      <td><pre class='comment'>// it under the terms of the GNU General Public License as published by</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>6</td><td>&nbsp;</td>
+      <td><pre class='comment'>// the Free Software Foundation, either version 3 of the License, or</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>7</td><td>&nbsp;</td>
+      <td><pre class='comment'>// (at your option) any later version.</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>8</td><td>&nbsp;</td>
+      <td><pre class='comment'>//</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>9</td><td>&nbsp;</td>
+      <td><pre class='comment'>// This program is distributed in the hope that it will be useful,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>10</td><td>&nbsp;</td>
+      <td><pre class='comment'>// but WITHOUT ANY WARRANTY; without even the implied warranty of</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>11</td><td>&nbsp;</td>
+      <td><pre class='comment'>// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>12</td><td>&nbsp;</td>
+      <td><pre class='comment'>// GNU General Public License for more details.</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>13</td><td>&nbsp;</td>
+      <td><pre class='comment'>//</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>14</td><td>&nbsp;</td>
+      <td><pre class='comment'>// You should have received a copy of the GNU General Public License</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>15</td><td>&nbsp;</td>
+      <td><pre class='comment'>// along with this program. If not, see &lt;http://www.gnu.org/licenses/>.</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>19</td><td>&nbsp;</td>
+      <td class='line'>17</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>package com.moneydance.modules.features.importlist.util;</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'></td><td>&nbsp;</td>
-      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import java.io.InputStream;
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import java.awt.Image;
+import java.io.IOException;
+import java.io.InputStream;
+
+import javax.imageio.ImageIO;
 
 import org.apache.commons.configuration.AbstractFileConfiguration;
 import org.apache.commons.configuration.Configuration;
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.PropertiesConfiguration;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 </div><span>import ...</span></pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -54,43 +97,15 @@ import org.slf4j.LoggerFactory;
       <td class='comment' onclick='showHideLines(this)'><div>/**
  * This configuration class accesses all values that are read
  * from a settings file in plain text. The settings file cannot be
- * modified at runtime, so all &lt;code>Settings&lt;/code> objects are immutable.
+ * modified at runtime, so the &lt;code>Settings&lt;/code> class is effectively
+ * immutable.
  *
  * @author Florian J. Breunig
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>37</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l37s0'>public enum Settings {</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38</li>
-        </ol>
-      </td>
-    </tr>
-    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
-    <tr>
-      <td class='line'>39</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    INSTANCE;</pre></td>
-    </tr>
-    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
-    <tr>
-      <td class='line'></td><td>&nbsp;</td>
-      <td class='comment' onclick='showHideLines(this)'><div>    /**
-     * Static initialization of class-dependent logger.
-     */</div><span>    /*...*/</span></td>
-    </tr>
-    <tr>
-      <td class='line'>44</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    private static final Logger LOG =</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>45</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>            LoggerFactory.getLogger(Settings.class);</pre></td>
-    </tr>
-    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
-    <tr>
-      <td class='line'>47</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    private static final Configuration CONFIG;</pre></td>
+      <td class='line'>38</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>public final class Settings {</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
@@ -100,78 +115,71 @@ import org.slf4j.LoggerFactory;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>52</td><td>&nbsp;</td>
+      <td class='line'>43</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    private static final String PROPERTIES_RESOURCE</pre></td>
     </tr>
     <tr>
-      <td class='line'>53</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>            = "com/moneydance/modules/features/importlist/resources/"</pre></td>
+      <td class='line'>44</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    = "com/moneydance/modules/features/importlist/resources/"</pre></td>
     </tr>
     <tr>
-      <td class='line'>54</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>              + "settings.properties";</pre></td>
+      <td class='line'>45</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            + "settings.properties";</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>56</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    static {</pre></td>
+      <td class='line'>47</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final Configuration config;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>49</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l49s0'>    Settings() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>57</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>        final AbstractFileConfiguration abstractFileConfiguration =</pre></td>
+      <td class='line'>50</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l50s0'>        final AbstractFileConfiguration abstractFileConfiguration =</pre></td>
     </tr>
     <tr>
-      <td class='line'>58</td><td>&nbsp;</td>
+      <td class='line'>51</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                new PropertiesConfiguration();</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>60</td><td>&nbsp;</td>
+      <td class='line'>53</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>        try {</pre></td>
     </tr>
     <tr>
-      <td class='line'>61</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>            InputStream inputStream =</pre></td>
+      <td class='line'>54</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l54s0'>            InputStream inputStream = Helper.getInputStreamFromResource(</pre></td>
     </tr>
     <tr>
-      <td class='line'>62</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                    Helper.INSTANCE.getInputStreamFromResource(</pre></td>
+      <td class='line'>55</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                    PROPERTIES_RESOURCE);</pre></td>
     </tr>
     <tr>
-      <td class='line'>63</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                            PROPERTIES_RESOURCE);</pre></td>
+      <td class='line'>56</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l56s0'>            abstractFileConfiguration.load(inputStream);</pre></td>
     </tr>
     <tr>
-      <td class='line'>64</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>            abstractFileConfiguration.load(inputStream);</pre></td>
+      <td class='line'>57</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l57s0'>        } catch (ConfigurationException e) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>65</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>        } catch (IllegalArgumentException e) {</pre></td>
+      <td class='line'>58</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l58s0'>            throw new IllegalStateException(e.getMessage(), e);</pre></td>
     </tr>
     <tr>
-      <td class='line'>66</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>            LOG.warn(e.getMessage(), e);</pre></td>
+      <td class='line'>59</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l59s0'>        }</pre></td>
     </tr>
     <tr>
-      <td class='line'>67</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>        } catch (ConfigurationException e) {</pre></td>
+      <td class='line'>60</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l60s0'>        this.config = abstractFileConfiguration;</pre></td>
     </tr>
     <tr>
-      <td class='line'>68</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>            LOG.warn(e.getMessage(), e);</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>69</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>        }</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>70</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>        CONFIG = abstractFileConfiguration;</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>71</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    }</pre></td>
+      <td class='line'>61</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l61s0'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
@@ -181,25 +189,15 @@ import org.slf4j.LoggerFactory;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>76</td><td>&nbsp;</td>
+      <td class='line'>66</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public String getExtensionName() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>77</td><td class='count'>43</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l77s0'>        return CONFIG.getString("extension_name");</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41x4</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 46x4</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41x12</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#testGetName: 61</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41x20</li>
-          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetExtensionName: 40</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testToString: 85</li>
-        </ol>
-      </td>
+      <td class='line'>67</td><td class='count'>44</td>
+      <td><pre class='prettyprint covered' id='l67s0'>        return this.config.getString("extension_name"); //$NON-NLS-1$</pre></td>
     </tr>
     <tr>
-      <td class='line'>78</td><td>&nbsp;</td>
+      <td class='line'>68</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -210,20 +208,15 @@ import org.slf4j.LoggerFactory;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>83</td><td>&nbsp;</td>
+      <td class='line'>73</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public String getExtensionIdentifier() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>84</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l84s0'>        return CONFIG.getString("extension_identifier");</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetExtensionIdentifier: 46</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetID: 79</li>
-        </ol>
-      </td>
+      <td class='line'>74</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered' id='l74s0'>        return this.config.getString("extension_identifier"); //$NON-NLS-1$</pre></td>
     </tr>
     <tr>
-      <td class='line'>85</td><td>&nbsp;</td>
+      <td class='line'>75</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -234,50 +227,57 @@ import org.slf4j.LoggerFactory;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>90</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    public String getIconResource() {</pre></td>
+      <td class='line'>80</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public Image getIconImage() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>91</td><td class='count'>15</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l91s0'>        return CONFIG.getString("icon_resource");</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#testGetIconImage: 66x2</li>
-          <li>com.moneydance.modules.features.importlist.io.DeleteAllOperationTest#testShowWarningAndPerform: 50x2</li>
-          <li>com.moneydance.modules.features.importlist.io.DeleteOneOperationTest#testShowWarningAndPerform: 68x2, 72x2</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteAllRows: 107x2</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteRow: 115x2</li>
-          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetIconResource: 52</li>
-          <li>com.moneydance.modules.features.importlist.util.HelperTest#testGetIconImage: 62</li>
-        </ol>
-      </td>
+      <td class='line'>81</td><td class='count'>7</td>
+      <td><pre class='prettyprint covered' id='l81s0'>        return getImage(this.config.getString("icon_resource")); //$NON-NLS-1$</pre></td>
     </tr>
     <tr>
-      <td class='line'>92</td><td>&nbsp;</td>
+      <td class='line'>82</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'></td><td>&nbsp;</td>
       <td class='comment' onclick='showHideLines(this)'><div>    /**
-     * @return The resource that contains the configuration of log4j.
+     * @return The help image.
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
+      <td class='line'>87</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public Image getHelpImage() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>88</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l88s0'>        return getImage(this.config.getString("help_resource")); //$NON-NLS-1$</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>89</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>    /**
+     * @return The resource that contains the configuration of the logger.
+     */</div><span>    /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>94</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public String getLoggingPropertiesResource() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>95</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered' id='l95s0'>        return this.config.getString(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>96</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                "logging_properties_resource"); //$NON-NLS-1$</pre></td>
+    </tr>
+    <tr>
       <td class='line'>97</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    public String getLog4jPropertiesResource() {</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>98</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l98s0'>        return CONFIG.getString("log4j_properties_resource");</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38</li>
-          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetLog4jPropertiesResource: 58</li>
-          <li>com.moneydance.modules.features.importlist.util.HelperTest#testGetInputStreamFromResource: 55</li>
-        </ol>
-      </td>
-    </tr>
-    <tr>
-      <td class='line'>99</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -288,26 +288,15 @@ import org.slf4j.LoggerFactory;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>104</td><td>&nbsp;</td>
+      <td class='line'>102</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public String getLocalizableResource() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>105</td><td class='count'>23</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l105s0'>        return CONFIG.getString("localizable_resource");</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
-          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetLocalizableResource: 64</li>
-          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#setUp: 39</li>
-          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testUpdate: 44</li>
-          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#setUp: 39x15</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72, 73</li>
-        </ol>
-      </td>
+      <td class='line'>103</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered' id='l103s0'>        return this.config.getString("localizable_resource"); //$NON-NLS-1$</pre></td>
     </tr>
     <tr>
-      <td class='line'>106</td><td>&nbsp;</td>
+      <td class='line'>104</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -319,24 +308,15 @@ import org.slf4j.LoggerFactory;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>112</td><td>&nbsp;</td>
+      <td class='line'>110</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public String getChooseBaseDirSuffix() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>113</td><td class='count'>14</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l113s0'>        return CONFIG.getString("choose_base_dir_suffix");</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 46</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41x5</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#testInvokeString: 72, 73x2</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41x3</li>
-          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetChooseBaseDirSuffix: 70</li>
-        </ol>
-      </td>
+      <td class='line'>111</td><td class='count'>14</td>
+      <td><pre class='prettyprint covered' id='l111s0'>        return this.config.getString("choose_base_dir_suffix"); //$NON-NLS-1$</pre></td>
     </tr>
     <tr>
-      <td class='line'>114</td><td>&nbsp;</td>
+      <td class='line'>112</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -347,23 +327,19 @@ import org.slf4j.LoggerFactory;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>119</td><td>&nbsp;</td>
+      <td class='line'>117</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public String getTransactionFileImportUriScheme() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>120</td><td class='count'>10</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l120s0'>        return CONFIG.getString("transaction_file_import_uri_scheme");</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportAllRows: 90x4</li>
-          <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#testShowWarningAndPerform: 57</li>
-          <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#testPerform: 62</li>
-          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 103, 109, 115</li>
-          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetTransactionFileImportUriScheme: 76</li>
-        </ol>
-      </td>
+      <td class='line'>118</td><td class='count'>10</td>
+      <td><pre class='prettyprint covered' id='l118s0'>        return this.config.getString(</pre></td>
     </tr>
     <tr>
-      <td class='line'>121</td><td>&nbsp;</td>
+      <td class='line'>119</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                "transaction_file_import_uri_scheme"); //$NON-NLS-1$</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>120</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -375,19 +351,16 @@ import org.slf4j.LoggerFactory;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>127</td><td>&nbsp;</td>
+      <td class='line'>126</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public String getTextFileImportUriScheme() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>128</td><td class='count'>7</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l128s0'>        return CONFIG.getString("text_file_import_uri_scheme");</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportAllRows: 90x2</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testImportRow: 98</li>
-          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testPerform: 122, 128, 134</li>
-          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetTextFileImportUriScheme: 82</li>
-        </ol>
-      </td>
+      <td class='line'>127</td><td class='count'>7</td>
+      <td><pre class='prettyprint covered' id='l127s0'>        return this.config.getString(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>128</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                "text_file_import_uri_scheme"); //$NON-NLS-1$</pre></td>
     </tr>
     <tr>
       <td class='line'>129</td><td>&nbsp;</td>
@@ -406,25 +379,8 @@ import org.slf4j.LoggerFactory;
       <td><pre class='prettyprint'>    public int getMonitorInterval() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>136</td><td class='count'>67</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l136s0'>        return CONFIG.getInt("monitor_interval");</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 46</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41x8</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 43x11</li>
-          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 50, 56, 50, 56, 50, 56</li>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x16</li>
-          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetMonitorIntervall: 88</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#setUp: 41x2</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#setUp: 41x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 38</li>
-        </ol>
-      </td>
+      <td class='line'>136</td><td class='count'>65</td>
+      <td><pre class='prettyprint covered' id='l136s0'>        return this.config.getInt("monitor_interval");</pre></td>
     </tr>
     <tr>
       <td class='line'>137</td><td>&nbsp;</td>
@@ -443,50 +399,16 @@ import org.slf4j.LoggerFactory;
       <td><pre class='prettyprint'>    public String[] getTransactionFileExtensions() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>144</td><td class='count'>67</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l144s0'>        String[] transactionFileExtensions =</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 46</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41x8</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 43x11</li>
-          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 50, 56, 50, 56, 50, 56</li>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x16</li>
-          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetTransactionFileExtensions: 94</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#setUp: 41x2</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#setUp: 41x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 38</li>
-        </ol>
-      </td>
+      <td class='line'>144</td><td class='count'>65</td>
+      <td><pre class='prettyprint covered' id='l144s0'>        String[] transactionFileExtensions = this.config.getStringArray(</pre></td>
     </tr>
     <tr>
       <td class='line'>145</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                CONFIG.getStringArray("transaction_file_extensions");</pre></td>
+      <td><pre class='prettyprint'>                "transaction_file_extensions"); //$NON-NLS-1$</pre></td>
     </tr>
     <tr>
-      <td class='line'>146</td><td class='count'>67</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l146s0'>        return transactionFileExtensions;</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 46</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41x8</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 43x11</li>
-          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 50, 56, 50, 56, 50, 56</li>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x16</li>
-          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetTransactionFileExtensions: 94</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#setUp: 41x2</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#setUp: 41x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 38</li>
-        </ol>
-      </td>
+      <td class='line'>146</td><td class='count'>65</td>
+      <td><pre class='prettyprint covered' id='l146s0'>        return transactionFileExtensions;</pre></td>
     </tr>
     <tr>
       <td class='line'>147</td><td>&nbsp;</td>
@@ -505,53 +427,23 @@ import org.slf4j.LoggerFactory;
       <td><pre class='prettyprint'>    public String[] getTextFileExtensions() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>154</td><td class='count'>67</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l154s0'>        String[] textFileExtensions =</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 46</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41x8</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 43x11</li>
-          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 50, 56, 50, 56, 50, 56</li>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x16</li>
-          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetTextFileExtensions: 100</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#setUp: 41x2</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#setUp: 41x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 38</li>
-        </ol>
-      </td>
+      <td class='line'>154</td><td class='count'>65</td>
+      <td><pre class='prettyprint covered' id='l154s0'>        String[] textFileExtensions =</pre></td>
     </tr>
     <tr>
       <td class='line'>155</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                CONFIG.getStringArray("text_file_extensions");</pre></td>
+      <td><pre class='prettyprint'>                this.config.getStringArray(</pre></td>
     </tr>
     <tr>
-      <td class='line'>156</td><td class='count'>67</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l156s0'>        return textFileExtensions;</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 46</li>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41x8</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 43x11</li>
-          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 50, 56, 50, 56, 50, 56</li>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x16</li>
-          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 43x2</li>
-          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetTextFileExtensions: 100</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#setUp: 41x2</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#setUp: 41x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 38</li>
-        </ol>
-      </td>
+      <td class='line'>156</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                        "text_file_extensions"); //$NON-NLS-1$</pre></td>
     </tr>
     <tr>
-      <td class='line'>157</td><td>&nbsp;</td>
+      <td class='line'>157</td><td class='count'>65</td>
+      <td><pre class='prettyprint covered' id='l157s0'>        return textFileExtensions;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>158</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -562,19 +454,15 @@ import org.slf4j.LoggerFactory;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>162</td><td>&nbsp;</td>
+      <td class='line'>163</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public int getMaxFilenameLength() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>163</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l163s0'>        return CONFIG.getInt("max_filename_length");</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetMaxFilenameLength: 106</li>
-        </ol>
-      </td>
+      <td class='line'>164</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l164s0'>        return this.config.getInt("max_filename_length"); //$NON-NLS-1$</pre></td>
     </tr>
     <tr>
-      <td class='line'>164</td><td>&nbsp;</td>
+      <td class='line'>165</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -585,37 +473,15 @@ import org.slf4j.LoggerFactory;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>169</td><td>&nbsp;</td>
+      <td class='line'>170</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public String getDescName() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>170</td><td class='count'>168</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l170s0'>        return CONFIG.getString("desc_name");</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38</li>
-          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetDescName: 112</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44x3</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetUserPreferences: 51, 55</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44x31</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48x3</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 56x3</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48x5, 50</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 56x4</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testColumnMoved: 63x5</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testSorterChanged: 79x5</li>
-          <li>com.moneydance.modules.features.importlist.controller.AggregationTableModelTest#testGetValueAt: 56, 58, 60, 62, 64</li>
-          <li>com.moneydance.modules.features.importlist.controller.FileTableModelTest#testGetColumnClassInt: 58, 60, 62, 64, 66</li>
-          <li>com.moneydance.modules.features.importlist.controller.FileTableModelTest#testGetValueAtForFullModel: 77, 79, 81, 83, 85</li>
-          <li>com.moneydance.modules.features.importlist.controller.FileTableRowSorterTest#testIsSortable: 43, 44, 45</li>
-          <li>com.moneydance.modules.features.importlist.controller.FileTableRowSorterTest#testGetComparatorInt: 50, 51x2, 52</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x27</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x27</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72x27, 73</li>
-        </ol>
-      </td>
+      <td class='line'>171</td><td class='count'>210</td>
+      <td><pre class='prettyprint covered' id='l171s0'>        return this.config.getString("desc_name"); //$NON-NLS-1$</pre></td>
     </tr>
     <tr>
-      <td class='line'>171</td><td>&nbsp;</td>
+      <td class='line'>172</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -626,37 +492,15 @@ import org.slf4j.LoggerFactory;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>176</td><td>&nbsp;</td>
+      <td class='line'>177</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public String getDescModified() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>177</td><td class='count'>115</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l177s0'>        return CONFIG.getString("desc_modified");</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38</li>
-          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetDescModified: 118</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44x3</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetUserPreferences: 51, 55</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44x31</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48x3</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 56x3</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48x4, 50</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 56x3</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testColumnMoved: 63x3</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testSorterChanged: 79x3</li>
-          <li>com.moneydance.modules.features.importlist.controller.AggregationTableModelTest#testGetValueAt: 58, 60, 62, 64</li>
-          <li>com.moneydance.modules.features.importlist.controller.FileTableModelTest#testGetColumnClassInt: 60, 62, 64, 66</li>
-          <li>com.moneydance.modules.features.importlist.controller.FileTableModelTest#testGetValueAtForFullModel: 79, 81, 83, 85</li>
-          <li>com.moneydance.modules.features.importlist.controller.FileTableRowSorterTest#testIsSortable: 44, 45</li>
-          <li>com.moneydance.modules.features.importlist.controller.FileTableRowSorterTest#testGetComparatorInt: 51x2, 52</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x13</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x13</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72x13, 73</li>
-        </ol>
-      </td>
+      <td class='line'>178</td><td class='count'>197</td>
+      <td><pre class='prettyprint covered' id='l178s0'>        return this.config.getString("desc_modified"); //$NON-NLS-1$</pre></td>
     </tr>
     <tr>
-      <td class='line'>178</td><td>&nbsp;</td>
+      <td class='line'>179</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -667,37 +511,15 @@ import org.slf4j.LoggerFactory;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>183</td><td>&nbsp;</td>
+      <td class='line'>184</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public String getDescImport() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>184</td><td class='count'>105</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l184s0'>        return CONFIG.getString("desc_import");</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38</li>
-          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetDescImport: 124</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44x3</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetUserPreferences: 51, 55</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44x31</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48x3</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 56x3</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48x4, 50</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 56x3</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testColumnMoved: 63x2</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testSorterChanged: 79x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.AggregationTableModelTest#testIsCellEditable: 43, 44, 45</li>
-          <li>com.moneydance.modules.features.importlist.controller.AggregationTableModelTest#testGetValueAt: 60, 62, 64</li>
-          <li>com.moneydance.modules.features.importlist.controller.FileTableModelTest#testIsCellEditable: 51, 52, 53</li>
-          <li>com.moneydance.modules.features.importlist.controller.FileTableModelTest#testGetColumnClassInt: 62, 64, 66</li>
-          <li>com.moneydance.modules.features.importlist.controller.FileTableModelTest#testGetValueAtForFullModel: 81, 83, 85</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x11</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x11</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72x11, 73</li>
-        </ol>
-      </td>
+      <td class='line'>185</td><td class='count'>103</td>
+      <td><pre class='prettyprint covered' id='l185s0'>        return this.config.getString("desc_import"); //$NON-NLS-1$</pre></td>
     </tr>
     <tr>
-      <td class='line'>185</td><td>&nbsp;</td>
+      <td class='line'>186</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -708,37 +530,15 @@ import org.slf4j.LoggerFactory;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>190</td><td>&nbsp;</td>
+      <td class='line'>191</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public String getDescDelete() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>191</td><td class='count'>92</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l191s0'>        return CONFIG.getString("desc_delete");</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38</li>
-          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetDescDelete: 130</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44x3</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetUserPreferences: 51, 55</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 44x31</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48x3</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 56x3</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48x4, 50</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 56x3</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testColumnMoved: 63</li>
-          <li>com.moneydance.modules.features.importlist.view.TableListenerTest#testSorterChanged: 79</li>
-          <li>com.moneydance.modules.features.importlist.controller.AggregationTableModelTest#testIsCellEditable: 44, 45</li>
-          <li>com.moneydance.modules.features.importlist.controller.AggregationTableModelTest#testGetValueAt: 62, 64</li>
-          <li>com.moneydance.modules.features.importlist.controller.FileTableModelTest#testIsCellEditable: 52, 53</li>
-          <li>com.moneydance.modules.features.importlist.controller.FileTableModelTest#testGetColumnClassInt: 64, 66</li>
-          <li>com.moneydance.modules.features.importlist.controller.FileTableModelTest#testGetValueAtForFullModel: 83, 85</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x9</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x9</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72x9, 73</li>
-        </ol>
-      </td>
+      <td class='line'>192</td><td class='count'>90</td>
+      <td><pre class='prettyprint covered' id='l192s0'>        return this.config.getString("desc_delete"); //$NON-NLS-1$</pre></td>
     </tr>
     <tr>
-      <td class='line'>192</td><td>&nbsp;</td>
+      <td class='line'>193</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -749,29 +549,15 @@ import org.slf4j.LoggerFactory;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>197</td><td>&nbsp;</td>
+      <td class='line'>198</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public String getIndentationPrefix() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>198</td><td class='count'>31</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l198s0'>        return CONFIG.getString("indentation_prefix");</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.table.LabelModifiedRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 66</li>
-          <li>com.moneydance.modules.features.importlist.table.LabelNameRendererTest#testGetTableCellRendererComponentJTableObjectBooleanBooleanIntInt: 62</li>
-          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetIndentationPrefix: 136</li>
-          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetHeaderValueName: 56</li>
-          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetHeaderValueModified: 62</li>
-          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetHeaderValueImport: 68</li>
-          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetHeaderValueDelete: 74</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48x4, 50x4</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x4</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x4</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72x4, 73</li>
-        </ol>
-      </td>
+      <td class='line'>199</td><td class='count'>31</td>
+      <td><pre class='prettyprint covered' id='l199s0'>        return this.config.getString("indentation_prefix"); //$NON-NLS-1$</pre></td>
     </tr>
     <tr>
-      <td class='line'>199</td><td>&nbsp;</td>
+      <td class='line'>200</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -782,26 +568,15 @@ import org.slf4j.LoggerFactory;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>204</td><td>&nbsp;</td>
+      <td class='line'>205</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public boolean isButtonResizable() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>205</td><td class='count'>21</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l205s0'>        return CONFIG.getBoolean("button_resizable");</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testIsButtonResizable: 142</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48x2</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 56x2</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48x2</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 56x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x4</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x4</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
-        </ol>
-      </td>
+      <td class='line'>206</td><td class='count'>19</td>
+      <td><pre class='prettyprint covered' id='l206s0'>        return this.config.getBoolean("button_resizable"); //$NON-NLS-1$</pre></td>
     </tr>
     <tr>
-      <td class='line'>206</td><td>&nbsp;</td>
+      <td class='line'>207</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -812,26 +587,15 @@ import org.slf4j.LoggerFactory;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>211</td><td>&nbsp;</td>
+      <td class='line'>212</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public int getMinColumnWidth() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>212</td><td class='count'>41</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l212s0'>        return CONFIG.getInt("min_column_width");</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetMinColumnWidth: 148</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48x4</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 56x4</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48x4</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 56x4</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x8</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x8</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
-        </ol>
-      </td>
+      <td class='line'>213</td><td class='count'>37</td>
+      <td><pre class='prettyprint covered' id='l213s0'>        return this.config.getInt("min_column_width"); //$NON-NLS-1$</pre></td>
     </tr>
     <tr>
-      <td class='line'>213</td><td>&nbsp;</td>
+      <td class='line'>214</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -842,24 +606,15 @@ import org.slf4j.LoggerFactory;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>218</td><td>&nbsp;</td>
+      <td class='line'>219</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public boolean isReorderingAllowed() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>219</td><td class='count'>6</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l219s0'>        return CONFIG.getBoolean("reordering_allowed");</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testIsReorderingAllowed: 154</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
-        </ol>
-      </td>
+      <td class='line'>220</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered' id='l220s0'>        return this.config.getBoolean("reordering_allowed"); //$NON-NLS-1$</pre></td>
     </tr>
     <tr>
-      <td class='line'>220</td><td>&nbsp;</td>
+      <td class='line'>221</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -870,26 +625,15 @@ import org.slf4j.LoggerFactory;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>225</td><td>&nbsp;</td>
+      <td class='line'>226</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public int getMinimumTableWidth() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>226</td><td class='count'>31</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l226s0'>        return CONFIG.getInt("minimum_table_width");</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetMinimumTableWidth: 160</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetPreferredTableWidth: 208</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48x2, 50x2</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48x3, 50x2</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x5</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x5</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72x5, 73</li>
-        </ol>
-      </td>
+      <td class='line'>227</td><td class='count'>31</td>
+      <td><pre class='prettyprint covered' id='l227s0'>        return this.config.getInt("minimum_table_width"); //$NON-NLS-1$</pre></td>
     </tr>
     <tr>
-      <td class='line'>227</td><td>&nbsp;</td>
+      <td class='line'>228</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -900,25 +644,15 @@ import org.slf4j.LoggerFactory;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>232</td><td>&nbsp;</td>
+      <td class='line'>233</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public int getMinimumTableHeight() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>233</td><td class='count'>19</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l233s0'>        return CONFIG.getInt("minimum_table_height");</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetMinimumTableHeight: 166</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetPreferredTableHeight: 214</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48x3, 50x2</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x3</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x3</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72x3, 73</li>
-        </ol>
-      </td>
+      <td class='line'>234</td><td class='count'>19</td>
+      <td><pre class='prettyprint covered' id='l234s0'>        return this.config.getInt("minimum_table_height"); //$NON-NLS-1$</pre></td>
     </tr>
     <tr>
-      <td class='line'>234</td><td>&nbsp;</td>
+      <td class='line'>235</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -929,24 +663,15 @@ import org.slf4j.LoggerFactory;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>239</td><td>&nbsp;</td>
+      <td class='line'>240</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public int getTableHeightOffset() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>240</td><td class='count'>30</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l240s0'>        return CONFIG.getInt("table_height_offset");</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetTableHeightOffset: 172</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48x5, 50x4</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x5</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x5</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72x5, 73</li>
-        </ol>
-      </td>
+      <td class='line'>241</td><td class='count'>29</td>
+      <td><pre class='prettyprint covered' id='l241s0'>        return this.config.getInt("table_height_offset"); //$NON-NLS-1$</pre></td>
     </tr>
     <tr>
-      <td class='line'>241</td><td>&nbsp;</td>
+      <td class='line'>242</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -957,28 +682,15 @@ import org.slf4j.LoggerFactory;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>246</td><td>&nbsp;</td>
+      <td class='line'>247</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public int getColumnWidth() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>247</td><td class='count'>43</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l247s0'>        return CONFIG.getInt("column_width");</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetColumnWidth: 178</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testSetColumnWidths: 146</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetColumnWidths: 153</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48x4</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 56x4</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48x4</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 56x4</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x8</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x8</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
-        </ol>
-      </td>
+      <td class='line'>248</td><td class='count'>39</td>
+      <td><pre class='prettyprint covered' id='l248s0'>        return this.config.getInt("column_width"); //$NON-NLS-1$</pre></td>
     </tr>
     <tr>
-      <td class='line'>248</td><td>&nbsp;</td>
+      <td class='line'>249</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -990,19 +702,19 @@ import org.slf4j.LoggerFactory;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>254</td><td>&nbsp;</td>
+      <td class='line'>255</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public int getPreferredEmptyMessageWidth() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>255</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l255s0'>        return CONFIG.getInt("preferred_empty_message_width");</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetPreferredEmptyMessageWidth: 184</li>
-        </ol>
-      </td>
+      <td class='line'>256</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l256s0'>        return this.config.getInt(</pre></td>
     </tr>
     <tr>
-      <td class='line'>256</td><td>&nbsp;</td>
+      <td class='line'>257</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                "preferred_empty_message_width"); //$NON-NLS-1$</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>258</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -1014,19 +726,19 @@ import org.slf4j.LoggerFactory;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>262</td><td>&nbsp;</td>
+      <td class='line'>264</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public int getPreferredEmptyMessageHeight() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>263</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l263s0'>        return CONFIG.getInt("preferred_empty_message_height");</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetPreferredEmptyMessageHeight: 190</li>
-        </ol>
-      </td>
+      <td class='line'>265</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l265s0'>        return this.config.getInt(</pre></td>
     </tr>
     <tr>
-      <td class='line'>264</td><td>&nbsp;</td>
+      <td class='line'>266</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                "preferred_empty_message_height"); //$NON-NLS-1$</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>267</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -1039,25 +751,19 @@ import org.slf4j.LoggerFactory;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>271</td><td>&nbsp;</td>
+      <td class='line'>274</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public int getMessageFilenameLineMaxLength() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>272</td><td class='count'>8</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l272s0'>        return CONFIG.getInt("message_filename_line_max_length");</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.io.DeleteAllOperationTest#testPerform: 55</li>
-          <li>com.moneydance.modules.features.importlist.io.DeleteOneOperationTest#testShowWarningAndPerform: 68, 72</li>
-          <li>com.moneydance.modules.features.importlist.io.DeleteOneOperationTest#testPerform: 55</li>
-          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#testDeleteRow: 115</li>
-          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetMessageFilenameLineMaxLength: 196</li>
-          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetConfirmationMessageDeleteOneFile: 104</li>
-          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#testGetErrorMessageDeleteFile: 119</li>
-        </ol>
-      </td>
+      <td class='line'>275</td><td class='count'>8</td>
+      <td><pre class='prettyprint covered' id='l275s0'>        return this.config.getInt(</pre></td>
     </tr>
     <tr>
-      <td class='line'>273</td><td>&nbsp;</td>
+      <td class='line'>276</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                "message_filename_line_max_length"); //$NON-NLS-1$</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>277</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -1069,28 +775,15 @@ import org.slf4j.LoggerFactory;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>279</td><td>&nbsp;</td>
+      <td class='line'>283</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public int getLengthOfVersionDigits() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>280</td><td class='count'>28</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l280s0'>        return CONFIG.getInt("length_of_version_digits");</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x16</li>
-          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetLengthOfVersionDigits: 202</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetMajorVersion: 86</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
-        </ol>
-      </td>
+      <td class='line'>284</td><td class='count'>27</td>
+      <td><pre class='prettyprint covered' id='l284s0'>        return this.config.getInt("length_of_version_digits"); //$NON-NLS-1$</pre></td>
     </tr>
     <tr>
-      <td class='line'>281</td><td>&nbsp;</td>
+      <td class='line'>285</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -1102,27 +795,19 @@ import org.slf4j.LoggerFactory;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>287</td><td>&nbsp;</td>
+      <td class='line'>291</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public int getVersionWithOpaqueHomepageView() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>288</td><td class='count'>27</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l288s0'>        return CONFIG.getInt("version_with_opaque_homepage_view");</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x16</li>
-          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetVersionWithOpaqueHomepageView: 208</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
-        </ol>
-      </td>
+      <td class='line'>292</td><td class='count'>26</td>
+      <td><pre class='prettyprint covered' id='l292s0'>        return this.config.getInt(</pre></td>
     </tr>
     <tr>
-      <td class='line'>289</td><td>&nbsp;</td>
+      <td class='line'>293</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                "version_with_opaque_homepage_view"); //$NON-NLS-1$</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>294</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -1133,27 +818,15 @@ import org.slf4j.LoggerFactory;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>294</td><td>&nbsp;</td>
+      <td class='line'>299</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public int getColorValueFgDef() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>295</td><td class='count'>18</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l295s0'>        return CONFIG.getInt("color_value_fg_def");</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetColorValueFgDef: 214</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetForeground: 232</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48x2, 50</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x3</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x3</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72x3, 73</li>
-        </ol>
-      </td>
+      <td class='line'>300</td><td class='count'>17</td>
+      <td><pre class='prettyprint covered' id='l300s0'>        return this.config.getInt("color_value_fg_def"); //$NON-NLS-1$</pre></td>
     </tr>
     <tr>
-      <td class='line'>296</td><td>&nbsp;</td>
+      <td class='line'>301</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -1164,29 +837,15 @@ import org.slf4j.LoggerFactory;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>301</td><td>&nbsp;</td>
+      <td class='line'>306</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public int getColorValueBgDef() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>302</td><td class='count'>42</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l302s0'>        return CONFIG.getInt("color_value_bg_def");</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetColorValueBgDef: 220</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetBackground: 238</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48x2, 50</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48x4, 50x3</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.view.EmptyLabelFactoryTest#testGetComponent: 40, 42</li>
-          <li>com.moneydance.modules.features.importlist.view.SplitPaneFactoryTest#testGetComponent: 42x2, 44x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x6</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x6</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72x6, 73</li>
-        </ol>
-      </td>
+      <td class='line'>307</td><td class='count'>41</td>
+      <td><pre class='prettyprint covered' id='l307s0'>        return this.config.getInt("color_value_bg_def"); //$NON-NLS-1$</pre></td>
     </tr>
     <tr>
-      <td class='line'>303</td><td>&nbsp;</td>
+      <td class='line'>308</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -1197,27 +856,15 @@ import org.slf4j.LoggerFactory;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>308</td><td>&nbsp;</td>
+      <td class='line'>313</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public int getColorValueBgAltDef() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>309</td><td class='count'>18</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l309s0'>        return CONFIG.getInt("color_value_bg_alt_def");</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetColorValueBgAltDef: 226</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetBackgroundAlt: 244</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48x2, 50</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetColumnFactory: 56</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x3</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x3</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72x3, 73</li>
-        </ol>
-      </td>
+      <td class='line'>314</td><td class='count'>17</td>
+      <td><pre class='prettyprint covered' id='l314s0'>        return this.config.getInt("color_value_bg_alt_def"); //$NON-NLS-1$</pre></td>
     </tr>
     <tr>
-      <td class='line'>310</td><td>&nbsp;</td>
+      <td class='line'>315</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -1229,26 +876,15 @@ import org.slf4j.LoggerFactory;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>316</td><td>&nbsp;</td>
+      <td class='line'>321</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public double getFactorRowHeightHeader() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>317</td><td class='count'>21</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l317s0'>        return CONFIG.getDouble("factor_row_height_header");</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 49x4, 66x4, 83x4</li>
-          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetFactorRowHeightHeader: 232</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetPreferredTableHeight: 214</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetHeaderRowHeight: 262</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48, 50</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72, 73</li>
-        </ol>
-      </td>
+      <td class='line'>322</td><td class='count'>21</td>
+      <td><pre class='prettyprint covered' id='l322s0'>        return this.config.getDouble("factor_row_height_header"); //$NON-NLS-1$</pre></td>
     </tr>
     <tr>
-      <td class='line'>318</td><td>&nbsp;</td>
+      <td class='line'>323</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -1259,26 +895,15 @@ import org.slf4j.LoggerFactory;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>323</td><td>&nbsp;</td>
+      <td class='line'>328</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public double getSummandRowHeightBody() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>324</td><td class='count'>39</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l324s0'>        return CONFIG.getDouble("summand_row_height_body");</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetSummandRowHeightBody: 238</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetPreferredTableHeight: 214</li>
-          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#testGetBodyRowHeight: 268</li>
-          <li>com.moneydance.modules.features.importlist.view.AggregationTableFactoryTest#testGetComponent: 48x4, 50x4</li>
-          <li>com.moneydance.modules.features.importlist.view.BaseTableFactoryTest#testGetComponent: 48x2, 50x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x6</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x6</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72x6, 73</li>
-        </ol>
-      </td>
+      <td class='line'>329</td><td class='count'>39</td>
+      <td><pre class='prettyprint covered' id='l329s0'>        return this.config.getDouble("summand_row_height_body"); //$NON-NLS-1$</pre></td>
     </tr>
     <tr>
-      <td class='line'>325</td><td>&nbsp;</td>
+      <td class='line'>330</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -1289,24 +914,15 @@ import org.slf4j.LoggerFactory;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>330</td><td>&nbsp;</td>
+      <td class='line'>335</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public String getKeyboardShortcutImport() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>331</td><td class='count'>11</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l331s0'>        return CONFIG.getString("keyboard_shortcut_import");</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#testGetKeyStroke: 62</li>
-          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#testGetKeyStroke: 62</li>
-          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetKeyboardShortcutImport: 244</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72x2, 73</li>
-        </ol>
-      </td>
+      <td class='line'>336</td><td class='count'>11</td>
+      <td><pre class='prettyprint covered' id='l336s0'>        return this.config.getString("keyboard_shortcut_import"); //$NON-NLS-1$</pre></td>
     </tr>
     <tr>
-      <td class='line'>332</td><td>&nbsp;</td>
+      <td class='line'>337</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -1317,24 +933,15 @@ import org.slf4j.LoggerFactory;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>337</td><td>&nbsp;</td>
+      <td class='line'>342</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public String getKeyboardShortcutDelete() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>338</td><td class='count'>11</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l338s0'>        return CONFIG.getString("keyboard_shortcut_delete");</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#testGetKeyStroke: 62</li>
-          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#testGetKeyStroke: 62</li>
-          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetKeyboardShortcutDelete: 250</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56x2</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72x2, 73</li>
-        </ol>
-      </td>
+      <td class='line'>343</td><td class='count'>11</td>
+      <td><pre class='prettyprint covered' id='l343s0'>        return this.config.getString("keyboard_shortcut_delete"); //$NON-NLS-1$</pre></td>
     </tr>
     <tr>
-      <td class='line'>339</td><td>&nbsp;</td>
+      <td class='line'>344</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -1345,21 +952,15 @@ import org.slf4j.LoggerFactory;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>344</td><td>&nbsp;</td>
+      <td class='line'>349</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public String getTrackingCode() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>345</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l345s0'>        return CONFIG.getString("tracking_code");</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 41</li>
-          <li>com.moneydance.modules.features.importlist.util.SettingsTest#testGetTrackingCode: 256</li>
-          <li>com.moneydance.modules.features.importlist.util.TrackerTest#setUp: 35</li>
-        </ol>
-      </td>
+      <td class='line'>350</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered' id='l350s0'>        return this.config.getString("tracking_code"); //$NON-NLS-1$</pre></td>
     </tr>
     <tr>
-      <td class='line'>346</td><td>&nbsp;</td>
+      <td class='line'>351</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -1370,19 +971,15 @@ import org.slf4j.LoggerFactory;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>351</td><td>&nbsp;</td>
+      <td class='line'>356</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public String getEventActionInstall() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>352</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l352s0'>        return CONFIG.getString("event_action_install");</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#testUnload: 51</li>
-        </ol>
-      </td>
+      <td class='line'>357</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered' id='l357s0'>        return this.config.getString("event_action_install"); //$NON-NLS-1$</pre></td>
     </tr>
     <tr>
-      <td class='line'>353</td><td>&nbsp;</td>
+      <td class='line'>358</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -1393,19 +990,15 @@ import org.slf4j.LoggerFactory;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>358</td><td>&nbsp;</td>
+      <td class='line'>363</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public String getEventActionDisplay() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>359</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l359s0'>        return CONFIG.getString("event_action_display");</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#testUnload: 51</li>
-        </ol>
-      </td>
+      <td class='line'>364</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered' id='l364s0'>        return this.config.getString("event_action_display"); //$NON-NLS-1$</pre></td>
     </tr>
     <tr>
-      <td class='line'>360</td><td>&nbsp;</td>
+      <td class='line'>365</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -1416,23 +1009,64 @@ import org.slf4j.LoggerFactory;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>365</td><td>&nbsp;</td>
+      <td class='line'>370</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public String getEventActionUninstall() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>366</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l366s0'>        return CONFIG.getString("event_action_uninstall");</pre>
-        <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.MainTest#testUnload: 51</li>
-        </ol>
-      </td>
+      <td class='line'>371</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered' id='l371s0'>        return this.config.getString("event_action_uninstall"); //$NON-NLS-1$</pre></td>
     </tr>
     <tr>
-      <td class='line'>367</td><td>&nbsp;</td>
+      <td class='line'>372</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>374</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private static Image getImage(final String resource) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>375</td><td class='count'>7</td>
+      <td><pre class='prettyprint covered' id='l375s0'>        Image image = null;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>376</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        try {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>377</td><td class='count'>7</td>
+      <td><pre class='prettyprint covered' id='l377s0'>            InputStream inputStream = Helper.getInputStreamFromResource(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>378</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                    resource);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>379</td><td class='count'>7</td>
+      <td><pre class='prettyprint covered' id='l379s0'>            image = ImageIO.read(inputStream);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>380</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l380s0'>        } catch (IOException e) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>381</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l381s0'>            throw new IllegalStateException(e.getMessage(), e);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>382</td><td class='count'>7</td>
+      <td><pre class='prettyprint covered' id='l382s0'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>383</td><td class='count'>7</td>
+      <td><pre class='prettyprint covered' id='l383s0'>        return image;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>384</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr>
-      <td class='line'>368</td><td>&nbsp;</td>
+      <td class='line'>385</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>}</pre></td>
     </tr>
   </table>

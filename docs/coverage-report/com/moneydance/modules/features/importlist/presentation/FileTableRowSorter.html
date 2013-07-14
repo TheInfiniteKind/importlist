@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JMockit Coverage Report - FileTableRowSorter.java</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../../../../coverage.css'/>
+  <link rel='shortcut icon' type='image/png' href='../../../../../../logo.png'/>
+  <script type='text/javascript' src='../../../../../../coverage.js'></script>
+  <script type='text/javascript' src='../../../../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption>master/src/com/moneydance/modules/features/importlist/presentation/FileTableRowSorter.java</caption>
+    <tr>
+      <td class='line'>1</td><td>&nbsp;</td>
+      <td><pre class='comment'>// Import List - http://my-flow.github.io/importlist/</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>2</td><td>&nbsp;</td>
+      <td><pre class='comment'>// Copyright (C) 2011-2014 Florian J. Breunig</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>3</td><td>&nbsp;</td>
+      <td><pre class='comment'>//</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>4</td><td>&nbsp;</td>
+      <td><pre class='comment'>// This program is free software: you can redistribute it and/or modify</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>5</td><td>&nbsp;</td>
+      <td><pre class='comment'>// it under the terms of the GNU General Public License as published by</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>6</td><td>&nbsp;</td>
+      <td><pre class='comment'>// the Free Software Foundation, either version 3 of the License, or</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>7</td><td>&nbsp;</td>
+      <td><pre class='comment'>// (at your option) any later version.</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>8</td><td>&nbsp;</td>
+      <td><pre class='comment'>//</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>9</td><td>&nbsp;</td>
+      <td><pre class='comment'>// This program is distributed in the hope that it will be useful,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>10</td><td>&nbsp;</td>
+      <td><pre class='comment'>// but WITHOUT ANY WARRANTY; without even the implied warranty of</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>11</td><td>&nbsp;</td>
+      <td><pre class='comment'>// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>12</td><td>&nbsp;</td>
+      <td><pre class='comment'>// GNU General Public License for more details.</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>13</td><td>&nbsp;</td>
+      <td><pre class='comment'>//</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>14</td><td>&nbsp;</td>
+      <td><pre class='comment'>// You should have received a copy of the GNU General Public License</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>15</td><td>&nbsp;</td>
+      <td><pre class='comment'>// along with this program. If not, see &lt;http://www.gnu.org/licenses/>.</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>17</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package com.moneydance.modules.features.importlist.presentation;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import com.moneydance.modules.features.importlist.util.AlphanumComparator;
+import com.moneydance.modules.features.importlist.util.Helper;
+import com.moneydance.modules.features.importlist.util.Settings;
+
+import java.util.Comparator;
+
+import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
+
+</div><span>import ...</span></pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+ * An implementation of &lt;code>RowSorter&lt;/code> that provides natural sorting
+ * for a &lt;code>ListTableModel&lt;/code>.
+ *
+ * @author Florian J. Breunig
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>35</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>final class FileTableRowSorter extends TableRowSorter&lt;TableModel> {</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>37</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final Settings settings;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>    /**
+     * @param tableModel The table model that is to be sorted
+     */</div><span>    /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>41</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    FileTableRowSorter(final TableModel tableModel) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>42</td><td class='count'>9</td>
+      <td><pre class='prettyprint covered' id='l42s0'>        super(tableModel);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>43</td><td class='count'>9</td>
+      <td><pre class='prettyprint covered' id='l43s0'>        this.settings = Helper.INSTANCE.getSettings();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>44</td><td class='count'>9</td>
+      <td><pre class='prettyprint covered' id='l44s0'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>46</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>47</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public boolean isSortable(final int column) {</pre></td>
+    </tr>
+    <tr>
+      <td></td><td class='count'>3</td>
+      <td class='paths'>
+        <span style='cursor:default; background-color:#00ff00' onclick='hidePath()'>Path coverage: 3/3</span>
+        <span class='covered' onclick="showPath(this,'l48s0 l49s0 l49s2 l49s4')">A: 1</span>
+        <span class='covered' onclick="showPath(this,'l48s0 l49s0 l49s1 l49s3 l49s4')">B: 1</span>
+        <span class='covered' onclick="showPath(this,'l48s0 l49s0 l49s1 l49s2 l49s4')">C: 1</span>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>48</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered' id='l48s0'>        String columnName = this.getModel().getColumnName(column);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>49</td><td class='count'>3</td>
+      <td><pre class='prettyprint jmp'>        <span id='l49s0' title='Executions: 3' class='covered'>return this.settings.getDescName().equals(columnName)</span></pre></td>
+    </tr>
+    <tr>
+      <td class='line'>50</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                || this.settings.getDescModified().equals(columnName);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>51</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>53</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>54</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public Comparator&lt;?> getComparator(final int column) {</pre></td>
+    </tr>
+    <tr>
+      <td></td><td class='count'>13</td>
+      <td class='paths'>
+        <span style='cursor:default; background-color:#00ff00' onclick='hidePath()'>Path coverage: 3/3</span>
+        <span class='covered' onclick="showPath(this,'l55s0 l57s0 l59s0 l62s0')">A: 1</span>
+        <span class='covered' onclick="showPath(this,'l55s0 l57s0 l59s0 l60s0 l62s0')">B: 11</span>
+        <span class='covered' onclick="showPath(this,'l55s0 l57s0 l58s0 l62s0')">C: 1</span>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>55</td><td class='count'>13</td>
+      <td><pre class='prettyprint covered' id='l55s0'>        final String columnName  = this.getModel().getColumnName(column);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>56</td><td class='count'>13</td>
+      <td><pre class='prettyprint covered' id='l56s0'>        Comparator&lt;?> comparator = null;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>57</td><td class='count'>13</td>
+      <td><pre class='prettyprint jmp'>        <span id='l57s0' title='Executions: 13' class='covered'>if (this.settings.getDescName().equals(columnName)) {</span></pre></td>
+    </tr>
+    <tr>
+      <td class='line'>58</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l58s0'>            comparator = AlphanumComparator.ALPHANUM;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>59</td><td class='count'>12</td>
+      <td><pre class='prettyprint jmp'>        <span id='l59s0' title='Executions: 12' class='covered'>}</span> else <span id='l59s1' title='Executions: 11' class='covered'>if (this.settings.getDescModified().equals(columnName)) {</span></pre></td>
+    </tr>
+    <tr>
+      <td class='line'>60</td><td class='count'>11</td>
+      <td><pre class='prettyprint covered' id='l60s0'>            comparator = super.getComparator(column);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>61</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>62</td><td class='count'>13</td>
+      <td><pre class='prettyprint covered' id='l62s0'>        return comparator;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>63</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>64</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>

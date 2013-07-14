@@ -13,8 +13,8 @@
     <tr>
       <td class='line'></td><td>&nbsp;</td>
       <td class='comment' onclick='showHideLines(this)'><div>/*
- * Import List - http://my-flow.github.com/importlist/
- * Copyright (C) 2011-2012 Florian J. Breunig
+ * Import List - http://my-flow.github.io/importlist/
+ * Copyright (C) 2011-2013 Florian J. Breunig
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,7 +33,7 @@
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'>19</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>package com.moneydance.modules.features.importlist.view;</pre></td>
+      <td><pre class='prettyprint'>package com.moneydance.modules.features.importlist.presentation;</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
@@ -56,7 +56,7 @@ import javax.swing.JSplitPane;
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'>29</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    private static final long serialVersionUID = -2741147624999364681L;</pre></td>
+      <td><pre class='prettyprint'>    private static final long serialVersionUID = 1L;</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
@@ -64,26 +64,20 @@ import javax.swing.JSplitPane;
       <td><pre class='prettyprint'>    JCustomSplitPane(final int newOrientation) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>32</td><td class='count'>5</td>
+      <td class='line'>32</td><td class='count'>2</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l32s0'>        super(newOrientation);</pre>
         <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.view.JCustomSplitPaneTest#setUp: 36</li>
-          <li>com.moneydance.modules.features.importlist.view.SplitPaneFactoryTest#testGetComponent: 42</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
+          <li>com.moneydance.modules.features.importlist.presentation.JCustomSplitPaneTest#setUp: 37</li>
+          <li>com.moneydance.modules.features.importlist.presentation.SplitPaneFactoryTest#testGetComponent: 43</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>33</td><td class='count'>5</td>
+      <td class='line'>33</td><td class='count'>2</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l33s0'>    }</pre>
         <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.view.JCustomSplitPaneTest#setUp: 36</li>
-          <li>com.moneydance.modules.features.importlist.view.SplitPaneFactoryTest#testGetComponent: 42</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 98</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 56</li>
-          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 72</li>
+          <li>com.moneydance.modules.features.importlist.presentation.JCustomSplitPaneTest#setUp: 37</li>
+          <li>com.moneydance.modules.features.importlist.presentation.SplitPaneFactoryTest#testGetComponent: 43</li>
         </ol>
       </td>
     </tr>
@@ -110,7 +104,7 @@ import javax.swing.JSplitPane;
       <td class='line'>37</td><td class='count'>4</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l37s0'>        super.addNotify();</pre>
         <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.view.JCustomSplitPaneTest#testAddNotify: 44, 48, 52, 56</li>
+          <li>com.moneydance.modules.features.importlist.presentation.JCustomSplitPaneTest#testAddNotify: 44, 48, 52, 56</li>
         </ol>
       </td>
     </tr>
@@ -119,7 +113,7 @@ import javax.swing.JSplitPane;
       <td class='line'>39</td><td class='count'>4</td>
       <td><pre class='prettyprint jmp'>        <span id='l39s0' title='Executions: 4' class='covered cp' onclick='showHide(this,0)'>if (this.getTopComponent() != null) {</span></pre>
         <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.view.JCustomSplitPaneTest#testAddNotify: 44, 48, 52, 56</li>
+          <li>com.moneydance.modules.features.importlist.presentation.JCustomSplitPaneTest#testAddNotify: 44, 48, 52, 56</li>
         </ol>
       </td>
     </tr>
@@ -127,7 +121,7 @@ import javax.swing.JSplitPane;
       <td class='line'>40</td><td class='count'>2</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l40s0'>            ((JComponent) this.getTopComponent()).setOpaque(false);</pre>
         <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.view.JCustomSplitPaneTest#testAddNotify: 48, 56</li>
+          <li>com.moneydance.modules.features.importlist.presentation.JCustomSplitPaneTest#testAddNotify: 48, 56</li>
         </ol>
       </td>
     </tr>
@@ -135,7 +129,7 @@ import javax.swing.JSplitPane;
       <td class='line'>41</td><td class='count'>2</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l41s0'>            this.getTopComponent().setBackground(this.getBackground());</pre>
         <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.view.JCustomSplitPaneTest#testAddNotify: 48, 56</li>
+          <li>com.moneydance.modules.features.importlist.presentation.JCustomSplitPaneTest#testAddNotify: 48, 56</li>
         </ol>
       </td>
     </tr>
@@ -148,7 +142,7 @@ import javax.swing.JSplitPane;
       <td class='line'>44</td><td class='count'>4</td>
       <td><pre class='prettyprint jmp'>        <span id='l44s0' title='Executions: 4' class='covered cp' onclick='showHide(this,0)'>if (this.getBottomComponent() != null) {</span></pre>
         <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.view.JCustomSplitPaneTest#testAddNotify: 44, 48, 52, 56</li>
+          <li>com.moneydance.modules.features.importlist.presentation.JCustomSplitPaneTest#testAddNotify: 44, 48, 52, 56</li>
         </ol>
       </td>
     </tr>
@@ -156,7 +150,7 @@ import javax.swing.JSplitPane;
       <td class='line'>45</td><td class='count'>2</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l45s0'>            ((JComponent) this.getBottomComponent()).setOpaque(false);</pre>
         <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.view.JCustomSplitPaneTest#testAddNotify: 52, 56</li>
+          <li>com.moneydance.modules.features.importlist.presentation.JCustomSplitPaneTest#testAddNotify: 52, 56</li>
         </ol>
       </td>
     </tr>
@@ -164,7 +158,7 @@ import javax.swing.JSplitPane;
       <td class='line'>46</td><td class='count'>2</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l46s0'>            this.getBottomComponent().setBackground(this.getBackground());</pre>
         <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.view.JCustomSplitPaneTest#testAddNotify: 52, 56</li>
+          <li>com.moneydance.modules.features.importlist.presentation.JCustomSplitPaneTest#testAddNotify: 52, 56</li>
         </ol>
       </td>
     </tr>
@@ -176,7 +170,7 @@ import javax.swing.JSplitPane;
       <td class='line'>48</td><td class='count'>4</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l48s0'>    }</pre>
         <ol style='display: none'>
-          <li>com.moneydance.modules.features.importlist.view.JCustomSplitPaneTest#testAddNotify: 44, 48, 52, 56</li>
+          <li>com.moneydance.modules.features.importlist.presentation.JCustomSplitPaneTest#testAddNotify: 44, 48, 52, 56</li>
         </ol>
       </td>
     </tr>
