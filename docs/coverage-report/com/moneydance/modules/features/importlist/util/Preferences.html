@@ -10,7 +10,7 @@
 </head>
 <body onload='prettyPrint()'>
   <table cellpadding='0' cellspacing='1'>
-    <caption>master/src/com/moneydance/modules/features/importlist/util/Preferences.java</caption>
+    <caption>develop/src/main/java/com/moneydance/modules/features/importlist/util/Preferences.java</caption>
     <tr>
       <td class='line'>1</td><td>&nbsp;</td>
       <td><pre class='comment'>// Import List - http://my-flow.github.io/importlist/</pre></td>
@@ -121,7 +121,7 @@ import org.apache.commons.lang3.Validate;
     </tr>
     <tr>
       <td class='line'>48</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    private       UserPreferences <span class='instance covered' title='Reads: 764 Writes: 209'>userPreferences</span>;</pre></td>
+      <td><pre class='prettyprint'>    private       UserPreferences <span class='instance covered' title='Reads: 604 Writes: 209'>userPreferences</span>;</pre></td>
     </tr>
     <tr>
       <td class='line'>49</td><td>&nbsp;</td>
@@ -137,7 +137,7 @@ import org.apache.commons.lang3.Validate;
     </tr>
     <tr>
       <td class='line'>52</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    private       StreamTable     <span class='instance covered' title='Reads: 734 Writes: 3'>columnOrder</span>;</pre></td>
+      <td><pre class='prettyprint'>    private       StreamTable     <span class='instance covered' title='Reads: 530 Writes: 3'>columnOrder</span>;</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
@@ -214,16 +214,16 @@ import org.apache.commons.lang3.Validate;
       <td><pre class='prettyprint'>    private UserPreferences getUserPreferences() {</pre></td>
     </tr>
     <tr>
-      <td></td><td class='count'>381</td>
+      <td></td><td class='count'>301</td>
       <td class='paths'>
         <span style='cursor:default; background-color:#00ff00' onclick='hidePath()'>Path coverage: 2/2</span>
-        <span class='covered' onclick="showPath(this,'l76s0 l82s0')">A: 379</span>
+        <span class='covered' onclick="showPath(this,'l76s0 l82s0')">A: 299</span>
         <span class='covered' onclick="showPath(this,'l76s0 l77s0 l82s0')">B: 2</span>
       </td>
     </tr>
     <tr>
-      <td class='line'>76</td><td class='count'>381</td>
-      <td><pre class='prettyprint jmp'>        <span id='l76s0' title='Executions: 381' class='covered'>if (this.userPreferences == null)</span> <span id='l76s1' title='Executions: 2' class='covered'>{</span></pre></td>
+      <td class='line'>76</td><td class='count'>301</td>
+      <td><pre class='prettyprint jmp'>        <span id='l76s0' title='Executions: 301' class='covered'>if (this.userPreferences == null)</span> <span id='l76s1' title='Executions: 2' class='covered'>{</span></pre></td>
     </tr>
     <tr>
       <td class='line'>77</td><td class='count'>2</td>
@@ -246,7 +246,7 @@ import org.apache.commons.lang3.Validate;
       <td><pre class='prettyprint'>        }</pre></td>
     </tr>
     <tr>
-      <td class='line'>82</td><td class='count'>381</td>
+      <td class='line'>82</td><td class='count'>301</td>
       <td><pre class='prettyprint covered' id='l82s0'>        return this.userPreferences;</pre></td>
     </tr>
     <tr>
@@ -404,7 +404,7 @@ import org.apache.commons.lang3.Validate;
       <td><pre class='prettyprint'>    public Locale getLocale() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>126</td><td class='count'>22</td>
+      <td class='line'>126</td><td class='count'>16</td>
       <td><pre class='prettyprint covered' id='l126s0'>        return this.getUserPreferences().getLocale();</pre></td>
     </tr>
     <tr>
@@ -417,7 +417,7 @@ import org.apache.commons.lang3.Validate;
       <td><pre class='prettyprint'>    public String getBaseDirectory() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>130</td><td class='count'>115</td>
+      <td class='line'>130</td><td class='count'>86</td>
       <td><pre class='prettyprint covered' id='l130s0'>        return this.getUserPreferences().getSetting("importlist.import_dir");</pre></td>
     </tr>
     <tr>
@@ -451,7 +451,7 @@ import org.apache.commons.lang3.Validate;
       <td><pre class='prettyprint'>    public boolean hasProxy() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>140</td><td class='count'>5</td>
+      <td class='line'>140</td><td class='count'>3</td>
       <td><pre class='prettyprint covered' id='l140s0'>        return this.getUserPreferences().getBoolSetting(</pre></td>
     </tr>
     <tr>
@@ -472,7 +472,7 @@ import org.apache.commons.lang3.Validate;
       <td><pre class='prettyprint'>    public String getProxyHost() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>146</td><td class='count'>5</td>
+      <td class='line'>146</td><td class='count'>1</td>
       <td><pre class='prettyprint covered' id='l146s0'>        return this.getUserPreferences().getSetting(</pre></td>
     </tr>
     <tr>
@@ -489,7 +489,7 @@ import org.apache.commons.lang3.Validate;
       <td><pre class='prettyprint'>    public int getProxyPort() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>151</td><td class='count'>5</td>
+      <td class='line'>151</td><td class='count'>1</td>
       <td><pre class='prettyprint covered' id='l151s0'>        return this.getUserPreferences().getIntSetting(</pre></td>
     </tr>
     <tr>
@@ -510,7 +510,7 @@ import org.apache.commons.lang3.Validate;
       <td><pre class='prettyprint'>    public boolean hasProxyAuthentication() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>157</td><td class='count'>5</td>
+      <td class='line'>157</td><td class='count'>1</td>
       <td><pre class='prettyprint covered' id='l157s0'>        return this.getUserPreferences().getBoolSetting(</pre></td>
     </tr>
     <tr>
@@ -680,16 +680,16 @@ import org.apache.commons.lang3.Validate;
       <td><pre class='prettyprint'>    public String getColumnName(final int column) {</pre></td>
     </tr>
     <tr>
-      <td></td><td class='count'>220</td>
+      <td></td><td class='count'>136</td>
       <td class='paths'>
         <span style='cursor:default; background-color:#00ff00' onclick='hidePath()'>Path coverage: 2/2</span>
-        <span class='covered' onclick="showPath(this,'l202s0 l207s0')">A: 219</span>
+        <span class='covered' onclick="showPath(this,'l202s0 l207s0')">A: 135</span>
         <span class='covered' onclick="showPath(this,'l202s0 l203s0 l207s0')">B: 1</span>
       </td>
     </tr>
     <tr>
-      <td class='line'>202</td><td class='count'>220</td>
-      <td><pre class='prettyprint jmp'>        <span id='l202s0' title='Executions: 220' class='covered'>if (this.columnOrder == null)</span> <span id='l202s1' title='Executions: 1' class='covered'>{</span></pre></td>
+      <td class='line'>202</td><td class='count'>136</td>
+      <td><pre class='prettyprint jmp'>        <span id='l202s0' title='Executions: 136' class='covered'>if (this.columnOrder == null)</span> <span id='l202s1' title='Executions: 1' class='covered'>{</span></pre></td>
     </tr>
     <tr>
       <td class='line'>203</td><td class='count'>1</td>
@@ -708,7 +708,7 @@ import org.apache.commons.lang3.Validate;
       <td><pre class='prettyprint'>        }</pre></td>
     </tr>
     <tr>
-      <td class='line'>207</td><td class='count'>220</td>
+      <td class='line'>207</td><td class='count'>136</td>
       <td><pre class='prettyprint covered' id='l207s0'>        return this.columnOrder.getStr(Integer.toString(column), null);</pre></td>
     </tr>
     <tr>
@@ -721,15 +721,15 @@ import org.apache.commons.lang3.Validate;
       <td><pre class='prettyprint'>    public void setSortKey(final RowSorter.SortKey sortKey) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>211</td><td class='count'>6</td>
+      <td class='line'>211</td><td class='count'>3</td>
       <td><pre class='prettyprint covered' id='l211s0'>        StreamTable streamTable = new StreamTable();</pre></td>
     </tr>
     <tr>
-      <td class='line'>212</td><td class='count'>6</td>
+      <td class='line'>212</td><td class='count'>3</td>
       <td><pre class='prettyprint covered' id='l212s0'>        streamTable.put(sortKey.getColumn(), sortKey.getSortOrder().toString());</pre></td>
     </tr>
     <tr>
-      <td class='line'>213</td><td class='count'>6</td>
+      <td class='line'>213</td><td class='count'>3</td>
       <td><pre class='prettyprint covered' id='l213s0'>        this.getUserPreferences().setSetting(</pre></td>
     </tr>
     <tr>
@@ -741,7 +741,7 @@ import org.apache.commons.lang3.Validate;
       <td><pre class='prettyprint'>                streamTable);</pre></td>
     </tr>
     <tr>
-      <td class='line'>216</td><td class='count'>6</td>
+      <td class='line'>216</td><td class='count'>3</td>
       <td><pre class='prettyprint covered' id='l216s0'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -783,16 +783,16 @@ import org.apache.commons.lang3.Validate;
       <td><pre class='prettyprint'>    public int getColumnCount() {</pre></td>
     </tr>
     <tr>
-      <td></td><td class='count'>147</td>
+      <td></td><td class='count'>129</td>
       <td class='paths'>
         <span style='cursor:default; background-color:#00ff00' onclick='hidePath()'>Path coverage: 2/2</span>
-        <span class='covered' onclick="showPath(this,'l228s0 l233s0')">A: 145</span>
+        <span class='covered' onclick="showPath(this,'l228s0 l233s0')">A: 127</span>
         <span class='covered' onclick="showPath(this,'l228s0 l229s0 l233s0')">B: 2</span>
       </td>
     </tr>
     <tr>
-      <td class='line'>228</td><td class='count'>147</td>
-      <td><pre class='prettyprint jmp'>        <span id='l228s0' title='Executions: 147' class='covered'>if (this.columnOrder == null)</span> <span id='l228s1' title='Executions: 2' class='covered'>{</span></pre></td>
+      <td class='line'>228</td><td class='count'>129</td>
+      <td><pre class='prettyprint jmp'>        <span id='l228s0' title='Executions: 129' class='covered'>if (this.columnOrder == null)</span> <span id='l228s1' title='Executions: 2' class='covered'>{</span></pre></td>
     </tr>
     <tr>
       <td class='line'>229</td><td class='count'>2</td>
@@ -811,7 +811,7 @@ import org.apache.commons.lang3.Validate;
       <td><pre class='prettyprint'>        }</pre></td>
     </tr>
     <tr>
-      <td class='line'>233</td><td class='count'>147</td>
+      <td class='line'>233</td><td class='count'>129</td>
       <td><pre class='prettyprint covered' id='l233s0'>        return this.columnOrder.size();</pre></td>
     </tr>
     <tr>
@@ -824,7 +824,7 @@ import org.apache.commons.lang3.Validate;
       <td><pre class='prettyprint'>    public CustomDateFormat getDateFormatter() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>237</td><td class='count'>16</td>
+      <td class='line'>237</td><td class='count'>12</td>
       <td><pre class='prettyprint covered' id='l237s0'>        return this.getUserPreferences().getShortDateFormatter();</pre></td>
     </tr>
     <tr>
@@ -837,7 +837,7 @@ import org.apache.commons.lang3.Validate;
       <td><pre class='prettyprint'>    public static DateFormat getTimeFormatter() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>241</td><td class='count'>16</td>
+      <td class='line'>241</td><td class='count'>12</td>
       <td><pre class='prettyprint covered' id='l241s0'>        return DateFormat.getTimeInstance();</pre></td>
     </tr>
     <tr>
@@ -856,7 +856,7 @@ import org.apache.commons.lang3.Validate;
       <td><pre class='prettyprint'>    public int getPreferredTableWidth() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>248</td><td class='count'>13</td>
+      <td class='line'>248</td><td class='count'>5</td>
       <td><pre class='prettyprint covered' id='l248s0'>        return this.settings.getMinimumTableWidth();</pre></td>
     </tr>
     <tr>
@@ -876,7 +876,7 @@ import org.apache.commons.lang3.Validate;
       <td><pre class='prettyprint'>    public int getPreferredTableHeight(final int rowCount) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>256</td><td class='count'>7</td>
+      <td class='line'>256</td><td class='count'>3</td>
       <td><pre class='prettyprint covered' id='l256s0'>        int fit = this.getHeaderRowHeight()</pre></td>
     </tr>
     <tr>
@@ -884,11 +884,11 @@ import org.apache.commons.lang3.Validate;
       <td><pre class='prettyprint'>                + rowCount * this.getBodyRowHeight();</pre></td>
     </tr>
     <tr>
-      <td class='line'>258</td><td class='count'>7</td>
+      <td class='line'>258</td><td class='count'>3</td>
       <td><pre class='prettyprint covered' id='l258s0'>        int min = Math.min(Preferences.getMaximumTableHeight(), fit);</pre></td>
     </tr>
     <tr>
-      <td class='line'>259</td><td class='count'>7</td>
+      <td class='line'>259</td><td class='count'>3</td>
       <td><pre class='prettyprint covered' id='l259s0'>        return Math.max(this.settings.getMinimumTableHeight(), min);</pre></td>
     </tr>
     <tr>
@@ -907,7 +907,7 @@ import org.apache.commons.lang3.Validate;
       <td><pre class='prettyprint'>    public static int getMaximumTableWidth() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>266</td><td class='count'>13</td>
+      <td class='line'>266</td><td class='count'>5</td>
       <td><pre class='prettyprint covered' id='l266s0'>        return (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth()</pre></td>
     </tr>
     <tr>
@@ -930,7 +930,7 @@ import org.apache.commons.lang3.Validate;
       <td><pre class='prettyprint'>    public static int getMaximumTableHeight() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>274</td><td class='count'>14</td>
+      <td class='line'>274</td><td class='count'>6</td>
       <td><pre class='prettyprint covered' id='l274s0'>        return (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight()</pre></td>
     </tr>
     <tr>
@@ -953,7 +953,7 @@ import org.apache.commons.lang3.Validate;
       <td><pre class='prettyprint'>    public Color getForeground() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>282</td><td class='count'>16</td>
+      <td class='line'>282</td><td class='count'>12</td>
       <td><pre class='prettyprint covered' id='l282s0'>        int foregroundValue = this.getUserPreferences().getIntSetting(</pre></td>
     </tr>
     <tr>
@@ -965,7 +965,7 @@ import org.apache.commons.lang3.Validate;
       <td><pre class='prettyprint'>                this.settings.getColorValueFgDef());</pre></td>
     </tr>
     <tr>
-      <td class='line'>285</td><td class='count'>16</td>
+      <td class='line'>285</td><td class='count'>12</td>
       <td><pre class='prettyprint covered' id='l285s0'>        return new Color(foregroundValue);</pre></td>
     </tr>
     <tr>
@@ -984,7 +984,7 @@ import org.apache.commons.lang3.Validate;
       <td><pre class='prettyprint'>    public Color getBackground() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>292</td><td class='count'>40</td>
+      <td class='line'>292</td><td class='count'>24</td>
       <td><pre class='prettyprint covered' id='l292s0'>        int backgroundValue = this.getUserPreferences().getIntSetting(</pre></td>
     </tr>
     <tr>
@@ -996,7 +996,7 @@ import org.apache.commons.lang3.Validate;
       <td><pre class='prettyprint'>                this.settings.getColorValueBgDef());</pre></td>
     </tr>
     <tr>
-      <td class='line'>295</td><td class='count'>40</td>
+      <td class='line'>295</td><td class='count'>24</td>
       <td><pre class='prettyprint covered' id='l295s0'>        return new Color(backgroundValue);</pre></td>
     </tr>
     <tr>
@@ -1015,7 +1015,7 @@ import org.apache.commons.lang3.Validate;
       <td><pre class='prettyprint'>    public Color getBackgroundAlt() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>302</td><td class='count'>16</td>
+      <td class='line'>302</td><td class='count'>12</td>
       <td><pre class='prettyprint covered' id='l302s0'>        int backgroundAltValue = this.getUserPreferences().getIntSetting(</pre></td>
     </tr>
     <tr>
@@ -1027,7 +1027,7 @@ import org.apache.commons.lang3.Validate;
       <td><pre class='prettyprint'>                this.settings.getColorValueBgAltDef());</pre></td>
     </tr>
     <tr>
-      <td class='line'>305</td><td class='count'>16</td>
+      <td class='line'>305</td><td class='count'>12</td>
       <td><pre class='prettyprint covered' id='l305s0'>        return new Color(backgroundAltValue);</pre></td>
     </tr>
     <tr>
@@ -1057,7 +1057,7 @@ import org.apache.commons.lang3.Validate;
       <td><pre class='prettyprint'>    public static Font getBodyFont() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>314</td><td class='count'>77</td>
+      <td class='line'>314</td><td class='count'>41</td>
       <td><pre class='prettyprint covered' id='l314s0'>        return UIManager.getFont("Label.font");</pre></td>
     </tr>
     <tr>
@@ -1070,7 +1070,7 @@ import org.apache.commons.lang3.Validate;
       <td><pre class='prettyprint'>    public int getHeaderRowHeight() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>318</td><td class='count'>20</td>
+      <td class='line'>318</td><td class='count'>16</td>
       <td><pre class='prettyprint covered' id='l318s0'>        return Math.round(</pre></td>
     </tr>
     <tr>
@@ -1091,7 +1091,7 @@ import org.apache.commons.lang3.Validate;
       <td><pre class='prettyprint'>    public int getBodyRowHeight() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>324</td><td class='count'>38</td>
+      <td class='line'>324</td><td class='count'>14</td>
       <td><pre class='prettyprint covered' id='l324s0'>        return Math.round(</pre></td>
     </tr>
     <tr>

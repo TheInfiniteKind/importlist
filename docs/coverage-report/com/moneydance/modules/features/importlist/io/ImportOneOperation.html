@@ -10,7 +10,7 @@
 </head>
 <body onload='prettyPrint()'>
   <table cellpadding='0' cellspacing='1'>
-    <caption>master/src/com/moneydance/modules/features/importlist/io/ImportOneOperation.java</caption>
+    <caption>develop/src/main/java/com/moneydance/modules/features/importlist/io/ImportOneOperation.java</caption>
     <tr>
       <td class='line'>1</td><td>&nbsp;</td>
       <td><pre class='comment'>// Import List - http://my-flow.github.io/importlist/</pre></td>
@@ -156,27 +156,27 @@ import org.apache.commons.lang3.text.StrSubstitutor;
       <td><pre class='prettyprint'>            final FileFilter argTransactionFileFilter,</pre></td>
     </tr>
     <tr>
-      <td class='line'>57</td><td class='count'>15</td>
+      <td class='line'>57</td><td class='count'>14</td>
       <td><pre class='prettyprint covered' id='l57s0'>            final FileFilter argTextFileFilter) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>58</td><td class='count'>15</td>
+      <td class='line'>58</td><td class='count'>14</td>
       <td><pre class='prettyprint covered' id='l58s0'>        this.prefs                  = Helper.INSTANCE.getPreferences();</pre></td>
     </tr>
     <tr>
-      <td class='line'>59</td><td class='count'>15</td>
+      <td class='line'>59</td><td class='count'>14</td>
       <td><pre class='prettyprint covered' id='l59s0'>        this.context                = argContext;</pre></td>
     </tr>
     <tr>
-      <td class='line'>60</td><td class='count'>15</td>
+      <td class='line'>60</td><td class='count'>14</td>
       <td><pre class='prettyprint covered' id='l60s0'>        this.transactionFileFilter  = argTransactionFileFilter;</pre></td>
     </tr>
     <tr>
-      <td class='line'>61</td><td class='count'>15</td>
+      <td class='line'>61</td><td class='count'>14</td>
       <td><pre class='prettyprint covered' id='l61s0'>        this.textFileFilter         = argTextFileFilter;</pre></td>
     </tr>
     <tr>
-      <td class='line'>62</td><td class='count'>15</td>
+      <td class='line'>62</td><td class='count'>14</td>
       <td><pre class='prettyprint covered' id='l62s0'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -189,12 +189,12 @@ import org.apache.commons.lang3.text.StrSubstitutor;
       <td><pre class='prettyprint'>    public void showWarningAndExecute(final List&lt;File> files) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>66</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered' id='l66s0'>        this.execute(files);</pre></td>
+      <td class='line'>66</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l66s0'>        this.execute(files);</pre></td>
     </tr>
     <tr>
-      <td class='line'>67</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered' id='l67s0'>    }</pre></td>
+      <td class='line'>67</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l67s0'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
@@ -206,37 +206,37 @@ import org.apache.commons.lang3.text.StrSubstitutor;
       <td><pre class='prettyprint'>    public void execute(final List&lt;File> files) {</pre></td>
     </tr>
     <tr>
-      <td></td><td class='count'>18</td>
+      <td></td><td class='count'>11</td>
       <td class='paths'>
         <span style='cursor:default; background-color:#00ff00' onclick='hidePath()'>Path coverage: 3/3</span>
         <span class='covered' onclick="showPath(this,'l71s0 l76s0 l79s0 l85s0 l90s0')">A: 3</span>
-        <span class='covered' onclick="showPath(this,'l71s0 l76s0 l79s0 l80s0 l85s0 l90s0')">B: 6</span>
-        <span class='covered' onclick="showPath(this,'l71s0 l76s0 l77s0 l85s0 l90s0')">C: 9</span>
+        <span class='covered' onclick="showPath(this,'l71s0 l76s0 l79s0 l80s0 l85s0 l90s0')">B: 3</span>
+        <span class='covered' onclick="showPath(this,'l71s0 l76s0 l77s0 l85s0 l90s0')">C: 5</span>
       </td>
     </tr>
     <tr>
-      <td class='line'>71</td><td class='count'>18</td>
+      <td class='line'>71</td><td class='count'>11</td>
       <td><pre class='prettyprint covered' id='l71s0'>        final File file = files.iterator().next();</pre></td>
     </tr>
     <tr>
-      <td class='line'>72</td><td class='count'>18</td>
+      <td class='line'>72</td><td class='count'>11</td>
       <td><pre class='prettyprint covered' id='l72s0'>        Map&lt;String, String> valuesMap = new HashMap&lt;String, String>(1);</pre></td>
     </tr>
     <tr>
-      <td class='line'>73</td><td class='count'>18</td>
+      <td class='line'>73</td><td class='count'>11</td>
       <td><pre class='prettyprint covered' id='l73s0'>        valuesMap.put("filename",  file.getAbsolutePath());</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>75</td><td class='count'>18</td>
+      <td class='line'>75</td><td class='count'>11</td>
       <td><pre class='prettyprint covered' id='l75s0'>        String uriScheme = "";</pre></td>
     </tr>
     <tr>
-      <td class='line'>76</td><td class='count'>18</td>
-      <td><pre class='prettyprint jmp'>        <span id='l76s0' title='Executions: 18' class='covered'>if (this.transactionFileFilter.accept(file)) {</span></pre></td>
+      <td class='line'>76</td><td class='count'>11</td>
+      <td><pre class='prettyprint jmp'>        <span id='l76s0' title='Executions: 11' class='covered'>if (this.transactionFileFilter.accept(file)) {</span></pre></td>
     </tr>
     <tr>
-      <td class='line'>77</td><td class='count'>9</td>
+      <td class='line'>77</td><td class='count'>5</td>
       <td><pre class='prettyprint covered' id='l77s0'>            uriScheme = Helper.INSTANCE.getSettings()</pre></td>
     </tr>
     <tr>
@@ -244,11 +244,11 @@ import org.apache.commons.lang3.text.StrSubstitutor;
       <td><pre class='prettyprint'>                    .getTransactionFileImportUriScheme();</pre></td>
     </tr>
     <tr>
-      <td class='line'>79</td><td class='count'>9</td>
-      <td><pre class='prettyprint jmp'>        <span id='l79s0' title='Executions: 9' class='covered'>}</span> else <span id='l79s1' title='Executions: 6' class='covered'>if (this.textFileFilter.accept(file)) {</span></pre></td>
+      <td class='line'>79</td><td class='count'>6</td>
+      <td><pre class='prettyprint jmp'>        <span id='l79s0' title='Executions: 6' class='covered'>}</span> else <span id='l79s1' title='Executions: 3' class='covered'>if (this.textFileFilter.accept(file)) {</span></pre></td>
     </tr>
     <tr>
-      <td class='line'>80</td><td class='count'>6</td>
+      <td class='line'>80</td><td class='count'>3</td>
       <td><pre class='prettyprint covered' id='l80s0'>            uriScheme = Helper.INSTANCE.getSettings()</pre></td>
     </tr>
     <tr>
@@ -256,7 +256,7 @@ import org.apache.commons.lang3.text.StrSubstitutor;
       <td><pre class='prettyprint'>                    .getTextFileImportUriScheme();</pre></td>
     </tr>
     <tr>
-      <td class='line'>82</td><td class='count'>6</td>
+      <td class='line'>82</td><td class='count'>3</td>
       <td><pre class='prettyprint covered' id='l82s0'>            valuesMap.put("accountno", this.getAccountNumberForFile(file));</pre></td>
     </tr>
     <tr>
@@ -265,11 +265,11 @@ import org.apache.commons.lang3.text.StrSubstitutor;
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>85</td><td class='count'>18</td>
+      <td class='line'>85</td><td class='count'>11</td>
       <td><pre class='prettyprint covered' id='l85s0'>        final StrSubstitutor sub = new StrSubstitutor(valuesMap);</pre></td>
     </tr>
     <tr>
-      <td class='line'>86</td><td class='count'>18</td>
+      <td class='line'>86</td><td class='count'>11</td>
       <td><pre class='prettyprint covered' id='l86s0'>        final String resolvedUri = sub.replace(uriScheme);</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -278,11 +278,11 @@ import org.apache.commons.lang3.text.StrSubstitutor;
       <td><pre class='comment'>        // Import the file by calling the URI</pre></td>
     </tr>
     <tr>
-      <td class='line'>89</td><td class='count'>18</td>
+      <td class='line'>89</td><td class='count'>11</td>
       <td><pre class='prettyprint covered' id='l89s0'>        this.context.showURL(resolvedUri);</pre></td>
     </tr>
     <tr>
-      <td class='line'>90</td><td class='count'>18</td>
+      <td class='line'>90</td><td class='count'>11</td>
       <td><pre class='prettyprint covered' id='l90s0'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -291,18 +291,18 @@ import org.apache.commons.lang3.text.StrSubstitutor;
       <td><pre class='prettyprint'>    private String getAccountNumberForFile(final File argFile) {</pre></td>
     </tr>
     <tr>
-      <td></td><td class='count'>6</td>
+      <td></td><td class='count'>3</td>
       <td class='paths'>
         <span style='cursor:default; background-color:#996600' onclick='hidePath()'>Path coverage: 2/5</span>
         <span class='uncovered' onclick="showPath(this,'l93s0 l102s0 l119s0')">A: 0</span>
-        <span class='covered' onclick="showPath(this,'l93s0 l102s0 l103s0 l104s0 l109s0 l110s0 l117s0 l119s0')">B: 5</span>
+        <span class='covered' onclick="showPath(this,'l93s0 l102s0 l103s0 l104s0 l109s0 l110s0 l117s0 l119s0')">B: 2</span>
         <span class='covered' onclick="showPath(this,'l93s0 l102s0 l103s0 l104s0 l109s0 l110s0 l111s0 l117s0 l119s0')">C: 1</span>
         <span class='uncovered' onclick="showPath(this,'l93s0 l102s0 l103s0 l104s0 l109s0 l110s0 l117s0 l119s0')">D: 0</span>
         <span class='uncovered' onclick="showPath(this,'l93s0 l102s0 l103s0 l104s0 l109s0 l110s0 l111s0 l117s0 l119s0')">E: 0</span>
       </td>
     </tr>
     <tr>
-      <td class='line'>93</td><td class='count'>6</td>
+      <td class='line'>93</td><td class='count'>3</td>
       <td><pre class='prettyprint covered' id='l93s0'>        final String fileName = FilenameUtils.removeExtension(</pre></td>
     </tr>
     <tr>
@@ -311,17 +311,17 @@ import org.apache.commons.lang3.text.StrSubstitutor;
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>96</td><td class='count'>6</td>
+      <td class='line'>96</td><td class='count'>3</td>
       <td><pre class='prettyprint covered' id='l96s0'>        RootAccount rootAccount = this.context.getRootAccount();</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>98</td><td class='count'>6</td>
+      <td class='line'>98</td><td class='count'>3</td>
       <td><pre class='prettyprint covered' id='l98s0'>        String accountNumber = "-1";</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>100</td><td class='count'>6</td>
+      <td class='line'>100</td><td class='count'>3</td>
       <td><pre class='prettyprint covered' id='l100s0'>        for (Iterator&lt;Account> iterator =</pre></td>
     </tr>
     <tr>
@@ -329,23 +329,23 @@ import org.apache.commons.lang3.text.StrSubstitutor;
       <td><pre class='prettyprint'>                AccountUtil.getAccountIterator(rootAccount);</pre></td>
     </tr>
     <tr>
-      <td class='line'>102</td><td class='count'>24</td>
-      <td><pre class='prettyprint jmp'>                <span id='l102s0' title='Executions: 24' class='covered'>iterator.hasNext();) {</span></pre></td>
+      <td class='line'>102</td><td class='count'>15</td>
+      <td><pre class='prettyprint jmp'>                <span id='l102s0' title='Executions: 15' class='covered'>iterator.hasNext();) {</span></pre></td>
     </tr>
     <tr>
-      <td class='line'>103</td><td class='count'>18</td>
+      <td class='line'>103</td><td class='count'>12</td>
       <td><pre class='prettyprint covered' id='l103s0'>            final Account account = iterator.next();</pre></td>
     </tr>
     <tr>
-      <td class='line'>104</td><td class='count'>18</td>
-      <td><pre class='prettyprint jmp'>            <span id='l104s0' title='Executions: 18' class='covered'>if (!AcctFilter.NON_CATEGORY_FILTER.matches(account)</span></pre></td>
+      <td class='line'>104</td><td class='count'>12</td>
+      <td><pre class='prettyprint jmp'>            <span id='l104s0' title='Executions: 12' class='covered'>if (!AcctFilter.NON_CATEGORY_FILTER.matches(account)</span></pre></td>
     </tr>
     <tr>
       <td class='line'>105</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                    || rootAccount.equals(account)) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>106</td><td class='count'>6</td>
+      <td class='line'>106</td><td class='count'>3</td>
       <td><pre class='prettyprint covered' id='l106s0'>                continue;</pre></td>
     </tr>
     <tr>
@@ -354,12 +354,12 @@ import org.apache.commons.lang3.text.StrSubstitutor;
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>109</td><td class='count'>9</td>
+      <td class='line'>109</td><td class='count'>6</td>
       <td><pre class='prettyprint covered' id='l109s0'>            final String accountName = account.getFullAccountName();</pre></td>
     </tr>
     <tr>
-      <td class='line'>110</td><td class='count'>9</td>
-      <td><pre class='prettyprint jmp'>            <span id='l110s0' title='Executions: 9' class='covered'>if (this.isEqual(accountName, fileName)) {</span></pre></td>
+      <td class='line'>110</td><td class='count'>6</td>
+      <td><pre class='prettyprint jmp'>            <span id='l110s0' title='Executions: 6' class='covered'>if (this.isEqual(accountName, fileName)) {</span></pre></td>
     </tr>
     <tr>
       <td class='line'>111</td><td class='count'>2</td>
@@ -386,12 +386,12 @@ import org.apache.commons.lang3.text.StrSubstitutor;
       <td><pre class='prettyprint'>            }</pre></td>
     </tr>
     <tr>
-      <td class='line'>117</td><td class='count'>9</td>
+      <td class='line'>117</td><td class='count'>6</td>
       <td><pre class='prettyprint covered' id='l117s0'>        }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>119</td><td class='count'>6</td>
+      <td class='line'>119</td><td class='count'>3</td>
       <td><pre class='prettyprint covered' id='l119s0'>        return accountNumber;</pre></td>
     </tr>
     <tr>
@@ -404,25 +404,25 @@ import org.apache.commons.lang3.text.StrSubstitutor;
       <td><pre class='prettyprint'>    private boolean isEqual(final String first, final String second) {</pre></td>
     </tr>
     <tr>
-      <td></td><td class='count'>9</td>
+      <td></td><td class='count'>6</td>
       <td class='paths'>
         <span style='cursor:default; background-color:#00ff00' onclick='hidePath()'>Path coverage: 3/3</span>
         <span class='covered' onclick="showPath(this,'l123s0 l125s0 l125s2 l125s4')">A: 1</span>
-        <span class='covered' onclick="showPath(this,'l123s0 l125s0 l125s1 l125s3 l125s4')">B: 7</span>
+        <span class='covered' onclick="showPath(this,'l123s0 l125s0 l125s1 l125s3 l125s4')">B: 4</span>
         <span class='covered' onclick="showPath(this,'l123s0 l125s0 l125s1 l125s2 l125s4')">C: 1</span>
       </td>
     </tr>
     <tr>
-      <td class='line'>123</td><td class='count'>9</td>
+      <td class='line'>123</td><td class='count'>6</td>
       <td><pre class='prettyprint covered' id='l123s0'>        final String string1 =  first.toUpperCase(this.prefs.getLocale());</pre></td>
     </tr>
     <tr>
-      <td class='line'>124</td><td class='count'>9</td>
+      <td class='line'>124</td><td class='count'>6</td>
       <td><pre class='prettyprint covered' id='l124s0'>        final String string2 = second.toUpperCase(this.prefs.getLocale());</pre></td>
     </tr>
     <tr>
-      <td class='line'>125</td><td class='count'>9</td>
-      <td><pre class='prettyprint jmp'>        <span id='l125s0' title='Executions: 9' class='covered'>return string1.contains(string2)</span> || <span id='l125s1' title='Executions: 8' class='covered'>string2.contains(string1);</span></pre></td>
+      <td class='line'>125</td><td class='count'>6</td>
+      <td><pre class='prettyprint jmp'>        <span id='l125s0' title='Executions: 6' class='covered'>return string1.contains(string2)</span> || <span id='l125s1' title='Executions: 5' class='covered'>string2.contains(string1);</span></pre></td>
     </tr>
     <tr>
       <td class='line'>126</td><td>&nbsp;</td>

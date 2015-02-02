@@ -10,7 +10,7 @@
 </head>
 <body onload='prettyPrint()'>
   <table cellpadding='0' cellspacing='1'>
-    <caption>master/src/com/moneydance/modules/features/importlist/io/DirectoryValidator.java</caption>
+    <caption>develop/src/main/java/com/moneydance/modules/features/importlist/io/DirectoryValidator.java</caption>
     <tr>
       <td class='line'>1</td><td>&nbsp;</td>
       <td><pre class='comment'>// Import List - http://my-flow.github.io/importlist/</pre></td>
@@ -131,16 +131,16 @@ import org.apache.commons.io.filefilter.IOFileFilter;
       <td><pre class='prettyprint'>    boolean isValidDirectory(final File file) {</pre></td>
     </tr>
     <tr>
-      <td></td><td class='count'>6</td>
+      <td></td><td class='count'>3</td>
       <td class='paths'>
         <span style='cursor:default; background-color:#00ff00' onclick='hidePath()'>Path coverage: 2/2</span>
         <span class='covered' onclick="showPath(this,'l44s0 l45s0')">A: 1</span>
-        <span class='covered' onclick="showPath(this,'l44s0 l48s0')">B: 5</span>
+        <span class='covered' onclick="showPath(this,'l44s0 l48s0')">B: 2</span>
       </td>
     </tr>
     <tr>
-      <td class='line'>44</td><td class='count'>6</td>
-      <td><pre class='prettyprint jmp'>        <span id='l44s0' title='Executions: 6' class='covered'>if (file == null)</span> <span id='l44s1' title='Executions: 1' class='covered'>{</span></pre></td>
+      <td class='line'>44</td><td class='count'>3</td>
+      <td><pre class='prettyprint jmp'>        <span id='l44s0' title='Executions: 3' class='covered'>if (file == null)</span> <span id='l44s1' title='Executions: 1' class='covered'>{</span></pre></td>
     </tr>
     <tr>
       <td class='line'>45</td><td class='count'>1</td>
@@ -152,7 +152,7 @@ import org.apache.commons.io.filefilter.IOFileFilter;
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>48</td><td class='count'>5</td>
+      <td class='line'>48</td><td class='count'>2</td>
       <td><pre class='prettyprint covered' id='l48s0'>        return this.accept(file);</pre></td>
     </tr>
     <tr>
@@ -173,7 +173,7 @@ import org.apache.commons.io.filefilter.IOFileFilter;
       <td><pre class='prettyprint'>        try {</pre></td>
     </tr>
     <tr>
-      <td class='line'>54</td><td class='count'>439</td>
+      <td class='line'>54</td><td class='count'>219</td>
       <td><pre class='prettyprint covered' id='l54s0'>            return FileFilterUtils.and(</pre></td>
     </tr>
     <tr>
@@ -214,7 +214,7 @@ import org.apache.commons.io.filefilter.IOFileFilter;
       <td><pre class='prettyprint'>    public boolean accept(final File dir, final String name) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>65</td><td class='count'>433</td>
+      <td class='line'>65</td><td class='count'>216</td>
       <td><pre class='prettyprint covered' id='l65s0'>        return this.accept(new File(dir, name));</pre></td>
     </tr>
     <tr>

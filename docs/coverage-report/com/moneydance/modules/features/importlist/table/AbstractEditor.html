@@ -10,7 +10,7 @@
 </head>
 <body onload='prettyPrint()'>
   <table cellpadding='0' cellspacing='1'>
-    <caption>master/src/com/moneydance/modules/features/importlist/table/AbstractEditor.java</caption>
+    <caption>develop/src/main/java/com/moneydance/modules/features/importlist/table/AbstractEditor.java</caption>
     <tr>
       <td class='line'>1</td><td>&nbsp;</td>
       <td><pre class='comment'>// Import List - http://my-flow.github.io/importlist/</pre></td>
@@ -303,20 +303,20 @@ import org.apache.commons.lang3.Validate;
       <td><pre class='prettyprint'>    public final void registerKeyboardShortcut(final JComponent jComponent) {</pre></td>
     </tr>
     <tr>
-      <td></td><td class='count'>10</td>
+      <td></td><td class='count'>2</td>
       <td class='paths'>
         <span style='cursor:default; background-color:#00ff00' onclick='hidePath()'>Path coverage: 2/2</span>
         <span class='covered' onclick="showPath(this,'l95s0 l96s0 l97s0')">A: 1</span>
-        <span class='covered' onclick="showPath(this,'l95s0 l96s0 l100s0 l116s0')">B: 9</span>
+        <span class='covered' onclick="showPath(this,'l95s0 l96s0 l100s0 l116s0')">B: 1</span>
       </td>
     </tr>
     <tr>
-      <td class='line'>95</td><td class='count'>10</td>
+      <td class='line'>95</td><td class='count'>2</td>
       <td><pre class='prettyprint covered' id='l95s0'>        Validate.notNull(jComponent, "jComponent must not be null");</pre></td>
     </tr>
     <tr>
-      <td class='line'>96</td><td class='count'>10</td>
-      <td><pre class='prettyprint jmp'>        <span id='l96s0' title='Executions: 10' class='covered'>if (this.getKeyStroke() == null) {</span></pre></td>
+      <td class='line'>96</td><td class='count'>2</td>
+      <td><pre class='prettyprint jmp'>        <span id='l96s0' title='Executions: 2' class='covered'>if (this.getKeyStroke() == null) {</span></pre></td>
     </tr>
     <tr>
       <td class='line'>97</td><td class='count'>1</td>
@@ -328,7 +328,7 @@ import org.apache.commons.lang3.Validate;
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>100</td><td class='count'>18</td>
+      <td class='line'>100</td><td class='count'>2</td>
       <td><pre class='prettyprint covered' id='l100s0'>        final Action action = new AbstractAction() {</pre></td>
     </tr>
     <tr>
@@ -366,11 +366,11 @@ import org.apache.commons.lang3.Validate;
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>111</td><td class='count'>9</td>
+      <td class='line'>111</td><td class='count'>1</td>
       <td><pre class='prettyprint covered' id='l111s0'>        final String actionMapKey = this.getClass().getName(); // unique</pre></td>
     </tr>
     <tr>
-      <td class='line'>112</td><td class='count'>9</td>
+      <td class='line'>112</td><td class='count'>1</td>
       <td><pre class='prettyprint covered' id='l112s0'>        jComponent.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(</pre></td>
     </tr>
     <tr>
@@ -382,11 +382,11 @@ import org.apache.commons.lang3.Validate;
       <td><pre class='prettyprint'>                actionMapKey);</pre></td>
     </tr>
     <tr>
-      <td class='line'>115</td><td class='count'>9</td>
+      <td class='line'>115</td><td class='count'>1</td>
       <td><pre class='prettyprint covered' id='l115s0'>        jComponent.getActionMap().put(actionMapKey, action);</pre></td>
     </tr>
     <tr>
-      <td class='line'>116</td><td class='count'>9</td>
+      <td class='line'>116</td><td class='count'>1</td>
       <td><pre class='prettyprint covered' id='l116s0'>    }</pre></td>
     </tr>
     <tr>

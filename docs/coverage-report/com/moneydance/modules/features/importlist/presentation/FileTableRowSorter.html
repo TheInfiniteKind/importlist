@@ -10,7 +10,7 @@
 </head>
 <body onload='prettyPrint()'>
   <table cellpadding='0' cellspacing='1'>
-    <caption>master/src/com/moneydance/modules/features/importlist/presentation/FileTableRowSorter.java</caption>
+    <caption>develop/src/main/java/com/moneydance/modules/features/importlist/presentation/FileTableRowSorter.java</caption>
     <tr>
       <td class='line'>1</td><td>&nbsp;</td>
       <td><pre class='comment'>// Import List - http://my-flow.github.io/importlist/</pre></td>
@@ -175,36 +175,36 @@ import javax.swing.table.TableRowSorter;
       <td><pre class='prettyprint'>    public Comparator&lt;?> getComparator(final int column) {</pre></td>
     </tr>
     <tr>
-      <td></td><td class='count'>13</td>
+      <td></td><td class='count'>10</td>
       <td class='paths'>
         <span style='cursor:default; background-color:#00ff00' onclick='hidePath()'>Path coverage: 3/3</span>
         <span class='covered' onclick="showPath(this,'l55s0 l57s0 l59s0 l62s0')">A: 1</span>
-        <span class='covered' onclick="showPath(this,'l55s0 l57s0 l59s0 l60s0 l62s0')">B: 11</span>
+        <span class='covered' onclick="showPath(this,'l55s0 l57s0 l59s0 l60s0 l62s0')">B: 8</span>
         <span class='covered' onclick="showPath(this,'l55s0 l57s0 l58s0 l62s0')">C: 1</span>
       </td>
     </tr>
     <tr>
-      <td class='line'>55</td><td class='count'>13</td>
+      <td class='line'>55</td><td class='count'>10</td>
       <td><pre class='prettyprint covered' id='l55s0'>        final String columnName  = this.getModel().getColumnName(column);</pre></td>
     </tr>
     <tr>
-      <td class='line'>56</td><td class='count'>13</td>
+      <td class='line'>56</td><td class='count'>10</td>
       <td><pre class='prettyprint covered' id='l56s0'>        Comparator&lt;?> comparator = null;</pre></td>
     </tr>
     <tr>
-      <td class='line'>57</td><td class='count'>13</td>
-      <td><pre class='prettyprint jmp'>        <span id='l57s0' title='Executions: 13' class='covered'>if (this.settings.getDescName().equals(columnName)) {</span></pre></td>
+      <td class='line'>57</td><td class='count'>10</td>
+      <td><pre class='prettyprint jmp'>        <span id='l57s0' title='Executions: 10' class='covered'>if (this.settings.getDescName().equals(columnName)) {</span></pre></td>
     </tr>
     <tr>
       <td class='line'>58</td><td class='count'>1</td>
       <td><pre class='prettyprint covered' id='l58s0'>            comparator = AlphanumComparator.ALPHANUM;</pre></td>
     </tr>
     <tr>
-      <td class='line'>59</td><td class='count'>12</td>
-      <td><pre class='prettyprint jmp'>        <span id='l59s0' title='Executions: 12' class='covered'>}</span> else <span id='l59s1' title='Executions: 11' class='covered'>if (this.settings.getDescModified().equals(columnName)) {</span></pre></td>
+      <td class='line'>59</td><td class='count'>9</td>
+      <td><pre class='prettyprint jmp'>        <span id='l59s0' title='Executions: 9' class='covered'>}</span> else <span id='l59s1' title='Executions: 8' class='covered'>if (this.settings.getDescModified().equals(columnName)) {</span></pre></td>
     </tr>
     <tr>
-      <td class='line'>60</td><td class='count'>11</td>
+      <td class='line'>60</td><td class='count'>8</td>
       <td><pre class='prettyprint covered' id='l60s0'>            comparator = super.getComparator(column);</pre></td>
     </tr>
     <tr>
@@ -212,7 +212,7 @@ import javax.swing.table.TableRowSorter;
       <td><pre class='prettyprint'>        }</pre></td>
     </tr>
     <tr>
-      <td class='line'>62</td><td class='count'>13</td>
+      <td class='line'>62</td><td class='count'>10</td>
       <td><pre class='prettyprint covered' id='l62s0'>        return comparator;</pre></td>
     </tr>
     <tr>

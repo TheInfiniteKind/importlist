@@ -10,7 +10,7 @@
 </head>
 <body onload='prettyPrint()'>
   <table cellpadding='0' cellspacing='1'>
-    <caption>master/src/com/moneydance/modules/features/importlist/io/DeleteOneOperation.java</caption>
+    <caption>develop/src/main/java/com/moneydance/modules/features/importlist/io/DeleteOneOperation.java</caption>
     <tr>
       <td class='line'>1</td><td>&nbsp;</td>
       <td><pre class='comment'>// Import List - http://my-flow.github.io/importlist/</pre></td>
@@ -129,15 +129,15 @@ import org.apache.commons.io.FileUtils;
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>48</td><td class='count'>6</td>
+      <td class='line'>48</td><td class='count'>5</td>
       <td><pre class='prettyprint covered' id='l48s0'>    DeleteOneOperation() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>49</td><td class='count'>6</td>
+      <td class='line'>49</td><td class='count'>5</td>
       <td><pre class='prettyprint covered' id='l49s0'>        this.localizable = Helper.INSTANCE.getLocalizable();</pre></td>
     </tr>
     <tr>
-      <td class='line'>50</td><td class='count'>6</td>
+      <td class='line'>50</td><td class='count'>5</td>
       <td><pre class='prettyprint covered' id='l50s0'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -150,21 +150,21 @@ import org.apache.commons.io.FileUtils;
       <td><pre class='prettyprint'>    public void showWarningAndExecute(final List&lt;File> files) {</pre></td>
     </tr>
     <tr>
-      <td></td><td class='count'>3</td>
+      <td></td><td class='count'>2</td>
       <td class='paths'>
-        <span style='cursor:default; background-color:#7f8000' onclick='hidePath()'>Path coverage: 2/4</span>
+        <span style='cursor:default; background-color:#bf4000' onclick='hidePath()'>Path coverage: 1/4</span>
         <span class='uncovered' onclick="showPath(this,'l54s0 l61s0 l64s0 l79s0 l82s0 l86s0')">A: 0</span>
         <span class='uncovered' onclick="showPath(this,'l54s0 l61s0 l64s0 l79s0 l80s0 l86s0')">B: 0</span>
         <span class='covered' onclick="showPath(this,'l54s0 l61s0 l62s0 l64s0 l79s0 l82s0 l86s0')">C: 2</span>
-        <span class='covered' onclick="showPath(this,'l54s0 l61s0 l62s0 l64s0 l79s0 l80s0 l86s0')">D: 1</span>
+        <span class='uncovered' onclick="showPath(this,'l54s0 l61s0 l62s0 l64s0 l79s0 l80s0 l86s0')">D: 0</span>
       </td>
     </tr>
     <tr>
-      <td class='line'>54</td><td class='count'>3</td>
+      <td class='line'>54</td><td class='count'>2</td>
       <td><pre class='prettyprint covered' id='l54s0'>        final File file = files.iterator().next();</pre></td>
     </tr>
     <tr>
-      <td class='line'>55</td><td class='count'>3</td>
+      <td class='line'>55</td><td class='count'>2</td>
       <td><pre class='prettyprint covered' id='l55s0'>        final String message =</pre></td>
     </tr>
     <tr>
@@ -176,23 +176,23 @@ import org.apache.commons.io.FileUtils;
       <td><pre class='prettyprint'>                        file.getName());</pre></td>
     </tr>
     <tr>
-      <td class='line'>58</td><td class='count'>3</td>
+      <td class='line'>58</td><td class='count'>2</td>
       <td><pre class='prettyprint covered' id='l58s0'>        final Object confirmationLabel = new JLabel(message);</pre></td>
     </tr>
     <tr>
-      <td class='line'>59</td><td class='count'>3</td>
+      <td class='line'>59</td><td class='count'>2</td>
       <td><pre class='prettyprint covered' id='l59s0'>        final Image image = Helper.INSTANCE.getSettings().getIconImage();</pre></td>
     </tr>
     <tr>
-      <td class='line'>60</td><td class='count'>3</td>
+      <td class='line'>60</td><td class='count'>2</td>
       <td><pre class='prettyprint covered' id='l60s0'>        Icon  icon  = null;</pre></td>
     </tr>
     <tr>
-      <td class='line'>61</td><td class='count'>3</td>
-      <td><pre class='prettyprint jmp'>        <span id='l61s0' title='Executions: 3' class='covered'>if (image != null)</span> <span id='l61s1' title='Executions: 3' class='covered'>{</span></pre></td>
+      <td class='line'>61</td><td class='count'>2</td>
+      <td><pre class='prettyprint jmp'>        <span id='l61s0' title='Executions: 2' class='covered'>if (image != null)</span> <span id='l61s1' title='Executions: 2' class='covered'>{</span></pre></td>
     </tr>
     <tr>
-      <td class='line'>62</td><td class='count'>3</td>
+      <td class='line'>62</td><td class='count'>2</td>
       <td><pre class='prettyprint covered' id='l62s0'>            icon = new ImageIcon(image);</pre></td>
     </tr>
     <tr>
@@ -200,7 +200,7 @@ import org.apache.commons.io.FileUtils;
       <td><pre class='prettyprint'>        }</pre></td>
     </tr>
     <tr>
-      <td class='line'>64</td><td class='count'>3</td>
+      <td class='line'>64</td><td class='count'>2</td>
       <td><pre class='prettyprint covered' id='l64s0'>        final Object[] options = {</pre></td>
     </tr>
     <tr>
@@ -217,7 +217,7 @@ import org.apache.commons.io.FileUtils;
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>69</td><td class='count'>3</td>
+      <td class='line'>69</td><td class='count'>2</td>
       <td><pre class='prettyprint covered' id='l69s0'>        final int choice = JOptionPane.showOptionDialog(</pre></td>
     </tr>
     <tr>
@@ -254,12 +254,12 @@ import org.apache.commons.io.FileUtils;
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>79</td><td class='count'>3</td>
-      <td><pre class='prettyprint jmp'>        <span id='l79s0' title='Executions: 3' class='covered'>if (choice == 0)</span> <span id='l79s1' title='Executions: 1' class='covered'>{</span></pre></td>
+      <td class='line'>79</td><td class='count'>2</td>
+      <td><pre class='prettyprint jmp'>        <span id='l79s0' title='Executions: 2' class='covered'>if (choice == 0)</span> <span id='l79s1' title='Executions: 0' class='uncovered'>{</span></pre></td>
     </tr>
     <tr>
-      <td class='line'>80</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered' id='l80s0'>            this.execute(files);</pre></td>
+      <td class='line'>80</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l80s0'>            this.execute(files);</pre></td>
     </tr>
     <tr>
       <td class='line'>81</td><td>&nbsp;</td>
@@ -282,7 +282,7 @@ import org.apache.commons.io.FileUtils;
       <td><pre class='prettyprint'>        }</pre></td>
     </tr>
     <tr>
-      <td class='line'>86</td><td class='count'>3</td>
+      <td class='line'>86</td><td class='count'>2</td>
       <td><pre class='prettyprint covered' id='l86s0'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -295,7 +295,7 @@ import org.apache.commons.io.FileUtils;
       <td><pre class='prettyprint'>    public void execute(final List&lt;File> files) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>90</td><td class='count'>4</td>
+      <td class='line'>90</td><td class='count'>3</td>
       <td><pre class='prettyprint covered' id='l90s0'>        final File file = files.iterator().next();</pre></td>
     </tr>
     <tr>
@@ -307,11 +307,11 @@ import org.apache.commons.io.FileUtils;
       <td><pre class='prettyprint'>        try {</pre></td>
     </tr>
     <tr>
-      <td class='line'>93</td><td class='count'>4</td>
+      <td class='line'>93</td><td class='count'>3</td>
       <td><pre class='prettyprint covered' id='l93s0'>            LOG.info(String.format("Deleting file %s", file.getAbsoluteFile()));</pre></td>
     </tr>
     <tr>
-      <td class='line'>94</td><td class='count'>4</td>
+      <td class='line'>94</td><td class='count'>3</td>
       <td><pre class='prettyprint covered' id='l94s0'>            FileUtils.forceDelete(file);</pre></td>
     </tr>
     <tr>
@@ -355,11 +355,11 @@ import org.apache.commons.io.FileUtils;
       <td><pre class='prettyprint'>                    JOptionPane.ERROR_MESSAGE);</pre></td>
     </tr>
     <tr>
-      <td class='line'>105</td><td class='count'>2</td>
+      <td class='line'>105</td><td class='count'>1</td>
       <td><pre class='prettyprint covered' id='l105s0'>        }</pre></td>
     </tr>
     <tr>
-      <td class='line'>106</td><td class='count'>4</td>
+      <td class='line'>106</td><td class='count'>3</td>
       <td><pre class='prettyprint covered' id='l106s0'>    }</pre></td>
     </tr>
     <tr>

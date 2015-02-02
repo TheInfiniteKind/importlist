@@ -10,7 +10,7 @@
 </head>
 <body onload='prettyPrint()'>
   <table cellpadding='0' cellspacing='1'>
-    <caption>master/src/com/moneydance/modules/features/importlist/presentation/SplitPaneFactory.java</caption>
+    <caption>develop/src/main/java/com/moneydance/modules/features/importlist/presentation/SplitPaneFactory.java</caption>
     <tr>
       <td class='line'>1</td><td>&nbsp;</td>
       <td><pre class='comment'>// Import List - http://my-flow.github.io/importlist/</pre></td>
@@ -100,7 +100,7 @@ import javax.swing.border.EmptyBorder;
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'>30</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    private       JSplitPane <span class='instance covered' title='Reads: 44 Writes: 4'>splitPane</span>;</pre></td>
+      <td><pre class='prettyprint'>    private       JSplitPane <span class='instance covered' title='Reads: 13 Writes: 1'>splitPane</span>;</pre></td>
     </tr>
     <tr>
       <td class='line'>31</td><td>&nbsp;</td>
@@ -142,31 +142,31 @@ import javax.swing.border.EmptyBorder;
       <td><pre class='prettyprint'>    private void init() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>43</td><td class='count'>4</td>
+      <td class='line'>43</td><td class='count'>1</td>
       <td><pre class='prettyprint covered' id='l43s0'>        this.splitPane = new JCustomSplitPane(JSplitPane.VERTICAL_SPLIT);</pre></td>
     </tr>
     <tr>
-      <td class='line'>44</td><td class='count'>4</td>
+      <td class='line'>44</td><td class='count'>1</td>
       <td><pre class='prettyprint covered' id='l44s0'>        this.splitPane.setResizeWeight(1.0);</pre></td>
     </tr>
     <tr>
-      <td class='line'>45</td><td class='count'>4</td>
+      <td class='line'>45</td><td class='count'>1</td>
       <td><pre class='prettyprint covered' id='l45s0'>        this.splitPane.setDividerSize(0);</pre></td>
     </tr>
     <tr>
-      <td class='line'>46</td><td class='count'>4</td>
+      <td class='line'>46</td><td class='count'>1</td>
       <td><pre class='prettyprint covered' id='l46s0'>        this.splitPane.setContinuousLayout(true);</pre></td>
     </tr>
     <tr>
-      <td class='line'>47</td><td class='count'>4</td>
+      <td class='line'>47</td><td class='count'>1</td>
       <td><pre class='prettyprint covered' id='l47s0'>        this.splitPane.setOpaque(false);</pre></td>
     </tr>
     <tr>
-      <td class='line'>48</td><td class='count'>4</td>
+      <td class='line'>48</td><td class='count'>1</td>
       <td><pre class='prettyprint covered' id='l48s0'>        this.splitPane.setBorder(MoneydanceLAF.homePageBorder);</pre></td>
     </tr>
     <tr>
-      <td class='line'>49</td><td class='count'>4</td>
+      <td class='line'>49</td><td class='count'>1</td>
       <td><pre class='prettyprint covered' id='l49s0'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -179,19 +179,19 @@ import javax.swing.border.EmptyBorder;
       <td><pre class='prettyprint'>    public JSplitPane getComponent() {</pre></td>
     </tr>
     <tr>
-      <td></td><td class='count'>6</td>
+      <td></td><td class='count'>2</td>
       <td class='paths'>
         <span style='cursor:default; background-color:#00ff00' onclick='hidePath()'>Path coverage: 2/2</span>
-        <span class='covered' onclick="showPath(this,'l53s0 l57s0 l64s0')">A: 2</span>
-        <span class='covered' onclick="showPath(this,'l53s0 l54s0 l57s0 l64s0')">B: 4</span>
+        <span class='covered' onclick="showPath(this,'l53s0 l57s0 l64s0')">A: 1</span>
+        <span class='covered' onclick="showPath(this,'l53s0 l54s0 l57s0 l64s0')">B: 1</span>
       </td>
     </tr>
     <tr>
-      <td class='line'>53</td><td class='count'>6</td>
-      <td><pre class='prettyprint jmp'>        <span id='l53s0' title='Executions: 6' class='covered'>if (this.splitPane == null)</span> <span id='l53s1' title='Executions: 4' class='covered'>{</span></pre></td>
+      <td class='line'>53</td><td class='count'>2</td>
+      <td><pre class='prettyprint jmp'>        <span id='l53s0' title='Executions: 2' class='covered'>if (this.splitPane == null)</span> <span id='l53s1' title='Executions: 1' class='covered'>{</span></pre></td>
     </tr>
     <tr>
-      <td class='line'>54</td><td class='count'>4</td>
+      <td class='line'>54</td><td class='count'>1</td>
       <td><pre class='prettyprint covered' id='l54s0'>            this.init();</pre></td>
     </tr>
     <tr>
@@ -200,29 +200,29 @@ import javax.swing.border.EmptyBorder;
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>57</td><td class='count'>6</td>
+      <td class='line'>57</td><td class='count'>2</td>
       <td><pre class='prettyprint covered' id='l57s0'>        JComponent topComponent = this.topComponentFactory.getComponent();</pre></td>
     </tr>
     <tr>
-      <td class='line'>58</td><td class='count'>6</td>
+      <td class='line'>58</td><td class='count'>2</td>
       <td><pre class='prettyprint covered' id='l58s0'>        topComponent.setBorder(new EmptyBorder(0, 0, 0, 0));</pre></td>
     </tr>
     <tr>
-      <td class='line'>59</td><td class='count'>6</td>
+      <td class='line'>59</td><td class='count'>2</td>
       <td><pre class='prettyprint covered' id='l59s0'>        this.splitPane.setTopComponent(topComponent);</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>61</td><td class='count'>6</td>
+      <td class='line'>61</td><td class='count'>2</td>
       <td><pre class='prettyprint covered' id='l61s0'>        JComponent bottomComponent = this.bottomComponentFactory.getComponent();</pre></td>
     </tr>
     <tr>
-      <td class='line'>62</td><td class='count'>6</td>
+      <td class='line'>62</td><td class='count'>2</td>
       <td><pre class='prettyprint covered' id='l62s0'>        this.splitPane.setBottomComponent(bottomComponent);</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>64</td><td class='count'>6</td>
+      <td class='line'>64</td><td class='count'>2</td>
       <td><pre class='prettyprint covered' id='l64s0'>        return this.splitPane;</pre></td>
     </tr>
     <tr>

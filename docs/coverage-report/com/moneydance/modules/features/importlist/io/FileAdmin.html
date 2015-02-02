@@ -10,7 +10,7 @@
 </head>
 <body onload='prettyPrint()'>
   <table cellpadding='0' cellspacing='1'>
-    <caption>master/src/com/moneydance/modules/features/importlist/io/FileAdmin.java</caption>
+    <caption>develop/src/main/java/com/moneydance/modules/features/importlist/io/FileAdmin.java</caption>
     <tr>
       <td class='line'>1</td><td>&nbsp;</td>
       <td><pre class='comment'>// Import List - http://my-flow.github.io/importlist/</pre></td>
@@ -178,11 +178,11 @@ import org.apache.commons.lang3.SystemUtils;
     </tr>
     <tr>
       <td class='line'>69</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    private       FileAlterationObserver    <span class='instance covered' title='Reads: 23 Writes: 10'>observer</span>;</pre></td>
+      <td><pre class='prettyprint'>    private       FileAlterationObserver    <span class='instance covered' title='Reads: 17 Writes: 7'>observer</span>;</pre></td>
     </tr>
     <tr>
       <td class='line'>70</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    private       boolean                   <span class='instance covered' title='Reads: 10 Writes: 8'>isMonitorRunning</span>;</pre></td>
+      <td><pre class='prettyprint'>    private       boolean                   <span class='instance covered' title='Reads: 10 Writes: 4'>isMonitorRunning</span>;</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
@@ -348,10 +348,10 @@ import org.apache.commons.lang3.SystemUtils;
     <tr>
       <td></td><td class='count'>4</td>
       <td class='paths'>
-        <span style='cursor:default; background-color:#aa5500' onclick='hidePath()'>Path coverage: 1/3</span>
-        <span class='uncovered' onclick="showPath(this,'l113s0 l115s0 l116s0')">A: 0</span>
-        <span class='covered' onclick="showPath(this,'l113s0 l115s0 l119s0 l135s0')">B: 4</span>
-        <span class='uncovered' onclick="showPath(this,'l113s0 l115s0 l119s0 l120s0 l135s0')">C: 0</span>
+        <span style='cursor:default; background-color:#55aa00' onclick='hidePath()'>Path coverage: 2/3</span>
+        <span class='covered' onclick="showPath(this,'l113s0 l115s0 l116s0')">A: 3</span>
+        <span class='uncovered' onclick="showPath(this,'l113s0 l115s0 l119s0 l135s0')">B: 0</span>
+        <span class='covered' onclick="showPath(this,'l113s0 l115s0 l119s0 l120s0 l135s0')">C: 1</span>
       </td>
     </tr>
     <tr>
@@ -361,11 +361,11 @@ import org.apache.commons.lang3.SystemUtils;
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'>115</td><td class='count'>4</td>
-      <td><pre class='prettyprint jmp'>        <span id='l115s0' title='Executions: 4' class='covered'>if (baseDirectory == null)</span> <span id='l115s1' title='Executions: 0' class='uncovered'>{</span></pre></td>
+      <td><pre class='prettyprint jmp'>        <span id='l115s0' title='Executions: 4' class='covered'>if (baseDirectory == null)</span> <span id='l115s1' title='Executions: 3' class='covered'>{</span></pre></td>
     </tr>
     <tr>
-      <td class='line'>116</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l116s0'>            return;</pre></td>
+      <td class='line'>116</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered' id='l116s0'>            return;</pre></td>
     </tr>
     <tr>
       <td class='line'>117</td><td>&nbsp;</td>
@@ -373,12 +373,12 @@ import org.apache.commons.lang3.SystemUtils;
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>119</td><td class='count'>4</td>
-      <td><pre class='prettyprint jmp'>        <span id='l119s0' title='Executions: 4' class='covered'>if (!this.directoryValidator.isValidDirectory(baseDirectory)) {</span></pre></td>
+      <td class='line'>119</td><td class='count'>1</td>
+      <td><pre class='prettyprint jmp'>        <span id='l119s0' title='Executions: 1' class='covered'>if (!this.directoryValidator.isValidDirectory(baseDirectory)) {</span></pre></td>
     </tr>
     <tr>
-      <td class='line'>120</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l120s0'>            LOG.warning(String.format(</pre></td>
+      <td class='line'>120</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l120s0'>            LOG.warning(String.format(</pre></td>
     </tr>
     <tr>
       <td class='line'>121</td><td>&nbsp;</td>
@@ -389,8 +389,8 @@ import org.apache.commons.lang3.SystemUtils;
       <td><pre class='prettyprint'>                    baseDirectory.getAbsolutePath()));</pre></td>
     </tr>
     <tr>
-      <td class='line'>123</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l123s0'>            final String errorMessage</pre></td>
+      <td class='line'>123</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l123s0'>            final String errorMessage</pre></td>
     </tr>
     <tr>
       <td class='line'>124</td><td>&nbsp;</td>
@@ -401,12 +401,12 @@ import org.apache.commons.lang3.SystemUtils;
       <td><pre class='prettyprint'>                    baseDirectory.getName());</pre></td>
     </tr>
     <tr>
-      <td class='line'>126</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l126s0'>            final Object errorLabel = new JLabel(errorMessage);</pre></td>
+      <td class='line'>126</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l126s0'>            final Object errorLabel = new JLabel(errorMessage);</pre></td>
     </tr>
     <tr>
-      <td class='line'>127</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l127s0'>            JOptionPane.showMessageDialog(</pre></td>
+      <td class='line'>127</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l127s0'>            JOptionPane.showMessageDialog(</pre></td>
     </tr>
     <tr>
       <td class='line'>128</td><td>&nbsp;</td>
@@ -426,15 +426,15 @@ import org.apache.commons.lang3.SystemUtils;
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>133</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l133s0'>            this.directoryChooser.reset();</pre></td>
+      <td class='line'>133</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l133s0'>            this.directoryChooser.reset();</pre></td>
     </tr>
     <tr>
       <td class='line'>134</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>        }</pre></td>
     </tr>
     <tr>
-      <td class='line'>135</td><td class='count'>4</td>
+      <td class='line'>135</td><td class='count'>1</td>
       <td><pre class='prettyprint covered' id='l135s0'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -456,11 +456,11 @@ import org.apache.commons.lang3.SystemUtils;
       <td><pre class='prettyprint'>    public void reloadFiles() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>142</td><td class='count'>8</td>
+      <td class='line'>142</td><td class='count'>5</td>
       <td><pre class='prettyprint covered' id='l142s0'>        synchronized (FileAdmin.class) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>143</td><td class='count'>8</td>
+      <td class='line'>143</td><td class='count'>5</td>
       <td><pre class='prettyprint covered' id='l143s0'>            this.files.clear();</pre></td>
     </tr>
     <tr>
@@ -468,7 +468,7 @@ import org.apache.commons.lang3.SystemUtils;
       <td><pre class='prettyprint'>            try {</pre></td>
     </tr>
     <tr>
-      <td class='line'>145</td><td class='count'>8</td>
+      <td class='line'>145</td><td class='count'>5</td>
       <td><pre class='prettyprint covered' id='l145s0'>                final Collection&lt;File> collection = FileUtils.listFiles(</pre></td>
     </tr>
     <tr>
@@ -484,27 +484,27 @@ import org.apache.commons.lang3.SystemUtils;
       <td><pre class='prettyprint'>                        null); // ignore subdirectories</pre></td>
     </tr>
     <tr>
-      <td class='line'>149</td><td class='count'>8</td>
-      <td><pre class='prettyprint covered' id='l149s0'>                this.files.addAll(collection);</pre></td>
+      <td class='line'>149</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l149s0'>                this.files.addAll(collection);</pre></td>
     </tr>
     <tr>
-      <td class='line'>150</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l150s0'>            } catch (IllegalArgumentException e) {</pre></td>
+      <td class='line'>150</td><td class='count'>5</td>
+      <td><pre class='prettyprint covered' id='l150s0'>            } catch (IllegalArgumentException e) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>151</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l151s0'>                LOG.log(Level.WARNING, e.getMessage(), e);</pre></td>
+      <td class='line'>151</td><td class='count'>5</td>
+      <td><pre class='prettyprint covered' id='l151s0'>                LOG.log(Level.WARNING, e.getMessage(), e);</pre></td>
     </tr>
     <tr>
-      <td class='line'>152</td><td class='count'>8</td>
-      <td><pre class='prettyprint covered' id='l152s0'>            }</pre></td>
+      <td class='line'>152</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l152s0'>            }</pre></td>
     </tr>
     <tr>
-      <td class='line'>153</td><td class='count'>8</td>
-      <td><pre class='prettyprint jmp'>        <span id='l153s0' title='Executions: 8' class='covered'>}</span></pre></td>
+      <td class='line'>153</td><td class='count'>5</td>
+      <td><pre class='prettyprint jmp'>        <span id='l153s0' title='Executions: 5' class='covered'>}</span></pre></td>
     </tr>
     <tr>
-      <td class='line'>154</td><td class='count'>8</td>
+      <td class='line'>154</td><td class='count'>5</td>
       <td><pre class='prettyprint covered' id='l154s0'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -513,7 +513,7 @@ import org.apache.commons.lang3.SystemUtils;
       <td><pre class='prettyprint'>    public File getBaseDirectory() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>157</td><td class='count'>44</td>
+      <td class='line'>157</td><td class='count'>35</td>
       <td><pre class='prettyprint covered' id='l157s0'>        return this.directoryChooser.getBaseDirectory();</pre></td>
     </tr>
     <tr>
@@ -555,10 +555,10 @@ import org.apache.commons.lang3.SystemUtils;
     <tr>
       <td></td><td class='count'>8</td>
       <td class='paths'>
-        <span style='cursor:default; background-color:#55aa00' onclick='hidePath()'>Path coverage: 2/3</span>
+        <span style='cursor:default; background-color:#00ff00' onclick='hidePath()'>Path coverage: 3/3</span>
         <span class='covered' onclick="showPath(this,'l170s0 l171s0')">A: 1</span>
-        <span class='uncovered' onclick="showPath(this,'l170s0 l173s0 l174s0')">B: 0</span>
-        <span class='covered' onclick="showPath(this,'l170s0 l173s0 l176s0 l185s0')">C: 7</span>
+        <span class='covered' onclick="showPath(this,'l170s0 l173s0 l174s0')">B: 3</span>
+        <span class='covered' onclick="showPath(this,'l170s0 l173s0 l176s0 l185s0')">C: 4</span>
       </td>
     </tr>
     <tr>
@@ -578,19 +578,19 @@ import org.apache.commons.lang3.SystemUtils;
       <td><pre class='prettyprint jmp'>        <span id='l173s0' title='Executions: 7' class='covered'>if (this.getBaseDirectory() == null) {</span></pre></td>
     </tr>
     <tr>
-      <td class='line'>174</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l174s0'>            return;</pre></td>
+      <td class='line'>174</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered' id='l174s0'>            return;</pre></td>
     </tr>
     <tr>
       <td class='line'>175</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>        }</pre></td>
     </tr>
     <tr>
-      <td class='line'>176</td><td class='count'>7</td>
+      <td class='line'>176</td><td class='count'>4</td>
       <td><pre class='prettyprint covered' id='l176s0'>        LOG.config("Starting the directory monitor.");</pre></td>
     </tr>
     <tr>
-      <td class='line'>177</td><td class='count'>7</td>
+      <td class='line'>177</td><td class='count'>4</td>
       <td><pre class='prettyprint covered' id='l177s0'>        this.setFileMonitorToCurrentImportDir();</pre></td>
     </tr>
     <tr>
@@ -602,11 +602,11 @@ import org.apache.commons.lang3.SystemUtils;
       <td><pre class='prettyprint'>        try {</pre></td>
     </tr>
     <tr>
-      <td class='line'>180</td><td class='count'>7</td>
+      <td class='line'>180</td><td class='count'>4</td>
       <td><pre class='prettyprint covered' id='l180s0'>            this.monitor.start();</pre></td>
     </tr>
     <tr>
-      <td class='line'>181</td><td class='count'>7</td>
+      <td class='line'>181</td><td class='count'>4</td>
       <td><pre class='prettyprint covered' id='l181s0'>            this.isMonitorRunning = true;</pre></td>
     </tr>
     <tr>
@@ -618,11 +618,11 @@ import org.apache.commons.lang3.SystemUtils;
       <td><pre class='prettyprint uncovered' id='l183s0'>            LOG.log(Level.WARNING, e.getMessage(), e);</pre></td>
     </tr>
     <tr>
-      <td class='line'>184</td><td class='count'>7</td>
+      <td class='line'>184</td><td class='count'>4</td>
       <td><pre class='prettyprint covered' id='l184s0'>        }</pre></td>
     </tr>
     <tr>
-      <td class='line'>185</td><td class='count'>7</td>
+      <td class='line'>185</td><td class='count'>4</td>
       <td><pre class='prettyprint covered' id='l185s0'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -639,17 +639,17 @@ import org.apache.commons.lang3.SystemUtils;
     <tr>
       <td></td><td class='count'>2</td>
       <td class='paths'>
-        <span style='cursor:default; background-color:#00ff00' onclick='hidePath()'>Path coverage: 2/2</span>
-        <span class='covered' onclick="showPath(this,'l191s0 l192s0')">A: 1</span>
-        <span class='covered' onclick="showPath(this,'l191s0 l194s0 l202s0')">B: 1</span>
+        <span style='cursor:default; background-color:#7f8000' onclick='hidePath()'>Path coverage: 1/2</span>
+        <span class='covered' onclick="showPath(this,'l191s0 l192s0')">A: 2</span>
+        <span class='uncovered' onclick="showPath(this,'l191s0 l194s0 l202s0')">B: 0</span>
       </td>
     </tr>
     <tr>
       <td class='line'>191</td><td class='count'>2</td>
-      <td><pre class='prettyprint jmp'>        <span id='l191s0' title='Executions: 2' class='covered'>if (!this.isMonitorRunning)</span> <span id='l191s1' title='Executions: 1' class='covered'>{</span></pre></td>
+      <td><pre class='prettyprint jmp'>        <span id='l191s0' title='Executions: 2' class='covered'>if (!this.isMonitorRunning)</span> <span id='l191s1' title='Executions: 2' class='covered'>{</span></pre></td>
     </tr>
     <tr>
-      <td class='line'>192</td><td class='count'>1</td>
+      <td class='line'>192</td><td class='count'>2</td>
       <td><pre class='prettyprint covered' id='l192s0'>            return;</pre></td>
     </tr>
     <tr>
@@ -657,8 +657,8 @@ import org.apache.commons.lang3.SystemUtils;
       <td><pre class='prettyprint'>        }</pre></td>
     </tr>
     <tr>
-      <td class='line'>194</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered' id='l194s0'>        LOG.config("Stopping the directory monitor.");</pre></td>
+      <td class='line'>194</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l194s0'>        LOG.config("Stopping the directory monitor.");</pre></td>
     </tr>
     <tr>
       <td class='line'>195</td><td>&nbsp;</td>
@@ -669,12 +669,12 @@ import org.apache.commons.lang3.SystemUtils;
       <td><pre class='prettyprint'>        try {</pre></td>
     </tr>
     <tr>
-      <td class='line'>197</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered' id='l197s0'>            this.monitor.stop(0);</pre></td>
+      <td class='line'>197</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l197s0'>            this.monitor.stop(0);</pre></td>
     </tr>
     <tr>
-      <td class='line'>198</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered' id='l198s0'>            this.isMonitorRunning = false;</pre></td>
+      <td class='line'>198</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l198s0'>            this.isMonitorRunning = false;</pre></td>
     </tr>
     <tr>
       <td class='line'>199</td><td class='count'>0</td>
@@ -685,12 +685,12 @@ import org.apache.commons.lang3.SystemUtils;
       <td><pre class='prettyprint uncovered' id='l200s0'>            LOG.log(Level.WARNING, e.getMessage(), e);</pre></td>
     </tr>
     <tr>
-      <td class='line'>201</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered' id='l201s0'>        }</pre></td>
+      <td class='line'>201</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l201s0'>        }</pre></td>
     </tr>
     <tr>
-      <td class='line'>202</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered' id='l202s0'>    }</pre></td>
+      <td class='line'>202</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l202s0'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
@@ -737,9 +737,9 @@ import org.apache.commons.lang3.SystemUtils;
     <tr>
       <td></td><td class='count'>4</td>
       <td class='paths'>
-        <span style='cursor:default; background-color:#00ff00' onclick='hidePath()'>Path coverage: 2/2</span>
-        <span class='covered' onclick="showPath(this,'l215s0 l216s0')">A: 3</span>
-        <span class='covered' onclick="showPath(this,'l215s0 l218s0 l226s0')">B: 1</span>
+        <span style='cursor:default; background-color:#7f8000' onclick='hidePath()'>Path coverage: 1/2</span>
+        <span class='covered' onclick="showPath(this,'l215s0 l216s0')">A: 4</span>
+        <span class='uncovered' onclick="showPath(this,'l215s0 l218s0 l226s0')">B: 0</span>
       </td>
     </tr>
     <tr>
@@ -747,7 +747,7 @@ import org.apache.commons.lang3.SystemUtils;
       <td><pre class='prettyprint jmp'>        <span id='l215s0' title='Executions: 4' class='covered'>if (rowNumber >= this.files.size()) {</span></pre></td>
     </tr>
     <tr>
-      <td class='line'>216</td><td class='count'>3</td>
+      <td class='line'>216</td><td class='count'>4</td>
       <td><pre class='prettyprint covered' id='l216s0'>            return;</pre></td>
     </tr>
     <tr>
@@ -755,8 +755,8 @@ import org.apache.commons.lang3.SystemUtils;
       <td><pre class='prettyprint'>        }</pre></td>
     </tr>
     <tr>
-      <td class='line'>218</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered' id='l218s0'>        FileOperation importOneOperation = new ImportOneOperation(</pre></td>
+      <td class='line'>218</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l218s0'>        FileOperation importOneOperation = new ImportOneOperation(</pre></td>
     </tr>
     <tr>
       <td class='line'>219</td><td>&nbsp;</td>
@@ -771,24 +771,24 @@ import org.apache.commons.lang3.SystemUtils;
       <td><pre class='prettyprint'>                this.textFileFilter);</pre></td>
     </tr>
     <tr>
-      <td class='line'>222</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered' id='l222s0'>        importOneOperation.showWarningAndExecute(</pre></td>
+      <td class='line'>222</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l222s0'>        importOneOperation.showWarningAndExecute(</pre></td>
     </tr>
     <tr>
       <td class='line'>223</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                Collections.singletonList(this.files.get(rowNumber)));</pre></td>
     </tr>
     <tr>
-      <td class='line'>224</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered' id='l224s0'>        this.setChanged();</pre></td>
+      <td class='line'>224</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l224s0'>        this.setChanged();</pre></td>
     </tr>
     <tr>
-      <td class='line'>225</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered' id='l225s0'>        this.notifyObservers();</pre></td>
+      <td class='line'>225</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l225s0'>        this.notifyObservers();</pre></td>
     </tr>
     <tr>
-      <td class='line'>226</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered' id='l226s0'>    }</pre></td>
+      <td class='line'>226</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l226s0'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
@@ -798,9 +798,9 @@ import org.apache.commons.lang3.SystemUtils;
     <tr>
       <td></td><td class='count'>3</td>
       <td class='paths'>
-        <span style='cursor:default; background-color:#00ff00' onclick='hidePath()'>Path coverage: 2/2</span>
-        <span class='covered' onclick="showPath(this,'l229s0 l230s0')">A: 2</span>
-        <span class='covered' onclick="showPath(this,'l229s0 l232s0 l236s0')">B: 1</span>
+        <span style='cursor:default; background-color:#7f8000' onclick='hidePath()'>Path coverage: 1/2</span>
+        <span class='covered' onclick="showPath(this,'l229s0 l230s0')">A: 3</span>
+        <span class='uncovered' onclick="showPath(this,'l229s0 l232s0 l236s0')">B: 0</span>
       </td>
     </tr>
     <tr>
@@ -808,7 +808,7 @@ import org.apache.commons.lang3.SystemUtils;
       <td><pre class='prettyprint jmp'>        <span id='l229s0' title='Executions: 3' class='covered'>if (this.files.isEmpty()) {</span></pre></td>
     </tr>
     <tr>
-      <td class='line'>230</td><td class='count'>2</td>
+      <td class='line'>230</td><td class='count'>3</td>
       <td><pre class='prettyprint covered' id='l230s0'>            return;</pre></td>
     </tr>
     <tr>
@@ -816,24 +816,24 @@ import org.apache.commons.lang3.SystemUtils;
       <td><pre class='prettyprint'>        }</pre></td>
     </tr>
     <tr>
-      <td class='line'>232</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered' id='l232s0'>        FileOperation deleteAllOperation = new DeleteAllOperation();</pre></td>
+      <td class='line'>232</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l232s0'>        FileOperation deleteAllOperation = new DeleteAllOperation();</pre></td>
     </tr>
     <tr>
-      <td class='line'>233</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered' id='l233s0'>        deleteAllOperation.showWarningAndExecute(this.files);</pre></td>
+      <td class='line'>233</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l233s0'>        deleteAllOperation.showWarningAndExecute(this.files);</pre></td>
     </tr>
     <tr>
-      <td class='line'>234</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered' id='l234s0'>        this.setChanged();</pre></td>
+      <td class='line'>234</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l234s0'>        this.setChanged();</pre></td>
     </tr>
     <tr>
-      <td class='line'>235</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered' id='l235s0'>        this.notifyObservers();</pre></td>
+      <td class='line'>235</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l235s0'>        this.notifyObservers();</pre></td>
     </tr>
     <tr>
-      <td class='line'>236</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered' id='l236s0'>    }</pre></td>
+      <td class='line'>236</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l236s0'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
@@ -843,9 +843,9 @@ import org.apache.commons.lang3.SystemUtils;
     <tr>
       <td></td><td class='count'>4</td>
       <td class='paths'>
-        <span style='cursor:default; background-color:#00ff00' onclick='hidePath()'>Path coverage: 2/2</span>
-        <span class='covered' onclick="showPath(this,'l239s0 l240s0')">A: 3</span>
-        <span class='covered' onclick="showPath(this,'l239s0 l242s0 l247s0')">B: 1</span>
+        <span style='cursor:default; background-color:#7f8000' onclick='hidePath()'>Path coverage: 1/2</span>
+        <span class='covered' onclick="showPath(this,'l239s0 l240s0')">A: 4</span>
+        <span class='uncovered' onclick="showPath(this,'l239s0 l242s0 l247s0')">B: 0</span>
       </td>
     </tr>
     <tr>
@@ -853,7 +853,7 @@ import org.apache.commons.lang3.SystemUtils;
       <td><pre class='prettyprint jmp'>        <span id='l239s0' title='Executions: 4' class='covered'>if (rowNumber >= this.files.size()) {</span></pre></td>
     </tr>
     <tr>
-      <td class='line'>240</td><td class='count'>3</td>
+      <td class='line'>240</td><td class='count'>4</td>
       <td><pre class='prettyprint covered' id='l240s0'>            return;</pre></td>
     </tr>
     <tr>
@@ -861,28 +861,28 @@ import org.apache.commons.lang3.SystemUtils;
       <td><pre class='prettyprint'>        }</pre></td>
     </tr>
     <tr>
-      <td class='line'>242</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered' id='l242s0'>        FileOperation deleteOneOperation = new DeleteOneOperation();</pre></td>
+      <td class='line'>242</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l242s0'>        FileOperation deleteOneOperation = new DeleteOneOperation();</pre></td>
     </tr>
     <tr>
-      <td class='line'>243</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered' id='l243s0'>        deleteOneOperation.showWarningAndExecute(</pre></td>
+      <td class='line'>243</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l243s0'>        deleteOneOperation.showWarningAndExecute(</pre></td>
     </tr>
     <tr>
       <td class='line'>244</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>                Collections.singletonList(this.files.get(rowNumber)));</pre></td>
     </tr>
     <tr>
-      <td class='line'>245</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered' id='l245s0'>        this.setChanged();</pre></td>
+      <td class='line'>245</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l245s0'>        this.setChanged();</pre></td>
     </tr>
     <tr>
-      <td class='line'>246</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered' id='l246s0'>        this.notifyObservers();</pre></td>
+      <td class='line'>246</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l246s0'>        this.notifyObservers();</pre></td>
     </tr>
     <tr>
-      <td class='line'>247</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered' id='l247s0'>    }</pre></td>
+      <td class='line'>247</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l247s0'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
@@ -890,16 +890,16 @@ import org.apache.commons.lang3.SystemUtils;
       <td><pre class='prettyprint'>    private void setFileMonitorToCurrentImportDir() {</pre></td>
     </tr>
     <tr>
-      <td></td><td class='count'>10</td>
+      <td></td><td class='count'>7</td>
       <td class='paths'>
         <span style='cursor:default; background-color:#7f8000' onclick='hidePath()'>Path coverage: 1/2</span>
         <span class='uncovered' onclick="showPath(this,'l250s0 l251s0')">A: 0</span>
-        <span class='covered' onclick="showPath(this,'l250s0 l253s0 l259s0')">B: 10</span>
+        <span class='covered' onclick="showPath(this,'l250s0 l253s0 l259s0')">B: 7</span>
       </td>
     </tr>
     <tr>
-      <td class='line'>250</td><td class='count'>10</td>
-      <td><pre class='prettyprint jmp'>        <span id='l250s0' title='Executions: 10' class='covered'>if (this.getBaseDirectory() == null) {</span></pre></td>
+      <td class='line'>250</td><td class='count'>7</td>
+      <td><pre class='prettyprint jmp'>        <span id='l250s0' title='Executions: 7' class='covered'>if (this.getBaseDirectory() == null) {</span></pre></td>
     </tr>
     <tr>
       <td class='line'>251</td><td class='count'>0</td>
@@ -910,7 +910,7 @@ import org.apache.commons.lang3.SystemUtils;
       <td><pre class='prettyprint'>        }</pre></td>
     </tr>
     <tr>
-      <td class='line'>253</td><td class='count'>10</td>
+      <td class='line'>253</td><td class='count'>7</td>
       <td><pre class='prettyprint covered' id='l253s0'>        this.observer = new FileAlterationObserver(</pre></td>
     </tr>
     <tr>
@@ -926,15 +926,15 @@ import org.apache.commons.lang3.SystemUtils;
       <td><pre class='prettyprint'>                IOCase.SYSTEM);</pre></td>
     </tr>
     <tr>
-      <td class='line'>257</td><td class='count'>10</td>
+      <td class='line'>257</td><td class='count'>7</td>
       <td><pre class='prettyprint covered' id='l257s0'>        this.observer.addListener(this.listener);</pre></td>
     </tr>
     <tr>
-      <td class='line'>258</td><td class='count'>10</td>
+      <td class='line'>258</td><td class='count'>7</td>
       <td><pre class='prettyprint covered' id='l258s0'>        this.monitor.addObserver(this.observer);</pre></td>
     </tr>
     <tr>
-      <td class='line'>259</td><td class='count'>10</td>
+      <td class='line'>259</td><td class='count'>7</td>
       <td><pre class='prettyprint covered' id='l259s0'>    }</pre></td>
     </tr>
     <tr>

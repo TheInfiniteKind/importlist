@@ -10,7 +10,7 @@
 </head>
 <body onload='prettyPrint()'>
   <table cellpadding='0' cellspacing='1'>
-    <caption>master/src/com/moneydance/modules/features/importlist/presentation/BaseTableFactory.java</caption>
+    <caption>develop/src/main/java/com/moneydance/modules/features/importlist/presentation/BaseTableFactory.java</caption>
     <tr>
       <td class='line'>1</td><td>&nbsp;</td>
       <td><pre class='comment'>// Import List - http://my-flow.github.io/importlist/</pre></td>
@@ -512,40 +512,40 @@ import javax.swing.table.TableModel;
       <td><pre class='prettyprint'>    public JScrollPane getComponent() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>156</td><td class='count'>6</td>
+      <td class='line'>156</td><td class='count'>2</td>
       <td><pre class='prettyprint covered' id='l156s0'>        this.table.setBackground(this.prefs.getBackground());</pre></td>
     </tr>
     <tr>
-      <td class='line'>157</td><td class='count'>6</td>
+      <td class='line'>157</td><td class='count'>2</td>
       <td><pre class='prettyprint covered' id='l157s0'>        this.table.setFont(Preferences.getBodyFont());</pre></td>
     </tr>
     <tr>
-      <td class='line'>158</td><td class='count'>6</td>
+      <td class='line'>158</td><td class='count'>2</td>
       <td><pre class='prettyprint covered' id='l158s0'>        this.table.setRowHeight(this.prefs.getBodyRowHeight());</pre></td>
     </tr>
     <tr>
-      <td class='line'>159</td><td class='count'>6</td>
+      <td class='line'>159</td><td class='count'>2</td>
       <td><pre class='prettyprint covered' id='l159s0'>        this.columnFactory.setDateFormatter(this.prefs.getDateFormatter());</pre></td>
     </tr>
     <tr>
-      <td class='line'>160</td><td class='count'>6</td>
+      <td class='line'>160</td><td class='count'>2</td>
       <td><pre class='prettyprint covered' id='l160s0'>        this.columnFactory.setTimeFormatter(Preferences.getTimeFormatter());</pre></td>
     </tr>
     <tr>
-      <td class='line'>161</td><td class='count'>6</td>
+      <td class='line'>161</td><td class='count'>2</td>
       <td><pre class='prettyprint covered' id='l161s0'>        this.columnFactory.setForeground(this.prefs.getForeground());</pre></td>
     </tr>
     <tr>
-      <td class='line'>162</td><td class='count'>6</td>
+      <td class='line'>162</td><td class='count'>2</td>
       <td><pre class='prettyprint covered' id='l162s0'>        this.columnFactory.setBackground(this.prefs.getBackground());</pre></td>
     </tr>
     <tr>
-      <td class='line'>163</td><td class='count'>6</td>
+      <td class='line'>163</td><td class='count'>2</td>
       <td><pre class='prettyprint covered' id='l163s0'>        this.columnFactory.setBackgroundAlt(this.prefs.getBackgroundAlt());</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>165</td><td class='count'>6</td>
+      <td class='line'>165</td><td class='count'>2</td>
       <td><pre class='prettyprint covered' id='l165s0'>        TableColumn nameCol = this.table.getColumn(</pre></td>
     </tr>
     <tr>
@@ -553,11 +553,11 @@ import javax.swing.table.TableModel;
       <td><pre class='prettyprint'>                this.settings.getDescName());</pre></td>
     </tr>
     <tr>
-      <td class='line'>167</td><td class='count'>6</td>
+      <td class='line'>167</td><td class='count'>2</td>
       <td><pre class='prettyprint covered' id='l167s0'>        nameCol.setHeaderValue(this.localizable.getHeaderValueName());</pre></td>
     </tr>
     <tr>
-      <td class='line'>168</td><td class='count'>6</td>
+      <td class='line'>168</td><td class='count'>2</td>
       <td><pre class='prettyprint covered' id='l168s0'>        TableColumn modifiedCol = this.table.getColumn(</pre></td>
     </tr>
     <tr>
@@ -565,11 +565,11 @@ import javax.swing.table.TableModel;
       <td><pre class='prettyprint'>                this.settings.getDescModified());</pre></td>
     </tr>
     <tr>
-      <td class='line'>170</td><td class='count'>6</td>
+      <td class='line'>170</td><td class='count'>2</td>
       <td><pre class='prettyprint covered' id='l170s0'>        modifiedCol.setHeaderValue(this.localizable.getHeaderValueModified());</pre></td>
     </tr>
     <tr>
-      <td class='line'>171</td><td class='count'>6</td>
+      <td class='line'>171</td><td class='count'>2</td>
       <td><pre class='prettyprint covered' id='l171s0'>        TableColumn importCol = this.table.getColumn(</pre></td>
     </tr>
     <tr>
@@ -577,11 +577,11 @@ import javax.swing.table.TableModel;
       <td><pre class='prettyprint'>                this.settings.getDescImport());</pre></td>
     </tr>
     <tr>
-      <td class='line'>173</td><td class='count'>6</td>
+      <td class='line'>173</td><td class='count'>2</td>
       <td><pre class='prettyprint covered' id='l173s0'>        importCol.setHeaderValue(this.localizable.getHeaderValueImport());</pre></td>
     </tr>
     <tr>
-      <td class='line'>174</td><td class='count'>6</td>
+      <td class='line'>174</td><td class='count'>2</td>
       <td><pre class='prettyprint covered' id='l174s0'>        TableColumn deleteCol = this.table.getColumn(</pre></td>
     </tr>
     <tr>
@@ -589,7 +589,7 @@ import javax.swing.table.TableModel;
       <td><pre class='prettyprint'>                this.settings.getDescDelete());</pre></td>
     </tr>
     <tr>
-      <td class='line'>176</td><td class='count'>6</td>
+      <td class='line'>176</td><td class='count'>2</td>
       <td><pre class='prettyprint covered' id='l176s0'>        deleteCol.setHeaderValue(</pre></td>
     </tr>
     <tr>
@@ -598,16 +598,16 @@ import javax.swing.table.TableModel;
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>179</td><td class='count'>6</td>
+      <td class='line'>179</td><td class='count'>2</td>
       <td><pre class='prettyprint covered' id='l179s0'>        this.scrollPane.setViewportView(this.table);</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>181</td><td class='count'>6</td>
+      <td class='line'>181</td><td class='count'>2</td>
       <td><pre class='prettyprint covered' id='l181s0'>        this.scrollPane.setBackground(this.prefs.getBackground());</pre></td>
     </tr>
     <tr>
-      <td class='line'>182</td><td class='count'>6</td>
+      <td class='line'>182</td><td class='count'>2</td>
       <td><pre class='prettyprint covered' id='l182s0'>        this.scrollPane.setMinimumSize(</pre></td>
     </tr>
     <tr>
@@ -623,7 +623,7 @@ import javax.swing.table.TableModel;
       <td><pre class='prettyprint'>                        this.settings.getMinimumTableHeight()));</pre></td>
     </tr>
     <tr>
-      <td class='line'>186</td><td class='count'>6</td>
+      <td class='line'>186</td><td class='count'>2</td>
       <td><pre class='prettyprint covered' id='l186s0'>        this.scrollPane.setPreferredSize(</pre></td>
     </tr>
     <tr>
@@ -643,7 +643,7 @@ import javax.swing.table.TableModel;
       <td><pre class='prettyprint'>                                this.tableModel.getRowCount())));</pre></td>
     </tr>
     <tr>
-      <td class='line'>191</td><td class='count'>6</td>
+      <td class='line'>191</td><td class='count'>2</td>
       <td><pre class='prettyprint covered' id='l191s0'>        this.scrollPane.setMaximumSize(</pre></td>
     </tr>
     <tr>
@@ -660,7 +660,7 @@ import javax.swing.table.TableModel;
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>196</td><td class='count'>6</td>
+      <td class='line'>196</td><td class='count'>2</td>
       <td><pre class='prettyprint covered' id='l196s0'>        return this.scrollPane;</pre></td>
     </tr>
     <tr>

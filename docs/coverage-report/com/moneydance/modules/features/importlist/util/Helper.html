@@ -10,7 +10,7 @@
 </head>
 <body onload='prettyPrint()'>
   <table cellpadding='0' cellspacing='1'>
-    <caption>master/src/com/moneydance/modules/features/importlist/util/Helper.java</caption>
+    <caption>develop/src/main/java/com/moneydance/modules/features/importlist/util/Helper.java</caption>
     <tr>
       <td class='line'>1</td><td>&nbsp;</td>
       <td><pre class='comment'>// Import List - http://my-flow.github.io/importlist/</pre></td>
@@ -158,7 +158,7 @@ import org.apache.commons.lang3.Validate;
       <td><pre class='prettyprint'>    public Settings getSettings() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>53</td><td class='count'>525</td>
+      <td class='line'>53</td><td class='count'>484</td>
       <td><pre class='prettyprint covered' id='l53s0'>        return this.settings;</pre></td>
     </tr>
     <tr>
@@ -171,12 +171,12 @@ import org.apache.commons.lang3.Validate;
       <td><pre class='prettyprint'>    public Preferences getPreferences() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>57</td><td class='count'>196</td>
+      <td class='line'>57</td><td class='count'>193</td>
       <td><pre class='prettyprint covered' id='l57s0'>        synchronized (Helper.class) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>58</td><td class='count'>196</td>
-      <td><pre class='prettyprint jmp'>            <span id='l58s0' title='Executions: 196' class='covered'>if (this.prefs == null)</span> <span id='l58s1' title='Executions: 1' class='covered'>{</span></pre></td>
+      <td class='line'>58</td><td class='count'>193</td>
+      <td><pre class='prettyprint jmp'>            <span id='l58s0' title='Executions: 193' class='covered'>if (this.prefs == null)</span> <span id='l58s1' title='Executions: 1' class='covered'>{</span></pre></td>
     </tr>
     <tr>
       <td class='line'>59</td><td class='count'>1</td>
@@ -187,11 +187,11 @@ import org.apache.commons.lang3.Validate;
       <td><pre class='prettyprint'>            }</pre></td>
     </tr>
     <tr>
-      <td class='line'>61</td><td class='count'>196</td>
-      <td><pre class='prettyprint jmp'>        <span id='l61s0' title='Executions: 196' class='covered'>}</span></pre></td>
+      <td class='line'>61</td><td class='count'>193</td>
+      <td><pre class='prettyprint jmp'>        <span id='l61s0' title='Executions: 193' class='covered'>}</span></pre></td>
     </tr>
     <tr>
-      <td class='line'>62</td><td class='count'>196</td>
+      <td class='line'>62</td><td class='count'>193</td>
       <td><pre class='prettyprint covered' id='l62s0'>        return this.prefs;</pre></td>
     </tr>
     <tr>
@@ -204,12 +204,12 @@ import org.apache.commons.lang3.Validate;
       <td><pre class='prettyprint'>    public Localizable getLocalizable() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>66</td><td class='count'>219</td>
+      <td class='line'>66</td><td class='count'>217</td>
       <td><pre class='prettyprint covered' id='l66s0'>        synchronized (Helper.class) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>67</td><td class='count'>219</td>
-      <td><pre class='prettyprint jmp'>            <span id='l67s0' title='Executions: 219' class='covered'>if (this.localizable == null)</span> <span id='l67s1' title='Executions: 1' class='covered'>{</span></pre></td>
+      <td class='line'>67</td><td class='count'>217</td>
+      <td><pre class='prettyprint jmp'>            <span id='l67s0' title='Executions: 217' class='covered'>if (this.localizable == null)</span> <span id='l67s1' title='Executions: 1' class='covered'>{</span></pre></td>
     </tr>
     <tr>
       <td class='line'>68</td><td class='count'>1</td>
@@ -228,11 +228,11 @@ import org.apache.commons.lang3.Validate;
       <td><pre class='prettyprint'>            }</pre></td>
     </tr>
     <tr>
-      <td class='line'>72</td><td class='count'>219</td>
-      <td><pre class='prettyprint jmp'>        <span id='l72s0' title='Executions: 219' class='covered'>}</span></pre></td>
+      <td class='line'>72</td><td class='count'>217</td>
+      <td><pre class='prettyprint jmp'>        <span id='l72s0' title='Executions: 217' class='covered'>}</span></pre></td>
     </tr>
     <tr>
-      <td class='line'>73</td><td class='count'>219</td>
+      <td class='line'>73</td><td class='count'>217</td>
       <td><pre class='prettyprint covered' id='l73s0'>        return this.localizable;</pre></td>
     </tr>
     <tr>
@@ -400,19 +400,19 @@ import org.apache.commons.lang3.Validate;
       <td><pre class='prettyprint'>            final String resource) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>121</td><td class='count'>10</td>
+      <td class='line'>121</td><td class='count'>8</td>
       <td><pre class='prettyprint covered' id='l121s0'>        ClassLoader cloader     = Helper.class.getClassLoader();</pre></td>
     </tr>
     <tr>
-      <td class='line'>122</td><td class='count'>10</td>
+      <td class='line'>122</td><td class='count'>8</td>
       <td><pre class='prettyprint covered' id='l122s0'>        InputStream inputStream = cloader.getResourceAsStream(resource);</pre></td>
     </tr>
     <tr>
-      <td class='line'>123</td><td class='count'>10</td>
+      <td class='line'>123</td><td class='count'>8</td>
       <td><pre class='prettyprint covered' id='l123s0'>        Validate.notNull(inputStream, "Resource %s was not found.", resource);</pre></td>
     </tr>
     <tr>
-      <td class='line'>124</td><td class='count'>10</td>
+      <td class='line'>124</td><td class='count'>8</td>
       <td><pre class='prettyprint covered' id='l124s0'>        return inputStream;</pre></td>
     </tr>
     <tr>

@@ -10,7 +10,7 @@
 </head>
 <body onload='prettyPrint()'>
   <table cellpadding='0' cellspacing='1'>
-    <caption>master/src/com/moneydance/modules/features/importlist/io/AbstractDirectoryChooser.java</caption>
+    <caption>develop/src/main/java/com/moneydance/modules/features/importlist/io/AbstractDirectoryChooser.java</caption>
     <tr>
       <td class='line'>1</td><td>&nbsp;</td>
       <td><pre class='comment'>// Import List - http://my-flow.github.io/importlist/</pre></td>
@@ -166,20 +166,20 @@ import java.io.File;
       <td><pre class='prettyprint'>    final File getBaseDirectory() {</pre></td>
     </tr>
     <tr>
-      <td></td><td class='count'>56</td>
+      <td></td><td class='count'>47</td>
       <td class='paths'>
-        <span style='cursor:default; background-color:#7f8000' onclick='hidePath()'>Path coverage: 1/2</span>
-        <span class='uncovered' onclick="showPath(this,'l53s0 l54s0')">A: 0</span>
-        <span class='covered' onclick="showPath(this,'l53s0 l57s0')">B: 56</span>
+        <span style='cursor:default; background-color:#00ff00' onclick='hidePath()'>Path coverage: 2/2</span>
+        <span class='covered' onclick="showPath(this,'l53s0 l54s0')">A: 10</span>
+        <span class='covered' onclick="showPath(this,'l53s0 l57s0')">B: 37</span>
       </td>
     </tr>
     <tr>
-      <td class='line'>53</td><td class='count'>56</td>
-      <td><pre class='prettyprint jmp'>        <span id='l53s0' title='Executions: 56' class='covered'>if (this.prefs.getBaseDirectory() == null) {</span></pre></td>
+      <td class='line'>53</td><td class='count'>47</td>
+      <td><pre class='prettyprint jmp'>        <span id='l53s0' title='Executions: 47' class='covered'>if (this.prefs.getBaseDirectory() == null) {</span></pre></td>
     </tr>
     <tr>
-      <td class='line'>54</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l54s0'>            return null;</pre></td>
+      <td class='line'>54</td><td class='count'>10</td>
+      <td><pre class='prettyprint covered' id='l54s0'>            return null;</pre></td>
     </tr>
     <tr>
       <td class='line'>55</td><td>&nbsp;</td>
@@ -187,7 +187,7 @@ import java.io.File;
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>57</td><td class='count'>56</td>
+      <td class='line'>57</td><td class='count'>37</td>
       <td><pre class='prettyprint covered' id='l57s0'>        return new File(this.prefs.getBaseDirectory());</pre></td>
     </tr>
     <tr>
@@ -200,12 +200,12 @@ import java.io.File;
       <td><pre class='prettyprint'>    final void reset() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>61</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l61s0'>        this.prefs.setBaseDirectory(null);</pre></td>
+      <td class='line'>61</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l61s0'>        this.prefs.setBaseDirectory(null);</pre></td>
     </tr>
     <tr>
-      <td class='line'>62</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l62s0'>    }</pre></td>
+      <td class='line'>62</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l62s0'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
@@ -213,8 +213,8 @@ import java.io.File;
       <td><pre class='prettyprint'>    protected final Preferences getPrefs() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>65</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered' id='l65s0'>        return this.prefs;</pre></td>
+      <td class='line'>65</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l65s0'>        return this.prefs;</pre></td>
     </tr>
     <tr>
       <td class='line'>66</td><td>&nbsp;</td>
