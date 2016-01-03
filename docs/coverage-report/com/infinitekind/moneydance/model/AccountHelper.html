@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JMockit Coverage Report - AccountHelper.java</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../../coverage.css'/>
+  <link rel='shortcut icon' type='image/png' href='../../../../logo.png'/>
+  <script type='text/javascript' src='../../../../coverage.js'></script>
+  <script type='text/javascript' src='../../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption>master/src/test/java/com/infinitekind/moneydance/model/AccountHelper.java</caption>
+    <tr>
+      <td class='line'>1</td><td>&nbsp;</td>
+      <td><pre class='comment'>// Import List - http://my-flow.github.io/importlist/</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>2</td><td>&nbsp;</td>
+      <td><pre class='comment'>// Copyright (C) 2011-2014 Florian J. Breunig</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>3</td><td>&nbsp;</td>
+      <td><pre class='comment'>//</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>4</td><td>&nbsp;</td>
+      <td><pre class='comment'>// This program is free software: you can redistribute it and/or modify</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>5</td><td>&nbsp;</td>
+      <td><pre class='comment'>// it under the terms of the GNU General Public License as published by</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>6</td><td>&nbsp;</td>
+      <td><pre class='comment'>// the Free Software Foundation, either version 3 of the License, or</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>7</td><td>&nbsp;</td>
+      <td><pre class='comment'>// (at your option) any later version.</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>8</td><td>&nbsp;</td>
+      <td><pre class='comment'>//</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>9</td><td>&nbsp;</td>
+      <td><pre class='comment'>// This program is distributed in the hope that it will be useful,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>10</td><td>&nbsp;</td>
+      <td><pre class='comment'>// but WITHOUT ANY WARRANTY; without even the implied warranty of</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>11</td><td>&nbsp;</td>
+      <td><pre class='comment'>// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>12</td><td>&nbsp;</td>
+      <td><pre class='comment'>// GNU General Public License for more details.</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>13</td><td>&nbsp;</td>
+      <td><pre class='comment'>//</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>14</td><td>&nbsp;</td>
+      <td><pre class='comment'>// You should have received a copy of the GNU General Public License</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>15</td><td>&nbsp;</td>
+      <td><pre class='comment'>// along with this program. If not, see &lt;http://www.gnu.org/licenses/>.</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>17</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package com.infinitekind.moneydance.model;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>19</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l19s0'>public final class AccountHelper {</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>21</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public static void addSubAccount(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>22</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            final Account parent,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>23</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            final Account subaccount</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>24</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            ) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>25</td><td class='count'>164</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l25s0'>        parent.addSubAccount(subaccount);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38x9</li>
+          <li>com.moneydance.modules.features.importlist.io.DefaultDirectoryChooserTest#setUp: 36x2</li>
+          <li>com.moneydance.modules.features.importlist.io.DeleteAllOperationTest#setUp: 40x2</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 40, 45, 40, 45, 40, 45, 40, 45, 40, 45, 40, 45, 40, 45, 40, 45, 40, 45, 40, 45, 40, 45</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testExecute: 55, 58</li>
+          <li>com.moneydance.modules.features.importlist.io.MacDirectoryChooserTest#setUp: 36x2</li>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 49x3</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x13</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 41x2</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 41x2</li>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#setUp: 43</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 41x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 41x2</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 48x30</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#setUp: 36x15</li>
+          <li>com.moneydance.modules.features.importlist.util.HelperTest#setUp: 35x4</li>
+          <li>com.moneydance.modules.features.importlist.util.TrackerTest#setUp: 34</li>
+          <li>com.moneydance.modules.features.importlist.presentation.AggregationTableFactoryTest#setUp: 42</li>
+          <li>com.moneydance.modules.features.importlist.presentation.BaseTableFactoryTest#setUp: 42x2</li>
+          <li>com.moneydance.modules.features.importlist.presentation.EmptyLabelFactoryTest#setUp: 38</li>
+          <li>com.moneydance.modules.features.importlist.presentation.FileTableRowSorterTest#setUp: 39x2</li>
+          <li>com.moneydance.modules.features.importlist.presentation.SplitPaneFactoryTest#setUp: 38</li>
+          <li>com.moneydance.modules.features.importlist.presentation.TableListenerTest#setUp: 46x6</li>
+          <li>com.moneydance.modules.features.importlist.controller.AggregationTableModelTest#setUp: 40x6</li>
+          <li>com.moneydance.modules.features.importlist.controller.FileTableModelTest#setUp: 45x7</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 39, 42, 39, 42, 39, 42, 39, 42, 39, 42, 39, 42, 39, 42, 39, 42, 39, 42, 39, 42</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>26</td><td class='count'>164</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l26s0'>    }</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 38x9</li>
+          <li>com.moneydance.modules.features.importlist.io.DefaultDirectoryChooserTest#setUp: 36x2</li>
+          <li>com.moneydance.modules.features.importlist.io.DeleteAllOperationTest#setUp: 40x2</li>
+          <li>com.moneydance.modules.features.importlist.io.FileAdminTest#setUp: 40, 45, 40, 45, 40, 45, 40, 45, 40, 45, 40, 45, 40, 45, 40, 45, 40, 45, 40, 45, 40, 45</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportAllOperationTest#setUp: 43x2</li>
+          <li>com.moneydance.modules.features.importlist.io.ImportOneOperationTest#testExecute: 55, 58</li>
+          <li>com.moneydance.modules.features.importlist.io.MacDirectoryChooserTest#setUp: 36x2</li>
+          <li>com.moneydance.modules.features.importlist.table.AbstractEditorTest#setUp: 49x3</li>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 45x13</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteAllEditorTest#setUp: 41x2</li>
+          <li>com.moneydance.modules.features.importlist.table.DeleteOneEditorTest#setUp: 41x2</li>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#setUp: 43</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportAllEditorTest#setUp: 41x2</li>
+          <li>com.moneydance.modules.features.importlist.table.ImportOneEditorTest#setUp: 41x2</li>
+          <li>com.moneydance.modules.features.importlist.util.PreferencesTest#setUp: 48x30</li>
+          <li>com.moneydance.modules.features.importlist.util.LocalizableTest#setUp: 36x15</li>
+          <li>com.moneydance.modules.features.importlist.util.HelperTest#setUp: 35x4</li>
+          <li>com.moneydance.modules.features.importlist.util.TrackerTest#setUp: 34</li>
+          <li>com.moneydance.modules.features.importlist.presentation.AggregationTableFactoryTest#setUp: 42</li>
+          <li>com.moneydance.modules.features.importlist.presentation.BaseTableFactoryTest#setUp: 42x2</li>
+          <li>com.moneydance.modules.features.importlist.presentation.EmptyLabelFactoryTest#setUp: 38</li>
+          <li>com.moneydance.modules.features.importlist.presentation.FileTableRowSorterTest#setUp: 39x2</li>
+          <li>com.moneydance.modules.features.importlist.presentation.SplitPaneFactoryTest#setUp: 38</li>
+          <li>com.moneydance.modules.features.importlist.presentation.TableListenerTest#setUp: 46x6</li>
+          <li>com.moneydance.modules.features.importlist.controller.AggregationTableModelTest#setUp: 40x6</li>
+          <li>com.moneydance.modules.features.importlist.controller.FileTableModelTest#setUp: 45x7</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 39, 42, 39, 42, 39, 42, 39, 42, 39, 42, 39, 42, 39, 42, 39, 42, 39, 42, 39, 42</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>27</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>

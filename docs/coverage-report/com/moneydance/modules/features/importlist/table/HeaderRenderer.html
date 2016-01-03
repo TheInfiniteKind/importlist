@@ -10,14 +10,14 @@
 </head>
 <body onload='prettyPrint()'>
   <table cellpadding='0' cellspacing='1'>
-    <caption>develop/src/main/java/com/moneydance/modules/features/importlist/table/HeaderRenderer.java</caption>
+    <caption>master/src/main/java/com/moneydance/modules/features/importlist/table/HeaderRenderer.java</caption>
     <tr>
       <td class='line'>1</td><td>&nbsp;</td>
       <td><pre class='comment'>// Import List - http://my-flow.github.io/importlist/</pre></td>
     </tr>
     <tr>
       <td class='line'>2</td><td>&nbsp;</td>
-      <td><pre class='comment'>// Copyright (C) 2011-2014 Florian J. Breunig</pre></td>
+      <td><pre class='comment'>// Copyright (C) 2011-2016 Florian J. Breunig</pre></td>
     </tr>
     <tr>
       <td class='line'>3</td><td>&nbsp;</td>
@@ -114,223 +114,369 @@ import org.apache.commons.lang3.Validate;
       <td class='line'>42</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    private final TableCellRenderer defaultHeaderTableCellRenderer;</pre></td>
     </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>43</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    private final ColorSchemeHelper colorSchemeHelper;</pre></td>
+      <td class='line'>44</td><td class='count'>25</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l44s0'>    HeaderRenderer(final TableCellRenderer argDefaultHeaderTableCellRenderer) {</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 50x13</li>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 48, 61, 74</li>
+          <li>com.moneydance.modules.features.importlist.presentation.AggregationTableFactoryTest#setUp: 47</li>
+          <li>com.moneydance.modules.features.importlist.presentation.BaseTableFactoryTest#setUp: 47x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>45</td><td class='count'>25</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l45s0'>        Validate.notNull(</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 50x13</li>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 48, 61, 74</li>
+          <li>com.moneydance.modules.features.importlist.presentation.AggregationTableFactoryTest#setUp: 47</li>
+          <li>com.moneydance.modules.features.importlist.presentation.BaseTableFactoryTest#setUp: 47x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>46</td><td class='count'>25</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l46s0'>                argDefaultHeaderTableCellRenderer,</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 50x13</li>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 48, 61, 74</li>
+          <li>com.moneydance.modules.features.importlist.presentation.AggregationTableFactoryTest#setUp: 47</li>
+          <li>com.moneydance.modules.features.importlist.presentation.BaseTableFactoryTest#setUp: 47x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>47</td><td class='count'>25</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l47s0'>                "argDefaultHeaderTableCellRenderer must not be null");</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 50x13</li>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 48, 61, 74</li>
+          <li>com.moneydance.modules.features.importlist.presentation.AggregationTableFactoryTest#setUp: 47</li>
+          <li>com.moneydance.modules.features.importlist.presentation.BaseTableFactoryTest#setUp: 47x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>48</td><td class='count'>25</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l48s0'>        this.defaultHeaderTableCellRenderer = argDefaultHeaderTableCellRenderer;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 50x13</li>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 48, 61, 74</li>
+          <li>com.moneydance.modules.features.importlist.presentation.AggregationTableFactoryTest#setUp: 47</li>
+          <li>com.moneydance.modules.features.importlist.presentation.BaseTableFactoryTest#setUp: 47x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>49</td><td class='count'>25</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l49s0'>    }</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.ColumnFactoryTest#setUp: 50x13</li>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 48, 61, 74</li>
+          <li>com.moneydance.modules.features.importlist.presentation.AggregationTableFactoryTest#setUp: 47</li>
+          <li>com.moneydance.modules.features.importlist.presentation.BaseTableFactoryTest#setUp: 47x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67</li>
+        </ol>
+      </td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>45</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    HeaderRenderer(</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>46</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>            final ColorSchemeHelper argColorSchemeHelper,</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>47</td><td class='count'>28</td>
-      <td><pre class='prettyprint covered' id='l47s0'>            final TableCellRenderer argDefaultHeaderTableCellRenderer) {</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>48</td><td class='count'>28</td>
-      <td><pre class='prettyprint covered' id='l48s0'>        Validate.notNull(</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>49</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                argColorSchemeHelper,</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>50</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                "argColorSchemeHelper must not be null"); //$NON-NLS-1$</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>51</td><td class='count'>28</td>
-      <td><pre class='prettyprint covered' id='l51s0'>        Validate.notNull(</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>52</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                argDefaultHeaderTableCellRenderer,</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>53</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                "argDefaultHeaderTableCellRenderer must not be null");</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>54</td><td class='count'>28</td>
-      <td><pre class='prettyprint covered' id='l54s0'>        this.colorSchemeHelper              = argColorSchemeHelper;</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>55</td><td class='count'>28</td>
-      <td><pre class='prettyprint covered' id='l55s0'>        this.defaultHeaderTableCellRenderer = argDefaultHeaderTableCellRenderer;</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>56</td><td class='count'>28</td>
-      <td><pre class='prettyprint covered' id='l56s0'>    }</pre></td>
-    </tr>
-    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
-    <tr>
-      <td class='line'>58</td><td>&nbsp;</td>
+      <td class='line'>51</td><td>&nbsp;</td>
       <td><pre class='comment'>    // ESCA-JAVA0138: abstract method from interface TableCellRenderer</pre></td>
     </tr>
     <tr>
-      <td class='line'>59</td><td>&nbsp;</td>
+      <td class='line'>52</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    @Override</pre></td>
     </tr>
     <tr>
-      <td class='line'>60</td><td>&nbsp;</td>
+      <td class='line'>53</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public Component getTableCellRendererComponent(</pre></td>
     </tr>
     <tr>
-      <td class='line'>61</td><td>&nbsp;</td>
+      <td class='line'>54</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>            final JTable table,</pre></td>
     </tr>
     <tr>
-      <td class='line'>62</td><td>&nbsp;</td>
+      <td class='line'>55</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>            final Object value,</pre></td>
     </tr>
     <tr>
-      <td class='line'>63</td><td>&nbsp;</td>
+      <td class='line'>56</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>            final boolean isSelected,</pre></td>
     </tr>
     <tr>
-      <td class='line'>64</td><td>&nbsp;</td>
+      <td class='line'>57</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>            final boolean hasFocus,</pre></td>
     </tr>
     <tr>
-      <td class='line'>65</td><td>&nbsp;</td>
+      <td class='line'>58</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>            final int row,</pre></td>
     </tr>
     <tr>
-      <td class='line'>66</td><td>&nbsp;</td>
+      <td class='line'>59</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>            final int column) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>60</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l60s0'>        Component component =</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 52, 65, 78</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td></td><td class='count'>3</td>
       <td class='paths'>
         <span style='cursor:default; background-color:#00ff00' onclick='hidePath()'>Path coverage: 3/3</span>
-        <span class='covered' onclick="showPath(this,'l67s0 l73s0 l83s0 l97s0')">A: 1</span>
-        <span class='covered' onclick="showPath(this,'l67s0 l73s0 l74s0 l77s0 l83s0 l97s0')">B: 1</span>
-        <span class='covered' onclick="showPath(this,'l67s0 l73s0 l74s0 l77s0 l78s0 l83s0 l97s0')">C: 1</span>
+        <span class='covered' onclick="showPath(this,'l61s0 l64s0 l75s0 l91s0')">A: 1</span>
+        <span class='covered' onclick="showPath(this,'l61s0 l64s0 l65s0 l69s0 l75s0 l91s0')">B: 1</span>
+        <span class='covered' onclick="showPath(this,'l61s0 l64s0 l65s0 l69s0 l70s0 l75s0 l91s0')">C: 1</span>
       </td>
     </tr>
     <tr>
-      <td class='line'>67</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered' id='l67s0'>        Component component =</pre></td>
+      <td class='line'>61</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l61s0'>                this.defaultHeaderTableCellRenderer</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 52, 65, 78</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>68</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                this.defaultHeaderTableCellRenderer</pre></td>
+      <td class='line'>62</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l62s0'>                .getTableCellRendererComponent(</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 52, 65, 78</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>69</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                .getTableCellRendererComponent(</pre></td>
+      <td class='line'>63</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l63s0'>                        table, value, hasFocus, hasFocus, row, column);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 52, 65, 78</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>70</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                        table, value, hasFocus, hasFocus, row, column);</pre></td>
+      <td class='line'>64</td><td class='count'>3</td>
+      <td><pre class='prettyprint jmp'>        <span id='l64s0' title='Executions: 3' class='covered cp' onclick='showHide(this,0)'>if (component instanceof JComponent)</span> <span id='l64s1' title='Executions: 2' class='covered cp' onclick='showHide(this,1)'>{</span></pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 52, 65, 78</li>
+        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 52, 78</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>71</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered' id='l71s0'>        this.colorSchemeHelper.applyColorScheme(component, row);</pre></td>
+      <td class='line'>65</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l65s0'>            JComponent jComponent = (JComponent) component;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 52, 78</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>66</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l66s0'>            jComponent.setBorder(new EmptyBorder(1, 1, 1, 1));</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 52, 78</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>67</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l67s0'>            jComponent.setOpaque(false);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 52, 78</li>
+        </ol>
+      </td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>73</td><td class='count'>3</td>
-      <td><pre class='prettyprint jmp'>        <span id='l73s0' title='Executions: 3' class='covered'>if (component instanceof JComponent)</span> <span id='l73s1' title='Executions: 2' class='covered'>{</span></pre></td>
+      <td class='line'>69</td><td class='count'>2</td>
+      <td><pre class='prettyprint jmp'>            <span id='l69s0' title='Executions: 2' class='covered cp' onclick='showHide(this,0)'>if (jComponent instanceof JLabel)</span> <span id='l69s1' title='Executions: 1' class='covered cp' onclick='showHide(this,1)'>{</span></pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 52, 78</li>
+        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 52</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>74</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered' id='l74s0'>            JComponent jComponent = (JComponent) component;</pre></td>
+      <td class='line'>70</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l70s0'>                JLabel jLabel = (JLabel) jComponent;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 52</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>75</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered' id='l75s0'>            jComponent.setBorder(new EmptyBorder(1, 1, 1, 1));</pre></td>
-    </tr>
-    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
-    <tr>
-      <td class='line'>77</td><td class='count'>2</td>
-      <td><pre class='prettyprint jmp'>            <span id='l77s0' title='Executions: 2' class='covered'>if (jComponent instanceof JLabel)</span> <span id='l77s1' title='Executions: 1' class='covered'>{</span></pre></td>
-    </tr>
-    <tr>
-      <td class='line'>78</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered' id='l78s0'>                JLabel jLabel = (JLabel) jComponent;</pre></td>
+      <td class='line'>71</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l71s0'>                jLabel.setHorizontalAlignment(SwingConstants.LEFT);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 52</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>79</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered' id='l79s0'>                jLabel.setHorizontalAlignment(SwingConstants.LEFT);</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>80</td><td>&nbsp;</td>
+      <td class='line'>72</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>            }</pre></td>
     </tr>
     <tr>
-      <td class='line'>81</td><td>&nbsp;</td>
+      <td class='line'>73</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>        }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>83</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered' id='l83s0'>        component.setFont(Preferences.getHeaderFont());</pre></td>
+      <td class='line'>75</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l75s0'>        component.setFont(Preferences.getHeaderFont());</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 52, 65, 78</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>84</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered' id='l84s0'>        component.setSize(new Dimension(</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>85</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                component.getWidth(),</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>86</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                Helper.INSTANCE.getPreferences().getHeaderRowHeight()));</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>87</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered' id='l87s0'>        component.setMinimumSize(new Dimension(</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>88</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                component.getWidth(),</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>89</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                Helper.INSTANCE.getPreferences().getHeaderRowHeight()));</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>90</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered' id='l90s0'>        component.setPreferredSize(new Dimension(</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>91</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                component.getWidth(),</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>92</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                Helper.INSTANCE.getPreferences().getHeaderRowHeight()));</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>93</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered' id='l93s0'>        component.setMaximumSize(new Dimension(</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>94</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                component.getWidth(),</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>95</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                Helper.INSTANCE.getPreferences().getHeaderRowHeight()));</pre></td>
+      <td class='line'>76</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l76s0'>        component.setForeground(Preferences.getHeaderForeground());</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 52, 65, 78</li>
+        </ol>
+      </td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>97</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered' id='l97s0'>        return component;</pre></td>
+      <td class='line'>78</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l78s0'>        component.setSize(new Dimension(</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 52x2, 65x2, 78</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>98</td><td>&nbsp;</td>
+      <td class='line'>79</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l79s0'>                component.getWidth(),</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 52, 65, 78</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>80</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l80s0'>                Helper.INSTANCE.getPreferences().getHeaderRowHeight()));</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 52, 65, 78</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>81</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l81s0'>        component.setMinimumSize(new Dimension(</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 52x2, 65x2, 78</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>82</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l82s0'>                component.getWidth(),</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 52, 65, 78</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>83</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l83s0'>                Helper.INSTANCE.getPreferences().getHeaderRowHeight()));</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 52, 65, 78</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>84</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l84s0'>        component.setPreferredSize(new Dimension(</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 52x2, 65x2, 78</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>85</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l85s0'>                component.getWidth(),</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 52, 65, 78</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>86</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l86s0'>                Helper.INSTANCE.getPreferences().getHeaderRowHeight()));</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 52, 65, 78</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>87</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l87s0'>        component.setMaximumSize(new Dimension(</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 52x2, 65x2, 78</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>88</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l88s0'>                component.getWidth(),</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 52, 65, 78</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>89</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l89s0'>                Helper.INSTANCE.getPreferences().getHeaderRowHeight()));</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 52, 65, 78</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>91</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l91s0'>        return component;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.table.HeaderRendererTest#testGetTableCellRendererComponent: 52, 65, 78</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>92</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr>
-      <td class='line'>99</td><td>&nbsp;</td>
+      <td class='line'>93</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>}</pre></td>
     </tr>
   </table>

@@ -10,14 +10,14 @@
 </head>
 <body onload='prettyPrint()'>
   <table cellpadding='0' cellspacing='1'>
-    <caption>develop/src/main/java/com/moneydance/modules/features/importlist/controller/ViewController.java</caption>
+    <caption>master/src/main/java/com/moneydance/modules/features/importlist/controller/ViewController.java</caption>
     <tr>
       <td class='line'>1</td><td>&nbsp;</td>
       <td><pre class='comment'>// Import List - http://my-flow.github.io/importlist/</pre></td>
     </tr>
     <tr>
       <td class='line'>2</td><td>&nbsp;</td>
-      <td><pre class='comment'>// Copyright (C) 2011-2014 Florian J. Breunig</pre></td>
+      <td><pre class='comment'>// Copyright (C) 2011-2016 Florian J. Breunig</pre></td>
     </tr>
     <tr>
       <td class='line'>3</td><td>&nbsp;</td>
@@ -79,8 +79,8 @@
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'></td><td>&nbsp;</td>
-      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import com.moneydance.apps.md.controller.FeatureModuleContext;
-import com.moneydance.apps.md.model.RootAccount;
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import com.infinitekind.moneydance.model.AccountBook;
+import com.moneydance.apps.md.controller.FeatureModuleContext;
 import com.moneydance.apps.md.view.HomePageView;
 import com.moneydance.apps.md.view.gui.MoneydanceLAF;
 import com.moneydance.modules.features.importlist.io.FileAdmin;
@@ -104,9 +104,7 @@ import java.awt.event.ActionListener;
 import java.util.Observable;
 import java.util.Observer;
 
-import javax.swing.JButton;
 import javax.swing.JComponent;
-import javax.swing.JLabel;
 import javax.swing.JViewport;
 import javax.swing.table.AbstractTableModel;
 </div><span>import ...</span></pre></td>
@@ -121,846 +119,1306 @@ import javax.swing.table.AbstractTableModel;
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>55</td><td>&nbsp;</td>
+      <td class='line'>53</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>public final class ViewController implements HomePageView {</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>57</td><td>&nbsp;</td>
+      <td class='line'>55</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    private final Settings              settings;</pre></td>
     </tr>
     <tr>
-      <td class='line'>58</td><td>&nbsp;</td>
+      <td class='line'>56</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    private final Localizable           localizable;</pre></td>
     </tr>
     <tr>
-      <td class='line'>59</td><td>&nbsp;</td>
+      <td class='line'>57</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    private final FileAdmin             fileAdmin;</pre></td>
     </tr>
     <tr>
-      <td class='line'>60</td><td>&nbsp;</td>
+      <td class='line'>58</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    private final Tracker               tracker;</pre></td>
     </tr>
     <tr>
-      <td class='line'>61</td><td>&nbsp;</td>
+      <td class='line'>59</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    private       boolean               <span class='instance covered' title='Reads: 8 Writes: 3'>initialized</span>;</pre></td>
     </tr>
     <tr>
-      <td class='line'>62</td><td>&nbsp;</td>
+      <td class='line'>60</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    private       ColumnFactory         <span class='instance uncovered' title='Reads: 0 Writes: 3'>columnFactory</span>;</pre></td>
     </tr>
     <tr>
-      <td class='line'>63</td><td>&nbsp;</td>
+      <td class='line'>61</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    private       JViewport             <span class='instance covered' title='Reads: 45 Writes: 3'>viewport</span>;</pre></td>
     </tr>
     <tr>
-      <td class='line'>64</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    private       DirectoryChooserButtonFactory <span class='instance covered' title='Reads: 4 Writes: 3'>directoryChooserFactory</span>;</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>65</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    private       EmptyLabelFactory     <span class='instance uncovered' title='Reads: 0 Writes: 3'>emptyLabelFactory</span>;</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>66</td><td>&nbsp;</td>
+      <td class='line'>62</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    private       ComponentFactory      <span class='instance uncovered' title='Reads: 0 Writes: 3'>splitPaneFactory</span>;</pre></td>
     </tr>
     <tr>
-      <td class='line'>67</td><td>&nbsp;</td>
+      <td class='line'>63</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    private       BaseTableFactory      <span class='instance covered' title='Reads: 6 Writes: 3'>baseTableFactory</span>;</pre></td>
     </tr>
     <tr>
-      <td class='line'>68</td><td>&nbsp;</td>
+      <td class='line'>64</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    private       AbstractTableModel    <span class='instance covered' title='Reads: 3 Writes: 3'>baseTableModel</span>;</pre></td>
     </tr>
     <tr>
-      <td class='line'>69</td><td>&nbsp;</td>
+      <td class='line'>65</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    private       AbstractTableModel    <span class='instance covered' title='Reads: 3 Writes: 3'>aggrTableModel</span>;</pre></td>
     </tr>
     <tr>
-      <td class='line'>70</td><td>&nbsp;</td>
+      <td class='line'>66</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    private       boolean               <span class='instance covered' title='Reads: 2 Writes: 9'>dirty</span>;</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>73</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    public ViewController(</pre></td>
+      <td class='line'>69</td><td class='count'>20</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l69s0'>    public ViewController(</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 40</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 45</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 40x8</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 43</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>74</td><td>&nbsp;</td>
+      <td class='line'>70</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>            final String baseDirectory,</pre></td>
     </tr>
     <tr>
-      <td class='line'>75</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>            final FeatureModuleContext context,</pre></td>
+      <td class='line'>71</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            final FeatureModuleContext argContext,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>72</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            final Tracker argTracker) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>73</td><td class='count'>20</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l73s0'>        this.settings    = Helper.INSTANCE.getSettings();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 40</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 45</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 40x8</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 43</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>74</td><td class='count'>20</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l74s0'>        this.localizable = Helper.INSTANCE.getLocalizable();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 40</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 45</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 40x8</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 43</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>75</td><td class='count'>20</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l75s0'>        this.fileAdmin   = new FileAdmin(baseDirectory, argContext);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 40</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 45</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 40x8</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 43</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>76</td><td class='count'>20</td>
-      <td><pre class='prettyprint covered' id='l76s0'>            final Tracker argTracker) {</pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l76s0'>        this.fileAdmin.addObserver(new ViewControllerObserver());</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 40</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 45</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 40x8</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 43</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>77</td><td class='count'>20</td>
-      <td><pre class='prettyprint covered' id='l77s0'>        this.settings    = Helper.INSTANCE.getSettings();</pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l77s0'>        this.tracker     = argTracker;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 40</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 45</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 40x8</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 43</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>78</td><td class='count'>20</td>
-      <td><pre class='prettyprint covered' id='l78s0'>        this.localizable = Helper.INSTANCE.getLocalizable();</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>79</td><td class='count'>20</td>
-      <td><pre class='prettyprint covered' id='l79s0'>        this.fileAdmin   = new FileAdmin(baseDirectory, context);</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>80</td><td class='count'>20</td>
-      <td><pre class='prettyprint covered' id='l80s0'>        this.fileAdmin.addObserver(new ViewControllerObserver());</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>81</td><td class='count'>20</td>
-      <td><pre class='prettyprint covered' id='l81s0'>        this.tracker     = argTracker;</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>82</td><td class='count'>20</td>
-      <td><pre class='prettyprint covered' id='l82s0'>    }</pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l78s0'>    }</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 40</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 45</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 40x8</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 43</li>
+        </ol>
+      </td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>85</td><td>&nbsp;</td>
+      <td class='line'>81</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    private void init() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>86</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered' id='l86s0'>        this.viewport = new JViewport();</pre></td>
+      <td class='line'>82</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l82s0'>        this.viewport = new JViewport();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>83</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l83s0'>        this.viewport.setOpaque(false);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>85</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l85s0'>        this.baseTableModel   = new FileTableModel(this.fileAdmin.getFiles());</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>86</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l86s0'>        this.baseTableFactory = new BaseTableFactory(</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>87</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered' id='l87s0'>        this.viewport.setOpaque(false);</pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l87s0'>                this.baseTableModel,</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>88</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l88s0'>                this.fileAdmin);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67</li>
+        </ol>
+      </td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>89</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered' id='l89s0'>        ActionListener actionListener = new ChooseBaseDirectoryActionListener();</pre></td>
-    </tr>
-    <tr>
       <td class='line'>90</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered' id='l90s0'>        this.directoryChooserFactory = new DirectoryChooserButtonFactory(</pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l90s0'>        this.aggrTableModel   = new AggregationTableModel();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>91</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                actionListener);</pre></td>
+      <td class='line'>91</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l91s0'>        AggregationTableFactory aggrTableFactory = new AggregationTableFactory(</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>92</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered' id='l92s0'>        this.emptyLabelFactory       = new EmptyLabelFactory();</pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l92s0'>                this.aggrTableModel,</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67</li>
+        </ol>
+      </td>
     </tr>
-    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>93</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l93s0'>                this.fileAdmin);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67</li>
+        </ol>
+      </td>
+    </tr>
     <tr>
       <td class='line'>94</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered' id='l94s0'>        this.baseTableModel   = new FileTableModel(this.fileAdmin.getFiles());</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>95</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered' id='l95s0'>        this.baseTableFactory = new BaseTableFactory(</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>96</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                this.baseTableModel,</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>97</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                this.fileAdmin);</pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l94s0'>        this.columnFactory    = this.baseTableFactory.getColumnFactory();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67</li>
+        </ol>
+      </td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>99</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered' id='l99s0'>        this.aggrTableModel   = new AggregationTableModel();</pre></td>
+      <td class='line'>96</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l96s0'>        this.splitPaneFactory = new SplitPaneFactory(</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67</li>
+        </ol>
+      </td>
     </tr>
+    <tr>
+      <td class='line'>97</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l97s0'>                this.baseTableFactory,</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>98</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l98s0'>                aggrTableFactory);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'>100</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered' id='l100s0'>        AggregationTableFactory aggrTableFactory = new AggregationTableFactory(</pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l100s0'>        this.setDirty(true);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>101</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                this.aggrTableModel,</pre></td>
+      <td class='line'>101</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l101s0'>        this.refresh();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>102</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                this.fileAdmin);</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>103</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered' id='l103s0'>        this.columnFactory    = this.baseTableFactory.getColumnFactory();</pre></td>
+      <td class='line'>102</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l102s0'>        this.fileAdmin.startMonitor();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67</li>
+        </ol>
+      </td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>104</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l104s0'>        this.tracker.track(Tracker.EventName.DISPLAY);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67</li>
+        </ol>
+      </td>
+    </tr>
     <tr>
       <td class='line'>105</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered' id='l105s0'>        this.splitPaneFactory = new SplitPaneFactory(</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>106</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                this.baseTableFactory,</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>107</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                aggrTableFactory);</pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l105s0'>    }</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67</li>
+        </ol>
+      </td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>109</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered' id='l109s0'>        this.setDirty(true);</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>110</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered' id='l110s0'>        this.refresh();</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>111</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered' id='l111s0'>        this.fileAdmin.startMonitor();</pre></td>
-    </tr>
-    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
-    <tr>
-      <td class='line'>113</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered' id='l113s0'>        this.tracker.track(Tracker.EventName.DISPLAY);</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>114</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered' id='l114s0'>    }</pre></td>
-    </tr>
-    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
-    <tr>
-      <td class='line'>117</td><td>&nbsp;</td>
+      <td class='line'>108</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    @Override</pre></td>
     </tr>
     <tr>
-      <td class='line'>118</td><td>&nbsp;</td>
+      <td class='line'>109</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public synchronized void refresh() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>119</td><td class='count'>8</td>
-      <td><pre class='prettyprint jmp'>        <span id='l119s0' title='Executions: 8' class='covered'>if (this.viewport == null</span> || <span id='l119s1' title='Executions: 5' class='covered'>!this.viewport.isVisible()) {</span></pre></td>
+      <td class='line'>110</td><td class='count'>8</td>
+      <td><pre class='prettyprint jmp'>        <span id='l110s0' title='Executions: 8' class='covered cp' onclick='showHide(this,0)'>if (this.viewport == null</span> || <span id='l110s1' title='Executions: 5' class='covered cp' onclick='showHide(this,1)'>!this.viewport.isVisible()) {</span></pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInvokeString: 71</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testRefresh: 48</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testChooseBaseDirectory: 84</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67, 68, 69</li>
+        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67, 68, 69</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>120</td><td class='count'>4</td>
-      <td><pre class='prettyprint covered' id='l120s0'>            return;</pre></td>
+      <td class='line'>111</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l111s0'>            return;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInvokeString: 71</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testRefresh: 48</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testChooseBaseDirectory: 84</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 69</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>121</td><td>&nbsp;</td>
+      <td class='line'>112</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>        }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>123</td><td class='count'>4</td>
-      <td><pre class='prettyprint covered' id='l123s0'>        Helper.INSTANCE.setChanged();</pre></td>
+      <td class='line'>114</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l114s0'>        Helper.INSTANCE.setChanged();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67, 68</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>124</td><td class='count'>4</td>
-      <td><pre class='prettyprint covered' id='l124s0'>        Helper.INSTANCE.notifyObservers(Boolean.TRUE);</pre></td>
+      <td class='line'>115</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l115s0'>        Helper.INSTANCE.notifyObservers(Boolean.TRUE);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67, 68</li>
+        </ol>
+      </td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>126</td><td class='count'>4</td>
-      <td><pre class='prettyprint covered' id='l126s0'>        this.fileAdmin.checkValidBaseDirectory();</pre></td>
+      <td class='line'>117</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l117s0'>        this.fileAdmin.checkValidBaseDirectory();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67, 68</li>
+        </ol>
+      </td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>128</td><td>&nbsp;</td>
+      <td class='line'>119</td><td>&nbsp;</td>
       <td><pre class='comment'>        // display a label iff no base directory has been chosen</pre></td>
     </tr>
     <tr>
-      <td class='line'>129</td><td class='count'>4</td>
-      <td><pre class='prettyprint jmp'>        <span id='l129s0' title='Executions: 4' class='covered'>if (this.fileAdmin.getBaseDirectory() == null) {</span></pre></td>
+      <td class='line'>120</td><td class='count'>4</td>
+      <td><pre class='prettyprint jmp'>        <span id='l120s0' title='Executions: 4' class='covered cp' onclick='showHide(this,0)'>if (this.fileAdmin.getBaseDirectory() == null) {</span></pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67, 68</li>
+        </ol>
+      </td>
     </tr>
+    <tr>
+      <td class='line'>121</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l121s0'>            DirectoryChooserButtonFactory directoryChooserFactory =</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67, 68</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>122</td><td class='count'>8</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l122s0'>                    new DirectoryChooserButtonFactory(</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67x2, 68</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>123</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l123s0'>                            String.format(</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67, 68</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>124</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l124s0'>                                    "&lt;html>&lt;u>%s&lt;/u>&lt;/html>",</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67, 68</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>125</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l125s0'>                                    this.localizable.getDirectoryChooserTitle()</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67, 68</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>126</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                                    ),</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>127</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l127s0'>                                    new ChooseBaseDirectoryActionListener()</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67, 68</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>128</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                            );</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'>130</td><td class='count'>4</td>
-      <td><pre class='prettyprint covered' id='l130s0'>            JButton chooserButton = this.directoryChooserFactory.getComponent();</pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l130s0'>            this.viewport.setView(directoryChooserFactory.getComponent());</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67, 68</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>131</td><td class='count'>4</td>
-      <td><pre class='prettyprint covered' id='l131s0'>            chooserButton.setText(String.format(</pre></td>
+      <td class='line'>131</td><td class='count'>8</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l131s0'>            this.viewport.setMinimumSize(</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67x2, 68</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>132</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                    "&lt;html>&lt;u>%s&lt;/u>&lt;/html>",</pre></td>
+      <td class='line'>132</td><td class='count'>8</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l132s0'>                    new Dimension(</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67x2, 68</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>133</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                    this.localizable.getDirectoryChooserTitle()));</pre></td>
-    </tr>
-    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
-    <tr>
-      <td class='line'>135</td><td class='count'>4</td>
-      <td><pre class='prettyprint covered' id='l135s0'>            this.viewport.setView(chooserButton);</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>136</td><td class='count'>4</td>
-      <td><pre class='prettyprint covered' id='l136s0'>            this.viewport.setMinimumSize(</pre></td>
+      <td class='line'>133</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l133s0'>                            this.settings.getPreferredEmptyMessageWidth(),</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67, 68</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>137</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                    new Dimension(</pre></td>
+      <td class='line'>134</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l134s0'>                            this.settings.getPreferredEmptyMessageHeight()));</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67, 68</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>138</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                            this.settings.getPreferredEmptyMessageWidth(),</pre></td>
+      <td class='line'>135</td><td class='count'>8</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l135s0'>            this.viewport.setPreferredSize(</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67x2, 68</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>139</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                            this.settings.getPreferredEmptyMessageHeight()));</pre></td>
+      <td class='line'>136</td><td class='count'>8</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l136s0'>                    new Dimension(</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67x2, 68</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>140</td><td class='count'>4</td>
-      <td><pre class='prettyprint covered' id='l140s0'>            this.viewport.setPreferredSize(</pre></td>
+      <td class='line'>137</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l137s0'>                            this.settings.getPreferredEmptyMessageWidth(),</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67, 68</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>141</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                    new Dimension(</pre></td>
+      <td class='line'>138</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l138s0'>                            this.settings.getPreferredEmptyMessageHeight()));</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67, 68</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>142</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                            this.settings.getPreferredEmptyMessageWidth(),</pre></td>
+      <td class='line'>139</td><td class='count'>8</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l139s0'>            this.viewport.setMaximumSize(</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67x2, 68</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>143</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                            this.settings.getPreferredEmptyMessageHeight()));</pre></td>
+      <td class='line'>140</td><td class='count'>8</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l140s0'>                    new Dimension(</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91x2</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67x2, 68</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>144</td><td class='count'>4</td>
-      <td><pre class='prettyprint covered' id='l144s0'>            this.viewport.setMaximumSize(</pre></td>
+      <td class='line'>141</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l141s0'>                            this.settings.getPreferredEmptyMessageWidth(),</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67, 68</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>145</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                    new Dimension(</pre></td>
+      <td class='line'>142</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l142s0'>                            this.settings.getPreferredEmptyMessageHeight()));</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67, 68</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>146</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                            this.settings.getPreferredEmptyMessageWidth(),</pre></td>
+      <td class='line'>143</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l143s0'>            return;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67, 68</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>147</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                            this.settings.getPreferredEmptyMessageHeight()));</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>148</td><td class='count'>4</td>
-      <td><pre class='prettyprint covered' id='l148s0'>            return;</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>149</td><td>&nbsp;</td>
+      <td class='line'>144</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>        }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>151</td><td class='count'>0</td>
-      <td><pre class='prettyprint jmp'>        <span id='l151s0' title='Executions: 0' class='uncovered'>if (this.isDirty()) {</span></pre></td>
+      <td class='line'>146</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>        <span id='l146s0' title='Executions: 0' class='uncovered'>if (this.isDirty()) {</span></pre></td>
     </tr>
     <tr>
-      <td class='line'>152</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l152s0'>            this.setDirty(false);</pre></td>
+      <td class='line'>147</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l147s0'>            this.setDirty(false);</pre></td>
     </tr>
     <tr>
-      <td class='line'>153</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l153s0'>            this.fileAdmin.reloadFiles();</pre></td>
+      <td class='line'>148</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l148s0'>            this.fileAdmin.reloadFiles();</pre></td>
     </tr>
     <tr>
-      <td class='line'>154</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l154s0'>            this.baseTableModel.fireTableDataChanged();</pre></td>
+      <td class='line'>149</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l149s0'>            this.baseTableModel.fireTableDataChanged();</pre></td>
     </tr>
     <tr>
-      <td class='line'>155</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l155s0'>            this.aggrTableModel.fireTableDataChanged();</pre></td>
+      <td class='line'>150</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l150s0'>            this.aggrTableModel.fireTableDataChanged();</pre></td>
     </tr>
     <tr>
-      <td class='line'>156</td><td>&nbsp;</td>
+      <td class='line'>151</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>        }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>158</td><td>&nbsp;</td>
+      <td class='line'>153</td><td>&nbsp;</td>
       <td><pre class='comment'>        // display a label iff there are no files in the list</pre></td>
     </tr>
     <tr>
-      <td class='line'>159</td><td class='count'>0</td>
-      <td><pre class='prettyprint jmp'>        <span id='l159s0' title='Executions: 0' class='uncovered'>if (this.baseTableModel.getRowCount() == 0) {</span></pre></td>
+      <td class='line'>154</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>        <span id='l154s0' title='Executions: 0' class='uncovered'>if (this.baseTableModel.getRowCount() == 0) {</span></pre></td>
     </tr>
     <tr>
-      <td class='line'>160</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l160s0'>            String emptyMessage = this.localizable.getEmptyMessage(</pre></td>
+      <td class='line'>155</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l155s0'>            EmptyLabelFactory emptyLabelFactory = new EmptyLabelFactory(</pre></td>
     </tr>
     <tr>
-      <td class='line'>161</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                    this.fileAdmin.getBaseDirectory().getAbsolutePath());</pre></td>
+      <td class='line'>156</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l156s0'>                    this.localizable.getEmptyMessage(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>157</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l157s0'>                            this.fileAdmin.getBaseDirectory().getAbsolutePath()</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>158</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                            )</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>159</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                    );</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>161</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l161s0'>            this.viewport.setView(emptyLabelFactory.getComponent());</pre></td>
     </tr>
     <tr>
       <td class='line'>162</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l162s0'>            JLabel emptyLabel = this.emptyLabelFactory.getComponent();</pre></td>
+      <td><pre class='prettyprint uncovered' id='l162s0'>            this.viewport.setMinimumSize(</pre></td>
     </tr>
     <tr>
       <td class='line'>163</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l163s0'>            emptyLabel.setText(emptyMessage);</pre></td>
+      <td><pre class='prettyprint uncovered' id='l163s0'>                    new Dimension(</pre></td>
     </tr>
-    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>164</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l164s0'>                            this.settings.getPreferredEmptyMessageWidth(),</pre></td>
+    </tr>
     <tr>
       <td class='line'>165</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l165s0'>            this.viewport.setView(emptyLabel);</pre></td>
+      <td><pre class='prettyprint uncovered' id='l165s0'>                            this.settings.getPreferredEmptyMessageHeight()));</pre></td>
     </tr>
     <tr>
       <td class='line'>166</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l166s0'>            this.viewport.setMinimumSize(</pre></td>
+      <td><pre class='prettyprint uncovered' id='l166s0'>            this.viewport.setPreferredSize(</pre></td>
     </tr>
     <tr>
-      <td class='line'>167</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                    new Dimension(</pre></td>
+      <td class='line'>167</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l167s0'>                    new Dimension(</pre></td>
     </tr>
     <tr>
-      <td class='line'>168</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                            this.settings.getPreferredEmptyMessageWidth(),</pre></td>
+      <td class='line'>168</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l168s0'>                            this.settings.getPreferredEmptyMessageWidth(),</pre></td>
     </tr>
     <tr>
-      <td class='line'>169</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                            this.settings.getPreferredEmptyMessageHeight()));</pre></td>
+      <td class='line'>169</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l169s0'>                            this.settings.getPreferredEmptyMessageHeight()));</pre></td>
     </tr>
     <tr>
       <td class='line'>170</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l170s0'>            this.viewport.setPreferredSize(</pre></td>
+      <td><pre class='prettyprint uncovered' id='l170s0'>            this.viewport.setMaximumSize(</pre></td>
     </tr>
     <tr>
-      <td class='line'>171</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                    new Dimension(</pre></td>
+      <td class='line'>171</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l171s0'>                    new Dimension(</pre></td>
     </tr>
     <tr>
-      <td class='line'>172</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                            this.settings.getPreferredEmptyMessageWidth(),</pre></td>
+      <td class='line'>172</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l172s0'>                            this.settings.getPreferredEmptyMessageWidth(),</pre></td>
     </tr>
     <tr>
-      <td class='line'>173</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                            this.settings.getPreferredEmptyMessageHeight()));</pre></td>
+      <td class='line'>173</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l173s0'>                            this.settings.getPreferredEmptyMessageHeight()));</pre></td>
     </tr>
     <tr>
       <td class='line'>174</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l174s0'>            this.viewport.setMaximumSize(</pre></td>
+      <td><pre class='prettyprint uncovered' id='l174s0'>            return;</pre></td>
     </tr>
     <tr>
       <td class='line'>175</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                    new Dimension(</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>176</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                            this.settings.getPreferredEmptyMessageWidth(),</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>177</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                            this.settings.getPreferredEmptyMessageHeight()));</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>178</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l178s0'>            return;</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>179</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>        }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>181</td><td>&nbsp;</td>
+      <td class='line'>177</td><td>&nbsp;</td>
       <td><pre class='comment'>        // display only scroll pane iff there is exactly one file in the list</pre></td>
     </tr>
     <tr>
+      <td class='line'>178</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>        <span id='l178s0' title='Executions: 0' class='uncovered'>if (this.baseTableModel.getRowCount() == 1) {</span></pre></td>
+    </tr>
+    <tr>
+      <td class='line'>179</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l179s0'>            JComponent component = this.baseTableFactory.getComponent();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>180</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l180s0'>            component.setBorder(MoneydanceLAF.homePageBorder);</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
       <td class='line'>182</td><td class='count'>0</td>
-      <td><pre class='prettyprint jmp'>        <span id='l182s0' title='Executions: 0' class='uncovered'>if (this.baseTableModel.getRowCount() == 1) {</span></pre></td>
+      <td><pre class='prettyprint uncovered' id='l182s0'>            this.viewport.setView(component);</pre></td>
     </tr>
     <tr>
       <td class='line'>183</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l183s0'>            JComponent component = this.baseTableFactory.getComponent();</pre></td>
+      <td><pre class='prettyprint uncovered' id='l183s0'>            this.viewport.setMinimumSize(</pre></td>
     </tr>
     <tr>
       <td class='line'>184</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l184s0'>            component.setBorder(MoneydanceLAF.homePageBorder);</pre></td>
+      <td><pre class='prettyprint uncovered' id='l184s0'>                    new Dimension(</pre></td>
     </tr>
-    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>185</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l185s0'>                            this.settings.getMinimumTableWidth(),</pre></td>
+    </tr>
     <tr>
       <td class='line'>186</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l186s0'>            this.viewport.setView(component);</pre></td>
+      <td><pre class='prettyprint uncovered' id='l186s0'>                            this.settings.getMinimumTableHeight()));</pre></td>
     </tr>
     <tr>
       <td class='line'>187</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l187s0'>            this.viewport.setMinimumSize(</pre></td>
+      <td><pre class='prettyprint uncovered' id='l187s0'>            this.viewport.setPreferredSize(</pre></td>
     </tr>
     <tr>
-      <td class='line'>188</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                    new Dimension(</pre></td>
+      <td class='line'>188</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l188s0'>                    new Dimension(</pre></td>
     </tr>
     <tr>
-      <td class='line'>189</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                            this.settings.getMinimumTableWidth(),</pre></td>
+      <td class='line'>189</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l189s0'>                            Helper.INSTANCE.getPreferences()</pre></td>
     </tr>
     <tr>
-      <td class='line'>190</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                            this.settings.getMinimumTableHeight()));</pre></td>
+      <td class='line'>190</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l190s0'>                            .getPreferredTableWidth(),</pre></td>
     </tr>
     <tr>
       <td class='line'>191</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l191s0'>            this.viewport.setPreferredSize(</pre></td>
+      <td><pre class='prettyprint uncovered' id='l191s0'>                            Helper.INSTANCE.getPreferences()</pre></td>
     </tr>
     <tr>
-      <td class='line'>192</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                    new Dimension(</pre></td>
+      <td class='line'>192</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l192s0'>                            .getPreferredTableHeight(</pre></td>
     </tr>
     <tr>
-      <td class='line'>193</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                            Helper.INSTANCE.getPreferences()</pre></td>
+      <td class='line'>193</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l193s0'>                                    this.baseTableModel.getRowCount())));</pre></td>
     </tr>
     <tr>
-      <td class='line'>194</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                            .getPreferredTableWidth(),</pre></td>
+      <td class='line'>194</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l194s0'>            this.viewport.setMaximumSize(</pre></td>
     </tr>
     <tr>
-      <td class='line'>195</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                            Helper.INSTANCE.getPreferences()</pre></td>
+      <td class='line'>195</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l195s0'>                    new Dimension(</pre></td>
     </tr>
     <tr>
-      <td class='line'>196</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                            .getPreferredTableHeight(</pre></td>
+      <td class='line'>196</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l196s0'>                            Preferences.getMaximumTableWidth(),</pre></td>
     </tr>
     <tr>
-      <td class='line'>197</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                                    this.baseTableModel.getRowCount())));</pre></td>
+      <td class='line'>197</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l197s0'>                            Preferences.getMaximumTableHeight()));</pre></td>
     </tr>
     <tr>
       <td class='line'>198</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l198s0'>            this.viewport.setMaximumSize(</pre></td>
+      <td><pre class='prettyprint uncovered' id='l198s0'>            this.registerKeyboardShortcuts4One();</pre></td>
     </tr>
     <tr>
-      <td class='line'>199</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                    new Dimension(</pre></td>
+      <td class='line'>199</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l199s0'>            return;</pre></td>
     </tr>
     <tr>
       <td class='line'>200</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                            Preferences.getMaximumTableWidth(),</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>201</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                            Preferences.getMaximumTableHeight()));</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>202</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l202s0'>            this.registerKeyboardShortcuts4One();</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>203</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l203s0'>            return;</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>204</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>        }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>206</td><td>&nbsp;</td>
+      <td class='line'>202</td><td>&nbsp;</td>
       <td><pre class='comment'>        // display scroll pane and an additional import all/delete all table</pre></td>
     </tr>
     <tr>
-      <td class='line'>207</td><td>&nbsp;</td>
+      <td class='line'>203</td><td>&nbsp;</td>
       <td><pre class='comment'>        // iff there is more than one file in the list</pre></td>
     </tr>
     <tr>
+      <td class='line'>204</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>        <span id='l204s0' title='Executions: 0' class='uncovered'>if (this.baseTableModel.getRowCount() > 1) {</span></pre></td>
+    </tr>
+    <tr>
+      <td class='line'>205</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l205s0'>            JComponent component = this.splitPaneFactory.getComponent();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>206</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l206s0'>            component.setBorder(MoneydanceLAF.homePageBorder);</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
       <td class='line'>208</td><td class='count'>0</td>
-      <td><pre class='prettyprint jmp'>        <span id='l208s0' title='Executions: 0' class='uncovered'>if (this.baseTableModel.getRowCount() > 1) {</span></pre></td>
+      <td><pre class='prettyprint uncovered' id='l208s0'>            this.viewport.setView(component);</pre></td>
     </tr>
     <tr>
       <td class='line'>209</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l209s0'>            JComponent component = this.splitPaneFactory.getComponent();</pre></td>
+      <td><pre class='prettyprint uncovered' id='l209s0'>            this.viewport.setMinimumSize(null);</pre></td>
     </tr>
     <tr>
       <td class='line'>210</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l210s0'>            component.setBorder(MoneydanceLAF.homePageBorder);</pre></td>
+      <td><pre class='prettyprint uncovered' id='l210s0'>            this.viewport.setPreferredSize(null);</pre></td>
     </tr>
-    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>211</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l211s0'>            this.viewport.setMaximumSize(null);</pre></td>
+    </tr>
     <tr>
       <td class='line'>212</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l212s0'>            this.viewport.setView(component);</pre></td>
+      <td><pre class='prettyprint uncovered' id='l212s0'>            this.registerKeyboardShortcuts4All();</pre></td>
     </tr>
     <tr>
       <td class='line'>213</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l213s0'>            this.viewport.setMinimumSize(null);</pre></td>
+      <td><pre class='prettyprint uncovered' id='l213s0'>            return;</pre></td>
     </tr>
     <tr>
-      <td class='line'>214</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l214s0'>            this.viewport.setPreferredSize(null);</pre></td>
+      <td class='line'>214</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
     </tr>
     <tr>
       <td class='line'>215</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l215s0'>            this.viewport.setMaximumSize(null);</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>216</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l216s0'>            this.registerKeyboardShortcuts4All();</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>217</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l217s0'>            return;</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>218</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>        }</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>219</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l219s0'>    }</pre></td>
+      <td><pre class='prettyprint uncovered' id='l215s0'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>222</td><td>&nbsp;</td>
+      <td class='line'>218</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>219</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public JComponent getGUIView(final AccountBook accountBook) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>220</td><td class='count'>4</td>
+      <td><pre class='prettyprint jmp'>        <span id='l220s0' title='Executions: 4' class='covered cp' onclick='showHide(this,0)'>if (!this.initialized)</span> <span id='l220s1' title='Executions: 3' class='covered cp' onclick='showHide(this,1)'>{</span></pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53, 54</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67</li>
+        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>221</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l221s0'>            this.initialized = true;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>222</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l222s0'>            this.init();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>223</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    public JComponent getGUIView(final RootAccount rootAccount) {</pre></td>
+      <td><pre class='prettyprint'>        }</pre></td>
     </tr>
     <tr>
       <td class='line'>224</td><td class='count'>4</td>
-      <td><pre class='prettyprint jmp'>        <span id='l224s0' title='Executions: 4' class='covered'>if (!this.initialized)</span> <span id='l224s1' title='Executions: 3' class='covered'>{</span></pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l224s0'>        return this.viewport;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53, 54</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>225</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered' id='l225s0'>            this.initialized = true;</pre></td>
+      <td class='line'>225</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
     </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>226</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered' id='l226s0'>            this.init();</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>227</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>        }</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>228</td><td class='count'>4</td>
-      <td><pre class='prettyprint covered' id='l228s0'>        return this.viewport;</pre></td>
+      <td class='line'>228</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
     </tr>
     <tr>
       <td class='line'>229</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    }</pre></td>
-    </tr>
-    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
-    <tr>
-      <td class='line'>232</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>    @Override</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>233</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public void reset() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>234</td><td>&nbsp;</td>
+      <td class='line'>230</td><td>&nbsp;</td>
       <td><pre class='comment'>        // ignore</pre></td>
     </tr>
     <tr>
-      <td class='line'>235</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered' id='l235s0'>    }</pre></td>
+      <td class='line'>231</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l231s0'>    }</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testReset: 59</li>
+        </ol>
+      </td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>238</td><td>&nbsp;</td>
+      <td class='line'>234</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    @Override</pre></td>
     </tr>
     <tr>
-      <td class='line'>239</td><td>&nbsp;</td>
+      <td class='line'>235</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public void setActive(final boolean active) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>240</td><td class='count'>5</td>
-      <td><pre class='prettyprint jmp'>        <span id='l240s0' title='Executions: 5' class='covered'>if (this.viewport == null)</span> <span id='l240s1' title='Executions: 3' class='covered'>{</span></pre></td>
+      <td class='line'>236</td><td class='count'>5</td>
+      <td><pre class='prettyprint jmp'>        <span id='l236s0' title='Executions: 5' class='covered cp' onclick='showHide(this,0)'>if (this.viewport == null)</span> <span id='l236s1' title='Executions: 3' class='covered cp' onclick='showHide(this,1)'>{</span></pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#testUnload: 50</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 64, 65, 68, 69</li>
+        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#testUnload: 50</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 64, 65</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>241</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered' id='l241s0'>            return;</pre></td>
+      <td class='line'>237</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l237s0'>            return;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#testUnload: 50</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 64, 65</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>242</td><td>&nbsp;</td>
+      <td class='line'>238</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>        }</pre></td>
     </tr>
     <tr>
-      <td class='line'>243</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered' id='l243s0'>        this.viewport.setVisible(active);</pre></td>
+      <td class='line'>239</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l239s0'>        this.viewport.setVisible(active);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 68, 69</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>244</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered' id='l244s0'>        this.refresh();</pre></td>
+      <td class='line'>240</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l240s0'>        this.refresh();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 68, 69</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>245</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered' id='l245s0'>    }</pre></td>
+      <td class='line'>241</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l241s0'>    }</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 68, 69</li>
+        </ol>
+      </td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>248</td><td>&nbsp;</td>
+      <td class='line'>244</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    @Override</pre></td>
     </tr>
     <tr>
-      <td class='line'>249</td><td>&nbsp;</td>
+      <td class='line'>245</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public String getID() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>250</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered' id='l250s0'>        return this.settings.getExtensionIdentifier();</pre></td>
+      <td class='line'>246</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l246s0'>        return this.settings.getExtensionIdentifier();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetID: 74</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>251</td><td>&nbsp;</td>
+      <td class='line'>247</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>254</td><td>&nbsp;</td>
+      <td class='line'>250</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    @Override</pre></td>
     </tr>
     <tr>
-      <td class='line'>255</td><td>&nbsp;</td>
+      <td class='line'>251</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public String toString() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>256</td><td class='count'>11</td>
-      <td><pre class='prettyprint covered' id='l256s0'>        return this.settings.getExtensionName();</pre></td>
+      <td class='line'>252</td><td class='count'>11</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l252s0'>        return this.settings.getExtensionName();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 40</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 45</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 40x8</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testToString: 79</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>257</td><td>&nbsp;</td>
+      <td class='line'>253</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>260</td><td>&nbsp;</td>
+      <td class='line'>256</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public void chooseBaseDirectory() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>261</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered' id='l261s0'>        this.fileAdmin.chooseBaseDirectory();</pre></td>
+      <td class='line'>257</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l257s0'>        this.fileAdmin.chooseBaseDirectory();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInvokeString: 71</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testChooseBaseDirectory: 84</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>262</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered' id='l262s0'>    }</pre></td>
+      <td class='line'>258</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l258s0'>    }</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInvokeString: 71</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testChooseBaseDirectory: 84</li>
+        </ol>
+      </td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>265</td><td>&nbsp;</td>
+      <td class='line'>261</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public void cleanup() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>266</td><td class='count'>4</td>
-      <td><pre class='prettyprint jmp'>        <span id='l266s0' title='Executions: 4' class='covered'>if (!this.initialized)</span> <span id='l266s1' title='Executions: 3' class='covered'>{</span></pre></td>
+      <td class='line'>262</td><td class='count'>4</td>
+      <td><pre class='prettyprint jmp'>        <span id='l262s0' title='Executions: 4' class='covered cp' onclick='showHide(this,0)'>if (!this.initialized)</span> <span id='l262s1' title='Executions: 3' class='covered cp' onclick='showHide(this,1)'>{</span></pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#testCleanup: 55</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#testUnload: 50</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 89, 92</li>
+        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#testCleanup: 55</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#testUnload: 50</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 89</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>267</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered' id='l267s0'>            return;</pre></td>
+      <td class='line'>263</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l263s0'>            return;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#testCleanup: 55</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#testUnload: 50</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 89</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>268</td><td>&nbsp;</td>
+      <td class='line'>264</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>        }</pre></td>
     </tr>
     <tr>
-      <td class='line'>269</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered' id='l269s0'>        this.viewport.setEnabled(false);</pre></td>
+      <td class='line'>265</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l265s0'>        this.viewport.setEnabled(false);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 92</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>270</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered' id='l270s0'>        this.viewport.removeAll();</pre></td>
+      <td class='line'>266</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l266s0'>        this.viewport.removeAll();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 92</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>271</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered' id='l271s0'>        this.fileAdmin.stopMonitor();</pre></td>
+      <td class='line'>267</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l267s0'>        this.fileAdmin.stopMonitor();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 92</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>272</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered' id='l272s0'>    }</pre></td>
+      <td class='line'>268</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l268s0'>    }</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 92</li>
+        </ol>
+      </td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>275</td><td>&nbsp;</td>
+      <td class='line'>271</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public void setDirty(final boolean argDirty) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>276</td><td class='count'>9</td>
-      <td><pre class='prettyprint covered' id='l276s0'>        this.dirty = argDirty;</pre></td>
+      <td class='line'>272</td><td class='count'>9</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l272s0'>        this.dirty = argDirty;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInvokeString: 71</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testChooseBaseDirectory: 84</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testIsDirty: 103, 106</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetDirty: 97, 98</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>277</td><td class='count'>9</td>
-      <td><pre class='prettyprint covered' id='l277s0'>    }</pre></td>
+      <td class='line'>273</td><td class='count'>9</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l273s0'>    }</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInvokeString: 71</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testChooseBaseDirectory: 84</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testIsDirty: 103, 106</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetDirty: 97, 98</li>
+        </ol>
+      </td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>280</td><td>&nbsp;</td>
+      <td class='line'>276</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public boolean isDirty() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>281</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered' id='l281s0'>        return this.dirty;</pre></td>
+      <td class='line'>277</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l277s0'>        return this.dirty;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testIsDirty: 104, 107</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>282</td><td>&nbsp;</td>
+      <td class='line'>278</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>285</td><td>&nbsp;</td>
+      <td class='line'>281</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    private void registerKeyboardShortcuts4One() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>286</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l286s0'>        AbstractEditor importOneEditor =</pre></td>
+      <td class='line'>282</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l282s0'>        AbstractEditor importOneEditor =</pre></td>
     </tr>
     <tr>
-      <td class='line'>287</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                this.columnFactory.getImportOneEditor();</pre></td>
+      <td class='line'>283</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l283s0'>                this.columnFactory.getImportOneEditor();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>284</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l284s0'>        importOneEditor.registerKeyboardShortcut(this.viewport);</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>286</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l286s0'>        AbstractEditor deleteOneEditor =</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>287</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l287s0'>                this.columnFactory.getDeleteOneEditor();</pre></td>
     </tr>
     <tr>
       <td class='line'>288</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l288s0'>        importOneEditor.registerKeyboardShortcut(this.viewport);</pre></td>
+      <td><pre class='prettyprint uncovered' id='l288s0'>        deleteOneEditor.registerKeyboardShortcut(this.viewport);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>289</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l289s0'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>290</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l290s0'>        AbstractEditor deleteOneEditor =</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>291</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                this.columnFactory.getDeleteOneEditor();</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>292</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l292s0'>        deleteOneEditor.registerKeyboardShortcut(this.viewport);</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>293</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l293s0'>    }</pre></td>
-    </tr>
-    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
-    <tr>
-      <td class='line'>296</td><td>&nbsp;</td>
+      <td class='line'>292</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    private void registerKeyboardShortcuts4All() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>297</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l297s0'>        AbstractEditor importAllEditor =</pre></td>
+      <td class='line'>293</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l293s0'>        AbstractEditor importAllEditor =</pre></td>
     </tr>
     <tr>
-      <td class='line'>298</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                this.columnFactory.getImportAllEditor();</pre></td>
+      <td class='line'>294</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l294s0'>                this.columnFactory.getImportAllEditor();</pre></td>
     </tr>
     <tr>
-      <td class='line'>299</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l299s0'>        importAllEditor.registerKeyboardShortcut(this.viewport);</pre></td>
+      <td class='line'>295</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l295s0'>        importAllEditor.registerKeyboardShortcut(this.viewport);</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>301</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l301s0'>        AbstractEditor deleteAllEditor =</pre></td>
+      <td class='line'>297</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l297s0'>        AbstractEditor deleteAllEditor =</pre></td>
     </tr>
     <tr>
-      <td class='line'>302</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                this.columnFactory.getDeleteAllEditor();</pre></td>
+      <td class='line'>298</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l298s0'>                this.columnFactory.getDeleteAllEditor();</pre></td>
     </tr>
     <tr>
-      <td class='line'>303</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l303s0'>        deleteAllEditor.registerKeyboardShortcut(this.viewport);</pre></td>
+      <td class='line'>299</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l299s0'>        deleteAllEditor.registerKeyboardShortcut(this.viewport);</pre></td>
     </tr>
     <tr>
-      <td class='line'>304</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l304s0'>    }</pre></td>
+      <td class='line'>300</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l300s0'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
@@ -970,35 +1428,57 @@ import javax.swing.table.AbstractTableModel;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>309</td><td class='count'>20</td>
-      <td><pre class='prettyprint covered' id='l309s0'>    private final class ViewControllerObserver</pre></td>
+      <td class='line'>305</td><td class='count'>20</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l305s0'>    private final class ViewControllerObserver</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 40</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInit: 45</li>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 40x8</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#setUp: 43</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>310</td><td>&nbsp;</td>
+      <td class='line'>306</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    implements Observer {</pre></td>
     </tr>
     <tr>
-      <td class='line'>311</td><td>&nbsp;</td>
+      <td class='line'>307</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>        @Override</pre></td>
     </tr>
     <tr>
-      <td class='line'>312</td><td>&nbsp;</td>
+      <td class='line'>308</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>        public void update(final Observable observable, final Object object) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>313</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered' id='l313s0'>            ViewController.this.setDirty(true);</pre></td>
+      <td class='line'>309</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l309s0'>            ViewController.this.setDirty(true);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInvokeString: 71</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testChooseBaseDirectory: 84</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>314</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered' id='l314s0'>            ViewController.this.refresh();</pre></td>
+      <td class='line'>310</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l310s0'>            ViewController.this.refresh();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInvokeString: 71</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testChooseBaseDirectory: 84</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>315</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered' id='l315s0'>        }</pre></td>
+      <td class='line'>311</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l311s0'>        }</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#testInvokeString: 71</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testChooseBaseDirectory: 84</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>316</td><td>&nbsp;</td>
+      <td class='line'>312</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -1009,36 +1489,42 @@ import javax.swing.table.AbstractTableModel;
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>321</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered' id='l321s0'>    private final class ChooseBaseDirectoryActionListener</pre></td>
+      <td class='line'>317</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l317s0'>    private final class ChooseBaseDirectoryActionListener</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testGetGUIView: 53</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testCleanup: 91</li>
+          <li>com.moneydance.modules.features.importlist.controller.ViewControllerTest#testSetActive: 67, 68</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>322</td><td>&nbsp;</td>
+      <td class='line'>318</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    implements ActionListener {</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>324</td><td>&nbsp;</td>
+      <td class='line'>320</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>        @Override</pre></td>
     </tr>
     <tr>
-      <td class='line'>325</td><td>&nbsp;</td>
+      <td class='line'>321</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>        public void actionPerformed(final ActionEvent event) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>326</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l326s0'>            ViewController.this.chooseBaseDirectory();</pre></td>
+      <td class='line'>322</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l322s0'>            ViewController.this.chooseBaseDirectory();</pre></td>
     </tr>
     <tr>
-      <td class='line'>327</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l327s0'>        }</pre></td>
+      <td class='line'>323</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l323s0'>        }</pre></td>
     </tr>
     <tr>
-      <td class='line'>328</td><td>&nbsp;</td>
+      <td class='line'>324</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr>
-      <td class='line'>329</td><td>&nbsp;</td>
+      <td class='line'>325</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>}</pre></td>
     </tr>
   </table>

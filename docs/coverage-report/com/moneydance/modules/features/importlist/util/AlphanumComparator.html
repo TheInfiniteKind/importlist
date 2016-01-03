@@ -10,10 +10,10 @@
 </head>
 <body onload='prettyPrint()'>
   <table cellpadding='0' cellspacing='1'>
-    <caption>develop/src/main/java/com/moneydance/modules/features/importlist/util/AlphanumComparator.java</caption>
+    <caption>master/src/main/java/com/moneydance/modules/features/importlist/util/AlphanumComparator.java</caption>
     <tr>
-      <td class='line'>1</td><td>&nbsp;</td>
-      <td><pre class='comment'>// The Alphanum Algorithm is an improved sorting algorithm for strings</pre></td>
+      <td class='line'>1</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l1s0'>// The Alphanum Algorithm is an improved sorting algorithm for strings</pre></td>
     </tr>
     <tr>
       <td class='line'>2</td><td>&nbsp;</td>
@@ -113,8 +113,8 @@
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>32</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l32s0'>public enum AlphanumComparator implements Comparator&lt;String> {</pre></td>
+      <td class='line'>32</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>public enum AlphanumComparator implements Comparator&lt;String> {</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
@@ -169,7 +169,11 @@
     </tr>
     <tr>
       <td class='line'>57</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered' id='l57s0'>    private AlphanumComparator() {</pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l57s0'>    private AlphanumComparator() {</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#setUp: 36</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>58</td><td>&nbsp;</td>
@@ -177,7 +181,11 @@
     </tr>
     <tr>
       <td class='line'>59</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered' id='l59s0'>    }</pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l59s0'>    }</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#setUp: 36</li>
+        </ol>
+      </td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
@@ -193,12 +201,29 @@
       <td><pre class='prettyprint'>    private static boolean isDigit(final char character) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>67</td><td class='count'>73</td>
-      <td><pre class='prettyprint jmp'>        <span id='l67s0' title='Executions: 73' class='covered'>return character >= DIGIT_LOWER_BOUND</span></pre></td>
+      <td></td><td class='count'>73</td>
+      <td class='paths'>
+        <span style='cursor:default; background-color:#00ff00' onclick='hidePath()'>Path coverage: 3/3</span>
+        <span class='covered' onclick="showPath(this,'l67s0 l68s0 l67s1')">A: 27</span>
+        <span class='covered' onclick="showPath(this,'l67s0 l67s2')">B: 5</span>
+        <span class='covered' onclick="showPath(this,'l67s0 l68s0 l67s2')">C: 41</span>
+      </td>
     </tr>
     <tr>
-      <td class='line'>68</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                && character &lt;= DIGIT_UPPER_BOUND;</pre></td>
+      <td class='line'>67</td><td class='count'>141</td>
+      <td><pre class='prettyprint jmp'>        <span id='l67s0' title='Executions: 141' class='covered cp' onclick='showHide(this,0)'>return character >= DIGIT_LOWER_BOUND</span></pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x61, 48x46, 53</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>68</td><td class='count'>68</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l68s0'>                && character &lt;= DIGIT_UPPER_BOUND;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x28, 48x23, 53</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>69</td><td>&nbsp;</td>
@@ -233,58 +258,92 @@
       <td><pre class='prettyprint'>            final int marker) {</pre></td>
     </tr>
     <tr>
-      <td></td><td class='count'>9</td>
+      <td></td><td class='count'>14</td>
       <td class='paths'>
-        <span style='cursor:default; background-color:#9f6000' onclick='hidePath()'>Path coverage: 3/8</span>
-        <span class='uncovered' onclick="showPath(this,'l83s0 l88s0 l98s0 l107s0')">A: 0</span>
-        <span class='covered' onclick="showPath(this,'l83s0 l88s0 l98s0 l99s0 l100s0 l103s0 l107s0')">B: 6</span>
-        <span class='covered' onclick="showPath(this,'l83s0 l88s0 l98s0 l99s0 l100s0 l101s0 l107s0')">C: 2</span>
-        <span class='covered' onclick="showPath(this,'l83s0 l88s0 l89s0 l107s0')">D: 1</span>
-        <span class='uncovered' onclick="showPath(this,'l83s0 l88s0 l89s0 l90s0 l91s0 l94s0 l98s0 l107s0')">E: 0</span>
-        <span class='uncovered' onclick="showPath(this,'l83s0 l88s0 l89s0 l90s0 l91s0 l94s0 l98s0 l99s0 l100s0 l103s0 l107s0')">F: 0</span>
-        <span class='uncovered' onclick="showPath(this,'l83s0 l88s0 l89s0 l90s0 l91s0 l94s0 l98s0 l99s0 l100s0 l101s0 l107s0')">G: 0</span>
-        <span class='uncovered' onclick="showPath(this,'l83s0 l88s0 l89s0 l90s0 l91s0 l92s0 l107s0')">H: 0</span>
+        <span style='cursor:default; background-color:#00ff00' onclick='hidePath()'>Path coverage: 2/2</span>
+        <span class='covered' onclick="showPath(this,'l83s0 l88s0 l98s0 l107s0')">A: 8</span>
+        <span class='covered' onclick="showPath(this,'l83s0 l88s0 l89s0 l107s0')">B: 6</span>
       </td>
     </tr>
     <tr>
       <td class='line'>83</td><td class='count'>14</td>
-      <td><pre class='prettyprint covered' id='l83s0'>        int index = marker;</pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l83s0'>        int index = marker;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x8, 48x4, 53</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>84</td><td class='count'>14</td>
-      <td><pre class='prettyprint covered' id='l84s0'>        final StringBuilder chunk = new StringBuilder();</pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l84s0'>        final StringBuilder chunk = new StringBuilder();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x8, 48x4, 53</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>85</td><td class='count'>14</td>
-      <td><pre class='prettyprint covered' id='l85s0'>        char character = string.charAt(index);</pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l85s0'>        char character = string.charAt(index);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x8, 48x4, 53</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>86</td><td class='count'>14</td>
-      <td><pre class='prettyprint covered' id='l86s0'>        chunk.append(character);</pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l86s0'>        chunk.append(character);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x8, 48x4, 53</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>87</td><td class='count'>14</td>
-      <td><pre class='prettyprint covered' id='l87s0'>        index++;</pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l87s0'>        index++;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x8, 48x4, 53</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>88</td><td class='count'>14</td>
-      <td><pre class='prettyprint jmp'>        <span id='l88s0' title='Executions: 14' class='covered'>if (isDigit(character)) {</span></pre></td>
+      <td><pre class='prettyprint jmp'>        <span id='l88s0' title='Executions: 14' class='covered cp' onclick='showHide(this,0)'>if (isDigit(character)) {</span></pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x8, 48x4, 53</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>89</td><td class='count'>15</td>
-      <td><pre class='prettyprint jmp'>            <span id='l89s0' title='Executions: 15' class='covered'>while (index &lt; slength)</span> <span id='l89s1' title='Executions: 13' class='covered'>{</span></pre></td>
+      <td class='line'>89</td><td class='count'>21</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l89s0'>            while (index &lt; slength) {</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x13, 48</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>90</td><td class='count'>13</td>
-      <td><pre class='prettyprint covered' id='l90s0'>                character = string.charAt(index);</pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l90s0'>                character = string.charAt(index);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x7, 48</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>91</td><td class='count'>13</td>
-      <td><pre class='prettyprint jmp'>                <span id='l91s0' title='Executions: 13' class='covered'>if (!isDigit(character)) {</span></pre></td>
+      <td><pre class='prettyprint jmp'>                <span id='l91s0' title='Executions: 13' class='covered cp' onclick='showHide(this,0)'>if (!isDigit(character)) {</span></pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x7, 48</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>92</td><td class='count'>4</td>
-      <td><pre class='prettyprint covered' id='l92s0'>                    break;</pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l92s0'>                    break;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x2, 48</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>93</td><td>&nbsp;</td>
@@ -292,35 +351,63 @@
     </tr>
     <tr>
       <td class='line'>94</td><td class='count'>9</td>
-      <td><pre class='prettyprint covered' id='l94s0'>                chunk.append(character);</pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l94s0'>                chunk.append(character);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x5, 48</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>95</td><td class='count'>9</td>
-      <td><pre class='prettyprint covered' id='l95s0'>                index++;</pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l95s0'>                index++;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x5, 48</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>96</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>            }</pre></td>
     </tr>
     <tr>
-      <td class='line'>97</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>        } else {</pre></td>
+      <td class='line'>97</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l97s0'>        } else {</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>98</td><td class='count'>38</td>
-      <td><pre class='prettyprint jmp'>            <span id='l98s0' title='Executions: 38' class='covered'>while (index &lt; slength)</span> <span id='l98s1' title='Executions: 36' class='covered'>{</span></pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l98s0'>            while (index &lt; slength) {</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x12, 48x10, 53</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>99</td><td class='count'>36</td>
-      <td><pre class='prettyprint covered' id='l99s0'>                character = string.charAt(index);</pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l99s0'>                character = string.charAt(index);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x12, 48x10, 53</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>100</td><td class='count'>36</td>
-      <td><pre class='prettyprint jmp'>                <span id='l100s0' title='Executions: 36' class='covered'>if (isDigit(character)) {</span></pre></td>
+      <td><pre class='prettyprint jmp'>                <span id='l100s0' title='Executions: 36' class='covered cp' onclick='showHide(this,0)'>if (isDigit(character)) {</span></pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x12, 48x10, 53</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>101</td><td class='count'>6</td>
-      <td><pre class='prettyprint covered' id='l101s0'>                    break;</pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l101s0'>                    break;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x4, 48</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>102</td><td>&nbsp;</td>
@@ -328,11 +415,19 @@
     </tr>
     <tr>
       <td class='line'>103</td><td class='count'>30</td>
-      <td><pre class='prettyprint covered' id='l103s0'>                chunk.append(character);</pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l103s0'>                chunk.append(character);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x8, 48x8, 53</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>104</td><td class='count'>30</td>
-      <td><pre class='prettyprint covered' id='l104s0'>                index++;</pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l104s0'>                index++;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x8, 48x8, 53</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>105</td><td>&nbsp;</td>
@@ -344,7 +439,11 @@
     </tr>
     <tr>
       <td class='line'>107</td><td class='count'>14</td>
-      <td><pre class='prettyprint covered' id='l107s0'>        return chunk.toString();</pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l107s0'>        return chunk.toString();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x8, 48x4, 53</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>108</td><td>&nbsp;</td>
@@ -369,69 +468,115 @@
       <td><pre class='prettyprint'>    public int compare(final String string1, final String string2) {</pre></td>
     </tr>
     <tr>
-      <td></td><td class='count'>1</td>
+      <td></td><td class='count'>0</td>
       <td class='paths'>
-        <span style='cursor:default; background-color:#eb1400' onclick='hidePath()'>Path coverage: 1/13</span>
-        <span class='uncovered' onclick="showPath(this,'l118s0 l123s0 l123s1 l124s0 l134s0 l134s1 l137s0 l140s0 l141s0 l142s0 l143s0 l144s0')">A: 0</span>
-        <span class='uncovered' onclick="showPath(this,'l118s0 l123s0 l123s1 l124s0 l134s0 l149s0 l152s0 l153s0')">B: 0</span>
-        <span class='uncovered' onclick="showPath(this,'l118s0 l123s0 l123s1 l124s0 l134s0 l134s1 l149s0 l152s0 l153s0')">C: 0</span>
-        <span class='uncovered' onclick="showPath(this,'l118s0 l123s0 l123s1 l124s0 l134s0 l134s1 l137s0 l140s0 l148s0 l152s0 l153s0')">D: 0</span>
-        <span class='uncovered' onclick="showPath(this,'l118s0 l123s0 l123s1 l124s0 l134s0 l134s1 l137s0 l140s0 l141s0 l148s0 l152s0 l153s0')">E: 0</span>
-        <span class='uncovered' onclick="showPath(this,'l118s0 l123s0 l123s1 l124s0 l134s0 l134s1 l137s0 l140s0 l141s0 l142s0 l143s0 l148s0 l152s0 l153s0')">F: 0</span>
-        <span class='uncovered' onclick="showPath(this,'l118s0 l123s0 l157s0')">G: 0</span>
-        <span class='uncovered' onclick="showPath(this,'l118s0 l123s0 l123s1 l157s0')">H: 0</span>
-        <span class='covered' onclick="showPath(this,'l118s0 l123s0 l123s1 l124s0 l134s0 l149s0 l152s0 l155s0 l157s0')">I: 1</span>
-        <span class='uncovered' onclick="showPath(this,'l118s0 l123s0 l123s1 l124s0 l134s0 l134s1 l149s0 l152s0 l155s0 l157s0')">J: 0</span>
-        <span class='uncovered' onclick="showPath(this,'l118s0 l123s0 l123s1 l124s0 l134s0 l134s1 l137s0 l140s0 l148s0 l152s0 l155s0 l157s0')">K: 0</span>
-        <span class='uncovered' onclick="showPath(this,'l118s0 l123s0 l123s1 l124s0 l134s0 l134s1 l137s0 l140s0 l141s0 l148s0 l152s0 l155s0 l157s0')">L: 0</span>
-        <span class='uncovered' onclick="showPath(this,'l118s0 l123s0 l123s1 l124s0 l134s0 l134s1 l137s0 l140s0 l141s0 l142s0 l143s0 l148s0 l152s0 l155s0 l157s0')">M: 0</span>
+        <span style='cursor:default; background-color:#ff0000' onclick='hidePath()'>Path coverage: 0/12</span>
+        <span class='uncovered' onclick="showPath(this,'l118s0 l134s0 l149s0 l152s0 l153s0')">A: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l118s0 l134s0 l135s0 l149s0 l152s0 l153s0')">B: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l118s0 l134s0 l135s0 l137s0 l140s0 l152s0 l153s0')">C: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l118s0 l134s0 l135s0 l137s0 l140s0 l141s0 l141s1 l152s0 l153s0')">D: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l118s0 l134s0 l149s0 l152s0 l157s0')">E: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l118s0 l134s0 l149s0 l152s0 l123s1 l157s0')">F: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l118s0 l134s0 l135s0 l149s0 l152s0 l157s0')">G: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l118s0 l134s0 l135s0 l149s0 l152s0 l123s1 l157s0')">H: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l118s0 l134s0 l135s0 l137s0 l140s0 l152s0 l157s0')">I: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l118s0 l134s0 l135s0 l137s0 l140s0 l152s0 l123s1 l157s0')">J: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l118s0 l134s0 l135s0 l137s0 l140s0 l141s0 l141s1 l152s0 l157s0')">K: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l118s0 l134s0 l135s0 l137s0 l140s0 l141s0 l141s1 l152s0 l123s1 l157s0')">L: 0</span>
       </td>
     </tr>
     <tr>
       <td class='line'>118</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered' id='l118s0'>        int thisMarker = 0;</pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l118s0'>        int thisMarker = 0;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43, 48, 53</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>119</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered' id='l119s0'>        int thatMarker = 0;</pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l119s0'>        int thatMarker = 0;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43, 48, 53</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>120</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered' id='l120s0'>        final int s1Length = string1.length();</pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l120s0'>        final int s1Length = string1.length();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43, 48, 53</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>121</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered' id='l121s0'>        final int s2Length = string2.length();</pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l121s0'>        final int s2Length = string2.length();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43, 48, 53</li>
+        </ol>
+      </td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>123</td><td class='count'>8</td>
-      <td><pre class='prettyprint jmp'>        <span id='l123s0' title='Executions: 8' class='covered'>while (thisMarker &lt; s1Length</span> && <span id='l123s1' title='Executions: 7' class='covered'>thatMarker &lt; s2Length)</span> <span id='l123s2' title='Executions: 7' class='covered'>{</span></pre></td>
+      <td class='line'>123</td><td class='count'>11</td>
+      <td><pre class='prettyprint jmp'>        <span id='l123s0' title='Executions: 11' class='covered cp' onclick='showHide(this,0)'>while (thisMarker &lt; s1Length</span> && <span id='l123s1' title='Executions: 7' class='covered cp' onclick='showHide(this,1)'>thatMarker &lt; s2Length)</span> </pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x5, 48x3, 53</li>
+        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x4, 48x2, 53</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>124</td><td class='count'>7</td>
-      <td><pre class='prettyprint covered' id='l124s0'>            final String thisChunk</pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l124s0'>            final String thisChunk</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x4, 48x2, 53</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>125</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>            = getChunk(string1, s1Length, thisMarker);</pre></td>
+      <td class='line'>125</td><td class='count'>7</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l125s0'>            = getChunk(string1, s1Length, thisMarker);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x4, 48x2, 53</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>126</td><td class='count'>7</td>
-      <td><pre class='prettyprint covered' id='l126s0'>            thisMarker += thisChunk.length();</pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l126s0'>            thisMarker += thisChunk.length();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x4, 48x2, 53</li>
+        </ol>
+      </td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'>128</td><td class='count'>7</td>
-      <td><pre class='prettyprint covered' id='l128s0'>            final String thatChunk</pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l128s0'>            final String thatChunk</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x4, 48x2, 53</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>129</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>            = getChunk(string2, s2Length, thatMarker);</pre></td>
+      <td class='line'>129</td><td class='count'>7</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l129s0'>            = getChunk(string2, s2Length, thatMarker);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x4, 48x2, 53</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>130</td><td class='count'>7</td>
-      <td><pre class='prettyprint covered' id='l130s0'>            thatMarker += thatChunk.length();</pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l130s0'>            thatMarker += thatChunk.length();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x4, 48x2, 53</li>
+        </ol>
+      </td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
@@ -440,15 +585,27 @@
     </tr>
     <tr>
       <td class='line'>133</td><td class='count'>7</td>
-      <td><pre class='prettyprint covered' id='l133s0'>            int result = 0;</pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l133s0'>            int result = 0;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x4, 48x2, 53</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>134</td><td class='count'>7</td>
-      <td><pre class='prettyprint jmp'>            <span id='l134s0' title='Executions: 7' class='covered'>if (isDigit(thisChunk.charAt(0))</span></pre></td>
+      <td><pre class='prettyprint jmp'>            <span id='l134s0' title='Executions: 7' class='covered cp' onclick='showHide(this,0)'>if (isDigit(thisChunk.charAt(0))</span></pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x4, 48x2, 53</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>135</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                    && isDigit(thatChunk.charAt(0))) {</pre></td>
+      <td class='line'>135</td><td class='count'>3</td>
+      <td><pre class='prettyprint jmp'>                    && <span id='l135s1' title='Executions: 3' class='covered cp' onclick='showHide(this,1)'>isDigit(thatChunk.charAt(0))) {</span></pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x2, 48</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>136</td><td>&nbsp;</td>
@@ -456,11 +613,19 @@
     </tr>
     <tr>
       <td class='line'>137</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered' id='l137s0'>                final int thisChunkLength = thisChunk.length();</pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l137s0'>                final int thisChunkLength = thisChunk.length();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x2, 48</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>138</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered' id='l138s0'>                result = thisChunkLength - thatChunk.length();</pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l138s0'>                result = thisChunkLength - thatChunk.length();</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x2, 48</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>139</td><td>&nbsp;</td>
@@ -468,23 +633,49 @@
     </tr>
     <tr>
       <td class='line'>140</td><td class='count'>3</td>
-      <td><pre class='prettyprint jmp'>                <span id='l140s0' title='Executions: 3' class='covered'>if (result == 0)</span> <span id='l140s1' title='Executions: 2' class='covered'>{</span></pre></td>
+      <td><pre class='prettyprint jmp'>                <span id='l140s0' title='Executions: 3' class='covered cp' onclick='showHide(this,0)'>if (result == 0)</span> <span id='l140s1' title='Executions: 2' class='covered cp' onclick='showHide(this,1)'>{</span></pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x2, 48</li>
+        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43, 48</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>141</td><td class='count'>6</td>
-      <td><pre class='prettyprint jmp'>                    <span id='l141s0' title='Executions: 6' class='covered'>for (int i = 0; i &lt; thisChunkLength; i++)</span> <span id='l141s1' title='Executions: 5' class='covered'>{</span></pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l141s0'>                    for (int i = 0; i &lt; thisChunkLength; i++) {</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x4, 48</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>142</td><td class='count'>5</td>
-      <td><pre class='prettyprint covered' id='l142s0'>                        result = thisChunk.charAt(i) - thatChunk.charAt(i);</pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l142s0'>                        result = thisChunk.charAt(i) - thatChunk.charAt(i);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x3, 48</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>143</td><td class='count'>5</td>
-      <td><pre class='prettyprint jmp'>                        <span id='l143s0' title='Executions: 5' class='covered'>if (result != 0)</span> <span id='l143s1' title='Executions: 1' class='covered'>{</span></pre></td>
+      <td><pre class='prettyprint jmp'>                        <span id='l143s0' title='Executions: 5' class='covered cp' onclick='showHide(this,0)'>if (result != 0)</span> <span id='l143s1' title='Executions: 1' class='covered cp' onclick='showHide(this,1)'>{</span></pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x3, 48</li>
+        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 48</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>144</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered' id='l144s0'>                            return result;</pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l144s0'>                            return result;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 48</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>145</td><td>&nbsp;</td>
@@ -499,12 +690,20 @@
       <td><pre class='prettyprint'>                }</pre></td>
     </tr>
     <tr>
-      <td class='line'>148</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered' id='l148s0'>            } else {</pre></td>
+      <td class='line'>148</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l148s0'>            } else {</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>149</td><td class='count'>4</td>
-      <td><pre class='prettyprint covered' id='l149s0'>                result = thisChunk.compareTo(thatChunk);</pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l149s0'>                result = thisChunk.compareTo(thatChunk);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x2, 48, 53</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>150</td><td>&nbsp;</td>
@@ -513,24 +712,39 @@
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'>152</td><td class='count'>6</td>
-      <td><pre class='prettyprint jmp'>            <span id='l152s0' title='Executions: 6' class='covered'>if (result != 0)</span> <span id='l152s1' title='Executions: 1' class='covered'>{</span></pre></td>
+      <td><pre class='prettyprint jmp'>            <span id='l152s0' title='Executions: 6' class='covered cp' onclick='showHide(this,0)'>if (result != 0)</span> <span id='l152s1' title='Executions: 1' class='covered cp' onclick='showHide(this,1)'>{</span></pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43x4, 48, 53</li>
+        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>153</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered' id='l153s0'>                return result;</pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l153s0'>                return result;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 43</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>154</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>            }</pre></td>
     </tr>
     <tr>
-      <td class='line'>155</td><td class='count'>5</td>
-      <td><pre class='prettyprint covered' id='l155s0'>        }</pre></td>
+      <td class='line'>155</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'>157</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered' id='l157s0'>        return s1Length - s2Length;</pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l157s0'>        return s1Length - s2Length;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.util.AlphanumComparatorTest#testCompare: 53</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>158</td><td>&nbsp;</td>

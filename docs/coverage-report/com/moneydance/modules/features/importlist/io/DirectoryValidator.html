@@ -10,14 +10,14 @@
 </head>
 <body onload='prettyPrint()'>
   <table cellpadding='0' cellspacing='1'>
-    <caption>develop/src/main/java/com/moneydance/modules/features/importlist/io/DirectoryValidator.java</caption>
+    <caption>master/src/main/java/com/moneydance/modules/features/importlist/io/DirectoryValidator.java</caption>
     <tr>
-      <td class='line'>1</td><td>&nbsp;</td>
-      <td><pre class='comment'>// Import List - http://my-flow.github.io/importlist/</pre></td>
+      <td class='line'>1</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l1s0'>// Import List - http://my-flow.github.io/importlist/</pre></td>
     </tr>
     <tr>
       <td class='line'>2</td><td>&nbsp;</td>
-      <td><pre class='comment'>// Copyright (C) 2011-2014 Florian J. Breunig</pre></td>
+      <td><pre class='comment'>// Copyright (C) 2011-2016 Florian J. Breunig</pre></td>
     </tr>
     <tr>
       <td class='line'>3</td><td>&nbsp;</td>
@@ -97,7 +97,11 @@ import org.apache.commons.io.filefilter.IOFileFilter;
     </tr>
     <tr>
       <td class='line'>30</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered' id='l30s0'>enum DirectoryValidator implements IOFileFilter {</pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l30s0'>enum DirectoryValidator implements IOFileFilter {</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.MainTest#setUp: 40</li>
+        </ol>
+      </td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
@@ -131,20 +135,31 @@ import org.apache.commons.io.filefilter.IOFileFilter;
       <td><pre class='prettyprint'>    boolean isValidDirectory(final File file) {</pre></td>
     </tr>
     <tr>
-      <td></td><td class='count'>3</td>
+      <td></td><td class='count'>2</td>
       <td class='paths'>
         <span style='cursor:default; background-color:#00ff00' onclick='hidePath()'>Path coverage: 2/2</span>
         <span class='covered' onclick="showPath(this,'l44s0 l45s0')">A: 1</span>
-        <span class='covered' onclick="showPath(this,'l44s0 l48s0')">B: 2</span>
+        <span class='covered' onclick="showPath(this,'l44s0 l48s0')">B: 1</span>
       </td>
     </tr>
     <tr>
-      <td class='line'>44</td><td class='count'>3</td>
-      <td><pre class='prettyprint jmp'>        <span id='l44s0' title='Executions: 3' class='covered'>if (file == null)</span> <span id='l44s1' title='Executions: 1' class='covered'>{</span></pre></td>
+      <td class='line'>44</td><td class='count'>2</td>
+      <td><pre class='prettyprint jmp'>        <span id='l44s0' title='Executions: 2' class='covered cp' onclick='showHide(this,0)'>if (file == null)</span> <span id='l44s1' title='Executions: 1' class='covered cp' onclick='showHide(this,1)'>{</span></pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.DirectoryValidatorTest#testIsValidDirectory: 33, 34</li>
+        </ol>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.DirectoryValidatorTest#testIsValidDirectory: 34</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>45</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered' id='l45s0'>            return false;</pre></td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l45s0'>            return false;</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.DirectoryValidatorTest#testIsValidDirectory: 34</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>46</td><td>&nbsp;</td>
@@ -152,8 +167,12 @@ import org.apache.commons.io.filefilter.IOFileFilter;
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>48</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered' id='l48s0'>        return this.accept(file);</pre></td>
+      <td class='line'>48</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l48s0'>        return this.accept(file);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.DirectoryValidatorTest#testIsValidDirectory: 33</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>49</td><td>&nbsp;</td>
@@ -173,16 +192,34 @@ import org.apache.commons.io.filefilter.IOFileFilter;
       <td><pre class='prettyprint'>        try {</pre></td>
     </tr>
     <tr>
-      <td class='line'>54</td><td class='count'>219</td>
-      <td><pre class='prettyprint covered' id='l54s0'>            return FileFilterUtils.and(</pre></td>
+      <td class='line'>54</td><td class='count'>240</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l54s0'>            return FileFilterUtils.and(</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.DirectoryValidatorTest#testAcceptFile: 39x2</li>
+          <li>com.moneydance.modules.features.importlist.io.DirectoryValidatorTest#testIsValidDirectory: 33x2</li>
+          <li>com.moneydance.modules.features.importlist.io.DirectoryValidatorTest#testAcceptFileString: 45</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>55</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                    CanReadFileFilter.CAN_READ,</pre></td>
+      <td class='line'>55</td><td class='count'>120</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l55s0'>                    CanReadFileFilter.CAN_READ,</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.DirectoryValidatorTest#testAcceptFile: 39</li>
+          <li>com.moneydance.modules.features.importlist.io.DirectoryValidatorTest#testIsValidDirectory: 33</li>
+          <li>com.moneydance.modules.features.importlist.io.DirectoryValidatorTest#testAcceptFileString: 45</li>
+        </ol>
+      </td>
     </tr>
     <tr>
-      <td class='line'>56</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>                    FileFilterUtils.directoryFileFilter()).accept(file);</pre></td>
+      <td class='line'>56</td><td class='count'>120</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l56s0'>                    FileFilterUtils.directoryFileFilter()).accept(file);</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.DirectoryValidatorTest#testAcceptFile: 39</li>
+          <li>com.moneydance.modules.features.importlist.io.DirectoryValidatorTest#testIsValidDirectory: 33</li>
+          <li>com.moneydance.modules.features.importlist.io.DirectoryValidatorTest#testAcceptFileString: 45</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>57</td><td class='count'>0</td>
@@ -214,8 +251,12 @@ import org.apache.commons.io.filefilter.IOFileFilter;
       <td><pre class='prettyprint'>    public boolean accept(final File dir, final String name) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>65</td><td class='count'>216</td>
-      <td><pre class='prettyprint covered' id='l65s0'>        return this.accept(new File(dir, name));</pre></td>
+      <td class='line'>65</td><td class='count'>118</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l65s0'>        return this.accept(new File(dir, name));</pre>
+        <ol style='display: none'>
+          <li>com.moneydance.modules.features.importlist.io.DirectoryValidatorTest#testAcceptFileString: 45</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>66</td><td>&nbsp;</td>
