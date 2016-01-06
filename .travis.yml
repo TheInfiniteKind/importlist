@@ -1,0 +1,8 @@
+language: ruby
+rvm:
+  - 2.2
+install: gem install html-proofer
+script: htmlproof *.html --only-4xx --check-html --check-external-hash --verbose
+branches:
+  only:
+  - gh-pages # test the gh-pages branch
