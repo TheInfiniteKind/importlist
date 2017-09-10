@@ -1,11 +1,6 @@
-## generic files to ignore
-*~
-*.lock
-*.DS_Store
-*.swp
-*.out
+.DS_Store
+Gemfile.lock
 
-# project specific
-bin
-dist
-src
+_site/
+.sass-cache/
+.jekyll-metadata/

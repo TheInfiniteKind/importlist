@@ -1,0 +1,16 @@
+title: Import List for Moneydance
+author: Florian J. Breunig
+description: Import List is an open-source extension for Moneydance monitoring a given directory for transaction files to import.
+google_analytics: UA-661182-7
+github: [metadata]
+sass:
+  style: compressed
+compress_html:
+  clippings: all
+  comments: ["<!-- ", "-->"]
+  ignore:
+    envs: ['development']
+gems:
+  - jekyll-seo-tag
+
+error_mode: strict

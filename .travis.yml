@@ -1,8 +1,17 @@
 language: ruby
+sudo: false
 rvm:
-  - 2.3.3
-install: gem install html-proofer
-script: htmlproofer *.html --only-4xx --check-html --check-external-hash
+  - 2.4.1
+
+jdk:
+ - oraclejdk8  # vnu.jar requires Java 8
+
+install:
+ - pip install --user html5validator
+ - bundle install
+
+script: jekyll build && html5validator --root ./_site --blacklist bower_components docs
+
 branches:
   only:
   - gh-pages # test the gh-pages branch
